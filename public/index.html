@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fishtown Web Design</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Horizon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/index.css">
+
+</head>
+<body>
+    <!-- Black Banner at the top -->
+    <div class="top-banner">
+        NOW ACCEPTING NEW CLIENTS.
+    </div>
+
+    <nav class="navbar navbar-light navbar-custom">
+        <div class="container-fluid">
+            <!-- Logo and Menu Icon -->
+            <a class="navbar-brand" href="#">
+                <img src="/public/content/home/logo.png" id="logo" alt="Fishtown Logo">
+            </a>
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="container-fluid main-section text-center intro">
+        <p class="tagline">
+            locally owned boutique<br>
+            web design agency<br>
+            specializing in <span id="rotating-word" class="rotating-word">venues</span>
+        </p>
+        
+        <button class="btn btn-get-started">GET STARTED</button>
+    </div>
+
+    <div class="container-fluid text-overlay">
+        <p class="overlay-text">custom designs, custom coded</p>
+        <h2 class="overlay-heading">small business web designer</h2>
+        <p class="overlay-subtext">No page builders or WordPress. We offer 100% hand-coded websites with superior results starting at $175/mo as well as Google Ads and SEO services.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer text-center py-4">
+        <p>&copy; 2024 Fishtown Web Design. All rights reserved.</p>
+        <img src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+        <p>Follow us on <a href="#">X</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+    </footer>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const words = ["hotels", "eateries"];
+        let currentIndex = 0;
+        const rotatingWordElement = document.getElementById("rotating-word");
+    
+        function rotateWords() {
+            // Set the next word
+            currentIndex = (currentIndex + 1) % words.length;
+            rotatingWordElement.style.animation = 'none'; // Reset animation
+            rotatingWordElement.innerText = words[currentIndex];
+            void rotatingWordElement.offsetWidth; // Trigger reflow
+            rotatingWordElement.style.animation = ''; // Re-apply animation
+        }
+    
+        // Change word every 2 seconds
+        setInterval(rotateWords, 5000);
+    </script>
+    
+    
+</body>
+</html>

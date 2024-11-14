@@ -1,0 +1,277 @@
+/* Logo settings */
+#logo {
+    max-width: 150px;
+}
+
+/* Navbar customization */
+.navbar-custom {
+    background-color: #f3eee8 !important; /* Match background */
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.navbar-brand span {
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Black top banner */
+.top-banner {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Horizon', sans-serif;
+    font-size: 15.7px;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+}
+
+body {
+    padding-top: 60px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3eee8;
+}
+
+/* Main section styles */
+.main-section {
+    background-color: #f3eee8;
+    padding: 50px 20px;
+}
+
+.tagline {
+    font-size: 24px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.btn-get-started {
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 10px 20px;
+    border-radius: 0;
+    border: none;
+    text-transform: uppercase;
+    font-family: 'Horizon';
+}
+
+/* Overlay section styles */
+.text-overlay {
+    position: relative;
+    background: url('/public/content/home/philly.png') no-repeat center center/cover;
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.overlay-text {
+    font-size: 25px;
+    font-weight: 800;
+    font-family: "Montserrat";
+    margin-bottom: 0px; /* Reduce the space below this text */
+}
+
+.overlay-heading {
+    font-size: 60px;
+    font-weight: 700;
+    font-family: "Montserrat";
+    margin-top: 0; /* Remove any top margin */
+}
+
+.overlay-subtext {
+    font-size: 16px;
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: "Montserrat";
+    margin-bottom: 10px;
+}
+
+.intro {
+    text-align: left!important; 
+}
+
+/* Footer styles */
+.footer {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+#fish {
+    max-width: 100px;
+    margin-bottom: 1rem;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.rotating-word {
+    font-family: 'Horizon', sans-serif; /* Use Horizon font */
+    color: #000; /* Make the text black */
+    display: inline-block;
+    animation: fadeUp 5s infinite;
+    position: relative;
+}
+
+/* Define Horizon font */
+@font-face {
+    font-family: 'Horizon'; /* Custom name for the font */
+    src: url('../../public/content/fonts/horizon.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Media Queries */
+
+/* For screens 768px and up (Tablets and small laptops) */
+@media (min-width: 768px) {
+    .navbar-custom {
+        font-size: 20px; /* Slightly larger text */
+    }
+
+    .tagline {
+        font-size: 28px; /* Increase tagline text size */
+    }
+
+    .btn-get-started {
+        font-size: 14px; /* Increase button font size */
+        padding: 12px 24px; /* Increase padding for button */
+    }
+
+    .overlay-text {
+        font-size: 30px; /* Larger overlay text */
+    }
+
+    .overlay-heading {
+        font-size: 80px; /* Larger heading */
+    }
+
+    .overlay-subtext {
+        font-size: 18px; /* Increase subtext size */
+        max-width: 800px; /* Increase max-width for better readability */
+    }
+}
+
+/* For screens 992px and up (Larger Tablets, Laptops, and Desktops) */
+@media (min-width: 992px) {
+    .navbar-custom {
+        font-size: 22px; /* Larger font size for desktop */
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 20px; /* More space between navbar items */
+    }
+
+    .main-section {
+        padding: 80px 50px; /* More padding for larger screens */
+    }
+
+    .tagline {
+        font-size: 36px; /* Larger tagline text */
+    }
+
+    .btn-get-started {
+        font-size: 16px; /* Larger button text */
+        padding: 15px 30px; /* Larger button padding */
+    }
+
+    .overlay-text {
+        font-size: 36px; /* Larger overlay text */
+    }
+
+    .overlay-heading {
+        font-size: 100px; /* Even larger heading */
+    }
+
+    .overlay-subtext {
+        font-size: 20px; /* Larger subtext */
+        max-width: 900px; /* Further increase max-width */
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 16px; /* Slightly larger text in footer */
+        text-align: left; /* Align footer text to the left */
+        padding-left: 30px; /* Padding for footer */
+        padding-right: 30px;
+    }
+
+    #fish {
+        max-width: 120px; /* Larger fish logo */
+    }
+}
+
+/* For screens 1200px and up (Large Desktops) */
+@media (min-width: 1200px) {
+    .navbar-custom {
+        font-size: 24px; /* Larger font size for large desktops */
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 30px; /* Add even more space between navbar items */
+    }
+
+    .main-section {
+        padding: 100px 80px; /* More padding for large screens */
+    }
+
+    .tagline {
+        font-size: 42px; /* Larger tagline text */
+    }
+
+    .btn-get-started {
+        font-size: 18px; /* Larger button text */
+        padding: 20px 40px; /* Larger button padding */
+    }
+
+    .overlay-heading {
+        font-size: 120px; /* Larger heading for very wide screens */
+    }
+
+    .overlay-subtext {
+        font-size: 22px; /* Larger subtext */
+        max-width: 1000px; /* Even wider for larger screens */
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 18px; /* Larger footer text */
+        text-align: left;
+    }
+
+    #fish {
+        max-width: 150px; /* Largest fish logo */
+    }
+}
