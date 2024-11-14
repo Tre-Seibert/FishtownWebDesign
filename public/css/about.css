@@ -1,0 +1,184 @@
+/* About Section */
+.about-section {
+    position: relative;
+    background-color: #f3eee8; /* Match body background color */
+}
+
+.about-banner {
+    position: relative; /* Adjust position to avoid overlap with the content */
+    width: 100%;
+    height: 150px;
+    background-color: #000;
+    mask-image: url('/public/content/home/drip-mask.svg');
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    -webkit-mask-image: url('/public/content/home/drip-mask.svg');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    z-index: 1; /* Ensure this is above the content */
+}
+
+.about-banner h1 {
+    color: #fff;
+    font-size: 32px;
+    font-family: 'Horizon', sans-serif;
+    margin: 5vh;
+    z-index: 2; /* Keep the heading above the SVG mask */
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Space between the image and text */
+    padding: 20px;
+    z-index: 0; /* Content below the heading */
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-text {
+    max-width: 600px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.about-text h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.about-text h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+
+/* Define Horizon font */
+@font-face {
+    font-family: 'Horizon'; /* Custom name for the font */
+    src: url('../../public/content/fonts/horizon.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Logo settings */
+#logo {
+    max-width: 150px;
+}
+
+/* Navbar customization */
+.navbar-custom {
+    background-color: #f3eee8 !important; /* Match background */
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+/* Black top banner */
+.top-banner {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Horizon', sans-serif;
+    font-size: 15.7px;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+}
+
+/* General body styles */
+body {
+    padding-top: 60px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3eee8;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+#fish {
+    max-width: 100px;
+    margin-bottom: 1rem;
+}
+
+/* Media Queries */
+
+/* For screens 992px and up (Larger Tablets, Laptops, and Desktops) */
+@media (min-width: 992px) {
+    .navbar-custom {
+        font-size: 22px; /* Larger font size for desktop */
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 20px; /* More space between navbar items */
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 16px; /* Slightly larger text in footer */
+        text-align: left; /* Align footer text to the left */
+        padding-left: 30px; /* Padding for footer */
+        padding-right: 30px;
+    }
+
+    #fish {
+        max-width: 120px; /* Larger fish logo */
+    }
+}
+
+/* For screens 1200px and up (Large Desktops) */
+@media (min-width: 1200px) {
+    .navbar-custom {
+        font-size: 24px; /* Larger font size for large desktops */
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 30px; /* Add even more space between navbar items */
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 18px; /* Larger footer text */
+        text-align: left;
+    }
+
+    #fish {
+        max-width: 150px; /* Largest fish logo */
+    }
+}

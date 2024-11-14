@@ -65,7 +65,7 @@ body {
 /* Overlay section styles */
 .text-overlay {
     position: relative;
-    background: url('/public/content/home/philly.png') no-repeat center center/cover;
+    background: url('/public/content/home/rowers.png') no-repeat center center/cover;
     color: #fff;
     padding: 100px 20px;
     text-align: center;
@@ -235,6 +235,9 @@ body {
 
 /* For screens 1200px and up (Large Desktops) */
 @media (min-width: 1200px) {
+    .container-fluid.main-section.text-center.intro {
+        padding: 30px 20px; /* Further reduce padding */
+    }
     .navbar-custom {
         font-size: 24px; /* Larger font size for large desktops */
     }

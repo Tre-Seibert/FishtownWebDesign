@@ -10,7 +10,7 @@
 
     <!--CSS Imports-->
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="stylesheet" href="/public/css/about.css">
 
     <!--Favicons-->
     <link rel="icon" type="image/png" sizes="16x16" href="../public/content/home/favicon_io/favicon-16x16.png">
@@ -46,10 +46,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="/public/index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/public/about.html">About</a>
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Pricing</a>
@@ -58,49 +58,32 @@
             </div>
         </div>
     </nav>
-
-    <!-- Main Content Section -->
-    <div class="container-fluid main-section text-center intro">
-        <p class="tagline">
-            locally owned boutique<br>
-            web design agency<br>
-            specializing in <span id="rotating-word" class="rotating-word">venues</span>
-        </p>
+    <div class="about-section">
+        <!-- About Banner with drips -->
+        <div class="about-banner">
+            <h1>About</h1>
+        </div>
         
-        <button class="btn btn-get-started">GET STARTED</button>
-    </div>
-
-    <div class="container-fluid text-overlay">
-        <p class="overlay-text">custom designs, custom coded</p>
-        <h2 class="overlay-heading">small business web designer</h2>
-        <p class="overlay-subtext">No page builders or WordPress. We offer 100% hand-coded websites with superior results starting at $175/mo as well as Google Ads and SEO services.</p>
-    </div>
-
+        <!-- Main Content Section (Image and Text) -->
+        <div class="content-wrapper">
+            <!-- Rounded image -->
+            <img src="/public/content/home/grad.jpeg" alt="headshot" class="profile-image">
+            <!-- Text Content -->
+            <div class="about-text">
+                <h2>Fishtown Web Design</h2>
+                <h3>We Make Websites With Purpose & Intent</h3>
+                <p>Hi, I'm Tre, the founder and lead developer of Fishtown Web Designs. My journey into programming began when I was 12 years old, creating websites and building computers to fund my video game collection. After earning my computer science degree in May 2024 at Saint Joseph's University, here in Philadelphia, and with over two years of hands-on experience in both front-end and back-end development, I'm dedicated to delivering custom, hand-coded websites at an affordable starting price for my clients.</p> <p>In my experience, many small businesses struggle with the upfront cost of building a new website. Those that can afford it often end up with websites that feel outdated or poorly designed, often created by developers who haven't kept up with current trends. I saw a gap where small businesses needed an affordable, trustworthy option for a quality website. That's why I developed my $0 down, $175 per month plan—designed to be manageable for small businesses and to provide a website that stands out, without breaking the bank.</p>
+            </div>
+        </div>
+    </div>  
     <!-- Footer Section -->
-    <footer class="footer text-center py-4">
+    <!-- <footer class="footer text-center py-4">
         <p>&copy; 2024 Fishtown Web Design. All rights reserved.</p>
         <img src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
         <p>Follow us on <a href="#">X</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
-    </footer>
+    </footer> -->
 
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const words = ["hotels", "eateries"];
-        let currentIndex = 0;
-        const rotatingWordElement = document.getElementById("rotating-word");
-    
-        function rotateWords() {
-            // Set the next word
-            currentIndex = (currentIndex + 1) % words.length;
-            rotatingWordElement.style.animation = 'none'; // Reset animation
-            rotatingWordElement.innerText = words[currentIndex];
-            void rotatingWordElement.offsetWidth; // Trigger reflow
-            rotatingWordElement.style.animation = ''; // Re-apply animation
-        }
-    
-        // Change word every 2 seconds
-        setInterval(rotateWords, 5000);
-    </script>
     
     
 </body>
