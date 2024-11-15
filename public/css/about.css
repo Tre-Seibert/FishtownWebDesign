@@ -44,7 +44,8 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: cover;  /* Keeps the aspect ratio and covers the circle */
+    object-position: 50% 30%;  /* Moves the image slightly towards the top */
 }
 
 .about-text {
