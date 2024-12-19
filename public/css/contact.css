@@ -153,7 +153,7 @@
     /* 40px - 92px, marign bottom and left are the same clamp values that the stripes box is absolutely positioned outside the cs-ul box */
     margin-bottom: clamp(2.5rem, 9vw, 5.75rem);
     /* 32px - 80px */
-    /* margin-right: clamp(2rem, 9vw, 5rem); */
+    margin-right: clamp(2rem, 9vw, 5rem);
     /* 40px - 100px top and bottom */
     /* 16px - 80px left and right */
     padding: clamp(2.5rem, 9.18vw, 6.25rem) clamp(1rem, 9.18vw, 5rem);
