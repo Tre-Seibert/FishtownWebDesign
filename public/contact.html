@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fishtown Web Design</title>
+
+    <!--Google Font Imports-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!--CSS Imports-->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/core.css">
+    <link rel="stylesheet" href="/public/css/contact.css">
+
+    <!--Favicons-->
+    <link rel="icon" type="image/png" sizes="16x16" href="../public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../public/content/home/favicon_io/android_chrome_192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../public/content/home/favicon_io/android_chrome_512x512.png">
+    <link rel="apple-touch-icon" href="../public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="../public/content/home/favicon_io/favicon.ico">
+
+</head>
+<body>
+    <!-- Black Banner at the top -->
+    <div class="top-banner">
+        NOW ACCEPTING NEW CLIENTS.
+    </div>
+
+    <nav class="navbar navbar-light navbar-custom">
+        <div class="container-fluid">
+            <!-- Logo and Menu Icon -->
+            <a class="navbar-brand" href="/public/index.html">
+                <img src="/public/content/home/logo.png" id="logo" alt="Fishtown Logo">
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/public/index.html">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">about</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/public/pricing.html">pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/public/contact.html">contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!--                   Contact                    -->
+    <!-- ============================================ -->
+
+    <div class="contact-banner">
+        <h1>Start A Project</h1>
+    </div>
+
+    <section id="contact-1105">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Contact Us</span>
+                <h2 class="cs-title">Make An Appointment</h2>
+                <!--Form-->
+                <form class="cs-form" id="cs-form-1105" name="Contact Form">
+                    <label class="cs-label">
+                        Name
+                        <input class="cs-input" required type="text" id="name-1105" name="name" placeholder="Name">
+                    </label>
+                    <label class="cs-label cs-email">
+                        Email
+                        <input class="cs-input" required type="email" id="email-1105" name="email" placeholder="Email">
+                    </label>
+                    <label class="cs-label cs-phone">
+                        Phone
+                        <input class="cs-input" required type="text" id="phone-1105" name="phone" placeholder="Phone">
+                    </label>
+                    <label class="cs-label">
+                        Message
+                        <textarea class="cs-input cs-textarea" required name="message" id="message-1105" placeholder="Write message..."></textarea>
+                    </label>
+                    <button class="cs-button-solid cs-submit" type="submit">Make an Appointment</button>
+                </form>
+                <!-- Modal for server response -->
+                <!-- Modal for server response -->
+                <div id="responseModal" class="modal">
+                    <div class="modal-content">
+                        <h2>Fishtown Web Design</h2>
+                        <p id="modal-message">Your message has been sent. Please allow 1 business day for a response.</p>
+                        <button id="closeModal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <picture class="cs-icon-wrapper">
+                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-phone.svg" alt="phone icon" class="cs-icon" width="40" height="40" decoding="async">
+                    </picture>
+                    <div class="cs-flex-group">
+                        <span class="cs-header">Phone</span>
+                        <a href="tel:888-4565-789
+                        " class="cs-link">+1 (717) 333-8691
+                        </a>
+                    </div>
+                </li>
+                <li class="cs-li">
+                    <picture class="cs-icon-wrapper">
+                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-email.svg" alt="mail icon" class="cs-icon" width="40" height="40" decoding="async">
+                    </picture>
+                    <div class="cs-flex-group">
+                        <span class="cs-header">Email</span>
+                        <a href="mailto:sales@fishtownwebdesignn.com" class="cs-link">sales@fishtownwebdesign.com</a>
+                    </div>
+                </li>
+                <li class="cs-li">
+                    <picture class="cs-icon-wrapper">
+                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-pin.svg" alt="address icon" class="cs-icon" width="40" height="40" decoding="async">
+                    </picture>
+                    <div class="cs-flex-group">
+                        <span class="cs-header">Born in Fishtown</span>
+                        <a href="" class="cs-link">Fishtown, Philadelphia, Pennsylvania</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+                                    
+
+
+
+
+
+    <!-- Footer Section -->
+    <footer class="footer text-center py-4">
+        <p>&copy; 2024 Fishtown Web Design. All rights reserved.</p>
+        <img src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+        <p>Follow us on <a href="#">X</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+    </footer>
+
+    <script src="/public/scripts/contact.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

@@ -1,41 +1,8 @@
-/* Logo settings */
-#logo {
-    max-width: 150px;
-}
 
-/* Navbar customization */
-.navbar-custom {
-    background-color: #f3eee8 !important; /* Match background */
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-}
 
-.navbar-brand span {
-    font-weight: bold;
-    font-size: 24px;
-    color: #333;
-}
-
-/* Black top banner */
-.top-banner {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Horizon', sans-serif;
-    font-size: 15.7px;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1050;
-}
-
-body {
-    padding-top: 60px;
-    font-family: 'Roboto', sans-serif;
-    background-color: #f3eee8;
-}
+/*-- -------------------->
+<--- Top Section Intro -->
+<-----------------------*/
 
 /* Main section styles */
 .main-section {
@@ -48,6 +15,7 @@ body {
     font-weight: 400;
     color: #333;
     margin-bottom: 20px;
+    font-family: "DM Serif Display";
 }
 
 .btn-get-started {
@@ -62,66 +30,11 @@ body {
     font-family: 'Horizon';
 }
 
-/* Overlay section styles */
-.text-overlay {
-    position: relative;
-    background: url('/public/content/home/rowers.png') no-repeat center center/cover;
-    color: #fff;
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.overlay-text {
-    font-size: 25px;
-    font-weight: 800;
-    font-family: "Montserrat";
-    margin-bottom: 0px; /* Reduce the space below this text */
-}
-
-.overlay-heading {
-    font-size: 60px;
-    font-weight: 700;
-    font-family: "Montserrat";
-    margin-top: 0; /* Remove any top margin */
-}
-
-.overlay-subtext {
-    font-size: 16px;
-    font-weight: 500;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-    font-family: "Montserrat";
-    margin-bottom: 10px;
-}
-
 .intro {
     text-align: left!important; 
 }
 
-/* Footer styles */
-.footer {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-}
-
-.footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-#fish {
-    max-width: 100px;
-    margin-bottom: 1rem;
-}
-
+/* for rotating word */
 @keyframes fadeUp {
     0% {
         opacity: 0;
@@ -143,138 +56,408 @@ body {
     display: inline-block;
     animation: fadeUp 5s infinite;
     position: relative;
+    font-size: 16px;
 }
 
-/* Define Horizon font */
-@font-face {
-    font-family: 'Horizon'; /* Custom name for the font */
-    src: url('../../public/content/fonts/horizon.otf') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+/*-- ---------->
+<--- Hero ----->
+<-------------*/
+
+/* Overlay section styles */
+.text-overlay {
+    position: absolute; /* Position it over the background */
+    top: 0;
+    left: 0;
+    width: 100%; /* Span the full width of the parent container */
+    height: 100%; /* Span the full height */
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stack text lines vertically */
+    justify-content: center; /* Center text vertically */
+    align-items: center; /* Center text horizontally */
+    color: #fff;
+    z-index: 1; /* Ensure it stays above the background */
 }
 
-/* Media Queries */
+
+/* Top line */
+.overlay-text {
+    font-size: var(--topperFontSize);
+    font-weight: 800;
+    font-family: "Horizon";
+    margin-bottom: 0; /* Reduce the space below this text */
+    color: #f8ce8a;
+}
+
+
+/* Middle line */
+.overlay-heading {
+    font-size: var(--headerFontSize);
+    font-weight: 700;
+    font-family: "DM Serif Display";
+    margin-top: 0; /* Remove any top margin */
+}
+
+
+/* Last line */
+.overlay-subtext {
+    font-size: var(--bodyFontSize);
+    font-weight: 500;
+    max-width: 600px; /* Limit the width for better readability */
+    margin: 0 auto;
+    line-height: 1.6;
+    font-family: "Montserrat";
+    margin-bottom: 10px;
+    text-align: center; /* Ensure text is centered */
+}
+
+/* Hero section styles */
+#hero-1426 {
+    position: relative; /* Needed for .text-overlay absolute positioning */
+    text-align: center; /* Center the text content horizontally */
+    padding: clamp(10.5rem, 13.95vw, 14.75em) 1rem;
+    overflow: hidden; /* Prevent overflow issues */
+    z-index: 1;
+}
+
+/* Background styles */
+#hero-1426 .cs-background {
+    width: 100%; /* Make it span the full width of the container */
+    height: 100%; /* Ensure it spans the full height of the parent */
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2; /* Place it behind the text overlay */
+    object-fit: cover; /* Ensure the image covers the space without distortion */
+}
+
+#hero-1426 .cs-background:before {
+    /* Overlay */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.48;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* prevents the cursor from interacting with it */
+    pointer-events: none;
+}
+#hero-1426 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#hero-1426 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+#hero-1426 .cs-content {
+    width: 100%;
+    max-width: 39.375rem;
+}
+#hero-1426 .cs-topper {
+    /* 13px - 16px */
+    font-size: clamp(0.8125rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+    display: inline-block;
+    position: relative;
+}
+#hero-1426 .cs-title {
+    /* 39px - 61px */
+    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+    font-weight: 700;
+    line-height: 1.2em;
+    text-align: center;
+    max-width: 51.8125rem;
+    color: #fff;
+    position: relative;
+}
+#hero-1426 .cs-button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+#hero-1426 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #1a1a1a;
+    min-width: 12.5rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+}
+#hero-1426 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+}
+#hero-1426 .cs-button-solid:hover:before {
+    width: 100%;
+}
+#hero-1426 .cs-button1 {
+    background-color: var(--secondary);
+}
+
+
+
+/*-- -------------->
+<--- Services ----->
+<-----------------*/
+
+
+#services-964 {
+    padding: var(--sectionPadding);
+    background-size: auto;
+    background-position: center;
+    background-repeat: repeat;
+    position: relative;
+    z-index: 1;
+    background: url(/public/content/svgs/stripes.svg);
+}
+#services-964 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+}
+#services-964 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+}
+
+#services-964 .cs-title,
+#services-964 .cs-text {
+    max-width: 100%;
+}
+#services-964 .cs-card-group {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 1.875rem;
+}
+#services-964 .cs-item {
+    width: 100%;
+    text-align: left;
+    list-style: none;
+    /* margin top value to match the negative margin value of the .cs-icon-wrapper */
+    margin: 2.75rem 0 0 0;
+    /* 24px - 64px bottom */
+    /* 24px - 40px left & right */
+    padding: 0 clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 6vw, 4rem);
+    background-color: #f7f3ee;
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    grid-column: span 12;
+    grid-row: span 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+#services-964 .cs-icon-wrapper {
+    width: 5.5rem;
+    height: 5.5rem;
+    margin: -2.75rem auto 2rem 0;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: calc(clamp(1.5rem, 4vw, 2.5rem) * -1);
+}
+#services-964 .cs-icon {
+    width: 2.5rem;
+    height: auto;
+}
+#services-964 .cs-h3 {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    line-height: 1.2em;
+    font-weight: bold;
+    text-align: inherit;
+    margin: 0 0 0.75rem 0;
+    color: var(--headerColor);
+    font-family: "DM Serif Display";
+}
+#services-964 .cs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    max-width: 18.75rem;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    color: var(--bodyTextColor);
+    font-family: "Montserrat";
+}
+#services-964 .cs-link {
+    text-decoration: none;
+    font-size: 0.8rem;
+    line-height: 1.2em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    color: var(--primary);
+    position: relative;
+    transition: color 0.3s;
+}
+#services-964 .cs-link:hover {
+    color: #fff;
+}
+#services-964 .cs-link:before {
+    /* underline */
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    bottom: 0rem;
+    left: 0;
+}
+#services-964 .cs-background {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+}
+#services-964 .cs-background:before {
+    /* background color overlay */
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #1a1a1a;
+    opacity: 0.84;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+#services-964 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* Makes img tag act as a background image */
+    object-fit: cover;
+}
+#services-964 .cs-waves {
+    width: 100%;
+    height: 13.875rem;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+#services-964 .cs-waves img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Landscapes phones */
+@media only screen and (min-width: 481px) {
+    /* Empty */
+}
 
 /* For screens 768px and up (Tablets and small laptops) */
-@media (min-width: 768px) {
-    .navbar-custom {
-        font-size: 20px; /* Slightly larger text */
-    }
-
+@media only screen and (min-width: 768px) {
     .tagline {
         font-size: 28px; /* Increase tagline text size */
     }
-
     .btn-get-started {
         font-size: 14px; /* Increase button font size */
         padding: 12px 24px; /* Increase padding for button */
     }
-
-    .overlay-text {
-        font-size: 30px; /* Larger overlay text */
+    #services-964 .cs-container {
+        max-width: 80rem;
     }
-
-    .overlay-heading {
-        font-size: 80px; /* Larger heading */
+    #services-964 .cs-card-group {
+        column-gap: 1.875rem;
     }
-
-    .overlay-subtext {
-        font-size: 18px; /* Increase subtext size */
-        max-width: 800px; /* Increase max-width for better readability */
+    #services-964 .cs-item {
+        grid-column: span 6;
     }
 }
 
-/* For screens 992px and up (Larger Tablets, Laptops, and Desktops) */
-@media (min-width: 992px) {
-    .navbar-custom {
-        font-size: 22px; /* Larger font size for desktop */
+/* For screens 1024px and up (Larger Tablets, Laptops, and Desktops) */
+@media only screen and (min-width: 1024px) {
+    #services-964 .cs-item {
+        grid-column: span 4;
     }
-
-    .navbar-nav .nav-item {
-        margin-right: 20px; /* More space between navbar items */
-    }
-
-    .main-section {
-        padding: 80px 50px; /* More padding for larger screens */
-    }
-
-    .tagline {
-        font-size: 36px; /* Larger tagline text */
-    }
-
-    .btn-get-started {
-        font-size: 16px; /* Larger button text */
-        padding: 15px 30px; /* Larger button padding */
-    }
-
-    .overlay-text {
-        font-size: 36px; /* Larger overlay text */
-    }
-
-    .overlay-heading {
-        font-size: 100px; /* Even larger heading */
-    }
-
-    .overlay-subtext {
-        font-size: 20px; /* Larger subtext */
-        max-width: 900px; /* Further increase max-width */
-    }
-
-    /* Footer */
-    .footer {
-        font-size: 16px; /* Slightly larger text in footer */
-        text-align: left; /* Align footer text to the left */
-        padding-left: 30px; /* Padding for footer */
-        padding-right: 30px;
-    }
-
-    #fish {
-        max-width: 120px; /* Larger fish logo */
+    .text-overlay {
+        position: relative;
     }
 }
 
-/* For screens 1200px and up (Large Desktops) */
-@media (min-width: 1200px) {
-    .container-fluid.main-section.text-center.intro {
-        padding: 30px 20px; /* Further reduce padding */
-    }
-    .navbar-custom {
-        font-size: 24px; /* Larger font size for large desktops */
-    }
-
-    .navbar-nav .nav-item {
-        margin-right: 30px; /* Add even more space between navbar items */
-    }
-
-    .main-section {
-        padding: 100px 80px; /* More padding for large screens */
-    }
-
-    .tagline {
-        font-size: 42px; /* Larger tagline text */
-    }
-
-    .btn-get-started {
-        font-size: 18px; /* Larger button text */
-        padding: 20px 40px; /* Larger button padding */
-    }
-
-    .overlay-heading {
-        font-size: 120px; /* Larger heading for very wide screens */
-    }
-
-    .overlay-subtext {
-        font-size: 22px; /* Larger subtext */
-        max-width: 1000px; /* Even wider for larger screens */
-    }
-
-    /* Footer */
-    .footer {
-        font-size: 18px; /* Larger footer text */
-        text-align: left;
-    }
-
-    #fish {
-        max-width: 150px; /* Largest fish logo */
-    }
+/* For screens 1440px and up (Large Desktops) */
+@media only screen and (min-width: 1440px) {
+    /* empty */
 }
+
+
+                       

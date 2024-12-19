@@ -1,0 +1,234 @@
+
+
+/* About Section */
+.about-section {
+    position: relative;
+    background-color: #f3eee8; /* Match body background color */
+    background: url('/public/content/svgs/stripes.svg');
+}
+
+.about-banner {
+    position: relative; /* Adjust position to avoid overlap with the content */
+    width: 100%;
+    height: 150px;
+    background: url('/public/content/svgs/dots.svg');
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    z-index: 1; /* Ensure this is above the content */
+}
+
+
+.about-banner h1 {
+    color: black;
+    font-family: 'Horizon', sans-serif;
+    margin: 5vh;
+    z-index: 1.5; /* Keep the heading above the SVG mask */
+    font-size:var(--headerFontSize);
+    font-weight: bold;
+    color: black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+/*-- -------------------------- -->
+<---          Pricing           -->
+<--- -------------------------- -*/
+
+
+#pricing-1183 {
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+}
+#pricing-1183 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+    position: relative;
+}
+#pricing-1183 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2%;
+}
+#pricing-1183 .cs-text {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: left;
+}
+
+#pricing-1183 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 13.375rem;
+    padding: 0 2rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+}
+#pricing-1183 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+}
+#pricing-1183 .cs-button-solid:hover:before {
+    width: 100%;
+}
+#pricing-1183 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* 16px - 20px */
+    gap: clamp(1rem, 1.8vw, 1.25rem);
+    /* prevents flexbox from squishing it */
+    flex: none;
+}
+#pricing-1183 .cs-item {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    /* 24px - 40px top & Bottom */
+    /* 16px - 32px left & right */
+    padding: clamp(1.5rem, 3vw, 2.5rem) 1.5rem;
+    background-color: rgb(241, 240, 236);
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+#pricing-1183 .cs-package {
+    /* 13px - 16px */
+    font-size: clamp(0.8125rem, 1.4vw, 1rem);
+    line-height: 1.2em;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: #767676;
+    display: block;
+}
+#pricing-1183 .cs-price {
+    /* 31px - 49px */
+    font-size: var(--headerFontSize);
+    line-height: 1.2em;
+    text-align: center;
+    font-weight: 900;
+    margin: 0;
+    color: var(--headerColor);
+}
+#pricing-1183 .cs-ul {
+    /* 20px - 25px */
+    margin: clamp(1.25rem, 3vw, 1.5rem) 0 0 0;
+    padding: clamp(1.25rem, 3vw, 1.5rem) 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    position: relative;
+}
+#pricing-1183 .cs-ul:before {
+    /* divider Line */
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        rgba(232, 232, 232, 0.2) 0%,
+        #e8e8e8 53.78%,
+        rgba(232, 232, 232, 0.2) 100%
+    );
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+}
+#pricing-1183 .cs-li {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    list-style: none;
+    line-height: 1.5em;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--bodyTextColor);
+    display: flex;
+    justify-content: space-between;
+    /* push everything to the top so if the li goes to two lines the icon stays at the top */
+    align-items: flex-start;
+    gap: 1rem;
+}
+#pricing-1183 .cs-li.cs-disabled {
+    opacity: 0.5;
+}
+#pricing-1183 .cs-li.cs-disabled .cs-icon {
+    filter: grayscale(1) brightness(300%);
+}
+#pricing-1183 .cs-icon {
+    width: 1.125rem;
+    height: auto;
+    display: block;
+}
+
+/* Media Queries */
+
+/* For screens 768px and up (Tablets and small laptops) */
+@media only screen and (min-width: 768px) {
+    #pricing-1183 .cs-container {
+        max-width: 80rem;
+    }
+    #pricing-1183 .cs-card-group {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: nowrap;
+    }
+}
+
+/* For screens 1024px and up (Larger Tablets, Laptops, and Desktops) */
+@media only screen and (min-width: 1024px) {
+    /*empty*/
+}
+
+/* For screens 1440px and up (Large Desktops) */
+@media only screen and (min-width: 1440px) {
+    /* empty */
+}

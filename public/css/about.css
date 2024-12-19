@@ -2,19 +2,16 @@
 .about-section {
     position: relative;
     background-color: #f3eee8; /* Match body background color */
+    background: url('/public/content/svgs/stripes.svg');
 }
 
 .about-banner {
     position: relative; /* Adjust position to avoid overlap with the content */
     width: 100%;
     height: 150px;
-    background-color: #000;
-    mask-image: url('/public/content/home/drip-mask.svg');
+    background: url('/public/content/svgs/dots.svg');
     mask-repeat: no-repeat;
     mask-size: cover;
-    -webkit-mask-image: url('/public/content/home/drip-mask.svg');
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -22,12 +19,17 @@
     z-index: 1; /* Ensure this is above the content */
 }
 
+
 .about-banner h1 {
-    color: #fff;
-    font-size: 32px;
+    color: black;
     font-family: 'Horizon', sans-serif;
     margin: 5vh;
-    z-index: 2; /* Keep the heading above the SVG mask */
+    z-index: 1.5; /* Keep the heading above the SVG mask */
+    font-size:var(--headerFontSize);
+    font-weight: bold;
+    color: black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 /* Content Wrapper */
@@ -46,6 +48,8 @@
     border-radius: 50%;
     object-fit: cover;  /* Keeps the aspect ratio and covers the circle */
     object-position: 50% 30%;  /* Moves the image slightly towards the top */
+    margin: auto;
+    display: block;
 }
 
 .about-text {
@@ -57,129 +61,197 @@
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 10px;
+    font-family: "DM Serif Display";
 }
 
 .about-text h3 {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
+    font-family: "DM Serif Display";
 }
 
 .about-text p {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;
+    font-family: "Montserrat";
 }
 
+/*-- -------------------------- -->
+<---           Steps            -->
+<--- -------------------------- -*/
 
-
-/* Define Horizon font */
-@font-face {
-    font-family: 'Horizon'; /* Custom name for the font */
-    src: url('../../public/content/fonts/horizon.otf') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+#steps-1173 {
+    padding: clamp(3.75rem, 7.82vw, 5.625rem) 1rem;;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background: url('/public/content/svgs/stripes.svg');
 }
-
-/* Logo settings */
-#logo {
-    max-width: 150px;
-}
-
-/* Navbar customization */
-.navbar-custom {
-    background-color: #f3eee8 !important; /* Match background */
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-}
-
-/* Black top banner */
-.top-banner {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Horizon', sans-serif;
-    font-size: 15.7px;
-    text-align: center;
-    padding: 10px 0;
+#steps-1173 .cs-container {
     width: 100%;
-    position: fixed;
+    /* changes to 1280px at tablet */
+    max-width: 44rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+}
+#steps-1173 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+}
+
+#steps-1173 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.25rem;
+}
+#steps-1173 .cs-item {
+    text-align: center;
+    list-style: none;
+    display: flex;
+    grid-column: span 12;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+#steps-1173 .cs-item:last-of-type:after {
+    display: none;
+}
+#steps-1173 .cs-item:nth-of-type(even):after {
+    /* scaleX -1 flips it horizontally */
+    transform: rotate(-135deg) scaleX(-1);
+}
+
+#steps-1173 .cs-picture {
+    margin-bottom: 1.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
+    border: 2px solid #858585;
+    border-radius: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#steps-1173 .cs-icon {
+    width: 2.5rem;
+    height: auto;
+    display: block;
+}
+#steps-1173 .cs-h3 {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    text-align: inherit;
+    margin: 0 0 0.75rem 0;
+    color: var(--headerColor);
+}
+#steps-1173 .cs-item-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    text-align: inherit;
+    max-width: 25.8125rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+}
+#steps-1173 .cs-graphic {
+    width: 52.5rem;
+    height: auto;
+    opacity: 0.3;
+    position: absolute;
+    top: -5rem;
+    left: -5rem;
+    z-index: -1;
+    transform: rotate(-10deg);
+}
+
+#steps-1173 .cs-background {
+    width: 100%; /* Make it span the full width of the container */
+    height: 100%; /* Ensure it spans the full height of the parent */
+    display: block;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 1050;
+    z-index: -2; /* Place it behind the text overlay */
+    object-fit: cover; /* Ensure the image covers the space without distortion */
 }
 
-/* General body styles */
-body {
-    padding-top: 60px;
-    font-family: 'Roboto', sans-serif;
-    background-color: #f3eee8;
+#steps-1173 .cs-background:before {
+    /* Overlay */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.48;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* prevents the cursor from interacting with it */
+    pointer-events: none;
+}
+#steps-1173 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
-/* Footer styles */
-.footer {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-}
+                                
 
-.footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-#fish {
-    max-width: 100px;
-    margin-bottom: 1rem;
-}
 
 /* Media Queries */
 
-/* For screens 992px and up (Larger Tablets, Laptops, and Desktops) */
-@media (min-width: 992px) {
-    .navbar-custom {
-        font-size: 22px; /* Larger font size for desktop */
-    }
-
-    .navbar-nav .nav-item {
-        margin-right: 20px; /* More space between navbar items */
-    }
-
-    /* Footer */
-    .footer {
-        font-size: 16px; /* Slightly larger text in footer */
-        text-align: left; /* Align footer text to the left */
-        padding-left: 30px; /* Padding for footer */
-        padding-right: 30px;
-    }
-
-    #fish {
-        max-width: 120px; /* Larger fish logo */
+/* Landscapes phones */
+@media only screen and (max-width: 481px ) {
+    #logo {
+        max-width: 130px;
     }
 }
 
-/* For screens 1200px and up (Large Desktops) */
-@media (min-width: 1200px) {
-    .navbar-custom {
-        font-size: 24px; /* Larger font size for large desktops */
+/* For screens 768px and up (Tablets and small laptops) */
+@media only screen and (min-width: 768px) {
+    #steps-1173 .cs-container {
+        max-width: 80rem;
     }
+    #steps-1173 .cs-item {
+        grid-column: span 4;
+    }
+    #steps-1173 .cs-item:nth-of-type(1):after {
+        transform: rotate(45deg);
+    }
+    #steps-1173 .cs-item:nth-of-type(2):after {
+        transform: rotate(135deg) scaleX(-1);
+    }
+    #steps-1173 .cs-item:after {
+        margin: 0;
+        position: absolute;
+        right: -2.5rem;
+        top: 0;
+        transform: rotate(45deg);
+    }
+}
 
-    .navbar-nav .nav-item {
-        margin-right: 30px; /* Add even more space between navbar items */
-    }
+/* For screens 1024px and up (Larger Tablets, Laptops, and Desktops) */
+@media only screen and (min-width: 1024px) {
+    /* None */
+}
 
-    /* Footer */
-    .footer {
-        font-size: 18px; /* Larger footer text */
-        text-align: left;
-    }
-
-    #fish {
-        max-width: 150px; /* Largest fish logo */
-    }
+/* For screens 1440px and up (Large Desktops) */
+@media only screen and (min-width: 1440px) {
+    /* None */
 }

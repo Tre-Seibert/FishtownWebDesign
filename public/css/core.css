@@ -1,0 +1,270 @@
+/*-- ---------->
+<--- root ---->
+<-------------*/
+:root {
+    /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+    --primary: #f8ce8a; ;
+    --primaryLight: #ffba43;
+    --secondary: #ffba43;
+    --secondaryLight: #ffba43;
+    --headerColor: #1a1a1a;
+    --bodyTextColor: #4e4b66;
+    --bodyTextColorWhite: #fafbfc;
+    /* 13px - 16px */
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    
+    /* 31px - 49px */
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.6875rem);
+    --bodyFontSize: 1rem;
+    /* 60px - 100px top and bottom */
+    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    
+}
+
+/*-- ---------->
+<--- Fonts ---->
+<-------------*/
+
+/* Define Horizon font */
+@font-face {
+    font-family: 'Horizon'; /* Custom name for the font */
+    src: url('../../public/content/fonts/horizon.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Define DM Serif Display font */
+@font-face {
+    font-family: "DM Serif Display"; /* Custom name for the font */
+    src: url('../../public/content/fonts/DMSerifDisplay-Regular.ttf') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*-- ---------->
+<--- Nav Bar -->
+<-------------*/
+.navbar-custom {
+    background-color: #f3eee8 !important; /* Match background */
+    font-size: 18px;
+}
+
+.navbar-brand span {
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+}
+
+.nav-link {
+    font-family: "DM Serif Display";
+}
+
+/* Black top banner */
+.top-banner {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Horizon', sans-serif;
+    font-size: 13.2px;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+}
+
+/*-- ---------->
+<--- body ---->
+<-------------*/
+
+/* General body styles */
+body {
+    padding-top: 60px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3eee8;
+    margin: 0;
+}
+
+*, *:before, *:after {
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+}
+
+/*-- ----------------->
+<--- Text Styles ---->
+<-------------*-------*/
+.cs-topper {
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: .1em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    display: block;
+    font-family: "Horizon";
+}
+
+.cs-title {
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    position: relative;
+    font-family: "DM Serif Display";
+}
+
+.cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 40.625rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+    font-family: "Montserrat";
+}
+
+.cs-package {
+    font-family: "Horizon";
+}
+       
+.cs-price {
+    font-family: "DM Serif Display";
+}
+
+.cs-li {
+    font-family: "Montserrat";
+}
+
+.cs-button-solid {
+    font-family: "Horizon";
+}
+
+/*Logo*/
+#logo {
+    max-width: 130px;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+#fish {
+    max-width: 100px;
+    margin-bottom: 1rem;
+}
+
+/* Landscapes phones */
+@media only screen and (min-width: 481px) {
+    /* Empty */
+}
+
+/* For screens 768px and up (Tablets and small laptops) */
+@media only screen and (min-width: 768px) {
+    .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .navbar-custom {
+        display: flex;
+        align-items: center; /* Align items vertically */
+        justify-content: flex-start; /* Ensure content starts from the left */
+    }
+    .navbar-brand {
+        display: flex;
+        align-items: center; /* Center-align logo vertically */
+        margin-right: 20px; /* Add space between logo and links */
+    }
+    .navbar-collapse {
+        display: flex !important;
+        align-items: center; /* Ensure links align with the logo */
+        flex-grow: 0; /* Prevent links from stretching */
+    }
+    .navbar-nav {
+        display: flex;
+        flex-direction: row; /* Horizontal layout for links */
+        align-items: center; /* Align links with the logo vertically */
+        margin: 0; /* Remove any extra margin */
+        padding: 0; /* Remove any extra padding */
+        margin-left: auto;
+    }
+    .navbar-nav li {
+        padding-left: 15px; /* Add spacing between nav items */
+    }
+    .navbar-toggler {
+        display: none; /* Hide the toggle button on desktop */
+    }
+}
+
+/* For screens 1024px and up (Larger Tablets, Laptops, and Desktops) */
+@media only screen and (min-width: 1024px) {
+    .navbar-custom {
+        font-size: 22px; /* Larger font size for desktop */
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 20px; /* More space between navbar items */
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 16px; /* Slightly larger text in footer */
+        text-align: left; /* Align footer text to the left */
+        padding-left: 30px; /* Padding for footer */
+        padding-right: 30px;
+    }
+
+    #fish {
+        max-width: 120px; /* Larger fish logo */
+    }
+}
+
+/* For screens 1440px and up (Large Desktops) */
+@media only screen and (min-width: 1440px) {
+    #logo {
+        max-width: 190px;
+    }
+
+    .navbar-custom {
+        font-size: 24px; /* Larger font size for large desktops */
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 30px; /* Add even more space between navbar items */
+    }
+
+    .cs-title {
+        font-size: clamp(1.75rem, 3.5vw, 2.875rem);
+
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 18px; /* Larger footer text */
+        text-align: left;
+    }
+
+    #fish {
+        max-width: 150px; /* Largest fish logo */
+    }
+}
