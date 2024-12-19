@@ -298,11 +298,8 @@ button #closeModal{
     background-color: var(--secondary);
     color: white;
     border: none;
+    font-family: "Horizon";
 
-}
-
-#closeModal:hover {
-    background-color: #45a049;
 }
 
 

@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 
 // Define a port number
-const port = process.env.PORT || 7000;
+const port = 7000;
 
 app.use(express.json());
 
@@ -14,7 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Define the public directory to serve static files
-app.use(express.static(path.join(__dirname, '/')));
+app.use(express.static(__dirname));
+
 
 // Serve node_modules as static files
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
