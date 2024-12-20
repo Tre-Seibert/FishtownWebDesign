@@ -106,10 +106,12 @@
 
         <!-- Background Image -->
         <picture class="cs-background">
-            <source media="(max-width: 600px)" src="/public/content/home/el.jpg">
-            <source media="(min-width: 601px)" src="/public/content/home/el.jpg">
-            <img loading="lazy" decoding="async" src="/public/content/home/el.jpg" alt="field" width="640" height="422" aria-hidden="true">
-        </picture>
+            <source media="(max-width: 1px)" src="/public/content/home/el4kink.jpg">
+            <source media="(min-width: 601px) and (max-width: 1999px)" src="/public/content/home/el4kink.jpg">
+            <source media="(min-width: 1500px)" src="/public/content/home/el4kink.jpg"> <!-- Adjusted to test with a smaller width -->
+            <img decoding="async" src="/public/content/home/el4kink.jpg" alt="field" aria-hidden="true">
+        </picture>           
+
     </section>
 
 
@@ -235,6 +237,17 @@
         // Change word every 2 seconds
         setInterval(rotateWords, 5000);
     </script>
+
+    <script>
+        if (window.matchMedia("(min-width: 2000px)").matches) {
+            console.log("4K image should be used");
+        } else if (window.matchMedia("(min-width: 601px) and (max-width: 1999px)").matches) {
+            console.log("Mid-range image should be used");
+        } else {
+            console.log("Mobile image should be used");
+        }
+    </script>
+
     
     
 </body>
