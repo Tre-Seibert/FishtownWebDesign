@@ -169,6 +169,14 @@ body {
     text-decoration: underline;
 }
 
+#small-text {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
 #fish {
     max-width: 100px;
     margin-bottom: 1rem;

@@ -41,6 +41,16 @@ app.get('/contact', (req, res) => {
   res.sendFile(__dirname + '/public/contact.html');
 });
 
+// route for tos page
+app.get('/terms-of-service', (req, res) => {
+  res.sendFile(__dirname + '/public/tos.html');
+});
+
+// route for privacy policy page
+app.get('/privacy-policy', (req, res) => {
+  res.sendFile(__dirname + '/public/pp.html');
+});
+
 require('dotenv').config(); // Loads environment variables from .env file
 //// Configure Nodemailer with Zoho SMTP
 const transporter = nodemailer.createTransport({

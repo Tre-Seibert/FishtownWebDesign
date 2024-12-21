@@ -1,0 +1,103 @@
+/* tos Section */
+.tos-section {
+    position: relative;
+    background-color: #f3eee8; /* Match body background color */
+    background: url('/public/content/svgs/stripes.svg');
+}
+
+.tos-banner {
+    position: relative; /* Adjust position to avoid overlap with the content */
+    width: 100%;
+    height: 150px;
+    background: url('/public/content/svgs/dots.svg');
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    z-index: 1; /* Ensure this is above the content */
+}
+
+
+.tos-banner h1 {
+    color: black;
+    font-family: 'Horizon', sans-serif;
+    margin: 5vh;
+    z-index: 1.5; /* Keep the heading above the SVG mask */
+    font-size:var(--headerFontSize);
+    font-weight: bold;
+    color: black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Space between the image and text */
+    padding: 20px;
+    z-index: 0; /* Content below the heading */
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;  /* Keeps the aspect ratio and covers the circle */
+    object-position: 50% 30%;  /* Moves the image slightly towards the top */
+    margin: auto;
+    display: block;
+}
+
+.tos-text {
+    max-width: 600px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tos-text h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: "DM Serif Display";
+}
+
+.tos-text h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: "DM Serif Display";
+}
+
+.tos-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: "Montserrat";
+}
+
+/* Media Queries */
+
+/* Landscapes phones */
+@media only screen and (max-width: 481px ) {
+    #logo {
+        max-width: 130px;
+    }
+}
+
+/* For screens 768px and up (Tablets and small laptops) */
+@media only screen and (min-width: 768px) {
+    /* None */
+}
+
+/* For screens 1024px and up (Larger Tablets, Laptops, and Desktops) */
+@media only screen and (min-width: 1024px) {
+    /* None */
+}
+
+/* For screens 1440px and up (Large Desktops) */
+@media only screen and (min-width: 1440px) {
+    /* None */
+}
