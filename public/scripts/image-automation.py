@@ -1,0 +1,133 @@
+import os
+from PIL import Image
+import tinify
+
+# Initialize Tinify API (you need to get a free API key from https://tinypng.com/developers)
+tinify.key = "8nJzldrJpHWmdTpXH1s3pGspHQ6tXlxc"
+
+# Create the directory to store compressed images
+def create_compressed_folder():
+    folder_name = "compressed-images"
+    if not os.path.exists(folder_name):
+        os.makedirs(folder_name)
+    return folder_name
+
+# Function to resize and crop images proportionally
+def resize_and_crop_image(image_path, target_width):
+    # Open the image
+    img = Image.open(image_path)
+    
+    # Get the original width and height
+    original_width, original_height = img.size
+    
+    # Calculate the aspect ratio
+    aspect_ratio = original_width / original_height
+    
+    # Calculate the new height based on the aspect ratio
+    target_height = int(target_width / aspect_ratio)
+    
+    # Resize the image with the new dimensions
+    resized_img = img.resize((target_width, target_height))
+    
+    return resized_img
+
+# Function to compress images using TinyPNG API
+def compress_image(image_path):
+    try:
+        source = tinify.from_file(image_path)
+        source.to_file(image_path)
+    except Exception as e:
+        print(f"Error compressing {image_path}: {e}")
+
+# Function to convert images to WebP format
+def convert_to_webp(image, output_path):
+    # Convert and save the image as WebP
+    image.save(output_path, format="WebP")
+
+# Function to generate HTML block for each image
+def generate_html(desktop_image_path, mobile_image_path):
+    base_name = os.path.basename(desktop_image_path)
+    html_block = f"""
+<picture>
+    <!-- Mobile Image (for screens < 600px) -->
+    <source media="(max-width: 600px)" srcset="{mobile_image_path}">
+    <!-- Desktop Image (for screens ≥ 601px) -->
+    <source media="(min-width: 601px)" srcset="{desktop_image_path}">
+    <!-- Fallback Image (for browsers that don't support picture element) -->
+    <img 
+        src="{base_name}" 
+        alt="{base_name}" 
+        width="1102" 
+        height="500" 
+        loading="lazy" 
+        decoding="async">
+</picture>
+    """
+    return html_block
+
+# Main function to process images
+def process_images(image_paths):
+    output_folder = create_compressed_folder()
+    html_blocks = []
+    
+    for image_path in image_paths:
+        # Resize and crop images (resize with proportional height)
+        desktop_resized = resize_and_crop_image(image_path, 1102)  # Resize to 1102px width for desktop
+        mobile_resized = resize_and_crop_image(image_path, 584)  # Resize to 584px width for mobile
+        
+        # Check if the image is PNG, then convert to WebP
+        if image_path.lower().endswith('.png'):
+            desktop_webp = os.path.join(output_folder, os.path.basename(image_path).replace(".png", ".webp"))
+            mobile_webp = os.path.join(output_folder, os.path.basename(image_path).replace(".png", "-m.webp"))
+            
+            # Convert PNG to WebP
+            convert_to_webp(desktop_resized, desktop_webp)
+            convert_to_webp(mobile_resized, mobile_webp)
+        else:
+            # For JPG/JPEG images, save them as WebP
+            desktop_webp = os.path.join(output_folder, os.path.basename(image_path).replace(".jpg", ".webp").replace(".jpeg", ".webp"))
+            mobile_webp = os.path.join(output_folder, os.path.basename(image_path).replace(".jpg", "-m.webp").replace(".jpeg", "-m.webp"))
+            
+            # Convert and save as WebP
+            convert_to_webp(desktop_resized, desktop_webp)
+            convert_to_webp(mobile_resized, mobile_webp)
+        
+        # Compress the images
+        compress_image(desktop_webp)
+        compress_image(mobile_webp)
+        
+        # Generate HTML block for each image
+        html_block = generate_html(desktop_webp, mobile_webp)
+        html_blocks.append(html_block)
+    
+    # Save the HTML blocks to a file
+    with open(os.path.join(output_folder, "image_html_blocks.html"), "w") as f:
+        f.write("\n".join(html_blocks))
+
+    print(f"All images processed and saved in '{output_folder}'.")
+
+# Function to get all image files from the 'staged-images' folder
+def get_image_paths_from_staged_images():
+    staged_folder = "staged-images"
+    if not os.path.exists(staged_folder):
+        print(f"Error: The folder '{staged_folder}' does not exist.")
+        return []
+    
+    # Get all image files (jpg, jpeg, png, heic) from the 'staged-images' folder
+    image_files = []
+    for file_name in os.listdir(staged_folder):
+        file_path = os.path.join(staged_folder, file_name)
+        if os.path.isfile(file_path) and file_name.lower().endswith(('jpg', 'jpeg', 'png', 'heic')):
+            image_files.append(file_path)
+    
+    return image_files
+
+if __name__ == "__main__":
+    # Get the image file paths from the 'staged-images' folder
+    image_paths = get_image_paths_from_staged_images()
+    
+    if image_paths:
+        # Process the images
+        process_images(image_paths)
+    else:
+        print("No valid images found in the 'staged-images' folder.")

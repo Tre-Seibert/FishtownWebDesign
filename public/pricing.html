@@ -33,7 +33,19 @@
         <div class="container-fluid">
             <!-- Logo and Menu Icon -->
             <a class="navbar-brand" href="/public/index.html">
-                <img src="/public/content/home/logo.png" id="logo" alt="Fishtown Logo">
+                <picture>
+                    <!-- Mobile Image (for screens < 600px) -->
+                    <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
+                    <!-- Desktop Image (for screens ≥ 601px) -->
+                    <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
+                    <!-- Fallback Image (for browsers that don't support picture element) -->
+                    <img 
+                        src="/public/content/home/logo.png"
+                        alt="logo.webp" 
+                        loading="lazy" 
+                        decoding="async"
+                        id="logo">
+                </picture>
             </a>
             <button 
                 class="navbar-toggler" 
@@ -202,7 +214,11 @@
     <!-- Footer Section -->
     <footer class="footer text-center py-4">
         <p>&copy; 2024 Fishtown Web Design. All rights reserved.</p>
-        <img src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+        <picture>
+            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
+            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
+            <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+        </picture>
         <p><a href="#">X</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
         <p><a id="tos" href="/public/tos.html">Terms Of Service</a><a id="pp" href="/public/pp.html">Privacy Policy</a></p>
     </footer>
