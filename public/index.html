@@ -39,7 +39,13 @@
         <div class="container-fluid">
             <!-- Logo and Menu Icon -->
             <a class="navbar-brand" href="/public/index.html">
-                <img src="/public/content/home/logo.png" id="logo" alt="Fishtown Logo">
+                <picture>
+                    <!-- Mobile Image -->
+                    <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo4m.webp">
+                    <!-- Desktop Image -->
+                    <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
+                    <img src="/public/content/home/logo.png" id="logo" alt="Fishtown Logo">
+                </picture>     
             </a>
             <button 
                 class="navbar-toggler" 
@@ -106,7 +112,11 @@
 
         <!-- Background Image -->
         <picture class="cs-background">
-            <img decoding="async" src="/public/content/home/el4kink.jpg" alt="field" aria-hidden="true">
+            <!-- Mobile Image -->
+            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/el4m.webp">
+            <!-- Desktop Image -->
+            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/el4kink.webp">
+            <img decoding="async" loading="lazy" src="/public/content/home/el4kink.jpg" alt="field" aria-hidden="true">
         </picture>           
 
     </section>
@@ -212,7 +222,13 @@
     <!-- Footer Section -->
     <footer class="footer text-center py-4">
         <p>&copy; 2024 Fishtown Web Design. All rights reserved.</p>
-        <img src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+        <picture>
+            <!-- Mobile Image -->
+            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish4m.webp">
+            <!-- Desktop Image -->
+            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
+            <img src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+        </picture> 
         <p><a href="#">X</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
         <p><a id="tos" href="/public/tos.html">Terms Of Service</a><a id="pp" href="/public/pp.html">Privacy Policy</a></p>
     </footer>
