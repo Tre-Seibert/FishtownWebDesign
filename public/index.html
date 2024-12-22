@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="https://fishtownwebdesign.com/public/content/home/logometa.png">
-    <meta property="og:title" content="Fishtown Web Design" />
-    <meta property="og:description" content="Never worry about your website again." />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:title" content="Fishtown Web Design">
+    <meta property="og:description" content="Never worry about your website again.">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <title>Fishtown Web Design</title>
-
-    <!--Google Font Imports-->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nanum+Gothic&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <!--CSS Imports-->
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -39,7 +35,19 @@
         <div class="container-fluid">
             <!-- Logo and Menu Icon -->
             <a class="navbar-brand" href="/public/index.html">
-                <img src="/public/content/home/logo.png" id="logo" alt="Fishtown Logo">
+                <picture>
+                    <!-- Mobile Image (for screens < 600px) -->
+                    <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
+                    <!-- Desktop Image (for screens ≥ 601px) -->
+                    <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
+                    <!-- Fallback Image (for browsers that don't support picture element) -->
+                    <img 
+                        src="/public/content/home/logo.png"
+                        alt="logo.webp" 
+                        loading="lazy" 
+                        decoding="async"
+                        id="logo">
+                </picture>
             </a>
             <button 
                 class="navbar-toggler" 
@@ -106,11 +114,21 @@
 
         <!-- Background Image -->
         <picture class="cs-background">
-            <img decoding="async" src="/public/content/home/el4kink.jpg" alt="field" aria-hidden="true">
-        </picture>           
-
+            <!-- Mobile Image (for screens < 600px) -->
+            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/el4kink-m.webp">
+            <!-- Desktop Image (for screens ≥ 601px) -->
+            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/el4kink.webp">
+            <!-- Fallback Image (for browsers that don't support picture element) -->
+            <img 
+                src="/public/content/home/el4kink.jpg" 
+                alt="el4kink.webp" 
+                width="1102" 
+                height="500" 
+                loading="lazy" 
+                decoding="async">
+        </picture>
+            
     </section>
-
 
 
     <!-- ============================================ -->
@@ -212,7 +230,11 @@
     <!-- Footer Section -->
     <footer class="footer text-center py-4">
         <p>&copy; 2024 Fishtown Web Design. All rights reserved.</p>
-        <img src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+        <picture>
+            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
+            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
+            <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+        </picture>
         <p><a href="#">X</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
         <p><a id="tos" href="/public/tos.html">Terms Of Service</a><a id="pp" href="/public/pp.html">Privacy Policy</a></p>
     </footer>
