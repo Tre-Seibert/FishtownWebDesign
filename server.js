@@ -14,8 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Define the public directory to serve static files
-app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(__dirname));
 
 
 // Serve node_modules as static files
