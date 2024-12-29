@@ -26,6 +26,11 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
+// Define a route for the root URL
+app.get('/home', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
 // route for about page
 app.get('/about', (req, res) => {
   res.sendFile(__dirname + '/public/about.html');
@@ -43,6 +48,11 @@ app.get('/contact', (req, res) => {
 
 // route for tos page
 app.get('/terms-of-service', (req, res) => {
+  res.sendFile(__dirname + '/public/tos.html');
+});
+
+// route for tos page
+app.get('/tos', (req, res) => {
   res.sendFile(__dirname + '/public/tos.html');
 });
 
