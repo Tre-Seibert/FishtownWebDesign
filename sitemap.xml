@@ -12,11 +12,6 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://fishtownwebdesign.com/public/index.html</loc>
-  <lastmod>2024-12-25T19:42:41+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://fishtownwebdesign.com/about</loc>
   <lastmod>2024-12-25T19:42:40+00:00</lastmod>
   <priority>0.80</priority>
@@ -32,18 +27,18 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fishtownwebdesign.com/public/contact.html</loc>
+  <loc>https://fishtownwebdesign.com/pp</loc>
   <lastmod>2024-12-25T19:42:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fishtownwebdesign.com/public/tos.html</loc>
-  <lastmod>2024-12-25T19:42:41+00:00</lastmod>
+  <loc>https://fishtownwebdesign.com/tos</loc>
+  <lastmod>2024-12-25T19:42:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fishtownwebdesign.com/public/pp.html</loc>
-  <lastmod>2024-12-25T19:42:41+00:00</lastmod>
+  <loc>https://fishtownwebdesign.com/home</loc>
+  <lastmod>2024-12-25T19:42:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
