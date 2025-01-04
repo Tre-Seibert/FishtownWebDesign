@@ -23,12 +23,12 @@ app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 
 // Define a route for the root URL
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(__dirname + '/public/home.html');
 });
 
 // Define a route for the root URL
 app.get('/home', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(__dirname + '/public/home.html');
 });
 
 // route for about page
@@ -58,6 +58,11 @@ app.get('/tos', (req, res) => {
 
 // route for privacy policy page
 app.get('/privacy-policy', (req, res) => {
+  res.sendFile(__dirname + '/public/pp.html');
+});
+
+// route for privacy policy page
+app.get('/pp', (req, res) => {
   res.sendFile(__dirname + '/public/pp.html');
 });
 
