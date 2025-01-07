@@ -174,7 +174,7 @@
 
     <!-- Footer Section -->
     <footer class="footer text-center py-4">
-        <p>&copy; 2024 Fishtown Web Design. All rights reserved.</p>
+        <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
         <picture>
             <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
             <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
@@ -186,7 +186,10 @@
 
     <script src="/public/scripts/contact.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script>
+        // Set the current year dynamically
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
