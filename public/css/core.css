@@ -190,6 +190,11 @@ body {
     margin-bottom: 1rem;
 }
 
+.current-year {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
 /* Landscapes phones */
 @media only screen and (min-width: 481px) {
     /* Empty */

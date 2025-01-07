@@ -239,7 +239,7 @@
   
     <!-- Footer Section -->
     <footer class="footer text-center py-4">
-        <p>&copy; 2024 Fishtown Web Design. All rights reserved.</p>
+        <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
         <picture>
             <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
             <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
@@ -248,13 +248,16 @@
         <p><a href="#">X</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
         <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
     </footer>
-    
+
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Set the current year dynamically
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+
         const words = ["venues", "eateries"];
         let currentIndex = 0;
         const rotatingWordElement = document.getElementById("rotating-word");
-    
+
         function rotateWords() {
             // Set the next word
             currentIndex = (currentIndex + 1) % words.length;
@@ -263,10 +266,11 @@
             void rotatingWordElement.offsetWidth; // Trigger reflow
             rotatingWordElement.style.animation = ''; // Re-apply animation
         }
-    
+
         // Change word every 2 seconds
         setInterval(rotateWords, 5000);
     </script>
+
 
 
     
