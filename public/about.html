@@ -97,7 +97,7 @@
         <!-- Main Content Section (Image and Text) -->
         <div class="content-wrapper">
             <!-- Text Content -->
-            <div class="about-text">
+            <div class="about-text" rel="preload">
                 <h2>Fishtown Web Design</h2>
                 <h3>We Make Websites With Purpose & Intent</h3>
                 <p>Hi, I'm Tre, the founder and lead developer of Fishtown Web Designs. My journey into programming began when I was 12 years old, creating websites and building computers to fund my video game collection. After earning my computer science degree in May 2024 at Saint Joseph's University, here in Philadelphia, and with over two years of hands-on experience in both front-end and back-end development, I'm dedicated to delivering custom, hand-coded websites at an affordable starting price for my clients.</p>             <!-- Rounded image -->  
@@ -187,8 +187,8 @@
         <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
     </footer>
 
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script defer>
         // Set the current year dynamically
         document.getElementById("current-year").textContent = new Date().getFullYear();
     </script>
