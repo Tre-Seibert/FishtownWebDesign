@@ -15,8 +15,8 @@
 
     <!--CSS Imports-->
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" defer>
-    <link rel="stylesheet" href="/public/css/core.css" defer> 
-    <link rel="stylesheet" href="/public/css/pricing.css" defer>
+    <link rel="stylesheet" href="/public/css/core.css"> 
+    <link rel="stylesheet" href="/public/css/pricing.css">
     
 
     <!--Favicons-->
@@ -27,16 +27,21 @@
     <link rel="apple-touch-icon" href="../public/content/home/favicon_io/apple-touch-icon.png">
     <link rel="icon" href="../public/content/home/favicon_io/favicon.ico">
 
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <style>
+        .cs-text {
+            font-size: var(--bodyFontSize);
+            line-height: 1.5em;
+            text-align: inherit;
+            width: 100%;
+            max-width: 40.625rem;
+            margin: 0;
+            color: var(--bodyTextColor);
+            font-family: "Montserrat";
+        }
+    </style>
 
-  gtag('config', 'G-P9ZFLQPT8E');
-</script>
+</head>
+
 <body>
     <!-- Black Banner at the top -->
     <div class="top-banner">
@@ -241,6 +246,15 @@
     <script>
         // Set the current year dynamically
         document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-P9ZFLQPT8E');
     </script>
     
 </body>

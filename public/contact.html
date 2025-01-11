@@ -16,7 +16,7 @@
     <!--CSS Imports-->
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" defer>
     <link rel="stylesheet" href="/public/css/core.css" defer>
-    <link rel="stylesheet" href="/public/css/contact.css" defer>
+    <link rel="stylesheet" href="/public/css/contact.css">
 
     <!--Favicons-->
     <link rel="icon" type="image/png" sizes="16x16" href="../public/content/home/favicon_io/favicon-16x16.png">
@@ -26,16 +26,22 @@
     <link rel="apple-touch-icon" href="../public/content/home/favicon_io/apple-touch-icon.png">
     <link rel="icon" href="../public/content/home/favicon_io/favicon.ico">
 
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+     <style>
+        .cs-title {
+            font-size: var(--headerFontSize);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: inherit;
+            max-width: 43.75rem;
+            margin: 0 0 1rem 0;
+            color: var(--headerColor);
+            position: relative;
+            font-family: "DM Serif Display";
+        }
+     </style>
 
-  gtag('config', 'G-P9ZFLQPT8E');
-</script>
+</head>
+
 <body>
     <!-- Black Banner at the top -->
     <div class="top-banner">
@@ -167,11 +173,6 @@
         </div>
     </section>
                                     
-
-
-
-
-
     <!-- Footer Section -->
     <footer class="footer text-center py-4">
         <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
@@ -189,6 +190,15 @@
     <script>
         // Set the current year dynamically
         document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E"></script>
+    <script async>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-P9ZFLQPT8E');
     </script>
 
 </body>
