@@ -55,7 +55,6 @@
                     <img 
                         src="/public/content/home/logo.png"
                         alt="Fishtown Web Design logo" 
-                        loading="lazy" 
                         decoding="async"
                         id="logo">
                 </picture>
@@ -127,7 +126,8 @@
                 alt="Fishtown Web Design El Philadelphia" 
                 width="1102" 
                 height="500" 
-                decoding="async">
+                decoding="async"
+                rel="preload">
         </picture>
             
     </section>
@@ -241,8 +241,8 @@
         <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
     </footer>
 
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script defer>
         // Set the current year dynamically
         document.getElementById("current-year").textContent = new Date().getFullYear();
 
