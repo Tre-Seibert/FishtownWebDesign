@@ -4,7 +4,8 @@
   "description": "��#\u0000 \u0000F\u0000i\u0000s\u0000h\u0000t\u0000o\u0000w\u0000n\u0000W\u0000e\u0000b\u0000D\u0000e\u0000s\u0000i\u0000g\u0000n\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "build:css": "postcss public/css/*.css --dir public/css/"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,12 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.1",
     "nodemailer": "^6.9.16"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "postcss-loader": "^8.1.1"
   }
 }
