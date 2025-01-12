@@ -18,14 +18,49 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname));
 
 
-// 404 Error for /public 
-app.get('/public/*', (req, res) => {
-  res.status(404).send('Not Found');
-});
-
 // Serve node_modules as static files
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 
+// Redirects for /public/*.html to clean URLs
+app.get('/public/contact.html', (req, res) => {
+  res.redirect(301, '/contact');
+});
+
+app.get('/public/about.html', (req, res) => {
+  res.redirect(301, '/about');
+});
+
+app.get('/public/pricing.html', (req, res) => {
+  res.redirect(301, '/pricing');
+});
+
+app.get('/public/terms-of-service.html', (req, res) => {
+  res.redirect(301, '/terms-of-service');
+});
+
+app.get('/public/pp.html', (req, res) => {
+  res.redirect(301, '/privacy-policy');
+});
+
+app.get('/public/philadelphia-web-design.html', (req, res) => {
+  res.redirect(301, '/philadelphia-web-design');
+});
+
+app.get('/public/web-design-near-me.html', (req, res) => {
+  res.redirect(301, '/web-design-near-me');
+});
+
+app.get('/public/affordable-website-design-philadelphia.html', (req, res) => {
+  res.redirect(301, '/affordable-website-design-philadelphia');
+});
+
+app.get('/public/philadelphia-web-design-firm.html', (req, res) => {
+  res.redirect(301, '/philadelphia-web-design-firm');
+});
+
+app.get('/public/web-designer-philadelphia.html', (req, res) => {
+  res.redirect(301, '/web-designer-philadelphia');
+});
 
 // Define a route for the root URL
 app.get('/', (req, res) => {
