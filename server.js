@@ -77,19 +77,19 @@ app.get('/web-design-near-me', (req, res) => {
 });
 
 
-// route for web-design-near-me landing page (SEO)
+// route for affordable-website-design-philadelphia landing page (SEO)
 app.get('/affordable-website-design-philadelphia', (req, res) => {
   res.sendFile(__dirname + '/public/affordable-website-design-philadelphia.html');
 });
 
 
-// route for web-design-near-me landing page (SEO)
+// route for philadelphia-web-design-firm landing page (SEO)
 app.get('/philadelphia-web-design-firm', (req, res) => {
   res.sendFile(__dirname + '/public/philadelphia-web-design-firm.html');
 });
 
 
-// route for web-design-near-me landing page (SEO)
+// route for web-designer-philadelphia landing page (SEO)
 app.get('/web-designer-philadelphia', (req, res) => {
   res.sendFile(__dirname + '/public/web-designer-philadelphia.html');
 });
