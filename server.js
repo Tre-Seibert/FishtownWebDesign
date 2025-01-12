@@ -66,6 +66,35 @@ app.get('/pp', (req, res) => {
   res.sendFile(__dirname + '/public/pp.html');
 });
 
+// route for philadelphia-web-design landing page (SEO)
+app.get('/philadelphia-web-design', (req, res) => {
+  res.sendFile(__dirname + '/public/philadelphia-web-design.html');
+});
+
+// route for web-design-near-me landing page (SEO)
+app.get('/web-design-near-me', (req, res) => {
+  res.sendFile(__dirname + '/public/web-design-near-me.html');
+});
+
+
+// route for web-design-near-me landing page (SEO)
+app.get('/affordable-website-design-philadelphia', (req, res) => {
+  res.sendFile(__dirname + '/public/affordable-website-design-philadelphia.html');
+});
+
+
+// route for web-design-near-me landing page (SEO)
+app.get('/philadelphia-web-design-firm', (req, res) => {
+  res.sendFile(__dirname + '/public/philadelphia-web-design-firm.html');
+});
+
+
+// route for web-design-near-me landing page (SEO)
+app.get('/web-designer-philadelphia', (req, res) => {
+  res.sendFile(__dirname + '/public/web-designer-philadelphia.html');
+});
+
+
 require('dotenv').config(); // Loads environment variables from .env file
 //// Configure Nodemailer with Zoho SMTP
 const transporter = nodemailer.createTransport({
