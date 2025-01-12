@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const path = require('path');
 const app = express();
+const axios = require('axios');
 
 // Define a port number
 const port = 7000;
@@ -19,6 +20,11 @@ app.use(express.static(__dirname));
 
 // Serve node_modules as static files
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
+
+// 404 Error for /public 
+app.get('/public/*', (req, res) => {
+  res.status(404).send('Not Found');
+});
 
 
 // Define a route for the root URL
@@ -92,6 +98,17 @@ app.get('/philadelphia-web-design-firm', (req, res) => {
 // route for web-designer-philadelphia landing page (SEO)
 app.get('/web-designer-philadelphia', (req, res) => {
   res.sendFile(__dirname + '/public/web-designer-philadelphia.html');
+});
+
+// Route to fetch blog posts
+app.get('/blogs', async (req, res) => {
+  try {
+    const response = await axios.get('http://localhost:1337/api/blogs'); // Use await to handle the async call
+    res.json(response.data);  // Send the data as a JSON response
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error fetching blog posts');
+  }
 });
 
 

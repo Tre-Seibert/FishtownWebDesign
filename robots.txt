@@ -1,5 +1,5 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
-Allow: /public/
+Disallow: /public/
 Sitemap: https://fishtownwebdesign.com/sitemap.xml
