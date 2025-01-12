@@ -18,13 +18,13 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname));
 
 
-// Serve node_modules as static files
-app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
-
 // 404 Error for /public 
 app.get('/public/*', (req, res) => {
   res.status(404).send('Not Found');
 });
+
+// Serve node_modules as static files
+app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 
 
 // Define a route for the root URL
