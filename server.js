@@ -20,6 +20,10 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 // Serve node_modules as static files (if needed)
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 
+// server site map
+app.use('/sitemap.xml', express.static(path.join(__dirname, 'sitemap.xml')));
+
+
 // Redirects
 const redirects = {
     '/public/home.html': '/',
@@ -53,6 +57,7 @@ app.get('/web-design-near-me', (req, res) => res.sendFile(path.join(__dirname, '
 app.get('/affordable-website-design-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/affordable-website-design-philadelphia.html')));
 app.get('/philadelphia-web-design-firm', (req, res) => res.sendFile(path.join(__dirname, 'public/philadelphia-web-design-firm.html')));
 app.get('/web-designer-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/web-designer-philadelphia.html')));
+
 
 
 // Define a route for the root URL
