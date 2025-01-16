@@ -157,8 +157,8 @@ app.post('/submit-appointment', async (req, res) => {
   }
 
   const mailOptions = {
-      from: '"Fishtown Web Designs" <sales@fishtownwebdesign.com>',
-      to: 'sales@fishtownwebdesign.com',
+      from: '"Fishtown Web Designs" <info@fishtownwebdesign.com>',
+      to: 'info@fishtownwebdesign.com',
       subject: 'New Appointment Request',
       text: `
       You have received a new appointment request:
