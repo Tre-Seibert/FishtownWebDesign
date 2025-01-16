@@ -37,12 +37,17 @@ const redirects = {
     '/public/affordable-website-design-philadelphia.html': '/affordable-website-design-philadelphia',
     '/public/philadelphia-web-design-firm.html': '/philadelphia-web-design-firm',
     '/public/web-designer-philadelphia.html': '/web-designer-philadelphia',
+    '/public/internet-marketing-fishtown.html': '/internet-marketing-fishtown'
 };
 
 Object.keys(redirects).forEach((oldPath) => {
     app.get(oldPath, (req, res) => {
         res.redirect(301, redirects[oldPath]);
     });
+});
+
+app.get('/home', (req, res) => {
+  res.redirect(301, '/'); // 301 is for a permanent redirect
 });
 
 // Routes
@@ -57,72 +62,8 @@ app.get('/web-design-near-me', (req, res) => res.sendFile(path.join(__dirname, '
 app.get('/affordable-website-design-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/affordable-website-design-philadelphia.html')));
 app.get('/philadelphia-web-design-firm', (req, res) => res.sendFile(path.join(__dirname, 'public/philadelphia-web-design-firm.html')));
 app.get('/web-designer-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/web-designer-philadelphia.html')));
+app.get('/internet-marketing-fishtown', (req, res) => res.sendFile(path.join(__dirname, 'public/internet-marketing-fishtown.html')))
 
-
-
-// Define a route for the root URL
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/home.html');
-});
-
-
-// route for about page
-app.get('/about', (req, res) => {
-  res.sendFile(__dirname + '/public/about.html');
-});
-
-// route for pricing page
-app.get('/pricing', (req, res) => {
-  res.sendFile(__dirname + '/public/pricing.html');
-});
-
-// route for contact page
-app.get('/contact', (req, res) => {
-  res.sendFile(__dirname + '/public/contact.html');
-});
-
-// route for tos page
-app.get('/terms-of-service', (req, res) => {
-  res.sendFile(__dirname + '/public/tos.html');
-});
-
-// route for privacy policy page
-app.get('/privacy-policy', (req, res) => {
-  res.sendFile(__dirname + '/public/pp.html');
-});
-
-// route for privacy policy page
-app.get('/pp', (req, res) => {
-  res.sendFile(__dirname + '/public/pp.html');
-});
-
-// route for philadelphia-web-design landing page (SEO)
-app.get('/philadelphia-web-design', (req, res) => {
-  res.sendFile(__dirname + '/public/philadelphia-web-design.html');
-});
-
-// route for web-design-near-me landing page (SEO)
-app.get('/web-design-near-me', (req, res) => {
-  res.sendFile(__dirname + '/public/web-design-near-me.html');
-});
-
-
-// route for affordable-website-design-philadelphia landing page (SEO)
-app.get('/affordable-website-design-philadelphia', (req, res) => {
-  res.sendFile(__dirname + '/public/affordable-website-design-philadelphia.html');
-});
-
-
-// route for philadelphia-web-design-firm landing page (SEO)
-app.get('/philadelphia-web-design-firm', (req, res) => {
-  res.sendFile(__dirname + '/public/philadelphia-web-design-firm.html');
-});
-
-
-// route for web-designer-philadelphia landing page (SEO)
-app.get('/web-designer-philadelphia', (req, res) => {
-  res.sendFile(__dirname + '/public/web-designer-philadelphia.html');
-});
 
 // Route to fetch blog posts
 app.get('/blogs', async (req, res) => {
