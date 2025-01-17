@@ -59,6 +59,24 @@
     font-family: "DM Serif Display";
 }
 
+/* Fix dropdown positioning */
+.navbar-nav .dropdown-menu {
+    position: absolute;
+    top: 100%; /* Align below the parent link */
+    left: 0;
+    margin-top: 0; /* Remove default Bootstrap margin */
+    z-index: 1000;
+  }
+  
+  /* Prevent dropdown from affecting parent alignment */
+  .navbar-nav .dropdown {
+    position: relative;
+    font-family: "DM Serif Display";
+    color: #333;
+  }
+  
+  
+
 /* Black top banner */
 .top-banner {
     background-color: #000;

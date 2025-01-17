@@ -47,11 +47,8 @@
             <!-- Logo and Menu Icon -->
             <a class="navbar-brand" href="https://fishtownwebdesign.com/">
                 <picture>
-                    <!-- Mobile Image (for screens < 600px) -->
                     <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
-                    <!-- Desktop Image (for screens ≥ 601px) -->
                     <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
-                    <!-- Fallback Image (for browsers that don't support picture element) -->
                     <img 
                         src="/public/content/home/logo.png"
                         alt="Fishtown Web Design Logo" 
@@ -73,16 +70,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://fishtownwebdesign.com/">home</a>
+                        <a class="nav-link" href="https://fishtownwebdesign.com/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="https://fishtownwebdesign.com/about">About Us</a></li>
+                            <li><a class="dropdown-item" href="https://fishtownwebdesign.com/faq">FAQ</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">about</a>
+                        <a class="nav-link" href="https://fishtownwebdesign.com/pricing">Pricing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://fishtownwebdesign.com/pricing">pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://fishtownwebdesign.com/contact">contact</a>
+                        <a class="nav-link" href="https://fishtownwebdesign.com/contact">Contact</a>
                     </li>
                 </ul>
             </div>

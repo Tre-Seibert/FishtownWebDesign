@@ -37,7 +37,8 @@ const redirects = {
     '/public/affordable-website-design-philadelphia.html': '/affordable-website-design-philadelphia',
     '/public/philadelphia-web-design-firm.html': '/philadelphia-web-design-firm',
     '/public/web-designer-philadelphia.html': '/web-designer-philadelphia',
-    '/public/internet-marketing-fishtown.html': '/internet-marketing-fishtown'
+    '/public/internet-marketing-fishtown.html': '/internet-marketing-fishtown',
+    '/public/faq.html': '/faq'
 };
 
 Object.keys(redirects).forEach((oldPath) => {
@@ -63,6 +64,7 @@ app.get('/affordable-website-design-philadelphia', (req, res) => res.sendFile(pa
 app.get('/philadelphia-web-design-firm', (req, res) => res.sendFile(path.join(__dirname, 'public/philadelphia-web-design-firm.html')));
 app.get('/web-designer-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/web-designer-philadelphia.html')));
 app.get('/internet-marketing-fishtown', (req, res) => res.sendFile(path.join(__dirname, 'public/internet-marketing-fishtown.html')))
+app.get('/faq', (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html')))
 
 
 // Route to fetch blog posts
