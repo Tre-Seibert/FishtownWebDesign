@@ -67,18 +67,6 @@ app.get('/internet-marketing-fishtown', (req, res) => res.sendFile(path.join(__d
 app.get('/faq', (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html')))
 
 
-// Route to fetch blog posts
-app.get('/blogs', async (req, res) => {
-  try {
-    const response = await axios.get('http://localhost:1337/api/blogs'); // Use await to handle the async call
-    res.json(response.data);  // Send the data as a JSON response
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Error fetching blog posts');
-  }
-});
-
-
 require('dotenv').config(); // Loads environment variables from .env file
 //// Configure Nodemailer with Zoho SMTP
 const transporter = nodemailer.createTransport({

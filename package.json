@@ -22,7 +22,8 @@
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.1",
-    "nodemailer": "^6.9.16"
+    "nodemailer": "^6.9.16",
+    "strapi": "^3.6.11"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^7.0.2",
