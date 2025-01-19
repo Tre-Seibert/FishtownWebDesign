@@ -43,12 +43,12 @@
         }
     </style>
 
-    <!-- Load non-critical CSS asynchronously -->
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
-    <link rel="preload" href="/public/css/core.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="/public/css/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/public/css/core.css"></noscript>
-    <noscript><link rel="stylesheet" href="/public/css/index.css"></noscript>
+    
+    <!--CSS Imports-->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/core.css" defer>
+    <link rel="stylesheet" href="/public/css/index.css" defer>
+
 
     <!--Favicons-->
     <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
