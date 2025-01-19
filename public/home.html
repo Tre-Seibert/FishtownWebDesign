@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- Preload Hero Images -->
+    <link 
+    rel="preload" 
+    as="image" 
+    href="https://fishtownwebdesign.com/public/content/home/web-design-philly.webp" 
+    type="image/webp">
+    <link 
+        rel="preload" 
+        as="image" 
+        href="https://fishtownwebdesign.com/public/content/home/web-design-philly-m.webp" 
+        type="image/webp" 
+        media="(max-width: 600px)">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="https://fishtownwebdesign.com/public/content/home/logometa.png">
@@ -14,9 +28,9 @@
     <title>Fishtown Web Design | Web Design Services in Philadelphia, Pennsylvania</title>
 
     <!--CSS Imports-->
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" defer>
-    <link rel="stylesheet" href="/public/css/core.css" defer>
-    <link rel="stylesheet" href="/public/css/index.css" defer>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/public/css/core.css">
+    <link rel="stylesheet" href="/public/css/index.css">
 
     <!--Favicons-->
     <link rel="icon" type="image/png" sizes="16x16" href="../public/content/home/favicon_io/favicon-16x16.png">
@@ -120,18 +134,28 @@
 
         <!-- Background Image -->
         <picture class="cs-background">
-            <!-- Mobile Image (for screens < 600px) -->
-            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/web-design-philly-m.webp">
-            <!-- Desktop Image (for screens ≥ 601px) -->
-            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/web-design-philly.webp">
-            <!-- Fallback Image (for browsers that don't support picture element) -->
+            <!-- Mobile Image -->
+            <source 
+                media="(max-width: 600px)" 
+                srcset="https://fishtownwebdesign.com/public/content/home/web-design-philly-m.webp"
+                type="image/webp"
+                fetchpriority="high">
+            <!-- Desktop Image -->
+            <source 
+                media="(min-width: 601px)" 
+                srcset="https://fishtownwebdesign.com/public/content/home/web-design-philly.webp"
+                type="image/webp"
+                fetchpriority="high">
+            <!-- Fallback Image -->
             <img 
-                src="/public/content/home/web-design-philly.png" 
+                src="https://fishtownwebdesign.com/public/content/home/web-design-philly.png" 
                 alt="Fishtown Web Design El Philadelphia" 
                 width="1102" 
                 height="500" 
                 decoding="async"
-                rel="preload">
+                loading="eager"
+                fetchpriority="high"
+                importance="high">
         </picture>
             
     </section>
