@@ -64,9 +64,19 @@
 <-------------*/
 
 /* Overlay section styles */
-/* .text-overlay {
+.text-overlay {
     position: absolute; /* Position it over the background */
-
+    top: 0;
+    left: 0;
+    width: 100%; /* Span the full width of the parent container */
+    height: 100%; /* Span the full height */
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stack text lines vertically */
+    justify-content: center; /* Center text vertically */
+    align-items: center; /* Center text horizontally */
+    color: #fff;
+    z-index: 1; /* Ensure it stays above the background */
+}
 
 
 /* Top line */
