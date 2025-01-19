@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://fishtownwebdesign.com/public/content/home/logometa.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="description" content="Custom, hand-coded websites for small businesses in Philadelphia. Affordable pricing, SEO, and Google Ads services. Get started today!">
+    <meta property="og:title" content="Custom Web Design in Philadelphia - Affordable & SEO-Optimized Websites">
+    <meta property="og:description" content="Custom, hand-coded websites for small businesses. Affordable pricing, SEO, web design and Google Ads management. Contact us now!">
+    <link rel="canonical" href="https://fishtownwebdesign.com/" />
+
+    <title>Fishtown Web Design | Web Design Services in Philadelphia, Pennsylvania</title>
 
     <!-- Preload Hero Images -->
     <link 
@@ -15,31 +26,37 @@
         type="image/webp" 
         media="(max-width: 600px)">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://fishtownwebdesign.com/public/content/home/logometa.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="description" content="Custom, hand-coded websites for small businesses in Philadelphia. Affordable pricing, SEO, and Google Ads services. Get started today!">
-    <meta property="og:title" content="Custom Web Design in Philadelphia - Affordable & SEO-Optimized Websites">
-    <meta property="og:description" content="Custom, hand-coded websites for small businesses. Affordable pricing, SEO, web design and Google Ads management. Contact us now!">
-    <link rel="canonical" href="https://fishtownwebdesign.com/" />
+    <!-- Inline Critical CSS for faster initial render -->
+    <style>
+        .text-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            z-index: 1;
+        }
+    </style>
 
-    <title>Fishtown Web Design | Web Design Services in Philadelphia, Pennsylvania</title>
-
-    <!--CSS Imports-->
+    <!-- Load non-critical CSS asynchronously -->
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="/public/css/core.css">
-    <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="preload" href="/public/css/core.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/public/css/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/public/css/core.css"></noscript>
+    <noscript><link rel="stylesheet" href="/public/css/index.css"></noscript>
 
     <!--Favicons-->
-    <link rel="icon" type="image/png" sizes="16x16" href="../public/content/home/favicon_io/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../public/content/home/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="../public/content/home/favicon_io/android_chrome_192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="../public/content/home/favicon_io/android_chrome_512x512.png">
-    <link rel="apple-touch-icon" href="../public/content/home/favicon_io/apple-touch-icon.png">
-    <link rel="icon" href="../public/content/home/favicon_io/favicon.ico">
-
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/content/home/favicon_io/android_chrome_192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/content/home/favicon_io/android_chrome_512x512.png">
+    <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E"></script>
