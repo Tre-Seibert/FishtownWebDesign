@@ -354,10 +354,43 @@
         // Change word every 2 seconds
         setInterval(rotateWords, 5000);
     </script>
+    <script>
+        // Get elements
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
 
+        // Remove Bootstrap-specific attributes
+        navbarToggler.removeAttribute('data-bs-toggle');
+        navbarToggler.removeAttribute('data-bs-target');
+        dropdownToggle.removeAttribute('data-bs-toggle');
 
+        // Toggle main navigation
+        navbarToggler.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (navbarCollapse.classList.contains('collapse')) {
+                navbarCollapse.classList.remove('collapse');
+                navbarCollapse.classList.add('show');
+            } else {
+                navbarCollapse.classList.add('collapse');
+                navbarCollapse.classList.remove('show');
+            }
+        });
 
-    
-    
+        // Toggle dropdown
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdownToggle.contains(e.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
