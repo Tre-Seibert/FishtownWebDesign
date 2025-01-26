@@ -338,7 +338,7 @@
         // Set the current year dynamically
         document.getElementById("current-year").textContent = new Date().getFullYear();
 
-        const words = ["venues", "eateries"];
+        const words = ["venues", "portfolios", "contractors"];
         let currentIndex = 0;
         const rotatingWordElement = document.getElementById("rotating-word");
 
@@ -351,7 +351,7 @@
             rotatingWordElement.style.animation = ''; // Re-apply animation
         }
 
-        // Change word every 2 seconds
+        // Change word every 5 seconds
         setInterval(rotateWords, 5000);
     </script>
     <script>
