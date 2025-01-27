@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const path = require('path');
 const app = express();
-const axios = require('axios');
 
 // Define a port number
 const port = 7000;
