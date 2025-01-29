@@ -31,12 +31,12 @@ const redirects = {
     '/public/pricing.html': '/pricing',
     '/public/terms-of-service.html': '/terms-of-service',
     '/public/pp.html': '/privacy-policy',
-    '/public/philadelphia-web-design.html': '/philadelphia-web-design',
-    '/public/web-design-near-me.html': '/web-design-near-me',
-    '/public/affordable-website-design-philadelphia.html': '/affordable-website-design-philadelphia',
-    '/public/philadelphia-web-design-firm.html': '/philadelphia-web-design-firm',
-    '/public/web-designer-philadelphia.html': '/web-designer-philadelphia',
-    '/public/internet-marketing-fishtown.html': '/internet-marketing-fishtown',
+    '/public/seo/philadelphia-web-design.html': '/philadelphia-web-design',
+    '/public/seo/web-design-near-me.html': '/web-design-near-me',
+    '/public/seo/affordable-website-design-philadelphia.html': '/affordable-website-design-philadelphia',
+    '/public/seo/philadelphia-web-design-firm.html': '/philadelphia-web-design-firm',
+    '/public/seo/web-designer-philadelphia.html': '/web-designer-philadelphia',
+    '/public/seo/internet-marketing-fishtown.html': '/internet-marketing-fishtown',
     '/public/faq.html': '/faq'
 };
 
