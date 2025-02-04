@@ -62,8 +62,8 @@ app.get('/web-design-near-me', (req, res) => res.sendFile(path.join(__dirname, '
 app.get('/affordable-website-design-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/seo/affordable-website-design-philadelphia.html')));
 app.get('/philadelphia-web-design-firm', (req, res) => res.sendFile(path.join(__dirname, 'public/seo/philadelphia-web-design-firm.html')));
 app.get('/web-designer-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/seo/web-designer-philadelphia.html')));
-app.get('/internet-marketing-fishtown', (req, res) => res.sendFile(path.join(__dirname, 'public/seo/internet-marketing-fishtown.html')))
-app.get('/faq', (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html')))
+app.get('/internet-marketing-fishtown', (req, res) => res.sendFile(path.join(__dirname, 'public/seo/internet-marketing-fishtown.html')));
+app.get('/faq', (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html')));
 
 
 require('dotenv').config(); // Loads environment variables from .env file
