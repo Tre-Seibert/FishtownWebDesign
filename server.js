@@ -57,12 +57,12 @@ app.get('/pricing', (req, res) => res.sendFile(path.join(__dirname, 'public/pric
 app.get('/contact', (req, res) => res.sendFile(path.join(__dirname, 'public/contact.html')));
 app.get('/terms-of-service', (req, res) => res.sendFile(path.join(__dirname, 'public/tos.html')));
 app.get('/privacy-policy', (req, res) => res.sendFile(path.join(__dirname, 'public/pp.html')));
-app.get('/philadelphia-web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/philadelphia-web-design.html')));
-app.get('/web-design-near-me', (req, res) => res.sendFile(path.join(__dirname, 'public/web-design-near-me.html')));
-app.get('/affordable-website-design-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/affordable-website-design-philadelphia.html')));
-app.get('/philadelphia-web-design-firm', (req, res) => res.sendFile(path.join(__dirname, 'public/philadelphia-web-design-firm.html')));
-app.get('/web-designer-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/web-designer-philadelphia.html')));
-app.get('/internet-marketing-fishtown', (req, res) => res.sendFile(path.join(__dirname, 'public/internet-marketing-fishtown.html')))
+app.get('/philadelphia-web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/seo/philadelphia-web-design.html')));
+app.get('/web-design-near-me', (req, res) => res.sendFile(path.join(__dirname, 'public/seo/web-design-near-me.html')));
+app.get('/affordable-website-design-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/seo/affordable-website-design-philadelphia.html')));
+app.get('/philadelphia-web-design-firm', (req, res) => res.sendFile(path.join(__dirname, 'public/seo/philadelphia-web-design-firm.html')));
+app.get('/web-designer-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/seo/web-designer-philadelphia.html')));
+app.get('/internet-marketing-fishtown', (req, res) => res.sendFile(path.join(__dirname, 'public/seo/internet-marketing-fishtown.html')))
 app.get('/faq', (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html')))
 
 
