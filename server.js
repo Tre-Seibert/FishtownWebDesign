@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const path = require('path');
 const app = express();
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 // Define a port number
 const port = 7000;
@@ -16,11 +17,114 @@ app.use(bodyParser.json());
 // Serve static files from the /public directory
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
+// Set the views directory (where your .ejs files are located)
+app.set('views', path.join(__dirname, 'views'));
+
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
+
 // Serve node_modules as static files (if needed)
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 
 // server site map
 app.use('/sitemap.xml', express.static(path.join(__dirname, 'sitemap.xml')));
+
+// Proxy API requests to Strapi running at localhost:1337
+app.use('/api', createProxyMiddleware({
+  target: 'http://localhost:1337', // Strapi API URL
+  changeOrigin: true,
+  pathRewrite: {
+    '^/api': '', // Remove '/api' from the URL before sending to Strapi
+  },
+}));
+
+const axios = require('axios');
+
+// Define a function to fetch posts from Strapi
+async function getPosts() {
+  try {
+    const response = await axios.get('http://127.0.0.1:1337/api/posts'); // Fetch posts
+    return response.data.data; // Return array of posts
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    return []; // Return an empty array on error
+  }
+}
+
+app.get('/blog', async (req, res) => {
+  try {
+      const posts = await getPosts(); // Example of fetching posts
+      console.log(posts);  // Log the posts to check the structure
+      res.render('blog-index', { posts });
+  } catch (error) {
+      console.error(error);
+      res.status(500).send('Something went wrong.');
+  }
+});
+
+
+// Individual Post Route using slug
+app.get('/blog/:slug', async (req, res) => {
+  const slug = req.params.slug;
+
+  try {
+      const response = await axios.get(`http://127.0.0.1:1337/api/posts?filters[slug][$eq]=${slug}&populate=*`);
+      const post = response.data.data[0]; // Assuming you have a single post with that slug
+
+      console.log(post); // Log the post structure to check the data
+
+      if (!post) {
+          return res.status(404).send('Post not found');
+      }
+
+      res.render('blog-post', { post });
+  } catch (error) {
+      console.error('Error fetching post:', error);
+      res.status(500).send('Error fetching blog post');
+  }
+});
+
+
+
+
+// Filter Posts by Category Route using category slug
+app.get('/blog/category/:slug', async (req, res) => {
+  try {
+    const slug = req.params.slug;
+
+    // Fetch posts filtered by the category slug
+    const response = await axios.get(`http://127.0.0.1:1337/api/posts?filters[category][slug][$eq]=${slug}&populate=categories`);
+    const posts = response.data.data;
+
+    // Fetch the category data for display
+    const categoryResponse = await axios.get(`http://127.0.0.1:1337/api/categories?filters[slug][$eq]=${slug}`);
+    const category = categoryResponse.data.data[0];
+
+    if (category) {
+      res.render('blog-index', { category, posts });
+    } else {
+      res.status(404).send('Category not found.');
+    }
+  } catch (error) {
+    console.error('Error fetching category or posts:', error);
+    res.status(500).send('Error fetching category or posts from Strapi.');
+  }
+});
+
+
+app.get('/posts', (req, res) => {
+  axios.get('http://127.0.0.1:1337/api/posts')
+    .then(response => {
+      console.log(response.data);  // Log the full response
+      res.json(response.data);  // Send the response to the client
+    })
+    .catch(error => {
+      console.error("Error fetching posts:", error);
+      res.status(500).send("Error fetching posts from Strapi.");
+    });
+});
+
+
 
 
 // Redirects
