@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://fishtownwebdesign.com/public/content/about/logometa.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="description" content="Boost your online presence with expert internet marketing in Fishtown. Our SEO and branding services help businesses in Fishtown stand out.">
+    <meta property="og:title" content="Internet Marketing & SEO in Fishtown | Branding Experts">
+    <meta property="og:description" content="Boost your online presence with expert internet marketing in Fishtown. Our SEO and branding services help businesses in Fishtown stand out.">
+    <link rel="canonical" href="https://fishtownwebdesign.com/internet-marketing-fishtown" />
+
+    <title>Blog | Fishtown Web Design</title>
+
+    <!--CSS Imports-->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" defer>
+    <link rel="stylesheet" href="/public/css/core.css">
+    <link rel="stylesheet" href="/public/css/internet-marketing-fishtown.css">
+
+    <!--Favicons-->
+    <link rel="icon" type="image/png" sizes="16x16" href="../public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../public/content/home/favicon_io/android_chrome_192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../public/content/home/favicon_io/android_chrome_512x512.png">
+    <link rel="apple-touch-icon" href="../public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="../public/content/home/favicon_io/favicon.ico">
+</head>
+
+<body>
+    <!-- Black Banner at the top -->
+    <div class="top-banner">
+        EXPERT INTERNET MARKETING & SEO SERVICES IN FISHTOWN
+    </div>
+
+    <nav class="navbar navbar-light navbar-custom">
+        <div class="container-fluid">
+            <!-- Logo and Menu Icon -->
+            <a class="navbar-brand" href="https://fishtownwebdesign.com/">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
+                    <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
+                    <img 
+                        src="/public/content/home/logo.png"
+                        alt="Fishtown Web Design Logo" 
+                        loading="lazy" 
+                        decoding="async"
+                        id="logo">
+                </picture>
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://fishtownwebdesign.com/">home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            about
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="https://fishtownwebdesign.com/about">about us</a></li>
+                            <li><a class="dropdown-item" href="https://fishtownwebdesign.com/faq">faq</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://fishtownwebdesign.com/pricing">pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://fishtownwebdesign.com/contact">contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="about-section">
+        <!-- Blog Banner -->
+        <div class="about-banner">
+            <h1>Blog</h1>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="content-wrapper">
+            <!-- Blog Posts List -->
+            <div class="blog-posts-list">
+                <% if (posts && posts.length > 0) { %>
+                    <% posts.forEach(post => { %>
+                        <div class="blog-post-item">
+                            <h2><a href="/blog/<%= post.slug %>"><%= post.title %></a></h2>
+                            <p>
+                                <% 
+                                    // Concatenate the text from each rich text block
+                                    const contentText = post.content.map(block => block.text).join(" ");
+                                    // Use the first 150 characters as the excerpt
+                                    const excerpt = contentText.substring(0, 150);
+                                %>
+                                <%= post.excerpt || excerpt + (contentText.length > 150 ? '...' : '') %>
+                            </p>
+                            <a href="/blog/<%= post.slug %>" class="cs-button-solid">Read More</a>
+                        </div>
+                    <% }) %>                    
+                <% } else { %>
+                    <p>No blog posts available.</p>
+                <% } %>
+            </div>            
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer text-center py-4">
+        <p>© <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
+        <picture>
+            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
+            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
+            <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+        </picture>
+        <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
+        <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
+    </footer>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script defer>
+        // Set the current year dynamically
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
