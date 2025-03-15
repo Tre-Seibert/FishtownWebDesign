@@ -2,4 +2,13 @@ User-agent: *
 Disallow: /admin/
 Disallow: /private/
 Disallow: /public/
+Allow: /public/content/home/
+Allow: /public/content/about/
+Allow: /public/content/contact/
+Allow: /public/content/fonts/
+Allow: /public/content/svgs/
+Allow: /public/content/home/favicon_io/
+Allow: /public/content/scripts/contact.js
+Allow: /public/content/scripts/faq.js
+Allow: /public/css/
 Sitemap: https://fishtownwebdesign.com/sitemap.xml
