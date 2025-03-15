@@ -103,22 +103,57 @@
     <div class="content-wrapper">
         <!-- Text Content -->
         <div class="about-text">
-            <% post.content.forEach(function(item) { %>
-                <% if (item.type === 'heading') { %>
-                    <h<%= item.level %>><%= item.children[0].text %></h<%= item.level %>>
-                <% } else if (item.type === 'paragraph') { %>
-                    <p><%= item.children[0].text %></p>
-                <% } else if (item.type === 'list') { %>
-                    <ul>
-                        <% item.children.forEach(function(listItem) { %>
-                            <li><%= listItem.children[0].text %></li>
-                        <% }); %>
-                    </ul>
-                <% } else if (item.type === 'text') { %>
-                    <span><%= item.text %></span>
-                <% } %>
-            <% }); %>
-            <a href="/blog" class="cs-button-solid">Back to Blog</a> | <a href="/" class="cs-button-solid">Home</a>
+            <div class="blog-content">
+                <h1><%= post.title %></h1>
+                <p><strong>Category:</strong> <%= post.categories %></p>
+                <p><strong>Date:</strong> <%= post.publishedDate %></p>
+                <div>
+                    <% post.content.forEach(function(item) { %>
+                        <% if (item.type === 'heading') { %>
+                            <h<%= item.level %> class="blog-heading"><%= item.children[0].text %></h<%= item.level %>>
+                        <% } else if (item.type === 'paragraph') { %>
+                            <p class="blog-paragraph">
+                                <% item.children.forEach(function(child) { %>
+                                    <% if (child.code) { %>
+                                        <pre><code><%= child.text %></code></pre>
+                                    <% } else { %>
+                                        <% if (child.bold) { %><strong><% } %>
+                                        <% if (child.italic) { %><em><% } %>
+                                        <%= child.text %>
+                                        <% if (child.italic) { %></em><% } %>
+                                        <% if (child.bold) { %></strong><% } %>
+                                    <% } %>
+                                <% }); %>
+                            </p>
+                        <% } else if (item.type === 'list') { %>
+                            <% if (item.format === 'ordered') { %>
+                                <ol class="blog-list">
+                            <% } else { %>
+                                <ul class="blog-list">
+                            <% } %>
+                                <% item.children.forEach(function(listItem) { %>
+                                    <li>
+                                        <% listItem.children.forEach(function(child) { %>
+                                            <% if (child.bold) { %><strong><% } %>
+                                            <% if (child.italic) { %><em><% } %>
+                                            <%= child.text %>
+                                            <% if (child.italic) { %></em><% } %>
+                                            <% if (child.bold) { %></strong><% } %>
+                                        <% }); %>
+                                    </li>
+                                <% }); %>
+                            <% if (item.format === 'ordered') { %>
+                                </ol>
+                            <% } else { %>
+                                </ul>
+                            <% } %>
+                        <% } else { %>
+                            <p>Unknown type: <%= item.type %></p>
+                        <% } %>
+                    <% }); %>
+                </div>
+                <a href="/">Back Home</a>
+            </div>
         </div>
     </div>
 
