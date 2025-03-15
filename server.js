@@ -40,47 +40,78 @@ app.use('/api', createProxyMiddleware({
 
 const axios = require('axios');
 
-// Define a function to fetch posts from Strapi
-async function getPosts() {
+// Fetch all posts from Strapi, sorted by publishedDate ascending
+// Fetch all posts from Strapi, sorted by publishedDate ascending
+async function getPosts(categoryFilter = null) {
   try {
-    const response = await axios.get('http://127.0.0.1:1337/api/posts'); // Fetch posts
-    return response.data.data; // Return array of posts
+    let url = 'http://127.0.0.1:1337/api/posts?populate=categories&sort=publishedDate:asc';
+    if (categoryFilter) {
+      url += `&filters[categories][name][$eq]=${encodeURIComponent(categoryFilter)}`;
+    }
+    console.log('Fetching posts from:', url);
+    const response = await axios.get(url);
+    console.log('Raw posts response:', JSON.stringify(response.data, null, 2));
+    if (!response.data || !Array.isArray(response.data.data)) {
+      console.error('Invalid posts response:', response.data);
+      return [];
+    }
+    return response.data.data.map(post => ({
+      id: post.id,
+      title: post.title,
+      slug: post.slug,
+      content: post.content,
+      publishedDate: post.publishedDate, // Note: using publishedDate, not publishedAt
+      categories: post.categories.map(cat => cat.name) // Direct array of categories
+    }));
   } catch (error) {
-    console.error('Error fetching posts:', error);
-    return []; // Return an empty array on error
+    console.error('Error fetching posts:', error.response?.data || error.message);
+    return [];
   }
 }
 
+// Fetch unique categories from Strapi
+async function getCategories() {
+  try {
+    const response = await axios.get('http://127.0.0.1:1337/api/categories');
+    console.log('Raw categories response:', JSON.stringify(response.data, null, 2));
+    if (!response.data || !Array.isArray(response.data.data)) {
+      console.error('Invalid categories response:', response.data);
+      return [];
+    }
+    return response.data.data.map(category => category.name);
+  } catch (error) {
+    console.error('Error fetching categories:', error.response?.data || error.message);
+    return [];
+  }
+}
+
+// Blog index route
 app.get('/blog', async (req, res) => {
   try {
-      const posts = await getPosts(); // Example of fetching posts
-      console.log(posts);  // Log the posts to check the structure
-      res.render('blog-index', { posts });
+    const categoryFilter = req.query.category || null;
+    const posts = await getPosts(categoryFilter);
+    const categories = await getCategories();
+    res.render('blog-index', { posts, categories, selectedCategory: categoryFilter });
   } catch (error) {
-      console.error(error);
-      res.status(500).send('Something went wrong.');
+    console.error('Blog route error:', error);
+    res.status(500).send('Something went wrong.');
   }
 });
 
-
-// Individual Post Route using slug
+// Single post route (for reference, assuming it exists)
+// Single post route
 app.get('/blog/:slug', async (req, res) => {
-  const slug = req.params.slug;
-
   try {
-      const response = await axios.get(`http://127.0.0.1:1337/api/posts?filters[slug][$eq]=${slug}&populate=*`);
-      const post = response.data.data[0]; // Assuming you have a single post with that slug
-
-      console.log(post); // Log the post structure to check the data
-
-      if (!post) {
-          return res.status(404).send('Post not found');
-      }
-
-      res.render('blog-post', { post });
+    const url = `http://127.0.0.1:1337/api/posts?filters[slug][$eq]=${req.params.slug}&populate=categories`;
+    console.log('Fetching single post from:', url);
+    const response = await axios.get(url);
+    console.log('Raw single post response:', JSON.stringify(response.data, null, 2));
+    const post = response.data.data[0];
+    if (!post) return res.status(404).send('Post not found');
+    res.render('blog-post', { post });
   } catch (error) {
-      console.error('Error fetching post:', error);
-      res.status(500).send('Error fetching blog post');
+    console.error('Single post error:', error.response?.data || error.message);
+    res.status(500).send('Something went wrong.');
   }
 });
 
