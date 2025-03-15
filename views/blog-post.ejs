@@ -1,31 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://fishtownwebdesign.com/public/content/about/logometa.png">
+
+    <!-- SEO Meta Tags -->
+    <title><%= post.title %> | Fishtown Web Design Blog</title>
+    <meta name="description" content="<%= post.excerpt %>">
+    <link rel="canonical" href="https://fishtownwebdesign.com/blog/<%= post.slug %>" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="<%= post.title %> | Fishtown Web Design Blog">
+    <meta property="og:description" content="<%= post.excerpt %>">
+    <meta property="og:url" content="https://fishtownwebdesign.com/blog/<%= post.slug %>">
+    <meta property="og:image" content="<%= post.featuredImage || 'https://fishtownwebdesign.com/public/content/home/fish.png' %>">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta name="description" content="Boost your online presence with expert internet marketing in Fishtown. Our SEO and branding services help businesses in Fishtown stand out.">
-    <meta property="og:title" content="Internet Marketing & SEO in Fishtown | Branding Experts">
-    <meta property="og:description" content="Boost your online presence with expert internet marketing in Fishtown. Our SEO and branding services help businesses in Fishtown stand out.">
-    <link rel="canonical" href="https://fishtownwebdesign.com/internet-marketing-fishtown" />
-
-    <title><%= post.title %> | Fishtown Web Design</title>
-
+    <meta property="article:published_time" content="<%= post.publishedAt %>">
+    <meta property="article:author" content="Fishtown Web Design">
+    <meta property="article:section" content="<%= post.category %>">
+    <meta property="article:tag" content="<%= post.tags.join(', ') %>">
 
     <!--CSS Imports-->
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" defer>
     <link rel="stylesheet" href="/public/css/core.css">
     <link rel="stylesheet" href="/public/css/internet-marketing-fishtown.css">
 
     <!--Favicons-->
-    <link rel="icon" type="image/png" sizes="16x16" href="../public/content/home/favicon_io/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../public/content/home/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="../public/content/home/favicon_io/android_chrome_192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="../public/content/home/favicon_io/android_chrome_512x512.png">
-    <link rel="apple-touch-icon" href="../public/content/home/favicon_io/apple-touch-icon.png">
-    <link rel="icon" href="../public/content/home/favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://fishtownwebdesign.com/public/content/home/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="https://fishtownwebdesign.com/public/content/home/favicon_io/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="https://fishtownwebdesign.com/public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon.ico">
 
     <style>
         .about-text p {
@@ -55,7 +60,9 @@
                         alt="Fishtown Web Design Logo" 
                         loading="lazy" 
                         decoding="async"
-                        id="logo">
+                        id="logo"
+                        width="130px"
+                        height="46.29px">
                 </picture>
             </a>
             <button
@@ -88,6 +95,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="https://fishtownwebdesign.com/contact">contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="https://fishtownwebdesign.com/blog">blog</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -103,21 +113,26 @@
     <div class="content-wrapper">
         <!-- Text Content -->
         <div class="about-text">
-            <% post.content.forEach(function(item) { %>
-                <% if (item.type === 'heading') { %>
-                    <h<%= item.level %>><%= item.children[0].text %></h<%= item.level %>>
-                <% } else if (item.type === 'paragraph') { %>
-                    <p><%= item.children[0].text %></p>
-                <% } else if (item.type === 'list') { %>
-                    <ul>
-                        <% item.children.forEach(function(listItem) { %>
-                            <li><%= listItem.children[0].text %></li>
-                        <% }); %>
-                    </ul>
-                <% } else if (item.type === 'text') { %>
-                    <span><%= item.text %></span>
-                <% } %>
-            <% }); %>
+            <div class="blog-content">
+                <% post.content.forEach(function(block) { %>
+
+                    <% if (block.type === 'heading') { %>
+                        <h<%= block.level %>><%= block.children[0].text %></h<%= block.level %>>
+                    <% } else if (block.type === 'paragraph') { %>
+                        <p><%= block.children.map(child => child.text).join(" ") %></p>
+                    <% } else if (block.type === 'list') { %>
+                        <ul>
+                            <% block.children.forEach(function(listItem) { %>
+                                <li><%= listItem.children.map(child => child.text).join(" ") %></li>
+                            <% }); %>
+                        </ul>
+                    <% } else if (block.type === 'code') { %>
+                        <pre><code class="language-<%= block.language || 'plaintext' %>"><%= block.children[0].text %></code></pre>
+                    <% } else if (block.type === 'quote') { %>
+                        <blockquote><%= block.children[0].text %></blockquote>
+                    <% } %>
+    
+                <% }); %>
             <a href="/blog" class="cs-button-solid">Back to Blog</a> | <a href="/" class="cs-button-solid">Home</a>
         </div>
     </div>
@@ -145,7 +160,6 @@
         gtag('config', 'G-P9ZFLQPT8E');
     </script>
 
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script defer>
         // Set the current year dynamically
         document.getElementById("current-year").textContent = new Date().getFullYear();
