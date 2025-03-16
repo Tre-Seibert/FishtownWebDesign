@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://fishtownwebdesign.com/public/content/about/logometa.png">
+
+    <!-- SEO Meta Tags -->
+    <title><%= post.title %> | Fishtown Web Design Blog</title>
+    <meta name="description" content="<%= post.excerpt %>">
+    <link rel="canonical" href="https://fishtownwebdesign.com/blog/<%= post.slug %>" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="<%= post.title %> | Fishtown Web Design Blog">
+    <meta property="og:description" content="<%= post.excerpt %>">
+    <meta property="og:url" content="https://fishtownwebdesign.com/blog/<%= post.slug %>">
+    <meta property="og:image" content="<%= post.featuredImage || 'https://fishtownwebdesign.com/public/content/home/fish.png' %>">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta name="description" content="Boost your online presence with expert internet marketing in Fishtown. Our SEO and branding services help businesses in Fishtown stand out.">
-    <meta property="og:title" content="Internet Marketing & SEO in Fishtown | Branding Experts">
-    <meta property="og:description" content="Boost your online presence with expert internet marketing in Fishtown. Our SEO and branding services help businesses in Fishtown stand out.">
-    <link rel="canonical" href="https://fishtownwebdesign.com/internet-marketing-fishtown" />
-
-    <title><%= post.title %> | Fishtown Web Design</title>
+    <meta property="article:published_time" content="<%= post.publishedAt %>">
+    <meta property="article:author" content="Fishtown Web Design">
+    <meta property="article:section" content="<%= post.category %>">
 
 
     <!--CSS Imports-->
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" defer>
-    <link rel="stylesheet" href="/public/css/core.css">
-    <link rel="stylesheet" href="/public/css/internet-marketing-fishtown.css">
+    
+    <link rel="stylesheet" href="/public/blog/index.css">
 
     <!--Favicons-->
     <link rel="icon" type="image/png" sizes="16x16" href="../public/content/home/favicon_io/favicon-16x16.png">
@@ -27,20 +34,12 @@
     <link rel="apple-touch-icon" href="../public/content/home/favicon_io/apple-touch-icon.png">
     <link rel="icon" href="../public/content/home/favicon_io/favicon.ico">
 
-    <style>
-        .about-text p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-family: "Montserrat";
-        }
-    </style>
 </head>
 
 <body>
     <!-- Black Banner at the top -->
     <div class="top-banner">
-        EXPERT INTERNET MARKETING & SEO SERVICES IN FISHTOWN
+        NOW ACCEPTING NEW CLIENTS.
     </div>
 
     <nav class="navbar navbar-light navbar-custom">
@@ -93,11 +92,7 @@
         </div>
     </nav>
 
-    <div class="about-section">
-        <!-- About Banner with drips -->
-        <div class="about-banner">
-            <h1><%= post.title %></h1>
-        </div>
+
 
     <!-- Main Content Section -->
     <div class="content-wrapper">
@@ -105,8 +100,7 @@
         <div class="about-text">
             <div class="blog-content">
                 <h1><%= post.title %></h1>
-                <p><strong>Category:</strong> <%= post.categories %></p>
-                <p><strong>Date:</strong> <%= post.publishedDate %></p>
+                <p><strong>Published:</strong> <%= post.publishedDate %></p>
                 <div>
                     <% post.content.forEach(function(item) { %>
                         <% if (item.type === 'heading') { %>
@@ -152,11 +146,12 @@
                         <% } %>
                     <% }); %>
                 </div>
-                <a href="/">Back Home</a>
+                <a href="/blog" class="btn btn-primary">Back Home</a>
             </div>
         </div>
     </div>
 
+    
 
     <!-- Footer Section -->
     <footer class="footer text-center py-4">
@@ -180,7 +175,6 @@
         gtag('config', 'G-P9ZFLQPT8E');
     </script>
 
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script defer>
         // Set the current year dynamically
         document.getElementById("current-year").textContent = new Date().getFullYear();

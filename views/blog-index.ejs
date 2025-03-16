@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://fishtownwebdesign.com/public/content/about/logometa.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="description" content="Explore the latest blog posts from Fishtown Web Design.">
-    <meta property="og:title" content="Blog | Fishtown Web Design">
-    <meta property="og:description" content="Explore the latest blog posts from Fishtown Web Design.">
+    <!-- SEO Meta Tags -->
+    <title>Blog | Fishtown Web Design</title>
+    <meta name="description" content="">
     <link rel="canonical" href="https://fishtownwebdesign.com/blog" />
+    <meta property="og:title" content="Blog | Fishtown Web Design">
+    <meta property="og:description" content="Insights, tips, and updates on web design, SEO, and web development.">
+    <meta property="og:url" content="https://fishtownwebdesign.com/blog">
 
     <title>Blog | Fishtown Web Design</title>
 
     <!-- CSS Imports -->
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" defer>
-    <link rel="stylesheet" href="/public/css/core.css">
-    <link rel="stylesheet" href="/public/blog/index.css">
-
+    <link rel="stylesheet" href="/public/blog/index.css">   
+    <link rel="stylesheet" href="/public/css/core.css">   
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/public/content/home/favicon_io/favicon-32x32.png">
@@ -26,13 +22,11 @@
     <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
     <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
 
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap">
 </head>
 <body>
     <!-- Top Banner -->
     <div class="top-banner">
-        Expert Internet Marketing & SEO Services in Fishtown
+        NOW ACCEPTING NEW CLIENTS.
     </div>
 
     <!-- Navbar -->
@@ -42,7 +36,7 @@
                 <picture>
                     <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
                     <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
-                    <img src="/public/content/home/logo.png" alt="Fishtown Web Design Logo" loading="lazy" decoding="async" id="logo">
+                    <img src="/public/content/home/logo.png" alt="Fishtown Web Design Logo" decoding="async" id="logo">
                 </picture>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,54 +63,74 @@
     <header class="blog-header">
         <div class="container">
             <h1 class="blog-title">Fishtown Web Design Blog</h1>
-            <p class="blog-subtitle">Insights, tips, and updates on web design, SEO, and digital marketing.</p>
+            <p class="blog-subtitle">Insights, tips, and updates on web design, SEO, and web development.</p>
         </div>
+        <!--Waves Background-->
+        <picture class="cs-waves">
+            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/waves-m.svg">
+            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/waves.svg">
+            <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/waves.svg" alt="waves graphic" width="1920" height="331" aria-hidden="true">
+        </picture>
     </header>
 
-    <!-- Main Content -->
-    <main class="container blog-content">
-        <div class="row">
-            <!-- Blog Posts -->
-            <section class="col-lg-8">
-                <div class="blog-posts-list">
-                    <% if (posts && posts.length > 0) { %>
-                        <% posts.forEach(post => { %>
-                            <article class="blog-post-item">
-                                <h2 class="blog-post-title"><a href="/blog/<%= post.slug %>"><%= post.title %></a></h2>
-                                <p class="blog-meta">
-                                    <span>Posted on: <%= new Date(post.publishedDate).toLocaleDateString() %></span> | 
-                                    <span>Categories: <%= post.categories.join(', ') %></span>
-                                </p>
-                                <p class="blog-excerpt">
-                                    <% 
-                                        const firstTextBlock = post.content.find(block => block.children && block.children.length > 0);
-                                        const excerpt = firstTextBlock ? firstTextBlock.children[0].text.substring(0, 150) + '...' : 'No preview available.';
-                                    %>
-                                    <%= excerpt %>
-                                </p>
-                                <a href="/blog/<%= post.slug %>" class="btn btn-primary">Read More</a>
-                            </article>
+
+    <!-- ============================================ -->
+    <!--                   Careers                    -->
+    <!-- ============================================ -->
+
+    <section id="careers-2065">
+        <div class="cs-container">
+            <div class="cs-wrapper">
+                <% if (posts && posts.length > 0) { %>
+                    <% posts.forEach(post => { %>
+                        <div class="cs-events">
+                            <ul class="cs-card-group">
+                                <li class="cs-item">
+                                    <div class="cs-info-wrapper">
+                                        <div class="cs-info">
+                                            <h3 class="cs-h3"><%= post.title %></h3>
+                                            <div class="cs-flex">
+                                                <span class="cs-time">
+                                                    <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/orange-clock.svg" alt="icon" width="16" height="16" loading="lazy" decoding="async" aria-hidden="true">
+                                                    <%= new Date(post.publishedDate).toLocaleDateString() %>
+                                                </span>
+                                            </div>
+                                            <p class="cs-text">
+                                                <% 
+                                                    let excerpt = 'No preview available.';
+                                                    try {
+                                                        const firstTextBlock = post.content.find(block => block.children && block.children.length > 0);
+                                                        if (firstTextBlock && firstTextBlock.children[0].text) {
+                                                            excerpt = firstTextBlock.children[0].text.substring(0, 150) + '...';
+                                                        }
+                                                    } catch (e) {
+                                                        // Fallback in case of error
+                                                    }
+                                                %>
+                                                <%= excerpt %>
+                                            </p>
+                                        </div>
+                                        <a href="/blog/<%= post.slug %>" class="cs-button-solid">Read More</a>
+                                    </li>
+                                </ul>
+                            </div>
                         <% }) %>
                     <% } else { %>
                         <p class="no-posts">No blog posts available at this time.</p>
                     <% } %>
+                    <div class="category-filter">
+                        <h3>Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="/blog" class="<%= !selectedCategory ? 'active' : '' %>">All</a></li>
+                            <% categories.forEach(category => { %>
+                                <li><a href="/blog?category=<%= encodeURIComponent(category) %>" class="<%= selectedCategory === category ? 'active' : '' %>"><%= category %></a></li>
+                            <% }); %>
+                        </ul>
+                    </div>
                 </div>
-            </section>
-
-            <!-- Sidebar (Category Filter) -->
-            <aside class="col-lg-4 blog-sidebar">
-                <div class="category-filter">
-                    <h3>Categories</h3>
-                    <ul class="category-list">
-                        <li><a href="/blog" class="<%= !selectedCategory ? 'active' : '' %>">All</a></li>
-                        <% categories.forEach(category => { %>
-                            <li><a href="/blog?category=<%= encodeURIComponent(category) %>" class="<%= selectedCategory === category ? 'active' : '' %>"><%= category %></a></li>
-                        <% }); %>
-                    </ul>
-                </div>
-            </aside>
-        </div>
-    </main>
+            </div> 
+        </section>
+                                
 
     <!-- Footer -->
     <footer class="footer text-center py-4">
@@ -130,7 +144,6 @@
         <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms of Service</a> | <a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
     </footer>
 
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script defer>
         document.getElementById("current-year").textContent = new Date().getFullYear();
     </script>

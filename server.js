@@ -103,9 +103,7 @@ app.get('/blog', async (req, res) => {
 app.get('/blog/:slug', async (req, res) => {
   try {
     const url = `http://127.0.0.1:1337/api/posts?filters[slug][$eq]=${req.params.slug}&populate=categories`;
-    console.log('Fetching single post from:', url);
     const response = await axios.get(url);
-    console.log('Raw single post response:', JSON.stringify(response.data, null, 2));
     const post = response.data.data[0];
     if (!post) return res.status(404).send('Post not found');
     res.render('blog-post', { post });
@@ -143,18 +141,6 @@ app.get('/blog/category/:slug', async (req, res) => {
 });
 
 
-app.get('/posts', (req, res) => {
-  axios.get('http://127.0.0.1:1337/api/posts')
-    .then(response => {
-      console.log(response.data);  // Log the full response
-      res.json(response.data);  // Send the response to the client
-    })
-    .catch(error => {
-      console.error("Error fetching posts:", error);
-      res.status(500).send("Error fetching posts from Strapi.");
-    });
-});
-
 
 
 
@@ -166,12 +152,6 @@ const redirects = {
     '/public/pricing.html': '/pricing',
     '/public/terms-of-service.html': '/terms-of-service',
     '/public/pp.html': '/privacy-policy',
-    '/public/philadelphia-web-design.html': '/philadelphia-web-design',
-    '/public/web-design-near-me.html': '/web-design-near-me',
-    '/public/affordable-website-design-philadelphia.html': '/affordable-website-design-philadelphia',
-    '/public/philadelphia-web-design-firm.html': '/philadelphia-web-design-firm',
-    '/public/web-designer-philadelphia.html': '/web-designer-philadelphia',
-    '/public/internet-marketing-fishtown.html': '/internet-marketing-fishtown',
     '/public/faq.html': '/faq'
 };
 
@@ -192,12 +172,6 @@ app.get('/pricing', (req, res) => res.sendFile(path.join(__dirname, 'public/pric
 app.get('/contact', (req, res) => res.sendFile(path.join(__dirname, 'public/contact.html')));
 app.get('/terms-of-service', (req, res) => res.sendFile(path.join(__dirname, 'public/tos.html')));
 app.get('/privacy-policy', (req, res) => res.sendFile(path.join(__dirname, 'public/pp.html')));
-app.get('/philadelphia-web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/philadelphia-web-design.html')));
-app.get('/web-design-near-me', (req, res) => res.sendFile(path.join(__dirname, 'public/web-design-near-me.html')));
-app.get('/affordable-website-design-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/affordable-website-design-philadelphia.html')));
-app.get('/philadelphia-web-design-firm', (req, res) => res.sendFile(path.join(__dirname, 'public/philadelphia-web-design-firm.html')));
-app.get('/web-designer-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/web-designer-philadelphia.html')));
-app.get('/internet-marketing-fishtown', (req, res) => res.sendFile(path.join(__dirname, 'public/internet-marketing-fishtown.html')));
 app.get('/faq', (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html')));
 
 
