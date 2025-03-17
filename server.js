@@ -23,11 +23,91 @@ app.set('views', path.join(__dirname, 'views'));
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
 
-// Serve node_modules as static files (if needed)
-app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
+const { SitemapStream, streamToPromise } = require('sitemap');
+const { createGzip } = require('zlib');
 
-// server site map
-app.use('/sitemap.xml', express.static(path.join(__dirname, 'sitemap.xml')));
+// In-memory cache for the sitemap
+let cachedSitemap = null;
+
+// Function to generate the sitemap
+async function generateSitemap() {
+  try {
+    const posts = await getPosts();
+    const sitemap = new SitemapStream({ hostname: 'https://www.fishtownwebdesign.com' });
+
+    // Add static pages
+    sitemap.write({ url: '/', changefreq: 'monthly', priority: 1.0 });
+    sitemap.write({ url: '/about', changefreq: 'monthly', priority: 0.8 });
+    sitemap.write({ url: '/pricing', changefreq: 'monthly', priority: 0.8 });
+    sitemap.write({ url: '/contact', changefreq: 'monthly', priority: 0.8 });
+    sitemap.write({ url: '/terms-of-service', changefreq: 'yearly', priority: 0.5 });
+    sitemap.write({ url: '/privacy-policy', changefreq: 'yearly', priority: 0.5 });
+    sitemap.write({ url: '/faq', changefreq: 'monthly', priority: 0.7 });
+    sitemap.write({ url: '/blog', changefreq: 'weekly', priority: 0.9 });
+
+    // Add blog posts
+    posts.forEach(post => {
+      sitemap.write({
+        url: `/blog/${post.slug}`,
+        changefreq: 'monthly',
+        priority: 0.7,
+        lastmod: post.publishedDate || new Date().toISOString(),
+      });
+    });
+
+    sitemap.end();
+    cachedSitemap = await streamToPromise(sitemap).then(data => data.toString());
+    return cachedSitemap;
+  } catch (error) {
+    console.error('Error generating sitemap:', error);
+    throw error;
+  }
+}
+
+app.post('/webhook/update-sitemap', async (req, res) => {
+  const authHeader = req.headers['authorization'];
+  const expectedToken = `Bearer ${process.env.WEBHOOK_SECRET_TOKEN}`; // Load from .env
+  console.log(authHeader)
+  if (!authHeader || authHeader !== expectedToken) {
+    console.log('Unauthorized webhook request');
+    return res.status(401).send('Unauthorized');
+  }
+  try {
+    console.log('Received webhook to update sitemap:', req.body);
+    await generateSitemap();  
+    res.status(200).send('Sitemap updated successfully');
+  } catch (error) {
+    console.error('Error updating sitemap via webhook:', error);
+    res.status(500).send('Error updating sitemap');
+  }
+});
+
+// Route to serve the sitemap dynamically
+app.get('/sitemap.xml', async (req, res) => {
+  try {
+    if (!cachedSitemap) {
+      cachedSitemap = await generateSitemap();
+    }
+    res.header('Content-Type', 'application/xml');
+    res.send(cachedSitemap);
+  } catch (error) {
+    res.status(500).send('Error generating sitemap');
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// Remove the static sitemap route
+// Remove this line: app.use('/sitemap.xml', express.static(path.join(__dirname, 'sitemap.xml')));
 
 // Proxy API requests to Strapi running at localhost:1337
 app.use('/api', createProxyMiddleware({
@@ -44,13 +124,13 @@ const axios = require('axios');
 // Fetch all posts from Strapi, sorted by publishedDate ascending
 async function getPosts(categoryFilter = null) {
   try {
-    let url = 'http://127.0.0.1:1337/api/posts?populate=categories&sort=publishedDate:asc';
+    let url = 'http://127.0.0.1:1337/api/posts?populate=categories&sort=publishedDate:asc&publicationState=live';
     if (categoryFilter) {
       url += `&filters[categories][name][$eq]=${encodeURIComponent(categoryFilter)}`;
     }
     console.log('Fetching posts from:', url);
     const response = await axios.get(url);
-    console.log('Raw posts response:', JSON.stringify(response.data, null, 2));
+    // console.log('Raw posts response:', JSON.stringify(response.data, null, 2));
     if (!response.data || !Array.isArray(response.data.data)) {
       console.error('Invalid posts response:', response.data);
       return [];
@@ -73,7 +153,7 @@ async function getPosts(categoryFilter = null) {
 async function getCategories() {
   try {
     const response = await axios.get('http://127.0.0.1:1337/api/categories');
-    console.log('Raw categories response:', JSON.stringify(response.data, null, 2));
+    // console.log('Raw categories response:', JSON.stringify(response.data, null, 2));
     if (!response.data || !Array.isArray(response.data.data)) {
       console.error('Invalid categories response:', response.data);
       return [];
