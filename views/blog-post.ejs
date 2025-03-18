@@ -30,8 +30,8 @@
     <!--Favicons-->
     <link rel="icon" type="image/png" sizes="16x16" href="../public/content/home/favicon_io/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../public/content/home/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="../public/content/home/favicon_io/android_chrome_192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="../public/content/home/favicon_io/android_chrome_512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../public/content/home/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../public/content/home/favicon_io/android-chrome-512x512.png">
     <link rel="apple-touch-icon" href="../public/content/home/favicon_io/apple-touch-icon.png">
     <link rel="icon" href="../public/content/home/favicon_io/favicon.ico">
 
@@ -53,7 +53,7 @@
     <header id="cs-navigation">
         <div class="cs-container">
             <!--Nav Logo-->
-            <a href="" class="cs-logo" aria-label="back to home">
+            <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
                 <picture>
                     <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
                     <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
@@ -81,7 +81,7 @@
                 <div class="cs-ul-wrapper">
                     <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
                         <li class="cs-li">
-                            <a href="/public/home.html" class="cs-li-link">
+                            <a href="https://fishtownwebdesign.com/" class="cs-li-link">
                                 home
                             </a>
                         </li>
@@ -93,25 +93,25 @@
                             </span>
                             <ul class="cs-drop-ul">
                                 <li class="cs-drop-li">
-                                    <a href="/public/about.html" class="cs-li-link cs-drop-link">about us</a>
+                                    <a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a>
                                 </li>
                                 <li class="cs-drop-li">
-                                    <a href="/public/faq.html" class="cs-li-link cs-drop-link">faq</a>
+                                    <a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="cs-li">
-                            <a href="/public/pricing.html" class="cs-li-link">
+                            <a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">
                                 pricing
                             </a>
                         </li>
                         <li class="cs-li">
-                            <a href="/public/contact.html" class="cs-li-link">
+                            <a href="https://fishtownwebdesign.com/contact" class="cs-li-link">
                                 contact
                             </a>
                         </li>
                         <li class="cs-li">
-                            <a href="/blog" class="cs-li-link cs-active">
+                            <a href="https://fishtownwebdesign.com/blog" class="cs-li-link cs-active">
                                 blog
                             </a>
                         </li>
@@ -181,7 +181,7 @@
                         <% } %>
                     <% }); %>
                 </div>
-                <a href="/blog" class="btn btn-primary">Back Home</a>
+                <a href="/blog" class="btn btn-primary">Back to blog</a>
             </div>
         </div>
     </div>
@@ -200,6 +200,10 @@
         <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
     </footer>
 
+    <script defer>
+        // Set the current year dynamically
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E"></script>
     <script async>
@@ -208,11 +212,6 @@
         gtag('js', new Date());
 
         gtag('config', 'G-P9ZFLQPT8E');
-    </script>
-
-    <script defer>
-        // Set the current year dynamically
-        document.getElementById("current-year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
