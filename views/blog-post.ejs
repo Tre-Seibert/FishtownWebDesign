@@ -135,7 +135,7 @@
         <div class="about-text">
             <div class="blog-content">
                 <h1><%= post.title %></h1>
-                <p><strong>Published:</strong> <%= post.publishedDate %></p>
+                <p><strong>Published:</strong> <%= new Date(post.publishedDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></p>
                 <div>
                     <% post.content.forEach(function(item) { %>
                         <% if (item.type === 'heading') { %>

@@ -124,7 +124,7 @@ const axios = require('axios');
 // Fetch all posts from Strapi, sorted by publishedDate ascending
 async function getPosts(categoryFilter = null) {
   try {
-    let url = 'http://127.0.0.1:1337/api/posts?populate=categories&sort=publishedDate:asc&publicationState=live';
+    let url = 'http://127.0.0.1:1337/api/posts?populate=categories&sort=publishedDate:desc&publicationState=live';
     if (categoryFilter) {
       url += `&filters[categories][name][$eq]=${encodeURIComponent(categoryFilter)}`;
     }
@@ -221,19 +221,27 @@ app.get('/blog/category/:slug', async (req, res) => {
 });
 
 
-
-
-
 // Redirects
 const redirects = {
-    '/public/home.html': '/',
-    '/public/contact.html': '/contact',
-    '/public/about.html': '/about',
-    '/public/pricing.html': '/pricing',
-    '/public/terms-of-service.html': '/terms-of-service',
-    '/public/pp.html': '/privacy-policy',
-    '/public/faq.html': '/faq'
+  '/public/home.html': '/',
+  '/public/contact.html': '/contact',
+  '/public/about.html': '/about',
+  '/public/pricing.html': '/pricing',
+  '/public/terms-of-service.html': '/terms-of-service',
+  '/public/pp.html': '/privacy-policy',
+  '/public/faq.html': '/faq',
+  '/public/philadelphia-web-design.html': '/', // TO DEL in like 2 months 5/18/25
+  '/public/web-design-near-me.html': '/',
+  '/public/affordable-website-design-philadelphia.html': '/',
+  '/public/philadelphia-web-design-firm.html': '/',
+  '/public/web-designer-philadelphia.html': '/',
+  '/public/internet-marketing-fishtown.html': '/'
 };
+
+
+
+
+
 
 Object.keys(redirects).forEach((oldPath) => {
     app.get(oldPath, (req, res) => {
@@ -253,6 +261,12 @@ app.get('/contact', (req, res) => res.sendFile(path.join(__dirname, 'public/cont
 app.get('/terms-of-service', (req, res) => res.sendFile(path.join(__dirname, 'public/tos.html')));
 app.get('/privacy-policy', (req, res) => res.sendFile(path.join(__dirname, 'public/pp.html')));
 app.get('/faq', (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html')));
+app.get('/philadelphia-web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/home.html')));
+app.get('/web-design-near-me', (req, res) => res.sendFile(path.join(__dirname, 'public/home.html')));
+app.get('/affordable-website-design-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/home.html')));
+app.get('/philadelphia-web-design-firm', (req, res) => res.sendFile(path.join(__dirname, 'public/home.html')));
+app.get('/web-designer-philadelphia', (req, res) => res.sendFile(path.join(__dirname, 'public/home.html')));
+app.get('/internet-marketing-fishtown', (req, res) => res.sendFile(path.join(__dirname, 'public/home.html')));
 
 
 require('dotenv').config(); // Loads environment variables from .env file

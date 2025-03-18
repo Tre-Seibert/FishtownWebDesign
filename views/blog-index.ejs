@@ -136,7 +136,9 @@
                             <h3 class="category-title">Categories</h3>
                             <!-- Mobile Toggle Button -->
                             <button class="category-toggle" aria-label="Toggle categories">
-                                <span class="category-toggle-text">Filter</span>
+                                <span class="category-toggle-text">
+                                    <%= selectedCategory ? selectedCategory : 'All' %>
+                                </span>
                                 <img class="cs-toggle-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="toggle icon" width="15" height="15" decoding="async" aria-hidden="true">
                             </button>
                             <ul class="category-list" aria-expanded="false">
@@ -153,11 +155,18 @@
                                 <li class="cs-item">
                                     <div class="cs-info-wrapper">
                                         <div class="cs-info">
-                                            <h3 class="cs-h3"><%= post.title %></h3>
+                                            <h3 class="cs-h3">
+                                                <a href="/blog/<%= post.slug %>" class="title-link" aria-label="Read <%= post.title %>">
+                                                    <%= post.title %>
+                                                </a>
+                                            </h3>
                                             <div class="cs-flex">
                                                 <span class="cs-time">
-                                                    <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/orange-clock.svg" alt="icon" width="16" height="16" loading="lazy" decoding="async" aria-hidden="true">
-                                                    <%= new Date(post.publishedDate).toLocaleDateString() %>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
+                                                        <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z"/>
+                                                        <path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2z"/>
+                                                      </svg>
+                                                    <%= new Date(post.publishedDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %>
                                                 </span>
                                             </div>
                                             <p class="cs-text">
@@ -255,14 +264,14 @@
         }
                                         
     </script>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E"></script>
-        <script async>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-    
-            gtag('config', 'G-P9ZFLQPT8E');
-        </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E"></script>
+    <script async>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-P9ZFLQPT8E');
+    </script>
 </body>
 </html>
