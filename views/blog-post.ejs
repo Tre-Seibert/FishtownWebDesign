@@ -6,20 +6,19 @@
 
     <!-- SEO Meta Tags -->
     <title><%= post.title %> | Fishtown Web Design Blog</title>
-    <meta name="description" content="<%= post.excerpt %>">
+    <meta name="description" content="<%= post.title %>">
     <link rel="canonical" href="https://fishtownwebdesign.com/blog/<%= post.slug %>" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="<%= post.title %> | Fishtown Web Design Blog">
-    <meta property="og:description" content="<%= post.excerpt %>">
+    <meta property="og:description" content="<%= post.title %>">
     <meta property="og:url" content="https://fishtownwebdesign.com/blog/<%= post.slug %>">
     <meta property="og:image" content="<%= post.featuredImage || 'https://fishtownwebdesign.com/public/content/home/fish.png' %>">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="article:published_time" content="<%= post.publishedAt %>">
     <meta property="article:author" content="Fishtown Web Design">
-    <meta property="article:section" content="<%= post.category %>">
 
 
     <!--CSS Imports-->
