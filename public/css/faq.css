@@ -3,6 +3,9 @@
 
 /* Add link styling for FAQ page */
 #faq-1720 .cs-text .cs-link {
-    color: inherit;
+    color: #000;
     text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+    box-shadow: none;
 }
