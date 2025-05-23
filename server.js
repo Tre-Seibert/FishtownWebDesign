@@ -43,7 +43,9 @@ async function generateSitemap() {
     sitemap.write({ url: '/terms-of-service', changefreq: 'yearly', priority: 0.5 });
     sitemap.write({ url: '/privacy-policy', changefreq: 'yearly', priority: 0.5 });
     sitemap.write({ url: '/faq', changefreq: 'monthly', priority: 0.7 });
+    sitemap.write({ url: '/web-design', changefreq: 'monthly', priority: 0.8 });
     sitemap.write({ url: '/blog', changefreq: 'weekly', priority: 0.9 });
+    sitemap.write({ url: '/seo', changefreq: 'monthly', priority: 0.8 });
 
     // Add blog posts
     posts.forEach(post => {
@@ -232,7 +234,9 @@ const redirects = {
     '/public/pricing.html': '/pricing',
     '/public/terms-of-service.html': '/terms-of-service',
     '/public/pp.html': '/privacy-policy',
-    '/public/faq.html': '/faq'
+    '/public/faq.html': '/faq',
+    '/public/web-design.html': '/web-design',
+    '/public/seo.html': '/seo'
 };
 
 Object.keys(redirects).forEach((oldPath) => {
@@ -253,6 +257,8 @@ app.get('/contact', (req, res) => res.sendFile(path.join(__dirname, 'public/cont
 app.get('/terms-of-service', (req, res) => res.sendFile(path.join(__dirname, 'public/tos.html')));
 app.get('/privacy-policy', (req, res) => res.sendFile(path.join(__dirname, 'public/pp.html')));
 app.get('/faq', (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html')));
+app.get('/web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/web-design.html')));
+app.get('/seo', (req, res) => res.sendFile(path.join(__dirname, 'public/seo.html')));
 
 
 require('dotenv').config(); // Loads environment variables from .env file
