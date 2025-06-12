@@ -4,6 +4,7 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 const app = express();
 const { createProxyMiddleware } = require('http-proxy-middleware');
+const winston = require('winston');
 
 // Define a port number
 const port = 7000;
@@ -29,23 +30,48 @@ const { createGzip } = require('zlib');
 // In-memory cache for the sitemap
 let cachedSitemap = null;
 
+// Configure Winston logger
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.json()
+  ),
+  transports: [
+    new winston.transports.File({ filename: 'error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'combined.log' }),
+    new winston.transports.Console({
+      format: winston.format.combine(
+        winston.format.colorize(),
+        winston.format.simple()
+      )
+    })
+  ]
+});
+
 // Function to generate the sitemap
 async function generateSitemap() {
   try {
+    logger.info('Starting sitemap generation');
     const posts = await getPosts();
     const sitemap = new SitemapStream({ hostname: 'https://www.fishtownwebdesign.com' });
 
     // Add static pages
-    sitemap.write({ url: '/', changefreq: 'monthly', priority: 1.0 });
-    sitemap.write({ url: '/about', changefreq: 'monthly', priority: 0.8 });
-    sitemap.write({ url: '/pricing', changefreq: 'monthly', priority: 0.8 });
-    sitemap.write({ url: '/contact', changefreq: 'monthly', priority: 0.8 });
-    sitemap.write({ url: '/terms-of-service', changefreq: 'yearly', priority: 0.5 });
-    sitemap.write({ url: '/privacy-policy', changefreq: 'yearly', priority: 0.5 });
-    sitemap.write({ url: '/faq', changefreq: 'monthly', priority: 0.7 });
-    sitemap.write({ url: '/web-design', changefreq: 'monthly', priority: 0.8 });
-    sitemap.write({ url: '/blog', changefreq: 'weekly', priority: 0.9 });
-    sitemap.write({ url: '/seo', changefreq: 'monthly', priority: 0.8 });
+    const staticPages = [
+      { url: '/', changefreq: 'monthly', priority: 1.0 },
+      { url: '/about', changefreq: 'monthly', priority: 0.8 },
+      { url: '/pricing', changefreq: 'monthly', priority: 0.8 },
+      { url: '/contact', changefreq: 'monthly', priority: 0.8 },
+      { url: '/terms-of-service', changefreq: 'yearly', priority: 0.5 },
+      { url: '/privacy-policy', changefreq: 'yearly', priority: 0.5 },
+      { url: '/faq', changefreq: 'monthly', priority: 0.7 },
+      { url: '/web-design', changefreq: 'monthly', priority: 0.8 },
+      { url: '/blog', changefreq: 'weekly', priority: 0.9 },
+      { url: '/seo', changefreq: 'monthly', priority: 0.8 }
+    ];
+
+    staticPages.forEach(page => sitemap.write(page));
+    logger.info('Added static pages to sitemap', { pageCount: staticPages.length });
 
     // Add blog posts
     posts.forEach(post => {
@@ -56,12 +82,17 @@ async function generateSitemap() {
         lastmod: post.publishedDate || new Date().toISOString(),
       });
     });
+    logger.info('Added blog posts to sitemap', { postCount: posts.length });
 
     sitemap.end();
     cachedSitemap = await streamToPromise(sitemap).then(data => data.toString());
+    logger.info('Sitemap generation completed successfully');
     return cachedSitemap;
   } catch (error) {
-    console.error('Error generating sitemap:', error);
+    logger.error('Error generating sitemap', {
+      error: error.message,
+      stack: error.stack
+    });
     throw error;
   }
 }
@@ -97,20 +128,6 @@ app.get('/sitemap.xml', async (req, res) => {
   }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-// Remove the static sitemap route
-// Remove this line: app.use('/sitemap.xml', express.static(path.join(__dirname, 'sitemap.xml')));
-
 // Proxy API requests to Strapi running at localhost:1337
 app.use('/api', createProxyMiddleware({
   target: 'http://localhost:1337', // Strapi API URL
@@ -122,31 +139,59 @@ app.use('/api', createProxyMiddleware({
 
 const axios = require('axios');
 
-// Fetch all posts from Strapi, sorted by publishedDate ascending
-// Fetch all posts from Strapi, sorted by publishedDate ascending
+const STRAPI_URL = 'https://fishtownwebdesign.com';
+
+// Fetch all posts from Strapi, sorted by publishedDate descending
 async function getPosts(categoryFilter = null) {
   try {
-    let url = 'http://127.0.0.1:1337/api/posts?populate=categories&sort=publishedDate:asc&publicationState=live';
+    let url = 'http://127.0.0.1:1337/api/posts?populate=categories&populate=featuredImage&sort=publishedDate:desc&publicationState=live';
     if (categoryFilter) {
       url += `&filters[categories][name][$eq]=${encodeURIComponent(categoryFilter)}`;
     }
-    console.log('Fetching posts from:', url);
+    logger.info('Fetching posts from Strapi', { url, categoryFilter });
+    
     const response = await axios.get(url);
-    // console.log('Raw posts response:', JSON.stringify(response.data, null, 2));
     if (!response.data || !Array.isArray(response.data.data)) {
-      console.error('Invalid posts response:', response.data);
+      logger.error('Invalid posts response from Strapi', { 
+        responseData: response.data,
+        status: response.status,
+        headers: response.headers
+      });
       return [];
     }
-    return response.data.data.map(post => ({
+
+    const posts = response.data.data.map(post => ({
       id: post.id,
       title: post.title,
       slug: post.slug,
       content: post.content,
-      publishedDate: post.publishedDate, // Note: using publishedDate, not publishedAt
-      categories: post.categories.map(cat => cat.name) // Direct array of categories
+      publishedDate: post.publishedDate,
+      categories: post.categories?.map(cat => cat.name) || [],
+      featuredImage: post.featuredImage ? {
+        mobile: post.featuredImage.formats?.small?.url
+          ? STRAPI_URL + post.featuredImage.formats.small.url
+          : STRAPI_URL + post.featuredImage.url,
+        desktop: post.featuredImage.formats?.medium?.url
+          ? STRAPI_URL + post.featuredImage.formats.medium.url
+          : STRAPI_URL + post.featuredImage.url,
+        default: STRAPI_URL + post.featuredImage.url
+      } : null
     }));
+
+    logger.info('Successfully processed posts', { 
+      postCount: posts.length,
+      hasImages: posts.some(post => post.featuredImage !== null)
+    });
+    
+    return posts;
   } catch (error) {
-    console.error('Error fetching posts:', error.response?.data || error.message);
+    logger.error('Error fetching posts from Strapi', {
+      error: error.message,
+      stack: error.stack,
+      response: error.response?.data,
+      status: error.response?.status,
+      categoryFilter
+    });
     return [];
   }
 }
@@ -154,15 +199,28 @@ async function getPosts(categoryFilter = null) {
 // Fetch unique categories from Strapi
 async function getCategories() {
   try {
+    logger.info('Fetching categories from Strapi');
     const response = await axios.get('http://127.0.0.1:1337/api/categories');
-    // console.log('Raw categories response:', JSON.stringify(response.data, null, 2));
+    
     if (!response.data || !Array.isArray(response.data.data)) {
-      console.error('Invalid categories response:', response.data);
+      logger.error('Invalid categories response from Strapi', {
+        responseData: response.data,
+        status: response.status,
+        headers: response.headers
+      });
       return [];
     }
-    return response.data.data.map(category => category.name);
+
+    const categories = response.data.data.map(category => category.name);
+    logger.info('Successfully fetched categories', { categoryCount: categories.length });
+    return categories;
   } catch (error) {
-    console.error('Error fetching categories:', error.response?.data || error.message);
+    logger.error('Error fetching categories from Strapi', {
+      error: error.message,
+      stack: error.stack,
+      response: error.response?.data,
+      status: error.response?.status
+    });
     return [];
   }
 }
@@ -171,32 +229,74 @@ async function getCategories() {
 app.get('/blog', async (req, res) => {
   try {
     const categoryFilter = req.query.category || null;
+    logger.info('Blog index request received', { categoryFilter });
+    
     const posts = await getPosts(categoryFilter);
     const categories = await getCategories();
+    
+    logger.info('Rendering blog index', {
+      postCount: posts.length,
+      categoryCount: categories.length,
+      selectedCategory: categoryFilter
+    });
+    
     res.render('blog-index', { posts, categories, selectedCategory: categoryFilter });
   } catch (error) {
-    console.error('Blog route error:', error);
+    logger.error('Blog index route error', {
+      error: error.message,
+      stack: error.stack,
+      categoryFilter: req.query.category
+    });
     res.status(500).send('Something went wrong.');
   }
 });
 
-// Single post route (for reference, assuming it exists)
 // Single post route
 app.get('/blog/:slug', async (req, res) => {
   try {
-    const url = `http://127.0.0.1:1337/api/posts?filters[slug][$eq]=${req.params.slug}&populate=categories`;
+    const { slug } = req.params;
+    logger.info('Single post request received', { slug });
+    
+    const url = `http://127.0.0.1:1337/api/posts?filters[slug][$eq]=${slug}&populate=categories&populate=featuredImage`;
     const response = await axios.get(url);
+    
+    if (!response.data.data || response.data.data.length === 0) {
+      logger.warn('Post not found', { slug });
+      return res.status(404).send('Post not found');
+    }
+    
     const post = response.data.data[0];
-    if (!post) return res.status(404).send('Post not found');
+    // Process the featured image like we do in getPosts
+    if (post.featuredImage) {
+      post.featuredImage = {
+        mobile: post.featuredImage.formats?.small?.url
+          ? STRAPI_URL + post.featuredImage.formats.small.url
+          : STRAPI_URL + post.featuredImage.url,
+        desktop: post.featuredImage.formats?.medium?.url
+          ? STRAPI_URL + post.featuredImage.formats.medium.url
+          : STRAPI_URL + post.featuredImage.url,
+        default: STRAPI_URL + post.featuredImage.url
+      };
+    }
+    
+    logger.info('Successfully fetched post', { 
+      slug,
+      hasCategories: post.categories?.length > 0,
+      hasContent: !!post.content,
+      hasFeaturedImage: !!post.featuredImage
+    });
+    
     res.render('blog-post', { post });
   } catch (error) {
-    console.error('Single post error:', error.response?.data || error.message);
+    logger.error('Single post route error', {
+      error: error.message,
+      stack: error.stack,
+      slug: req.params.slug,
+      response: error.response?.data
+    });
     res.status(500).send('Something went wrong.');
   }
 });
-
-
-
 
 // Filter Posts by Category Route using category slug
 app.get('/blog/category/:slug', async (req, res) => {
@@ -221,10 +321,6 @@ app.get('/blog/category/:slug', async (req, res) => {
     res.status(500).send('Error fetching category or posts from Strapi.');
   }
 });
-
-
-
-
 
 // Redirects
 const redirects = {
@@ -259,7 +355,6 @@ app.get('/privacy-policy', (req, res) => res.sendFile(path.join(__dirname, 'publ
 app.get('/faq', (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html')));
 app.get('/web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/web-design.html')));
 app.get('/seo', (req, res) => res.sendFile(path.join(__dirname, 'public/seo.html')));
-
 
 require('dotenv').config(); // Loads environment variables from .env file
 //// Configure Nodemailer with Zoho SMTP
@@ -303,10 +398,21 @@ app.post('/submit-appointment', async (req, res) => {
   }
 });
 
-
-
-
 // Start the server and listen on the specified port
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
+});
+
+// Add error handling middleware at the end of the file
+app.use((err, req, res, next) => {
+  logger.error('Unhandled error occurred', {
+    error: err.message,
+    stack: err.stack,
+    path: req.path,
+    method: req.method,
+    query: req.query,
+    body: req.body
+  });
+  
+  res.status(500).send('An unexpected error occurred');
 });
