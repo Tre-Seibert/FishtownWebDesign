@@ -167,6 +167,51 @@
 </head>
 <body>
 
+    <!-- ============================================ -->
+    <!--                 Popup                        -->
+    <!-- ============================================ -->
+
+    <div id="cs-modal-1605" style="z-index: -10">
+        <div class="cs-wrapper">
+            <button id="cs-close-1605" class="cs-close" aria-label="close pop up">
+                <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/Close.svg" alt="clothing" width="24" height="24" aria-hidden="true">
+            </button>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/public/content/home/philadelphia-nighttime-city-skyline-m.webp">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/public/content/home/philadelphia-nighttime-city-skyline.webp">
+                <img loading="lazy" decoding="async" src="/public/content/home/philadelphia-nighttime-city-skyline.jpg" alt="clothing" width="413" height="500">
+            </picture>
+            <div class="cs-content">
+                <span class="cs-header">
+                    Join Our Newsletter Get 50% Off Your First Month
+                </span>
+                <p class="cs-text">
+                    Stay updated with the latest web design trends, SEO tips, and Philadelphia business insights. Join our community of local business owners and get exclusive offers delivered to your inbox.
+                </p>
+                <!--If you remove the form because you don't want it, make sure you remove "CSsubmitButton.addEventListener('click', handleClose);" in the JS code. It is adding an event listener on the submit button, if you remove the submit button JS freaks out that its trying to add an event listener to something that isn't there and won't work -->
+                <form class="cs-form" name="Newsletter Form" method="post" id="newsletter-form">
+                    <input class="cs-input" type="email" id="cs-email-1605" name="email" placeholder="Email Address" required>
+                    <button id="cs-submit-1605" class="cs-button-solid cs-submit" type="submit">Subscribe Now</button>
+                </form>
+                <div id="newsletter-message" style="display: none; margin-top: 10px; padding: 10px; border-radius: 5px;"></div>
+                <div class="cs-social">
+                    <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link">
+                        <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/facebook-1a.svg" alt="logo" width="12" height="12" aria-hidden="true" decoding="async">
+                    </a>
+                    <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link">
+                        <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/instagram1a.svg" alt="logo" width="12" height="12" aria-hidden="true" decoding="async">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!--                 Top Banner                   -->
+    <!-- ============================================ -->
+
     <div class="cs-topper-card">
         <!-- Black Banner at the top -->
         <div class="top-banner">
@@ -270,8 +315,10 @@
         </div>
     </header>
 
+    <!-- ============================================ -->
+    <!--                 Intro                        -->
+    <!-- ============================================ -->
 
-        <!-- Main Content Section -->
     <div class="cs-intro">
         <p class="tagline">
             Philadelphia's premier<br>
@@ -502,7 +549,10 @@
                                 
                                     
   
-    <!-- Footer Section -->
+    <!-- ============================================ -->
+    <!--                 Footer                       -->
+    <!-- ============================================ -->
+
     <footer class="footer">
         <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
         <picture>
@@ -514,6 +564,113 @@
         <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
     </footer>
 
+    <!-- ============================================ -->
+    <!--                 Scripts                    -->
+    <!-- ============================================ -->
+
+    <script>
+        // your local storage reset for local testing. uncomment this command so you can still access you pop up after clicking the close or submit button.
+        localStorage.setItem('modalClosed', 'false');
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Variables
+            var CSmodal = document.getElementById("cs-modal-1605");
+            var CScloseButton = document.getElementById("cs-close-1605");
+            var CSsubmitButton = document.getElementById("cs-submit-1605");
+
+            // Check localStorage to see if the modal has been closed before
+            if (localStorage.getItem('modalClosed') !== 'true') {
+                // Show the modal after 5 seconds
+                setTimeout(function () {
+                    CSmodal.classList.add('cs-loaded');
+                    CSmodal.style.zIndex = 12000; // Set z-index to 12000 to make it visible
+                }, 0);
+            } else {
+                // If modal is marked as closed, make sure it's hidden
+                CSmodal.classList.add('cs-closed');
+                CSmodal.classList.remove('cs-loaded');
+                CSmodal.style.zIndex = -10000; // Set z-index to -1000 to keep it hidden
+            }
+
+            // Close button event listener
+            CScloseButton.addEventListener('click', function () {
+                // Add 'cs-closed' class and remove 'cs-loaded' class
+                CSmodal.classList.add('cs-closed');
+                CSmodal.classList.remove('cs-loaded');
+                CSmodal.style.zIndex = -1000; // Set z-index to -1000 to hide the modal
+
+                // Store the closed state in localStorage
+                localStorage.setItem('modalClosed', 'true');
+            });
+
+            // Handle newsletter form submission
+            var newsletterForm = document.getElementById('newsletter-form');
+            var newsletterMessage = document.getElementById('newsletter-message');
+            var emailInput = document.getElementById('cs-email-1605');
+
+            newsletterForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const email = emailInput.value.trim();
+                
+                if (!email) {
+                    showMessage('Please enter your email address.', 'error');
+                    return;
+                }
+
+                // Disable submit button during submission
+                CSsubmitButton.disabled = true;
+                CSsubmitButton.textContent = 'Subscribing...';
+
+                try {
+                    const response = await fetch('/subscribe-newsletter', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ email: email })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        showMessage(data.message, 'success');
+                        emailInput.value = '';
+                        // Close modal after successful subscription
+                        setTimeout(() => {
+                            CSmodal.classList.add('cs-closed');
+                            CSmodal.classList.remove('cs-loaded');
+                            CSmodal.style.zIndex = -1000;
+                            localStorage.setItem('modalClosed', 'true');
+                        }, 2000);
+                    } else {
+                        showMessage(data.message, 'error');
+                    }
+                } catch (error) {
+                    showMessage('There was an error processing your subscription. Please try again.', 'error');
+                } finally {
+                    // Re-enable submit button
+                    CSsubmitButton.disabled = false;
+                    CSsubmitButton.textContent = 'Subscribe Now';
+                }
+            });
+
+            function showMessage(message, type) {
+                newsletterMessage.textContent = message;
+                newsletterMessage.style.display = 'block';
+                newsletterMessage.style.backgroundColor = type === 'success' ? '#d4edda' : '#f8d7da';
+                newsletterMessage.style.color = type === 'success' ? '#155724' : '#721c24';
+                newsletterMessage.style.border = type === 'success' ? '1px solid #c3e6cb' : '1px solid #f5c6cb';
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    newsletterMessage.style.display = 'none';
+                }, 5000);
+            }
+
+        });
+                                
+    </script>
     <script defer>
         // Set the current year dynamically
         document.getElementById("current-year").textContent = new Date().getFullYear();

@@ -5,6 +5,7 @@ const path = require('path');
 const app = express();
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const winston = require('winston');
+const { pool, testConnection, initializeDatabase } = require('./public/scripts/database');
 
 // Define a port number
 const port = 7000;
@@ -356,51 +357,96 @@ app.get('/faq', (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html
 app.get('/web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/web-design.html')));
 app.get('/seo', (req, res) => res.sendFile(path.join(__dirname, 'public/seo.html')));
 
-require('dotenv').config(); // Loads environment variables from .env file
-//// Configure Nodemailer with Zoho SMTP
-const transporter = nodemailer.createTransport({
-  host: 'smtp.zoho.com', // For paid organization users
-  port: 465,               // SSL port
-  secure: true,            // Use SSL
-  auth: {
-    user: process.env.EMAIL_USER, // Fetch the email address from .env
-    pass: process.env.EMAIL_PASS, // Fetch the app password from .env
-  },
-});
 
-// Route to handle form submissions
-app.post('/submit-appointment', async (req, res) => {
-  const { name, email, phone, message } = req.body;
 
-  if (!name || !email || !phone || !message) {
-      return res.status(400).send('All fields are required.');
+// Route to handle newsletter subscriptions
+app.post('/subscribe-newsletter', async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ 
+      success: false, 
+      message: 'Email address is required.' 
+    });
   }
 
-  const mailOptions = {
-      from: '"Fishtown Web Designs" <info@fishtownwebdesign.com>',
-      to: 'info@fishtownwebdesign.com',
-      subject: 'New Appointment Request',
-      text: `
-      You have received a new appointment request:
-      Name: ${name}
-      Email: ${email}
-      Phone: ${phone}
-      Message: ${message}
-      `,
-  };
+  // Basic email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ 
+      success: false, 
+      message: 'Please enter a valid email address.' 
+    });
+  }
 
   try {
-      await transporter.sendMail(mailOptions);
-      res.send('Your appointment request has been submitted successfully!');
+    const connection = await pool.getConnection();
+    
+    // Check if email already exists
+    const [existingRows] = await connection.execute(
+      'SELECT id, status FROM newsletter_subscriptions WHERE email = ?',
+      [email]
+    );
+
+    if (existingRows.length > 0) {
+      const existing = existingRows[0];
+      
+      if (existing.status === 'active') {
+        connection.release();
+        return res.status(400).json({ 
+          success: false, 
+          message: 'This email is already subscribed to our newsletter.' 
+        });
+      } else {
+        // Reactivate subscription
+        await connection.execute(
+          'UPDATE newsletter_subscriptions SET status = "active", subscribed_at = CURRENT_TIMESTAMP WHERE email = ?',
+          [email]
+        );
+        connection.release();
+        
+        logger.info('Newsletter subscription reactivated', { email });
+        return res.json({ 
+          success: true, 
+          message: 'Welcome back! Your subscription has been reactivated.' 
+        });
+      }
+    }
+
+    // Insert new subscription
+    await connection.execute(
+      'INSERT INTO newsletter_subscriptions (email) VALUES (?)',
+      [email]
+    );
+    
+    connection.release();
+    
+    logger.info('New newsletter subscription added', { email });
+    res.json({ 
+      success: true, 
+      message: 'Thank you for subscribing to our newsletter!' 
+    });
+    
   } catch (error) {
-      console.error('Error sending email:', error);
-      res.status(500).send('There was an error submitting your appointment request.');
+    logger.error('Error handling newsletter subscription', {
+      error: error.message,
+      stack: error.stack,
+      email: email
+    });
+    res.status(500).json({ 
+      success: false, 
+      message: 'There was an error processing your subscription. Please try again later.' 
+    });
   }
 });
 
 // Start the server and listen on the specified port
-app.listen(port, () => {
+app.listen(port, async () => {
   console.log(`Server is running on http://localhost:${port}`);
+  
+  // Initialize database connection and tables
+  await testConnection();
+  await initializeDatabase();
 });
 
 // Add error handling middleware at the end of the file

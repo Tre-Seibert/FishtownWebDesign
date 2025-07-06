@@ -1,39 +1,28 @@
+// Handle form submission with Web3Forms
 document.querySelector('#cs-form-1105').addEventListener('submit', async (event) => {
-    event.preventDefault(); // Prevent the form's default behavior
-
-    // Extract form data
-    const formData = {
-        name: document.querySelector('#name-1105').value,
-        email: document.querySelector('#email-1105').value,
-        phone: document.querySelector('#phone-1105').value,
-        message: document.querySelector('#message-1105').value,
-    };
-
-    try {
-        // Send form data to the server
-        const response = await fetch('/submit-appointment', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData),
-        });
-
-        // Process server response
-        const result = await response.text();
-
-        // Show the modal with the response
-        document.querySelector('#modal-message').textContent = result || 'Your message has been sent. Please allow 1 business day for a response.';
-        document.querySelector('#responseModal').style.display = 'block';
-
-        // Optionally, clear the form
-        document.querySelector('#cs-form-1105').reset();
-    } catch (error) {
-        console.error('Error submitting the form:', error);
-        document.querySelector('#modal-message').textContent = 'There was an error submitting the form. Please try again.';
-        document.querySelector('#responseModal').style.display = 'block';
-    }
+    // Don't prevent default - let Web3Forms handle the submission
+    // The form will submit to Web3Forms and redirect back to our site
+    
+    // Show loading state
+    const submitButton = event.target.querySelector('.cs-submit');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+    
+    // The form will naturally submit to Web3Forms
+    // Web3Forms will redirect back to our site with #success hash
+    // Our main script will detect this and show the modal
 });
 
 // Close the modal when the "Close" button is clicked
 document.querySelector('#closeModal').addEventListener('click', () => {
     document.querySelector('#responseModal').style.display = 'none';
+});
+
+// Close modal when clicking outside of it
+window.addEventListener('click', (event) => {
+    const modal = document.querySelector('#responseModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
 });

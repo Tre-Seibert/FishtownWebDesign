@@ -217,7 +217,19 @@
                 <span class="cs-topper">Contact Us</span>
                 <h2 class="cs-title">Make An Appointment</h2>
                 <!--Form-->
-                <form class="cs-form" id="cs-form-1105" name="Contact Form">
+                <form action="https://api.web3forms.com/submit" method="POST" class="cs-form" id="cs-form-1105" name="Contact Form">
+                    <!-- Replace with your Access Key -->
+                    <input type="hidden" name="access_key" value="ba3ec559-ea59-4ba5-92e1-e13f47bea9dd">
+                    
+                    <!-- Optional: Subject for the email -->
+                    <input type="hidden" name="subject" value="New Appointment Request from Fishtown Web Design">
+                    
+                    <!-- Optional: From Name in email -->
+                    <input type="hidden" name="from_name" value="Fishtown Web Design Website">
+                    
+                    <!-- Custom Redirection to show modal -->
+                    <input type="hidden" name="redirect" value="https://fishtownwebdesign.com/contact#success">
+                    
                     <label class="cs-label">
                         Name
                         <input class="cs-input" required type="text" id="name-1105" name="name" placeholder="Name">
@@ -234,6 +246,9 @@
                         Message
                         <textarea class="cs-input cs-textarea" required name="message" id="message-1105" placeholder="Write message..."></textarea>
                     </label>
+                    <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                     <button class="cs-button-solid cs-submit" type="submit">Make an Appointment</button>
                 </form>
                 <!-- Modal for server response -->
@@ -296,6 +311,16 @@
     <script>
         // Set the current year dynamically
         document.getElementById("current-year").textContent = new Date().getFullYear();
+        
+        // Check if we're returning from Web3Forms submission (URL has #success)
+        if (window.location.hash === '#success') {
+            // Show the success modal
+            document.querySelector('#modal-message').textContent = 'Your appointment request has been submitted successfully! We will get back to you within 1 business day.';
+            document.querySelector('#responseModal').style.display = 'block';
+            
+            // Clear the hash from URL
+            history.replaceState(null, null, window.location.pathname);
+        }
     </script>
     <script>
         // add classes for mobile navigation toggling
