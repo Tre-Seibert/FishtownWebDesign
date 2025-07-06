@@ -1,2 +1,244 @@
 @media only screen and (min-width:0rem){.cs-intro{padding:clamp(1rem,54vw,2rem) 1rem clamp(3.75rem,7.5vw,6.25rem)}.tagline{font-size:24px;font-weight:400;color:#333;margin-top:5rem;font-family:"DM Serif Display"}.btn-get-started{background-color:#000;color:#fff;font-weight:700;font-size:12px;padding:10px 20px;border-radius:0;border:none;text-transform:uppercase;font-family:Horizon;text-decoration:none}.intro{text-align:left!important}@keyframes fadeUp{0%{opacity:0;transform:translateY(20px)}50%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-20px)}}.rotating-word{font-family:Horizon,"sans-serif";color:#000;display:inline-block;animation:5s infinite fadeUp;position:relative;font-size:16px}#hero-2149{padding:clamp(2.75rem,54vw,8rem) 1rem clamp(3.75rem,7.5vw,6.25rem);overflow:hidden;position:relative;z-index:1}#hero-2149 .cs-container{width:100%;max-width:80rem;margin:auto;display:flex;justify-content:center;align-items:center}#hero-2149 .cs-content{text-align:center;width:100%;display:flex;flex-direction:column;align-items:center}#hero-2149 .cs-title{font-size:clamp(2.4375rem, 5vw, 3.8125rem);max-width:30ch;color:var(--bodyTextColorWhite)}#hero-2149 .cs-text{color:var(--bodyTextColorWhite);font-size:clamp(1rem, 2vw, 1.25rem);max-width:55ch;margin-bottom:2rem;opacity:.8}#hero-2149 .cs-button-solid{font-size:1rem;font-weight:700;line-height:clamp(2.875rem, 5.5vw, 3.5rem);text-align:center;text-decoration:none;min-width:12.5rem;margin:0;box-sizing:border-box;padding:0 clamp(2rem,4vw,3rem);background-color:var(--primary);color:var(--bodyTextColorWhite);display:inline-block;position:relative;z-index:1;transition:color .3s}#hero-2149 .cs-background,#hero-2149 .cs-background img,#hero-2149 .cs-background:before,#hero-2149 .cs-button-solid:before{height:100%;position:absolute;top:0;left:0}#hero-2149 .cs-button-solid:before{content:"";width:0%;background:#fff;opacity:1;z-index:-1;transition:width .3s}#hero-2149 .cs-button-solid:hover{color:var(--headerColor)}#hero-2149 .cs-button-solid:hover:before{width:100%}#hero-2149 .cs-background{width:100%;display:block;z-index:-2}#hero-2149 .cs-background:before{content:"";width:100%;background:linear-gradient(0deg,rgba(0,0,0,.5) 0,rgba(0,0,0,.5) 100%);pointer-events:none;opacity:1;display:block;z-index:1}#hero-2149 .cs-background img{width:100%;object-fit:cover}#services-964 .cs-background img,#services-964 .cs-waves img{object-fit:cover}#services-964{padding:var(--sectionPadding);position:relative;z-index:1;background:url(/public/content/svgs/stripes.svg)}#services-964 .cs-container{width:100%;max-width:34.375rem;margin:auto;display:flex;flex-direction:column;align-items:center;gap:clamp(3rem,6vw,4rem)}#services-964 .cs-content{text-align:center;width:100%;max-width:50rem;display:flex;flex-direction:column;align-items:center}#services-964 .cs-text,#services-964 .cs-title{max-width:100%}#services-964 .cs-card-group{margin:0;padding:0;width:100%;display:grid;grid-template-columns:repeat(12,1fr);row-gap:1.875rem}#services-964 .cs-item{width:100%;text-align:left;list-style:none;margin:2.75rem 0 0;padding:0 clamp(1.5rem,4vw,2.5rem) clamp(1.5rem,6vw,4rem);background-color:#f7f3ee;box-sizing:border-box;grid-column:span 12;grid-row:span 1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;position:relative;z-index:1}#services-964 .cs-icon-wrapper{width:5.5rem;height:5.5rem;margin:-2.75rem auto 2rem 0;background-color:var(--primary);display:flex;justify-content:center;align-items:center;position:relative;left:calc(clamp(1.5rem,4vw,2.5rem) * -1)}#services-964 .cs-icon{width:2.5rem;height:auto}#services-964 .cs-h3{font-size:clamp(1.25rem, 2.5vw, 1.5625rem);line-height:1.2em;font-weight:700;text-align:inherit;margin:0 0 .75rem;color:var(--headerColor);font-family:"DM Serif Display"}#services-964 .cs-item-text{font-size:clamp(.875rem, 1.5vw, 1rem);line-height:1.5em;max-width:18.75rem;margin:0 0 2rem;padding:0;color:var(--bodyTextColor);font-family:Montserrat}#services-964 .cs-link{text-decoration:none;font-size:.8rem;line-height:1.2em;font-weight:700;margin:0;padding:0;color:var(--primary);position:relative;transition:color .3s}#services-964 .cs-link:hover{color:#fff}#services-964 .cs-link:before{content:"";width:100%;height:1px;background:currentColor;opacity:1;position:absolute;display:block;bottom:0;left:0}#services-964 .cs-background,#services-964 .cs-background img,#services-964 .cs-background:before,#services-964 .cs-waves img{width:100%;height:100%;position:absolute;top:0;left:0}#services-964 .cs-background{opacity:0;display:block;z-index:-1;transition:opacity .3s}#services-964 .cs-background:before{content:"";display:block;background:#1a1a1a;opacity:.84;z-index:1}#services-964 .cs-waves{width:100%;height:13.875rem;background-color:#000;position:absolute;bottom:0;left:0;z-index:-1}#wed{color:#4a4a4a}}@media only screen and (min-width:90rem){.cs-intro{margin-left:5rem}#hero-2149{min-height:40vh;padding:clamp(2.75rem,54vw,12rem) 1rem clamp(3.75rem,7.5vw,6.25rem)}#hero-2149 .cs-background img{object-position:0% 65%}}@media only screen and (min-width:135rem){#hero-2149{min-height:55vh;padding:clamp(2.75rem,54vw,16rem) 1rem clamp(3.75rem,7.5vw,6.25rem)}#hero-2149 .cs-background img{object-position:0% 65%}}@media only screen and (min-width:48rem){.tagline{font-size:28px}.btn-get-started{font-size:14px;padding:12px 24px}#services-964 .cs-container{max-width:80rem}#services-964 .cs-card-group{column-gap:1.875rem}#services-964 .cs-item{grid-column:span 6}}@media only screen and (min-width:64rem){#services-964 .cs-item{grid-column:span 4}.text-overlay{position:relative}#services-1169 .cs-container{max-width:90rem}}@media only screen and (min-width:0rem){#services-1169 .cs-h3,#services-1169 .cs-link{transition:color .3s;text-align:inherit;display:flex}#services-1169 .portfolio-btn-get-started{max-width:55%;margin-top:20px;background-color:#000;color:#fff;font-weight:700;font-size:12px;padding:1rem;text-align:center;border-radius:0;border:none;text-transform:uppercase;font-family:Horizon;text-decoration:none}#services-1169 .cs-h3,#services-1169 .cs-item-text{width:100%;box-sizing:border-box;line-height:1.5em;font-family:Montserrat}#services-1169{padding:var(--sectionPadding)}#services-1169 .cs-container{display:flex;flex-direction:column;align-items:center;margin:auto;max-width:51.5rem;width:100%;gap:clamp(3rem,6vw,4rem)}#services-1169 .cs-content{display:flex;flex-direction:column;align-items:center;width:100%;text-align:center}#services-1169 .cs-title{max-width:20ch}#services-1169 .cs-card-group{display:grid;align-items:stretch;grid-template-columns:repeat(12,1fr);margin:0;width:100%;padding:0;gap:clamp(1rem,2vw,1.25rem)}#services-1169 .cs-item{z-index:1;position:relative;display:flex;flex-direction:column;align-items:flex-start;width:100%;list-style:none;text-align:left;grid-column:span 12;max-width:25rem;margin:0 auto}#services-1169 .cs-picture{position:relative;display:block;height:clamp(11.25rem,24vw,15rem);width:100%;overflow:hidden}#services-1169 .cs-picture img{z-index:-1;position:absolute;top:0;left:0;height:100%;width:100%;object-fit:cover;transition:transform .65s}#services-1169 .cs-info{display:flex;flex-direction:column;padding:1.5rem;background-color:#f3eee8}#services-1169 .cs-h3{justify-content:flex-start;align-items:center;font-size:clamp(1.25rem, 2.5vw, 1.5625rem);font-weight:700;color:var(--headerColor);margin:0 0 .75rem}#services-1169 .cs-item-text{font-size:clamp(.875rem, 1.5vw, 1rem);color:var(--bodyTextColor);text-align:inherit;margin:0}#services-1169 .cs-link{justify-content:flex-start;align-items:center;text-decoration:none;font-size:1rem;line-height:1.2em;font-weight:700;color:var(--headerColor);margin-top:1.25rem}#portfolio{color:#4a4a4a}}@media only screen and (min-width:48rem){#services-1169 .cs-container{max-width:59rem}#services-1169 .cs-item{grid-column:span 4;max-width:initial}#services-1169 .portfolio-btn-get-started{font-size:14px;padding:12px 24px;max-width:50%;margin-top:20px}}@media only screen and (min-width:64rem){#services-1169 .cs-container{max-width:90rem}}
 
+/*-- -------------------------- -->
+<---           Modal            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #cs-modal-1605 {
+      padding: var(--sectionPadding);
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transition: opacity .3s, visibility .3s;
+      transition-delay: .3;
+    }
+    #cs-modal-1605.cs-loaded {
+      /* when the page finishes loading, the JS will add this class to the cs-modal which will then animate into existence */
+      opacity: 1;
+      visibility: visible;
+    }
+    #cs-modal-1605.cs-loaded .cs-wrapper {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    #cs-modal-1605.cs-closed {
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1000;
+    }
+    #cs-modal-1605 .cs-wrapper {
+      width: 100%;
+      /* changes to 846px at tbalet */
+      max-width: 25rem;
+      background-color: #fff;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+      transform: translateY(12.25rem);
+      transition: transform .7s, opacity .3s;
+      transition-delay: .5s;
+    }
+    #cs-modal-1605 .cs-content {
+      text-align: center;
+      /* 40px - 60px top & bottom */
+      /* 24px - 40px left & right */
+      padding: clamp(2.5rem, 8vw, 3.75rem) clamp(1.5rem, 3vw, 2.5rem);
+      /* prevents padding from affecting height and width */
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #cs-modal-1605 .cs-close {
+      width: 2.5rem;
+      height: 2.5rem;
+      border: 1px solid transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      transition: border-color 0.3s, transform 0.5s;
+    }
+    #cs-modal-1605 .cs-close:hover {
+      cursor: pointer;
+      border-color: #e8e8e8;
+      transform: rotate(90deg);
+    }
+    #cs-modal-1605 .cs-close img {
+      width: 1.5rem;
+      height: auto;
+    }
+    #cs-modal-1605 .cs-picture {
+      width: 100%;
+      height: 60vw;
+      /* removed at tablet */
+      max-height: 15.625rem;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+    #cs-modal-1605 .cs-picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #cs-modal-1605 .cs-header {
+      /* 20px - 25px */
+      font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+      text-align: inherit;
+      line-height: 1.2em;
+      font-weight: 700;
+      max-width: 20ch;
+      /* 12px - 16px */
+      margin: 0 0 clamp(0.75rem, 2vw, 1rem);
+      display: block;
+    }
+    #cs-modal-1605 .cs-text {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+      /* 28px - 32px */
+      margin: 0 0 clamp(1.75rem, 2.5vw, 2rem);
+    }
+    #cs-modal-1605 .cs-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    #cs-modal-1605 .cs-input {
+      font-size: 1rem;
+      width: 100%;
+      height: clamp(2.875rem, 5.5vw, 3.5rem);
+      margin: 0;
+      padding: 0;
+      padding-left: 1.25rem;
+      background-color: #f7f7f7;
+      border: none;
+      /* prevents padding from adding to width and height */
+      box-sizing: border-box;
+      display: block;
+    }
+    #cs-modal-1605 .cs-input::placeholder {
+      color: #767676;
+    }
+    #cs-modal-1605 .cs-button-solid {
+      font-size: 1rem;
+      /* 46px - 56px */
+      line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+      color: #fff;
+      min-width: 9.375rem;
+      padding: 0 1.5rem;
+      background-color: var(--primaryLight);
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      /* prevents padding from adding to the width */
+      box-sizing: border-box;
+    }
+    #cs-modal-1605 .cs-button-solid:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      background: #000;
+      opacity: 1;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: width 0.3s;
+    }
+    #cs-modal-1605 .cs-button-solid:hover:before {
+      width: 100%;
+    }
+    #cs-modal-1605 .cs-submit {
+      width: 100%;
+      border: none;
+    }
+    #cs-modal-1605 .cs-submit:hover {
+      cursor: pointer;
+    }
+    #cs-modal-1605 .cs-social {
+      height: 2rem;
+      margin-top: 2rem;
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      transition: opacity 0.3s, visibility 0.3s, height 0.3s;
+    }
+    #cs-modal-1605 .cs-social-link {
+      text-decoration: none;
+      width: 2rem;
+      height: 2rem;
+      background-color: #484848;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s;
+    }
+    #cs-modal-1605 .cs-social-link:hover {
+      background-color: var(--primary);
+    }
+    #cs-modal-1605 .cs-social-link:hover .cs-social-icon {
+      opacity: 1;
+      filter: grayscale(1) brightness(10000%);
+    }
+    #cs-modal-1605 .cs-social-icon {
+      width: 0.75rem;
+      height: auto;
+      filter: grayscale(1) brightness(1000%);
+      opacity: 0.6;
+      display: block;
+      transition: opacity 0.6s;
+    }
+  }
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    #cs-modal-1605 .cs-wrapper {
+      max-width: 52.875rem;
+      flex-flow: row;
+      align-items: stretch;
+    }
+    #cs-modal-1605 .cs-close {
+      background-color: transparent;
+      top: 1rem;
+      right: 1rem;
+    }
+    #cs-modal-1605 .cs-content {
+      width: 50%;
+    }
+    #cs-modal-1605 .cs-picture {
+      width: 50%;
+      min-height: 27rem;
+      height: auto;
+      max-height: 100%;
+    }
+  }
+                                  
