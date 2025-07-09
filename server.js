@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
@@ -356,6 +358,7 @@ app.get('/privacy-policy', (req, res) => res.sendFile(path.join(__dirname, 'publ
 app.get('/faq', (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html')));
 app.get('/web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/web-design.html')));
 app.get('/seo', (req, res) => res.sendFile(path.join(__dirname, 'public/seo.html')));
+app.get('/unsubscribe', (req, res) => res.sendFile(path.join(__dirname, 'public/unsubscribe.html')));
 
 
 
@@ -436,6 +439,80 @@ app.post('/subscribe-newsletter', async (req, res) => {
     res.status(500).json({ 
       success: false, 
       message: 'There was an error processing your subscription. Please try again later.' 
+    });
+  }
+});
+
+// Route to handle newsletter unsubscriptions
+app.post('/unsubscribe-newsletter', async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ 
+      success: false, 
+      message: 'Email address is required.' 
+    });
+  }
+
+  // Basic email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ 
+      success: false, 
+      message: 'Please enter a valid email address.' 
+    });
+  }
+
+  try {
+    const connection = await pool.getConnection();
+    
+    // Check if email exists and is currently subscribed
+    const [existingRows] = await connection.execute(
+      'SELECT id, status FROM newsletter_subscriptions WHERE email = ?',
+      [email]
+    );
+
+    if (existingRows.length === 0) {
+      connection.release();
+      return res.status(404).json({ 
+        success: false, 
+        message: 'This email address is not subscribed to our newsletter.' 
+      });
+    }
+
+    const existing = existingRows[0];
+    
+    if (existing.status === 'unsubscribed') {
+      connection.release();
+      return res.status(400).json({ 
+        success: false, 
+        message: 'This email address has already been unsubscribed from our newsletter.' 
+      });
+    }
+
+    // Update subscription status to unsubscribed
+    await connection.execute(
+      'UPDATE newsletter_subscriptions SET status = "unsubscribed" WHERE email = ?',
+      [email]
+    );
+    
+    connection.release();
+    
+    logger.info('Newsletter subscription cancelled', { email });
+    res.json({ 
+      success: true, 
+      message: 'You have been successfully unsubscribed from our newsletter. We\'re sorry to see you go!' 
+    });
+    
+  } catch (error) {
+    logger.error('Error handling newsletter unsubscription', {
+      error: error.message,
+      stack: error.stack,
+      email: email
+    });
+    res.status(500).json({ 
+      success: false, 
+      message: 'There was an error processing your unsubscription. Please try again later.' 
     });
   }
 });
