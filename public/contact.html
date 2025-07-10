@@ -100,263 +100,265 @@
 </head>
 
 <body>
-    <div class="cs-topper-card">
-        <!-- Black Banner at the top -->
-        <div class="top-banner">
-            NOW ACCEPTING NEW CLIENTS.
-        </div>
-    </div>
-
-
-    <!-- ============================================ -->
-    <!--                 Navigation                   -->
-    <!-- ============================================ -->
-
-    <header id="cs-navigation">
-        <div class="cs-container">
-            <!--Nav Logo-->
-            <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
-                <picture>
-                    <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
-                    <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
-                    <img 
-                        src="https://fishtownwebdesign.com/public/content/home/logo.png"
-                        alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
-                        decoding="async"
-                        id="logo"
-                        width="130px"
-                        height="46.29px"
-                        fetchpriority="high">
-                </picture>
-            </a>
-            <!--Navigation List-->
-            <nav class="cs-nav" role="navigation">
-                <!--Mobile Nav Toggle-->
-                <button class="cs-toggle" aria-label="mobile menu toggle">
-                    <div class="cs-box" aria-hidden="true">
-                        <span class="cs-line cs-line1" aria-hidden="true"></span>
-                        <span class="cs-line cs-line2" aria-hidden="true"></span>
-                        <span class="cs-line cs-line3" aria-hidden="true"></span>
-                    </div>
-                </button>
-                <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
-                <div class="cs-ul-wrapper">
-                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/" class="cs-li-link">
-                                home
-                            </a>
-                        </li>
-                        <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
-                        <li class="cs-li cs-dropdown" tabindex="0">
-                            <span class="cs-li-link">
-                                about
-                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                            </span>
-                            <ul class="cs-drop-ul">
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="cs-li cs-dropdown" tabindex="0">
-                            <span class="cs-li-link">
-                                services
-                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                            </span>
-                            <ul class="cs-drop-ul">
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">
-                                pricing
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/contact" class="cs-li-link cs-active">
-                                contact
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/blog" class="cs-li-link">
-                                blog
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- <a href="" class="cs-button-solid cs-nav-button">Contact Us</a> -->
-            <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
-            <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
-                <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
-                <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
-            </button> -->
-        </div>
-    </header>
-
-    <!-- ============================================ -->
-    <!--                   Contact                    -->
-    <!-- ============================================ -->
-
-    <div class="contact-banner">
-        <h1>Contact Us</h1>
-    </div>
-
-    <section id="contact-1105">
-        <div class="cs-container">
-            <div class="cs-content">
-                <span class="cs-topper">Contact Us</span>
-                <h2 class="cs-title">Make An Appointment</h2>
-                <!--Form-->
-                <form action="https://api.web3forms.com/submit" method="POST" class="cs-form" id="cs-form-1105" name="Contact Form">
-                    <!-- Replace with your Access Key -->
-                    <input type="hidden" name="access_key" value="ba3ec559-ea59-4ba5-92e1-e13f47bea9dd">
-                    
-                    <!-- Optional: Subject for the email -->
-                    <input type="hidden" name="subject" value="New Appointment Request from Fishtown Web Design">
-                    
-                    <!-- Optional: From Name in email -->
-                    <input type="hidden" name="from_name" value="Fishtown Web Design Website">
-                    
-                    <!-- Custom Redirection to show modal -->
-                    <input type="hidden" name="redirect" value="https://fishtownwebdesign.com/contact#success">
-                    
-                    <label class="cs-label">
-                        Name
-                        <input class="cs-input" required type="text" id="name-1105" name="name" placeholder="Name">
-                    </label>
-                    <label class="cs-label cs-email">
-                        Email
-                        <input class="cs-input" required type="email" id="email-1105" name="email" placeholder="Email">
-                    </label>
-                    <label class="cs-label cs-phone">
-                        Phone
-                        <input class="cs-input" required type="text" id="phone-1105" name="phone" placeholder="Phone">
-                    </label>
-                    <label class="cs-label">
-                        Message
-                        <textarea class="cs-input cs-textarea" required name="message" id="message-1105" placeholder="Write message..."></textarea>
-                    </label>
-                    <!-- Honeypot Spam Protection -->
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                    <button class="cs-button-solid cs-submit" type="submit">Make an Appointment</button>
-                </form>
-                <!-- Modal for server response -->
-                <div id="responseModal" class="modal">
-                    <div class="modal-content">
-                        <h2>Fishtown Web Design</h2>
-                        <p id="modal-message">Your message has been sent. Please allow 1 business day for a response.</p>
-                        <button id="closeModal">Close</button>
-                    </div>
-                </div>
+    <div class="page-wrapper">
+        <div class="cs-topper-card">
+            <!-- Black Banner at the top -->
+            <div class="top-banner">
+                NOW ACCEPTING NEW CLIENTS.
             </div>
-            <ul class="cs-ul">
-                <li class="cs-li">
-                    <picture class="cs-icon-wrapper">
-                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-phone.svg" alt="phone contact icon" class="cs-icon" width="40" height="40" decoding="async">
+        </div>
+
+
+        <!-- ============================================ -->
+        <!--                 Navigation                   -->
+        <!-- ============================================ -->
+
+        <header id="cs-navigation">
+            <div class="cs-container">
+                <!--Nav Logo-->
+                <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
+                        <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
+                        <img 
+                            src="https://fishtownwebdesign.com/public/content/home/logo.png"
+                            alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
+                            decoding="async"
+                            id="logo"
+                            width="130px"
+                            height="46.29px"
+                            fetchpriority="high">
                     </picture>
-                    <div class="cs-flex-group">
-                        <span class="cs-header">Phone</span>
-                        <a href="tel:888-4565-789
-                        " class="cs-link">+1 (717) 333-8691
-                        </a>
+                </a>
+                <!--Navigation List-->
+                <nav class="cs-nav" role="navigation">
+                    <!--Mobile Nav Toggle-->
+                    <button class="cs-toggle" aria-label="mobile menu toggle">
+                        <div class="cs-box" aria-hidden="true">
+                            <span class="cs-line cs-line1" aria-hidden="true"></span>
+                            <span class="cs-line cs-line2" aria-hidden="true"></span>
+                            <span class="cs-line cs-line3" aria-hidden="true"></span>
+                        </div>
+                    </button>
+                    <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+                    <div class="cs-ul-wrapper">
+                        <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/" class="cs-li-link">
+                                    home
+                                </a>
+                            </li>
+                            <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span class="cs-li-link">
+                                    about
+                                    <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a>
+                                    </li>
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span class="cs-li-link">
+                                    services
+                                    <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a>
+                                    </li>
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">
+                                    pricing
+                                </a>
+                            </li>
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/contact" class="cs-li-link cs-active">
+                                    contact
+                                </a>
+                            </li>
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/blog" class="cs-li-link">
+                                    blog
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                </li>
-                <li class="cs-li">
-                    <picture class="cs-icon-wrapper">
-                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-email.svg" alt="email contact icon" class="cs-icon" width="40" height="40" decoding="async">
-                    </picture>
-                    <div class="cs-flex-group">
-                        <span class="cs-header">Email</span>
-                        <a href="mailto:sales@fishtownwebdesignn.com" class="cs-link">sales@fishtownwebdesign.com</a>
+                </nav>
+                <!-- <a href="" class="cs-button-solid cs-nav-button">Contact Us</a> -->
+                <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+                <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
+                    <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
+                    <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
+                </button> -->
+            </div>
+        </header>
+
+        <!-- ============================================ -->
+        <!--                   Contact                    -->
+        <!-- ============================================ -->
+
+        <div class="contact-banner">
+            <h1>Contact Us</h1>
+        </div>
+
+        <section id="contact-1105">
+            <div class="cs-container">
+                <div class="cs-content">
+                    <span class="cs-topper">Contact Us</span>
+                    <h2 class="cs-title">Make An Appointment</h2>
+                    <!--Form-->
+                    <form action="https://api.web3forms.com/submit" method="POST" class="cs-form" id="cs-form-1105" name="Contact Form">
+                        <!-- Replace with your Access Key -->
+                        <input type="hidden" name="access_key" value="ba3ec559-ea59-4ba5-92e1-e13f47bea9dd">
+                        
+                        <!-- Optional: Subject for the email -->
+                        <input type="hidden" name="subject" value="New Appointment Request from Fishtown Web Design">
+                        
+                        <!-- Optional: From Name in email -->
+                        <input type="hidden" name="from_name" value="Fishtown Web Design Website">
+                        
+                        <!-- Custom Redirection to show modal -->
+                        <input type="hidden" name="redirect" value="https://fishtownwebdesign.com/contact#success">
+                        
+                        <label class="cs-label">
+                            Name
+                            <input class="cs-input" required type="text" id="name-1105" name="name" placeholder="Name">
+                        </label>
+                        <label class="cs-label cs-email">
+                            Email
+                            <input class="cs-input" required type="email" id="email-1105" name="email" placeholder="Email">
+                        </label>
+                        <label class="cs-label cs-phone">
+                            Phone
+                            <input class="cs-input" required type="text" id="phone-1105" name="phone" placeholder="Phone">
+                        </label>
+                        <label class="cs-label">
+                            Message
+                            <textarea class="cs-input cs-textarea" required name="message" id="message-1105" placeholder="Write message..."></textarea>
+                        </label>
+                        <!-- Honeypot Spam Protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                        <button class="cs-button-solid cs-submit" type="submit">Make an Appointment</button>
+                    </form>
+                    <!-- Modal for server response -->
+                    <div id="responseModal" class="modal">
+                        <div class="modal-content">
+                            <h2>Fishtown Web Design</h2>
+                            <p id="modal-message">Your message has been sent. Please allow 1 business day for a response.</p>
+                            <button id="closeModal">Close</button>
+                        </div>
                     </div>
-                </li>
-                <li class="cs-li">
-                    <picture class="cs-icon-wrapper">
-                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-pin.svg" alt="location pin icon" class="cs-icon" width="40" height="40" decoding="async">
-                    </picture>
-                    <div class="cs-flex-group">
-                        <span class="cs-header">Born in Fishtown</span>
-                        <a href="" class="cs-link">Fishtown, Philadelphia, Pennsylvania</a>
-                    </div>
-                </li>
-            </ul>
-        </section>
-    </main>
+                </div>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <picture class="cs-icon-wrapper">
+                            <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-phone.svg" alt="phone contact icon" class="cs-icon" width="40" height="40" decoding="async">
+                        </picture>
+                        <div class="cs-flex-group">
+                            <span class="cs-header">Phone</span>
+                            <a href="tel:888-4565-789
+                            " class="cs-link">+1 (717) 333-8691
+                            </a>
+                        </div>
+                    </li>
+                    <li class="cs-li">
+                        <picture class="cs-icon-wrapper">
+                            <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-email.svg" alt="email contact icon" class="cs-icon" width="40" height="40" decoding="async">
+                        </picture>
+                        <div class="cs-flex-group">
+                            <span class="cs-header">Email</span>
+                            <a href="mailto:sales@fishtownwebdesignn.com" class="cs-link">sales@fishtownwebdesign.com</a>
+                        </div>
+                    </li>
+                    <li class="cs-li">
+                        <picture class="cs-icon-wrapper">
+                            <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-pin.svg" alt="location pin icon" class="cs-icon" width="40" height="40" decoding="async">
+                        </picture>
+                        <div class="cs-flex-group">
+                            <span class="cs-header">Born in Fishtown</span>
+                            <a href="" class="cs-link">Fishtown, Philadelphia, Pennsylvania</a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
                                     
-    <!-- Footer Section -->
-    <footer class="footer text-center py-4">
-        <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
-        <picture>
-            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
-            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
-            <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Web Design Philadelphia Logo">
-        </picture>
-        <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
-        <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
-    </footer>
+        <!-- Footer Section -->
+        <footer class="footer text-center py-4">
+            <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
+            <picture>
+                <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
+                <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
+                <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Web Design Philadelphia Logo">
+            </picture>
+            <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
+            <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
+        </footer>
 
-    <script src="/public/scripts/contact.js"></script>
+        <script src="/public/scripts/contact.js"></script>
 
-    <script>
-        // Set the current year dynamically
-        document.getElementById("current-year").textContent = new Date().getFullYear();
-        
-        // Check if we're returning from Web3Forms submission (URL has #success)
-        if (window.location.hash === '#success') {
-            // Show the success modal
-            document.querySelector('#modal-message').textContent = 'Your appointment request has been submitted successfully! We will get back to you within 1 business day.';
-            document.querySelector('#responseModal').style.display = 'block';
+        <script>
+            // Set the current year dynamically
+            document.getElementById("current-year").textContent = new Date().getFullYear();
             
-            // Clear the hash from URL
-            history.replaceState(null, null, window.location.pathname);
-        }
-    </script>
-    <script>
-        // add classes for mobile navigation toggling
-        var CSbody = document.querySelector('body');
-        const CSnavbarMenu = document.querySelector('#cs-navigation');
-        const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
-
-        CShamburgerMenu.addEventListener('click', function () {
-            CShamburgerMenu.classList.toggle('cs-active');
-            CSnavbarMenu.classList.toggle('cs-active');
-            CSbody.classList.toggle('cs-open');
-            // run the function to check the aria-expanded value
-            ariaExpanded();
-        });
-
-        // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
-        function ariaExpanded() {
-            const csUL = document.querySelector('#cs-expanded');
-            const csExpanded = csUL.getAttribute('aria-expanded');
-
-            if (csExpanded === 'false') {
-                csUL.setAttribute('aria-expanded', 'true');
-            } else {
-                csUL.setAttribute('aria-expanded', 'false');
+            // Check if we're returning from Web3Forms submission (URL has #success)
+            if (window.location.hash === '#success') {
+                // Show the success modal
+                document.querySelector('#modal-message').textContent = 'Your appointment request has been submitted successfully! We will get back to you within 1 business day.';
+                document.querySelector('#responseModal').style.display = 'block';
+                
+                // Clear the hash from URL
+                history.replaceState(null, null, window.location.pathname);
             }
-        }
+        </script>
+        <script>
+            // add classes for mobile navigation toggling
+            var CSbody = document.querySelector('body');
+            const CSnavbarMenu = document.querySelector('#cs-navigation');
+            const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
 
-        // mobile nav toggle code
-        const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
-        for (const item of dropDowns) {
-            const onClick = () => {
-                item.classList.toggle('cs-active');
-            };
-            item.addEventListener('click', onClick);
-        }
-                                        
-    </script>
+            CShamburgerMenu.addEventListener('click', function () {
+                CShamburgerMenu.classList.toggle('cs-active');
+                CSnavbarMenu.classList.toggle('cs-active');
+                CSbody.classList.toggle('cs-open');
+                // run the function to check the aria-expanded value
+                ariaExpanded();
+            });
+
+            // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+            function ariaExpanded() {
+                const csUL = document.querySelector('#cs-expanded');
+                const csExpanded = csUL.getAttribute('aria-expanded');
+
+                if (csExpanded === 'false') {
+                    csUL.setAttribute('aria-expanded', 'true');
+                } else {
+                    csUL.setAttribute('aria-expanded', 'false');
+                }
+            }
+
+            // mobile nav toggle code
+            const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+            for (const item of dropDowns) {
+                const onClick = () => {
+                    item.classList.toggle('cs-active');
+                };
+                item.addEventListener('click', onClick);
+            }
+                                            
+        </script>
+    </div>
 </body>
 </html>

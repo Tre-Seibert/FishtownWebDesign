@@ -86,389 +86,391 @@
 </head>
 
 <body>
-    <div class="cs-topper-card">
-        <!-- Black Banner at the top -->
-        <div class="top-banner">
-            NOW ACCEPTING NEW CLIENTS.
-        </div>
-    </div>
-
-    <!-- ============================================ -->
-    <!--                 Navigation                   -->
-    <!-- ============================================ -->
-
-    <header id="cs-navigation">
-        <div class="cs-container">
-            <!--Nav Logo-->
-            <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
-                <picture>
-                    <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
-                    <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
-                    <img 
-                        src="https://fishtownwebdesign.com/public/content/home/logo.png"
-                        alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
-                        decoding="async"
-                        id="logo"
-                        width="130px"
-                        height="46.29px"
-                        fetchpriority="high">
-                </picture>
-            </a>
-            <!--Navigation List-->
-            <nav class="cs-nav" role="navigation">
-                <!--Mobile Nav Toggle-->
-                <button class="cs-toggle" aria-label="mobile menu toggle">
-                    <div class="cs-box" aria-hidden="true">
-                        <span class="cs-line cs-line1" aria-hidden="true"></span>
-                        <span class="cs-line cs-line2" aria-hidden="true"></span>
-                        <span class="cs-line cs-line3" aria-hidden="true"></span>
-                    </div>
-                </button>
-                <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
-                <div class="cs-ul-wrapper">
-                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/" class="cs-li-link">
-                                home
-                            </a>
-                        </li>
-                        <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
-                        <li class="cs-li cs-dropdown" tabindex="0">
-                            <span class="cs-li-link cs-active">
-                                about
-                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                            </span>
-                            <ul class="cs-drop-ul">
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link cs-active">faq</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="cs-li cs-dropdown" tabindex="0">
-                            <span class="cs-li-link">
-                                services
-                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                            </span>
-                            <ul class="cs-drop-ul">
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">
-                                pricing
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/contact" class="cs-li-link">
-                                contact
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/blog" class="cs-li-link">
-                                blog
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- <a href="" class="cs-button-solid cs-nav-button">Contact Us</a> -->
-            <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
-            <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
-                <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
-                <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
-            </button> -->
-        </div>
-    </header>
-    
-
-<!-- ============================================ -->
-<!--                    FAQ                       -->
-<!-- ============================================ -->
-
-    <div class="about-section">
-        <!-- About Banner with drips -->
-        <div class="about-banner">
-            <h1>Frequently Asked Questions</h1>
-        </div>
-    </div>
-
-    <section id="faq-1720">
-        <div class="cs-container">
-            <div class="cs-content">
-                <span class="cs-topper">FAQ</span>
-                <h2 class="cs-title">Frequently Asked Questions</h2>
-                <p class="cs-text">
-                    Find answers to common questions about our web design services, pricing, and process. Can't find what you're looking for? <a href="https://fishtownwebdesign.com/contact" class="cs-link">Contact us</a> for more information.
-                </p>
-            </div>
-            <div class="cs-flex-group">
-                <div class="cs-button-group">
-                    <div class="cs-flex">
-                        <button class="cs-option" data-filter="one">
-                            <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
-                            Pricing Questions
-                        </button>
-                        <button class="cs-option" data-filter="two">
-                            <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
-                            Subscription Plan
-                        </button>
-                        <button class="cs-option" data-filter="three">
-                            <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
-                            SEO Services
-                        </button>
-                        <button class="cs-option" data-filter="four">
-                            <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
-                            Websites
-                        </button>
-                    </div>
-                </div>
-                <div class="cs-wrapper">
-                    <ul class="cs-faq-group" data-category="one">
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">How long is the subscription period?</span>
-                                <span class="cs-icon" aria-hidden="true"></span>
-                            </button>
-                            <div class="cs-item-p">
-                                <p>Our subscription plans have a 12-month minimum period, after which you can continue month-to-month or switch to another plan. This ensures we can provide consistent service and maintain your website effectively. Learn more about our <a href="https://fishtownwebdesign.com/pricing" class="cs-link">subscription plans</a>.</p>
-                            </div>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">What happens if I cancel my subscription before 12 months?</span>
-                            </button>
-                            <p class="cs-item-p">Cancelling before the 12-month minimum may incur a cancellation fee based on the remaining contract duration.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Can I rejoin after cancelling?</span>
-                            </button>
-                            <p class="cs-item-p">Yes, you can rejoin anytime after cancelling. We will assist in restoring your website and services.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">How do you handle late payments?</span>
-                            </button>
-                            <p class="cs-item-p">Late payments may result in a temporary suspension of services until the balance is cleared. We provide reminders to avoid interruptions.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">What payment methods do you accept?</span>
-                            </button>
-                            <p class="cs-item-p">We accept payments via credit card, debit card, and ACH transfers through secure payment platforms.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Is the $100 per additional page a one-time fee?</span>
-                            </button>
-                            <p class="cs-item-p">Yes, the $100 fee for additional pages is a one-time charge.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Do you offer refunds?</span>
-                            </button>
-                            <p class="cs-item-p">Refunds are not typically offered, but we will work with you to resolve any issues to your satisfaction.</p>
-                        </li>
-                    </ul>
-                    <ul class="cs-faq-group cs-hidden" data-category="two">
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">What happens after the 12-month subscription minimum?</span>
-                            </button>
-                            <p class="cs-item-p">After the 12-month period, you can continue paying monthly or switch to a lump-sum plan if desired.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Can I buy out my subscription after the minimum period?</span>
-                            </button>
-                            <p class="cs-item-p">Yes, we allow buyouts after the subscription minimum, and we can provide a customized quote based on your website's scope.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Can I add unlimited edits to the lump-sum package?</span>
-                            </button>
-                            <p class="cs-item-p">Yes, you can add unlimited edits and support to the lump-sum package for an additional fee.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">What is the difference between the lump-sum and subscription plans?</span>
-                            </button>
-                            <p class="cs-item-p">The subscription plan includes ongoing updates and hosting, while the lump-sum plan gives you full ownership and control of the website after completion.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Are SEO services included in your packages?</span>
-                            </button>
-                            <p class="cs-item-p">Basic SEO is included in all packages. Advanced SEO services are available as an add-on.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Do you offer e-commerce sites under the subscription plan?</span>
-                            </button>
-                            <p class="cs-item-p">Yes, e-commerce functionality can be included in subscription plans, customized to meet your needs.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">If I cancel a subscription, do I keep my domain?</span>
-                            </button>
-                            <p class="cs-item-p">You retain ownership of your domain, provided it was registered in your name. We can assist with domain transfers if needed.</p>
-                        </li>
-                    </ul>
-                    <ul class="cs-faq-group cs-hidden" data-category="three">
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">What are your SEO rates?</span>
-                            </button>
-                            <p class="cs-item-p">Our SEO rates vary based on the scope of work. Contact us for a customized quote tailored to your business goals.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Does SEO really work?</span>
-                            </button>
-                            <p class="cs-item-p">Yes! SEO improves your website's visibility, driving more traffic and potential customers to your business over time.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Can you get my website to the front page in a month?</span>
-                            </button>
-                            <p class="cs-item-p">SEO is a long-term strategy, and while results can vary, significant improvements typically take 3-6 months.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">What is included in your SEO services?</span>
-                            </button>
-                            <p class="cs-item-p">Our SEO services include keyword research, on-page optimization, backlink building, and performance tracking.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Do you also manage PPC ads?</span>
-                            </button>
-                            <p class="cs-item-p">Yes, we offer PPC management as an additional service to complement your SEO strategy.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Do you provide SEO audits?</span>
-                            </button>
-                            <p class="cs-item-p">Yes, we offer detailed SEO audits to identify areas for improvement and opportunities for growth.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">How long does it take to see SEO results?</span>
-                            </button>
-                            <p class="cs-item-p">SEO results typically take 6-12 months to become noticeable, depending on your industry and competition.</p>
-                        </li>
-                    </ul>
-                    <ul class="cs-faq-group cs-hidden" data-category="four">
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">How long does it take to build a website?</span>
-                            </button>
-                            <p class="cs-item-p">The timeline for website development depends on the project scope but typically ranges from 2 to 3 weeks.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Do I keep my website if I cancel my subscription?</span>
-                            </button>
-                            <p class="cs-item-p">If you cancel, the website remains under our management unless you opt for a buyout plan to take full ownership.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Do I own my domain?</span>
-                            </button>
-                            <p class="cs-item-p">Yes, you own your domain if it is registered in your name. We assist with domain registration and management as needed.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Do you use WordPress or other builders?</span>
-                            </button>
-                            <p class="cs-item-p">We specialize in custom-coded websites and will not use WordPress or other builders.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">Why choose custom code over WordPress?</span>
-                            </button>
-                            <p class="cs-item-p">Custom coding provides greater flexibility, faster load times, and enhanced security compared to WordPress.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">What happens to my website if something happens to you?</span>
-                            </button>
-                            <p class="cs-item-p">We have fail-safes in place, including backups and documentation, to ensure your website remains operational.</p>
-                        </li>
-                        <li class="cs-faq-item">
-                            <button class="cs-button">
-                                <span class="cs-button-text">How do I request edits to my site?</span>
-                            </button>
-                            <p class="cs-item-p">You can request edits via email, help@fishtownwebdesign.com. Edits are typically processed within 48 hours, but can take up to 5 business days.</p>
-                        </li>
-                    </ul>
-                </div>
+    <div class="page-wrapper">
+        <div class="cs-topper-card">
+            <!-- Black Banner at the top -->
+            <div class="top-banner">
+                NOW ACCEPTING NEW CLIENTS.
             </div>
         </div>
-    </section>
-    
 
-    <!-- Footer Section -->
-    <footer class="footer text-center py-4">
-        <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
-        <picture>
-            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
-            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
-            <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
-        </picture>
-        <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
-        <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
-    </footer>
+        <!-- ============================================ -->
+        <!--                 Navigation                   -->
+        <!-- ============================================ -->
 
-    <script src="/public/scripts/faq.js"></script>
+        <header id="cs-navigation">
+            <div class="cs-container">
+                <!--Nav Logo-->
+                <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
+                        <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
+                        <img 
+                            src="https://fishtownwebdesign.com/public/content/home/logo.png"
+                            alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
+                            decoding="async"
+                            id="logo"
+                            width="130px"
+                            height="46.29px"
+                            fetchpriority="high">
+                    </picture>
+                </a>
+                <!--Navigation List-->
+                <nav class="cs-nav" role="navigation">
+                    <!--Mobile Nav Toggle-->
+                    <button class="cs-toggle" aria-label="mobile menu toggle">
+                        <div class="cs-box" aria-hidden="true">
+                            <span class="cs-line cs-line1" aria-hidden="true"></span>
+                            <span class="cs-line cs-line2" aria-hidden="true"></span>
+                            <span class="cs-line cs-line3" aria-hidden="true"></span>
+                        </div>
+                    </button>
+                    <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+                    <div class="cs-ul-wrapper">
+                        <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/" class="cs-li-link">
+                                    home
+                                </a>
+                            </li>
+                            <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span class="cs-li-link cs-active">
+                                    about
+                                    <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a>
+                                    </li>
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link cs-active">faq</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span class="cs-li-link">
+                                    services
+                                    <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a>
+                                    </li>
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">
+                                    pricing
+                                </a>
+                            </li>
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/contact" class="cs-li-link">
+                                    contact
+                                </a>
+                            </li>
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/blog" class="cs-li-link">
+                                    blog
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- <a href="" class="cs-button-solid cs-nav-button">Contact Us</a> -->
+                <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+                <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
+                    <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
+                    <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
+                </button> -->
+            </div>
+        </header>
+        
 
-    <script defer>
-        // Set the current year dynamically
-        document.getElementById("current-year").textContent = new Date().getFullYear();
-    </script>
-    <script>
-        // add classes for mobile navigation toggling
-        var CSbody = document.querySelector('body');
-        const CSnavbarMenu = document.querySelector('#cs-navigation');
-        const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
+    <!-- ============================================ -->
+    <!--                    FAQ                       -->
+    <!-- ============================================ -->
 
-        CShamburgerMenu.addEventListener('click', function () {
-            CShamburgerMenu.classList.toggle('cs-active');
-            CSnavbarMenu.classList.toggle('cs-active');
-            CSbody.classList.toggle('cs-open');
-            // run the function to check the aria-expanded value
-            ariaExpanded();
-        });
+        <div class="about-section">
+            <!-- About Banner with drips -->
+            <div class="about-banner">
+                <h1>Frequently Asked Questions</h1>
+            </div>
+        </div>
 
-        // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
-        function ariaExpanded() {
-            const csUL = document.querySelector('#cs-expanded');
-            const csExpanded = csUL.getAttribute('aria-expanded');
+        <section id="faq-1720">
+            <div class="cs-container">
+                <div class="cs-content">
+                    <span class="cs-topper">FAQ</span>
+                    <h2 class="cs-title">Frequently Asked Questions</h2>
+                    <p class="cs-text">
+                        Find answers to common questions about our web design services, pricing, and process. Can't find what you're looking for? <a href="https://fishtownwebdesign.com/contact" class="cs-link">Contact us</a> for more information.
+                    </p>
+                </div>
+                <div class="cs-flex-group">
+                    <div class="cs-button-group">
+                        <div class="cs-flex">
+                            <button class="cs-option" data-filter="one">
+                                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
+                                Pricing Questions
+                            </button>
+                            <button class="cs-option" data-filter="two">
+                                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
+                                Subscription Plan
+                            </button>
+                            <button class="cs-option" data-filter="three">
+                                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
+                                SEO Services
+                            </button>
+                            <button class="cs-option" data-filter="four">
+                                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
+                                Websites
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cs-wrapper">
+                        <ul class="cs-faq-group" data-category="one">
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">How long is the subscription period?</span>
+                                    <span class="cs-icon" aria-hidden="true"></span>
+                                </button>
+                                <div class="cs-item-p">
+                                    <p>Our subscription plans have a 12-month minimum period, after which you can continue month-to-month or switch to another plan. This ensures we can provide consistent service and maintain your website effectively. Learn more about our <a href="https://fishtownwebdesign.com/pricing" class="cs-link">subscription plans</a>.</p>
+                                </div>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">What happens if I cancel my subscription before 12 months?</span>
+                                </button>
+                                <p class="cs-item-p">Cancelling before the 12-month minimum may incur a cancellation fee based on the remaining contract duration.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Can I rejoin after cancelling?</span>
+                                </button>
+                                <p class="cs-item-p">Yes, you can rejoin anytime after cancelling. We will assist in restoring your website and services.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">How do you handle late payments?</span>
+                                </button>
+                                <p class="cs-item-p">Late payments may result in a temporary suspension of services until the balance is cleared. We provide reminders to avoid interruptions.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">What payment methods do you accept?</span>
+                                </button>
+                                <p class="cs-item-p">We accept payments via credit card, debit card, and ACH transfers through secure payment platforms.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Is the $100 per additional page a one-time fee?</span>
+                                </button>
+                                <p class="cs-item-p">Yes, the $100 fee for additional pages is a one-time charge.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Do you offer refunds?</span>
+                                </button>
+                                <p class="cs-item-p">Refunds are not typically offered, but we will work with you to resolve any issues to your satisfaction.</p>
+                            </li>
+                        </ul>
+                        <ul class="cs-faq-group cs-hidden" data-category="two">
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">What happens after the 12-month subscription minimum?</span>
+                                </button>
+                                <p class="cs-item-p">After the 12-month period, you can continue paying monthly or switch to a lump-sum plan if desired.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Can I buy out my subscription after the minimum period?</span>
+                                </button>
+                                <p class="cs-item-p">Yes, we allow buyouts after the subscription minimum, and we can provide a customized quote based on your website's scope.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Can I add unlimited edits to the lump-sum package?</span>
+                                </button>
+                                <p class="cs-item-p">Yes, you can add unlimited edits and support to the lump-sum package for an additional fee.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">What is the difference between the lump-sum and subscription plans?</span>
+                                </button>
+                                <p class="cs-item-p">The subscription plan includes ongoing updates and hosting, while the lump-sum plan gives you full ownership and control of the website after completion.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Are SEO services included in your packages?</span>
+                                </button>
+                                <p class="cs-item-p">Basic SEO is included in all packages. Advanced SEO services are available as an add-on.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Do you offer e-commerce sites under the subscription plan?</span>
+                                </button>
+                                <p class="cs-item-p">Yes, e-commerce functionality can be included in subscription plans, customized to meet your needs.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">If I cancel a subscription, do I keep my domain?</span>
+                                </button>
+                                <p class="cs-item-p">You retain ownership of your domain, provided it was registered in your name. We can assist with domain transfers if needed.</p>
+                            </li>
+                        </ul>
+                        <ul class="cs-faq-group cs-hidden" data-category="three">
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">What are your SEO rates?</span>
+                                </button>
+                                <p class="cs-item-p">Our SEO rates vary based on the scope of work. Contact us for a customized quote tailored to your business goals.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Does SEO really work?</span>
+                                </button>
+                                <p class="cs-item-p">Yes! SEO improves your website's visibility, driving more traffic and potential customers to your business over time.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Can you get my website to the front page in a month?</span>
+                                </button>
+                                <p class="cs-item-p">SEO is a long-term strategy, and while results can vary, significant improvements typically take 3-6 months.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">What is included in your SEO services?</span>
+                                </button>
+                                <p class="cs-item-p">Our SEO services include keyword research, on-page optimization, backlink building, and performance tracking.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Do you also manage PPC ads?</span>
+                                </button>
+                                <p class="cs-item-p">Yes, we offer PPC management as an additional service to complement your SEO strategy.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Do you provide SEO audits?</span>
+                                </button>
+                                <p class="cs-item-p">Yes, we offer detailed SEO audits to identify areas for improvement and opportunities for growth.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">How long does it take to see SEO results?</span>
+                                </button>
+                                <p class="cs-item-p">SEO results typically take 6-12 months to become noticeable, depending on your industry and competition.</p>
+                            </li>
+                        </ul>
+                        <ul class="cs-faq-group cs-hidden" data-category="four">
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">How long does it take to build a website?</span>
+                                </button>
+                                <p class="cs-item-p">The timeline for website development depends on the project scope but typically ranges from 2 to 3 weeks.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Do I keep my website if I cancel my subscription?</span>
+                                </button>
+                                <p class="cs-item-p">If you cancel, the website remains under our management unless you opt for a buyout plan to take full ownership.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Do I own my domain?</span>
+                                </button>
+                                <p class="cs-item-p">Yes, you own your domain if it is registered in your name. We assist with domain registration and management as needed.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Do you use WordPress or other builders?</span>
+                                </button>
+                                <p class="cs-item-p">We specialize in custom-coded websites and will not use WordPress or other builders.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">Why choose custom code over WordPress?</span>
+                                </button>
+                                <p class="cs-item-p">Custom coding provides greater flexibility, faster load times, and enhanced security compared to WordPress.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">What happens to my website if something happens to you?</span>
+                                </button>
+                                <p class="cs-item-p">We have fail-safes in place, including backups and documentation, to ensure your website remains operational.</p>
+                            </li>
+                            <li class="cs-faq-item">
+                                <button class="cs-button">
+                                    <span class="cs-button-text">How do I request edits to my site?</span>
+                                </button>
+                                <p class="cs-item-p">You can request edits via email, help@fishtownwebdesign.com. Edits are typically processed within 48 hours, but can take up to 5 business days.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
 
-            if (csExpanded === 'false') {
-                csUL.setAttribute('aria-expanded', 'true');
-            } else {
-                csUL.setAttribute('aria-expanded', 'false');
+        <!-- Footer Section -->
+        <footer class="footer text-center py-4">
+            <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
+            <picture>
+                <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
+                <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
+                <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+            </picture>
+            <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
+            <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
+        </footer>
+
+        <script src="/public/scripts/faq.js"></script>
+
+        <script defer>
+            // Set the current year dynamically
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+        </script>
+        <script>
+            // add classes for mobile navigation toggling
+            var CSbody = document.querySelector('body');
+            const CSnavbarMenu = document.querySelector('#cs-navigation');
+            const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
+
+            CShamburgerMenu.addEventListener('click', function () {
+                CShamburgerMenu.classList.toggle('cs-active');
+                CSnavbarMenu.classList.toggle('cs-active');
+                CSbody.classList.toggle('cs-open');
+                // run the function to check the aria-expanded value
+                ariaExpanded();
+            });
+
+            // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+            function ariaExpanded() {
+                const csUL = document.querySelector('#cs-expanded');
+                const csExpanded = csUL.getAttribute('aria-expanded');
+
+                if (csExpanded === 'false') {
+                    csUL.setAttribute('aria-expanded', 'true');
+                } else {
+                    csUL.setAttribute('aria-expanded', 'false');
+                }
             }
-        }
 
-        // mobile nav toggle code
-        const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
-        for (const item of dropDowns) {
-            const onClick = () => {
-                item.classList.toggle('cs-active');
-            };
-            item.addEventListener('click', onClick);
-        }
+            // mobile nav toggle code
+            const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+            for (const item of dropDowns) {
+                const onClick = () => {
+                    item.classList.toggle('cs-active');
+                };
+                item.addEventListener('click', onClick);
+            }
                                         
-    </script>
+        </script>
+    </div>
 </body>
 </html>
