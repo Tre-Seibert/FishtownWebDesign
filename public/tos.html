@@ -29,270 +29,272 @@
 </head>
 
 <body>
-    <div class="cs-topper-card">
-        <!-- Black Banner at the top -->
-        <div class="top-banner">
-            NOW ACCEPTING NEW CLIENTS.
-        </div>
-    </div>
-
-
-    <!-- ============================================ -->
-    <!--                 Navigation                   -->
-    <!-- ============================================ -->
-
-    <header id="cs-navigation">
-        <div class="cs-container">
-            <!--Nav Logo-->
-            <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
-                <picture>
-                    <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
-                    <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
-                    <img 
-                        src="https://fishtownwebdesign.com/public/content/home/logo.png"
-                        alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
-                        decoding="async"
-                        id="logo"
-                        width="130px"
-                        height="46.29px"
-                        fetchpriority="high">
-                </picture>
-            </a>
-            <!--Navigation List-->
-            <nav class="cs-nav" role="navigation">
-                <!--Mobile Nav Toggle-->
-                <button class="cs-toggle" aria-label="mobile menu toggle">
-                    <div class="cs-box" aria-hidden="true">
-                        <span class="cs-line cs-line1" aria-hidden="true"></span>
-                        <span class="cs-line cs-line2" aria-hidden="true"></span>
-                        <span class="cs-line cs-line3" aria-hidden="true"></span>
-                    </div>
-                </button>
-                <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
-                <div class="cs-ul-wrapper">
-                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/" class="cs-li-link">
-                                home
-                            </a>
-                        </li>
-                        <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
-                        <li class="cs-li cs-dropdown" tabindex="0">
-                            <span class="cs-li-link">
-                                about
-                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                            </span>
-                            <ul class="cs-drop-ul">
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="cs-li cs-dropdown" tabindex="0">
-                            <span class="cs-li-link">
-                                services
-                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                            </span>
-                            <ul class="cs-drop-ul">
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">
-                                pricing
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/contact" class="cs-li-link">
-                                contact
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/blog" class="cs-li-link">
-                                blog
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- <a href="" class="cs-button-solid cs-nav-button">Contact Us</a> -->
-            <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
-            <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
-                <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
-                <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
-            </button> -->
-        </div>
-    </header>
-
-
-    
-    <div class="tos-section">
-        <!-- tos Banner -->
-        <div class="tos-banner">
-            <h1>Terms Of Service</h1>
-        </div>
-
-        <!-- Main Content Section (Image and Text) -->
-        <div class="content-wrapper">
-            <!-- Text Content -->
-            <!-- Text Content -->
-            <div class="tos-text">
-                <h2>Terms of Service</h2>
-                <h3>Last Updated July 6, 2025</h3>
-                <h3>Agreement to our Legal Terms</h3>
-                <p>We are Fishtown Web Design, LLC ("Company," "we," "us," "our"), a company registered in Erie, Pennsylvania, United States, at 502 W 7th ST, STE 100, Erie, PA 16502.</p>
-                <p>We operate the website <a href="https://fishtownwebdesign.com">https://fishtownwebdesign.com</a> (the "Site") and offer various services related to web design, development, and digital marketing (the "Services").</p>
-                <p>You can contact us by phone at 717-333-8691, email at info@fishtownwebdesign.com, or by mail to 502 W 7th ST, STE 100, Erie, PA 16502, United States.</p>
-                <p>These Legal Terms form a legally binding agreement between you, whether as an individual or on behalf of an entity ("you"), and Fishtown Web Design, concerning your access to and use of our Services. By accessing or using our Services, you agree that you have read, understood, and accepted these Legal Terms. IF YOU DO NOT AGREE TO THESE TERMS, YOU MUST IMMEDIATELY DISCONTINUE USE OF OUR SERVICES.</p>
-                <p>We reserve the right to update or modify these Legal Terms at any time. Any changes will be reflected by updating the "Last updated" date. It is your responsibility to review these Legal Terms periodically to stay informed of updates. Continued use of the Services after changes are posted will constitute acceptance of those changes.</p>
-                <p>The Services are intended for users who are at least 18 years old. If you are under 18, you are not permitted to use the Services.</p>
-                <p>We recommend that you print a copy of these Legal Terms for your records.</p>
-
-                <h3>TABLE OF CONTENTS</h3>
-                <ol>
-                    <li>Our Services</li>
-                    <li>Intellectual Property Rights</li>
-                    <li>User Representations</li>
-                    <li>Prohibited Activities</li>
-                    <li>User Generated Contributions</li>
-                    <li>Contribution License</li>
-                    <li>Third-Party Websites and Content</li>
-                    <li>Services Management</li>
-                    <li>Privacy Policy</li>
-                    <li>Term and Termination</li>
-                    <li>Modifications and Interruptions</li>
-                    <li>Governing Law</li>
-                    <li>Dispute Resolution</li>
-                    <li>Corrections</li>
-                    <li>Disclaimer</li>
-                    <li>Limitations of Liability</li>
-                    <li>Indemnification</li>
-                    <li>User Data</li>
-                    <li>Electronic Communications, Transactions, and Signatures</li>
-                    <li>California Users and Residents</li>
-                    <li>Miscellaneous</li>
-                    <li>Contact Us</li>
-                </ol>
-
-                <h3>1. OUR SERVICES</h3>
-                <p>The Services are available for use only in jurisdictions where such use is lawful. If you access the Services from outside the United States, you do so at your own risk and are responsible for compliance with local laws.</p>
-                <p>Our Services are not tailored to meet the requirements of specific industry regulations (such as HIPAA or FISMA). If your use of the Services would be subject to such regulations, you may not use the Services.</p>
-
-                <h3>2. INTELLECTUAL PROPERTY RIGHTS</h3>
-                <p>We own or have the necessary licenses for all intellectual property rights in the Services, including all content, software, design, logos, and trademarks (collectively, the "Content"). Our Content is protected by copyright and trademark laws and may only be used as expressly permitted by us.</p>
-                <p>You are granted a non-exclusive, non-transferable, revocable license to access the Services and use the Content solely for personal or internal business purposes. You may not reproduce, distribute, or otherwise use the Content for commercial purposes without our written consent.</p>
-                <p>If you wish to use the Content in any way not expressly permitted, please contact us at info@fishtownwebdesign.com.</p>
-
-                <h3>3. USER REPRESENTATIONS</h3>
-                <p>By using the Services, you represent and warrant that:</p>
-                <ul>
-                    <li>You have the legal capacity to agree to these Legal Terms;</li>
-                    <li>You are not a minor in your jurisdiction;</li>
-                    <li>You will not use the Services for any illegal or unauthorized purposes;</li>
-                    <li>Your use of the Services will not violate any applicable law.</li>
-                </ul>
-
-                <h3>4. PROHIBITED ACTIVITIES</h3>
-                <p>You agree not to use the Services for any unlawful activities or to engage in the following prohibited actions:</p>
-                <ul>
-                    <li>Copying, distributing, or creating derivative works of the Services without our permission;</li>
-                    <li>Engaging in fraudulent, harmful, or abusive behavior;</li>
-                    <li>Attempting to bypass security features or interfere with the Services' functionality;</li>
-                    <li>Using the Services to promote unauthorized commercial activities or competing services.</li>
-                </ul>
-
-                <h3>5. USER GENERATED CONTRIBUTIONS</h3>
-                <p>The Services may allow you to submit or post content. You are solely responsible for any content you submit and agree not to post anything that violates applicable laws or our policies.</p>
-
-                <h3>5.1. NEWSLETTER SUBSCRIPTIONS</h3>
-                <p>By subscribing to our newsletter, you consent to receive monthly email communications from us. You acknowledge that:</p>
-                <ul>
-                    <li>You are providing your email address voluntarily for newsletter communications.</li>
-                    <li>You may receive promotional content, updates, and marketing materials.</li>
-                    <li>You can unsubscribe at any time by contacting us or using the unsubscribe link in our emails.</li>
-                    <li>We may use your email address to send you relevant content and offers.</li>
-                </ul>
-
-                <h3>6. CONTRIBUTION LICENSE</h3>
-                <p>By submitting feedback or suggestions to us, you grant us the right to use and share that feedback without compensation.</p>
-
-                <h3>7. THIRD-PARTY WEBSITES AND CONTENT</h3>
-                <p>Our Services may contain links to third-party websites or content. We are not responsible for the accuracy, legality, or content of these external sites, and you access them at your own risk.</p>
-
-                <h3>8. SERVICES MANAGEMENT</h3>
-                <p>We reserve the right to monitor and manage the Services to ensure compliance with these Legal Terms and protect our interests.</p>
-
-                <h3>9. PRIVACY POLICY</h3>
-                <p>We value your privacy. Please review our Privacy Policy, <a href="https://fishtownwebdesign.com/privacy-policy">fishtownwebdesign.com/privacy-policy</a>, for information on how we collect and use your data.</p>
-
-                <h3>10. TERM AND TERMINATION</h3>
-                <p>These Legal Terms remain in effect as long as you use the Services. We may suspend or terminate your access at our discretion if you breach these Terms.</p>
-
-                <h3>11. MODIFICATIONS AND INTERRUPTIONS</h3>
-                <p>We reserve the right to modify or discontinue the Services at any time. We are not liable for any interruption or inability to access the Services.</p>
-                <h3>12. GOVERNING LAW</h3>
-                <p>These Legal Terms and your use of the Services are governed by and construed in accordance with the laws of the Commonwealth of Pennsylvania, applicable to agreements made and to be entirely performed within Pennsylvania, without regard to its conflict of law principles.</p>
-            
-                <h3>13. DISPUTE RESOLUTION</h3>
-                <p>Any legal action of whatever nature brought by either you or us (collectively, the "Parties" and individually, a "Party") shall be commenced or prosecuted in the state and federal courts located in Philadelphia, Pennsylvania, and the Parties hereby consent to, and waive all defenses of lack of personal jurisdiction and forum non conveniens with respect to venue and jurisdiction in such state and federal courts. Application of the United Nations Convention on Contracts for the International Sale of Goods and the Uniform Computer Information Transaction Act (UCITA) are excluded from these Legal Terms. In no event shall any claim, action, or proceeding brought by either Party related in any way to the Services be commenced more than one (1) year after the cause of action arose.</p>
-            
-                <h3>14. CORRECTIONS</h3>
-                <p>There may be information on the Services that contains typographical errors, inaccuracies, or omissions, including descriptions, pricing, availability, and various other information. We reserve the right to correct any errors, inaccuracies, or omissions and to change or update the information on the Services at any time, without prior notice.</p>
-            
-                <h3>15. DISCLAIMER</h3>
-                <p>THE SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SERVICES AND YOUR USE THEREOF, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THE SERVICES' CONTENT OR THE CONTENT OF ANY WEBSITES OR MOBILE APPLICATIONS LINKED TO THE SERVICES AND WE WILL ASSUME NO LIABILITY OR RESPONSIBILITY FOR ANY (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS, (2) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE SERVICES, (3) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (4) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE SERVICES, (5) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH THE SERVICES BY ANY THIRD PARTY, AND/OR (6) ANY ERRORS OR OMISSIONS IN ANY CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICES. WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD PARTY THROUGH THE SERVICES, ANY HYPERLINKED WEBSITE, OR ANY WEBSITE OR MOBILE APPLICATION FEATURED IN ANY BANNER OR OTHER ADVERTISING, AND WE WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND ANY THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES. AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE.</p>
-            
-                <h3>16. LIMITATIONS OF LIABILITY</h3>
-                <p>IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
-            
-                <h3>17. INDEMNIFICATION</h3>
-                <p>You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys’ fees and expenses, made by any third party due to or arising out of: (1) use of the Services; (2) breach of these Legal Terms; (3) any breach of your representations and warranties set forth in these Legal Terms; (4) your violation of the rights of a third party, including but not limited to intellectual property rights; or (5) any overt harmful act toward any other user of the Services with whom you connected via the Services. Notwithstanding the foregoing, we reserve the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us, and you agree to cooperate, at your expense, with our defense of such claims. We will use reasonable efforts to notify you of any such claim, action, or proceeding which is subject to this indemnification upon becoming aware of it.</p>
-            
-                <h3>18. USER DATA</h3>
-                <p>We will maintain certain data that you transmit to the Services for the purpose of managing the performance of the Services, as well as data relating to your use of the Services. Although we perform regular routine backups of data, you are solely responsible for all data that you transmit or that relates to any activity you have undertaken using the Services. You agree that we shall have no liability to you for any loss or corruption of any such data, and you hereby waive any right of action against us arising from any such loss or corruption of such data.</p>
-            
-                <h3>19. ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES</h3>
-                <p>Visiting the Services, sending us emails, and completing online forms constitute electronic communications. You consent to receive electronic communications, and you agree that all agreements, notices, disclosures, and other communications we provide to you electronically, via email and on the Services, satisfy any legal requirement that such communication be in writing. YOU HEREBY AGREE TO THE USE OF ELECTRONIC SIGNATURES, CONTRACTS, ORDERS, AND OTHER RECORDS, AND TO ELECTRONIC DELIVERY OF NOTICES, POLICIES, AND RECORDS OF TRANSACTIONS INITIATED OR COMPLETED BY US OR VIA THE SERVICES. You hereby waive any rights or requirements under any statutes, regulations, rules, ordinances, or other laws in any jurisdiction which require an original signature or delivery or retention of non-electronic records, or to payments or the granting of credits by any means other than electronic means.</p>
-                <p>By subscribing to our newsletter, you specifically consent to receive electronic marketing communications from us, including but not limited to monthly newsletters, promotional offers, and company updates. You may opt out of these communications at any time.</p>
-            
-                <h3>20. CALIFORNIA USERS AND RESIDENTS</h3>
-                <p>If any complaint with us is not satisfactorily resolved, you can contact the Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs in writing at 1625 North Market Blvd., Suite N 112, Sacramento, California 95834 or by telephone at (800) 952-5210 or (916) 445-1254.</p>
-            
-                <h3>21. MISCELLANEOUS</h3>
-                <p>These Legal Terms and any policies or operating rules posted by us on the Services or in respect to the Services constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Legal Terms shall not operate as a waiver of such right or provision. These Legal Terms operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control. If any provision or part of a provision of these Legal Terms is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Legal Terms and does not affect the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Legal Terms or use of the Services. You agree that these Legal Terms will not be construed against us by virtue of having drafted them. You hereby waive any and all defenses you may have based on the electronic form of these Legal Terms and the lack of signing by the parties hereto to execute these Legal Terms.</p>
-            
-                <h3>22. CONTACT US</h3>
-                <p>In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at:</p>
-                <p><strong>Fishtown Web Design</strong><br>
-                502 W 7th ST, STE 100, Erie, PA 16502<br>
-                United States<br>
-                Phone: 717-333-8691<br>
-                Email: info@fishtownwebdesign.com</p>
+    <div class="page-wrapper">
+        <div class="cs-topper-card">
+            <!-- Black Banner at the top -->
+            <div class="top-banner">
+                NOW ACCEPTING NEW CLIENTS.
             </div>
         </div>
+
+
+        <!-- ============================================ -->
+        <!--                 Navigation                   -->
+        <!-- ============================================ -->
+
+        <header id="cs-navigation">
+            <div class="cs-container">
+                <!--Nav Logo-->
+                <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
+                        <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
+                        <img 
+                            src="https://fishtownwebdesign.com/public/content/home/logo.png"
+                            alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
+                            decoding="async"
+                            id="logo"
+                            width="130px"
+                            height="46.29px"
+                            fetchpriority="high">
+                    </picture>
+                </a>
+                <!--Navigation List-->
+                <nav class="cs-nav" role="navigation">
+                    <!--Mobile Nav Toggle-->
+                    <button class="cs-toggle" aria-label="mobile menu toggle">
+                        <div class="cs-box" aria-hidden="true">
+                            <span class="cs-line cs-line1" aria-hidden="true"></span>
+                            <span class="cs-line cs-line2" aria-hidden="true"></span>
+                            <span class="cs-line cs-line3" aria-hidden="true"></span>
+                        </div>
+                    </button>
+                    <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+                    <div class="cs-ul-wrapper">
+                        <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/" class="cs-li-link">
+                                    home
+                                </a>
+                            </li>
+                            <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span class="cs-li-link">
+                                    about
+                                    <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a>
+                                    </li>
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span class="cs-li-link">
+                                    services
+                                    <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a>
+                                    </li>
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">
+                                    pricing
+                                </a>
+                            </li>
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/contact" class="cs-li-link">
+                                    contact
+                                </a>
+                            </li>
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/blog" class="cs-li-link">
+                                    blog
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- <a href="" class="cs-button-solid cs-nav-button">Contact Us</a> -->
+                <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+                <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
+                    <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
+                    <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
+                </button> -->
+            </div>
+        </header>
+
+
+        
+        <div class="tos-section">
+            <!-- tos Banner -->
+            <div class="tos-banner">
+                <h1>Terms Of Service</h1>
+            </div>
+
+            <!-- Main Content Section (Image and Text) -->
+            <div class="content-wrapper">
+                <!-- Text Content -->
+                <!-- Text Content -->
+                <div class="tos-text">
+                    <h2>Terms of Service</h2>
+                    <h3>Last Updated July 6, 2025</h3>
+                    <h3>Agreement to our Legal Terms</h3>
+                    <p>We are Fishtown Web Design, LLC ("Company," "we," "us," "our"), a company registered in Erie, Pennsylvania, United States, at 502 W 7th ST, STE 100, Erie, PA 16502.</p>
+                    <p>We operate the website <a href="https://fishtownwebdesign.com">https://fishtownwebdesign.com</a> (the "Site") and offer various services related to web design, development, and digital marketing (the "Services").</p>
+                    <p>You can contact us by phone at 717-333-8691, email at info@fishtownwebdesign.com, or by mail to 502 W 7th ST, STE 100, Erie, PA 16502, United States.</p>
+                    <p>These Legal Terms form a legally binding agreement between you, whether as an individual or on behalf of an entity ("you"), and Fishtown Web Design, concerning your access to and use of our Services. By accessing or using our Services, you agree that you have read, understood, and accepted these Legal Terms. IF YOU DO NOT AGREE TO THESE TERMS, YOU MUST IMMEDIATELY DISCONTINUE USE OF OUR SERVICES.</p>
+                    <p>We reserve the right to update or modify these Legal Terms at any time. Any changes will be reflected by updating the "Last updated" date. It is your responsibility to review these Legal Terms periodically to stay informed of updates. Continued use of the Services after changes are posted will constitute acceptance of those changes.</p>
+                    <p>The Services are intended for users who are at least 18 years old. If you are under 18, you are not permitted to use the Services.</p>
+                    <p>We recommend that you print a copy of these Legal Terms for your records.</p>
+
+                    <h3>TABLE OF CONTENTS</h3>
+                    <ol>
+                        <li>Our Services</li>
+                        <li>Intellectual Property Rights</li>
+                        <li>User Representations</li>
+                        <li>Prohibited Activities</li>
+                        <li>User Generated Contributions</li>
+                        <li>Contribution License</li>
+                        <li>Third-Party Websites and Content</li>
+                        <li>Services Management</li>
+                        <li>Privacy Policy</li>
+                        <li>Term and Termination</li>
+                        <li>Modifications and Interruptions</li>
+                        <li>Governing Law</li>
+                        <li>Dispute Resolution</li>
+                        <li>Corrections</li>
+                        <li>Disclaimer</li>
+                        <li>Limitations of Liability</li>
+                        <li>Indemnification</li>
+                        <li>User Data</li>
+                        <li>Electronic Communications, Transactions, and Signatures</li>
+                        <li>California Users and Residents</li>
+                        <li>Miscellaneous</li>
+                        <li>Contact Us</li>
+                    </ol>
+
+                    <h3>1. OUR SERVICES</h3>
+                    <p>The Services are available for use only in jurisdictions where such use is lawful. If you access the Services from outside the United States, you do so at your own risk and are responsible for compliance with local laws.</p>
+                    <p>Our Services are not tailored to meet the requirements of specific industry regulations (such as HIPAA or FISMA). If your use of the Services would be subject to such regulations, you may not use the Services.</p>
+
+                    <h3>2. INTELLECTUAL PROPERTY RIGHTS</h3>
+                    <p>We own or have the necessary licenses for all intellectual property rights in the Services, including all content, software, design, logos, and trademarks (collectively, the "Content"). Our Content is protected by copyright and trademark laws and may only be used as expressly permitted by us.</p>
+                    <p>You are granted a non-exclusive, non-transferable, revocable license to access the Services and use the Content solely for personal or internal business purposes. You may not reproduce, distribute, or otherwise use the Content for commercial purposes without our written consent.</p>
+                    <p>If you wish to use the Content in any way not expressly permitted, please contact us at info@fishtownwebdesign.com.</p>
+
+                    <h3>3. USER REPRESENTATIONS</h3>
+                    <p>By using the Services, you represent and warrant that:</p>
+                    <ul>
+                        <li>You have the legal capacity to agree to these Legal Terms;</li>
+                        <li>You are not a minor in your jurisdiction;</li>
+                        <li>You will not use the Services for any illegal or unauthorized purposes;</li>
+                        <li>Your use of the Services will not violate any applicable law.</li>
+                    </ul>
+
+                    <h3>4. PROHIBITED ACTIVITIES</h3>
+                    <p>You agree not to use the Services for any unlawful activities or to engage in the following prohibited actions:</p>
+                    <ul>
+                        <li>Copying, distributing, or creating derivative works of the Services without our permission;</li>
+                        <li>Engaging in fraudulent, harmful, or abusive behavior;</li>
+                        <li>Attempting to bypass security features or interfere with the Services' functionality;</li>
+                        <li>Using the Services to promote unauthorized commercial activities or competing services.</li>
+                    </ul>
+
+                    <h3>5. USER GENERATED CONTRIBUTIONS</h3>
+                    <p>The Services may allow you to submit or post content. You are solely responsible for any content you submit and agree not to post anything that violates applicable laws or our policies.</p>
+
+                    <h3>5.1. NEWSLETTER SUBSCRIPTIONS</h3>
+                    <p>By subscribing to our newsletter, you consent to receive monthly email communications from us. You acknowledge that:</p>
+                    <ul>
+                        <li>You are providing your email address voluntarily for newsletter communications.</li>
+                        <li>You may receive promotional content, updates, and marketing materials.</li>
+                        <li>You can unsubscribe at any time by contacting us or using the unsubscribe link in our emails.</li>
+                        <li>We may use your email address to send you relevant content and offers.</li>
+                    </ul>
+
+                    <h3>6. CONTRIBUTION LICENSE</h3>
+                    <p>By submitting feedback or suggestions to us, you grant us the right to use and share that feedback without compensation.</p>
+
+                    <h3>7. THIRD-PARTY WEBSITES AND CONTENT</h3>
+                    <p>Our Services may contain links to third-party websites or content. We are not responsible for the accuracy, legality, or content of these external sites, and you access them at your own risk.</p>
+
+                    <h3>8. SERVICES MANAGEMENT</h3>
+                    <p>We reserve the right to monitor and manage the Services to ensure compliance with these Legal Terms and protect our interests.</p>
+
+                    <h3>9. PRIVACY POLICY</h3>
+                    <p>We value your privacy. Please review our Privacy Policy, <a href="https://fishtownwebdesign.com/privacy-policy">fishtownwebdesign.com/privacy-policy</a>, for information on how we collect and use your data.</p>
+
+                    <h3>10. TERM AND TERMINATION</h3>
+                    <p>These Legal Terms remain in effect as long as you use the Services. We may suspend or terminate your access at our discretion if you breach these Terms.</p>
+
+                    <h3>11. MODIFICATIONS AND INTERRUPTIONS</h3>
+                    <p>We reserve the right to modify or discontinue the Services at any time. We are not liable for any interruption or inability to access the Services.</p>
+                    <h3>12. GOVERNING LAW</h3>
+                    <p>These Legal Terms and your use of the Services are governed by and construed in accordance with the laws of the Commonwealth of Pennsylvania, applicable to agreements made and to be entirely performed within Pennsylvania, without regard to its conflict of law principles.</p>
+                
+                    <h3>13. DISPUTE RESOLUTION</h3>
+                    <p>Any legal action of whatever nature brought by either you or us (collectively, the "Parties" and individually, a "Party") shall be commenced or prosecuted in the state and federal courts located in Philadelphia, Pennsylvania, and the Parties hereby consent to, and waive all defenses of lack of personal jurisdiction and forum non conveniens with respect to venue and jurisdiction in such state and federal courts. Application of the United Nations Convention on Contracts for the International Sale of Goods and the Uniform Computer Information Transaction Act (UCITA) are excluded from these Legal Terms. In no event shall any claim, action, or proceeding brought by either Party related in any way to the Services be commenced more than one (1) year after the cause of action arose.</p>
+                
+                    <h3>14. CORRECTIONS</h3>
+                    <p>There may be information on the Services that contains typographical errors, inaccuracies, or omissions, including descriptions, pricing, availability, and various other information. We reserve the right to correct any errors, inaccuracies, or omissions and to change or update the information on the Services at any time, without prior notice.</p>
+                
+                    <h3>15. DISCLAIMER</h3>
+                    <p>THE SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SERVICES AND YOUR USE THEREOF, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THE SERVICES' CONTENT OR THE CONTENT OF ANY WEBSITES OR MOBILE APPLICATIONS LINKED TO THE SERVICES AND WE WILL ASSUME NO LIABILITY OR RESPONSIBILITY FOR ANY (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS, (2) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE SERVICES, (3) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (4) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE SERVICES, (5) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH THE SERVICES BY ANY THIRD PARTY, AND/OR (6) ANY ERRORS OR OMISSIONS IN ANY CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICES. WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD PARTY THROUGH THE SERVICES, ANY HYPERLINKED WEBSITE, OR ANY WEBSITE OR MOBILE APPLICATION FEATURED IN ANY BANNER OR OTHER ADVERTISING, AND WE WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND ANY THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES. AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE.</p>
+                
+                    <h3>16. LIMITATIONS OF LIABILITY</h3>
+                    <p>IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+                
+                    <h3>17. INDEMNIFICATION</h3>
+                    <p>You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys’ fees and expenses, made by any third party due to or arising out of: (1) use of the Services; (2) breach of these Legal Terms; (3) any breach of your representations and warranties set forth in these Legal Terms; (4) your violation of the rights of a third party, including but not limited to intellectual property rights; or (5) any overt harmful act toward any other user of the Services with whom you connected via the Services. Notwithstanding the foregoing, we reserve the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us, and you agree to cooperate, at your expense, with our defense of such claims. We will use reasonable efforts to notify you of any such claim, action, or proceeding which is subject to this indemnification upon becoming aware of it.</p>
+                
+                    <h3>18. USER DATA</h3>
+                    <p>We will maintain certain data that you transmit to the Services for the purpose of managing the performance of the Services, as well as data relating to your use of the Services. Although we perform regular routine backups of data, you are solely responsible for all data that you transmit or that relates to any activity you have undertaken using the Services. You agree that we shall have no liability to you for any loss or corruption of any such data, and you hereby waive any right of action against us arising from any such loss or corruption of such data.</p>
+                
+                    <h3>19. ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES</h3>
+                    <p>Visiting the Services, sending us emails, and completing online forms constitute electronic communications. You consent to receive electronic communications, and you agree that all agreements, notices, disclosures, and other communications we provide to you electronically, via email and on the Services, satisfy any legal requirement that such communication be in writing. YOU HEREBY AGREE TO THE USE OF ELECTRONIC SIGNATURES, CONTRACTS, ORDERS, AND OTHER RECORDS, AND TO ELECTRONIC DELIVERY OF NOTICES, POLICIES, AND RECORDS OF TRANSACTIONS INITIATED OR COMPLETED BY US OR VIA THE SERVICES. You hereby waive any rights or requirements under any statutes, regulations, rules, ordinances, or other laws in any jurisdiction which require an original signature or delivery or retention of non-electronic records, or to payments or the granting of credits by any means other than electronic means.</p>
+                    <p>By subscribing to our newsletter, you specifically consent to receive electronic marketing communications from us, including but not limited to monthly newsletters, promotional offers, and company updates. You may opt out of these communications at any time.</p>
+                
+                    <h3>20. CALIFORNIA USERS AND RESIDENTS</h3>
+                    <p>If any complaint with us is not satisfactorily resolved, you can contact the Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs in writing at 1625 North Market Blvd., Suite N 112, Sacramento, California 95834 or by telephone at (800) 952-5210 or (916) 445-1254.</p>
+                
+                    <h3>21. MISCELLANEOUS</h3>
+                    <p>These Legal Terms and any policies or operating rules posted by us on the Services or in respect to the Services constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Legal Terms shall not operate as a waiver of such right or provision. These Legal Terms operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control. If any provision or part of a provision of these Legal Terms is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Legal Terms and does not affect the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Legal Terms or use of the Services. You agree that these Legal Terms will not be construed against us by virtue of having drafted them. You hereby waive any and all defenses you may have based on the electronic form of these Legal Terms and the lack of signing by the parties hereto to execute these Legal Terms.</p>
+                
+                    <h3>22. CONTACT US</h3>
+                    <p>In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at:</p>
+                    <p><strong>Fishtown Web Design</strong><br>
+                    502 W 7th ST, STE 100, Erie, PA 16502<br>
+                    United States<br>
+                    Phone: 717-333-8691<br>
+                    Email: info@fishtownwebdesign.com</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Footer Section -->
+        <footer class="footer text-center py-4">
+            <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
+            <picture>
+                <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
+                <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
+                <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+            </picture>
+            <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
+            <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
+        </footer>
     </div>
-
-
-
-    <!-- Footer Section -->
-    <footer class="footer text-center py-4">
-        <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
-        <picture>
-            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
-            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
-            <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
-        </picture>
-        <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
-        <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
-    </footer>
 
     <script>
         // Set the current year dynamically

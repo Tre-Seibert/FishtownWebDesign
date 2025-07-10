@@ -143,252 +143,251 @@
 
 </head>
 <body>
-
-    <div class="cs-topper-card">
-        <!-- Black Banner at the top -->
-        <div class="top-banner">
-            NOW ACCEPTING NEW CLIENTS.
+    <div class="page-wrapper">
+        <div class="cs-topper-card">
+            <!-- Black Banner at the top -->
+            <div class="top-banner">
+                NOW ACCEPTING NEW CLIENTS.
+            </div>
         </div>
-    </div>
 
 
-    <!-- ============================================ -->
-    <!--                 Navigation                   -->
-    <!-- ============================================ -->
+        <!-- ============================================ -->
+        <!--                 Navigation                   -->
+        <!-- ============================================ -->
 
-    <header id="cs-navigation">
-        <div class="cs-container">
-            <!--Nav Logo-->
-            <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
-                <picture>
-                    <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
-                    <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
-                    <img 
-                        src="https://fishtownwebdesign.com/public/content/home/logo.png"
-                        alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
-                        decoding="async"
-                        id="logo"
-                        width="130px"
-                        height="46.29px"
-                        fetchpriority="high">
-                </picture>
-            </a>
-            <!--Navigation List-->
-            <nav class="cs-nav" role="navigation">
-                <!--Mobile Nav Toggle-->
-                <button class="cs-toggle" aria-label="mobile menu toggle">
-                    <div class="cs-box" aria-hidden="true">
-                        <span class="cs-line cs-line1" aria-hidden="true"></span>
-                        <span class="cs-line cs-line2" aria-hidden="true"></span>
-                        <span class="cs-line cs-line3" aria-hidden="true"></span>
+        <header id="cs-navigation">
+            <div class="cs-container">
+                <!--Nav Logo-->
+                <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
+                        <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
+                        <img 
+                            src="https://fishtownwebdesign.com/public/content/home/logo.png"
+                            alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
+                            decoding="async"
+                            id="logo"
+                            width="130px"
+                            height="46.29px"
+                            fetchpriority="high">
+                    </picture>
+                </a>
+                <!--Navigation List-->
+                <nav class="cs-nav" role="navigation">
+                    <!--Mobile Nav Toggle-->
+                    <button class="cs-toggle" aria-label="mobile menu toggle">
+                        <div class="cs-box" aria-hidden="true">
+                            <span class="cs-line cs-line1" aria-hidden="true"></span>
+                            <span class="cs-line cs-line2" aria-hidden="true"></span>
+                            <span class="cs-line cs-line3" aria-hidden="true"></span>
+                        </div>
+                    </button>
+                    <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+                    <div class="cs-ul-wrapper">
+                        <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/" class="cs-li-link">
+                                    home
+                                </a>
+                            </li>
+                            <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span class="cs-li-link cs-active">
+                                    about
+                                    <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link cs-active">about us</a>
+                                    </li>
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span class="cs-li-link">
+                                    services
+                                    <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a>
+                                    </li>
+                                    <li class="cs-drop-li">
+                                        <a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">
+                                    pricing
+                                </a>
+                            </li>
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/contact" class="cs-li-link">
+                                    contact
+                                </a>
+                            </li>
+                            <li class="cs-li">
+                                <a href="https://fishtownwebdesign.com/blog" class="cs-li-link">
+                                    blog
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                </button>
-                <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
-                <div class="cs-ul-wrapper">
-                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/" class="cs-li-link">
-                                home
-                            </a>
-                        </li>
-                        <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
-                        <li class="cs-li cs-dropdown" tabindex="0">
-                            <span class="cs-li-link cs-active">
-                                about
-                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                            </span>
-                            <ul class="cs-drop-ul">
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link cs-active">about us</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="cs-li cs-dropdown" tabindex="0">
-                            <span class="cs-li-link">
-                                services
-                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                            </span>
-                            <ul class="cs-drop-ul">
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">
-                                pricing
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/contact" class="cs-li-link">
-                                contact
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/blog" class="cs-li-link">
-                                blog
-                            </a>
-                        </li>
-                    </ul>
+                </nav>
+                <!-- <a href="" class="cs-button-solid cs-nav-button">Contact Us</a> -->
+                <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+                <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
+                    <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
+                    <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
+                </button> -->
+            </div>
+        </header>
+
+        <div class="about-section">
+            <!-- About Banner with drips -->
+            <div class="about-banner">
+                <h1>About Us</h1>
+            </div>
+
+            <!-- Main Content Section (Image and Text) -->
+            <div class="content-wrapper">
+                <!-- Text Content -->
+                <div class="about-text">
+                    <h2>Fishtown Web Design</h2>
+                    <h3>Custom Web Design in Philadelphia</h3>
+                    <p>Hi, I'm Tre, the founder and lead developer of Fishtown Web Design. My journey into programming began when I was 12 years old, creating websites and building computers to fund my video game collection. After earning my computer science degree in May 2024 at Saint Joseph's University, here in Philadelphia, and with over two years of hands-on experience in both front-end and back-end development, I'm dedicated to delivering custom, hand-coded websites with 90+ page speed scores at an affordable starting price for small businesses.</p>             <!-- Rounded image -->  
+                    <picture>
+                        <!-- Mobile Image (for screens < 600px) -->
+                        <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/about/grad-m.webp">
+                        <!-- Desktop Image (for screens ≥ 601px) -->
+                        <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/about/grad.webp">
+                        <!-- Fallback Image (for browsers that don't support picture element) -->
+                        <img
+                            class="profile-image mb-3" 
+                            src="https://fishtownwebdesign.com/public/content/about/grad.jpeg" 
+                            alt="Tre Seibert - Founder of Fishtown Web Design - Philadelphia Web Developer" 
+                            loading="lazy" 
+                            decoding="async"
+                            width="150px"
+                            height="150px">
+                    </picture>
+                        <p>In my experience, many small businesses in Philadelphia struggle with the upfront cost of building a new website. Those that can afford it often end up with websites that feel outdated or poorly designed, often created by developers who haven't kept up with current trends. I saw a gap where small businesses needed an affordable, trustworthy option for a performance optimized website. That's why I offer my $0 down, $150 per month plan—designed to be manageable for small businesses and to provide a custom-coded website that stands out, without breaking the bank.</p>
                 </div>
-            </nav>
-            <!-- <a href="" class="cs-button-solid cs-nav-button">Contact Us</a> -->
-            <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
-            <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
-                <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
-                <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
-            </button> -->
-        </div>
-    </header>
-
-    <div class="about-section">
-        <!-- About Banner with drips -->
-        <div class="about-banner">
-            <h1>About Us</h1>
-        </div>
-
-        <!-- Main Content Section (Image and Text) -->
-        <div class="content-wrapper">
-            <!-- Text Content -->
-            <div class="about-text">
-                <h2>Fishtown Web Design</h2>
-                <h3>Custom Web Design in Philadelphia</h3>
-                <p>Hi, I'm Tre, the founder and lead developer of Fishtown Web Design. My journey into programming began when I was 12 years old, creating websites and building computers to fund my video game collection. After earning my computer science degree in May 2024 at Saint Joseph's University, here in Philadelphia, and with over two years of hands-on experience in both front-end and back-end development, I'm dedicated to delivering custom, hand-coded websites with 90+ page speed scores at an affordable starting price for small businesses.</p>             <!-- Rounded image -->  
-                <picture>
-                    <!-- Mobile Image (for screens < 600px) -->
-                    <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/about/grad-m.webp">
-                    <!-- Desktop Image (for screens ≥ 601px) -->
-                    <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/about/grad.webp">
-                    <!-- Fallback Image (for browsers that don't support picture element) -->
-                    <img
-                        class="profile-image mb-3" 
-                        src="https://fishtownwebdesign.com/public/content/about/grad.jpeg" 
-                        alt="Tre Seibert - Founder of Fishtown Web Design - Philadelphia Web Developer" 
-                        loading="lazy" 
-                        decoding="async"
-                        width="150px"
-                        height="150px">
-                </picture>
-                    <p>In my experience, many small businesses in Philadelphia struggle with the upfront cost of building a new website. Those that can afford it often end up with websites that feel outdated or poorly designed, often created by developers who haven't kept up with current trends. I saw a gap where small businesses needed an affordable, trustworthy option for a performance optimized website. That's why I offer my $0 down, $150 per month plan—designed to be manageable for small businesses and to provide a custom-coded website that stands out, without breaking the bank.</p>
             </div>
         </div>
-    </div>
 
-    <!-- ============================================ -->
-    <!--                   Steps                      -->
-    <!-- ============================================ -->
+        <!-- ============================================ -->
+        <!--                   Steps                      -->
+        <!-- ============================================ -->
 
-    <section id="steps-1173">
-        <div class="cs-container">
-            <div class="cs-content">
-                <span class="cs-topper">Our Work Process</span>
-                <h2 class="cs-title">How We Create Performance Optimized Websites</h2>
-                <p class="cs-text">
-                    After a contract is signed we send a small questionnaire about your business and what you offer, then we expand on that content and write the entire site's content for you, create the design, get approval, then we build. Generally takes 2-3 weeks from start to finish.
-                </p>
+        <section id="steps-1173">
+            <div class="cs-container">
+                <div class="cs-content">
+                    <span class="cs-topper">Our Work Process</span>
+                    <h2 class="cs-title">How We Create Performance Optimized Websites</h2>
+                    <p class="cs-text">
+                        After a contract is signed we send a small questionnaire about your business and what you offer, then we expand on that content and write the entire site's content for you, create the design, get approval, then we build. Generally takes 2-3 weeks from start to finish.
+                    </p>
+                </div>
+                <ul class="cs-card-group">
+                    <li class="cs-item">
+                        <div class="cs-picture">
+                            <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383z"/> 
+                              </svg>
+                        </div>
+                        <h3 class="cs-h3">Questionaire</h3>
+                        <p class="cs-item-text">
+                            We send you an email with less than 10 questions about you business, services, what sets you apart, etc and we do all the rest.
+                        </p>
+                    </li>
+                    <li class="cs-item">
+                        <div class="cs-picture">
+                            <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306"/>
+                              </svg>
+                        </div>
+                        <h3 class="cs-h3">Design Approval</h3>
+                        <p class="cs-item-text">
+                            We then do a video screen share showing you the first draft and make any changes you want to make sure you're 100% satisfied.
+                        </p>
+                    </li>
+                    <li class="cs-item">
+                        <div class="cs-picture">
+                            <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M7.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318"/>
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8"/>
+                              </svg>
+                        </div>
+                        <h3 class="cs-h3">Development</h3>
+                        <p class="cs-item-text">
+                            Once approved, we can start coding the site out and setting everything up. We will send a demo link to view before we launch and go live.
+                        </p>
+                    </li>
+                </ul>
             </div>
-            <ul class="cs-card-group">
-                <li class="cs-item">
-                    <div class="cs-picture">
-                        <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383z"/> 
-                          </svg>
-                    </div>
-                    <h3 class="cs-h3">Questionaire</h3>
-                    <p class="cs-item-text">
-                        We send you an email with less than 10 questions about you business, services, what sets you apart, etc and we do all the rest.
-                    </p>
-                </li>
-                <li class="cs-item">
-                    <div class="cs-picture">
-                        <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306"/>
-                          </svg>
-                    </div>
-                    <h3 class="cs-h3">Design Approval</h3>
-                    <p class="cs-item-text">
-                        We then do a video screen share showing you the first draft and make any changes you want to make sure you're 100% satisfied.
-                    </p>
-                </li>
-                <li class="cs-item">
-                    <div class="cs-picture">
-                        <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M7.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318"/>
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8"/>
-                          </svg>
-                    </div>
-                    <h3 class="cs-h3">Development</h3>
-                    <p class="cs-item-text">
-                        Once approved, we can start coding the site out and setting everything up. We will send a demo link to view before we launch and go live.
-                    </p>
-                </li>
-            </ul>
-        </div>
-    </section>
+        </section>
 
 
 
 
 
-    <!-- Footer Section -->
-    <footer class="footer text-center py-4">
-        <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
-        <picture>
-            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
-            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
-            <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Web Design Philadelphia Logo">
-        </picture>
-        <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
-        <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
-    </footer>
+        <!-- Footer Section -->
+        <footer class="footer text-center py-4">
+            <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
+            <picture>
+                <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
+                <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
+                <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Web Design Philadelphia Logo">
+            </picture>
+            <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
+            <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
+        </footer>
 
-    <script defer>
-        // Set the current year dynamically
-        document.getElementById("current-year").textContent = new Date().getFullYear();
-    </script>
-    <script>
-        // add classes for mobile navigation toggling
-        var CSbody = document.querySelector('body');
-        const CSnavbarMenu = document.querySelector('#cs-navigation');
-        const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
+        <script defer>
+            // Set the current year dynamically
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+        </script>
+        <script>
+            // add classes for mobile navigation toggling
+            var CSbody = document.querySelector('body');
+            const CSnavbarMenu = document.querySelector('#cs-navigation');
+            const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
 
-        CShamburgerMenu.addEventListener('click', function () {
-            CShamburgerMenu.classList.toggle('cs-active');
-            CSnavbarMenu.classList.toggle('cs-active');
-            CSbody.classList.toggle('cs-open');
-            // run the function to check the aria-expanded value
-            ariaExpanded();
-        });
+            CShamburgerMenu.addEventListener('click', function () {
+                CShamburgerMenu.classList.toggle('cs-active');
+                CSnavbarMenu.classList.toggle('cs-active');
+                CSbody.classList.toggle('cs-open');
+                // run the function to check the aria-expanded value
+                ariaExpanded();
+            });
 
-        // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
-        function ariaExpanded() {
-            const csUL = document.querySelector('#cs-expanded');
-            const csExpanded = csUL.getAttribute('aria-expanded');
+            // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+            function ariaExpanded() {
+                const csUL = document.querySelector('#cs-expanded');
+                const csExpanded = csUL.getAttribute('aria-expanded');
 
-            if (csExpanded === 'false') {
-                csUL.setAttribute('aria-expanded', 'true');
-            } else {
-                csUL.setAttribute('aria-expanded', 'false');
+                if (csExpanded === 'false') {
+                    csUL.setAttribute('aria-expanded', 'true');
+                } else {
+                    csUL.setAttribute('aria-expanded', 'false');
+                }
             }
-        }
 
-        // mobile nav toggle code
-        const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
-        for (const item of dropDowns) {
-            const onClick = () => {
-                item.classList.toggle('cs-active');
-            };
-            item.addEventListener('click', onClick);
-        }
+            // mobile nav toggle code
+            const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+            for (const item of dropDowns) {
+                const onClick = () => {
+                    item.classList.toggle('cs-active');
+                };
+                item.addEventListener('click', onClick);
+            }
                                         
-    </script>
-
-
+        </script>
+    </div>
 </body>
 </html>
