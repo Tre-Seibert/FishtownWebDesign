@@ -42,6 +42,29 @@ async function initializeDatabase() {
     `;
     
     await connection.execute(createTableQuery);
+
+    // Create questionnaire_submissions table
+    const createQuestionnaireTableQuery = `
+      CREATE TABLE IF NOT EXISTS questionnaire_submissions (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        primary_services TEXT NOT NULL,
+        top_revenue_services TEXT NOT NULL,
+        about_business TEXT NOT NULL,
+        why_choose_you TEXT NOT NULL,
+        essential_info TEXT,
+        design_inspiration TEXT NOT NULL,
+        primary_cta VARCHAR(255) NOT NULL,
+        branding TEXT NOT NULL,
+        features TEXT NOT NULL,
+        requested_pages TEXT NOT NULL,
+        experience_feedback TEXT,
+        submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `;
+
+    await connection.execute(createQuestionnaireTableQuery);
     console.log('Database tables initialized successfully');
     connection.release();
   } catch (error) {
