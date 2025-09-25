@@ -1,0 +1,69 @@
+.contact-banner{position:relative;width:100%;height:150px;background:url('/public/content/svgs/dots.svg');mask-repeat:no-repeat;mask-size:cover;display:flex;justify-content:center;align-items:flex-end;z-index:1}
+.contact-banner h1{font-size: 1.2rem;font-weight:700;color:#000;font-family:Horizon;margin-top:1rem}
+
+/* Section wrapper */
+#questionnaire{padding:var(--sectionPadding);position:relative;z-index:1}
+#questionnaire .cs-container{width:100%;max-width:36.5rem;margin:auto;display:flex;justify-content:center;align-items:stretch;flex-direction:column;gap:clamp(3rem,6vw,5rem)}
+#questionnaire .cs-content{text-align:left;width:100%;display:flex;flex-direction:column;align-items:flex-start}
+#questionnaire .cs-title{margin:0 0 2rem}
+
+/* Form base */
+#questionnaire .cs-form{width:100%;padding:clamp(1.5rem,5.18vw,3rem) clamp(1.25rem,5.18vw,2rem);box-sizing:border-box;background-color:#f7f8f8;display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;gap:1.25rem}
+#questionnaire .cs-label{font-size:clamp(.875rem, 1.5vw, 1rem);width:100%;color:var(--headerColor);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;margin-bottom:1rem;gap:.25rem}
+#questionnaire .cs-input{font-size:1rem;width:100%;height:3.5rem;padding:0 0 0 1.5rem;color:var(--headerColor);background-color:#fff;border:none;box-sizing:border-box}
+#questionnaire .cs-input::placeholder{color:#7d799c;opacity:.6}
+#questionnaire .cs-textarea{min-height:7.5rem;padding-top:1.5rem;margin-bottom:.75rem;font-family:inherit}
+
+/* Trust / privacy panel */
+.trust-panel{position:relative;overflow:hidden;margin:1rem 0 0;background:linear-gradient(180deg,#f7f8f8, #ffffff);border:1px solid #e6e7e8;border-radius:.75rem;padding:1rem}
+.trust-panel:before{content:"";position:absolute;left:-10%;right:-10%;top:-18px;height:72px;background:url('/public/svgs/waves.svg') center/contain no-repeat;opacity:.08;pointer-events:none}
+.trust-header{display:flex;align-items:flex-start;gap:.75rem}
+.trust-icon{display:inline-flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:999px;background:var(--black);color:#fff;flex:0 0 auto}
+.trust-copy h3{margin:0 0 .25rem;font-weight:700;font-size:clamp(1rem,1.6vw,1.25rem);color:var(--headerColor)}
+.trust-copy p{margin:0;color:var(--headerColor);opacity:.85;font-size:.9375rem;line-height:1.45}
+.trust-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
+.trust-badges .badge{display:inline-block;padding:.35rem .6rem;border-radius:999px;background:#e6e7e8;color:#000;font-weight:600;font-size:.8125rem}
+.trust-fish{position:absolute;right:.75rem;bottom:.5rem;color:#000;opacity:.15}
+
+/* Mobile/desktop visibility */
+.trust-desktop{display:none}
+.trust-mobile{display:block}
+
+/* Stepper */
+.stepper{width:100%;display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem}
+.stepper .step-text{font-weight:700;color:var(--headerColor)}
+.stepper .step-progress{flex:1;height:.375rem;background:#e6e7e8;position:relative;border-radius:999px;overflow:hidden}
+.stepper #stepProgressBar{display:block;height:100%;width:50%;background:var(--black)}
+
+/* Step containers */
+.form-step{display:none;width:100%}
+.form-step.active{display:block}
+.form-actions{width:100%;display:flex;justify-content:space-between;gap:.75rem;margin-top:.25rem}
+
+/* Buttons */
+#questionnaire .cs-button-solid{font-size:1rem;line-height:clamp(2em, 5.5vw, 3.5em);text-decoration:none;font-weight:700;text-align:center;margin:0;color:#fff;border:none;min-width:9.375rem;padding:.5rem 1.3rem;background-color:var(--black);border-radius:.25rem;display:inline-block;position:relative;z-index:1;box-sizing:border-box;transition:color .3s}
+#questionnaire .cs-button-solid:before{content:"";position:absolute;height:100%;width:0%;background:#000;opacity:1;top:0;left:0;z-index:-1;border-radius:.25rem;transition:width .3s}
+#questionnaire .cs-button-solid:hover{color:#fff}
+#questionnaire .cs-submit{min-width:15.6875rem;border-radius:0}
+
+/* Modal */
+.modal{display:none;position:fixed;z-index:1;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.5);overflow:auto;padding-top:100px;font-family:"DM Serif Display"}
+.modal-content{background-color:#fff;margin:auto;padding:20px;border:1px solid #888;width:80%;max-width:400px}
+.modal-content p{font-family:Roboto}
+#closeModal{background-color:var(--secondary);color:#fff;border:none;padding:10px 20px;font-size:14px;cursor:pointer}
+
+/* Desktop enhancements */
+@media only screen and (min-width:1024px){
+  #questionnaire .cs-container{max-width:80rem;display:grid;grid-template-columns:minmax(0, 1fr) minmax(0, 33.875rem);grid-auto-rows:auto;column-gap:clamp(2rem,4vw,4rem);row-gap:clamp(1rem,1.5vw,1.5rem);align-items:start}
+  #questionnaire .cs-content{max-width:33.875rem;order:0;grid-column:2;grid-row:1}
+  #questionnaire .cs-form{grid-column:1;grid-row:1}
+  #questionnaire .trust-panel{grid-column:2;grid-row:2}
+  .trust-desktop{display:block;}
+  .trust-mobile{display:none}
+  .contact-banner h1{font-size:clamp(1.69375rem, 2.3vw, 1.9875rem)}
+  .trust-panel{margin-top:2rem;padding:1.5rem 1.75rem;border-radius:1rem}
+  .trust-panel:before{top:-24px;height:96px;opacity:.1}
+  .trust-fish{right:1rem;bottom:.75rem;transform:scale(1.05)}
+}
+
+
