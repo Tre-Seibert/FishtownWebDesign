@@ -178,6 +178,7 @@
         <div class="about-text">
             <div class="blog-content">
                 <h1><%= post.title %></h1>
+                <% if (post.featuredImage) { %>
                 <div class="featured-image">
                     <picture>
                         <source media="(max-width: 600px)" srcset="<%= post.featuredImage.mobile %>">
@@ -190,9 +191,22 @@
                             decoding="async">
                     </picture>
                 </div>
+                <% } %>
                 <p><strong>Published:</strong> <%= new Date(new Date(post.publishedDate).getTime() + 24*60*60*1000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></p>
                 <div>
-                    <% post.content.forEach(function(item) { %>
+                    <% 
+                        // Handle both post.content (Blocks) and post.contents (Markdown) for backward compatibility
+                        if (post.contents && typeof post.contents === 'string') {
+                            // Handle Markdown content
+                    %>
+                        <div class="blog-markdown-content">
+                            <%- md.render(post.contents) %>
+                        </div>
+                    <% 
+                        } else if (post.content && Array.isArray(post.content)) {
+                            // Handle Blocks content
+                            post.content.forEach(function(item) { 
+                    %>
                         <% if (item.type === 'heading') { %>
                             <h<%= item.level %> class="blog-heading"><%= item.children[0].text %></h<%= item.level %>>
                         <% } else if (item.type === 'paragraph') { %>
@@ -234,7 +248,13 @@
                         <% } else { %>
                             <p>Unknown type: <%= item.type %></p>
                         <% } %>
-                    <% }); %>
+                    <% 
+                            });
+                        } else {
+                            // Fallback for unexpected data types
+                    %>
+                        <p>No content available.</p>
+                    <% } %>
                 </div>
                 <a href="/blog" class="btn btn-primary">Back to blog</a>
             </div>

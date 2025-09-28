@@ -141,6 +141,8 @@ app.use('/api', createProxyMiddleware({
 }));
 
 const axios = require('axios');
+const MarkdownIt = require('markdown-it');
+const md = new MarkdownIt();
 
 const STRAPI_URL = 'https://fishtownwebdesign.com';
 
@@ -243,7 +245,7 @@ app.get('/blog', async (req, res) => {
       selectedCategory: categoryFilter
     });
     
-    res.render('blog-index', { posts, categories, selectedCategory: categoryFilter });
+    res.render('blog-index', { posts, categories, selectedCategory: categoryFilter, md: md });
   } catch (error) {
     logger.error('Blog index route error', {
       error: error.message,
@@ -269,9 +271,26 @@ app.get('/blog/:slug', async (req, res) => {
     }
     
     const post = response.data.data[0];
+    
+    // Process the post data to match the structure used in getPosts
+    const processedPost = {
+      id: post.id,
+      title: post.title,
+      slug: post.slug,
+      content: post.content, // Keep the original content field
+      contents: post.contents, // Also keep contents for backward compatibility
+      publishedDate: post.publishedDate,
+      publishedAt: post.publishedAt,
+      updatedAt: post.updatedAt,
+      metaTitle: post.metaTitle,
+      metaDescription: post.metaDescription,
+      excerpt: post.excerpt,
+      categories: post.categories?.map(cat => cat.name) || []
+    };
+    
     // Process the featured image like we do in getPosts
     if (post.featuredImage) {
-      post.featuredImage = {
+      processedPost.featuredImage = {
         mobile: post.featuredImage.formats?.small?.url
           ? STRAPI_URL + post.featuredImage.formats.small.url
           : STRAPI_URL + post.featuredImage.url,
@@ -284,12 +303,17 @@ app.get('/blog/:slug', async (req, res) => {
     
     logger.info('Successfully fetched post', { 
       slug,
-      hasCategories: post.categories?.length > 0,
-      hasContent: !!post.content,
-      hasFeaturedImage: !!post.featuredImage
+      hasCategories: processedPost.categories?.length > 0,
+      hasContent: !!processedPost.content,
+      hasContents: !!processedPost.contents,
+      hasFeaturedImage: !!processedPost.featuredImage,
+      contentType: typeof processedPost.content,
+      contentsType: typeof processedPost.contents,
+      contentIsArray: Array.isArray(processedPost.content),
+      contentsIsArray: Array.isArray(processedPost.contents)
     });
     
-    res.render('blog-post', { post });
+    res.render('blog-post', { post: processedPost, md: md });
   } catch (error) {
     logger.error('Single post route error', {
       error: error.message,
