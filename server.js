@@ -171,6 +171,7 @@ async function getPosts(categoryFilter = null) {
       slug: post.slug,
       content: post.content,
       publishedDate: post.publishedDate,
+      excerpt: post.excerpt,
       categories: post.categories?.map(cat => cat.name) || [],
       featuredImage: post.featuredImage ? {
         mobile: post.featuredImage.formats?.small?.url

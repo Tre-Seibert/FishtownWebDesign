@@ -185,25 +185,7 @@
                                     </time>
                                 </div>
                                 <p class="blog-excerpt">
-                                    <% 
-                                        let excerpt = 'No preview available.';
-                                        try {
-                                            // Handle both post.content (Blocks) and post.contents (Markdown) for backward compatibility
-                                            if (post.contents && typeof post.contents === 'string') {
-                                                // Handle Markdown content - strip markdown and get first 150 chars
-                                                excerpt = post.contents.replace(/[#*`_~\[\]()]/g, '').substring(0, 150) + '...';
-                                            } else if (post.content && Array.isArray(post.content)) {
-                                                // Handle Blocks content
-                                                const firstTextBlock = post.content.find(block => block.children && block.children.length > 0);
-                                                if (firstTextBlock && firstTextBlock.children[0].text) {
-                                                    excerpt = firstTextBlock.children[0].text.substring(0, 150) + '...';
-                                                }
-                                            }
-                                        } catch (e) {
-                                            // Fallback in case of error
-                                        }
-                                    %>
-                                    <%= excerpt %>
+                                    <%= post.excerpt || 'No preview available.' %>
                                 </p>
                                 <a href="/blog/<%= post.slug %>" class="cs-button-solid">Read More</a>
                             </div>
