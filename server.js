@@ -27,6 +27,14 @@ app.set('views', path.join(__dirname, 'views'));
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
 
+// Force www redirect
+app.use((req, res, next) => {
+  if (req.hostname === 'fishtownwebdesign.com') {
+    return res.redirect(301, `https://www.fishtownwebdesign.com${req.url}`);
+  }
+  next();
+});
+
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { createGzip } = require('zlib');
 
