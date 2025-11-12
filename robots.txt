@@ -1,7 +1,6 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
-Disallow: /public/
 Disallow: /questionnaire
 Disallow: /submit-questionnaire
 Sitemap: https://fishtownwebdesign.com/sitemap.xml
