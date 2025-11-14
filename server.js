@@ -239,10 +239,61 @@ async function getCategories() {
   }
 }
 
-// Blog index route
+// Blog category route with clean URLs
+app.get('/blog/category/:categorySlug', async (req, res) => {
+  try {
+    const { categorySlug } = req.params;
+    logger.info('Blog category request received', { categorySlug });
+    
+    // Convert slug back to category name for filtering
+    const categoryName = categorySlug
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+    
+    const posts = await getPosts(categoryName);
+    const categories = await getCategories();
+    
+    logger.info('Rendering blog category', {
+      postCount: posts.length,
+      categoryCount: categories.length,
+      selectedCategory: categoryName
+    });
+    
+    res.render('blog-index', { 
+      posts, 
+      categories, 
+      selectedCategory: categoryName, 
+      md: md 
+    });
+  } catch (error) {
+    logger.error('Blog category route error', {
+      error: error.message,
+      stack: error.stack,
+      categorySlug: req.params.categorySlug
+    });
+    res.status(500).send('Something went wrong.');
+  }
+});
+
+// Blog index route with redirect for old query-based category URLs
 app.get('/blog', async (req, res) => {
   try {
-    const categoryFilter = req.query.category || null;
+    // Redirect old query-based category URLs to new clean URLs
+    if (req.query.category) {
+      const categorySlug = req.query.category
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[()]/g, '')
+        .replace(/&/g, 'and');
+      logger.info('Redirecting old category URL', { 
+        oldCategory: req.query.category, 
+        newSlug: categorySlug 
+      });
+      return res.redirect(301, `/blog/category/${categorySlug}`);
+    }
+    
+    const categoryFilter = null;
     logger.info('Blog index request received', { categoryFilter });
     
     const posts = await getPosts(categoryFilter);
@@ -379,6 +430,12 @@ Object.keys(redirects).forEach((oldPath) => {
 
 app.get('/home', (req, res) => {
   res.redirect(301, '/'); // 301 is for a permanent redirect
+});
+
+// Return 410 Gone for old /public/*.html direct access attempts (not covered by redirects above)
+app.get('/public/*.html', (req, res) => {
+  logger.info('410 Gone returned for old public URL', { url: req.url });
+  res.status(410).send('This page has permanently moved. Please visit our <a href="/">homepage</a>.');
 });
 
 // Routes
