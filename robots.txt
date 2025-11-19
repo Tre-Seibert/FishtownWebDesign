@@ -3,4 +3,5 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /questionnaire
 Disallow: /submit-questionnaire
-Sitemap: https://fishtownwebdesign.com/sitemap.xml
+Disallow: /cdn-cgi/
+Sitemap: https://www.fishtownwebdesign.com/sitemap.xml

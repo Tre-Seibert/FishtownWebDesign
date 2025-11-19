@@ -435,7 +435,37 @@ app.get('/home', (req, res) => {
 // Return 410 Gone for old /public/*.html direct access attempts (not covered by redirects above)
 app.get('/public/*.html', (req, res) => {
   logger.info('410 Gone returned for old public URL', { url: req.url });
+  res.set('X-Robots-Tag', 'noindex');
   res.status(410).send('This page has permanently moved. Please visit our <a href="/">homepage</a>.');
+});
+
+// Return 410 Gone for old/deleted pages
+const deletedPages = [
+  '/blog/philly-site-speed-hacks',
+  '/blog/fishtownwebdesign.com',
+  '/blog/seo-blog-',
+  '/services',
+  '/blog/link',
+  '/tos',
+  '/subscribe-newsletter',
+  '/affordable-website-design-philadelphia',
+  '/blog/building-a-blog-with-strapi-and-node-js',
+  '/blog/why-trade-business-owners-need-a-blog-seo-tips-for-painters-contractors',
+  '/blog/discover-fishtown-philadelphia-a-vibrant-neighborhood-and-the-evil-genius-block-party-experience',
+  '/philadelphia-web-design-firm',
+  '/internet-marketing-fishtown',
+  '/web-designer-philadelphia',
+  '/views/blog',
+  '/philadelphia-web-design',
+  '/web-design-near-me'
+];
+
+deletedPages.forEach((path) => {
+  app.get(path, (req, res) => {
+    logger.info('410 Gone returned for deleted page', { url: req.url });
+    res.set('X-Robots-Tag', 'noindex');
+    res.status(410).send('This page has been permanently removed.');
+  });
 });
 
 // Routes
