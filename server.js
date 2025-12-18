@@ -27,6 +27,25 @@ app.set('views', path.join(__dirname, 'views'));
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
 
+// Allowed blog post slugs
+const ALLOWED_BLOG_POSTS = [
+  'HVAC-Website-Design-Case-Study-Axel-Mechanical-Services',
+  'definitive-guide-to-web-design-for-philadelphia-businesses',
+  'from-cat-inspiration-to-coffee-empire-building-green-shades-coffee-co-purpose-driven-ecommerce-platform',
+  'web-design-mistakes-philadelphia-startups'
+];
+
+// Allowed category slugs
+const ALLOWED_CATEGORIES = ['web-design', 'case-studies'];
+
+// Force HTTPS redirect (before www redirect)
+app.use((req, res, next) => {
+  if (req.protocol === 'http' && req.get('host') !== 'localhost:7000') {
+    return res.redirect(301, `https://${req.get('host')}${req.url}`);
+  }
+  next();
+});
+
 // Force www redirect
 app.use((req, res, next) => {
   if (req.hostname === 'fishtownwebdesign.com') {
@@ -84,8 +103,9 @@ async function generateSitemap() {
     staticPages.forEach(page => sitemap.write(page));
     logger.info('Added static pages to sitemap', { pageCount: staticPages.length });
 
-    // Add blog posts
-    posts.forEach(post => {
+    // Add blog posts (only allowed ones)
+    const allowedPosts = posts.filter(post => ALLOWED_BLOG_POSTS.includes(post.slug));
+    allowedPosts.forEach(post => {
       sitemap.write({
         url: `/blog/${post.slug}`,
         changefreq: 'monthly',
@@ -93,7 +113,17 @@ async function generateSitemap() {
         lastmod: post.publishedDate || new Date().toISOString(),
       });
     });
-    logger.info('Added blog posts to sitemap', { postCount: posts.length });
+    logger.info('Added blog posts to sitemap', { postCount: allowedPosts.length });
+
+    // Add category pages
+    ALLOWED_CATEGORIES.forEach(categorySlug => {
+      sitemap.write({
+        url: `/blog/category/${categorySlug}`,
+        changefreq: 'weekly',
+        priority: 0.8,
+      });
+    });
+    logger.info('Added category pages to sitemap', { categoryCount: ALLOWED_CATEGORIES.length });
 
     sitemap.end();
     cachedSitemap = await streamToPromise(sitemap).then(data => data.toString());
@@ -245,6 +275,13 @@ app.get('/blog/category/:categorySlug', async (req, res) => {
     const { categorySlug } = req.params;
     logger.info('Blog category request received', { categorySlug });
     
+    // Check if category is allowed
+    if (!ALLOWED_CATEGORIES.includes(categorySlug)) {
+      logger.warn('Unauthorized category access attempt', { categorySlug });
+      res.set('X-Robots-Tag', 'noindex');
+      return res.status(404).send('Category not found.');
+    }
+    
     // Convert slug back to category name for filtering
     const categoryName = categorySlug
       .split('-')
@@ -263,7 +300,8 @@ app.get('/blog/category/:categorySlug', async (req, res) => {
     res.render('blog-index', { 
       posts, 
       categories, 
-      selectedCategory: categoryName, 
+      selectedCategory: categoryName,
+      categorySlug: categorySlug,
       md: md 
     });
   } catch (error) {
@@ -286,11 +324,22 @@ app.get('/blog', async (req, res) => {
         .replace(/\s+/g, '-')
         .replace(/[()]/g, '')
         .replace(/&/g, 'and');
-      logger.info('Redirecting old category URL', { 
-        oldCategory: req.query.category, 
-        newSlug: categorySlug 
-      });
-      return res.redirect(301, `/blog/category/${categorySlug}`);
+      
+      // Only redirect to allowed categories
+      if (ALLOWED_CATEGORIES.includes(categorySlug)) {
+        logger.info('Redirecting old category URL', { 
+          oldCategory: req.query.category, 
+          newSlug: categorySlug 
+        });
+        return res.redirect(301, `/blog/category/${categorySlug}`);
+      } else {
+        // Redirect disallowed categories to blog index
+        logger.info('Redirecting disallowed category to blog index', { 
+          oldCategory: req.query.category, 
+          categorySlug 
+        });
+        return res.redirect(301, '/blog');
+      }
     }
     
     const categoryFilter = null;
@@ -322,11 +371,19 @@ app.get('/blog/:slug', async (req, res) => {
     const { slug } = req.params;
     logger.info('Single post request received', { slug });
     
+    // Check if post is allowed
+    if (!ALLOWED_BLOG_POSTS.includes(slug)) {
+      logger.warn('Unauthorized blog post access attempt', { slug });
+      res.set('X-Robots-Tag', 'noindex');
+      return res.status(404).send('Post not found');
+    }
+    
     const url = `http://127.0.0.1:1337/api/posts?filters[slug][$eq]=${slug}&populate=categories&populate=featuredImage`;
     const response = await axios.get(url);
     
     if (!response.data.data || response.data.data.length === 0) {
       logger.warn('Post not found', { slug });
+      res.set('X-Robots-Tag', 'noindex');
       return res.status(404).send('Post not found');
     }
     
@@ -385,29 +442,6 @@ app.get('/blog/:slug', async (req, res) => {
   }
 });
 
-// Filter Posts by Category Route using category slug
-app.get('/blog/category/:slug', async (req, res) => {
-  try {
-    const slug = req.params.slug;
-
-    // Fetch posts filtered by the category slug
-    const response = await axios.get(`http://127.0.0.1:1337/api/posts?filters[category][slug][$eq]=${slug}&populate=categories`);
-    const posts = response.data.data;
-
-    // Fetch the category data for display
-    const categoryResponse = await axios.get(`http://127.0.0.1:1337/api/categories?filters[slug][$eq]=${slug}`);
-    const category = categoryResponse.data.data[0];
-
-    if (category) {
-      res.render('blog-index', { category, posts });
-    } else {
-      res.status(404).send('Category not found.');
-    }
-  } catch (error) {
-    console.error('Error fetching category or posts:', error);
-    res.status(500).send('Error fetching category or posts from Strapi.');
-  }
-});
 
 // Redirects
 const redirects = {
@@ -432,6 +466,11 @@ app.get('/home', (req, res) => {
   res.redirect(301, '/'); // 301 is for a permanent redirect
 });
 
+// Redirect /tos to /terms-of-service
+app.get('/tos', (req, res) => {
+  res.redirect(301, '/terms-of-service');
+});
+
 // Return 410 Gone for old /public/*.html direct access attempts (not covered by redirects above)
 app.get('/public/*.html', (req, res) => {
   logger.info('410 Gone returned for old public URL', { url: req.url });
@@ -446,7 +485,6 @@ const deletedPages = [
   '/blog/seo-blog-',
   '/services',
   '/blog/link',
-  '/tos',
   '/subscribe-newsletter',
   '/affordable-website-design-philadelphia',
   '/blog/building-a-blog-with-strapi-and-node-js',
@@ -457,7 +495,10 @@ const deletedPages = [
   '/web-designer-philadelphia',
   '/views/blog',
   '/philadelphia-web-design',
-  '/web-design-near-me'
+  '/web-design-near-me',
+  '/blog/best-website-builders-small-businesses-2025',
+  '/blog/seo-blog-writing-philadelphia-business',
+  '/blog/philly-business-online-presence-tips'
 ];
 
 deletedPages.forEach((path) => {
