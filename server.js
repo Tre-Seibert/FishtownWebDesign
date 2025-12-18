@@ -492,6 +492,38 @@ app.get('/tos', (req, res) => {
   res.redirect(301, '/terms-of-service');
 });
 
+// High-value page redirects (301 permanent redirects to preserve SEO value)
+// These pages were deleted but still get significant traffic from Google
+app.get('/philadelphia-web-design', (req, res) => {
+  logger.info('301 redirect: philadelphia-web-design to web-design', { url: req.url });
+  res.redirect(301, '/web-design');
+});
+
+app.get('/internet-marketing-fishtown', (req, res) => {
+  logger.info('301 redirect: internet-marketing-fishtown to seo', { url: req.url });
+  res.redirect(301, '/seo');
+});
+
+app.get('/web-designer-philadelphia', (req, res) => {
+  logger.info('301 redirect: web-designer-philadelphia to web-design', { url: req.url });
+  res.redirect(301, '/web-design');
+});
+
+app.get('/philadelphia-web-design-firm', (req, res) => {
+  logger.info('301 redirect: philadelphia-web-design-firm to web-design', { url: req.url });
+  res.redirect(301, '/web-design');
+});
+
+app.get('/web-design-near-me', (req, res) => {
+  logger.info('301 redirect: web-design-near-me to web-design', { url: req.url });
+  res.redirect(301, '/web-design');
+});
+
+app.get('/affordable-website-design-philadelphia', (req, res) => {
+  logger.info('301 redirect: affordable-website-design-philadelphia to pricing', { url: req.url });
+  res.redirect(301, '/pricing');
+});
+
 // Return 410 Gone for old /public/*.html direct access attempts (not covered by redirects above)
 app.get('/public/*.html', (req, res) => {
   logger.info('410 Gone returned for old public URL', { url: req.url });
@@ -499,7 +531,7 @@ app.get('/public/*.html', (req, res) => {
   res.status(410).send('This page has permanently moved. Please visit our <a href="/">homepage</a>.');
 });
 
-// Return 410 Gone for old/deleted pages
+// Return 410 Gone for old/deleted pages (low-value pages that should be removed from index)
 const deletedPages = [
   '/blog/philly-site-speed-hacks',
   '/blog/fishtownwebdesign.com',
@@ -507,16 +539,10 @@ const deletedPages = [
   '/services',
   '/blog/link',
   '/subscribe-newsletter',
-  '/affordable-website-design-philadelphia',
   '/blog/building-a-blog-with-strapi-and-node-js',
   '/blog/why-trade-business-owners-need-a-blog-seo-tips-for-painters-contractors',
   '/blog/discover-fishtown-philadelphia-a-vibrant-neighborhood-and-the-evil-genius-block-party-experience',
-  '/philadelphia-web-design-firm',
-  '/internet-marketing-fishtown',
-  '/web-designer-philadelphia',
   '/views/blog',
-  '/philadelphia-web-design',
-  '/web-design-near-me',
   '/blog/best-website-builders-small-businesses-2025',
   '/blog/seo-blog-writing-philadelphia-business',
   '/blog/philly-business-online-presence-tips'
