@@ -27,6 +27,9 @@ app.set('views', path.join(__dirname, 'views'));
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
 
+// Trust proxy (needed when behind Cloudflare, AWS ALB, etc.)
+app.set('trust proxy', true);
+
 // Allowed blog post slugs
 const ALLOWED_BLOG_POSTS = [
   'HVAC-Website-Design-Case-Study-Axel-Mechanical-Services',
@@ -39,10 +42,28 @@ const ALLOWED_BLOG_POSTS = [
 const ALLOWED_CATEGORIES = ['web-design', 'case-studies'];
 
 // Force HTTPS redirect (before www redirect)
+// Skip if behind a proxy (Cloudflare, AWS ALB, etc.) - they handle HTTPS redirects
 app.use((req, res, next) => {
-  if (req.protocol === 'http' && req.get('host') !== 'localhost:7000') {
-    return res.redirect(301, `https://${req.get('host')}${req.url}`);
+  const host = req.get('host');
+  const forwardedProto = req.get('X-Forwarded-Proto');
+  const isLocalhost = host === 'localhost:7000';
+  
+  // Skip redirect for localhost
+  if (isLocalhost) {
+    return next();
   }
+  
+  // If behind a proxy (X-Forwarded-Proto exists), let the proxy handle HTTPS redirects
+  // This prevents infinite redirect loops when proxy forwards HTTP to Node.js
+  if (forwardedProto) {
+    return next();
+  }
+  
+  // Only redirect if direct connection (no proxy) and protocol is HTTP
+  if (req.protocol === 'http') {
+    return res.redirect(301, `https://${host}${req.url}`);
+  }
+  
   next();
 });
 
