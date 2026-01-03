@@ -963,9 +963,22 @@ app.post('/send-newsletter', async (req, res) => {
       try {
         // Replace unsubscribe placeholder with actual unsubscribe link
         const unsubscribeLink = `https://www.fishtownwebdesign.com/unsubscribe?email=${encodeURIComponent(subscriber.email)}`;
-        const personalizedHtml = newsletterHtml.replace(
+        let personalizedHtml = newsletterHtml;
+        
+        // Replace both Zoho Campaigns format and template format
+        personalizedHtml = personalizedHtml.replace(
           /\$\[LI:UNSUBSCRIBE\]\$/g,
           unsubscribeLink
+        );
+        // Replace {{SUBSCRIBER_EMAIL}} placeholder in unsubscribe links
+        personalizedHtml = personalizedHtml.replace(
+          /unsubscribe\?email=\{\{SUBSCRIBER_EMAIL\}\}/g,
+          `unsubscribe?email=${encodeURIComponent(subscriber.email)}`
+        );
+        // Also replace standalone {{SUBSCRIBER_EMAIL}} if used elsewhere
+        personalizedHtml = personalizedHtml.replace(
+          /\{\{SUBSCRIBER_EMAIL\}\}/g,
+          subscriber.email
         );
 
         // Send email via Zoho

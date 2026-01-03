@@ -75,7 +75,8 @@ class ZohoMailService {
         fromAddress: this.fromEmail,
         toAddress: toEmail,
         subject: subject,
-        content: htmlContent
+        content: htmlContent,
+        mailFormat: 'html' // Explicitly set to HTML for proper rendering
       };
 
       const response = await axios.post(
