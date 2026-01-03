@@ -4,7 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
     <title>Fishtown Web Design Newsletter</title>
+    <style type="text/css">
+        :root {
+            color-scheme: light;
+            supported-color-schemes: light;
+        }
+        /* Prevent dark mode color inversion */
+        body {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        /* Force light color scheme for all elements */
+        table, td, div, p, a {
+            color-scheme: light !important;
+        }
+    </style>
     <!--[if mso]>
     <style type="text/css">
         body, table, td {font-family: Arial, sans-serif !important;}
@@ -21,7 +38,7 @@
                     
                     <!-- Header -->
                     <tr>
-                        <td style="background-color: #000000; padding: 30px 40px; text-align: center;">
+                        <td style="background-color: #000000 !important; padding: 30px 40px; text-align: center; color-scheme: light;">
                             <img src="https://fishtownwebdesign.com/public/content/home/logo.png" alt="Fishtown Web Design" width="130" height="46" style="display: block; margin: 0 auto; max-width: 130px;">
                         </td>
                     </tr>
@@ -134,7 +151,7 @@
                     
                     <!-- Footer -->
                     <tr>
-                        <td style="background-color: #000000; padding: 30px 40px; text-align: center;">
+                        <td style="background-color: #000000 !important; padding: 30px 40px; text-align: center; color-scheme: light;">
                             <p style="margin: 0 0 15px 0; font-size: 14px; color: #ffffff; line-height: 1.5;">
                                 <strong>Fishtown Web Design</strong><br>
                                 Philadelphia's Premier Custom Web Design Agency
