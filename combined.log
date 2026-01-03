@@ -1,0 +1,6 @@
+{"level":"info","message":"Newsletter sending in TEST MODE","testEmail":"treseibert3@gmail.com","timestamp":"2026-01-03T02:57:29.299Z"}
+{"email":"treseibert3@gmail.com","error":"Failed to send email via Zoho Mail API","level":"error","message":"Error sending newsletter to subscriber","timestamp":"2026-01-03T02:57:30.065Z"}
+{"failed":1,"level":"info","message":"Newsletter sending completed","successful":0,"testMode":true,"timestamp":"2026-01-03T02:57:30.066Z","total":1}
+{"level":"info","message":"Newsletter sending in TEST MODE","testEmail":"treseibert3@gmail.com","timestamp":"2026-01-03T02:58:54.261Z"}
+{"email":"treseibert3@gmail.com","level":"info","message":"Newsletter sent successfully","timestamp":"2026-01-03T02:58:55.329Z"}
+{"failed":0,"level":"info","message":"Newsletter sending completed","successful":1,"testMode":true,"timestamp":"2026-01-03T02:58:55.330Z","total":1}

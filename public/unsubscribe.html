@@ -371,6 +371,15 @@
     </script>
 
     <script>
+        // Auto-populate email from URL parameter if present
+        window.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const emailParam = urlParams.get('email');
+            if (emailParam) {
+                document.getElementById('email').value = decodeURIComponent(emailParam);
+            }
+        });
+
         // Handle unsubscribe form submission
         document.getElementById('unsubscribe-form').addEventListener('submit', async function(e) {
             e.preventDefault();

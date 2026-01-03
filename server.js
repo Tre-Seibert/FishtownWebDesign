@@ -8,6 +8,8 @@ const app = express();
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const winston = require('winston');
 const { pool, testConnection, initializeDatabase } = require('./public/scripts/database');
+const zohoMailService = require('./public/scripts/zohoMail');
+const fs = require('fs').promises;
 
 // Define a port number
 const port = 7000;
@@ -863,6 +865,158 @@ app.post('/unsubscribe-newsletter', async (req, res) => {
     res.status(500).json({ 
       success: false, 
       message: 'There was an error processing your unsubscription. Please try again later.' 
+    });
+  }
+});
+
+/**
+ * Route to send newsletter to all active subscribers
+ * 
+ * POST /send-newsletter
+ * Headers: Authorization: Bearer <NEWSLETTER_SECRET_TOKEN>
+ * Body: {
+ *   newsletterFile: "July2025.html",  // Filename in public/newsletter/
+ *   subject: "Fishtown Web Design Newsletter - July 2025",
+ *   testMode: true  // Optional: If true, sends only to test email (NEWSLETTER_TEST_EMAIL)
+ * }
+ * 
+ * Example usage (production):
+ * curl -X POST http://localhost:7000/send-newsletter \
+ *   -H "Authorization: Bearer your-secret-token" \
+ *   -H "Content-Type: application/json" \
+ *   -d '{"newsletterFile": "July2025.html", "subject": "July Newsletter"}'
+ * 
+ * Example usage (test mode):
+ * curl -X POST http://localhost:7000/send-newsletter \
+ *   -H "Authorization: Bearer your-secret-token" \
+ *   -H "Content-Type: application/json" \
+ *   -d '{"newsletterFile": "July2025.html", "subject": "July Newsletter", "testMode": true}'
+ */
+app.post('/send-newsletter', async (req, res) => {
+  const { newsletterFile, subject, testMode } = req.body;
+
+  // Validate required fields
+  if (!newsletterFile || !subject) {
+    return res.status(400).json({
+      success: false,
+      message: 'Newsletter file path and subject are required.'
+    });
+  }
+
+  // Optional: Add authentication/authorization check here
+  // For example, check for API key or admin session
+  const authHeader = req.headers['authorization'];
+  const expectedToken = `Bearer ${process.env.NEWSLETTER_SECRET_TOKEN}`;
+  if (!authHeader || authHeader !== expectedToken) {
+    logger.warn('Unauthorized newsletter send attempt');
+    return res.status(401).json({
+      success: false,
+      message: 'Unauthorized. Valid authorization token required.'
+    });
+  }
+
+  try {
+    // Read newsletter HTML file
+    const newsletterPath = path.join(__dirname, 'public', 'newsletter', newsletterFile);
+    let newsletterHtml = await fs.readFile(newsletterPath, 'utf8');
+
+    let subscribers;
+    let isTestMode = testMode === true;
+
+    if (isTestMode) {
+      // Test mode: Use test email instead of querying database
+      const testEmail = process.env.NEWSLETTER_TEST_EMAIL;
+      if (!testEmail) {
+        return res.status(400).json({
+          success: false,
+          message: 'Test mode enabled but NEWSLETTER_TEST_EMAIL is not configured in .env file.'
+        });
+      }
+      subscribers = [{ email: testEmail }];
+      logger.info('Newsletter sending in TEST MODE', { testEmail });
+    } else {
+      // Production mode: Get all active subscribers from database
+      const connection = await pool.getConnection();
+      const [subscriberRows] = await connection.execute(
+        'SELECT email FROM newsletter_subscriptions WHERE status = "active"'
+      );
+      connection.release();
+      subscribers = subscriberRows;
+
+      if (subscribers.length === 0) {
+        return res.status(404).json({
+          success: false,
+          message: 'No active subscribers found.'
+        });
+      }
+    }
+
+    // Send newsletter to each subscriber
+    const results = {
+      total: subscribers.length,
+      successful: 0,
+      failed: 0,
+      errors: []
+    };
+
+    for (const subscriber of subscribers) {
+      try {
+        // Replace unsubscribe placeholder with actual unsubscribe link
+        const unsubscribeLink = `https://www.fishtownwebdesign.com/unsubscribe?email=${encodeURIComponent(subscriber.email)}`;
+        const personalizedHtml = newsletterHtml.replace(
+          /\$\[LI:UNSUBSCRIBE\]\$/g,
+          unsubscribeLink
+        );
+
+        // Send email via Zoho
+        await zohoMailService.sendEmail(
+          subscriber.email,
+          subject,
+          personalizedHtml
+        );
+
+        results.successful++;
+        logger.info('Newsletter sent successfully', { email: subscriber.email });
+      } catch (error) {
+        results.failed++;
+        results.errors.push({
+          email: subscriber.email,
+          error: error.message
+        });
+        logger.error('Error sending newsletter to subscriber', {
+          email: subscriber.email,
+          error: error.message
+        });
+      }
+    }
+
+    logger.info('Newsletter sending completed', {
+      total: results.total,
+      successful: results.successful,
+      failed: results.failed,
+      testMode: isTestMode
+    });
+
+    const message = isTestMode 
+      ? `Newsletter sent in TEST MODE to ${process.env.NEWSLETTER_TEST_EMAIL}.`
+      : `Newsletter sent to ${results.successful} of ${results.total} subscribers.`;
+
+    res.json({
+      success: true,
+      message: message,
+      testMode: isTestMode,
+      results: results
+    });
+
+  } catch (error) {
+    logger.error('Error sending newsletter', {
+      error: error.message,
+      stack: error.stack,
+      newsletterFile: newsletterFile
+    });
+    res.status(500).json({
+      success: false,
+      message: 'There was an error sending the newsletter. Please try again later.'
     });
   }
 });
