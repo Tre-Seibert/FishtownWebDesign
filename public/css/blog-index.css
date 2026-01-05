@@ -332,7 +332,7 @@
     flex-direction: column;
     position: absolute;
     top: clamp(1rem, 2.5vw, 1.5rem);
-    left: clamp(1rem, 2.5vw, 1.5rem);
+    right: clamp(1rem, 2.5vw, 1.5rem);
     z-index: 2;
     font-family: Horizon, sans-serif;
   }
