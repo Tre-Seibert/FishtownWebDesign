@@ -224,7 +224,12 @@
                             <div class="cs-flex">
                                 <div class="cs-info-wrapper">
                                     <span class="cs-date">
-                                        <%= new Date(post.publishedDate).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' }).replace('/', '<br>') %>
+                                        <% 
+                                            const date = new Date(post.publishedDate);
+                                            const month = date.getMonth() + 1;
+                                            const day = date.getDate();
+                                        %>
+                                        <%= month %><br><%= day %>
                                     </span>
                                     <span class="cs-category">
                                         <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/folder-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
