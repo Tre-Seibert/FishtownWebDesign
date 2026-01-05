@@ -285,6 +285,11 @@ html, body {
   }
 }
 
+/* Copyright text padding */
+.cs-ip.cs-text {
+  padding: 0 1rem;
+}
+
 .cs-title,.cs-topper{line-height:1.2em;text-align:inherit}.cs-text,.cs-title,.cs-topper{text-align:inherit}:root{
   /* Logo Colors */
   --logo-bg: #F8F6F1;
