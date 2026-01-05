@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://fishtownwebdesign.com/public/content/home/fish.png">
+    <meta property="og:image" content="https://www.fishtownwebdesign.com/public/content/home/fish.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="description" content="Philadelphia's #1 local SEO agency. Expert SEO services for small businesses. Get found on Google Maps & organic search. Local SEO packages from $250/mo. Free consultation!">
@@ -14,34 +14,34 @@
     <title>Philadelphia SEO Services | Local SEO Expert & Small Business SEO</title>
 
     <!--CSS Imports-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/seo.css">
     <link rel="stylesheet" href="/public/css/core.css">
 
     <!--Favicons-->
-    <link rel="icon" type="image/png" sizes="16x16" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://fishtownwebdesign.com/public/content/home/favicon_io/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="https://fishtownwebdesign.com/public/content/home/favicon_io/android-chrome-512x512.png">
-    <link rel="apple-touch-icon" href="https://fishtownwebdesign.com/public/content/home/favicon_io/apple-touch-icon.png">
-    <link rel="icon" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/content/home/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/content/home/favicon_io/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="/public/css/index.css" as="style">
+    <link rel="preload" href="/public/css/seo.css" as="style">
     <link rel="preload" href="/public/css/core.css" as="style">
-    <link rel="preload" href="https://fishtownwebdesign.com/public/content/home/logo.webp" as="image">
-    <link rel="preload" href="https://fishtownwebdesign.com/public/content/home/web-design-philly.webp" as="image">
+    <link rel="preload" href="/public/content/home/logo.webp" as="image">
 
 </head>
 <body>
     <div class="page-wrapper">
 
     <div class="cs-topper-card">
-        <!-- Black Banner at the top -->
         <div class="top-banner">
             NOW ACCEPTING NEW CLIENTS.
         </div>
     </div>
-
 
     <!-- ============================================ -->
     <!--                 Navigation                   -->
@@ -49,13 +49,12 @@
 
     <header id="cs-navigation">
         <div class="cs-container">
-            <!--Nav Logo-->
             <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
                 <picture>
-                    <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
-                    <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
+                    <source media="(max-width: 600px)" srcset="/public/content/home/logo-m.webp">
+                    <source media="(min-width: 601px)" srcset="/public/content/home/logo.webp">
                     <img 
-                        src="https://fishtownwebdesign.com/public/content/home/logo.png"
+                        src="/public/content/home/logo.png"
                         alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
                         decoding="async"
                         id="logo"
@@ -64,9 +63,7 @@
                         fetchpriority="high">
                 </picture>
             </a>
-            <!--Navigation List-->
             <nav class="cs-nav" role="navigation">
-                <!--Mobile Nav Toggle-->
                 <button class="cs-toggle" aria-label="mobile menu toggle">
                     <div class="cs-box" aria-hidden="true">
                         <span class="cs-line cs-line1" aria-hidden="true"></span>
@@ -74,15 +71,11 @@
                         <span class="cs-line cs-line3" aria-hidden="true"></span>
                     </div>
                 </button>
-                <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
                 <div class="cs-ul-wrapper">
                     <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
                         <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/" class="cs-li-link">
-                                home
-                            </a>
+                            <a href="https://fishtownwebdesign.com/" class="cs-li-link">home</a>
                         </li>
-                        <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
                         <li class="cs-li cs-dropdown" tabindex="0">
                             <span class="cs-li-link">
                                 about
@@ -112,240 +105,389 @@
                             </ul>
                         </li>
                         <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">
-                                pricing
-                            </a>
+                            <a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">pricing</a>
                         </li>
                         <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/contact" class="cs-li-link">
-                                contact
-                            </a>
+                            <a href="https://fishtownwebdesign.com/contact" class="cs-li-link">contact</a>
                         </li>
                         <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/blog" class="cs-li-link">
-                                blog
-                            </a>
+                            <a href="https://fishtownwebdesign.com/blog" class="cs-li-link">blog</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <!-- <a href="" class="cs-button-solid cs-nav-button">Contact Us</a> -->
-            <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
-            <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
-                <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
-                <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
-            </button> -->
         </div>
     </header>
 
+    <!-- ============================================ -->
+    <!--                 Hero Section                  -->
+    <!-- ============================================ -->
 
-<!-- ============================================ -->
-<!--                   Banner                     -->
-<!-- ============================================ -->
-
-<div id="banner-1534">
-    <div class="cs-container">
-        <span class="cs-int-title">Search Engine Optimization</span>
-        <div class="cs-breadcrumbs">
-            <a href="" class="cs-link">Services</a>
-            <a href="" class="cs-link cs-active">SEO</a>
+    <section id="seo-hero-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Local SEO Services</span>
+                <h1 class="cs-title">Philadelphia SEO Services</h1>
+                <p class="cs-text">
+                    Get found on Google Maps and organic search. Expert local SEO services for Philadelphia businesses starting at $250/mo. Dominate local search results and attract more customers to your business.
+                </p>
+                <a href="https://fishtownwebdesign.com/contact" class="cs-button-solid">Get Started Today</a>
+            </div>
         </div>
-    </div>
-    <!--Background Image-->
-    <picture class="cs-background">
-        <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="/public/content/seo/philadelphia-skyline-m.webp">
-        <!--Tablet and above Image-->
-        <source media="(min-width: 601px)" srcset="/public/content/seo/philadelphia-skyline.webp">
-        <img decoding="async" src="/public/content/seo/philadelphia-skyline.jpg" alt="people laughing" width="1280" height="568" aria-hidden="true">
-    </picture>
-    <svg class="cs-mask" xmlns="http://www.w3.org/2000/svg" width="1920" height="136" viewBox="0 0 1920 136" fill="none">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M1920 136V0C1803.21 45.3334 1445.52 136 951 136C456.485 136 111.116 45.3334 0 0V136H951H1920Z" fill="var(--maskBG)"/>
-    </svg>
-</div>
-
-
-<!-- ============================================ -->
-<!--                   Content                     -->
-<!-- ============================================ -->
-<section id="content-page-1533">
-    <div class="cs-container">
-        <div class="cs-image-group">
-            <!--Flower-->
-            <img class="cs-flower" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/flower-graphic.svg" alt="flower" loading="lazy" decoding="async" height="148" width="153">
-            <picture class="cs-background">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/public/content/seo/fish-mural-fishtown-m.webp">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/public/content/seo/fish-mural-fishtown.webp">
-                <img loading="lazy" decoding="async" src="/public/content/seo/fish-mural-fishtown.png" alt="kid" width="522" height="540">
-            </picture>
-            <!--Floating Blob-->
-            <img class="cs-floater" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/day-care-events-left.svg" alt="graphic" loading="lazy" decoding="async" height="710" width="690">
-        </div>
-        <div class="cs-content">
-            <h1 class="cs-title">Philadelphia SEO Services | Expert Local SEO for Small Businesses</h1>
-            
-            <p>
-                Looking for the best SEO company in Philadelphia? Fishtown Web Design delivers expert local SEO services that help Philadelphia businesses rank higher on Google and get found by more customers. Whether you're a restaurant in Fishtown, a law firm in Center City, or a contractor in South Philly, our proven SEO strategies will help you dominate local search results.
-            </p>
-
-            <h2>Philadelphia SEO Services That Drive Results</h2>
-            <p>
-                Our comprehensive Philadelphia SEO services combine technical expertise with local market knowledge to help your business:
-            </p>
-            <ul>
-                <li>Rank higher in Google Maps and organic search results</li>
-                <li>Get found by more local customers searching for your services</li>
-                <li>Outperform competitors in your Philadelphia neighborhood</li>
-                <li>Generate more qualified leads and phone calls</li>
-                <li>Build a strong online presence in your local market</li>
-            </ul>
-
-            <h2>Local SEO Services for Philadelphia Businesses</h2>
-
-            <h3>Small Business SEO in Philadelphia</h3>
-            <p>
-                We specialize in helping Philadelphia small businesses get found online. From restaurants and retail shops to service providers and professional practices, our local SEO strategies are tailored to your specific industry and neighborhood. We've helped businesses across Philadelphia neighborhoods including:
-            </p>
-            <ul>
-                <li>Fishtown SEO optimization</li>
-                <li>Center City local SEO</li>
-                <li>Northern Liberties search optimization</li>
-                <li>South Philadelphia SEO services</li>
-                <li>Olde Kensington local search marketing</li>
-            </ul>
-
-            <h3>Industry-Specific SEO Solutions</h3>
-            <p>
-                Our Philadelphia SEO experts understand the unique challenges and opportunities in different industries:
-            </p>
-            <ul>
-                <li>Restaurant SEO in Philadelphia</li>
-                <li>Law Firm SEO for Philadelphia attorneys</li>
-                <li>Contractor SEO services</li>
-                <li>Medical Practice SEO optimization</li>
-                <li>Real Estate SEO for Philadelphia agents</li>
-            </ul>
-
-            <h2>Our Philadelphia SEO Strategy</h2>
-
-            <h3>1. Technical SEO Optimization</h3>
-            <p>
-                We start with a comprehensive technical SEO audit to identify and fix issues that could be holding your site back:
-            </p>
-            <ul>
-                <li>Website speed optimization</li>
-                <li>Mobile responsiveness improvements</li>
-                <li>Technical error fixes</li>
-                <li>Schema markup implementation</li>
-                <li>Site structure optimization</li>
-            </ul>
-
-            <h3>2. Local SEO & Google Business Profile</h3>
-            <p>
-                Your Google Business Profile is crucial for local visibility. We optimize it to help you:
-            </p>
-            <ul>
-                <li>Rank higher in the Google Map Pack</li>
-                <li>Get more clicks and calls</li>
-                <li>Improve your local search presence</li>
-                <li>Build trust with potential customers</li>
-            </ul>
-
-            <h3>3. Content Strategy & Optimization</h3>
-            <p>
-                We create and optimize content that ranks for your target keywords:
-            </p>
-            <ul>
-                <li>Local service pages</li>
-                <li>Neighborhood-specific content</li>
-                <li>Industry-focused blog posts</li>
-                <li>Case studies and testimonials</li>
-            </ul>
-
-            <h3>4. Link Building & Authority</h3>
-            <p>
-                We build high-quality backlinks to improve your site's authority:
-            </p>
-            <ul>
-                <li>Local business directory listings</li>
-                <li>Industry-specific citations</li>
-                <li>Local media outreach</li>
-                <li>Strategic partnerships</li>
-            </ul>
-
-            <h2>Philadelphia SEO Pricing & Packages</h2>
-            <p>
-                Our SEO services are priced competitively for Philadelphia businesses:
-            </p>
-            <ul>
-                <li>Local SEO Package: Starting at $250/month</li>
-                <li>Custom SEO Solutions</li>
-                <li>Google Business Profile Optimization</li>
-            </ul>
-
-            <h2>Why Choose Our Philadelphia SEO Services?</h2>
-            <ul>
-                <li>Local Philadelphia SEO experts</li>
-                <li>Proven track record of results</li>
-                <li>Transparent reporting and communication</li>
-                <li>Custom strategies for your business</li>
-                <li>Ongoing optimization and support</li>
-            </ul>
-
-            <h2>Frequently Asked Questions</h2>
-
-            <h3>How long does SEO take to work?</h3>
-            <p>
-                While some improvements can be seen in 30-90 days, significant results typically take 6-12 months. SEO is a long-term investment that builds sustainable growth.
-            </p>
-
-            <h3>How much does SEO cost in Philadelphia?</h3>
-            <p>
-                Our SEO packages start at $250/month, with custom solutions available for businesses with specific needs. We offer flexible terms and transparent pricing.
-            </p>
-
-            <h3>Do you offer SEO for specific Philadelphia neighborhoods?</h3>
-            <p>
-                Yes! We specialize in local SEO for all Philadelphia neighborhoods, with particular focus in Fishtown, Center City, Northern Liberties, and surrounding areas.
-            </p>
-
-            <h2>Ready to Improve Your Philadelphia SEO?</h2>
-            <p>
-                Get a free SEO consultation and learn how we can help your business rank higher in local search results. Contact us today to discuss your goals and see our proven strategies in action.
-            </p>
-            <p>
-                <a href="https://fishtownwebdesign.com/contact" class="cs-button-solid">Get Your Free SEO Consultation</a>
-            </p>
-        </div>
-    </div>
-    <div class="cs-bubbles" aria-hidden="true"></div>
-</section>
-                                
-
-
-    
-    <!-- Footer Section -->
-    <footer class="footer">
-        <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
-        <picture>
-            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
-            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
-            <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+        <picture class="cs-background">
+            <source media="(max-width: 600px)" srcset="/public/content/svgs/stripes.svg">
+            <source media="(min-width: 601px)" srcset="/public/content/svgs/stripes.svg">
+            <img decoding="async" src="/public/content/svgs/stripes.svg" alt="" width="1920" height="907" aria-hidden="true">
         </picture>
-        <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
-        <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              Services Section                 -->
+    <!-- ============================================ -->
+
+    <section id="seo-services-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Our SEO Services</span>
+                <h2 class="cs-title">What We Offer for <strong>Philadelphia Businesses</strong></h2>
+                <p class="cs-text">
+                    Our comprehensive SEO services combine technical expertise with local market knowledge to help your Philadelphia business rank higher, get found by more customers, and generate more qualified leads.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <div class="cs-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                        </svg>
+                    </div>
+                    <h3 class="cs-h3">Local SEO</h3>
+                    <p class="cs-item-text">
+                        Optimize your Google Business Profile and local listings to rank higher in the Map Pack and attract more Philadelphia customers searching for your services.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-icon-wrapper">
+                        <img src="/public/content/seo/technical-seo.png" alt="Technical SEO" width="40" height="40">
+                    </div>
+                    <h3 class="cs-h3">Technical SEO</h3>
+                    <p class="cs-item-text">
+                        Comprehensive technical audits, site speed optimization, mobile responsiveness, and schema markup to improve your search engine visibility.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-icon-wrapper">
+                        <img src="/public/content/seo/content-strategy.png" alt="Content Strategy" width="40" height="40">
+                    </div>
+                    <h3 class="cs-h3">Content Strategy</h3>
+                    <p class="cs-item-text">
+                        Local service pages, neighborhood-specific content, and industry-focused blog posts that rank for your target keywords and attract Philadelphia customers.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                            <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1 1.274-1.053l.172-.171z"/>
+                            <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
+                        </svg>
+                    </div>
+                    <h3 class="cs-h3">Link Building</h3>
+                    <p class="cs-item-text">
+                        High-quality backlinks from local directories, industry citations, and strategic partnerships to improve your site's authority and search rankings.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .896.027"/>
+                        </svg>
+                    </div>
+                    <h3 class="cs-h3">Analytics & Reporting</h3>
+                    <p class="cs-item-text">
+                        Monthly reports showing your rankings, traffic growth, and lead generation. We track what matters and show you real results for your Philadelphia business.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-icon-wrapper">
+                        <img src="/public/content/seo/gbp.png" alt="Google Business Profile" width="40" height="40">
+                    </div>
+                    <h3 class="cs-h3">Google Business Profile</h3>
+                    <p class="cs-item-text">
+                        Professional optimization of your Google Business Profile to rank higher in map searches, get more clicks, and build trust with potential Philadelphia customers.
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <!--Waves Background-->
+        <picture class="cs-waves">
+            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/waves-m.svg">
+            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/waves.svg">
+            <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/waves.svg" alt="waves graphic" width="1920" height="331" aria-hidden="true">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            Local Focus Section                -->
+    <!-- ============================================ -->
+
+    <section id="seo-local-2149">
+        <div class="cs-container">
+            <div class="cs-content-wrapper">
+                <div class="cs-content">
+                    <span class="cs-topper">Local Philadelphia SEO</span>
+                    <h2 class="cs-title">We Serve <strong>All Philadelphia Neighborhoods</strong></h2>
+                    <p class="cs-text">
+                        From Fishtown to Center City, Northern Liberties to South Philly, we help businesses across Philadelphia get found by local customers. Our neighborhood-specific SEO strategies ensure you rank where it matters most.
+                    </p>
+                    <ul class="cs-neighborhoods-list">
+                        <li class="cs-neighborhood-item">
+                            <div class="cs-neighborhood-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                </svg>
+                            </div>
+                            <div class="cs-neighborhood-content">
+                                <h4 class="cs-neighborhood-name">Fishtown</h4>
+                                <p class="cs-neighborhood-text">Local SEO optimization for Fishtown businesses</p>
+                            </div>
+                        </li>
+                        <li class="cs-neighborhood-item">
+                            <div class="cs-neighborhood-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                </svg>
+                            </div>
+                            <div class="cs-neighborhood-content">
+                                <h4 class="cs-neighborhood-name">Center City</h4>
+                                <p class="cs-neighborhood-text">Downtown Philadelphia SEO services</p>
+                            </div>
+                        </li>
+                        <li class="cs-neighborhood-item">
+                            <div class="cs-neighborhood-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                </svg>
+                            </div>
+                            <div class="cs-neighborhood-content">
+                                <h4 class="cs-neighborhood-name">Northern Liberties</h4>
+                                <p class="cs-neighborhood-text">NoLibs local search optimization</p>
+                            </div>
+                        </li>
+                        <li class="cs-neighborhood-item">
+                            <div class="cs-neighborhood-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                </svg>
+                            </div>
+                            <div class="cs-neighborhood-content">
+                                <h4 class="cs-neighborhood-name">South Philadelphia</h4>
+                                <p class="cs-neighborhood-text">South Philly SEO services</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="https://fishtownwebdesign.com/contact" class="cs-button-solid">Get Your Free SEO Consultation</a>
+                </div>
+                <div class="cs-visual-wrapper">
+                    <div class="cs-industries-card">
+                        <h3 class="cs-industries-title">Industries We Serve</h3>
+                        <ul class="cs-industries-list">
+                            <li class="cs-industry-item">
+                                <span class="cs-industry-name">Restaurants</span>
+                            </li>
+                            <li class="cs-industry-item">
+                                <span class="cs-industry-name">Law Firms</span>
+                            </li>
+                            <li class="cs-industry-item">
+                                <span class="cs-industry-name">Contractors</span>
+                            </li>
+                            <li class="cs-industry-item">
+                                <span class="cs-industry-name">Medical Practices</span>
+                            </li>
+                            <li class="cs-industry-item">
+                                <span class="cs-industry-name">Real Estate</span>
+                            </li>
+                            <li class="cs-industry-item">
+                                <span class="cs-industry-name">Retail Shops</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            Process Section                    -->
+    <!-- ============================================ -->
+
+    <section id="seo-process-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Our SEO Process</span>
+                <h2 class="cs-title">How We Improve Your <strong>Search Rankings</strong></h2>
+                <p class="cs-text">
+                    Our proven SEO process combines technical optimization, content strategy, and local marketing to help your Philadelphia business rank higher and attract more customers.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <div class="cs-picture">
+                        <img src="/public/content/seo/seo-audit.png" alt="SEO Audit" width="40" height="40">
+                    </div>
+                    <h3 class="cs-h3">1. SEO Audit</h3>
+                    <p class="cs-item-text">
+                        We start with a comprehensive technical SEO audit to identify issues, opportunities, and create a custom strategy tailored to your Philadelphia business.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-picture">
+                        <img src="/public/content/seo/optimization.png" alt="Optimization" width="40" height="40">
+                    </div>
+                    <h3 class="cs-h3">2. Optimization</h3>
+                    <p class="cs-item-text">
+                        We optimize your website, Google Business Profile, and local listings. Technical fixes, content creation, and link building all happen simultaneously.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-picture">
+                        <img src="/public/content/seo/growth.png" alt="Monitoring" width="40" height="40">
+                    </div>
+                    <h3 class="cs-h3">3. Monitoring & Growth</h3>
+                    <p class="cs-item-text">
+                        Monthly reports show your progress. We continuously optimize, create new content, and build authority to keep your rankings climbing.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            Results Section                    -->
+    <!-- ============================================ -->
+
+    <section id="seo-results-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Proven Results</span>
+                <h2 class="cs-title">What <strong>SEO Success</strong> Looks Like</h2>
+                <p id="seo-results-text" class="cs-text">
+                    Our SEO strategies deliver real results for Philadelphia businesses. See how we help companies rank higher, get more traffic, and generate more leads.
+                </p>
+            </div>
+            <ul class="cs-stats-group">
+                <li class="cs-stat-item">
+                    <div class="cs-stat-number">6-12</div>
+                    <div class="cs-stat-label">Months to Results</div>
+                    <p class="cs-stat-text">Significant SEO improvements typically appear within 6-12 months of consistent optimization</p>
+                </li>
+                <li class="cs-stat-item">
+                    <div class="cs-stat-number">250+</div>
+                    <div class="cs-stat-label">Starting Price</div>
+                    <p class="cs-stat-text">Affordable SEO packages starting at $250/month for Philadelphia small businesses</p>
+                </li>
+                <li class="cs-stat-item">
+                    <div class="cs-stat-number">100%</div>
+                    <div class="cs-stat-label">Transparent Reporting</div>
+                    <p class="cs-stat-text">Monthly reports showing rankings, traffic, and lead generation so you see real results</p>
+                </li>
+                <li class="cs-stat-item">
+                    <div class="cs-stat-number">24/7</div>
+                    <div class="cs-stat-label">Ongoing Support</div>
+                    <p class="cs-stat-text">Continuous optimization, content updates, and strategy adjustments to keep you ranking</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              CTA Section                     -->
+    <!-- ============================================ -->
+
+    <section id="seo-cta-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Ready to Get Started?</span>
+                <h2 class="cs-title">Get Your <strong>Free SEO Consultation</strong></h2>
+                <p class="cs-text">
+                    Learn how our Philadelphia SEO services can help your business rank higher, get found by more customers, and generate more leads. Contact us today for a free consultation.
+                </p>
+                <a href="https://fishtownwebdesign.com/contact" class="cs-button-solid">Get Your Free Consultation</a>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <source media="(max-width: 600px)" srcset="/public/content/svgs/stripes.svg">
+            <source media="(min-width: 601px)" srcset="/public/content/svgs/stripes.svg">
+            <img decoding="async" src="/public/content/svgs/stripes.svg" alt="" width="1920" height="907" aria-hidden="true">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Footer                       -->
+    <!-- ============================================ -->
+
+    <footer id="cs-footer-2412">
+        <div class="cs-container cs-container-top">
+            <picture>
+                <source media="(max-width: 600px)" srcset="/public/content/home/footer-logo-m.webp">
+                <source media="(min-width: 601px)" srcset="/public/content/home/footer-logo.webp">
+                <img loading="lazy" src="/public/content/home/footer-logo.png" id="footer-logo" alt="Fishtown Logo" width="216" height="128">
+            </picture>
+            <div class="cs-quick-links">
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <a class="cs-link" href="/about">About</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/pricing">Pricing</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/web-design">Web Design</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/seo">SEO</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cs-wrapper">
+                <div class="cs-subscribe">
+                    <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
+                    <form class="cs-form" name="Subscription Form" method="post">
+                        <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address">
+                        <button class="cs-button-solid cs-submit" type="submit">
+                            <img class="cs-icon" src="/public/content/home/subscribe.png" alt="submit my email and subcribe" width="40" height="40" decoding="async" loading="lazy">
+                        </button>
+                    </form>
+                </div>
+                <div class="cs-bottom">
+                    <div class="cs-social">
+                        <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                        <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit instagram">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                    </div>
+                    <div class="cs-legal">
+                        <a href="/tos" class="cs-legal-link cs-link">Terms & Conditions</a>
+                        <span class="cs-divider" aria-hidden="true">|</span>
+                        <a href="/pp" class="cs-legal-link cs-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-credit">
+            <span class="cs-ip cs-text">© <span id="current-year">2026</span> Fishtown Web Design. All rights reserved.</span>
+        </div>
+        <svg class="cs-curve" aria-hidden="true" width="1920" height="1" viewBox="0 0 1920 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1920" height="1" fill="var(--overlayBG)"/>
+        </svg>
     </footer>
 
-    <!-- Scripts -->
-    
-    <script defer>
-        // Set the current year dynamically
-        document.getElementById("current-year").textContent = new Date().getFullYear();
-    </script>
     <script>
-        // add classes for mobile navigation toggling
         var CSbody = document.querySelector('body');
         const CSnavbarMenu = document.querySelector('#cs-navigation');
         const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
@@ -354,11 +496,9 @@
             CShamburgerMenu.classList.toggle('cs-active');
             CSnavbarMenu.classList.toggle('cs-active');
             CSbody.classList.toggle('cs-open');
-            // run the function to check the aria-expanded value
             ariaExpanded();
         });
 
-        // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
         function ariaExpanded() {
             const csUL = document.querySelector('#cs-expanded');
             const csExpanded = csUL.getAttribute('aria-expanded');
@@ -370,7 +510,6 @@
             }
         }
 
-        // mobile nav toggle code
         const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
         for (const item of dropDowns) {
             const onClick = () => {
@@ -378,16 +517,13 @@
             };
             item.addEventListener('click', onClick);
         }
-                                        
     </script>
-    
-    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Fishtown Web Design",
-        "image": "https://fishtownwebdesign.com/public/content/home/logo.webp",
+        "image": "https://www.fishtownwebdesign.com/public/content/home/logo.webp",
         "description": "Philadelphia's premier SEO agency specializing in local search optimization and small business SEO services.",
         "address": {
             "@type": "PostalAddress",
@@ -402,7 +538,7 @@
             "longitude": "-75.1301"
         },
         "url": "https://fishtownwebdesign.com",
-        "telephone": "+1-215-555-0123",
+        "telephone": "+1-717-333-8691",
         "priceRange": "$$",
         "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
@@ -424,69 +560,24 @@
             "@type": "City",
             "name": "Philadelphia",
             "containsPlace": [
-                {
-                    "@type": "Place",
-                    "name": "Fishtown"
-                },
-                {
-                    "@type": "Place",
-                    "name": "Northern Liberties"
-                },
-                {
-                    "@type": "Place",
-                    "name": "Olde Kensington"
-                },
-                {
-                    "@type": "Place",
-                    "name": "Center City"
-                },
-                {
-                    "@type": "Place",
-                    "name": "South Philadelphia"
-                }
-            ]
-        },
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "SEO Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Local SEO Package",
-                        "description": "Comprehensive local SEO services for Philadelphia businesses"
-                    },
-                    "price": "500",
-                    "priceCurrency": "USD",
-                    "priceValidUntil": "2024-12-31"
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "SEO Audit",
-                        "description": "One-time comprehensive SEO audit and recommendations"
-                    },
-                    "price": "997",
-                    "priceCurrency": "USD",
-                    "priceValidUntil": "2024-12-31"
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Google Business Profile Optimization",
-                        "description": "Professional optimization of your Google Business Profile"
-                    },
-                    "price": "297",
-                    "priceCurrency": "USD",
-                    "priceValidUntil": "2024-12-31"
-                }
+                {"@type": "Place", "name": "Fishtown"},
+                {"@type": "Place", "name": "Northern Liberties"},
+                {"@type": "Place", "name": "Olde Kensington"},
+                {"@type": "Place", "name": "Center City"},
+                {"@type": "Place", "name": "South Philadelphia"}
             ]
         }
     }
     </script>
+    <script>
+        // Update copyright year dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
     </div>
 </body>
-</html> 
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://fishtownwebdesign.com/public/content/home/fish.png">
+    <meta property="og:image" content="https://www.fishtownwebdesign.com/public/content/home/fish.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="description" content="Philadelphia's #1 custom web design agency. Hand-coded websites with lightning-fast loading speeds. No WordPress. Local Philadelphia web design services from $150/mo. Get a free consultation!">
@@ -14,22 +14,24 @@
     <title>Philadelphia Web Design | Custom Hand-Coded Websites & Fast Loading Speeds</title>
 
     <!--CSS Imports-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/web-design.css">
     <link rel="stylesheet" href="/public/css/core.css">
 
     <!--Favicons-->
-    <link rel="icon" type="image/png" sizes="16x16" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://fishtownwebdesign.com/public/content/home/favicon_io/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="https://fishtownwebdesign.com/public/content/home/favicon_io/android-chrome-512x512.png">
-    <link rel="apple-touch-icon" href="https://fishtownwebdesign.com/public/content/home/favicon_io/apple-touch-icon.png">
-    <link rel="icon" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/content/home/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/content/home/favicon_io/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="/public/css/index.css" as="style">
+    <link rel="preload" href="/public/css/web-design.css" as="style">
     <link rel="preload" href="/public/css/core.css" as="style">
-    <link rel="preload" href="https://fishtownwebdesign.com/public/content/home/logo.webp" as="image">
-    <link rel="preload" href="https://fishtownwebdesign.com/public/content/home/web-design-philly.webp" as="image">
+    <link rel="preload" href="/public/content/home/logo.webp" as="image">
 
 </head>
 <body>
@@ -52,10 +54,10 @@
             <!--Nav Logo-->
             <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
                 <picture>
-                    <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
-                    <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
+                    <source media="(max-width: 600px)" srcset="/public/content/home/logo-m.webp">
+                    <source media="(min-width: 601px)" srcset="/public/content/home/logo.webp">
                     <img 
-                        src="https://fishtownwebdesign.com/public/content/home/logo.png"
+                        src="/public/content/home/logo.png"
                         alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
                         decoding="async"
                         id="logo"
@@ -74,7 +76,6 @@
                         <span class="cs-line cs-line3" aria-hidden="true"></span>
                     </div>
                 </button>
-                <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
                 <div class="cs-ul-wrapper">
                     <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
                         <li class="cs-li">
@@ -82,7 +83,6 @@
                                 home
                             </a>
                         </li>
-                        <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
                         <li class="cs-li cs-dropdown" tabindex="0">
                             <span class="cs-li-link">
                                 about
@@ -129,168 +129,428 @@
                     </ul>
                 </div>
             </nav>
-            <!-- <a href="" class="cs-button-solid cs-nav-button">Contact Us</a> -->
-            <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
-            <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
-                <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
-                <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
-            </button> -->
         </div>
     </header>
 
+    <!-- ============================================ -->
+    <!--                 Hero Section                  -->
+    <!-- ============================================ -->
+
+    <section id="web-design-hero-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Custom Hand-Coded Websites</span>
+                <h1 class="cs-title">Philadelphia Web Design Services</h1>
+                <p class="cs-text">
+                    No WordPress. No page builders. We build 100% hand-coded websites with lightning-fast loading speeds, starting at $150/mo. Perfect for Philadelphia businesses looking for performance-optimized, SEO-friendly websites that actually convert.
+                </p>
+                <a href="https://fishtownwebdesign.com/contact" class="cs-button-solid">Get Started Today</a>
+            </div>
+        </div>
+        <!-- Background Pattern -->
+        <picture class="cs-background">
+            <source media="(max-width: 600px)" srcset="/public/content/svgs/stripes.svg">
+            <source media="(min-width: 601px)" srcset="/public/content/svgs/stripes.svg">
+            <img decoding="async" src="/public/content/svgs/stripes.svg" alt="" width="1920" height="907" aria-hidden="true">
+        </picture>
+    </section>
 
     <!-- ============================================ -->
-<!--                 Content Page                 -->
-<!-- ============================================ -->
+    <!--              Why Choose Section              -->
+    <!-- ============================================ -->
 
-<!-- ============================================ 
-    This Stitch is used for content heavy interior pages
-    that have no design or layout.  Often times these are 
-    content silos where you talk extensively about a topic
-    to educate your visitors and rank on Google for the 
-    content.  These are great for pages that have a TON
-    of content.  Design isn't important here, it's all 
-    about making the content accessible and easy to read.
-================================================= -->
-
-<!-- ============================================ -->
-<!--                   Banner                     -->
-<!-- ============================================ -->
-
-<div id="banner-1534">
-    <div class="cs-container">
-        <span class="cs-int-title">Web Design</span>
-        <div class="cs-breadcrumbs">
-            <a href="" class="cs-link">Services</a>
-            <a href="" class="cs-link cs-active">Web Design</a>
-        </div>
-    </div>
-    <!--Background Image-->
-    <picture class="cs-background">
-        <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="/public/content/web-design/philadelphia-skyline-m.webp">
-        <!--Tablet and above Image-->
-        <source media="(min-width: 601px)" srcset="/public/content/web-design/philadelphia-skyline.webp">
-        <img decoding="async" src="/public/content/web-design/philadelphia-skyline.jpg" alt="people laughing" width="1280" height="568" aria-hidden="true">
-    </picture>
-    <svg class="cs-mask" xmlns="http://www.w3.org/2000/svg" width="1920" height="136" viewBox="0 0 1920 136" fill="none">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M1920 136V0C1803.21 45.3334 1445.52 136 951 136C456.485 136 111.116 45.3334 0 0V136H951H1920Z" fill="var(--maskBG)"/>
-    </svg>
-</div>
-
-
-<!-- ============================================ -->
-<!--                   Content                     -->
-<!-- ============================================ -->
-<section id="content-page-1534">
-    <div class="cs-container">
-        <div class="cs-image-group">
-            <!--Flower-->
-            <img class="cs-flower" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/flower-graphic.svg" alt="flower" loading="lazy" decoding="async" height="148" width="153">
-            <picture class="cs-background">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/public/content/web-design/fishtown-turtle-mural-m.webp">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/public/content/web-design/fishtown-turtle-mural.webp">
-                <img loading="lazy" decoding="async" src="/public/content/web-design/fishtown-turtle-mural.png" alt="kid" width="522" height="540">
-            </picture>
-            <!--Floating Blob-->
-            <img class="cs-floater" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/day-care-events-left.svg" alt="graphic" loading="lazy" decoding="async" height="710" width="690">
-        </div>
-        <div class="cs-content">
-            <h1 class="cs-title">Philadelphia Web Design Services – Hand-Coded for Speed, SEO, and Security</h1>
-            <p class="cs-subtitle">Philadelphia's #1 Custom Web Design Agency – No WordPress. No Page Builders. 100% Hand-Coded.</p>
-            
-            <p>
-                At Fishtown Web Design, we're Philadelphia's premier custom web design agency, building websites entirely from scratch. Unlike most Philadelphia web design companies relying on bloated WordPress templates or drag-and-drop builders, our websites are hand-coded line by line using clean HTML, CSS, and JavaScript. The result? Lightning-fast performance, unmatched security, and complete design flexibility tailored to your Philadelphia business.
-            </p>
-
-            <h2>Why Philadelphia Businesses Choose Our Custom-Coded Websites</h2>
-            <ul>
-                <li><strong>Instant Load Times:</strong> Our Philadelphia websites consistently score perfect marks on Google PageSpeed Insights.</li>
-                <li><strong>Higher Google Rankings:</strong> Better Core Web Vitals improve your SEO and visibility in Philadelphia local searches.</li>
-                <li><strong>Better Conversions:</strong> Faster websites convert more Philadelphia visitors into customers.</li>
-                <li><strong>Stronger Ad Performance:</strong> Lower bounce rates and reduced cost-per-click (CPC) on Google Ads for Philadelphia businesses.</li>
-                <li><strong>Ironclad Security:</strong> No plugins. No databases. Virtually impossible to hack.</li>
+    <section id="web-design-why-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Why Choose Us</span>
+                <h2 class="cs-title">Why Philadelphia Businesses Choose <strong>Hand-Coded Websites</strong></h2>
+                <p class="cs-text">
+                    Unlike WordPress or page builders, our custom-coded websites are built for speed, security, and performance. Every line of code is optimized to help your Philadelphia business rank higher, convert more visitors, and grow faster.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <div class="cs-icon-wrapper">
+                        <img src="/public/content/web-design/lightning.png" alt="Lightning-Fast Load Times" width="40" height="40">
+                    </div>
+                    <h3 class="cs-h3">Lightning-Fast Load Times</h3>
+                    <p class="cs-item-text">
+                        Our websites consistently score 90+ on Google PageSpeed Insights. Load times under 1 second keep visitors engaged and improve conversion rates for Philadelphia businesses.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-icon-wrapper">
+                        <img src="/public/content/web-design/lock.png" alt="Ironclad Security" width="40" height="40">
+                    </div>
+                    <h3 class="cs-h3">Ironclad Security</h3>
+                    <p class="cs-item-text">
+                        No plugins. No databases. No vulnerabilities. Our static, hand-coded websites are virtually impossible to hack, keeping your Philadelphia business safe from cyber threats.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .896.027"/>
+                        </svg>
+                    </div>
+                    <h3 class="cs-h3">Better SEO Rankings</h3>
+                    <p class="cs-item-text">
+                        Faster websites rank higher in Google. Our optimized code and Core Web Vitals help Philadelphia businesses dominate local search results and attract more customers.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                            <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
+                        </svg>
+                    </div>
+                    <h3 class="cs-h3">Better Ad Performance</h3>
+                    <p class="cs-item-text">
+                        Lower bounce rates and improved Quality Scores mean lower cost-per-click and higher ROI on your Google Ads campaigns for Philadelphia businesses.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-icon-wrapper">
+                        <img src="/public/content/web-design/freedom.png" alt="Complete Design Freedom" width="40" height="40">
+                    </div>
+                    <h3 class="cs-h3">Complete Design Freedom</h3>
+                    <p class="cs-item-text">
+                        No template limitations. Every website is custom-designed and coded from scratch, ensuring your Philadelphia business stands out with a unique, professional online presence.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+                            <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                            <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="cs-h3">Mobile-First Design</h3>
+                    <p class="cs-item-text">
+                        Every website is built mobile-first, ensuring a perfect experience on all devices. Your Philadelphia customers get a seamless experience whether they're on desktop, tablet, or mobile.
+                    </p>
+                </li>
             </ul>
-
-            <h2>Fast-Loading Websites Lead to More Philadelphia Leads</h2>
-            <p>
-                If your Philadelphia business website takes more than 3 seconds to load, you could be losing over 50% of your traffic. Most Philadelphia small businesses don't realize that slow page builders are killing their conversion rates. At Fishtown Web Design, we eliminate the lag with static, optimized code—keeping your Philadelphia visitors on the site and ready to take action.
-            </p>
-
-            <h2>Philadelphia SEO-First Web Design</h2>
-            <p>
-                Search engines love fast websites. That's why our custom-coded websites consistently outrank Philadelphia competitors using bloated platforms like WordPress. By focusing on Google's Core Web Vitals—like load speed, responsiveness, and visual stability—we help you rise through the Philadelphia search results while delivering a smoother experience for your users.
-            </p>
-            <p>
-                Plus, we design every site with Philadelphia local SEO in mind. That means optimized metadata, structured content, internal linking strategies, and mobile-first responsiveness—all geared toward helping Philadelphia businesses dominate their niche online.
-            </p>
-
-            <h2>Better Ad Campaign Results for Philadelphia Businesses</h2>
-            <p>Running Google Ads in Philadelphia? Your website speed directly affects your Quality Score. A faster site reduces bounce rates and improves engagement, leading to:</p>
-            <ul>
-                <li>Lower cost-per-click in Philadelphia</li>
-                <li>Higher ad placements in local searches</li>
-                <li>Better ROI from every dollar you spend</li>
-            </ul>
-
-            <h2>Security You Don't Have to Worry About</h2>
-            <p>
-                WordPress is one of the most hacked platforms in the world. If you're not constantly updating plugins and core files, your Philadelphia business website is vulnerable. Our sites don't use CMS platforms or plugins—there's nothing to exploit. Just clean, static files that stay secure for years with no maintenance needed.
-            </p>
-
-            <h2>Philadelphia Google Business Profile Optimization</h2>
-            <p>
-                A fast website doesn't just help with organic search—it improves your Philadelphia Google Business Profile performance too. We'll help you leverage site speed, local SEO, reviews, and optimized content to increase your visibility in Philadelphia map searches, drawing more traffic to both your website and physical location.
-            </p>
-
-            <h2>Full-Service Web Design & Small Business SEO in Philadelphia</h2>
-            <p>
-                Custom web design and SEO go hand in hand. While many Philadelphia developers claim to "do SEO," they often just check boxes like metadata or sitemaps. We go deeper.
-            </p>
-            <p>Our in-house SEO experts create high-performing strategies tailored for Philadelphia small businesses—including:</p>
-            <ul>
-                <li>Philadelphia keyword research & content creation</li>
-                <li>Local blogging for SEO authority</li>
-                <li>Philadelphia backlink building</li>
-                <li>On-page technical audits</li>
-                <li>Philadelphia local search optimization</li>
-                <li>Google Analytics and Search Console integration</li>
-            </ul>
-            <p>We'll show you the real process, not just the buzzwords.</p>
-
-            <h2>Ready to Upgrade Your Philadelphia Website?</h2>
-            <p>
-                If you're a Philadelphia-based business owner looking for a high-performance, SEO-driven website that works as hard as you do, let's talk. Our team is ready to build you a custom-coded site that loads fast, ranks high, and brings in real leads.
-            </p>
-            <p class="cs-cta">👉 <a href="/contact" class="cs-button-solid">Get a free Philadelphia web design consultation today</a></p>
         </div>
-    </div>
-    <div class="cs-bubbles" aria-hidden="true"></div>
-</section>
-                                
-
-
-    
-    <!-- Footer Section -->
-    <footer class="footer">
-        <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
-        <picture>
-            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
-            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
-            <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+        <!--Waves Background-->
+        <picture class="cs-waves">
+            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/waves-m.svg">
+            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/waves.svg">
+            <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/waves.svg" alt="waves graphic" width="1920" height="331" aria-hidden="true">
         </picture>
-        <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
-        <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            Comparison Section                 -->
+    <!-- ============================================ -->
+
+    <section id="web-design-comparison-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Hand-Coded vs WordPress</span>
+                <h2 class="cs-title">Why <strong>Hand-Coded</strong> Beats WordPress Every Time</h2>
+                <p class="cs-text">
+                    See the difference between our custom-coded websites and bloated WordPress templates. The results speak for themselves.
+                </p>
+            </div>
+            <div class="cs-comparison-wrapper">
+                <div class="cs-comparison-card cs-hand-coded">
+                    <div class="cs-comparison-header">
+                        <div class="cs-comparison-icon">
+                            <img src="/public/content/web-design/hand-coded.png" alt="Hand-Coded Websites" width="40" height="40">
+                        </div>
+                        <h3 class="cs-comparison-title">Hand-Coded Websites</h3>
+                    </div>
+                    <ul class="cs-comparison-list">
+                        <li class="cs-comparison-item">
+                            <img class="cs-check-icon" src="/public/content/svgs/mech-check.svg" alt="checkmark" width="18" height="18">
+                            <span>90+ Page Speed Scores</span>
+                        </li>
+                        <li class="cs-comparison-item">
+                            <img class="cs-check-icon" src="/public/content/svgs/mech-check.svg" alt="checkmark" width="18" height="18">
+                            <span>Load Times Under 1 Second</span>
+                        </li>
+                        <li class="cs-comparison-item">
+                            <img class="cs-check-icon" src="/public/content/svgs/mech-check.svg" alt="checkmark" width="18" height="18">
+                            <span>Virtually Unhackable</span>
+                        </li>
+                        <li class="cs-comparison-item">
+                            <img class="cs-check-icon" src="/public/content/svgs/mech-check.svg" alt="checkmark" width="18" height="18">
+                            <span>No Plugin Updates Needed</span>
+                        </li>
+                        <li class="cs-comparison-item">
+                            <img class="cs-check-icon" src="/public/content/svgs/mech-check.svg" alt="checkmark" width="18" height="18">
+                            <span>Complete Design Freedom</span>
+                        </li>
+                        <li class="cs-comparison-item">
+                            <img class="cs-check-icon" src="/public/content/svgs/mech-check.svg" alt="checkmark" width="18" height="18">
+                            <span>Better SEO Rankings</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cs-comparison-card cs-wordpress">
+                    <div class="cs-comparison-header">
+                        <div class="cs-comparison-icon">
+                            <img src="/public/content/web-design/wordpress.png" alt="WordPress" width="40" height="40">
+                        </div>
+                        <h3 class="cs-comparison-title">WordPress Sites</h3>
+                    </div>
+                    <ul class="cs-comparison-list">
+                        <li class="cs-comparison-item cs-disabled">
+                            <img class="cs-x-icon" src="/public/content/svgs/mesh-x.svg" alt="not included" width="18" height="18">
+                            <span>40-60 Page Speed Scores</span>
+                        </li>
+                        <li class="cs-comparison-item cs-disabled">
+                            <img class="cs-x-icon" src="/public/content/svgs/mesh-x.svg" alt="not included" width="18" height="18">
+                            <span>3-5 Second Load Times</span>
+                        </li>
+                        <li class="cs-comparison-item cs-disabled">
+                            <img class="cs-x-icon" src="/public/content/svgs/mesh-x.svg" alt="not included" width="18" height="18">
+                            <span>Frequent Security Vulnerabilities</span>
+                        </li>
+                        <li class="cs-comparison-item cs-disabled">
+                            <img class="cs-x-icon" src="/public/content/svgs/mesh-x.svg" alt="not included" width="18" height="18">
+                            <span>Constant Plugin Updates</span>
+                        </li>
+                        <li class="cs-comparison-item cs-disabled">
+                            <img class="cs-x-icon" src="/public/content/svgs/mesh-x.svg" alt="not included" width="18" height="18">
+                            <span>Template Limitations</span>
+                        </li>
+                        <li class="cs-comparison-item cs-disabled">
+                            <img class="cs-x-icon" src="/public/content/svgs/mesh-x.svg" alt="not included" width="18" height="18">
+                            <span>Slower SEO Performance</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            Performance Section                -->
+    <!-- ============================================ -->
+
+    <section id="web-design-performance-2149">
+        <div class="cs-container">
+            <div class="cs-content-wrapper">
+                <div class="cs-content">
+                    <span class="cs-topper">Performance</span>
+                    <h2 class="cs-title">Fast Websites = <strong>More Philadelphia Leads</strong></h2>
+                    <p class="cs-text">
+                        If your website takes more than 3 seconds to load, you could be losing over 50% of your traffic. Our hand-coded websites load in under 1 second, keeping Philadelphia visitors engaged and ready to take action.
+                    </p>
+                    <ul class="cs-benefits-list">
+                        <li class="cs-benefit-item">
+                            <div class="cs-benefit-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z"/>
+                                    <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z"/>
+                                    <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5"/>
+                                </svg>
+                            </div>
+                            <p class="cs-benefit-text">Faster load times result in increased website traffic and higher conversion rates for Philadelphia businesses.</p>
+                        </li>
+                        <li class="cs-benefit-item">
+                            <div class="cs-benefit-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                    <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5"/>
+                                </svg>
+                            </div>
+                            <p class="cs-benefit-text">A faster website boosts your SEO rankings and increases the effectiveness of your Google Ads campaigns in Philadelphia.</p>
+                        </li>
+                        <li class="cs-benefit-item">
+                            <div class="cs-benefit-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"/>
+                                </svg>
+                            </div>
+                            <p class="cs-benefit-text">Our websites consistently load in less than one second, providing a seamless user experience and driving more conversions.</p>
+                        </li>
+                    </ul>
+                    <a href="https://fishtownwebdesign.com/contact" class="cs-button-solid">Get Your Website Today</a>
+                </div>
+                <div class="cs-visual-wrapper">
+                    <div class="cs-metrics-group">
+                        <div class="cs-metric">
+                            <span class="cs-metric-number">90+</span>
+                            <span class="cs-metric-label">Page Speed</span>
+                            <span class="cs-metric-label">Scores</span>
+                        </div>
+                        <div class="cs-metric">
+                            <span class="cs-metric-number">&lt;1s</span>
+                            <span class="cs-metric-label">Load</span>
+                            <span class="cs-metric-label">Time</span>
+                        </div>
+                        <div class="cs-metric">
+                            <span class="cs-metric-number">100%</span>
+                            <span class="cs-metric-label">Hand</span>
+                            <span class="cs-metric-label">Coded</span>
+                        </div>
+                    </div>
+                    <div class="cs-pagespeed-card">
+                        <picture class="cs-pagespeed-picture">
+                            <source media="(max-width: 600px)" srcset="/public/content/home/Google-Page-Speed-Score-m.webp">
+                            <source media="(min-width: 601px)" srcset="/public/content/home/Google-Page-Speed-Score.webp">
+                            <img 
+                                loading="lazy" 
+                                decoding="async" 
+                                src="/public/content/home/Google-Page-Speed-Score.png" 
+                                alt="Google PageSpeed Insights report showing 100 performance score" 
+                                width="1200" 
+                                height="800">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              Process Section                  -->
+    <!-- ============================================ -->
+
+    <section id="web-design-process-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Our Process</span>
+                <h2 class="cs-title">How We Build Your <strong>Custom Website</strong></h2>
+                <p class="cs-text">
+                    From initial consultation to launch, we handle everything. Our streamlined process ensures your Philadelphia business gets a high-performance website in 2-3 weeks.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <div class="cs-picture">
+                        <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383z"/>
+                        </svg>
+                    </div>
+                    <h3 class="cs-h3">1. Consultation</h3>
+                    <p class="cs-item-text">
+                        We start with a brief questionnaire about your Philadelphia business, services, and goals. We'll expand on your answers to create comprehensive, SEO-optimized content.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-picture">
+                        <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306"/>
+                        </svg>
+                    </div>
+                    <h3 class="cs-h3">2. Design & Approval</h3>
+                    <p class="cs-item-text">
+                        We create a custom design mockup and do a video screen share to show you the first draft. We'll make any changes you want to ensure you're 100% satisfied.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-picture">
+                        <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M7.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318"/>
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8"/>
+                        </svg>
+                    </div>
+                    <h3 class="cs-h3">3. Development & Launch</h3>
+                    <p class="cs-item-text">
+                        Once approved, we hand-code your website with optimized HTML, CSS, and JavaScript. We'll send you a demo link to review before we launch and go live.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              CTA Section                     -->
+    <!-- ============================================ -->
+
+    <section id="web-design-cta-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Ready to Get Started?</span>
+                <h2 class="cs-title">Get Your <strong>Custom-Coded Website</strong> Today</h2>
+                <p class="cs-text">
+                    Join Philadelphia businesses that have upgraded to hand-coded websites. Get lightning-fast performance, better SEO rankings, and more leads—all starting at $150/mo.
+                </p>
+                <a href="https://fishtownwebdesign.com/contact" class="cs-button-solid">Get a Free Consultation</a>
+            </div>
+        </div>
+        <!-- Background Pattern -->
+        <picture class="cs-background">
+            <source media="(max-width: 600px)" srcset="/public/content/svgs/stripes.svg">
+            <source media="(min-width: 601px)" srcset="/public/content/svgs/stripes.svg">
+            <img decoding="async" src="/public/content/svgs/stripes.svg" alt="" width="1920" height="907" aria-hidden="true">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Footer                       -->
+    <!-- ============================================ -->
+
+    <footer id="cs-footer-2412">
+        <div class="cs-container cs-container-top">
+            <!-- Logo -->
+             <picture>
+                <source media="(max-width: 600px)" srcset="/public/content/home/footer-logo-m.webp">
+                <source media="(min-width: 601px)" srcset="/public/content/home/footer-logo.webp">
+                <img loading="lazy" src="/public/content/home/footer-logo.png" id="footer-logo" alt="Fishtown Logo" width="216" height="128">
+            </picture>
+            <!--Quick Links-->
+            <div class="cs-quick-links">
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <a class="cs-link" href="/about">About</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/pricing">Pricing</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/web-design">Web Design</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/seo">SEO</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cs-wrapper">
+                <!--Subscribtion Form-->
+                <div class="cs-subscribe">
+                    <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
+                    <form class="cs-form" name="Subscription Form" method="post">
+                        <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address">
+                        <button class="cs-button-solid cs-submit" type="submit">
+                            <img class="cs-icon" src="/public/content/home/subscribe.png" alt="submit my email and subcribe" width="40" height="40" decoding="async" loading="lazy">
+                        </button>
+                    </form>
+                </div>
+                <div class="cs-bottom">
+                    <!--Social-->
+                    <div class="cs-social">
+                        <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                        <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit instagram">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                    </div>
+                    <!--Legal-->
+                    <div class="cs-legal">
+                        <a href="/tos" class="cs-legal-link cs-link">Terms & Conditions</a>
+                        <span class="cs-divider" aria-hidden="true">|</span>
+                        <a href="/pp" class="cs-legal-link cs-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-credit">
+            <span class="cs-ip cs-text">© <span id="current-year">2026</span> Fishtown Web Design. All rights reserved.</span>
+        </div>
+        <svg class="cs-curve" aria-hidden="true" width="1920" height="1" viewBox="0 0 1920 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1920" height="1" fill="var(--overlayBG)"/>
+        </svg>
     </footer>
 
-    <!-- Scripts -->
-
-    <script defer>
-        // Set the current year dynamically
-        document.getElementById("current-year").textContent = new Date().getFullYear();
-    </script>
     <script>
         // add classes for mobile navigation toggling
         var CSbody = document.querySelector('body');
@@ -325,7 +585,6 @@
             };
             item.addEventListener('click', onClick);
         }
-                                        
     </script>
     <!-- Schema Markup -->
     <script type="application/ld+json">
@@ -333,7 +592,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Fishtown Web Design",
-        "image": "https://fishtownwebdesign.com/public/content/home/logo.webp",
+        "image": "https://www.fishtownwebdesign.com/public/content/home/logo.webp",
         "description": "Philadelphia's premier custom web design agency specializing in hand-coded, fast-loading websites for local businesses.",
         "address": {
             "@type": "PostalAddress",
@@ -347,7 +606,7 @@
             "longitude": "-75.1652"
         },
         "url": "https://fishtownwebdesign.com",
-        "telephone": "+1-215-555-0123",
+        "telephone": "+1-717-333-8691",
         "priceRange": "$$",
         "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
@@ -367,6 +626,15 @@
         ]
     }
     </script>
+    <script>
+        // Update copyright year dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
     </div>
 </body>
-</html> 
+</html>

@@ -15,6 +15,9 @@
     <meta property="og:url" content="https://www.fishtownwebdesign.com/blog">
 
     <!-- CSS Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/blog-index.css">
     <link rel="stylesheet" href="/public/css/core.css">
 
@@ -27,12 +30,13 @@
     <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
 </head>
 <body>
-    <!-- Top Banner -->
-    <div class="cs-topper-card">
-        <div class="top-banner">
-            NOW ACCEPTING NEW CLIENTS.
+    <div class="page-wrapper">
+        <!-- Top Banner -->
+        <div class="cs-topper-card">
+            <div class="top-banner">
+                NOW ACCEPTING NEW CLIENTS.
+            </div>
         </div>
-    </div>
 
         <!-- ============================================ -->
     <!--                 Navigation                   -->
@@ -129,92 +133,200 @@
         </div>
     </header>
 
-    <!-- Blog Section -->
-    <section id="blog-index-2065">
+    <!-- ============================================ -->
+    <!--                 Blog Hero                    -->
+    <!-- ============================================ -->
+
+    <section id="blog-hero-2149">
         <div class="cs-container">
-            <!-- Blog Header -->
-            <div class="blog-header">
-                <h1>Blog</h1>
+            <div class="cs-content">
+                <span class="cs-topper">Blog & News</span>
+                <h1 class="cs-title">Case Studies, News & <strong>Insights</strong></h1>
+                <p class="cs-text">
+                    Stay updated with the latest web design trends, performance optimization tips, and insights from our Philadelphia-based team. Explore case studies, design best practices, and industry news to help your business succeed online.
+                </p>
             </div>
+        </div>
+        <!-- Background Pattern -->
+        <picture class="cs-background">
+            <source media="(max-width: 600px)" srcset="/public/content/svgs/stripes.svg">
+            <source media="(min-width: 601px)" srcset="/public/content/svgs/stripes.svg">
+            <img decoding="async" src="/public/content/svgs/stripes.svg" alt="" width="1920" height="907" aria-hidden="true">
+        </picture>
+    </section>
 
-            <!-- Category Filter -->
-            <div class="category-filter">
-                <h2 class="category-title">Categories:</h2>
-                <button class="category-toggle" aria-label="Toggle categories">
-                    <span class="category-toggle-text">
-                        <%= selectedCategory ? selectedCategory : 'All' %>
-                    </span>
-                    <img class="cs-toggle-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="toggle icon" width="15" height="15" decoding="async" aria-hidden="true">
-                </button>
-                <ul class="category-list" aria-expanded="false">
-                    <li><a href="/blog" class="<%= !selectedCategory ? 'active' : '' %>">All</a></li>
-                    <% categories.forEach(category => { 
-                        const categorySlug = category.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '').replace(/&/g, 'and');
-                    %>
-                        <li><a href="/blog/category/<%= categorySlug %>" class="<%= selectedCategory === category ? 'active' : '' %>"><%= category %></a></li>
-                    <% }); %>
-                </ul>
-            </div>
+    <!-- ============================================ -->
+    <!--              Blog Categories                  -->
+    <!-- ============================================ -->
 
-            <!-- Blog Posts Grid -->
-            <div class="blog-grid">
-                <% if (posts && posts.length > 0) { %>
-                    <% posts.forEach(post => { %>
-                        <article class="blog-card">
-                            <% if (post.featuredImage) { %>
-                                <div class="blog-image">
-                                    <picture>
-                                        <source media="(max-width: 600px)" srcset="<%= post.featuredImage.mobile %>">
-                                        <source media="(min-width: 601px)" srcset="<%= post.featuredImage.desktop %>">
-                                        <img 
-                                            src="<%= post.featuredImage.default %>"
-                                            alt="<%= post.title %>"
-                                            width="400"
-                                            height="225"
-                                            decoding="async">
-                                    </picture>
-                                </div>
-                            <% } %>
-                            <div class="blog-content">
-                                <h3 class="blog-title">
-                                    <a href="/blog/<%= post.slug %>" aria-label="Read <%= post.title %>">
-                                        <%= post.title %>
-                                    </a>
-                                </h3>
-                                <div class="blog-meta">
-                                    <time datetime="<%= post.publishedDate %>">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16" aria-hidden="true">
-                                            <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z"/>
-                                            <path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2z"/>
-                                        </svg>
-                                        <%= new Date(post.publishedDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %>
-                                    </time>
-                                </div>
-                                <p class="blog-excerpt">
-                                    <%= post.excerpt || 'No preview available.' %>
-                                </p>
-                                <a href="/blog/<%= post.slug %>" class="cs-button-solid">Read More</a>
-                            </div>
-                        </article>
-                    <% }); %>
-                <% } else { %>
-                    <p class="no-posts">No blog posts available at this time.</p>
-                <% } %>
+    <section id="blog-categories-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Browse by Category</span>
+                <h2 class="cs-title">Explore Our <strong>Content</strong></h2>
             </div>
+            <ul class="cs-category-group">
+                <li class="cs-category-item">
+                    <a href="/blog" class="cs-category-button <%= !selectedCategory ? 'cs-active' : '' %>">
+                        <div class="cs-category-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z"/>
+                                <path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="cs-category-title">All Posts</h3>
+                        <p class="cs-category-text">View all our blog posts</p>
+                    </a>
+                </li>
+                <% categories.forEach(category => { 
+                    const categorySlug = category.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '').replace(/&/g, 'and');
+                %>
+                <li class="cs-category-item">
+                    <a href="/blog/category/<%= categorySlug %>" class="cs-category-button <%= selectedCategory === category ? 'cs-active' : '' %>">
+                        <div class="cs-category-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                            </svg>
+                        </div>
+                        <h3 class="cs-category-title"><%= category %></h3>
+                        <p class="cs-category-text">Explore <%= category %> content</p>
+                    </a>
+                </li>
+                <% }); %>
+            </ul>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
-        <picture>
-            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
-            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
-            <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
-        </picture>
-        <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
-        <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
+    <!-- ============================================ -->
+    <!--              Blog Posts Grid                  -->
+    <!-- ============================================ -->
+
+    <section id="blog-posts-2149">
+        <div class="cs-container">
+            <% if (posts && posts.length > 0) { %>
+                <ul class="cs-card-group">
+                    <% posts.forEach((post, index) => { %>
+                        <li class="cs-item <%= index === 0 ? 'cs-item-featured' : '' %>">
+                            <% if (post.featuredImage) { %>
+                                <picture class="cs-picture">
+                                    <source media="(max-width: 600px)" srcset="<%= post.featuredImage.mobile %>">
+                                    <source media="(min-width: 601px)" srcset="<%= post.featuredImage.desktop %>">
+                                    <img 
+                                        loading="lazy" 
+                                        decoding="async" 
+                                        src="<%= post.featuredImage.default %>" 
+                                        alt="<%= post.title %>" 
+                                        width="411" 
+                                        height="320">
+                                </picture>
+                            <% } %>
+                            <div class="cs-flex">
+                                <div class="cs-info-wrapper">
+                                    <span class="cs-date">
+                                        <%= new Date(post.publishedDate).toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' }).replace('/', '<br>') %>
+                                    </span>
+                                    <span class="cs-category">
+                                        <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/folder-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                                        <%= post.category || 'Blog' %>
+                                    </span>
+                                </div>
+                                <div class="cs-link">
+                                    <h3 class="cs-h3">
+                                        <a href="/blog/<%= post.slug %>" class="title-link">
+                                            <%= post.title %>
+                                        </a>
+                                    </h3>
+                                    <p class="cs-item-text"><%= post.excerpt || 'No preview available.' %></p>
+                                    <a href="/blog/<%= post.slug %>" class="cs-read-more">
+                                        Read More
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <div class="cs-content">
+                    <p class="no-posts">No blog posts available at this time.</p>
+                </div>
+            <% } %>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Footer                       -->
+    <!-- ============================================ -->
+
+    <footer id="cs-footer-2412">
+        <div class="cs-container cs-container-top">
+            <!-- Logo -->
+             <picture>
+                <source media="(max-width: 600px)" srcset="/public/content/home/footer-logo-m.webp">
+                <source media="(min-width: 601px)" srcset="/public/content/home/footer-logo.webp">
+                <img loading="lazy" src="/public/content/home/footer-logo.png" id="footer-logo" alt="Fishtown Logo" width="216" height="128">
+            </picture>
+            <!--Quick Links-->
+            <div class="cs-quick-links">
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <a class="cs-link" href="/about">About</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/pricing">Pricing</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/web-design">Web Design</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/seo">SEO</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cs-wrapper">
+                <!--Subscribtion Form-->
+                <div class="cs-subscribe">
+                    <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
+                    <form class="cs-form" name="Subscription Form" method="post">
+                        <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address">
+                        <button class="cs-button-solid cs-submit" type="submit">
+                            <img class="cs-icon" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/paperplane.svg" alt="submit my email and subcribe" width="40" height="40" decoding="async" loading="lazy">
+                        </button>
+                    </form>
+                </div>
+                <div class="cs-bottom">
+                    <!--Social-->
+                    <div class="cs-social">
+                        <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                        <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit instagram">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                    </div>
+                    <!--Legal-->
+                    <div class="cs-legal">
+                        <a href="/tos" class="cs-legal-link cs-link">Terms & Conditions</a>
+                        <span class="cs-divider" aria-hidden="true">|</span>
+                        <a href="/pp" class="cs-legal-link cs-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-credit">
+            <span class="cs-ip cs-text">© 2026 Fishtown Web Design. All rights reserved.</span>
+        </div>
+        <svg class="cs-curve" aria-hidden="true" width="1920" height="1" viewBox="0 0 1920 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1920" height="1" fill="var(--overlayBG)"/>
+        </svg>
     </footer>
+    </div>
 
     <script>
         // Update copyright year
@@ -244,17 +356,6 @@
             item.addEventListener('click', () => item.classList.toggle('cs-active'));
         });
 
-        // Category filter toggle
-        const categoryToggle = document.querySelector('.category-toggle');
-        const categoryList = document.querySelector('.category-list');
-
-        if (categoryToggle && categoryList) {
-            categoryToggle.addEventListener('click', function() {
-                const isExpanded = categoryList.getAttribute('aria-expanded') === 'true';
-                categoryList.setAttribute('aria-expanded', !isExpanded);
-                categoryToggle.classList.toggle('cs-active');
-            });
-        }
     </script>
 
     <!-- Google Analytics -->

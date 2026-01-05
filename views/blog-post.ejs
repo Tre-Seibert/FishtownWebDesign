@@ -52,7 +52,9 @@
     </script>
 
     <!--CSS Imports-->
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/post.css">
     <link rel="stylesheet" href="/public/css/core.css">
 
@@ -67,12 +69,13 @@
 </head>
 
 <body>
-    <div class="cs-topper-card">
-        <!-- Black Banner at the top -->
-        <div class="top-banner">
-            NOW ACCEPTING NEW CLIENTS.
+    <div class="page-wrapper">
+        <div class="cs-topper-card">
+            <!-- Black Banner at the top -->
+            <div class="top-banner">
+                NOW ACCEPTING NEW CLIENTS.
+            </div>
         </div>
-    </div>
 
 
     <!-- ============================================ -->
@@ -136,10 +139,10 @@
                             </span>
                             <ul class="cs-drop-ul">
                                 <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">web design</a>
+                                    <a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a>
                                 </li>
                                 <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">seo</a>
+                                    <a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a>
                                 </li>
                             </ul>
                         </li>
@@ -170,30 +173,60 @@
         </div>
     </header>
 
+    <!-- ============================================ -->
+    <!--                 Blog Post Hero                -->
+    <!-- ============================================ -->
 
-
-    <!-- Main Content Section -->
-    <div class="content-wrapper">
-        <!-- Text Content -->
-        <div class="about-text">
-            <div class="blog-content">
-                <h1><%= post.title %></h1>
-                <% if (post.featuredImage) { %>
-                <div class="featured-image">
-                    <picture>
-                        <source media="(max-width: 600px)" srcset="<%= post.featuredImage.mobile %>">
-                        <source media="(min-width: 601px)" srcset="<%= post.featuredImage.desktop %>">
-                        <img 
-                            src="<%= post.featuredImage.default %>"
-                            alt="<%= post.title %>"
-                            width="400"
-                            height="225"
-                            decoding="async">
-                    </picture>
+    <section id="blog-post-hero-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <div class="cs-meta-wrapper">
+                    <% if (post.category) { %>
+                    <span class="cs-category-badge">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/folder-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                        <%= post.category %>
+                    </span>
+                    <% } %>
+                    <time class="cs-date" datetime="<%= post.publishedDate %>">
+                        <%= new Date(new Date(post.publishedDate).getTime() + 24*60*60*1000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %>
+                    </time>
                 </div>
+                <h1 class="cs-title"><%= post.title %></h1>
+                <% if (post.excerpt) { %>
+                <p class="cs-text"><%= post.excerpt %></p>
                 <% } %>
-                <p><strong>Published:</strong> <%= new Date(new Date(post.publishedDate).getTime() + 24*60*60*1000).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></p>
-                <div>
+            </div>
+        </div>
+        <% if (post.featuredImage) { %>
+        <picture class="cs-background">
+            <source media="(max-width: 600px)" srcset="<%= post.featuredImage.mobile %>">
+            <source media="(min-width: 601px)" srcset="<%= post.featuredImage.desktop %>">
+            <img 
+                decoding="async" 
+                src="<%= post.featuredImage.default %>" 
+                alt="<%= post.title %>" 
+                width="1920" 
+                height="907" 
+                aria-hidden="true">
+        </picture>
+        <% } else { %>
+        <picture class="cs-background">
+            <source media="(max-width: 600px)" srcset="/public/content/svgs/stripes.svg">
+            <source media="(min-width: 601px)" srcset="/public/content/svgs/stripes.svg">
+            <img decoding="async" src="/public/content/svgs/stripes.svg" alt="" width="1920" height="907" aria-hidden="true">
+        </picture>
+        <% } %>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              Blog Post Content                -->
+    <!-- ============================================ -->
+
+    <section id="blog-post-content-2149">
+        <div class="cs-container">
+            <div class="cs-content-wrapper">
+                <article class="cs-article">
+                    <div class="cs-article-content">
                     <% 
                         // Handle both post.content (Blocks) and post.contents (Markdown) for backward compatibility
                         if (post.contents && typeof post.contents === 'string') {
@@ -249,31 +282,104 @@
                             <p>Unknown type: <%= item.type %></p>
                         <% } %>
                     <% 
-                            });
+                        });
                         } else {
                             // Fallback for unexpected data types
                     %>
                         <p>No content available.</p>
                     <% } %>
-                </div>
-                <a href="/blog" class="btn btn-primary">Back to blog</a>
+                    </div>
+                </article>
             </div>
         </div>
-    </div>
+    </section>
 
-    
+    <!-- ============================================ -->
+    <!--              Back to Blog CTA                 -->
+    <!-- ============================================ -->
 
-    <!-- Footer Section -->
-    <footer class="footer text-center py-4">
-        <p>© <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
-        <picture>
-            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
-            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
-            <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
-        </picture>
-        <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
-        <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
+    <section id="blog-post-cta-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h2 class="cs-title">Explore More <strong>Content</strong></h2>
+                <p class="cs-text">
+                    Discover more insights, case studies, and tips from our Philadelphia web design team.
+                </p>
+                <a href="/blog" class="cs-button-solid">Back to Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Footer                       -->
+    <!-- ============================================ -->
+
+    <footer id="cs-footer-2412">
+        <div class="cs-container cs-container-top">
+            <!-- Logo -->
+             <picture>
+                <source media="(max-width: 600px)" srcset="/public/content/home/footer-logo-m.webp">
+                <source media="(min-width: 601px)" srcset="/public/content/home/footer-logo.webp">
+                <img loading="lazy" src="/public/content/home/footer-logo.png" id="footer-logo" alt="Fishtown Logo" width="216" height="128">
+            </picture>
+            <!--Quick Links-->
+            <div class="cs-quick-links">
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <a class="cs-link" href="/about">About</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/pricing">Pricing</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/web-design">Web Design</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/seo">SEO</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cs-wrapper">
+                <!--Subscribtion Form-->
+                <div class="cs-subscribe">
+                    <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
+                    <form class="cs-form" name="Subscription Form" method="post">
+                        <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address">
+                        <button class="cs-button-solid cs-submit" type="submit">
+                            <img class="cs-icon" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/paperplane.svg" alt="submit my email and subcribe" width="40" height="40" decoding="async" loading="lazy">
+                        </button>
+                    </form>
+                </div>
+                <div class="cs-bottom">
+                    <!--Social-->
+                    <div class="cs-social">
+                        <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                        <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit instagram">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                    </div>
+                    <!--Legal-->
+                    <div class="cs-legal">
+                        <a href="/tos" class="cs-legal-link cs-link">Terms & Conditions</a>
+                        <span class="cs-divider" aria-hidden="true">|</span>
+                        <a href="/pp" class="cs-legal-link cs-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-credit">
+            <span class="cs-ip cs-text">© 2026 Fishtown Web Design. All rights reserved.</span>
+        </div>
+        <svg class="cs-curve" aria-hidden="true" width="1920" height="1" viewBox="0 0 1920 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1920" height="1" fill="var(--overlayBG)"/>
+        </svg>
     </footer>
+    </div>
 
     <script>
         // Update copyright year
@@ -303,17 +409,6 @@
             item.addEventListener('click', () => item.classList.toggle('cs-active'));
         });
 
-        // Category filter toggle
-        const categoryToggle = document.querySelector('.category-toggle');
-        const categoryList = document.querySelector('.category-list');
-
-        if (categoryToggle && categoryList) {
-            categoryToggle.addEventListener('click', function() {
-                const isExpanded = categoryList.getAttribute('aria-expanded') === 'true';
-                categoryList.setAttribute('aria-expanded', !isExpanded);
-                categoryToggle.classList.toggle('cs-active');
-            });
-        }
     </script>
 
     <!-- Google tag (gtag.js) -->

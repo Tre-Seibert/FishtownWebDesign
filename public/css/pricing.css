@@ -1,1 +1,553 @@
-@media screen and (min-width:0rem){.about-section{position:relative;background:url('/public/content/svgs/stripes.svg')}.about-banner{position:relative;width:100%;height:150px;background:url('/public/content/svgs/dots.svg');mask-repeat:no-repeat;mask-size:cover;display:flex;justify-content:center;align-items:flex-end;padding-top: 11rem;;z-index:1}.about-banner h1{margin-top:1rem;font-weight:700;color:#000;font-family:Horizon;font-size:var(--headerFontSize)}#pricing-1183{padding-top:2vh;padding-bottom:5vh}#pricing-1183 .cs-container{width:100%;max-width:34.375rem;margin:auto;display:flex;flex-direction:column;align-items:center;gap:clamp(3rem,6vw,4rem);position:relative}#pricing-1183 .cs-content{text-align:left;width:100%;display:flex;flex-direction:column;padding-left:2%}#pricing-1183 .cs-text{text-align:left;width:100%;display:flex;flex-direction:column;align-items:left}#pricing-1183 .cs-button-solid{font-size:1rem;line-height:clamp(2.875em, 5.5vw, 3.5em);text-decoration:none;font-weight:700;text-align:center;margin:0;color:#fff;min-width:13.375rem;padding:0 2rem;background-color:var(--primary);display:inline-block;position:relative;z-index:1;box-sizing:border-box}#pricing-1183 .cs-button-solid:before{content:"";position:absolute;height:100%;width:0%;background:#000;opacity:1;top:0;left:0;z-index:-1;transition:width .3s}#pricing-1183 .cs-card-group{width:100%;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(1rem,1.8vw,1.25rem);flex:none}#pricing-1183 .cs-item{list-style:none;width:100%;margin:0;padding:clamp(1.5rem,3vw,2.5rem) 1.5rem;background-color:#f1f0ec;box-sizing:border-box;display:flex;flex-direction:column;align-items:stretch}#pricing-1183 .cs-package{font-size:clamp(.8125rem, 1.4vw, 1rem);line-height:1.2em;text-align:center;margin:0 0 .5rem;color:#767676;display:block}#pricing-1183 .cs-price{font-size:var(--headerFontSize);line-height:1.2em;text-align:center;font-weight:900;margin:0;color:var(--headerColor)}#pricing-1183 .cs-ul{margin:clamp(1.25rem,3vw,1.5rem) 0 0;padding:clamp(1.25rem,3vw,1.5rem) 0 0;display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;position:relative}#pricing-1183 .cs-ul:before{content:"";width:100%;height:1px;background:linear-gradient(90deg,rgba(232,232,232,.2) 0,#e8e8e8 53.78%,rgba(232,232,232,.2) 100%);opacity:1;position:absolute;display:block;top:0;left:0}#pricing-1183 .cs-li{font-size:clamp(.875rem, 1.5vw, 1rem);list-style:none;line-height:1.5em;width:100%;margin:0;padding:0;color:var(--bodyTextColor);display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}#pricing-1183 .cs-li.cs-disabled .cs-icon{filter:grayscale(1) brightness(300%)}#pricing-1183 .cs-icon{width:1.125rem;height:auto;display:block}}@media only screen and (min-width:768px){.navbar>.container,.navbar>.container-fluid,.navbar>.container-lg,.navbar>.container-md,.navbar>.container-sm,.navbar>.container-xl,.navbar>.container-xxl{flex-wrap:nowrap;align-items:center}.navbar-brand,.navbar-custom{display:flex;align-items:center}.navbar-custom{justify-content:flex-start}.navbar-brand{margin-right:20px}.navbar-collapse{display:flex!important;align-items:center;flex-grow:0}.navbar-nav{display:flex;flex-direction:row;align-items:center;margin:0 0 0 auto;padding:0}.navbar-nav li{padding-left:15px}.navbar-toggler{display:none}#pricing-1183 .cs-container{max-width:80rem}#pricing-1183 .cs-card-group{flex-direction:row;justify-content:center;align-items:stretch;flex-wrap:nowrap}}
+/*-- -------------------------- -->
+<---        Pricing Hero          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #pricing-hero-2149 {
+    padding: clamp(2.75rem, 54vw, 8rem) 1rem clamp(3.75rem, 7.5vw, 6.25rem);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
+  }
+  
+  #pricing-hero-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #pricing-hero-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #pricing-hero-2149 .cs-topper {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: inherit;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
+    color: var(--primary);
+    font-family: Horizon, sans-serif;
+  }
+  
+  #pricing-hero-2149 .cs-title {
+    font-size: clamp(2.4375rem, 5vw, 4.5rem);
+    max-width: 30ch;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #pricing-hero-2149 .cs-text {
+    color: var(--text-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 55ch;
+    margin: 0;
+    line-height: 1.6em;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #pricing-hero-2149 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+  }
+  
+  #pricing-hero-2149 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+  }
+}
+
+/*-- -------------------------- -->
+<---      Value Proposition       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #pricing-value-2149 {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+    background-color: var(--bg-primary);
+    position: relative;
+    z-index: 1;
+  }
+  
+  #pricing-value-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+  }
+  
+  #pricing-value-2149 .cs-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  
+  #pricing-value-2149 .cs-content {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  #pricing-value-2149 .cs-topper {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: inherit;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
+    color: var(--primary);
+    font-family: Horizon, sans-serif;
+  }
+  
+  #pricing-value-2149 .cs-title {
+    max-width: 30ch;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #pricing-value-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #pricing-value-2149 .cs-text {
+    max-width: 100%;
+    margin: 0 0 clamp(1.25rem, 2vw, 1.5rem) 0;
+    line-height: 1.6em;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: var(--text-body);
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #pricing-value-2149 .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: clamp(1rem, 2vw, 1.5rem) 0 0 0;
+    color: var(--text-light);
+    min-width: 12.5rem;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--bg-dark);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  #pricing-value-2149 .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+  
+  #pricing-value-2149 .cs-visual-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+  
+  #pricing-value-2149 .cs-value-card {
+    grid-column: span 12;
+    background-color: var(--bg-card);
+    padding: clamp(2rem, 4vw, 2.5rem) 1rem 2rem 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  #pricing-value-2149 .cs-value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  #pricing-value-2149 .cs-value-icon {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  #pricing-value-2149 .cs-value-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+  
+  #pricing-value-2149 .cs-value-title {
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #pricing-value-2149 .cs-value-text {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.6em;
+    color: var(--text-body);
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #pricing-value-2149 .cs-value-card {
+    grid-column: span 4;
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #pricing-value-2149 .cs-content-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  #pricing-value-2149 .cs-content {
+    width: 50%;
+    flex: 1;
+  }
+  
+  #pricing-value-2149 .cs-visual-wrapper {
+    width: 50%;
+    flex: 1;
+  }
+}
+
+/*-- -------------------------- -->
+<---        Pricing Plans         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #pricing-1183 {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
+  }
+  
+  #pricing-1183 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  
+  #pricing-1183 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #pricing-1183 .cs-topper {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: inherit;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
+    color: var(--primary);
+    font-family: Horizon, sans-serif;
+  }
+  
+  #pricing-1183 .cs-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    max-width: 30ch;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #pricing-1183 .cs-text {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6em;
+    max-width: 55ch;
+    margin: 0;
+    color: var(--text-body);
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #pricing-1183 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: clamp(1.5rem, 3vw, 2rem);
+    justify-content: center;
+  }
+  
+  #pricing-1183 .cs-item {
+    list-style: none;
+    width: 100%;
+    max-width: 25rem;
+    margin: 0;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
+    background-color: var(--bg-card);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  #pricing-1183 .cs-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  #pricing-1183 .cs-item-featured {
+    border: 2px solid var(--primary);
+    transform: scale(1.05);
+  }
+  
+  #pricing-1183 .cs-item-featured:hover {
+    transform: scale(1.05) translateY(-5px);
+  }
+  
+  #pricing-1183 .cs-badge {
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: Horizon, sans-serif;
+    letter-spacing: 0.05em;
+  }
+  
+  #pricing-1183 .cs-package {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    text-align: center;
+    margin: 1rem 0 0 0;
+    color: var(--text-muted);
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: Horizon, sans-serif;
+  }
+  
+  #pricing-1183 .cs-price-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  #pricing-1183 .cs-price {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.2em;
+    text-align: center;
+    font-weight: 900;
+    color: var(--headerColor);
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #pricing-1183 .cs-price-period {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    font-weight: 400;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #pricing-1183 .cs-savings {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #pricing-1183 .cs-note {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin: 0 0 1.5rem 0;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #pricing-1183 .cs-ul {
+    margin: clamp(1.5rem, 3vw, 2rem) 0;
+    padding: clamp(1.5rem, 3vw, 2rem) 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+    flex: 1;
+  }
+  
+  #pricing-1183 .cs-ul:before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(232, 232, 232, 0.2) 0, #e8e8e8 53.78%, rgba(232, 232, 232, 0.2) 100%);
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+  }
+  
+  #pricing-1183 .cs-li {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    list-style: none;
+    line-height: 1.5em;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--bodyTextColor);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #pricing-1183 .cs-li.cs-disabled {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+  
+  #pricing-1183 .cs-li.cs-disabled .cs-icon {
+    filter: grayscale(1) brightness(300%);
+  }
+  
+  #pricing-1183 .cs-icon {
+    width: 1.125rem;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+  }
+  
+  #pricing-1183 .cs-plan-button {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: clamp(1.5rem, 3vw, 2rem) 0 0 0;
+    color: var(--text-light);
+    min-width: 100%;
+    padding: 0 2rem;
+    background-color: var(--bg-dark);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  #pricing-1183 .cs-plan-button:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+  
+  #pricing-1183 .cs-item-featured .cs-plan-button {
+    background-color: var(--bg-dark);
+  }
+  
+  #pricing-1183 .cs-waves {
+    width: 100%;
+    height: 13.875rem;
+    background-color: var(--bg-dark);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  #pricing-1183 .cs-waves img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #pricing-1183 .cs-card-group {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap;
+  }
+  
+  #pricing-1183 .cs-item {
+    max-width: none;
+    flex: 1;
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #pricing-1183 .cs-item {
+    max-width: 22rem;
+  }
+}

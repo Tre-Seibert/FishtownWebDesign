@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://fishtownwebdesign.com/public/content/about/logometa.png">
+    <meta property="og:image" content="https://www.fishtownwebdesign.com/public/content/about/logometa.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="description" content="Philadelphia's custom web design agency specializing in hand-coded websites with 90+ page speed scores. Performance optimized websites for small businesses. Founded by a Saint Joseph's University graduate with 2+ years of experience.">
@@ -14,22 +14,25 @@
     <title>About Us | Custom Web Design in Philadelphia | Hand-Coded Websites</title>
 
     <!--CSS Imports-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/about.css">
     <link rel="stylesheet" href="/public/css/core.css">
 
     <!--Favicons-->
-    <link rel="icon" type="image/png" sizes="16x16" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://fishtownwebdesign.com/public/content/home/favicon_io/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="https://fishtownwebdesign.com/public/content/home/favicon_io/android-chrome-512x512.png">
-    <link rel="apple-touch-icon" href="https://fishtownwebdesign.com/public/content/home/favicon_io/apple-touch-icon.png">
-    <link rel="icon" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/content/home/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/content/home/favicon_io/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
 
     <!-- Preload critical resources -->
     <link rel="preload" href="/public/css/about.css" as="style">
     <link rel="preload" href="/public/css/core.css" as="style">
-    <link rel="preload" href="https://fishtownwebdesign.com/public/content/home/logo.webp" as="image">
-    <link rel="preload" href="https://fishtownwebdesign.com/public/content/about/grad.webp" as="image">
+    <link rel="preload" href="/public/content/home/logo.webp" as="image">
+    <link rel="preload" href="/public/content/about/grad.webp" as="image">
 
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
@@ -42,7 +45,7 @@
         "description": "Philadelphia's custom web design agency specializing in hand-coded websites with 90+ page speed scores. Performance optimized websites for small businesses.",
         "founder": {
           "@type": "Person",
-          "name": "Tre",
+          "name": "Tre Seibert",
           "jobTitle": "Founder and Lead Developer",
           "alumniOf": {
             "@type": "CollegeOrUniversity",
@@ -67,10 +70,7 @@
           "Google Ads",
           "Front-end Development",
           "Back-end Development",
-          "Small Business Web Design",
-          "Restaurant Website Design",
-          "Law Firm Website Design",
-          "Contractor Website Design"
+          "Small Business Web Design"
         ],
         "areaServed": {
           "@type": "City",
@@ -151,7 +151,6 @@
             </div>
         </div>
 
-
         <!-- ============================================ -->
         <!--                 Navigation                   -->
         <!-- ============================================ -->
@@ -161,10 +160,10 @@
                 <!--Nav Logo-->
                 <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
                     <picture>
-                        <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
-                        <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
+                        <source media="(max-width: 600px)" srcset="/public/content/home/logo-m.webp">
+                        <source media="(min-width: 601px)" srcset="/public/content/home/logo.webp">
                         <img 
-                            src="https://fishtownwebdesign.com/public/content/home/logo.png"
+                            src="/public/content/home/logo.png"
                             alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
                             decoding="async"
                             id="logo"
@@ -183,7 +182,6 @@
                             <span class="cs-line cs-line3" aria-hidden="true"></span>
                         </div>
                     </button>
-                    <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
                     <div class="cs-ul-wrapper">
                         <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
                             <li class="cs-li">
@@ -191,7 +189,6 @@
                                     home
                                 </a>
                             </li>
-                            <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
                             <li class="cs-li cs-dropdown" tabindex="0">
                                 <span class="cs-li-link cs-active">
                                     about
@@ -238,50 +235,192 @@
                         </ul>
                     </div>
                 </nav>
-                <!-- <a href="" class="cs-button-solid cs-nav-button">Contact Us</a> -->
-                <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
-                <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
-                    <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
-                    <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
-                </button> -->
             </div>
         </header>
 
-        <div class="about-section">
-            <!-- About Banner with drips -->
-            <div class="about-banner">
-                <h1>About Us</h1>
-            </div>
+        <!-- ============================================ -->
+        <!--                 Hero Section                  -->
+        <!-- ============================================ -->
 
-            <!-- Main Content Section (Image and Text) -->
-            <div class="content-wrapper">
-                <!-- Text Content -->
-                <div class="about-text">
-                    <h2>Fishtown Web Design</h2>
-                    <h3>Custom Web Design in Philadelphia</h3>
-                    <p>Hi, I'm Tre, the founder and lead developer of Fishtown Web Design. My journey into programming began when I was 12 years old, creating websites and building computers to fund my video game collection. After earning my computer science degree in May 2024 at Saint Joseph's University, here in Philadelphia, and with over two years of hands-on experience in both front-end and back-end development, I'm dedicated to delivering custom, hand-coded websites with 90+ page speed scores at an affordable starting price for small businesses.</p>             <!-- Rounded image -->  
-                    <picture>
-                        <!-- Mobile Image (for screens < 600px) -->
-                        <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/about/grad-m.webp">
-                        <!-- Desktop Image (for screens ≥ 601px) -->
-                        <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/about/grad.webp">
-                        <!-- Fallback Image (for browsers that don't support picture element) -->
-                        <img
-                            class="profile-image mb-3" 
-                            src="https://fishtownwebdesign.com/public/content/about/grad.jpeg" 
-                            alt="Tre Seibert - Founder of Fishtown Web Design - Philadelphia Web Developer" 
-                            loading="lazy" 
-                            decoding="async"
-                            width="150px"
-                            height="150px">
-                    </picture>
-                        <p>In my experience, many small businesses in Philadelphia struggle with the upfront cost of building a new website. Those that can afford it often end up with websites that feel outdated or poorly designed, often created by developers who haven't kept up with current trends. I saw a gap where small businesses needed an affordable, trustworthy option for a performance optimized website. That's why I offer my $0 down, $150 per month plan—designed to be manageable for small businesses and to provide a custom-coded website that stands out, without breaking the bank.</p>
+        <section id="about-hero-2149">
+            <div class="cs-container">
+                <div class="cs-content">
+                    <h1 class="cs-title">Our Story</h1>
+                    <p class="cs-text">
+                        Fishtown Web Design was founded by Tre Seibert, a Philadelphia-based developer with over 10 years of technical experience that began with modding video games and building custom solutions. This deep technical foundation, combined with a computer science degree from Saint Joseph's University and 2+ years of professional web development, drives our approach to creating custom, hand-coded websites with exceptional performance for local businesses.
+                    </p>
+                    <div class="cs-profile-wrapper">
+                        <picture class="cs-profile-picture">
+                            <source media="(max-width: 600px)" srcset="/public/content/about/grad-m.webp">
+                            <source media="(min-width: 601px)" srcset="/public/content/about/grad.webp">
+                            <img 
+                                src="/public/content/about/grad.jpeg" 
+                                alt="Tre Seibert - Founder of Fishtown Web Design - Philadelphia Web Developer" 
+                                loading="eager" 
+                                decoding="async"
+                                width="300"
+                                height="300">
+                        </picture>
+                        <div class="cs-profile-info">
+                            <h2 class="cs-name">Tre Seibert</h2>
+                            <p class="cs-location">Founder, Lead Developer</p>
+                            <p class="cs-location">Philadelphia Web Developer</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <!-- Background Pattern -->
+            <picture class="cs-background">
+                <source media="(max-width: 600px)" srcset="/public/content/svgs/stripes.svg">
+                <source media="(min-width: 601px)" srcset="/public/content/svgs/stripes.svg">
+                <img decoding="async" src="/public/content/svgs/stripes.svg" alt="" width="1920" height="907" aria-hidden="true">
+            </picture>
+        </section>
 
         <!-- ============================================ -->
-        <!--                   Steps                      -->
+        <!--              Journey Timeline                 -->
+        <!-- ============================================ -->
+
+        <section id="journey-2149">
+            <div class="cs-container">
+                <div class="cs-content">
+                    <span class="cs-topper">The Journey</span>
+                    <h2 class="cs-title">Building <strong>Expertise</strong></h2>
+                    <p class="cs-text">
+                        Our journey combines a decade of technical problem-solving with formal education and professional experience. Here's how we've built our expertise.
+                    </p>
+                </div>
+                <ul class="cs-timeline">
+                    <li class="cs-timeline-item">
+                        <div class="cs-timeline-marker">
+                            <span class="cs-timeline-number">10+ Years</span>
+                        </div>
+                        <div class="cs-timeline-content">
+                            <h3 class="cs-h3">Technical Foundation</h3>
+                            <p class="cs-item-text">
+                                Over a decade of hands-on technical experience, starting with modding video games, building custom solutions, and solving complex technical challenges. This foundation in problem-solving and creative technical thinking informs everything we do.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="cs-timeline-item">
+                        <div class="cs-timeline-marker">
+                            <span class="cs-timeline-number">2024</span>
+                        </div>
+                        <div class="cs-timeline-content">
+                            <h3 class="cs-h3">Formal Education</h3>
+                            <p class="cs-item-text">
+                                Earned a computer science degree from Saint Joseph's University in Philadelphia, combining years of practical technical experience with formal academic training in software development and computer science principles.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="cs-timeline-item">
+                        <div class="cs-timeline-marker">
+                            <span class="cs-timeline-number">2+ Years</span>
+                        </div>
+                        <div class="cs-timeline-content">
+                            <h3 class="cs-h3">Professional Development</h3>
+                            <p class="cs-item-text">
+                                Over two years of professional experience in both front-end and back-end web development. Building real websites for real businesses, applying our technical foundation to solve practical business challenges and deliver results.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="cs-timeline-item">
+                        <div class="cs-timeline-marker">
+                            <span class="cs-timeline-number">Now</span>
+                        </div>
+                        <div class="cs-timeline-content">
+                            <h3 class="cs-h3">Fishtown Web Design</h3>
+                            <p class="cs-item-text">
+                                Dedicated to delivering custom, hand-coded websites with 90+ page speed scores at an affordable starting price for small businesses in Philadelphia.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!--              Mission Section                 -->
+        <!-- ============================================ -->
+
+        <section id="mission-2149">
+            <div class="cs-container">
+                <div class="cs-content-wrapper">
+                    <div class="cs-content">
+                        <span class="cs-topper">Our Mission</span>
+                        <h2 class="cs-title">Why <strong>$150</strong> Per Month?</h2>
+                        <p class="cs-text">
+                            Many small businesses in Philadelphia struggle with the upfront cost of building a new website. Those that can afford it often end up with websites that feel outdated or poorly designed, often created by developers who haven't kept up with current trends.
+                        </p>
+                        <p class="cs-text">
+                            We identified a gap where small businesses needed an affordable, trustworthy option for a performance optimized website. That's why we offer our <strong>$0 down, $150 per month plan</strong>—designed to be manageable for small businesses and to provide a custom-coded website that stands out, without breaking the bank.
+                        </p>
+                        <a href="https://fishtownwebdesign.com/contact" class="cs-button-solid">Get Started Today</a>
+                    </div>
+                    <div class="cs-visual-wrapper">
+                        <div class="cs-mission-card">
+                            <div class="cs-mission-icon">
+                                <img src="/public/content/about/handshake.png" alt="Custom Coded" width="60" height="60">
+                            </div>
+                            <h3 class="cs-mission-title">$0 Down</h3>
+                            <p class="cs-mission-text">No upfront costs. Start your website today.</p>
+                        </div>
+                        <div class="cs-mission-card">
+                            <div class="cs-mission-icon">
+                                <img src="/public/content/about/cc.png" alt="Custom Coded" width="60" height="60">
+                            </div>
+                            <h3 class="cs-mission-title">$150/Month</h3>
+                            <p class="cs-mission-text">Affordable monthly payments for small businesses.</p>
+                        </div>
+                        <div class="cs-mission-card">
+                            <div class="cs-mission-icon">
+                                <img src="/public/content/about/laptop.png" alt="Custom Coded" width="60" height="60">
+                            </div>
+                            <h3 class="cs-mission-title">Custom Coded</h3>
+                            <p class="cs-mission-text">Hand-coded websites that stand out from the crowd.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!--              Stats Section                   -->
+        <!-- ============================================ -->
+
+        <section id="stats-2149">
+            <div class="cs-container">
+                <div class="cs-content">
+                    <span class="cs-topper">By The Numbers</span>
+                    <h2 class="cs-title">What We Bring to <strong>Your Business</strong></h2>
+                </div>
+                <ul class="cs-stats-group">
+                    <li class="cs-stat-item">
+                        <div class="cs-stat-number">90+</div>
+                        <div class="cs-stat-label">Page Speed Scores</div>
+                        <p class="cs-stat-text">Every website we build achieves top-tier performance scores</p>
+                    </li>
+                    <li class="cs-stat-item">
+                        <div class="cs-stat-number">10+</div>
+                        <div class="cs-stat-label">Years Technical Experience</div>
+                        <p class="cs-stat-text">A decade of technical problem-solving, plus 2+ years of professional web development</p>
+                    </li>
+                    <li class="cs-stat-item">
+                        <div class="cs-stat-number">100%</div>
+                        <div class="cs-stat-label">Hand-Coded</div>
+                        <p class="cs-stat-text">No WordPress or page builders. Pure custom code.</p>
+                    </li>
+                    <li class="cs-stat-item">
+                        <div class="cs-stat-number">100%</div>
+                        <div class="cs-stat-label">Custom Solutions</div>
+                        <p class="cs-stat-text">Tailored websites designed specifically for your business needs</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!--              Process Section                 -->
         <!-- ============================================ -->
 
         <section id="steps-1173">
@@ -298,18 +437,18 @@
                         <div class="cs-picture">
                             <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383z"/> 
-                              </svg>
+                            </svg>
                         </div>
-                        <h3 class="cs-h3">Questionaire</h3>
+                        <h3 class="cs-h3">Questionnaire</h3>
                         <p class="cs-item-text">
-                            We send you an email with less than 10 questions about you business, services, what sets you apart, etc and we do all the rest.
+                            We send you an email with less than 10 questions about your business, services, what sets you apart, etc and we do all the rest.
                         </p>
                     </li>
                     <li class="cs-item">
                         <div class="cs-picture">
                             <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306"/>
-                              </svg>
+                            </svg>
                         </div>
                         <h3 class="cs-h3">Design Approval</h3>
                         <p class="cs-item-text">
@@ -321,7 +460,7 @@
                             <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M7.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318"/>
                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8"/>
-                              </svg>
+                            </svg>
                         </div>
                         <h3 class="cs-h3">Development</h3>
                         <p class="cs-item-text">
@@ -332,26 +471,76 @@
             </div>
         </section>
 
+        <!-- ============================================ -->
+        <!--                 Footer                       -->
+        <!-- ============================================ -->
 
-
-
-
-        <!-- Footer Section -->
-        <footer class="footer text-center py-4">
-            <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
-            <picture>
-                <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
-                <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
-                <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Web Design Philadelphia Logo">
-            </picture>
-            <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
-            <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
+        <footer id="cs-footer-2412">
+            <div class="cs-container cs-container-top">
+                <!-- Logo -->
+                 <picture>
+                    <source media="(max-width: 600px)" srcset="/public/content/home/footer-logo-m.webp">
+                    <source media="(min-width: 601px)" srcset="/public/content/home/footer-logo.webp">
+                    <img loading="lazy" src="/public/content/home/footer-logo.png" id="footer-logo" alt="Fishtown Logo" width="216" height="128">
+                </picture>
+                <!--Quick Links-->
+                <div class="cs-quick-links">
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            <a class="cs-link" href="/about">About</a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="/pricing">Pricing</a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="/web-design">Web Design</a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="/seo">SEO</a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cs-wrapper">
+                    <!--Subscribtion Form-->
+                    <div class="cs-subscribe">
+                        <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
+                        <form class="cs-form" name="Subscription Form" method="post">
+                            <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address">
+                            <button class="cs-button-solid cs-submit" type="submit">
+                                <img class="cs-icon" src="/public/content/home/subscribe.png" alt="submit my email and subcribe" width="40" height="40" decoding="async" loading="lazy">
+                            </button>
+                        </form>
+                    </div>
+                    <div class="cs-bottom">
+                        <!--Social-->
+                        <div class="cs-social">
+                            <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
+                                <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
+                            </a>
+                            <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit instagram">
+                                <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
+                            </a>
+                        </div>
+                        <!--Legal-->
+                        <div class="cs-legal">
+                            <a href="/terms-of-service" class="cs-legal-link cs-link">Terms & Conditions</a>
+                            <span class="cs-divider" aria-hidden="true">|</span>
+                            <a href="/privacy-policy" class="cs-legal-link cs-link">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cs-credit">
+                <span class="cs-ip cs-text">© <span id="current-year">2026</span> Fishtown Web Design. All rights reserved.</span>
+            </div>
+            <svg class="cs-curve" aria-hidden="true" width="1920" height="1" viewBox="0 0 1920 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1920" height="1" fill="var(--overlayBG)"/>
+            </svg>
         </footer>
 
-        <script defer>
-            // Set the current year dynamically
-            document.getElementById("current-year").textContent = new Date().getFullYear();
-        </script>
         <script>
             // add classes for mobile navigation toggling
             var CSbody = document.querySelector('body');
@@ -386,7 +575,15 @@
                 };
                 item.addEventListener('click', onClick);
             }
-                                        
+        </script>
+        <script>
+            // Update copyright year dynamically
+            document.addEventListener('DOMContentLoaded', function() {
+                const yearElement = document.getElementById('current-year');
+                if (yearElement) {
+                    yearElement.textContent = new Date().getFullYear();
+                }
+            });
         </script>
     </div>
 </body>

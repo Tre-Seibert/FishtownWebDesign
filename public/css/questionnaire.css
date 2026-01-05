@@ -1,69 +1,629 @@
-.contact-banner{position:relative;width:100%;height:150px;background:url('/public/content/svgs/dots.svg');mask-repeat:no-repeat;mask-size:cover;display:flex;justify-content:center;align-items:flex-end;z-index:1}
-.contact-banner h1{font-size: 1.2rem;font-weight:700;color:#000;font-family:Horizon;margin-top:1rem}
+/*-- -------------------------- -->
+<---        Questionnaire Hero    -->
+<--- -------------------------- -*/
 
-/* Section wrapper */
-#questionnaire{padding:var(--sectionPadding);position:relative;z-index:1}
-#questionnaire .cs-container{width:100%;max-width:36.5rem;margin:auto;display:flex;justify-content:center;align-items:stretch;flex-direction:column;gap:clamp(3rem,6vw,5rem)}
-#questionnaire .cs-content{text-align:left;width:100%;display:flex;flex-direction:column;align-items:flex-start}
-#questionnaire .cs-title{margin:0 0 2rem}
-
-/* Form base */
-#questionnaire .cs-form{width:100%;padding:clamp(1.5rem,5.18vw,3rem) clamp(1.25rem,5.18vw,2rem);box-sizing:border-box;background-color:#f7f8f8;display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;gap:1.25rem}
-#questionnaire .cs-label{font-size:clamp(.875rem, 1.5vw, 1rem);width:100%;color:var(--headerColor);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;margin-bottom:1rem;gap:.25rem}
-#questionnaire .cs-input{font-size:1rem;width:100%;height:3.5rem;padding:0 0 0 1.5rem;color:var(--headerColor);background-color:#fff;border:none;box-sizing:border-box}
-#questionnaire .cs-input::placeholder{color:#7d799c;opacity:.6}
-#questionnaire .cs-textarea{min-height:7.5rem;padding-top:1.5rem;margin-bottom:.75rem;font-family:inherit}
-
-/* Trust / privacy panel */
-.trust-panel{position:relative;overflow:hidden;margin:1rem 0 0;background:linear-gradient(180deg,#f7f8f8, #ffffff);border:1px solid #e6e7e8;border-radius:.75rem;padding:1rem}
-.trust-panel:before{content:"";position:absolute;left:-10%;right:-10%;top:-18px;height:72px;background:url('/public/svgs/waves.svg') center/contain no-repeat;opacity:.08;pointer-events:none}
-.trust-header{display:flex;align-items:flex-start;gap:.75rem}
-.trust-icon{display:inline-flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:999px;background:var(--black);color:#fff;flex:0 0 auto}
-.trust-copy h3{margin:0 0 .25rem;font-weight:700;font-size:clamp(1rem,1.6vw,1.25rem);color:var(--headerColor)}
-.trust-copy p{margin:0;color:var(--headerColor);opacity:.85;font-size:.9375rem;line-height:1.45}
-.trust-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
-.trust-badges .badge{display:inline-block;padding:.35rem .6rem;border-radius:999px;background:#e6e7e8;color:#000;font-weight:600;font-size:.8125rem}
-.trust-fish{position:absolute;right:.75rem;bottom:.5rem;color:#000;opacity:.15}
-
-/* Mobile/desktop visibility */
-.trust-desktop{display:none}
-.trust-mobile{display:block}
-
-/* Stepper */
-.stepper{width:100%;display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem}
-.stepper .step-text{font-weight:700;color:var(--headerColor)}
-.stepper .step-progress{flex:1;height:.375rem;background:#e6e7e8;position:relative;border-radius:999px;overflow:hidden}
-.stepper #stepProgressBar{display:block;height:100%;width:50%;background:var(--black)}
-
-/* Step containers */
-.form-step{display:none;width:100%}
-.form-step.active{display:block}
-.form-actions{width:100%;display:flex;justify-content:space-between;gap:.75rem;margin-top:.25rem}
-
-/* Buttons */
-#questionnaire .cs-button-solid{font-size:1rem;line-height:clamp(2em, 5.5vw, 3.5em);text-decoration:none;font-weight:700;text-align:center;margin:0;color:#fff;border:none;min-width:9.375rem;padding:.5rem 1.3rem;background-color:var(--black);border-radius:.25rem;display:inline-block;position:relative;z-index:1;box-sizing:border-box;transition:color .3s}
-#questionnaire .cs-button-solid:before{content:"";position:absolute;height:100%;width:0%;background:#000;opacity:1;top:0;left:0;z-index:-1;border-radius:.25rem;transition:width .3s}
-#questionnaire .cs-button-solid:hover{color:#fff}
-#questionnaire .cs-submit{min-width:15.6875rem;border-radius:0}
-
-/* Modal */
-.modal{display:none;position:fixed;z-index:1;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.5);overflow:auto;padding-top:100px;font-family:"DM Serif Display"}
-.modal-content{background-color:#fff;margin:auto;padding:20px;border:1px solid #888;width:80%;max-width:400px}
-.modal-content p{font-family:Roboto}
-#closeModal{background-color:var(--secondary);color:#fff;border:none;padding:10px 20px;font-size:14px;cursor:pointer}
-
-/* Desktop enhancements */
-@media only screen and (min-width:1024px){
-  #questionnaire .cs-container{max-width:80rem;display:grid;grid-template-columns:minmax(0, 1fr) minmax(0, 33.875rem);grid-auto-rows:auto;column-gap:clamp(2rem,4vw,4rem);row-gap:clamp(1rem,1.5vw,1.5rem);align-items:start}
-  #questionnaire .cs-content{max-width:33.875rem;order:0;grid-column:2;grid-row:1}
-  #questionnaire .cs-form{grid-column:1;grid-row:1}
-  #questionnaire .trust-panel{grid-column:2;grid-row:2}
-  .trust-desktop{display:block;}
-  .trust-mobile{display:none}
-  .contact-banner h1{font-size:clamp(1.69375rem, 2.3vw, 1.9875rem)}
-  .trust-panel{margin-top:2rem;padding:1.5rem 1.75rem;border-radius:1rem}
-  .trust-panel:before{top:-24px;height:96px;opacity:.1}
-  .trust-fish{right:1rem;bottom:.75rem;transform:scale(1.05)}
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #questionnaire-hero-2149 {
+    padding: clamp(2.75rem, 54vw, 8rem) 1rem clamp(3.75rem, 7.5vw, 6.25rem);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
+  }
+  
+  #questionnaire-hero-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #questionnaire-hero-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #questionnaire-hero-2149 .cs-topper {
+    margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+  }
+  
+  #questionnaire-hero-2149 .cs-title {
+    font-size: clamp(2.4375rem, 5vw, 4.5rem);
+    max-width: 30ch;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+  }
+  
+  #questionnaire-hero-2149 .cs-text {
+    color: var(--text-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 55ch;
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+    line-height: 1.6em;
+  }
+  
+  #questionnaire-hero-2149 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.05;
+  }
+  
+  #questionnaire-hero-2149 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
+/*-- -------------------------- -->
+<---        Questionnaire Form    -->
+<--- -------------------------- -*/
 
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #questionnaire {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
+  }
+  
+  #questionnaire .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+  }
+  
+  #questionnaire .cs-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  
+  /* Sidebar */
+  #questionnaire .cs-sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  /* Form Wrapper */
+  #questionnaire .cs-form-wrapper {
+    width: 100%;
+  }
+  
+  /* Form Base */
+  #questionnaire .cs-form {
+    width: 100%;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
+    box-sizing: border-box;
+    background-color: var(--bg-card);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form Header */
+  #questionnaire .form-header {
+    margin-bottom: clamp(2rem, 4vw, 2.5rem);
+  }
+  
+  /* Stepper */
+  #questionnaire .stepper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  #questionnaire .step-text {
+    font-weight: 700;
+    color: var(--headerColor);
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  #questionnaire .step-progress {
+    flex: 1;
+    height: 0.5rem;
+    background: var(--bg-tertiary);
+    position: relative;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  
+  #questionnaire #stepProgressBar {
+    display: block;
+    height: 100%;
+    width: 50%;
+    background: var(--primary);
+    border-radius: 999px;
+    transition: width 0.3s ease;
+  }
+  
+  /* Step Indicator */
+  #questionnaire .step-indicator {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+  
+  #questionnaire .step-label {
+    font-size: clamp(0.75rem, 1.25vw, 0.875rem);
+    color: var(--bg-dark);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-secondary);
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+  }
+  
+  #questionnaire .step-label[data-step="1"] {
+    color: var(--primary);
+    background-color: rgba(248, 200, 130, 0.2);
+  }
+  
+  /* Step Title */
+  #questionnaire .step-title {
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary);
+  }
+  
+  #questionnaire .step-title h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0 0 0.5rem 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #questionnaire .step-title p {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    color: var(--text-body);
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  /* Form Steps */
+  #questionnaire .form-step {
+    display: none;
+    width: 100%;
+  }
+  
+  #questionnaire .form-step.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Labels */
+  #questionnaire .cs-label {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    width: 100%;
+    color: var(--headerColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: clamp(1.25rem, 2.5vw, 1.5rem);
+    gap: 0.5rem;
+  }
+  
+  #questionnaire .label-text {
+    font-weight: 600;
+    color: var(--headerColor);
+    line-height: 1.5em;
+  }
+  
+  #questionnaire .required {
+    color: var(--primary);
+    font-weight: 700;
+  }
+  
+  /* Inputs */
+  #questionnaire .cs-input {
+    font-size: 1rem;
+    width: 100%;
+    height: 3.5rem;
+    padding: 0 0 0 1.5rem;
+    color: var(--headerColor);
+    background-color: var(--text-light);
+    border: 2px solid var(--border-light);
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #questionnaire .cs-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(248, 200, 130, 0.1);
+  }
+  
+  #questionnaire .cs-input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+  
+  #questionnaire .cs-textarea {
+    min-height: 7.5rem;
+    padding: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-family: inherit;
+    resize: vertical;
+  }
+  
+  /* Form Actions */
+  #questionnaire .form-actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: clamp(2rem, 4vw, 2.5rem);
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-light);
+  }
+  
+  /* Buttons */
+  #questionnaire .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: var(--text-light);
+    border: none;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--bg-dark);
+    border-radius: 0.5rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+  }
+  
+  #questionnaire .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  #questionnaire .cs-button-solid:active {
+    transform: translateY(0);
+  }
+  
+  #questionnaire .cs-back {
+    background-color: var(--bg-secondary);
+    color: var(--headerColor);
+    box-shadow: none;
+  }
+  
+  #questionnaire .cs-back:hover {
+    background-color: var(--bg-tertiary);
+    box-shadow: none;
+    transform: translateY(-2px);
+  }
+  
+  #questionnaire .cs-submit {
+    min-width: 15.6875rem;
+    flex: 1;
+  }
+  
+  /* Trust Panel */
+  #questionnaire .trust-panel {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 0.75rem;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #questionnaire .trust-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  #questionnaire .trust-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--bg-dark);
+    flex: 0 0 auto;
+  }
+  
+  #questionnaire .trust-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  #questionnaire .trust-copy h3 {
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    color: var(--headerColor);
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #questionnaire .trust-copy p {
+    margin: 0;
+    color: var(--text-body);
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #questionnaire .trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  #questionnaire .trust-badges .badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    background-color: var(--bg-secondary);
+    color: var(--headerColor);
+    font-weight: 600;
+    font-size: clamp(0.75rem, 1.25vw, 0.875rem);
+    font-family: Montserrat, sans-serif;
+  }
+  
+  /* Info Cards */
+  #questionnaire .questionnaire-info {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+  
+  #questionnaire .info-card {
+    background-color: var(--bg-card);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  #questionnaire .info-icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-dark);
+    flex-shrink: 0;
+  }
+  
+  #questionnaire .info-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  #questionnaire .info-card h4 {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #questionnaire .info-card p {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.6em;
+    color: var(--text-body);
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  /* Mobile/Desktop visibility */
+  #questionnaire .trust-desktop {
+    display: none;
+  }
+  
+  #questionnaire .trust-mobile {
+    display: block;
+    margin-top: 2rem;
+  }
+  
+  /* Modal */
+  #questionnaire .modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: auto;
+    padding: 1rem;
+    font-family: "DM Serif Display";
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(4px);
+  }
+  
+  #questionnaire .modal.modal-show {
+    opacity: 1;
+  }
+  
+  #questionnaire .modal-content {
+    background-color: var(--text-light);
+    margin: auto;
+    padding: clamp(2rem, 5vw, 3rem);
+    border-radius: 0.75rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  #questionnaire .modal.modal-show .modal-content {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  
+  #questionnaire .modal-success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #questionnaire .modal-success-icon img {
+    width: 100%;
+    height: auto;
+    max-width: 80px;
+  }
+  
+  #questionnaire .modal-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0 0 1rem;
+    font-family: "DM Serif Display";
+    line-height: 1.2;
+  }
+  
+  #questionnaire .modal-message {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
+    color: var(--bodyTextColor);
+    margin: 0 0 2rem;
+    font-family: Montserrat, sans-serif;
+    max-width: 100%;
+  }
+  
+  #questionnaire .modal-button {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    border: none;
+    padding: 0.875rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  #questionnaire .modal-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #questionnaire .cs-content-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+  
+  #questionnaire .cs-sidebar {
+    width: 35%;
+    max-width: 20rem;
+    flex-shrink: 0;
+  }
+  
+  #questionnaire .cs-form-wrapper {
+    flex: 1;
+  }
+  
+  #questionnaire .form-actions {
+    justify-content: flex-end;
+  }
+  
+  #questionnaire .cs-back {
+    order: 1;
+  }
+  
+  #questionnaire .cs-submit {
+    order: 2;
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #questionnaire .trust-desktop {
+    display: block;
+  }
+  
+  #questionnaire .trust-mobile {
+    display: none;
+  }
+  
+  #questionnaire .cs-sidebar {
+    width: 30%;
+    max-width: 25rem;
+  }
+  
+  #questionnaire .step-indicator .step-label[data-step="2"] {
+    color: var(--text-secondary);
+    background-color: var(--bg-secondary);
+  }
+  
+  #questionnaire .form-step[data-step="2"].active ~ .form-header .step-label[data-step="2"] {
+    color: var(--primary);
+    background-color: rgba(248, 200, 130, 0.2);
+  }
+}

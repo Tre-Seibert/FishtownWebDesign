@@ -1,13 +1,17 @@
-const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
-        for (const item of faqItems) {
-            const onClick = () => {
-            item.classList.toggle('active')
-        }
-        item.addEventListener('click', onClick)
+const faqButtons = Array.from(document.querySelectorAll('.cs-faq-item .cs-button'));
+        for (const button of faqButtons) {
+            const onClick = (e) => {
+                e.preventDefault();
+                const faqItem = button.closest('.cs-faq-item');
+                if (faqItem) {
+                    faqItem.classList.toggle('active');
+                }
+            }
+            button.addEventListener('click', onClick);
         }
 
         class FAQFilter {
-        filtersSelector = '.cs-option'
+        filtersSelector = '.cs-category-button'
         FAQselector = '.cs-faq-group'
         activeClass = 'cs-active'
         hiddenClass = 'cs-hidden'
@@ -15,9 +19,11 @@ const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
         constructor() {
             const $filters = document.querySelectorAll(this.filtersSelector)
             this.$activeFilter = $filters[0]
-            this.$images = document.querySelectorAll(this.FAQselector)
+            this.$faqGroups = document.querySelectorAll(this.FAQselector)
 
-            this.$activeFilter.classList.add(this.activeClass)
+            if (this.$activeFilter) {
+                this.$activeFilter.classList.add(this.activeClass)
+            }
 
             for (const $filter of $filters) {
             $filter.addEventListener('click', () => this.onClick($filter))
@@ -29,7 +35,9 @@ const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
 
             const { activeClass } = this
 
-            this.$activeFilter.classList.remove(activeClass)
+            if (this.$activeFilter) {
+                this.$activeFilter.classList.remove(activeClass)
+            }
             $filter.classList.add(activeClass)
 
             this.$activeFilter = $filter
@@ -39,9 +47,9 @@ const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
             const showAll = filter == 'all'
             const { hiddenClass } = this
 
-            for (const $image of this.$images) {
-            const show = showAll || $image.dataset.category == filter
-            $image.classList.toggle(hiddenClass, !show)
+            for (const $faqGroup of this.$faqGroups) {
+            const show = showAll || $faqGroup.dataset.category == filter
+            $faqGroup.classList.toggle(hiddenClass, !show)
             }
         }
         }
