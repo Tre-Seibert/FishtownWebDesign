@@ -197,25 +197,6 @@
                 <% } %>
             </div>
         </div>
-        <% if (post.featuredImage) { %>
-        <picture class="cs-background">
-            <source media="(max-width: 600px)" srcset="<%= post.featuredImage.mobile %>">
-            <source media="(min-width: 601px)" srcset="<%= post.featuredImage.desktop %>">
-            <img 
-                decoding="async" 
-                src="<%= post.featuredImage.default %>" 
-                alt="<%= post.title %>" 
-                width="1920" 
-                height="907" 
-                aria-hidden="true">
-        </picture>
-        <% } else { %>
-        <picture class="cs-background">
-            <source media="(max-width: 600px)" srcset="/public/content/svgs/stripes.svg">
-            <source media="(min-width: 601px)" srcset="/public/content/svgs/stripes.svg">
-            <img decoding="async" src="/public/content/svgs/stripes.svg" alt="" width="1920" height="907" aria-hidden="true">
-        </picture>
-        <% } %>
     </section>
 
     <!-- ============================================ -->
@@ -226,6 +207,20 @@
         <div class="cs-container">
             <div class="cs-content-wrapper">
                 <article class="cs-article">
+                    <% if (post.featuredImage) { %>
+                    <div class="cs-featured-image">
+                        <picture>
+                            <source media="(max-width: 600px)" srcset="<%= post.featuredImage.mobile %>">
+                            <source media="(min-width: 601px)" srcset="<%= post.featuredImage.desktop %>">
+                            <img 
+                                decoding="async" 
+                                src="<%= post.featuredImage.default %>" 
+                                alt="<%= post.title %>" 
+                                width="1920" 
+                                height="907">
+                        </picture>
+                    </div>
+                    <% } %>
                     <div class="cs-article-content">
                     <% 
                         // Handle both post.content (Blocks) and post.contents (Markdown) for backward compatibility
