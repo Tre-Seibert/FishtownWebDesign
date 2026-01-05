@@ -358,12 +358,13 @@
                     <!--Subscribtion Form-->
                     <div class="cs-subscribe">
                         <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
-                        <form class="cs-form" name="Subscription Form" method="post">
-                            <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address">
-                            <button class="cs-button-solid cs-submit" type="submit">
+                        <form class="cs-form" name="Subscription Form" method="post" id="footer-newsletter-form" action="#" onsubmit="return false;">
+                            <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address" required>
+                            <button class="cs-button-solid cs-submit" type="submit" id="footer-subscribe-button">
                                 <img class="cs-icon" src="/public/content/home/subscribe.png" alt="submit my email and subcribe" width="40" height="40" decoding="async" loading="lazy">
                             </button>
                         </form>
+                        <div id="footer-newsletter-message" style="display: none; margin-top: 10px; padding: 10px; border-radius: 5px;"></div>
                     </div>
                     <div class="cs-bottom">
                         <!--Social-->
@@ -614,6 +615,131 @@
                 }
             });
         </script>
+        <script>
+            // Footer Newsletter Subscription Handler
+            document.addEventListener('DOMContentLoaded', function() {
+                const footerNewsletterForm = document.getElementById('footer-newsletter-form');
+                const footerNewsletterMessage = document.getElementById('footer-newsletter-message');
+                const footerSubscribeButton = document.getElementById('footer-subscribe-button');
+                const footerNewsletterInput = document.getElementById('cs-subscribe-2412');
+                const footerNewsletterModal = document.getElementById('footer-newsletter-modal');
+
+                if (footerNewsletterForm) {
+                    footerNewsletterForm.addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        
+                        const email = footerNewsletterInput.value.trim();
+                        
+                        if (!email) {
+                            showFooterMessage('Please enter your email address.', 'error');
+                            return;
+                        }
+
+                        footerSubscribeButton.disabled = true;
+                        const originalButtonHTML = footerSubscribeButton.innerHTML;
+                        footerSubscribeButton.innerHTML = '<span style="color: var(--bodyTextColorWhite);">Subscribing...</span>';
+
+                        try {
+                            const response = await fetch('/subscribe-newsletter', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({ email: email })
+                            });
+
+                            const data = await response.json();
+
+                            if (data.success) {
+                                footerNewsletterInput.value = '';
+                                openFooterNewsletterModal(data.message);
+                            } else {
+                                showFooterMessage(data.message, 'error');
+                            }
+                        } catch (error) {
+                            showFooterMessage('There was an error processing your subscription. Please try again.', 'error');
+                        } finally {
+                            footerSubscribeButton.disabled = false;
+                            footerSubscribeButton.innerHTML = originalButtonHTML;
+                        }
+                    });
+
+                    function showFooterMessage(message, type) {
+                        footerNewsletterMessage.textContent = message;
+                        footerNewsletterMessage.style.display = 'block';
+                        footerNewsletterMessage.style.backgroundColor = type === 'success' ? '#d4edda' : '#f8d7da';
+                        footerNewsletterMessage.style.color = type === 'success' ? '#155724' : '#721c24';
+                        footerNewsletterMessage.style.border = type === 'success' ? '1px solid #c3e6cb' : '1px solid #f5c6cb';
+                        setTimeout(() => {
+                            footerNewsletterMessage.style.display = 'none';
+                        }, 5000);
+                    }
+
+                    function openFooterNewsletterModal(message) {
+                        const modal = document.getElementById('footer-newsletter-modal');
+                        const modalMessage = document.getElementById('footer-newsletter-modal-message');
+                        if (modal && modalMessage) {
+                            modalMessage.textContent = message || 'Thank you for subscribing to our newsletter!';
+                            modal.style.display = 'flex';
+                            document.body.style.overflow = 'hidden';
+                            setTimeout(() => {
+                                modal.classList.add('modal-show');
+                            }, 10);
+                        }
+                    }
+
+                    const closeFooterModal = document.getElementById('close-footer-newsletter-modal');
+                    if (closeFooterModal) {
+                        closeFooterModal.addEventListener('click', function() {
+                            const modal = document.getElementById('footer-newsletter-modal');
+                            modal.classList.remove('modal-show');
+                            document.body.style.overflow = '';
+                            setTimeout(() => {
+                                modal.style.display = 'none';
+                            }, 300);
+                        });
+                    }
+
+                    const footerModal = document.getElementById('footer-newsletter-modal');
+                    if (footerModal) {
+                        footerModal.addEventListener('click', function(e) {
+                            if (e.target === footerModal) {
+                                footerModal.classList.remove('modal-show');
+                                document.body.style.overflow = '';
+                                setTimeout(() => {
+                                    footerModal.style.display = 'none';
+                                }, 300);
+                            }
+                        });
+                    }
+
+                    document.addEventListener('keydown', function(e) {
+                        if (e.key === 'Escape' && footerModal && footerModal.style.display === 'flex') {
+                            footerModal.classList.remove('modal-show');
+                            document.body.style.overflow = '';
+                            setTimeout(() => {
+                                footerModal.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                }
+            });
+        </script>
+    </div>
+    <!-- Footer Newsletter Success Modal -->
+    <div id="footer-newsletter-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-success-icon">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/public/content/home/fish-m.webp">
+                    <source media="(min-width: 601px)" srcset="/public/content/home/fish.webp">
+                    <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Web Design Philadelphia Logo">
+                </picture>
+            </div>
+            <h2 class="modal-title">Thank You!</h2>
+            <p id="footer-newsletter-modal-message" class="modal-message">Thank you for subscribing to our newsletter!</p>
+            <button id="close-footer-newsletter-modal" class="modal-button">Close</button>
+        </div>
     </div>
 </body>
 </html>
