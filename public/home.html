@@ -22,22 +22,27 @@
     <title>Philadelphia Web Design | Custom Hand-Coded Websites | Fishtown Web Design</title>
 
     <!--CSS Imports-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/index.css">
     <link rel="stylesheet" href="/public/css/core.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <!--Favicons-->
-    <link rel="icon" type="image/png" sizes="16x16" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://fishtownwebdesign.com/public/content/home/favicon_io/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="https://fishtownwebdesign.com/public/content/home/favicon_io/android-chrome-512x512.png">
-    <link rel="apple-touch-icon" href="https://fishtownwebdesign.com/public/content/home/favicon_io/apple-touch-icon.png">
-    <link rel="icon" href="https://fishtownwebdesign.com/public/content/home/favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/content/home/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/content/home/favicon_io/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
 
     <!-- Preload critical resources -->
     <link rel="preload" href="/public/css/index.css" as="style">
     <link rel="preload" href="/public/css/core.css" as="style">
-    <link rel="preload" href="https://fishtownwebdesign.com/public/content/home/logo.webp" as="image">
-    <link rel="preload" href="https://fishtownwebdesign.com/public/content/home/web-design-philly.webp" as="image">
+    <link rel="preload" href="/public/content/home/logo.webp" as="image">
+    <link rel="preload" href="/public/content/home/web-design-philly.webp" as="image">
 
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
@@ -226,14 +231,6 @@
                     <button id="cs-submit-1605" class="cs-button-solid cs-submit" type="submit">Subscribe Now</button>
                 </form>
                 <div id="newsletter-message" style="display: none; margin-top: 10px; padding: 10px; border-radius: 5px;"></div>
-                <div class="cs-social">
-                    <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link">
-                        <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/facebook-1a.svg" alt="logo" width="12" height="12" aria-hidden="true" decoding="async">
-                    </a>
-                    <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link">
-                        <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/instagram1a.svg" alt="logo" width="12" height="12" aria-hidden="true" decoding="async">
-                    </a>
-                </div>
             </div>
         </div>
     </div>
@@ -259,10 +256,10 @@
             <!--Nav Logo-->
             <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
                 <picture>
-                    <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
-                    <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
+                    <source media="(max-width: 600px)" srcset="/public/content/home/logo-m.webp">
+                    <source media="(min-width: 601px)" srcset="/public/content/home/logo.webp">
                     <img 
-                        src="https://fishtownwebdesign.com/public/content/home/logo.png"
+                        src="/public/content/home/logo.png"
                         alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
                         decoding="async"
                         id="logo"
@@ -349,14 +346,14 @@
     <!--                 Intro                        -->
     <!-- ============================================ -->
 
-    <div class="cs-intro">
+    <!-- <div class="cs-intro">
         <p class="tagline">
             Philadelphia's premier<br>
             custom web design agency<br>
             specializing in <span id="rotating-word" class="rotating-word">venues</span>
         </p>
         <a class="btn btn-get-started" href="https://fishtownwebdesign.com/contact">GET STARTED</a>
-    </div>
+    </div> -->
 
     <!-- ============================================ -->
     <!--                    Hero                      -->
@@ -370,6 +367,7 @@
                 <p class="cs-text">
                     No WordPress or page builders. We offer 100% hand-coded websites with lightning-fast loading speeds, starting at $150/mo. Perfect for small businesses in Philadelphia looking for affordable, high-performance web design.
                 </p>
+                <a href="https://fishtownwebdesign.com/contact" class="cs-button-solid">Get Started</a>
             </div>
         </div>
         <!-- Background Image -->
@@ -377,17 +375,17 @@
 
             <source 
                 media="(max-width: 600px)" 
-                srcset="https://fishtownwebdesign.com/public/content/home/web-design-philly-m.webp"
+                srcset="/public/content/home/web-design-philly-m.webp"
                 type="image/webp"
                 fetchpriority="high">
 
             <source 
                 media="(min-width: 601px)" 
-                srcset="https://fishtownwebdesign.com/public/content/home/web-design-philly.webp"
+                srcset="/public/content/home/web-design-philly.webp"
                 type="image/webp"
                 fetchpriority="high">
 
-            <img decoding="async" src="https://fishtownwebdesign.com/public/content/home/web-design-philly.jpg" alt="Under The El" width="1920" height="907" aria-hidden="true">
+            <img decoding="async" src="/public/content/home/web-design-philly.jpg" alt="Under The El" width="1920" height="907" aria-hidden="true">
         </picture>
     </section>
                                 
@@ -486,94 +484,6 @@
         </picture>
     </section>
 
-    
-    <!-- ============================================ -->
-    <!--                  Portfolio                    -->
-    <!-- ============================================ -->
-
-    <section id="services-1169">
-        <div class="cs-container">
-        <div class="cs-content">
-            <span id="portfolio" class="cs-topper">Portfolio</span>
-            <h2 class="cs-title">Previous Projects</h2>
-            <p class="cs-text">
-                We specialize in custom web design for small businesses across Philadelphia. From contractors and venues to photographers and startups, we create hand-coded websites that are performance-optimized, SEO-friendly, and tailored to your industry. Each website is built with 90+ page speed scores and custom features that drive results.
-            </p>
-        </div>
-        <ul class="cs-card-group">
-            <li class="cs-item">
-            <picture class="cs-picture">
-                <!-- Mobile Image (for screens < 600px) -->
-                <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/shawnee-run-wedding-and-events-venue-columbia-pa-m.webp">
-                <!-- Desktop Image (for screens ≥ 601px) -->
-                <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/shawnee-run-wedding-and-events-venue-columbia-pa.webp">
-                <!-- Fallback Image (for browsers that don't support picture element) -->
-                <img 
-                    src="https://fishtownwebdesign.com/public/content/home/shawnee-run-wedding-and-events-venue-columbia-pa.png" 
-                    alt="Shawnee Run Wedding and Events Venue - Columbia, PA" 
-                    width="413"
-                    height="240"
-                    loading="lazy" 
-                    decoding="async">
-            </picture>
-            <div class="cs-info">
-                <h3 class="cs-h3">Shawnee Run Wedding and Events Venue</h3>
-                <p class="cs-item-text">
-                    A fully customized website designed for Shawnee Run Wedding and Events Venue, a wedding and events venue. The site features a modern design with high-quality visuals and an integrated, custom-coded online booking system, making it easy for clients to schedule events while showcasing the venue's amenities and services.
-                </p>
-                <a class="btn portfolio-btn-get-started" href="https://shawneerunvenue.com/">VISIT WEBSITE</a>
-            </div>
-            </li>
-            <li class="cs-item">
-            <picture class="cs-picture">
-                <!-- Mobile Image (for screens < 600px) -->
-                <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/ams-m.webp">
-                <!-- Desktop Image (for screens ≥ 601px) -->
-                <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/ams.webp">
-                <!-- Fallback Image (for browsers that don't support picture element) -->
-                <img 
-                    src="https://fishtownwebdesign.com/public/content/home/ams.jpg" 
-                    alt="HVAC company website design by Fishtown Web Design" 
-                    width="413"
-                    height="240"
-                    loading="lazy" 
-                    decoding="async">
-            </picture>      
-            <div class="cs-info">
-                <h3 class="cs-h3">Axel Mechanical Services</h3>
-                <p class="cs-item-text">
-                    A fully customized website designed for Axel Mechanical Services LLC, an HVAC company. The site combines functionality with an industrial aesthetic, featuring detailed service descriptions, customer testimonials, and easy navigation for potential clients to explore heating, ventilation, and air conditioning solutions.
-                </p>
-                <a class="btn portfolio-btn-get-started" href="https://axelmechanicalservices.com/">VISIT WEBSITE</a>
-            </div>
-            </li>
-            <li class="cs-item">
-            <picture class="cs-picture">
-                <!-- Mobile Image (for screens < 600px) -->
-                <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/green-shades-coffee-co-m.webp">
-                <!-- Desktop Image (for screens ≥ 601px) -->
-                <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/green-shades-coffee-co.webp">
-                <!-- Fallback Image (for browsers that don't support picture element) -->
-                <img 
-                    src="https://fishtownwebdesign.com/public/content/home/green-shades-coffee-co.png" 
-                    alt="Photography business website with custom booking system" 
-                    width="1102" 
-                    height="500" 
-                    loading="lazy" 
-                    decoding="async">
-            </picture>
-            <div class="cs-info">
-                <h3 class="cs-h3">Green Shades Coffee Co.</h3>
-                <p class="cs-item-text">
-                    Green Shades Coffee Co. is a Vestal, New York roaster crafting premium, freshly roasted, ethically sourced coffee—every purchase helps support shelter animals. We built them a fully custom website powered by Shopify Storefront API, giving them the familiar Shopify admin interface for easy order fulfillment while delivering the speed and performance of a custom-built site.
-                </p>
-                <a class="btn portfolio-btn-get-started" href="https://greenshadescoffeeco.com/">VISIT WEBSITE</a>
-            </div>
-            </li>
-        </ul>
-        </div>
-    </section>
-
     <!-- ============================================ -->
     <!--                Performance                    -->
     <!-- ============================================ -->
@@ -641,16 +551,264 @@
                     </div>
                     <div class="cs-pagespeed-card">
                         <picture class="cs-pagespeed-picture">
-                            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/Google-Page-Speed-Score-m.webp">
-                            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/Google-Page-Speed-Score.webp">
+                            <source media="(max-width: 600px)" srcset="/public/content/home/Google-Page-Speed-Score-m.webp">
+                            <source media="(min-width: 601px)" srcset="/public/content/home/Google-Page-Speed-Score.webp">
                             <img 
                                 loading="lazy" 
                                 decoding="async" 
-                                src="https://fishtownwebdesign.com/public/content/home/Google-Page-Speed-Score.png" 
+                                src="/public/content/home/Google-Page-Speed-Score.png" 
                                 alt="Google PageSpeed Insights report showing 100 performance score" 
                                 width="1200" 
                                 height="800">
                         </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Why Choose                   -->
+    <!-- ============================================ -->
+
+    <section id="why-choose-892">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Testimonials</span>
+                <h2 class="cs-title">Trusted Web Designer Across The East Coast</h2>
+                <p class="cs-text">
+                    For over a year, we've been helping small business owners across the East Coast turn their website dreams into reality. Our commitment to your success runs deep, we're just as invested in your business growth as you are. When you choose Fishtown Web Design, you're not hiring a typical agency. You're gaining a dedicated partner who truly cares about your success.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <span class="cs-quote-icon" aria-hidden="true">&ldquo;</span>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <p class="cs-item-text">
+                            Tre is absolutely outstanding at what he does! The team does not miss a beat when it comes to the customers best interests. Provide them with the right info and do as they say, the results will show without hesitation.
+                        </p>
+                        <h3 class="cs-h3">- Axel Mechanical Services LLC</h3>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-quote-icon" aria-hidden="true">&ldquo;</span>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <p class="cs-item-text">
+                            Tre has been an exceptional partner in developing and maintaining my custom designed site. His team works fast and is extremely collaborative. His team went above and beyond in execution and even added subtle interactive/animated touches that really make the site extra impactful and engaging. I highly recommend Fishtown Web Design for anyone looking to launch something great and fast!
+                        </p>
+                        <h3 class="cs-h3">- Laura A.</h3>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-quote-icon" aria-hidden="true">&ldquo;</span>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <p class="cs-item-text">
+                            Tre at Fishtown was the nicest person to work with. He listened to everything I wanted, asked meaningful and intelligent questions and explained the entire process to me. His entire team was involved and I can tell you they were ALL responsive and made any changed I requested. 
+                        </p>
+                        <h3 class="cs-h3">- Eleni K.</h3>
+                    </div>
+                </li>
+            </ul>
+            <!--Floating Arrow Graphic-->
+            <!-- <img class="cs-floater" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Forange-arrow.svg" alt="arrow" loading="lazy" decoding="async" aria-hidden="true"> -->
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!--                  Portfolio                    -->
+    <!-- ============================================ -->
+
+    <section id="services-1169">
+        <div class="cs-container">
+        <div class="cs-content">
+            <span id="portfolio" class="cs-topper">Portfolio</span>
+            <h2 class="cs-title">Previous Projects</h2>
+            <p class="cs-text">
+                We specialize in custom web design for small businesses across Philadelphia. From contractors and venues to photographers and startups, we create hand-coded websites that are performance-optimized, SEO-friendly, and tailored to your industry. Each website is built with 90+ page speed scores and custom features that drive results.
+            </p>
+        </div>
+        <div class="portfolio-layout">
+            <!-- Left Column - Project Information -->
+            <div class="portfolio-left">
+                <h2 class="portfolio-title">Portfolios</h2>
+                <p class="portfolio-subtitle">BRIDGING CREATIVE DESIGN & CODE</p>
+                <p class="portfolio-description">
+                    We bridge the gap between creative vision and technical execution. When Laura brought her portfolio design to us, we translated her strategic layouts, typography, and brand system into clean, responsive code. Every pixel, interaction, and responsive breakpoint reflects her original design intent—ensuring the final site matches the creative vision while performing flawlessly across devices.
+                </p>
+                <div class="portfolio-details">
+                    <div class="portfolio-detail-item">
+                        <strong>STACK:</strong> HTML, CSS, SwiperJS, Node.js, Express
+                    </div>
+                    <div class="portfolio-detail-item">
+                        <strong>SCOPE:</strong> Full website build, responsive design
+                    </div>
+                    <div class="portfolio-detail-item">
+                        <strong>TOOLS:</strong> XD, Adobe Fonts
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column - Swiper Slider -->
+            <div class="portfolio-right">
+                <div class="swiper portfolio-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <picture class="swiper-picture">
+                                <source media="(max-width: 600px)" srcset="/public/content/home/laura-mobile-m.webp">
+                                <source media="(min-width: 601px)" srcset="/public/content/home/laura-mobile.webp">
+                                <img 
+                                    src="/public/content/home/laura-mobile.png" 
+                                    alt="Laura Alden Creative Portfolio - Full Website" 
+                    loading="lazy" 
+                    decoding="async">
+            </picture>
+            </div>
+                        <div class="swiper-slide">
+                            <picture class="swiper-picture">
+                                <source media="(max-width: 600px)" srcset="/public/content/home/laura-m.webp">
+                                <source media="(min-width: 601px)" srcset="/public/content/home/laura.webp">
+                                <img 
+                                    src="/public/content/home/laura.png" 
+                                    alt="Laura Alden Creative Portfolio - Design and Code" 
+                    loading="lazy" 
+                    decoding="async">
+            </picture>      
+            </div>
+                        <div class="swiper-slide">
+                            <picture class="swiper-picture">
+                                <source media="(max-width: 600px)" srcset="/public/content/home/laura-web-mobile-m.webp">
+                                <source media="(min-width: 601px)" srcset="/public/content/home/laura-web-mobile.webp">
+                                <img 
+                                    src="/public/content/home/laura-web-mobile.png" 
+                                    alt="Laura Alden Creative Portfolio - Full Website" 
+                    loading="lazy" 
+                    decoding="async">
+            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture class="swiper-picture">
+                                <source media="(max-width: 600px)" srcset="/public/content/home/laura-web-m.webp">
+                                <source media="(min-width: 601px)" srcset="/public/content/home/laura-web.webp">
+                                <img 
+                                    src="/public/content/home/laura-web.png" 
+                                    alt="Laura Alden Creative Portfolio - Full Website" 
+                                    loading="lazy" 
+                                    decoding="async">
+                            </picture>      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              Venues Section                  -->
+    <!-- ============================================ -->
+
+    <section id="venues-section">
+        <div class="cs-container">
+            <div class="venues-layout">
+                <!-- Left Column - Website Content -->
+                <div class="venues-left">
+                    <div class="venues-website-wrapper">
+                        <picture class="venues-website-picture">
+                            <source media="(max-width: 600px)" srcset="/public/content/home/shawnee-m.webp">
+                            <source media="(min-width: 601px)" srcset="/public/content/home/shawnee.webp">
+                            <img 
+                                src="/public/content/home/shawnee.png" 
+                                alt="Shawnee Run Wedding & Events Venue Website" 
+                                loading="lazy" 
+                                decoding="async">
+                        </picture>
+                    </div>
+                </div>
+                <!-- Right Column - Project Description -->
+                <div class="venues-right">
+                    <div class="venues-vertical-text">Venues</div>
+                    <div class="venues-content-wrapper">
+                        <p class="venues-description">
+                            At Shawnee Run Wedding & Events Venue in historic Columbia, PA, the website we delivered transforms a rich, 200-year-old property into a compelling digital destination that resonates with every couple, planner, and event host who visits online. The site captures the venue's authentic charm under elegant willow trees and its versatile use for weddings, corporate events, birthday celebrations, baby showers, and more—turning multiple service offerings into clear, SEO-rich pathways that match what prospective clients search for. <a href="https://fishtownwebdesign.com/blog/shawnee-run-venue" class="venues-link">Shawnee Run Venue</a>
+                        </p>
+                        <div class="venues-details">
+                            <div class="venues-detail-item">
+                                <strong>STACK:</strong> HTML, CSS, Node.js, Express
+                            </div>
+                            <div class="venues-detail-item">
+                                <strong>SCOPE:</strong> Full website build, Custom booking system
+                            </div>
+                            <div class="venues-detail-item">
+                                <strong>TOOLS:</strong> Google Calendar API (booking system), Adobe Fonts
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              Axel Mechanical Carousel        -->
+    <!-- ============================================ -->
+
+    <section id="axel-carousel-section">
+        <div class="cs-container">
+            <div class="axel-layout">
+                <!-- Top Section - Header Text (Horizontal) -->
+                <div class="axel-header">
+                    <div class="axel-left">
+                        <h2 class="axel-title">Contractors</h2>
+                        <a href="https://fishtownwebdesign.com/blog/HVAC-Website-Design-Case-Study-Axel-Mechanical-Services" class="axel-case-study-button">VIEW CASE STUDY</a>
+                    </div>
+                    <div class="axel-description-wrapper">
+                        <p class="axel-description">
+                            Skilled trade businesses deserve a high-performing digital presence that works as hard as they do. For contractors like Axel Mechanical—HVAC contractors, plumbers, electricians, general contractors, and mechanical service providers—websites are built to clearly communicate services, establish immediate credibility, and convert visitors into qualified inquiries.
+                        </p>
+                    </div>
+                </div>
+                <!-- Bottom Section - Centered Carousel -->
+                <div class="axel-right">
+                    <div class="swiper axel-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <picture class="axel-swiper-picture">
+                                    <source media="(max-width: 600px)" srcset="/public/content/home/axel-home-m.webp">
+                                    <source media="(min-width: 601px)" srcset="/public/content/home/axel-home.webp">
+                                    <img 
+                                        src="/public/content/home/axel-home.png" 
+                                        alt="Axel Mechanical Services Home Page" 
+                                        loading="lazy" 
+                                        decoding="async">
+                                </picture>
+                            </div>
+                            <div class="swiper-slide">
+                                <picture class="axel-swiper-picture">
+                                    <source media="(max-width: 600px)" srcset="/public/content/home/axel-tips-m.webp">
+                                    <source media="(min-width: 601px)" srcset="/public/content/home/axel-tips.webp">
+                                    <img 
+                                        src="/public/content/home/axel-tips.png" 
+                                        alt="Axel Mechanical Services Helpful Tips Page" 
+                                        loading="lazy" 
+                                        decoding="async">
+                                </picture>
+                            </div>
+                            <div class="swiper-slide">
+                                <picture class="axel-swiper-picture">
+                                    <source media="(max-width: 600px)" srcset="/public/content/home/axel-about-m.webp">
+                                    <source media="(min-width: 601px)" srcset="/public/content/home/axel-about.webp">
+                                    <img 
+                                        src="/public/content/home/axel-about.png" 
+                                        alt="Axel Mechanical Services About Page" 
+                                        loading="lazy" 
+                                        decoding="async">
+                                </picture>
+                            </div>
+                        </div>
+                        <!-- Pagination -->
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </div>
@@ -667,7 +825,7 @@
                 <span class="cs-topper">Affordable Web Design Plans</span>
                 <h2 class="cs-title">Web Hosting and Design in Philadelphia</h2>
                 <p class="cs-text">
-                    Get a custom-coded, performance-optimized website with our affordable web design plans. Our hand-coded websites are built for speed and SEO, with unlimited edits and 24/7 support. Perfect for small businesses in Philadelphia looking for a done-for-you web design solution.
+                    Get a custom-coded, optimized website with our affordable web design plans. Our hand-coded websites are built for speed and SEO, with unlimited edits and 24/7 support. Perfect for small businesses in Philadelphia looking for a done-for-you web design solution.
                 </p>
             </div>
             <ul class="cs-card-group">
@@ -780,6 +938,100 @@
         </div>
     </section>
 
+                                                   
+    <!-- ============================================ -->
+    <!--                   Contact                    -->
+    <!-- ============================================ -->
+
+    <section id="contact-1105">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Contact Us</span>
+                <h2 class="cs-title">Make An Appointment</h2>
+                <!--Form-->
+                <form action="https://forms.fishtownwebdesign.com/api/submit" method="POST" class="cs-form" id="cs-form-1105" name="Contact Form">
+                    <!-- Replace with your Access Key -->
+                    <input type="hidden" name="apiKey" value="xJHLRHotYucwbBra5mnduC5FMfFR07HM">
+                    
+                    <!-- Optional: Subject for the email -->
+                    <input type="hidden" name="subject" value="New Appointment Request from Fishtown Web Design">
+                    
+                    <!-- Optional: From Name in email -->
+                    <input type="hidden" name="from_name" value="Fishtown Web Design Website">
+                    
+                    <!-- Custom Redirection to show modal -->
+                    <input type="hidden" name="redirect" value="https://fishtownwebdesign.com/#success">
+                    
+                    <label class="cs-label">
+                        Name
+                        <input class="cs-input" required type="text" id="name-1105" name="name" placeholder="Name">
+                    </label>
+                    <label class="cs-label cs-email">
+                        Email
+                        <input class="cs-input" required type="email" id="email-1105" name="email" placeholder="Email">
+                    </label>
+                    <label class="cs-label cs-phone">
+                        Phone
+                        <input class="cs-input" required type="text" id="phone-1105" name="phone" placeholder="Phone">
+                    </label>
+                    <label class="cs-label">
+                        Message
+                        <textarea class="cs-input cs-textarea" required name="message" id="message-1105" placeholder="Write message..."></textarea>
+                    </label>
+                    <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <button class="cs-button-solid cs-submit" type="submit">Make an Appointment</button>
+                </form>
+                <!-- Modal for server response -->
+                <div id="responseModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-success-icon">
+                            <picture>
+                                <source media="(max-width: 600px)" srcset="/public/content/home/fish-m.webp">
+                                <source media="(min-width: 601px)" srcset="/public/content/home/fish.webp">
+                                <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Web Design Philadelphia Logo">
+                            </picture>
+                        </div>
+                        <h2 class="modal-title">Thank You!</h2>
+                        <p id="modal-message" class="modal-message">Your appointment request has been submitted successfully! We will get back to you within 1 business day.</p>
+                        <button id="closeModal" class="modal-button">Close</button>
+                    </div>
+                </div>
+            </div>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <picture class="cs-icon-wrapper">
+                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-phone.svg" alt="phone contact icon" class="cs-icon" width="40" height="40" decoding="async">
+                    </picture>
+                    <div class="cs-flex-group">
+                        <span class="cs-header">Phone</span>
+                        <a href="tel:888-4565-789
+                        " class="cs-link">+1 (717) 333-8691
+                        </a>
+                    </div>
+                </li>
+                <li class="cs-li">
+                    <picture class="cs-icon-wrapper">
+                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-email.svg" alt="email contact icon" class="cs-icon" width="40" height="40" decoding="async">
+                    </picture>
+                    <div class="cs-flex-group">
+                        <span class="cs-header">Email</span>
+                        <a href="mailto:sales@fishtownwebdesignn.com" class="cs-link">sales@fishtownwebdesign.com</a>
+                    </div>
+                </li>
+                <li class="cs-li">
+                    <picture class="cs-icon-wrapper">
+                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-pin.svg" alt="location pin icon" class="cs-icon" width="40" height="40" decoding="async">
+                    </picture>
+                    <div class="cs-flex-group">
+                        <span class="cs-header">Born in Fishtown</span>
+                        <a href="" class="cs-link">Fishtown, Philadelphia</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
 
     <!-- ============================================ -->
     <!--                    Blog                      -->
@@ -793,16 +1045,16 @@
                     <h2 class="cs-title">Case Studies, News & Blogs</h2>
                 </div>
                 <p class="cs-text">
-                    Stay updated with the latest web design trends, performance optimization tips, and insights from our Philadelphia based team. Explore case studies, design best practices, and industry news to help your business succeed online.
+                    Stay updated with the latest web design trends, performance optimization tips, and insights from our team. Explore case studies, design best practices, and industry news to help your business succeed online.
                 </p>
             </div>
             <ul class="cs-card-group">
                 <li class="cs-item">
                     <span class="cs-date">8<br>Nov</span>
                     <picture class="cs-picture">
-                        <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/axel-mechanical-services-case-study-m.webp">
-                        <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/axel-mechanical-services-case-study.webp">
-                        <img loading="lazy" decoding="async" src="https://fishtownwebdesign.com/public/content/home/axel-mechanical-services-case-study.jpeg" alt="people" width="411" height="320">
+                        <source media="(max-width: 600px)" srcset="/public/content/home/axel-mechanical-services-case-study-m.webp">
+                        <source media="(min-width: 601px)" srcset="/public/content/home/axel-mechanical-services-case-study.webp">
+                        <img loading="lazy" decoding="async" src="/public/content/home/axel-mechanical-services-case-study.jpeg" alt="people" width="411" height="320">
                     </picture>
                     <a href="https://fishtownwebdesign.com/blog/HVAC-Website-Design-Case-Study-Axel-Mechanical-Services" class="cs-flex">
                         <div class="cs-info-wrapper">
@@ -820,9 +1072,9 @@
                 <li class="cs-item">
                     <span class="cs-date">5<br>Oct</span>
                     <picture class="cs-picture">
-                        <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/definitive_guide_to_web_design_for_philadelphia_businesses_in_2025-m.webp">
-                        <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/definitive_guide_to_web_design_for_philadelphia_businesses_in_2025.webp"">
-                        <img loading="lazy" decoding="async" src="https://fishtownwebdesign.com/public/content/home/definitive_guide_to_web_design_for_philadelphia_businesses_in_2025.png" alt="people" width="411" height="320">
+                        <source media="(max-width: 600px)" srcset="/public/content/home/definitive_guide_to_web_design_for_philadelphia_businesses_in_2025-m.webp">
+                        <source media="(min-width: 601px)" srcset="/public/content/home/definitive_guide_to_web_design_for_philadelphia_businesses_in_2025.webp"">
+                        <img loading="lazy" decoding="async" src="/public/content/home/definitive_guide_to_web_design_for_philadelphia_businesses_in_2025.png" alt="people" width="411" height="320">
                     </picture>
                     <a href="https://fishtownwebdesign.com/blog/from-cat-inspiration-to-coffee-empire-building-green-shades-coffee-co-purpose-driven-ecommerce-platform" class="cs-flex">
                         <div class="cs-info-wrapper">
@@ -840,9 +1092,9 @@
                 <li class="cs-item">
                     <span class="cs-date">28<br>Sept</span>
                     <picture class="cs-picture">
-                        <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/Green_Shades_Coffee_Co_Case_Study-m.webp">
-                        <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/Green_Shades_Coffee_Co_Case_Study.webp">
-                        <img loading="lazy" decoding="async" src="https://fishtownwebdesign.com/public/content/home/Green_Shades_Coffee_Co_Case_Study.png" alt="people" width="411" height="320">
+                        <source media="(max-width: 600px)" srcset="/public/content/home/Green_Shades_Coffee_Co_Case_Study-m.webp">
+                        <source media="(min-width: 601px)" srcset="/public/content/home/Green_Shades_Coffee_Co_Case_Study.webp">
+                        <img loading="lazy" decoding="async" src="/public/content/home/Green_Shades_Coffee_Co_Case_Study.png" alt="people" width="411" height="320">
                     </picture>
                     <a href="https://fishtownwebdesign.com/blog/definitive-guide-to-web-design-for-philadelphia-businesses" class="cs-flex">
                         <div class="cs-info-wrapper">
@@ -860,74 +1112,87 @@
             </ul>
         </div>
     </section>
-                     
-                                
-    <!-- ============================================ -->
-    <!--                 Why Choose                   -->
-    <!-- ============================================ -->
-
-    <section id="why-choose-892">
-        <div class="cs-container">
-            <div class="cs-content">
-                <span class="cs-topper">Testimonials</span>
-                <h2 class="cs-title">Trusted Web Designer Across The East Coast</h2>
-                <p class="cs-text">
-                    For over a year, we've been helping small business owners across the East Coast turn their website dreams into reality. Our commitment to your success runs deep, we're just as invested in your business growth as you are. When you choose Fishtown Web Design, you're not hiring a typical agency. You're gaining a dedicated partner who truly cares about your success.
-                </p>
-            </div>
-            <ul class="cs-card-group">
-                <li class="cs-item">
-                    <span class="cs-quote-icon" aria-hidden="true">&ldquo;</span>
-                    <!-- Text Grouped For Flexbox-->
-                    <div class="cs-text-group">
-                        <p class="cs-item-text">
-                            Tre is absolutely outstanding at what he does! The team does not miss a beat when it comes to the customers best interests. Provide them with the right info and do as they say, the results will show without hesitation.
-                        </p>
-                        <h3 class="cs-h3">- Axel Mechanical Services LLC</h3>
-                    </div>
-                </li>
-                <li class="cs-item">
-                    <span class="cs-quote-icon" aria-hidden="true">&ldquo;</span>
-                    <!-- Text Grouped For Flexbox-->
-                    <div class="cs-text-group">
-                        <p class="cs-item-text">
-                            Tre at Fishtown was the nicest person to work with. He listened to everything I wanted, asked meaningful and intelligent questions and explained the entire process to me. His entire team was involved and I can tell you they were ALL responsive and made any changed I requested. 
-                        </p>
-                        <h3 class="cs-h3">- Eleni K.</h3>
-                    </div>
-                </li>
-                <li class="cs-item">
-                    <span class="cs-quote-icon" aria-hidden="true">&ldquo;</span>
-                    <!-- Text Grouped For Flexbox-->
-                    <div class="cs-text-group">
-                        <p class="cs-item-text">
-                            Really good to work with and hopefully continue to grow alongside through the future.
-                        </p>
-                        <h3 class="cs-h3">- Green Shades Coffee Co.</h3>
-                    </div>
-                </li>
-            </ul>
-            <!--Floating Arrow Graphic-->
-            <!-- <img class="cs-floater" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Forange-arrow.svg" alt="arrow" loading="lazy" decoding="async" aria-hidden="true"> -->
-        </div>
-    </section>
-                                                   
-                                    
   
     <!-- ============================================ -->
     <!--                 Footer                       -->
     <!-- ============================================ -->
 
-    <footer class="footer">
+    <footer id="cs-footer-2412">
+        <div class="cs-container cs-container-top">
+            <!-- Logo -->
+             <picture>
+                <source media="(max-width: 600px)" srcset="/public/content/home/footer-logo-m.webp">
+                <source media="(min-width: 601px)" srcset="/public/content/home/footer-logo.webp">
+                <img loading="lazy" src="/public/content/home/footer-logo.png" id="footer-logo" alt="Fishtown Logo" width="216" height="128">
+            </picture>
+            <!--Quick Links-->
+            <div class="cs-quick-links">
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <a class="cs-link" href="/about">About</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/pricing">Pricing</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/web-design">Web Design</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/seo">SEO</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cs-wrapper">
+                <!--Subscribtion Form-->
+                <div class="cs-subscribe">
+                    <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
+                    <form class="cs-form" name="Subscription Form" method="post">
+                        <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address">
+                        <button class="cs-button-solid cs-submit" type="submit">
+                            <img class="cs-icon" src="/public/content/home/subscribe.png" alt="submit my email and subcribe" width="40" height="40" decoding="async" loading="lazy">
+                        </button>
+                    </form>
+                </div>
+                <div class="cs-bottom">
+                    <!--Social-->
+                    <div class="cs-social">
+                        <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                        <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit instagram">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                    </div>
+                    <!--Legal-->
+                    <div class="cs-legal">
+                        <a href="/tos" class="cs-legal-link cs-link">Terms & Conditions</a>
+                        <span class="cs-divider" aria-hidden="true">|</span>
+                        <a href="/pp" class="cs-legal-link cs-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-credit">
+            <span class="cs-ip cs-text">© <span id="current-year">2026</span> Fishtown Web Design. All rights reserved.</span>
+        </div>
+        <svg class="cs-curve" aria-hidden="true" width="1920" height="1" viewBox="0 0 1920 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1920" height="1" fill="var(--overlayBG)"/>
+        </svg>
+    </footer>
+                                
+    <!-- <footer class="footer">
         <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
         <picture>
-            <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
-            <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
+            <source media="(max-width: 600px)" srcset="/public/content/home/fish-m.webp">
+            <source media="(min-width: 601px)" srcset="/public/content/home/fish.webp">
             <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
         </picture>
         <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
         <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
-    </footer>
+    </footer> -->
 
     <!-- ============================================ -->
     <!--                 Scripts                    -->
@@ -1040,21 +1305,21 @@
         // Set the current year dynamically
         document.getElementById("current-year").textContent = new Date().getFullYear();
 
-        const words = ["venues", "portfolios", "contractors"];
-        let currentIndex = 0;
-        const rotatingWordElement = document.getElementById("rotating-word");
+        // const words = ["venues", "portfolios", "contractors"];
+        // let currentIndex = 0;
+        // const rotatingWordElement = document.getElementById("rotating-word");
 
-        function rotateWords() {
-            // Set the next word
-            currentIndex = (currentIndex + 1) % words.length;
-            rotatingWordElement.style.animation = 'none'; // Reset animation
-            rotatingWordElement.innerText = words[currentIndex];
-            void rotatingWordElement.offsetWidth; // Trigger reflow
-            rotatingWordElement.style.animation = ''; // Re-apply animation
-        }
+        // function rotateWords() {
+        //     // Set the next word
+        //     currentIndex = (currentIndex + 1) % words.length;
+        //     rotatingWordElement.style.animation = 'none'; // Reset animation
+        //     rotatingWordElement.innerText = words[currentIndex];
+        //     void rotatingWordElement.offsetWidth; // Trigger reflow
+        //     rotatingWordElement.style.animation = ''; // Re-apply animation
+        // }
 
-        // Change word every 5 seconds
-        setInterval(rotateWords, 5000);
+        // // Change word every 5 seconds
+        // setInterval(rotateWords, 5000);
     </script>
     <script>
         // add classes for mobile navigation toggling
@@ -1092,6 +1357,260 @@
         }
                                         
     </script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        document.addEventListener('DOMContentLoaded', function() {
+            const portfolioSwiper = new Swiper('.portfolio-swiper', {
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                spaceBetween: -100,
+                loop: true,
+                effect: 'coverflow',
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 300,
+                    modifier: 1.5,
+                    slideShadows: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 'auto',
+                        spaceBetween: -80,
+                    },
+                    768: {
+                        slidesPerView: 'auto',
+                        spaceBetween: -100,
+                    },
+                    1024: {
+                        slidesPerView: 'auto',
+                        spaceBetween: -120,
+                    },
+                },
+            });
+
+            // Initialize Axel Mechanical Swiper
+            const axelCarousel = document.querySelector('.axel-swiper');
+            if (axelCarousel) {
+                // Count total slides in this carousel
+                const wrapper = axelCarousel.querySelector('.swiper-wrapper');
+                const originalSlides = Array.from(wrapper.querySelectorAll('.swiper-slide'));
+                const totalSlides = originalSlides.length;
+                
+                // Determine max slidesPerView from breakpoints (highest value is 2)
+                const maxSlidesPerView = 2;
+                
+                // For circular loop to work properly, Swiper needs at least slidesPerView * 2 slides
+                // If we have fewer slides, duplicate them to meet the requirement
+                // This ensures seamless circular behavior
+                const minSlidesForLoop = Math.ceil(maxSlidesPerView * 2);
+                
+                if (totalSlides < minSlidesForLoop) {
+                    // Calculate how many times we need to duplicate
+                    const duplicatesNeeded = Math.ceil(minSlidesForLoop / totalSlides);
+                    
+                    // Duplicate slides to ensure smooth circular looping
+                    for (let i = 0; i < duplicatesNeeded; i++) {
+                        originalSlides.forEach((slide) => {
+                            const clone = slide.cloneNode(true);
+                            wrapper.appendChild(clone);
+                        });
+                    }
+                }
+                
+                // Get pagination element for this specific carousel
+                const pagination = axelCarousel.querySelector('.swiper-pagination');
+                
+                // Store original slide count for pagination
+                const originalSlideCount = totalSlides;
+
+                const axelSwiper = new Swiper(axelCarousel, {
+                    loop: true, // Always enable loop for circular behavior
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
+                    effect: 'slide',
+                    speed: 30,
+                    centeredSlides: true,
+                    pagination: {
+                        el: pagination,
+                        clickable: false,
+                        dynamicBullets: false,
+                        type: 'bullets',
+                    },
+                    breakpoints: {
+                        // Mobile settings
+                        320: {
+                            slidesPerView: 1.5,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: 1.5,
+                            spaceBetween: -90,
+                        },
+                        968: {
+                            slidesPerView: 1.5,
+                            spaceBetween: -260,
+                        },
+                        1024: {
+                            slidesPerView: 1.5,
+                            spaceBetween: -80,
+                        },
+                        1124: {
+                            slidesPerView: 1.5,
+                            spaceBetween: -200,
+                        },
+                        1224: {
+                            slidesPerView: 2,
+                            spaceBetween: -50,
+                        },
+                        1324: {
+                            slidesPerView: 2,
+                            spaceBetween: -100,
+                        },
+                        1424: {
+                            slidesPerView: 2,
+                            spaceBetween: -150,
+                        },
+                        1524: {
+                            slidesPerView: 2,
+                            spaceBetween: -200,
+                        },
+                        1624: {
+                            slidesPerView: 2,
+                            spaceBetween: -200,
+                        },
+                        1712: {
+                            slidesPerView: 2,
+                            spaceBetween: 50,
+                        },
+                        2000: {
+                            slidesPerView: 1.5,
+                            spaceBetween: -500,
+                        },
+                        2200: {
+                            slidesPerView: 1.5,
+                            spaceBetween: -700,
+                        },
+                        2400: {
+                            slidesPerView: 1.5,
+                            spaceBetween: -900,
+                        },
+                        2500: {
+                            slidesPerView: 2,
+                            spaceBetween: -250,
+                        },
+                    },
+                    // Handle pagination updates to work correctly with loop mode
+                    on: {
+                        init: function(swiper) {
+                            // For carousels with fewer slides, manually manage pagination
+                            if (pagination && originalSlideCount < minSlidesForLoop) {
+                                // Clear existing bullets
+                                pagination.innerHTML = '';
+                                
+                                // Wrap realIndex to valid range
+                                const wrappedIndex = swiper.realIndex % originalSlideCount;
+                                
+                                // Create bullets only for original slides
+                                for (let i = 0; i < originalSlideCount; i++) {
+                                    const bullet = document.createElement('span');
+                                    bullet.className = 'swiper-pagination-bullet';
+                                    if (i === wrappedIndex) {
+                                        bullet.classList.add('swiper-pagination-bullet-active');
+                                    }
+                                    pagination.appendChild(bullet);
+                                }
+                            }
+                        },
+                        slideChange: function(swiper) {
+                            // Update pagination to show correct active bullet based on wrapped real index
+                            if (pagination && originalSlideCount < minSlidesForLoop) {
+                                // Wrap realIndex to valid range using modulo (for loop mode)
+                                const wrappedIndex = swiper.realIndex % originalSlideCount;
+                                const bullets = pagination.querySelectorAll('.swiper-pagination-bullet');
+                                
+                                // Update active state for all bullets using wrapped index
+                                bullets.forEach((bullet, idx) => {
+                                    if (idx === wrappedIndex) {
+                                        bullet.classList.add('swiper-pagination-bullet-active');
+                                    } else {
+                                        bullet.classList.remove('swiper-pagination-bullet-active');
+                                    }
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('responseModal');
+        const closeModal = document.getElementById('closeModal');
+        const body = document.body;
+
+        function openModal() {
+            modal.style.display = 'flex';
+            body.style.overflow = 'hidden'; // Prevent background scrolling
+            // Trigger animation
+            setTimeout(() => {
+                modal.classList.add('modal-show');
+            }, 10);
+        }
+
+        function closeModalHandler() {
+            modal.classList.remove('modal-show');
+            body.style.overflow = ''; // Restore scrolling
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Check if we're returning from Web3Forms submission (URL has #success)
+        if (window.location.hash === '#success') {
+            // Show the success modal
+            document.querySelector('#modal-message').textContent = 'Your appointment request has been submitted successfully! We will get back to you within 1 business day.';
+            openModal();
+            
+            // Clear the hash from URL
+            history.replaceState(null, null, window.location.pathname);
+        }
+
+        // Close modal functionality
+        if (closeModal) {
+            closeModal.addEventListener('click', closeModalHandler);
+        }
+
+        // Close modal when clicking outside
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModalHandler();
+                }
+            });
+        }
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
+                closeModalHandler();
+            }
+        });
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E"></script>
     <script async>
@@ -1100,6 +1619,15 @@
         gtag('js', new Date());
 
         gtag('config', 'G-P9ZFLQPT8E');
+    </script>
+    <script>
+        // Update copyright year dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        });
     </script>
 </body>
 </html>

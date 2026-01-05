@@ -1,1 +1,651 @@
-.contact-banner{position:relative;width:100%;height:150px;background:url('/public/content/svgs/dots.svg');mask-repeat:no-repeat;mask-size:cover;display:flex;justify-content:center;align-items:flex-end;z-index:1}.contact-banner h1{font-size:clamp(1.69375rem, 2.3vw, 1.9875rem);font-weight:700;color:#000;font-family:Horizon;margin-top:1rem}#contact-1105{padding:var(--sectionPadding);position:relative;z-index:1}#contact-1105 .cs-container{width:100%;max-width:36.5rem;margin:auto;display:flex;justify-content:center;align-items:stretch;flex-direction:column;gap:clamp(3rem,6vw,5rem)}#contact-1105 .cs-content{text-align:left;width:100%;display:flex;flex-direction:column;align-items:flex-start}#contact-1105 .cs-title{margin:0 0 2rem}#contact-1105 .cs-form{width:100%;padding:clamp(1.5rem,5.18vw,3rem) clamp(1.25rem,5.18vw,2rem);box-sizing:border-box;background-color:#f7f8f8;display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;gap:.75rem}#contact-1105 .cs-label{font-size:clamp(.875rem, 1.5vw, 1rem);width:100%;color:var(--headerColor);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:.25rem}#contact-1105 .cs-input{font-size:1rem;width:100%;height:3.5rem;padding:0 0 0 1.5rem;color:var(--headerColor);background-color:#fff;border:none;box-sizing:border-box}#contact-1105 .cs-input::placeholder{color:#7d799c;opacity:.6}#contact-1105 .cs-textarea{min-height:7.5rem;padding-top:1.5rem;margin-bottom:.75rem;font-family:inherit}#contact-1105 .cs-button-solid{font-size:1rem;line-height:clamp(2em, 5.5vw, 3.5em);text-decoration:none;font-weight:700;text-align:center;margin:0;color:#fff;border:none;min-width:9.375rem;padding:.5rem 1.3rem;background-color:var(--black);border-radius:.25rem;display:inline-block;position:relative;z-index:1;box-sizing:border-box;transition:color .3s}#contact-1105 .cs-button-solid:before{content:"";position:absolute;height:100%;width:0%;background:#000;opacity:1;top:0;left:0;z-index:-1;border-radius:.25rem;transition:width .3s}#contact-1105 .cs-button-solid:hover{color:#fff}#contact-1105 .cs-submit{min-width:15.6875rem;border-radius:0}#contact-1105 .cs-ul{width:auto;margin-bottom:clamp(2.5rem,9vw,5.75rem);margin-right:clamp(2rem,9vw,5rem);padding:clamp(2.5rem,9.18vw,6.25rem) clamp(1rem,9.18vw,5rem);box-sizing:border-box;background-color:#f7f7f7;display:flex;flex-direction:column;align-items:flex-start;gap:clamp(1.5rem,6vw,3.75rem);position:relative}#contact-1105 .cs-ul:before{content:"";height:100%;width:100%;background:url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/stripes-contact.svg") center/cover no-repeat;opacity:1;display:block;position:absolute;top:clamp(2.5rem,9vw,5.75rem);left:clamp(2rem,9vw,5rem);z-index:-1}#contact-1105 .cs-li{display:flex;justify-content:flex-start;align-items:flex-start;gap:clamp(.75rem,2vw,1.25rem)}#contact-1105 .cs-li:hover .cs-icon-wrapper{transform:scale(1.1)}#contact-1105 .cs-header{font-size:clamp(1.25rem, 2.5vw, 1.5625rem);font-weight:700;line-height:1.2em;margin-bottom:.5rem;color:var(--headerColor);display:block}#contact-1105 .cs-link{font-size:clamp(.875rem, 2vw, 1rem);line-height:1.5em;text-decoration:none;color:#767676;display:block;position:relative}#contact-1105 .cs-icon-wrapper{width:clamp(2.75rem,8.3vw,5rem);height:clamp(2.75rem,8.3vw,5rem);margin:0;border-radius:50%;border:1px solid #bababa;display:flex;justify-content:center;align-items:center;flex:none;transition:transform .3s}#contact-1105 .cs-icon{width:clamp(1.25rem,3vw,2.5rem);height:auto;display:block}#contact-1105 .cs-img{left:0;top:0;width:100%;height:100%}#contact-1105 .cs-picture{width:100%;border-radius:.5rem;overflow:hidden;display:block;position:relative;aspect-ratio:1.44}#contact-1105 .cs-img{position:absolute;object-fit:cover}.modal{display:none;position:fixed;left:0;top:0;width:100%;height:100%;z-index:10000;background-color:rgba(0,0,0,.6);overflow:auto;padding:1rem;font-family:"DM Serif Display";align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease;backdrop-filter:blur(4px)}.modal.modal-show{opacity:1}.modal-content{background-color:#fff;margin:auto;padding:clamp(2rem,5vw,3rem);border-radius:.75rem;width:90%;max-width:500px;box-shadow:0 20px 60px rgba(0,0,0,.3);text-align:center;position:relative;transform:scale(.9) translateY(20px);transition:transform .3s ease,opacity .3s ease;opacity:0}.modal.modal-show .modal-content{transform:scale(1) translateY(0);opacity:1}.modal-success-icon{width:80px;height:80px;margin:0 auto 1.5rem;color:var(--secondary);display:flex;align-items:center;justify-content:center;padding:1rem;animation:successPulse .6s ease}.modal-success-icon svg{width:100%;height:100%;stroke:#fff;stroke-width:2.5}@keyframes successPulse{0%{transform:scale(0);opacity:0}50%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}.modal-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;color:var(--headerColor);margin:0 0 1rem;font-family:"DM Serif Display";line-height:1.2}.modal-message{font-size:clamp(1rem,2vw,1.125rem);line-height:1.6;color:var(--bodyTextColor);margin:0 0 2rem;font-family:Inter;max-width:100%}.modal-button{background-color:var(--black);color:#fff;border:none;padding:.875rem 2.5rem;font-size:1rem;font-weight:700;border-radius:.25rem;cursor:pointer;font-family:Horizon;text-transform:uppercase;letter-spacing:.05em;transition:all .3s ease;position:relative;overflow:hidden;min-width:150px}.modal-button:before{content:"";position:absolute;height:100%;width:0%;background:#333;opacity:1;top:0;left:0;z-index:-1;border-radius:.25rem;transition:width .3s}.modal-button:hover{color:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.2)}.modal-button:hover:before{width:100%}.modal-button:active{transform:translateY(0)}@media only screen and (min-width:768px){.navbar>.container,.navbar>.container-fluid,.navbar>.container-lg,.navbar>.container-md,.navbar>.container-sm,.navbar>.container-xl,.navbar>.container-xxl{flex-wrap:nowrap;align-items:center}.navbar-brand,.navbar-custom{display:flex;align-items:center}.navbar-custom{justify-content:flex-start}.navbar-brand{margin-right:20px}.navbar-collapse{display:flex!important;align-items:center;flex-grow:0}.navbar-nav{display:flex;flex-direction:row;align-items:center;margin:0 0 0 auto;padding:0}.navbar-nav li{padding-left:15px}.navbar-toggler{display:none}.contact-banner h1{font-size:var(--headerFontSize)}}@media only screen and (min-width:1024px){#contact-1105 .cs-container{max-width:80rem;flex-direction:row;justify-content:flex-start;align-items:flex-start}#contact-1105 .cs-content{max-width:33.875rem;order:2}#contact-1105 .cs-ul{max-width:32.0625rem}}
+/*-- -------------------------- -->
+<---        Contact Hero          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #contact-hero-2149 {
+    padding: clamp(2.75rem, 54vw, 5rem) 1rem clamp(3.75rem, 7.5vw, 6.25rem);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
+  }
+  
+  #contact-hero-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #contact-hero-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #contact-hero-2149 .cs-topper {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: inherit;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
+    color: var(--primary);
+    font-family: Horizon, sans-serif;
+  }
+  
+  #contact-hero-2149 .cs-title {
+    font-size: clamp(2.4375rem, 5vw, 4.5rem);
+    max-width: 30ch;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #contact-hero-2149 .cs-text {
+    color: var(--text-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 55ch;
+    margin: 0;
+    line-height: 1.6em;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #contact-hero-2149 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+  }
+  
+  #contact-hero-2149 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+  }
+}
+
+/*-- -------------------------- -->
+<---      Contact Methods         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #contact-methods-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-secondary);
+    position: relative;
+    z-index: 1;
+  }
+  
+  #contact-methods-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  
+  #contact-methods-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #contact-methods-2149 .cs-title {
+    max-width: 30ch;
+  }
+  
+  #contact-methods-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #contact-methods-2149 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  #contact-methods-2149 .cs-item {
+    grid-column: span 12;
+    list-style: none;
+    background-color: var(--bg-card);
+    padding: clamp(2rem, 4vw, 2.5rem);
+    border-radius: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  #contact-methods-2149 .cs-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  #contact-methods-2149 .cs-icon-wrapper {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-dark);
+    margin-bottom: 0.5rem;
+  }
+  
+  #contact-methods-2149 .cs-icon-wrapper svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  #contact-methods-2149 .cs-h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #contact-methods-2149 .cs-item-text {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.6em;
+    color: var(--text-body);
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #contact-methods-2149 .cs-link {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-weight: 600;
+    color: var(--bg-dark);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #contact-methods-2149 .cs-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #contact-methods-2149 .cs-item {
+    grid-column: span 4;
+  }
+}
+
+/*-- -------------------------- -->
+<---      Contact Form Section     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #contact-form-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-primary);
+    position: relative;
+    z-index: 1;
+  }
+  
+  #contact-form-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+  }
+  
+  #contact-form-2149 .cs-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  
+  #contact-form-2149 .cs-content {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  #contact-form-2149 .cs-title {
+    max-width: 30ch;
+  }
+  
+  #contact-form-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #contact-form-2149 .cs-text {
+    max-width: 100%;
+    margin: 0 0 clamp(1.5rem, 3vw, 2rem) 0;
+  }
+  
+  #contact-form-2149 .cs-form {
+    width: 100%;
+    padding: clamp(2rem, 4vw, 3rem);
+    background-color: var(--bg-card);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 1.25rem);
+  }
+  
+  #contact-form-2149 .cs-label {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    width: 100%;
+    color: var(--headerColor);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #contact-form-2149 .cs-input {
+    font-size: 1rem;
+    width: 100%;
+    height: clamp(3rem, 5vw, 3.5rem);
+    padding: 0 0 0 1.25rem;
+    color: var(--headerColor);
+    background-color: var(--text-light);
+    border: 2px solid var(--border-light);
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+    transition: border-color 0.3s;
+  }
+  
+  #contact-form-2149 .cs-input:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+  
+  #contact-form-2149 .cs-input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+  
+  #contact-form-2149 .cs-textarea {
+    min-height: 8rem;
+    padding-top: 1rem;
+    font-family: inherit;
+    resize: vertical;
+  }
+  
+  #contact-form-2149 .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: clamp(0.5rem, 1vw, 1rem) 0 0 0;
+    color: var(--text-light);
+    min-width: 100%;
+    padding: 0 2rem;
+    background-color: var(--bg-dark);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  #contact-form-2149 .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+  
+  #contact-form-2149 .cs-visual-wrapper {
+    width: 100%;
+  }
+  
+  #contact-form-2149 .cs-info-card {
+    background-color: var(--bg-card);
+    padding: clamp(2rem, 4vw, 3rem);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #contact-form-2149 .cs-info-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1.5rem, 3vw, 2rem) 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #contact-form-2149 .cs-info-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  #contact-form-2149 .cs-info-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  
+  #contact-form-2149 .cs-info-number {
+    width: 2.5rem;
+    height: 2.5rem;
+    min-width: 2.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-dark);
+    font-weight: 700;
+    font-size: 1.125rem;
+    font-family: Horizon, sans-serif;
+  }
+  
+  #contact-form-2149 .cs-info-content {
+    flex: 1;
+  }
+  
+  #contact-form-2149 .cs-info-heading {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0 0 0.5rem 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #contact-form-2149 .cs-info-text {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.6em;
+    color: var(--text-body);
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #contact-form-2149 .cs-content-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  #contact-form-2149 .cs-content {
+    width: 55%;
+    flex: 1;
+  }
+  
+  #contact-form-2149 .cs-visual-wrapper {
+    width: 45%;
+    flex: 1;
+  }
+}
+
+/*-- -------------------------- -->
+<---      Why Contact Us          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #contact-why-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-secondary);
+    position: relative;
+    z-index: 1;
+  }
+  
+  #contact-why-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  
+  #contact-why-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #contact-why-2149 .cs-title {
+    max-width: 30ch;
+  }
+  
+  #contact-why-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #contact-why-2149 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  #contact-why-2149 .cs-item {
+    grid-column: span 12;
+    list-style: none;
+    background-color: var(--bg-card);
+    padding: clamp(2rem, 4vw, 2.5rem);
+    border-radius: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  #contact-why-2149 .cs-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  #contact-why-2149 .cs-icon-wrapper {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  #contact-why-2149 .cs-icon-wrapper img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+  
+  #contact-why-2149 .cs-h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #contact-why-2149 .cs-item-text {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.6em;
+    color: var(--text-body);
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #contact-why-2149 .cs-item {
+    grid-column: span 4;
+  }
+}
+
+/*-- -------------------------- -->
+<---           Modal              -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  .modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: auto;
+    padding: 1rem;
+    font-family: "DM Serif Display";
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(4px);
+  }
+  
+  .modal.modal-show {
+    opacity: 1;
+  }
+  
+  .modal-content {
+    background-color: var(--text-light);
+    margin: auto;
+    padding: clamp(2rem, 5vw, 3rem);
+    border-radius: 0.75rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  .modal.modal-show .modal-content {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  
+  .modal-success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    animation: successPulse 0.6s ease;
+  }
+  
+  .modal-success-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: #fff;
+    stroke-width: 2.5;
+  }
+  
+  @keyframes successPulse {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .modal-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0 0 1rem;
+    font-family: "DM Serif Display";
+    line-height: 1.2;
+  }
+  
+  .modal-message {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
+    color: var(--bodyTextColor);
+    margin: 0 0 2rem;
+    font-family: Montserrat, sans-serif;
+    max-width: 100%;
+  }
+  
+  .modal-button {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    border: none;
+    padding: 0.875rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: Horizon;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: relative;
+    min-width: 150px;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  .modal-button:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+}

@@ -1,11 +1,478 @@
-.about-banner h1,.cs-button-solid{font-weight:700;text-align:center}.about-section li{position:relative;background:url('/public/content/svgs/stripes.svg');font-size:16px;line-height:1.6}.about-banner{margin-top:5rem;position:relative;width:100%;height:150px;background:url('/public/content/svgs/dots.svg');mask-repeat:no-repeat;mask-size:cover;display:flex;justify-content:center;align-items:flex-end;z-index:1}.about-banner h1{font-family:Horizon,sans-serif;margin:5vh 5vh 20px;font-size:clamp(1.275rem, 2.9vw, 2rem);color:#000;padding-bottom:10px}.about-text h2,.about-text h3{font-family:"DM Serif Display"}.content-wrapper{display:flex;align-items:center;justify-content:center;gap:30px;padding:20px;z-index:0}.profile-image{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:50% 30%;margin:auto;display:block}.about-text{max-width:600px}.about-text h2{font-size:24px;font-weight:700;margin-bottom:10px}.about-text h3{font-size:20px;font-weight:600;margin-bottom:20px}.cs-button-solid{font-size:1rem;line-height:clamp(2.875em, 5.5vw, 3.5em);text-decoration:none;margin:0;color:#fff;min-width:13.375rem;padding:0 2rem;background-color:var(--primary);display:inline-block;position:relative;z-index:1;box-sizing:border-box}.cs-button-solid:before{content:"";position:absolute;height:100%;width:0%;background:#000;opacity:1;top:0;left:0;z-index:-1;transition:width .3s}@media only screen and (min-width:0rem){#faq-1720 .cs-container,#faq-1720 .cs-content{flex-direction:column;display:flex;width:100%}#faq-1720 .cs-button,#faq-1720 .cs-option{font-size:clamp(1rem, 2vw, 1.25rem);line-height:1.2em;font-weight:700;border:none;position:relative}#faq-1720{padding:var(--sectionPadding);position:relative}#faq-1720 .cs-container{max-width:80rem;margin:auto;align-items:center;gap:clamp(3rem,6vw,4rem);position:relative;z-index:1}#faq-1720 .cs-content{text-align:left;align-items:flex-start}#faq-1720 .cs-title{margin:0}#faq-1720 .cs-flex-group{width:100%;overflow:hidden;display:flex;flex-direction:column;gap:clamp(1rem,2.3vw,1.25rem);position:relative}#faq-1720 .cs-wrapper{width:100%;position:relative}#faq-1720 .cs-button-group{width:100%;display:flex;flex-direction:column;gap:clamp(1rem,2.5vw,1.25rem);flex:none}#faq-1720 .cs-flex{width:100%;padding:clamp(1.5rem,3vw,2rem);background-color:#f7f7f7;display:flex;flex-direction:column;order:3;gap:1.25rem}#faq-1720 .cs-option{padding:0;color:var(--bodyTextColor);background-color:transparent;display:flex;justify-content:flex-start;align-items:center;gap:.5rem;z-index:1;transition:color .3s}#faq-1720 .cs-option:hover{color:var(--primary);cursor:pointer}#faq-1720 .cs-faq-item.active .cs-button,#faq-1720 .cs-option.cs-active{color:var(--primary)}#faq-1720 .cs-picture{width:100%;height:clamp(20.5rem,30vw,28.125rem);margin:0 0 clamp(1rem,2.4vw,1.25rem);order:2;position:relative;z-index:1}#faq-1720 .cs-picture img{width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0}#faq-1720 .cs-faq-group{width:100%;padding:0;margin:0;display:flex;justify-content:center;align-items:center;flex-direction:column;order:3;gap:.5rem;transition:transform .7s,opacity .3s,visibility .5s,top .3s,left .3s;transform-origin:top;transform-style:preserve-3d;perspective:900px}#faq-1720 .cs-faq-group.cs-hidden{visibility:hidden;pointer-events:none;opacity:0;top:0;left:0;position:absolute;transform:scaleY(0)}#faq-1720 .cs-faq-group.cs-hidden .cs-faq-item{transform:rotateX(270deg);opacity:0}#faq-1720 .cs-faq-item{list-style:none;width:100%;overflow:hidden;opacity:1;top:0;transform:rotateX(0);transition:transform .6s,opacity .3s}#faq-1720 .cs-faq-item:nth-of-type(2){transition-delay:0.1s}#faq-1720 .cs-faq-item:nth-of-type(3){transition-delay:0.2s}#faq-1720 .cs-faq-item:nth-of-type(4){transition-delay:0.3s}#faq-1720 .cs-faq-item:nth-of-type(5){transition-delay:0.4s}#faq-1720 .cs-faq-item:nth-of-type(6){transition-delay:0.5s}#faq-1720 .cs-faq-item:nth-of-type(7){transition-delay:0.6s}#faq-1720 .cs-faq-item:nth-of-type(8){transition-delay:0.7s}#faq-1720 .cs-faq-item:nth-of-type(9){transition-delay:0.8s}#faq-1720 .cs-faq-item:nth-of-type(10){transition-delay:0.9s}#faq-1720 .cs-faq-item.active .cs-button:before{background-color:var(--primary);transform:rotate(315deg)}#faq-1720 .cs-faq-item.active .cs-button:after{background-color:var(--primary);transform:rotate(-315deg)}#faq-1720 .cs-faq-item.active .cs-item-p{height:auto;padding:0 clamp(1rem,2vw,1.5rem) clamp(1.25rem,1.3vw,1.5rem);opacity:1}#faq-1720 .cs-button{text-align:left;padding:clamp(1rem,2vw,1.5rem) clamp(1rem,2vw,1.25rem);background-color:#f7f7f7;color:var(--headerColor);display:block;width:100%;transition:background-color .3s,color .3s}#faq-1720 .cs-button:after,#faq-1720 .cs-button:before{content:"";width:.5rem;height:.125rem;background-color:var(--headerColor);opacity:1;border-radius:50%;position:absolute;top:50%;transition:transform .5s;display:block}#faq-1720 .cs-button:hover{cursor:pointer}#faq-1720 .cs-button:before{right:1.5rem;transform:rotate(45deg);transform-origin:left center}#faq-1720 .cs-button:after{right:1.3125rem;transform:rotate(-45deg);transform-origin:right center}#faq-1720 .cs-button-text{width:80%;display:block}#faq-1720 .cs-item-p{font-size:clamp(.875rem, 1.5vw, 1rem);line-height:1.5em;width:100%;height:0;margin:0;padding:0 clamp(1rem,2vw,1.5rem);opacity:0;background-color:#f7f7f7;color:var(--bodyTextColor);overflow:hidden;transition:opacity .3s,padding-bottom .3s}}@media only screen and (min-width:37.5rem){#faq-1720 .cs-button-group{width:80%;max-width:22.0625rem;flex-direction:row;align-items:stretch;flex:none}#faq-1720 .cs-content{width:100%}#faq-1720 .cs-picture{min-height:clamp(18.75rem,30vw,30.8125rem);margin:0;height:100%;flex:none;order:3}}@media only screen and (min-width:48rem){.about-banner{margin-top: 0rem;}#faq-1720 .cs-flex-group{display:flex;flex-direction:row;flex-wrap:nowrap;column-gap:clamp(1.25rem,3vw,5rem)}#faq-1720 .cs-button-group{flex-direction:column;flex:auto}#faq-1720 .cs-picture{max-height:31.25rem}}
+/*-- -------------------------- -->
+<---        FAQ Hero Section      -->
+<--- -------------------------- -*/
 
-
-/* Add link styling for FAQ page */
-#faq-1720 .cs-text .cs-link {
-    color: #000;
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #faq-hero-2149 {
+    padding: clamp(2.75rem, 54vw, 5rem) 1rem clamp(3.75rem, 7.5vw, 6.25rem);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
+  }
+  
+  #faq-hero-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #faq-hero-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #faq-hero-2149 .cs-title {
+    font-size: clamp(2.4375rem, 5vw, 4.5rem);
+    max-width: 30ch;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+  }
+  
+  #faq-hero-2149 .cs-text {
+    color: var(--text-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 55ch;
+    margin: 0;
+    line-height: 1.6em;
+  }
+  
+  #faq-hero-2149 .cs-text .cs-link {
+    color: var(--primary);
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    text-underline-offset: 2px;
-    box-shadow: none;
+    text-underline-offset: 4px;
+    transition: color 0.3s;
+  }
+  
+  #faq-hero-2149 .cs-text .cs-link:hover {
+    color: var(--primary-dark);
+  }
+  
+  #faq-hero-2149 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.05;
+  }
+  
+  #faq-hero-2149 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/*-- -------------------------- -->
+<---      FAQ Categories          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #faq-categories-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-secondary);
+    position: relative;
+    z-index: 1;
+  }
+  
+  #faq-categories-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  
+  #faq-categories-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #faq-categories-2149 .cs-title {
+    max-width: 30ch;
+  }
+  
+  #faq-categories-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #faq-categories-2149 .cs-category-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+  
+  #faq-categories-2149 .cs-category-item {
+    grid-column: span 12;
+    list-style: none;
+  }
+  
+  #faq-categories-2149 .cs-category-button {
+    width: 100%;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    background-color: var(--bg-card);
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #faq-categories-2149 .cs-category-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary);
+  }
+  
+  #faq-categories-2149 .cs-category-button.cs-active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 8px 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  #faq-categories-2149 .cs-category-button.cs-active .cs-category-icon {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+  }
+  
+  #faq-categories-2149 .cs-category-button.cs-active .cs-category-title,
+  #faq-categories-2149 .cs-category-button.cs-active .cs-category-text {
+    color: var(--bg-dark);
+  }
+  
+  #faq-categories-2149 .cs-category-icon {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-dark);
+    transition: all 0.3s;
+  }
+  
+  #faq-categories-2149 .cs-category-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  #faq-categories-2149 .cs-category-title {
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #faq-categories-2149 .cs-category-text {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    color: var(--text-body);
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #faq-categories-2149 .cs-category-item {
+    grid-column: span 6;
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #faq-categories-2149 .cs-category-item {
+    grid-column: span 3;
+  }
+}
+
+/*-- -------------------------- -->
+<---        FAQ Accordion         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #faq-1720 {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: var(--bg-primary);
+    position: relative;
+    z-index: 1;
+  }
+  
+  #faq-1720 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+  }
+  
+  #faq-1720 .cs-wrapper {
+    width: 100%;
+    position: relative;
+    padding-top: clamp(2rem, 4vw, 3rem);
+  }
+  
+  #faq-1720 .cs-faq-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 1.25rem);
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  
+  #faq-1720 .cs-faq-group.cs-hidden {
+    display: none;
+  }
+  
+  #faq-1720 .cs-faq-item {
+    list-style: none;
+    width: 100%;
+    background-color: var(--bg-card);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  #faq-1720 .cs-faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  #faq-1720 .cs-faq-item.active {
+    box-shadow: 0 8px 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  #faq-1720 .cs-button {
+    width: 100%;
+    padding: clamp(1.25rem, 2.5vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    transition: background-color 0.3s;
+  }
+  
+  #faq-1720 .cs-button:hover {
+    background-color: var(--bg-secondary);
+  }
+  
+  #faq-1720 .cs-button-text {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-weight: 600;
+    line-height: 1.4em;
+    color: var(--headerColor);
+    margin: 0;
+    flex: 1;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #faq-1720 .cs-button .cs-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #faq-1720 .cs-button .cs-icon::before,
+  #faq-1720 .cs-button .cs-icon::after {
+    content: '';
+    position: absolute;
+    width: 1.25rem;
+    height: 2px;
+    background-color: var(--primary);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  
+  #faq-1720 .cs-button .cs-icon::before {
+    transform: rotate(90deg);
+  }
+  
+  #faq-1720 .cs-button .cs-icon::after {
+    transform: rotate(0deg);
+  }
+  
+  #faq-1720 .cs-faq-item.active .cs-button .cs-icon::before {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  
+  #faq-1720 .cs-faq-item.active .cs-button .cs-icon::after {
+    transform: rotate(180deg);
+  }
+  
+  #faq-1720 .cs-item-p {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.6em;
+    color: var(--text-body);
+    margin: 0;
+    padding: 0 clamp(1rem, 2vw, 1.5rem) clamp(1.25rem, 2vw, 1.5rem);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #faq-1720 .cs-faq-item.active .cs-item-p {
+    max-height: 500px;
+    opacity: 1;
+    padding: 0 clamp(1rem, 2vw, 1.5rem) clamp(1.25rem, 2vw, 1.5rem);
+  }
+  
+  #faq-1720 .cs-item-p p {
+    margin: 0 0 1rem 0;
+  }
+  
+  #faq-1720 .cs-item-p p:last-child {
+    margin-bottom: 0;
+  }
+  
+  #faq-1720 .cs-item-p .cs-link {
+    color: var(--primary);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition: color 0.3s;
+  }
+  
+  #faq-1720 .cs-item-p .cs-link:hover {
+    color: var(--primary-dark);
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #faq-1720 .cs-faq-group {
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+}
+
+/*-- -------------------------- -->
+<---        FAQ CTA Section        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #faq-cta-2149 {
+    padding: var(--sectionPadding);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
+  }
+  
+  #faq-cta-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #faq-cta-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #faq-cta-2149 .cs-title {
+    max-width: 30ch;
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+  }
+  
+  #faq-cta-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #faq-cta-2149 .cs-text {
+    max-width: 50ch;
+    margin: 0 0 clamp(2rem, 4vw, 2.5rem) 0;
+  }
+  
+  #faq-cta-2149 .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: var(--text-light);
+    min-width: 12.5rem;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--bg-dark);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  #faq-cta-2149 .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+  
+  #faq-cta-2149 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.05;
+  }
+  
+  #faq-cta-2149 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

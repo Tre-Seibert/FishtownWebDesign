@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://fishtownwebdesign.com/public/content/about/logometa.png">
+    <meta property="og:image" content="https://www.fishtownwebdesign.com/public/content/about/logometa.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="description" content="Get answers about our custom web design services in Philadelphia. Learn about our hand-coded websites, performance optimization, and affordable web design subscription plans starting at $150/mo.">
@@ -18,12 +18,12 @@
     <link rel="stylesheet" href="/public/css/core.css">
 
     <!--Favicons-->
-    <link rel="icon" type="image/png" sizes="16x16" href="../public/content/home/favicon_io/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../public/content/home/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="../public/content/home/favicon_io/android_chrome_192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="../public/content/home/favicon_io/android_chrome_512x512.png">
-    <link rel="apple-touch-icon" href="../public/content/home/favicon_io/apple-touch-icon.png">
-    <link rel="icon" href="../public/content/home/favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/content/home/favicon_io/android_chrome_192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/content/home/favicon_io/android_chrome_512x512.png">
+    <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
 
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
@@ -75,14 +75,10 @@
     }
     </script>
 
-    <style>
-        .about-text p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-family: "Montserrat";
-        }
-    </style>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/public/css/faq.css" as="style">
+    <link rel="preload" href="/public/css/core.css" as="style">
+    <link rel="preload" href="/public/content/home/logo.webp" as="image">
 </head>
 
 <body>
@@ -103,10 +99,10 @@
                 <!--Nav Logo-->
                 <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
                     <picture>
-                        <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/logo-m.webp">
-                        <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/logo.webp">
+                        <source media="(max-width: 600px)" srcset="/public/content/home/logo-m.webp">
+                        <source media="(min-width: 601px)" srcset="/public/content/home/logo.webp">
                         <img 
-                            src="https://fishtownwebdesign.com/public/content/home/logo.png"
+                            src="/public/content/home/logo.png"
                             alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
                             decoding="async"
                             id="logo"
@@ -191,46 +187,90 @@
         
 
     <!-- ============================================ -->
-    <!--                    FAQ                       -->
+    <!--                 Hero Section                  -->
     <!-- ============================================ -->
 
-        <div class="about-section">
-            <!-- About Banner with drips -->
-            <div class="about-banner">
-                <h1>Frequently Asked Questions</h1>
-            </div>
-        </div>
-
-        <section id="faq-1720">
+        <section id="faq-hero-2149">
             <div class="cs-container">
                 <div class="cs-content">
-                    <span class="cs-topper">FAQ</span>
-                    <h2 class="cs-title">Frequently Asked Questions</h2>
+                    <span class="cs-topper">Questions & Answers</span>
+                    <h1 class="cs-title">Frequently Asked Questions</h1>
                     <p class="cs-text">
                         Find answers to common questions about our web design services, pricing, and process. Can't find what you're looking for? <a href="https://fishtownwebdesign.com/contact" class="cs-link">Contact us</a> for more information.
                     </p>
                 </div>
-                <div class="cs-flex-group">
-                    <div class="cs-button-group">
-                        <div class="cs-flex">
-                            <button class="cs-option" data-filter="one">
-                                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
-                                Pricing Questions
-                            </button>
-                            <button class="cs-option" data-filter="two">
-                                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
-                                Subscription Plan
-                            </button>
-                            <button class="cs-option" data-filter="three">
-                                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
-                                SEO Services
-                            </button>
-                            <button class="cs-option" data-filter="four">
-                                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/plus.svg" alt="plus graphic" width="12" height="12" decoding="async" aria-hidden="true">
-                                Websites
-                            </button>
-                        </div>
-                    </div>
+            </div>
+            <!-- Background Pattern -->
+            <picture class="cs-background">
+                <source media="(max-width: 600px)" srcset="/public/content/svgs/stripes.svg">
+                <source media="(min-width: 601px)" srcset="/public/content/svgs/stripes.svg">
+                <img decoding="async" src="/public/content/svgs/stripes.svg" alt="" width="1920" height="907" aria-hidden="true">
+            </picture>
+        </section>
+
+        <!-- ============================================ -->
+        <!--              FAQ Categories                  -->
+        <!-- ============================================ -->
+
+        <section id="faq-categories-2149">
+            <div class="cs-container">
+                <div class="cs-content">
+                    <span class="cs-topper">Browse by Topic</span>
+                    <h2 class="cs-title">Choose a <strong>Category</strong></h2>
+                </div>
+                <ul class="cs-category-group">
+                    <li class="cs-category-item">
+                        <button class="cs-category-button cs-active" data-filter="one">
+                            <div class="cs-category-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
+                                </svg>
+                            </div>
+                            <h3 class="cs-category-title">Pricing</h3>
+                            <p class="cs-category-text">Questions about costs and payment</p>
+                        </button>
+                    </li>
+                    <li class="cs-category-item">
+                        <button class="cs-category-button" data-filter="two">
+                            <div class="cs-category-icon">
+                                <img src="/public/content/about/subscription.png" alt="Custom Coded" width="60" height="60">
+                            </div>
+                            <h3 class="cs-category-title">Subscription</h3>
+                            <p class="cs-category-text">Monthly plans and subscriptions</p>
+                        </button>
+                    </li>
+                    <li class="cs-category-item">
+                        <button class="cs-category-button" data-filter="three">
+                            <div class="cs-category-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                            </div>
+                            <h3 class="cs-category-title">SEO Services</h3>
+                            <p class="cs-category-text">Search engine optimization</p>
+                        </button>
+                    </li>
+                    <li class="cs-category-item">
+                        <button class="cs-category-button" data-filter="four">
+                            <div class="cs-category-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"/>
+                                </svg>
+                            </div>
+                            <h3 class="cs-category-title">Websites</h3>
+                            <p class="cs-category-text">Website development & design</p>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!--                 FAQ Content                  -->
+        <!-- ============================================ -->
+
+        <section id="faq-1720">
+            <div class="cs-container">
                     <div class="cs-wrapper">
                         <ul class="cs-faq-group" data-category="one">
                             <li class="cs-faq-item">
@@ -415,26 +455,102 @@
                 </div>
             </div>
         </section>
-        
 
-        <!-- Footer Section -->
-        <footer class="footer text-center py-4">
-            <p>&copy; <span id="current-year"></span> Fishtown Web Design. All rights reserved.</p>
-            <picture>
-                <source media="(max-width: 600px)" srcset="https://fishtownwebdesign.com/public/content/home/fish-m.webp">
-                <source media="(min-width: 601px)" srcset="https://fishtownwebdesign.com/public/content/home/fish.webp">
-                <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Logo">
+        <!-- ============================================ -->
+        <!--              Still Have Questions            -->
+        <!-- ============================================ -->
+
+        <section id="faq-cta-2149">
+            <div class="cs-container">
+                <div class="cs-content">
+                    <span class="cs-topper">Still Have Questions?</span>
+                    <h2 class="cs-title">Can't Find What You're <strong>Looking For?</strong></h2>
+                    <p class="cs-text">
+                        We're here to help! Reach out to us directly and we'll get back to you within 24 hours with answers to all your questions.
+                    </p>
+                    <a href="https://fishtownwebdesign.com/contact" class="cs-button-solid">Contact Us Today</a>
+                </div>
+            </div>
+            <!-- Background Pattern -->
+            <picture class="cs-background">
+                <source media="(max-width: 600px)" srcset="/public/content/svgs/stripes.svg">
+                <source media="(min-width: 601px)" srcset="/public/content/svgs/stripes.svg">
+                <img decoding="async" src="/public/content/svgs/stripes.svg" alt="" width="1920" height="907" aria-hidden="true">
             </picture>
-            <p><a href="https://www.facebook.com/profile.php?id=61570913623739">Facebook</a> | <a href="https://instagram.com/fishtownwebdesign">Instagram</a></p>
-            <p><a id="tos" href="https://fishtownwebdesign.com/terms-of-service">Terms Of Service</a><a id="pp" href="https://fishtownwebdesign.com/privacy-policy">Privacy Policy</a></p>
+        </section>
+
+        <!-- ============================================ -->
+        <!--                 Footer                       -->
+        <!-- ============================================ -->
+
+        <footer id="cs-footer-2412">
+            <div class="cs-container cs-container-top">
+                <!-- Logo -->
+                 <picture>
+                    <source media="(max-width: 600px)" srcset="/public/content/home/footer-logo-m.webp">
+                    <source media="(min-width: 601px)" srcset="/public/content/home/footer-logo.webp">
+                    <img loading="lazy" src="/public/content/home/footer-logo.png" id="footer-logo" alt="Fishtown Logo" width="216" height="128">
+                </picture>
+                <!--Quick Links-->
+                <div class="cs-quick-links">
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            <a class="cs-link" href="/about">About</a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="/pricing">Pricing</a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="/web-design">Web Design</a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="/seo">SEO</a>
+                        </li>
+                        <li class="cs-li">
+                            <a class="cs-link" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cs-wrapper">
+                    <!--Subscribtion Form-->
+                    <div class="cs-subscribe">
+                        <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
+                        <form class="cs-form" name="Subscription Form" method="post">
+                            <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address">
+                            <button class="cs-button-solid cs-submit" type="submit">
+                                <img class="cs-icon" src="/public/content/home/subscribe.png" alt="submit my email and subcribe" width="40" height="40" decoding="async" loading="lazy">
+                            </button>
+                        </form>
+                    </div>
+                    <div class="cs-bottom">
+                        <!--Social-->
+                        <div class="cs-social">
+                            <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
+                                <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
+                            </a>
+                            <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit instagram">
+                                <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
+                            </a>
+                        </div>
+                        <!--Legal-->
+                        <div class="cs-legal">
+                            <a href="/tos" class="cs-legal-link cs-link">Terms & Conditions</a>
+                            <span class="cs-divider" aria-hidden="true">|</span>
+                            <a href="/pp" class="cs-legal-link cs-link">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cs-credit">
+                <span class="cs-ip cs-text">© <span id="current-year">2026</span> Fishtown Web Design. All rights reserved.</span>
+            </div>
+            <svg class="cs-curve" aria-hidden="true" width="1920" height="1" viewBox="0 0 1920 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1920" height="1" fill="var(--overlayBG)"/>
+            </svg>
         </footer>
 
         <script src="/public/scripts/faq.js"></script>
 
-        <script defer>
-            // Set the current year dynamically
-            document.getElementById("current-year").textContent = new Date().getFullYear();
-        </script>
         <script>
             // add classes for mobile navigation toggling
             var CSbody = document.querySelector('body');
@@ -470,6 +586,15 @@
                 item.addEventListener('click', onClick);
             }
                                         
+        </script>
+        <script>
+            // Update copyright year dynamically
+            document.addEventListener('DOMContentLoaded', function() {
+                const yearElement = document.getElementById('current-year');
+                if (yearElement) {
+                    yearElement.textContent = new Date().getFullYear();
+                }
+            });
         </script>
     </div>
 </body>

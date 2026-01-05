@@ -1,353 +1,865 @@
 /*-- -------------------------- -->
-<---          Banner            -->
+<---        Web Design Hero        -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #banner-1534 {
-      padding: var(--sectionPadding);
-      /* 190px - 268px */
-      padding-top: clamp(11.875rem, 25vw, 16.75rem);
-      /* 100px - 150px */
-      padding-bottom: clamp(6.25rem, 12vw, 9.375rem);
-      /* clips the line from causing overflow issues for going off screen */
-      overflow: hidden;
-      position: relative;
-      z-index: 1;
-    }
-    #banner-1534 .cs-container {
-      text-align: center;
-      width: 100%;
-      max-width: 80rem;
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
-      /* 8px - 12px */
-      gap: clamp(0.5rem, 1vw, 0.75rem);
-    }
-    #banner-1534 .cs-int-title {
-      /* 39px - 61px */
-      font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
-      font-weight: 900;
-      line-height: 1.2em;
-      text-align: inherit;
-      margin: 0;
-      color: var(--headercolor);
-      position: relative;
-    }
-    #banner-1534 .cs-breadcrumbs {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #banner-1534 .cs-link {
-      font-size: 1rem;
-      line-height: 1.2em;
-      text-decoration: none;
-      color: var(--bodyTextColor);
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #banner-1534 .cs-link:last-of-type {
-      /* remove the chevron on the last list item */
-    }
-    #banner-1534 .cs-link:last-of-type::after {
-      display: none;
-    }
-    #banner-1534 .cs-link:after {
-      /* chevron */
-      content: '';
-      width: 0.4375rem;
-      height: 0.75rem;
-      margin: 0 1rem;
-      background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/grey-chevron.svg");
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      display: block;
-    }
-    #banner-1534 .cs-link.cs-active {
-      color: var(--primary);
-    }
-    #banner-1534 .cs-background {
-      width: 100%;
-      height: 100%;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-    #banner-1534 .cs-background:before {
-      /* gradient overlay */
-      content: '';
-      width: 100%;
-      height: 100%;
-      background: #FFF3EC;
-      opacity: .8;
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
-    #banner-1534 .cs-background img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      /* Makes img tag act as a background image */
-      object-fit: cover;
-    }
-    #banner-1534 .cs-mask {
-      --maskBG: #ffffff;
-      width: 100%;
-      height: auto;
-      display: block;
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      z-index: 100;
-    }
-  }
-  /* Tablet - 768px */
-  @media only screen and (min-width: 48rem) {
-    #banner-1534 .cs-background:before {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, rgba(255, 243, 236, 0.9) 23.05%, rgba(255, 243, 236, 0) 80.08%);
-      opacity: 1;
-    }
+  #web-design-hero-2149 {
+    padding: clamp(2.75rem, 54vw, 8rem) 1rem clamp(3.75rem, 7.5vw, 6.25rem);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
   }
   
-  /*-- -------------------------- -->
-  <---        Content Page        -->
-  <--- -------------------------- -*/
+  #web-design-hero-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
-  /* Mobile - 360px */
-  @media only screen and (min-width: 0rem) {
-    @keyframes floatAnimation {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-2rem);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-    @keyframes floatAnimation2 {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-3rem);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-    #content-page-1534 {
-      padding: var(--sectionPadding);
-      background-color: #fff;
-      /* clips the wave background from causing overflow issues when it goes off screen */
-      overflow: hidden;
-      position: relative;
-      z-index: 1;
-    }
-    #content-page-1534 .cs-container {
-      width: 100%;
-      max-width: 80rem;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      /* 40px - 64px */
-      gap: clamp(2.5rem, 4vw, 4rem);
-      position: relative;
-    }
-    #content-page-1534 .cs-content {
-      /* set text align to left if content needs to be left aligned */
-      text-align: left;
-      width: 100%;
-      max-width: 46.125rem;
-      display: flex;
-      flex-direction: column;
-      /* centers content horizontally, set to flex-start to left align */
-      align-items: flex-start;
-    }
-    #content-page-1534 .cs-title {
-      font-size: var(--headerFontSize);
-      font-weight: 900;
-      line-height: 1.2em;
-      text-align: inherit;
-      width: 100%;
-      max-width: 100%;
-      margin: 0 0 1rem 0;
-      color: var(--headerColor);
-      position: relative;
-    }
-    #content-page-1534 h2,
-    #content-page-1534 h3,
-    #content-page-1534 h4,
-    #content-page-1534 h5,
-    #content-page-1534 h6 {
-      font-weight: 700;
-      text-align: inherit;
-      margin: 0 0 1rem 0;
-      color: var(--headerColor);
-    }
-    #content-page-1534 h2 {
-      font-size: 2rem;
-      margin-top: 2rem;
-    }
-    #content-page-1534 h3 {
-      font-size: 1.5rem;
-      color: var(--primary);
-    }
-    #content-page-1534 h4,
-    #content-page-1534 h5,
-    #content-page-1534 h6 {
-      font-size: 1.25rem;
-    }
-    #content-page-1534 .cs-button-solid {
-      margin-bottom: 2rem;
-    }
-    #content-page-1534 .cs-no-margin {
-      margin: 0;
-    }
-    #content-page-1534 .cs-color {
-      color: var(--primary);
-    }
-    #content-page-1534 p {
-      font-size: var(--bodyFontSize);
-      line-height: 1.5em;
-      text-align: inherit;
-      width: 100%;
-      margin: 0 0 1rem 0;
-      color: var(--bodyTextColor);
-    }
-    #content-page-1534 p:last-of-type {
-      margin-bottom: 2rem;
-    }
-    #content-page-1534 p a {
-      font-size: inherit;
-      line-height: inherit;
-      text-decoration: underline;
-      color: var(--black);
-      filter: brightness(120%);
-    }
-    #content-page-1534 ol,
-    #content-page-1534 ul {
-      padding-left: 1.5rem;
-      margin: 0 0 2rem 0;
-      color: var(--bodyTextColor);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    #content-page-1534 ul li {
-      list-style: none;
-      color: inherit;
-      position: relative;
-    }
-    #content-page-1534 ul li:before {
-      /* custom list bullet */
-      content: '';
-      width: 3px;
-      height: 3px;
-      background: currentColor;
-      opacity: 1;
-      border-radius: 50%;
-      position: absolute;
-      display: block;
-      top: 0.625rem;
-      left: -0.75rem;
-    }
-    #content-page-1534 img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    #content-page-1534 .cs-image-group {
-      width: 32.625em;
-      height: 33.75em;
-      display: none;
-      position: relative;
-      z-index: 1;
-    }
-    #content-page-1534 .cs-background {
-      width: 100%;
-      height: 100%;
-      border-radius: 2.5em;
-      /* clips the corners of the children around the border radius */
-      overflow: hidden;
-      /* makes it cover the parent dimensions */
-      object-fit: cover;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
-    #content-page-1534 .cs-background img {
-      width: 100%;
-      height: 100%;
-      /* makes it cover the parent like a backgorund image */
-      object-fit: cover;
-      display: block;
-    }
-    #content-page-1534 .cs-flower {
-      width: 9.5625em;
-      height: auto;
-      position: relative;
-      left: -2em;
-      top: -2.25em;
-      z-index: 10;
-    }
-    #content-page-1534 .cs-floater {
-      width: 44.375em;
-      height: auto;
-      position: absolute;
-      right: 9.375em;
-      top: 25em;
-      z-index: -1;
-      animation-name: floatAnimation2;
-      animation-duration: 14s;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
-      animation-iteration-count: infinite;
-    }
+  #web-design-hero-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  /* Tablet - 768px */
-  @media only screen and (min-width: 48rem) {
-    #content-page-1534 .cs-container {
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: space-between;
-    }
-    #content-page-1534 .cs-content {
-      width: 60%;
-      max-width: 43.375rem;
-      /* prevents flexbox from squishing it */
-      flex: none;
-    }
-    #content-page-1534 .cs-image-group {
-      font-size: min(1.3vw, 1em);
-      display: block;
-    }
+  
+  #web-design-hero-2149 .cs-topper {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: inherit;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
+    color: var(--primary);
+    font-family: Horizon, sans-serif;
   }
-  /* Desktop - 1200px */
-  @media only screen and (min-width: 75rem) {
-    #content-page-1534 .cs-content {
-      width: 53%;
-    }
+  
+  #web-design-hero-2149 .cs-title {
+    font-size: clamp(2.4375rem, 5vw, 4.5rem);
+    max-width: 30ch;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+    font-family: "DM Serif Display", serif;
   }
-                                  
+  
+  #web-design-hero-2149 .cs-text {
+    color: var(--text-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 55ch;
+    margin: 0 0 clamp(2rem, 4vw, 3rem) 0;
+    line-height: 1.6em;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #web-design-hero-2149 .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: var(--text-light);
+    min-width: 12.5rem;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--bg-dark);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  #web-design-hero-2149 .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+  
+  #web-design-hero-2149 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    opacity: 0.05;
+  }
+  
+  #web-design-hero-2149 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/*-- -------------------------- -->
+<---        Why Choose Section     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #web-design-why-2149 {
+    padding: var(--sectionPadding);
+    padding-bottom: 0;
+    position: relative;
+    z-index: 1;
+    background: url(/public/content/svgs/stripes.svg);
+  }
+  
+  #web-design-why-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  
+  #web-design-why-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #web-design-why-2149 .cs-title {
+    max-width: 30ch;
+  }
+  
+  #web-design-why-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #web-design-why-2149 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 1.875rem;
+    column-gap: 1.875rem;
+  }
+  
+  #web-design-why-2149 .cs-item {
+    width: 100%;
+    text-align: left;
+    list-style: none;
+    margin: 2.75rem 0 0;
+    padding: 0 clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 6vw, 4rem);
+    background-color: var(--bg-card);
+    box-sizing: border-box;
+    grid-column: span 12;
+    grid-row: span 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #web-design-why-2149 .cs-icon-wrapper {
+    width: 5.5rem;
+    height: 5.5rem;
+    margin: -2.75rem auto 2rem 0;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: calc(clamp(1.5rem, 4vw, 2.5rem) * -1);
+  }
+  
+  #web-design-why-2149 .cs-icon-wrapper svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--bg-dark);
+  }
+  
+  #web-design-why-2149 .cs-h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-align: inherit;
+    margin: 0 0 .75rem;
+    color: var(--headerColor);
+    font-family: "DM Serif Display";
+  }
+  
+  #web-design-why-2149 .cs-item-text {
+    font-size: clamp(.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    max-width: 18.75rem;
+    margin: 0 0 2rem;
+    padding: 0;
+    color: var(--text-body);
+    font-family: Montserrat;
+  }
+  
+  #web-design-why-2149 .cs-waves {
+    width: 100%;
+    height: 13.875rem;
+    background-color: var(--bg-dark);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  #web-design-why-2149 .cs-waves img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #web-design-why-2149 .cs-card-group {
+    column-gap: 1.875rem;
+  }
+  
+  #web-design-why-2149 .cs-item {
+    grid-column: span 6;
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #web-design-why-2149 .cs-item {
+    grid-column: span 4;
+  }
+}
+
+/*-- -------------------------- -->
+<---      Comparison Section       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #web-design-comparison-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-primary);
+    position: relative;
+    z-index: 1;
+  }
+  
+  #web-design-comparison-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  
+  #web-design-comparison-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #web-design-comparison-2149 .cs-title {
+    max-width: 30ch;
+  }
+  
+  #web-design-comparison-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-card {
+    width: 100%;
+    background-color: var(--bg-card);
+    padding: clamp(2rem, 4vw, 3rem);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-card.cs-hand-coded {
+    border: 2px solid var(--primary);
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-icon svg {
+    width: 2rem;
+    height: 2rem;
+    color: var(--bg-dark);
+  }
+  
+
+  #web-design-comparison-2149 .cs-wordpress .cs-comparison-icon svg {
+    color: var(--text-light);
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    color: var(--text-body);
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-item.cs-disabled {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+  
+  #web-design-comparison-2149 .cs-check-icon,
+  #web-design-comparison-2149 .cs-x-icon {
+    width: 1.125rem;
+    height: auto;
+    flex-shrink: 0;
+  }
+  
+  #web-design-comparison-2149 .cs-x-icon {
+    filter: grayscale(1) brightness(300%);
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #web-design-comparison-2149 .cs-comparison-wrapper {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-card {
+    flex: 1;
+  }
+}
+
+/*-- -------------------------- -->
+<---      Performance Section       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #web-design-performance-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-primary);
+    position: relative;
+    z-index: 1;
+  }
+  
+  #web-design-performance-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  
+  #web-design-performance-2149 .cs-content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  
+  #web-design-performance-2149 .cs-content {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    order: 2;
+  }
+  
+  #web-design-performance-2149 .cs-topper {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  #web-design-performance-2149 .cs-title {
+    font-size: var(--headerFontSize);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+  
+  #web-design-performance-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #web-design-performance-2149 .cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    color: var(--text-primary);
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    max-width: 100%;
+  }
+  
+  #web-design-performance-2149 .cs-benefits-list {
+    width: 100%;
+    margin: 0 0 clamp(2rem, 4vw, 2.5rem) 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 1.25rem);
+  }
+  
+  #web-design-performance-2149 .cs-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    list-style: none;
+  }
+  
+  #web-design-performance-2149 .cs-benefit-icon {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #web-design-performance-2149 .cs-benefit-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #web-design-performance-2149 .cs-benefit-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    color: var(--text-primary);
+    margin: 0;
+    flex: 1;
+  }
+  
+  #web-design-performance-2149 .cs-button-solid {
+    font-size: .8rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: var(--text-light);
+    min-width: 100%;
+    padding: 0 1.5rem;
+    background-color: var(--bg-dark);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+    font-family: Horizon;
+    text-transform: uppercase;
+  }
+  
+  #web-design-performance-2149 .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+  
+  #web-design-performance-2149 .cs-visual-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
+    order: 1;
+  }
+  
+  #web-design-performance-2149 .cs-metrics-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    flex-wrap: wrap;
+  }
+  
+  #web-design-performance-2149 .cs-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: center;
+  }
+  
+  #web-design-performance-2149 .cs-metric-number {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    color: var(--primary);
+    font-family: "DM Serif Display";
+    display: block;
+  }
+  
+  #web-design-performance-2149 .cs-metric-label {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    color: var(--text-primary);
+    display: block;
+    font-family: Montserrat;
+  }
+  
+  #web-design-performance-2149 .cs-pagespeed-card {
+    width: 100%;
+    background-color: var(--bg-secondary);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #web-design-performance-2149 .cs-pagespeed-picture {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+  
+  #web-design-performance-2149 .cs-pagespeed-picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #web-design-performance-2149 .cs-container {
+    max-width: 80rem;
+  }
+  
+  #web-design-performance-2149 .cs-content-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+  
+  #web-design-performance-2149 .cs-content {
+    width: 50%;
+    flex: 1;
+    order: 0;
+  }
+  
+  #web-design-performance-2149 .cs-visual-wrapper {
+    width: 50%;
+    flex: 1;
+    order: 0;
+  }
+  
+  #web-design-performance-2149 .cs-metrics-group {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  #web-design-performance-2149 .cs-metric {
+    flex: 1;
+  }
+  
+  #web-design-performance-2149 .cs-button-solid {
+    min-width: auto;
+    width: auto;
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #web-design-performance-2149 .cs-content-wrapper {
+    align-items: flex-start;
+  }
+  
+  #web-design-performance-2149 .cs-visual-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 3vw, 2.5rem);
+  }
+  
+  #web-design-performance-2149 .cs-metrics-group {
+    justify-content: flex-start;
+  }
+}
+
+/*-- -------------------------- -->
+<---        Process Section        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #web-design-process-2149 {
+    padding: var(--sectionPadding);
+    overflow: hidden;
+    z-index: 1;
+    background-color: var(--bg-secondary);
+  }
+  
+  #web-design-process-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  
+  #web-design-process-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #web-design-process-2149 .cs-title {
+    max-width: 30ch;
+  }
+  
+  #web-design-process-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #web-design-process-2149 .cs-card-group {
+    width: 100%;
+    margin: clamp(1rem, 2vw, 1.5rem) 0 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  #web-design-process-2149 .cs-item {
+    text-align: center;
+    display: flex;
+    grid-column: span 12;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: var(--bg-card);
+    padding: clamp(2rem, 4vw, 2.5rem);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  #web-design-process-2149 .cs-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  #web-design-process-2149 .cs-picture {
+    margin-bottom: clamp(1.25rem, 2vw, 1.5rem);
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #web-design-process-2149 .cs-icon {
+    width: 2.5rem;
+    height: auto;
+    display: block;
+    color: var(--bg-dark);
+  }
+  
+  #web-design-process-2149 .cs-h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    text-align: inherit;
+    margin: 0 0 clamp(0.75rem, 1.5vw, 1rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #web-design-process-2149 .cs-item-text {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.6em;
+    text-align: inherit;
+    max-width: 25.8125rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+    font-family: Montserrat, sans-serif;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #web-design-process-2149 .cs-item {
+    grid-column: span 4;
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #web-design-process-2149 .cs-container {
+    max-width: 80rem;
+  }
+}
+
+/*-- -------------------------- -->
+<---          CTA Section          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #web-design-cta-2149 {
+    padding: clamp(2.75rem, 54vw, 8rem) 1rem clamp(3.75rem, 7.5vw, 6.25rem);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
+  }
+  
+  #web-design-cta-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #web-design-cta-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #web-design-cta-2149 .cs-topper {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: inherit;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
+    color: var(--primary);
+    font-family: Horizon, sans-serif;
+  }
+  
+  #web-design-cta-2149 .cs-title {
+    font-size: clamp(2.4375rem, 5vw, 4.5rem);
+    max-width: 30ch;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #web-design-cta-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #web-design-cta-2149 .cs-text {
+    color: var(--text-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 55ch;
+    margin: 0 0 clamp(2rem, 4vw, 3rem) 0;
+    line-height: 1.6em;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #web-design-cta-2149 .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: var(--text-light);
+    min-width: 12.5rem;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--bg-dark);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  #web-design-cta-2149 .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+  
+  #web-design-cta-2149 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    opacity: 0.05;
+  }
+  
+  #web-design-cta-2149 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
