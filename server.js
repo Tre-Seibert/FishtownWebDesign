@@ -577,140 +577,139 @@ app.get('/questionnaire', (req, res) => {
 });
 
 // Handle questionnaire submission
-// app.post('/submit-questionnaire', async (req, res) => {
-//   res.set('X-Robots-Tag', 'noindex, nofollow, noarchive, nosnippet');
-//   try {
-//     const {
-//       name,
-//       email,
-//       primary_services,
-//       top_revenue_services,
-//       about_business,
-//       why_choose_you,
-//       essential_info,
-//       design_inspiration,
-//       primary_cta,
-//       branding,
-//       features,
-//       requested_pages,
-//       experience_feedback,
-//       botcheck
-//     } = req.body || {};
+app.post('/submit-questionnaire', async (req, res) => {
+  res.set('X-Robots-Tag', 'noindex, nofollow, noarchive, nosnippet');
+  try {
+    const {
+      name,
+      email,
+      primary_services,
+      top_revenue_services,
+      about_business,
+      why_choose_you,
+      essential_info,
+      design_inspiration,
+      primary_cta,
+      branding,
+      features,
+      requested_pages,
+      experience_feedback,
+      botcheck
+    } = req.body || {};
 
-//     // Honeypot check
-//     if (botcheck) {
-//       logger.warn('Bot submission blocked on questionnaire');
-//       return res.status(200).send('OK');
-//     }
+    // Honeypot check
+    if (botcheck) {
+      logger.warn('Bot submission blocked on questionnaire');
+      return res.status(200).json({ success: true, message: 'OK' });
+    }
 
-//     // Basic validation
-//     const requiredFields = [
-//       name,
-//       email,
-//       primary_services,
-//       top_revenue_services,
-//       about_business,
-//       why_choose_you,
-//       design_inspiration,
-//       primary_cta,
-//       branding,
-//       features,
-//       requested_pages
-//     ];
-//     if (requiredFields.some(v => !v || String(v).trim() === '')) {
-//       return res.status(400).json({ success: false, message: 'Please complete all required fields.' });
-//     }
-//     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//     if (!emailRegex.test(email)) {
-//       return res.status(400).json({ success: false, message: 'Please enter a valid email address.' });
-//     }
+    // Basic validation
+    const requiredFields = [
+      name,
+      email,
+      primary_services,
+      top_revenue_services,
+      about_business,
+      why_choose_you,
+      design_inspiration,
+      primary_cta,
+      branding,
+      features,
+      requested_pages
+    ];
+    if (requiredFields.some(v => !v || String(v).trim() === '')) {
+      return res.status(400).json({ success: false, message: 'Please complete all required fields.' });
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ success: false, message: 'Please enter a valid email address.' });
+    }
 
-//     const connection = await pool.getConnection();
-//     await connection.execute(
-//       `INSERT INTO questionnaire_submissions 
-//         (name, email, primary_services, top_revenue_services, about_business, why_choose_you, essential_info, design_inspiration, primary_cta, branding, features, requested_pages, experience_feedback)
-//        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-//       [
-//         String(name).trim(),
-//         String(email).trim(),
-//         String(primary_services).trim(),
-//         String(top_revenue_services).trim(),
-//         String(about_business).trim(),
-//         String(why_choose_you).trim(),
-//         essential_info ? String(essential_info).trim() : null,
-//         String(design_inspiration).trim(),
-//         String(primary_cta).trim(),
-//         String(branding).trim(),
-//         String(features).trim(),
-//         String(requested_pages).trim(),
-//         experience_feedback ? String(experience_feedback).trim() : null
-//       ]
-//     );
-//     connection.release();
+    const connection = await pool.getConnection();
+    await connection.execute(
+      `INSERT INTO questionnaire_submissions 
+        (name, email, primary_services, top_revenue_services, about_business, why_choose_you, essential_info, design_inspiration, primary_cta, branding, features, requested_pages, experience_feedback)
+       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+      [
+        String(name).trim(),
+        String(email).trim(),
+        String(primary_services).trim(),
+        String(top_revenue_services).trim(),
+        String(about_business).trim(),
+        String(why_choose_you).trim(),
+        essential_info ? String(essential_info).trim() : null,
+        String(design_inspiration).trim(),
+        String(primary_cta).trim(),
+        String(branding).trim(),
+        String(features).trim(),
+        String(requested_pages).trim(),
+        experience_feedback ? String(experience_feedback).trim() : null
+      ]
+    );
+    connection.release();
 
-//     logger.info('Questionnaire submission saved', { email });
-//     // Redirect to success so the modal opens
-//     return res.redirect(303, '/questionnaire#success');
-//   } catch (error) {
-//     // If table does not exist yet, initialize schema then retry once
-//     if (error && (error.code === 'ER_NO_SUCH_TABLE' || /doesn't exist/i.test(error.message))) {
-//       try {
-//         await initializeDatabase();
-//         const {
-//           name,
-//           email,
-//           primary_services,
-//           top_revenue_services,
-//           about_business,
-//           why_choose_you,
-//           essential_info,
-//           design_inspiration,
-//           primary_cta,
-//           branding,
-//           features,
-//           requested_pages,
-//           experience_feedback
-//         } = req.body || {};
-//         const connection = await pool.getConnection();
-//         await connection.execute(
-//           `INSERT INTO questionnaire_submissions 
-//             (name, email, primary_services, top_revenue_services, about_business, why_choose_you, essential_info, design_inspiration, primary_cta, branding, features, requested_pages, experience_feedback)
-//            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-//           [
-//             String(name).trim(),
-//             String(email).trim(),
-//             String(primary_services).trim(),
-//             String(top_revenue_services).trim(),
-//             String(about_business).trim(),
-//             String(why_choose_you).trim(),
-//             essential_info ? String(essential_info).trim() : null,
-//             String(design_inspiration).trim(),
-//             String(primary_cta).trim(),
-//             String(branding).trim(),
-//             String(features).trim(),
-//             String(requested_pages).trim(),
-//             experience_feedback ? String(experience_feedback).trim() : null
-//           ]
-//         );
-//         connection.release();
-//         logger.info('Questionnaire submission saved after schema init', { email });
-//         return res.redirect(303, '/questionnaire#success');
-//       } catch (retryError) {
-//         logger.error('Retry after schema init failed for questionnaire submission', {
-//           error: retryError.message,
-//           stack: retryError.stack
-//         });
-//       }
-//     }
+    logger.info('Questionnaire submission saved', { email });
+    return res.json({ success: true, message: 'Your questionnaire has been submitted successfully! We will review it and follow up within 1 business day.' });
+  } catch (error) {
+    // If table does not exist yet, initialize schema then retry once
+    if (error && (error.code === 'ER_NO_SUCH_TABLE' || /doesn't exist/i.test(error.message))) {
+      try {
+        await initializeDatabase();
+        const {
+          name,
+          email,
+          primary_services,
+          top_revenue_services,
+          about_business,
+          why_choose_you,
+          essential_info,
+          design_inspiration,
+          primary_cta,
+          branding,
+          features,
+          requested_pages,
+          experience_feedback
+        } = req.body || {};
+        const connection = await pool.getConnection();
+        await connection.execute(
+          `INSERT INTO questionnaire_submissions 
+            (name, email, primary_services, top_revenue_services, about_business, why_choose_you, essential_info, design_inspiration, primary_cta, branding, features, requested_pages, experience_feedback)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+          [
+            String(name).trim(),
+            String(email).trim(),
+            String(primary_services).trim(),
+            String(top_revenue_services).trim(),
+            String(about_business).trim(),
+            String(why_choose_you).trim(),
+            essential_info ? String(essential_info).trim() : null,
+            String(design_inspiration).trim(),
+            String(primary_cta).trim(),
+            String(branding).trim(),
+            String(features).trim(),
+            String(requested_pages).trim(),
+            experience_feedback ? String(experience_feedback).trim() : null
+          ]
+        );
+        connection.release();
+        logger.info('Questionnaire submission saved after schema init', { email });
+        return res.json({ success: true, message: 'Your questionnaire has been submitted successfully! We will review it and follow up within 1 business day.' });
+      } catch (retryError) {
+        logger.error('Retry after schema init failed for questionnaire submission', {
+          error: retryError.message,
+          stack: retryError.stack
+        });
+      }
+    }
 
-//     logger.error('Error handling questionnaire submission', {
-//       error: error.message,
-//       stack: error.stack,
-//       bodyKeys: Object.keys(req.body || {})
-//     });
-//     return res.status(500).json({ success: false, message: 'There was an error submitting your questionnaire.' });
-//   }
-// });
+    logger.error('Error handling questionnaire submission', {
+      error: error.message,
+      stack: error.stack,
+      bodyKeys: Object.keys(req.body || {})
+    });
+    return res.status(500).json({ success: false, message: 'There was an error submitting your questionnaire. Please try again later.' });
+  }
+});
 
 
 

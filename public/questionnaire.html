@@ -189,8 +189,7 @@
                     <!-- Right Column - Form -->
                     <div class="cs-form-wrapper">
                         <!--Form-->
-                        <form action="https://forms.fishtownwebdesign.com/api/submit" method="POST" class="cs-form" id="client-questionnaire-form" name="Client Questionnaire">
-                            <input type="hidden" name="apiKey" value="YOUR_API_KEY_HERE">
+                        <form action="/submit-questionnaire" method="POST" class="cs-form" id="client-questionnaire-form" name="Client Questionnaire">
                             
                             <div class="form-header">
                                 <div class="stepper" aria-hidden="true">
@@ -538,11 +537,70 @@
                 }
                 showStep(current);
 
-                // On submit, ensure last step is valid
-                form.addEventListener('submit', function(e){
+                // On submit, ensure last step is valid and handle submission
+                form.addEventListener('submit', async function(e){
+                    e.preventDefault();
+                    
                     if(!validateStep(current)){
-                        e.preventDefault();
                         return false;
+                    }
+
+                    // Get submit button
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    const originalButtonText = submitButton.textContent;
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Submitting...';
+
+                    try {
+                        // Collect form data
+                        const formData = new FormData(form);
+                        const data = {};
+                        formData.forEach((value, key) => {
+                            // Skip botcheck if it's checked (honeypot)
+                            if (key === 'botcheck' && formData.get('botcheck')) {
+                                return;
+                            }
+                            data[key] = value;
+                        });
+
+                        // Send to server
+                        const response = await fetch('/submit-questionnaire', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data)
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            // Show success modal
+                            const modal = document.getElementById('responseModal');
+                            const modalMessage = document.getElementById('modal-message');
+                            if (modal && modalMessage) {
+                                modalMessage.textContent = result.message || 'Your questionnaire has been submitted successfully! We will review it and follow up within 1 business day.';
+                                modal.style.display = 'flex';
+                                document.body.style.overflow = 'hidden';
+                                setTimeout(() => {
+                                    modal.classList.add('modal-show');
+                                }, 10);
+                            }
+                            // Reset form
+                            form.reset();
+                            // Reset to first step
+                            current = 0;
+                            showStep(current);
+                        } else {
+                            // Show error message
+                            alert(result.message || 'There was an error submitting your questionnaire. Please try again.');
+                        }
+                    } catch (error) {
+                        console.error('Error submitting questionnaire:', error);
+                        alert('There was an error submitting your questionnaire. Please try again later.');
+                    } finally {
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalButtonText;
                     }
                 });
             })();
