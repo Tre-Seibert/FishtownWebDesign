@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Development Contract - Fishtown Web Design</title>
+    <style>
+        /* Import existing design system */
+        @import url('/public/css/core.css');
+        
+        /* Contract-specific styles */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Montserrat, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-body);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6em;
+            font-size: 0.9375rem;
+        }
+        
+        .contract-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: clamp(1.5rem, 3vw, 2rem) 1rem;
+            background: var(--bg-primary);
+            min-height: 100vh;
+        }
+        
+        /* Navigation Header */
+        .contract-nav {
+            background: var(--bg-card);
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex: 1;
+        }
+        
+        .page-indicator {
+            font-weight: 600;
+            color: var(--headerColor);
+            font-size: 0.875rem;
+            white-space: nowrap;
+        }
+        
+        .skip-button {
+            font-family: Horizon, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            padding: 0.625rem 1.25rem;
+            background: var(--primary);
+            color: var(--headerColor);
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .skip-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(248, 200, 130, 0.3);
+        }
+        
+        .nav-arrows {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .nav-arrow {
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 2px solid var(--border-medium);
+            background: var(--bg-primary);
+            border-radius: 0.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: var(--headerColor);
+            font-size: 1.25rem;
+        }
+        
+        .nav-arrow:hover:not(:disabled) {
+            border-color: var(--primary);
+            background: var(--primaryLight);
+            transform: translateY(-2px);
+        }
+        
+        .nav-arrow:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        
+        /* Page Container */
+        .page-container {
+            position: relative;
+            min-height: 600px;
+        }
+        
+        .contract-page {
+            display: none;
+            background: var(--bg-card);
+            padding: clamp(1.5rem, 3vw, 2rem);
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .contract-page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Cover Sheet */
+        .cover-title {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 900;
+            color: var(--headerColor);
+            text-align: center;
+            margin: 0 0 clamp(1.5rem, 3vw, 2rem) 0;
+            line-height: 1.2em;
+        }
+        
+        .cover-field {
+            margin-bottom: 1.25rem;
+        }
+        
+        .cover-label {
+            font-weight: 600;
+            color: var(--headerColor);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .cover-label .required {
+            color: var(--primary);
+            font-weight: 700;
+            margin-left: 0.25rem;
+        }
+        
+        .cover-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-medium);
+            border-radius: 0.25rem;
+            font-family: Montserrat, sans-serif;
+            font-size: 1rem;
+            background: var(--bg-primary);
+            color: var(--text-body);
+            box-sizing: border-box;
+        }
+        
+        .cover-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(248, 200, 130, 0.1);
+        }
+        
+        .cover-input[readonly] {
+            background: var(--bg-secondary);
+            cursor: not-allowed;
+        }
+        
+        .cover-input:required:invalid {
+            border-color: var(--border-medium);
+        }
+        
+        .cover-input:required:valid {
+            border-color: var(--border-medium);
+        }
+        
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.75rem 0;
+        }
+        
+        .service-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Contract Content */
+        .contract-main-title {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            font-weight: 700;
+            color: var(--headerColor);
+            text-align: center;
+            margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+            line-height: 1.2em;
+        }
+        
+        .contract-intro {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            background: var(--bg-secondary);
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .article {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-title {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(1.125rem, 2.25vw, 1.25rem);
+            font-weight: 700;
+            color: var(--headerColor);
+            margin: 0 0 0.75rem 0;
+            line-height: 1.2em;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-light);
+        }
+        
+        .article-content {
+            line-height: 1.8;
+            color: var(--text-body);
+            font-size: 0.9375rem;
+        }
+        
+        .article-content p {
+            margin: 0 0 0.875rem 0;
+        }
+        
+        .article-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .article-content strong {
+            color: var(--headerColor);
+            font-weight: 600;
+        }
+        
+        .article-content ul {
+            margin: 0.75rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Signature Section - Highlighted */
+        .signature-section {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+            padding: clamp(1.5rem, 3vw, 2rem);
+            border-radius: 0.5rem;
+            border: 3px solid var(--primary);
+            box-shadow: 0 4px 16px rgba(248, 200, 130, 0.2);
+            position: relative;
+        }
+        
+        .signature-section::before {
+            content: "✍️ Sign Here";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: var(--headerColor);
+            padding: 0.375rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: Horizon, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .signature-block {
+            margin-bottom: 2rem;
+        }
+        
+        .signature-block:last-child {
+            margin-bottom: 0;
+        }
+        
+        .signature-label {
+            font-weight: 600;
+            color: var(--headerColor);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        
+        .signature-field {
+            border: 3px dashed var(--primary);
+            padding: 2rem;
+            text-align: center;
+            background: var(--bg-primary);
+            border-radius: 0.5rem;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .signature-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 120px;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+        
+        .signature-field.company-signature {
+            cursor: default;
+            border-style: solid;
+            border-color: var(--border-light);
+            padding: 0.75rem 1rem;
+            min-height: 60px;
+            max-width: 300px;
+            margin: 0 0 1rem 0;
+            align-items: flex-start;
+        }
+        
+        .signature-field.company-signature .signature-image {
+            max-height: 50px;
+        }
+        
+        .signature-field.company-signature:hover {
+            background: var(--bg-primary);
+            box-shadow: none;
+        }
+        
+        .signature-field.client-signature {
+            padding: 1rem;
+            min-height: 150px;
+            max-width: 100%;
+            margin: 0 0 1rem 0;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .signature-field:hover {
+            border-color: var(--primary-dark);
+            box-shadow: 0 4px 12px rgba(248, 200, 130, 0.3);
+            background: var(--bg-secondary);
+        }
+        
+        .signature-field:active {
+            transform: scale(0.98);
+        }
+        
+        .signature-field.client-signature {
+            cursor: default;
+        }
+        
+        /* DocuSeal signature field styling */
+        signature-field {
+            display: block;
+            width: 100%;
+            min-height: 120px;
+            border: 2px dashed var(--primary);
+            border-radius: 0.25rem;
+            background: var(--bg-primary);
+            margin: 0 auto;
+        }
+        
+        text-field, date-field {
+            display: inline-block;
+            padding: 0.5rem;
+            border: 1px solid var(--border-medium);
+            border-radius: 0.25rem;
+            background: var(--bg-primary);
+            font-family: Montserrat, sans-serif;
+            font-size: 0.875rem;
+        }
+        
+        .signature-placeholder {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            pointer-events: none;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .signature-field.client-signature .signature-placeholder {
+            text-align: center;
+        }
+        
+        .signature-instruction {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            pointer-events: none;
+        }
+        
+        .signature-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-medium);
+            border-radius: 0.25rem;
+            font-family: Montserrat, sans-serif;
+            font-size: 1rem;
+            background: var(--bg-primary);
+            color: var(--text-body);
+            box-sizing: border-box;
+            text-align: center;
+        }
+        
+        .signature-input[readonly] {
+            background: var(--bg-secondary);
+            cursor: not-allowed;
+        }
+        
+        .version-info {
+            text-align: right;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: var(--bg-secondary);
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primaryLight) 100%);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        /* Mobile responsive */
+        @media only screen and (max-width: 48rem) {
+            .contract-wrapper {
+                padding: 1rem;
+            }
+            
+            .contract-nav {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .nav-info {
+                justify-content: space-between;
+            }
+            
+            .nav-arrows {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-arrow {
+                flex: 1;
+            }
+            
+            .contract-page {
+                padding: 1rem;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .contract-nav,
+            .skip-button,
+            .nav-arrows {
+                display: none;
+            }
+            
+            .contract-page {
+                display: block !important;
+                page-break-after: always;
+            }
+            
+            .contract-page:last-child {
+                page-break-after: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contract-wrapper">
+        <!-- Form wrapper -->
+        <form id="contract-form" novalidate onsubmit="handleFormSubmit(event)">
+            <!-- Navigation Header -->
+            <div class="contract-nav">
+                <div class="nav-info">
+                    <span class="page-indicator">Page <span id="current-page">1</span> of <span id="total-pages">1</span></span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                <button type="button" class="skip-button" id="skip-button" onclick="goToSignatures()">Skip to Signatures →</button>
+                <div class="nav-arrows">
+                    <button type="button" class="nav-arrow" id="prev-btn" onclick="changePage(-1)" disabled>‹</button>
+                    <button type="button" class="nav-arrow" id="next-btn" onclick="changePage(1)">›</button>
+                </div>
+            </div>
+            
+            <!-- Page Container -->
+            <div class="page-container">
+            <!-- Page 1: Cover Sheet -->
+            <div class="contract-page active" data-page="1">
+                <h1 class="cover-title">WEBSITE DEVELOPMENT CONTRACT FORM</h1>
+                
+                <div class="cover-field">
+                    <label class="cover-label">Company: <span id="company-required" style="display: none; color: var(--primary);">*</span></label>
+                    <input type="text" class="cover-input" id="input-company" name="business_name" placeholder="Enter company name" oninput="updateContractFields(); validateCompanyFields();">
+                </div>
+                
+                <div class="cover-field">
+                    <label class="cover-label">Contact Name: <span class="required" style="color: var(--primary);">*</span></label>
+                    <input type="text" class="cover-input" id="input-contact" name="client_name" placeholder="Enter your full name" oninput="updateContractFields()">
+                </div>
+                
+                <div class="cover-field">
+                    <label class="cover-label">Address: <span class="required" style="color: var(--primary);">*</span></label>
+                    <input type="text" class="cover-input" id="input-address" name="business_address" placeholder="Enter address" required oninput="updateContractFields()">
+                </div>
+                
+                <div class="cover-field">
+                    <label class="cover-label">Phone: <span class="required" style="color: var(--primary);">*</span></label>
+                    <input type="tel" class="cover-input" id="input-phone" name="client_phone" placeholder="(717) 555-1234" oninput="updateContractFields()">
+                </div>
+                
+                <div class="cover-field">
+                    <label class="cover-label">E-Mail: <span class="required" style="color: var(--primary);">*</span></label>
+                    <input type="email" class="cover-input" id="input-email" name="client_email" placeholder="your.email@example.com" oninput="updateContractFields()">
+                </div>
+                
+                <div class="cover-field">
+                    <label class="cover-label">Company Type: <span id="company-type-required" style="display: none; color: var(--primary);">*</span></label>
+                    <select class="cover-input" id="input-client-type" name="client_type" onchange="updateContractFields(); validateCompanyFields();">
+                        <option value="">Select company type (if applicable)</option>
+                        <option value="Limited Liability Company">Limited Liability Company</option>
+                        <option value="Corporation">Corporation</option>
+                        <option value="Partnership">Partnership</option>
+                        <option value="Sole Proprietorship">Sole Proprietorship</option>
+                        <option value="Individual">Individual</option>
+                    </select>
+                </div>
+                
+                <div class="cover-field">
+                    <label class="cover-label">Website Development Services:</label>
+                    <ul class="service-list">
+                        <li>Initial website development</li>
+                        <li>Monthly hosting</li>
+                        <li>Basic maintenance & updates</li>
+                        <li>Security updates</li>
+                    </ul>
+                </div>
+                
+                <div class="cover-field">
+                    <label class="cover-label">Plan Type: <span class="required" style="color: var(--primary);">*</span></label>
+                    <select class="cover-input" id="plan-type" name="plan_type" onchange="updateServiceFee()">
+                        <option value="">Select a plan</option>
+                        <option value="monthly">Monthly - $150/month</option>
+                        <option value="yearly">Yearly - $1,499/year (Save $300)</option>
+                    </select>
+                </div>
+                
+                <div class="cover-field">
+                    <label class="cover-label">Service Fee:</label>
+                    <input type="text" class="cover-input" id="service-fee-display" name="service_fee" value="Select a plan above" readonly style="background: var(--bg-secondary);">
+                </div>
+                
+                <div class="cover-field">
+                    <label class="cover-label">Initial Service Term:</label>
+                    <input type="text" class="cover-input" name="service_term" value="1 Year" readonly style="background: var(--bg-secondary);">
+                </div>
+                
+                <div class="cover-field">
+                    <label class="cover-label">Start Date:</label>
+                    <input type="date" class="cover-input" id="start-date" name="start_date" readonly style="background: var(--bg-secondary);">
+                </div>
+                
+                <div class="cover-field">
+                    <label class="cover-label">Service Capacity:</label>
+                    <ul class="service-list">
+                        <li>Up to 10GB storage</li>
+                        <li>Additional usage will be billed at standard rates</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Page 2: Agreement Introduction -->
+            <div class="contract-page" data-page="2">
+                <h2 class="contract-main-title">Website Design Development Agreement</h2>
+                
+                <div class="contract-intro">
+                    <p>THIS DEVELOPMENT OF WEBSITE DESIGN AGREEMENT, dated <strong id="display-effective-date">{{EFFECTIVE_DATE}}</strong> (the "Effective Date"), is between Fishtown Web Design LLC ("Company"), a Pennsylvania Limited Liability Company, and <span id="display-client-intro">{{CLIENT_INTRO}}</span>. Company and Client are sometimes referred to herein collectively as "Parties" and individually as a "Party."</p>
+                    
+                    <p><strong>B. WHEREAS</strong>, Client desires Company to design a website for Client;</p>
+                    
+                    <p><strong>NOW THEREFORE</strong>, in consideration of the mutual covenants and promises set forth herein, the Parties agree as follows:</p>
+                </div>
+                
+                <div class="article">
+                    <h3 class="article-title">AGREEMENT</h3>
+                </div>
+                
+                <div class="article">
+                    <h3 class="article-title">ARTICLE I. DEFINITIONS.</h3>
+                    <div class="article-content">
+                        <p><strong>"Alpha Version"</strong> means the first test system of Client's Website, which is tested on a computer that is not connected to the Internet.</p>
+                        <p><strong>"Agreement"</strong> means this written agreement between Company and Client.</p>
+                        <p><strong>"Beta Version"</strong> means the second test system of Client's Website, which is tested through the Internet by Client.</p>
+                        <p><strong>"Bug"</strong> means an error in the Website that causes repeated and repeatable malfunctions.</p>
+                        <p><strong>"CGI"</strong> or <strong>"Common Gateway Interface"</strong> means the standard method of writing computer code to enable an interactive computer program on one Internet server to communicate with users located at remote Internet servers.</p>
+                        <p><strong>"Derivative Work"</strong> means any modifications made to any computer source code, object code, CGI code or HTML code.</p>
+                        <p><strong>"Domain Name"</strong> or <strong>"Name"</strong> is the alpha-numeric name associated with Client's Website, Web pages or electronic mail.</p>
+                        <p><strong>"Hour"</strong> means one hour spent by one Company developer.</p>
+                        <p><strong>"HTML Code"</strong> means hypertext mark-up language, which is the language commonly used for developing the appearance of websites.</p>
+                        <p><strong>"Intellectual Property Rights"</strong> means:</p>
+                        <ul>
+                            <li>Rights in any patent, copyright, trademark, trade dress, and trade name;</li>
+                            <li>Related registrations and applications for registration; and</li>
+                            <li>Trade secrets, know-how and goodwill.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Page 3: Definitions Continued & Website Development -->
+            <div class="contract-page" data-page="3">
+                <div class="article">
+                    <h3 class="article-title">ARTICLE I. DEFINITIONS (continued)</h3>
+                    <div class="article-content">
+                        <p><strong>"Internet"</strong> means the global computer network comprising interconnected networks using standard Protocols.</p>
+                        <p><strong>"Internet Service Provider"</strong> or <strong>"ISP"</strong> means an entity that enables the uploading and downloading of data between remote computers and the Internet.</p>
+                        <p><strong>"Project Manager"</strong> means one of Client's employees, as may be designed by Client from time to time, who shall be deemed as Client's liaison with Company, and who shall have the power to act as Client's project manager in order to make ongoing decisions under this Agreement which are binding upon Client.</p>
+                        <p><strong>"Protocols"</strong> means a set of rules that regulate the way data is transmitted between computers and includes the TCP/IP protocols.</p>
+                        <p><strong>"Web page"</strong> means each individual screen display contained in Client's Website and may consist of more than one data file.</p>
+                        <p><strong>"Website"</strong> means all Web pages and domain names associated with Client and its products or services, and which are stored on Company's server.</p>
+                        <p><strong>"Website Hosting Service Provider"</strong> or <strong>"Web host"</strong> means an entity that stores third-party websites on its server, receives or stores commands or data transmitted by Internet users, transmits web page data to users' Internet addresses, and performs related maintenance.</p>
+                        <p><strong>"World Wide Web"</strong> or <strong>"WWW"</strong> is a subset of the Internet, and is a common system for browsing Internet websites.</p>
+                    </div>
+                </div>
+                
+                <div class="article">
+                    <h3 class="article-title">ARTICLE II. WEBSITE DEVELOPMENT.</h3>
+                    <div class="article-content">
+                        <p><strong>2.1. Design.</strong></p>
+                        <p><strong>Client Questionnaire.</strong> The Company's process begins with providing the Client a comprehensive questionnaire designed to gather all necessary information required to build the Client's website. This questionnaire covers details such as desired functionality, design preferences, and specific content requirements.</p>
+                        <p><strong>Design Mockup and Revisions.</strong> Based on the Client's responses to the questionnaire, the Company will create an initial design mockup. The Client will review this mockup and provide feedback with suggested changes. The Company will revise the design accordingly and present the updated mockup to the Client. This back-and-forth revision process will continue until both the Client and the Company are satisfied with the design.</p>
+                        <p><strong>Final Design Approval.</strong> Once both the Client and the Company agree on the design, the Client must provide formal approval of the final design mockup. This approval signifies that the design phase is complete and ready for development.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Page 4: Development Continued -->
+            <div class="contract-page" data-page="4">
+                <div class="article">
+                    <h3 class="article-title">ARTICLE II. WEBSITE DEVELOPMENT (continued)</h3>
+                    <div class="article-content">
+                        <p><strong>2.2. Coding.</strong></p>
+                        <p><strong>Method.</strong> Upon receiving the Client's formal approval of the final design mockup, the Company will proceed with website development in accordance with the approved design specifications.</p>
+                        <p><strong>Project Management.</strong> The Parties recognize that Client's participation in all phases of the development of the Website is essential. As such, Project Manager shall use his/her best efforts to complete the project on schedule.</p>
+                        <p><strong>2.3. Schedule.</strong></p>
+                        <p><strong>Alpha Version.</strong> Company shall provide an Alpha Version of Client's Website for Client's testing at Company's facilities within thirty (30) days after the final design approval. Client shall perform complete testing of all aspects of the Alpha Version within ten (10) days after Company's provision of the Alpha Version. CLIENT EXPRESSLY WAIVES ANY RIGHT TO REVOKE ACCEPTANCE.</p>
+                        <p><strong>Beta Version.</strong> Company shall host on its Internet server the Beta Version of Client's Website for Client's testing over the Internet within fifteen (15) days after Client's acceptance of the Alpha Version. Client shall perform complete testing of all aspects of the Beta Version within ten (10) days after Company's provision of the Beta Version. CLIENT EXPRESSLY WAIVES ANY RIGHT TO REVOKE ACCEPTANCE.</p>
+                        <p><strong>Final Version.</strong> Company shall deliver Client's completed Website within ten (10) days after Client's Final Acceptance of the Beta Version.</p>
+                        <p><strong>2.4. Deliverables.</strong> Company's delivery of Client's Final Version shall consist of Company's posting of Client's Website to Company's Internet server.</p>
+                        <p><strong>2.5. Fees and Payment.</strong> Service Fee shall be delivered by Client to Company contemporaneously with Client's endorsement of this Agreement upon signing, and pay to Company the Service Fee stated on the cover sheet to this Agreement ({{SERVICE_FEE}}), beginning on the date of the execution of this Agreement and continuing thereafter on the first day of each month during the term of this Agreement. Additional fees shall be paid by Client to Company for other services.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Page 5: Modifications & Intellectual Property -->
+            <div class="contract-page" data-page="5">
+                <div class="article">
+                    <h3 class="article-title">ARTICLE II. WEBSITE DEVELOPMENT (continued)</h3>
+                    <div class="article-content">
+                        <p><strong>2.6. Modifications Subsequent to Final Acceptance.</strong></p>
+                        <p>After Final Acceptance, Client may desire to modify the Website. Client shall submit its desired modifications in writing to Company. For a period of two (2) to twelve (12) months following Final Acceptance, Company shall make necessary and reasonable modifications to Client's Website.</p>
+                        <p><strong>Additional Fees:</strong></p>
+                        <ul>
+                            <li><strong>Content Changes:</strong> Unlimited content changes at no additional charge (changes taking one hour or less). Requests involving redesign or significant modifications will incur a fee of $150.00 per hour.</li>
+                            <li><strong>Additional Pages:</strong> $100.00 per page beyond the initial five pages (one-time charge). Blog pages are excluded from this charge.</li>
+                            <li><strong>Blog:</strong> Available for a one-time charge of $250.00.</li>
+                            <li><strong>Bug Fixes:</strong> Provided at no additional charge until the bug is resolved.</li>
+                        </ul>
+                        <p><strong>2.7. Copyright and Intellectual Property Ownership.</strong></p>
+                        <p>Company shall be deemed the sole author and owner of all CGI, HTML Code, graphics and data, and their attendant Intellectual Property Rights, that are incorporated into the Website. Company hereby grants, assigns and otherwise transfers non-exclusively and in perpetuity to Client, its successors and its assigns, the right to reproduce the Website, to prepare derivative works therefrom, to publicly perform or to publicly display the Website.</p>
+                        <p>Client shall be deemed the author and owner of Client's Domain Name and its attendant Intellectual Property Rights, and any graphics or data provided by Client that are incorporated into the Website.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Page 6: Warranties & Disclaimers -->
+            <div class="contract-page" data-page="6">
+                <div class="article">
+                    <h3 class="article-title">ARTICLE III. WARRANTIES.</h3>
+                    <div class="article-content">
+                        <p>Company confirms and warrants that:</p>
+                        <p><strong>3.1.</strong> Company has the right to enter into this Agreement and to grant the rights granted in it.</p>
+                        <p><strong>3.2.</strong> Company shall, in good faith, comply with the terms of this Agreement.</p>
+                        <p><strong>3.3.</strong> Company is the sole creator of any Websites designed by Company, except for those graphics and data supplied by Client. The Website shall be prepared in a workmanlike manner, and will function in conjunction with properly configured web browsers including, but not limited to, Chrome, Safari, Edge, and Firefox.</p>
+                    </div>
+                </div>
+                
+                <div class="article">
+                    <h3 class="article-title">ARTICLE IV. DISCLAIMERS.</h3>
+                    <div class="article-content">
+                        <p><strong>4.1. Warranty Disclaimer.</strong> The goods and services provided by Company are provided "AS IS", WITHOUT WARRANTY OF ANY KIND TO CLIENT OR ANY THIRD PARTY, INCLUDING, BUT NOT LIMITED TO, ANY EXPRESS OR IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, QUALITY, ACCURACY, NON-INFRINGEMENT, QUIET ENJOYMENT, TITLE, MARKETABILITY, PROFITABILITY, OR SUITABILITY.</p>
+                        <p><strong>4.2. Limitation of Liability.</strong> CLIENT FURTHER AGREES THAT COMPANY SHALL NOT BE LIABLE TO CLIENT OR ANY THIRD PARTY FOR ANY LOSS OF PROFITS, LOSS OF USE, INTERRUPTION OF BUSINESS, OR ANY DIRECT, INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES OF ANY KIND WHETHER UNDER THIS AGREEMENT OR OTHERWISE, EVEN IF COMPANY WAS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES OR WAS GROSSLY NEGLIGENT.</p>
+                        <p>Some jurisdictions do not permit the exclusion or limitation of liability for consequential or incidental damages, and, as such, some portion of the above limitation may not apply to Client. In such jurisdictions, Company's liability is limited to the greatest extent permitted by law.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Page 7: Termination & Other Terms -->
+            <div class="contract-page" data-page="7">
+                <div class="article">
+                    <h3 class="article-title">ARTICLE V. TERMINATION.</h3>
+                    <div class="article-content">
+                        <p><strong>5.1. Termination by Company.</strong></p>
+                        <p>Company reserves the right to terminate any and all services to Client for no cause and without any reason upon thirty (30) days' notice. Company reserves the right to cancel this Agreement and terminate any and all services to Client immediately, and without prior notice, in the event that Client fails to fulfill any material obligation contained in this Agreement.</p>
+                        <p><strong>Refunds.</strong> Under no circumstances will Client be entitled to a refund of payments made; provided, however, that the Company reserves to itself the sole and exclusive discretion to provide refunds to Clients on a case-by-case basis.</p>
+                        <p><strong>5.2. Post-Termination Rights.</strong> After termination by any party for any reason, Company shall retain the right to recover all accrued charges due and owing by Client to Company through the date of termination.</p>
+                    </div>
+                </div>
+                
+                <div class="article">
+                    <h3 class="article-title">ARTICLE VI - XX. ADDITIONAL TERMS.</h3>
+                    <div class="article-content">
+                        <p><strong>Confidentiality:</strong> Both Parties agree to keep confidential information in strict confidence and only use it for purposes of performing obligations under this Agreement.</p>
+                        <p><strong>Arbitration:</strong> Any dispute concerning the Parties' duties under this Agreement which cannot be resolved within thirty (30) days shall be directed to binding arbitration administered by the American Arbitration Association in the County of Lancaster, State of Pennsylvania.</p>
+                        <p><strong>Governing Law:</strong> This Agreement shall be governed by the laws of the State of Pennsylvania, and venue and jurisdiction for any litigation shall lie in the County of Lancaster, State of Pennsylvania.</p>
+                        <p><strong>Entire Agreement:</strong> This Agreement supersedes any and all other agreements between the Parties and may be amended or modified only in writing.</p>
+                        <p><strong>Assignment:</strong> This Agreement may not be assigned or transferred by either Party without the prior written consent of the other Party.</p>
+                        <p><strong>Authority:</strong> The Parties knowingly and expressly consent to the foregoing terms and conditions. Each signatory is authorized to enter into this Agreement on behalf of its respective Party.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Page 8: Signatures -->
+            <div class="contract-page" data-page="8" id="signature-page">
+                <div class="signature-section">
+                    <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                        <p style="margin: 0; font-size: 0.875rem; color: var(--text-body); line-height: 1.6;">
+                            <strong style="color: var(--headerColor);">Instructions:</strong> Please review all pages of this agreement. Once all required fields on page 1 are completed, click "Submit & Sign Contract" below. You will be redirected to a secure signing page where you can sign electronically.
+                        </p>
+                    </div>
+                    
+                    <div class="signature-block">
+                        <p class="signature-label"><strong>Fishtown Web Design LLC</strong></p>
+                        <p class="signature-label">Signed:</p>
+                        <div class="signature-field company-signature">
+                            <img src="/public/content/contract/George Seibert.png" alt="George Seibert Signature" class="signature-image" onerror="this.style.display='none'; this.parentElement.querySelector('.signature-placeholder').style.display='block';">
+                            <p class="signature-placeholder" style="display: none;">Company signature</p>
+                        </div>
+                        <p class="signature-label" style="font-size: 0.8125rem; margin-bottom: 0.5rem;">Printed Name: George Seibert</p>
+                        <p class="signature-label" style="font-size: 0.8125rem; margin-bottom: 0.5rem;">Title: Founder</p>
+                        <p class="signature-label" style="font-size: 0.8125rem; margin-bottom: 0;">Date: <input type="text" class="signature-input" id="signature-date-company" name="company_signature_date" value="" readonly style="max-width: 200px; font-size: 0.875rem; padding: 0.5rem;"></p>
+                    </div>
+                    
+                    <div class="signature-block">
+                        <p class="signature-label"><strong>Client</strong></p>
+                        <p class="signature-label">Signed:</p>
+                        <div class="signature-field client-signature" id="client-signature-field" style="padding: 1rem; min-height: 150px; display: flex; align-items: center; justify-content: center;">
+                            <!-- DocuSeal signature field - required for DocuSeal to know where to place signature -->
+                            <signature-field 
+                                name="Client Signature" 
+                                role="First Party"
+                                format="drawn_or_typed"
+                                required="true"
+                                style="width: 100%; max-width: 400px; min-height: 120px; border: 2px dashed var(--primary); border-radius: 0.25rem; display: block; margin: 0 auto;">
+                            </signature-field>
+                        </div>
+                        <p class="signature-label" style="font-size: 0.8125rem; margin-bottom: 0.5rem; margin-top: 1rem;">Printed Name: <span class="required" style="color: var(--primary);">*</span>
+                            <text-field 
+                                name="Client Printed Name" 
+                                role="First Party"
+                                required="true"
+                                style="width: 200px; max-width: 200px; font-size: 0.875rem; padding: 0.5rem; border: 1px solid var(--border-medium); border-radius: 0.25rem; display: inline-block;">
+                            </text-field>
+                        </p>
+                        <p class="signature-label" style="font-size: 0.8125rem; margin-bottom: 0;">Date: <span class="required" style="color: var(--primary);">*</span>
+                            <date-field 
+                                name="Client Signature Date" 
+                                role="First Party"
+                                required="true"
+                                style="width: 200px; max-width: 200px; font-size: 0.875rem; padding: 0.5rem; border: 1px solid var(--border-medium); border-radius: 0.25rem; display: inline-block;">
+                            </date-field>
+                        </p>
+                    </div>
+                    
+                    <div class="version-info">Page 14 of 14<br>V1.02</div>
+                </div>
+            </div>
+            
+            <!-- Submit Button - Only shown on signature page (page 8) -->
+            <div id="submit-section" style="display: none; margin-top: 2rem; padding: 1.5rem; background: var(--bg-card); border-radius: 0.5rem; text-align: center;">
+                <p style="margin-bottom: 1rem; color: var(--text-body); font-size: 0.875rem;">
+                    By submitting this form, you agree to the terms and conditions outlined in this contract.
+                </p>
+                <button type="submit" class="skip-button" id="submit-button" style="font-size: 1rem; padding: 1rem 2rem; min-width: 200px;">
+                    Submit & Sign Contract
+                </button>
+                <div id="form-message" style="margin-top: 1rem; display: none; padding: 0.75rem; border-radius: 0.25rem;"></div>
+            </div>
+        </div>
+        </form>
+    </div>
+    
+    <script>
+        let currentPage = 1;
+        const totalPages = document.querySelectorAll('.contract-page').length;
+        
+        // Initialize
+        document.getElementById('total-pages').textContent = totalPages;
+        updateNavigation();
+        initializeDates();
+        validateCompanyFields(); // Initialize company field validation
+        
+        // Initialize dates on page load
+        function initializeDates() {
+            const currentDate = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            const todayISO = new Date().toISOString().split('T')[0];
+            
+            // Set effective date
+            const effectiveDateEl = document.getElementById('display-effective-date');
+            if (effectiveDateEl) {
+                effectiveDateEl.textContent = currentDate;
+            }
+            
+            // Set company signature date (readonly, auto-filled)
+            const companyDateEl = document.getElementById('signature-date-company');
+            if (companyDateEl) companyDateEl.value = currentDate;
+            
+            // Set start date to today (readonly, auto-filled)
+            const startDateEl = document.getElementById('start-date');
+            if (startDateEl) {
+                startDateEl.value = todayISO;
+            }
+            
+            // Set client signature date to today
+            const clientSignatureDateEl = document.getElementById('client-signature-date');
+            if (clientSignatureDateEl) {
+                clientSignatureDateEl.value = todayISO;
+            }
+        }
+        
+        // Update service fee display based on plan type
+        function updateServiceFee() {
+            const planType = document.getElementById('plan-type')?.value;
+            const feeDisplay = document.getElementById('service-fee-display');
+            
+            if (!feeDisplay) return;
+            
+            if (planType === 'monthly') {
+                feeDisplay.value = '$150.00 per month, payable in advance, subject to the terms of Section 2.5 herein.';
+            } else if (planType === 'yearly') {
+                feeDisplay.value = '$1,499.00 per year, payable in advance, subject to the terms of Section 2.5 herein.';
+            } else {
+                feeDisplay.value = 'Select a plan above';
+            }
+        }
+        
+        
+        // Validate company name and company type relationship
+        function validateCompanyFields() {
+            const companyName = document.getElementById('input-company')?.value?.trim() || '';
+            const companyType = document.getElementById('input-client-type')?.value?.trim() || '';
+            const companyRequired = document.getElementById('company-required');
+            const companyTypeRequired = document.getElementById('company-type-required');
+            const companyInput = document.getElementById('input-company');
+            const companyTypeSelect = document.getElementById('input-client-type');
+            
+            // If either is filled, the other becomes required
+            if (companyName || companyType) {
+                if (companyRequired) companyRequired.style.display = 'inline';
+                if (companyTypeRequired) companyTypeRequired.style.display = 'inline';
+                if (companyInput) companyInput.setAttribute('required', 'required');
+                if (companyTypeSelect) companyTypeSelect.setAttribute('required', 'required');
+            } else {
+                if (companyRequired) companyRequired.style.display = 'none';
+                if (companyTypeRequired) companyTypeRequired.style.display = 'none';
+                if (companyInput) companyInput.removeAttribute('required');
+                if (companyTypeSelect) companyTypeSelect.removeAttribute('required');
+            }
+        }
+        
+        // Update contract fields dynamically
+        // Note: This function only works when viewing the template directly
+        // DocuSeal converts HTML to PDF, so this won't run in the signing interface
+        function updateContractFields() {
+            // Get values from input fields
+            const contactName = document.getElementById('input-contact')?.value || '';
+            const companyName = document.getElementById('input-company')?.value || '';
+            const companyType = document.getElementById('input-client-type')?.value || '';
+            
+            // Determine if this is a business or individual client
+            const isBusiness = companyName.trim() !== '' || companyType.trim() !== '';
+            
+            // Build client introduction text based on whether it's a business or individual
+            let clientIntro = '';
+            if (isBusiness) {
+                // Business client
+                if (companyName && companyType) {
+                    clientIntro = `<strong>${companyName}</strong> ("Client"), a Pennsylvania ${companyType}`;
+                } else if (companyName) {
+                    clientIntro = `<strong>${companyName}</strong> ("Client"), a Pennsylvania entity`;
+                } else if (companyType) {
+                    clientIntro = `<strong>${contactName || ''}</strong> ("Client"), a Pennsylvania ${companyType}`;
+                } else {
+                    clientIntro = `<strong>${contactName || ''}</strong> ("Client"), a Pennsylvania entity`;
+                }
+            } else {
+                // Individual client
+                clientIntro = `<strong>${contactName || ''}</strong> ("Client"), an individual`;
+            }
+            
+            // Update client introduction display in agreement text
+            const clientIntroDisplay = document.getElementById('display-client-intro');
+            if (clientIntroDisplay && clientIntro) {
+                clientIntroDisplay.innerHTML = clientIntro;
+            }
+        }
+        
+        function changePage(direction) {
+            const newPage = currentPage + direction;
+            if (newPage < 1 || newPage > totalPages) return;
+            
+            // Hide current page
+            document.querySelector(`.contract-page[data-page="${currentPage}"]`).classList.remove('active');
+            
+            // Show new page
+            currentPage = newPage;
+            document.querySelector(`.contract-page[data-page="${currentPage}"]`).classList.add('active');
+            
+            updateNavigation();
+            scrollToTop();
+        }
+        
+        function goToSignatures() {
+            const signaturePage = document.getElementById('signature-page');
+            if (signaturePage) {
+                // Hide current page
+                document.querySelector(`.contract-page[data-page="${currentPage}"]`).classList.remove('active');
+                
+                // Show signature page
+                currentPage = parseInt(signaturePage.getAttribute('data-page'));
+                signaturePage.classList.add('active');
+                
+                updateNavigation();
+                scrollToTop();
+                
+                // Scroll to signature section when signature page becomes visible
+                setTimeout(() => {
+                    const firstSignature = signaturePage.querySelector('.signature-field');
+                    if (firstSignature) {
+                        firstSignature.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 300);
+            }
+        }
+        
+        
+        function updateNavigation() {
+            document.getElementById('current-page').textContent = currentPage;
+            
+            // Update progress bar
+            const progress = (currentPage / totalPages) * 100;
+            document.getElementById('progress-fill').style.width = progress + '%';
+            
+            // Update arrow buttons
+            document.getElementById('prev-btn').disabled = currentPage === 1;
+            document.getElementById('next-btn').disabled = currentPage === totalPages;
+            
+            // Hide skip button on signature page
+            const skipButton = document.getElementById('skip-button');
+            if (currentPage === totalPages) {
+                skipButton.style.display = 'none';
+            } else {
+                skipButton.style.display = 'block';
+            }
+            
+            // Show submit button only on signature page (page 8)
+            const submitSection = document.getElementById('submit-section');
+            if (submitSection) {
+                if (currentPage === totalPages) {
+                    submitSection.style.display = 'block';
+                    // Scroll to submit button after a brief delay
+                    setTimeout(() => {
+                        submitSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 300);
+                } else {
+                    submitSection.style.display = 'none';
+                }
+            }
+        }
+        
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                changePage(-1);
+            } else if (e.key === 'ArrowRight') {
+                changePage(1);
+            }
+        });
+        
+        // Handle form submission
+        async function handleFormSubmit(event) {
+            console.log('[CONTRACT] Form submission started');
+            event.preventDefault();
+            event.stopPropagation();
+            
+            const form = document.getElementById('contract-form');
+            const submitButton = document.getElementById('submit-button');
+            const messageDiv = document.getElementById('form-message');
+            
+            // Remove any remaining required attributes to prevent HTML5 validation
+            const allRequiredFields = form.querySelectorAll('[required]');
+            console.log('[CONTRACT] Found', allRequiredFields.length, 'fields with required attribute');
+            allRequiredFields.forEach(field => {
+                field.removeAttribute('required');
+            });
+            
+            // Validate required fields
+            const requiredFields = {
+                client_name: document.getElementById('input-contact')?.value,
+                client_email: document.getElementById('input-email')?.value,
+                client_phone: document.getElementById('input-phone')?.value,
+                business_address: document.getElementById('input-address')?.value,
+                plan_type: document.getElementById('plan-type')?.value
+            };
+            
+            const companyName = document.getElementById('input-company')?.value?.trim() || '';
+            const companyType = document.getElementById('input-client-type')?.value?.trim() || '';
+            
+            console.log('[CONTRACT] Field validation:', {
+                client_name: requiredFields.client_name ? '✓' : '✗',
+                client_email: requiredFields.client_email ? '✓' : '✗',
+                client_phone: requiredFields.client_phone ? '✓' : '✗',
+                business_address: requiredFields.business_address ? '✓' : '✗',
+                plan_type: requiredFields.plan_type ? '✓' : '✗',
+                company_name: companyName ? '✓' : '✗',
+                company_type: companyType ? '✓' : '✗'
+            });
+            
+            // Check for missing required fields
+            const missingFields = [];
+            if (!requiredFields.client_name || requiredFields.client_name.trim() === '') {
+                missingFields.push('Contact Name');
+            }
+            if (!requiredFields.client_email || requiredFields.client_email.trim() === '') {
+                missingFields.push('Email');
+            }
+            if (!requiredFields.client_phone || requiredFields.client_phone.trim() === '') {
+                missingFields.push('Phone');
+            }
+            if (!requiredFields.business_address || requiredFields.business_address.trim() === '') {
+                missingFields.push('Address');
+            }
+            if (!requiredFields.plan_type) {
+                missingFields.push('Plan Type');
+            }
+            
+            // Validate company name and company type relationship
+            if (companyName && !companyType) {
+                missingFields.push('Company Type (required when Company Name is provided)');
+            }
+            if (companyType && !companyName) {
+                missingFields.push('Company Name (required when Company Type is selected)');
+            }
+            
+            if (missingFields.length > 0) {
+                console.warn('[CONTRACT] Validation failed - missing fields:', missingFields);
+                showMessage('Please fill in all required fields: ' + missingFields.join(', '), 'error');
+                // Go to first page to show missing fields
+                currentPage = 1;
+                document.querySelectorAll('.contract-page').forEach(page => page.classList.remove('active'));
+                document.querySelector('.contract-page[data-page="1"]')?.classList.add('active');
+                updateNavigation();
+                scrollToTop();
+                return;
+            }
+            
+            // Disable submit button
+            submitButton.disabled = true;
+            submitButton.textContent = 'Creating Contract...';
+            messageDiv.style.display = 'none';
+            
+            try {
+                // Collect form data
+                const formData = new FormData(form);
+                const data = {
+                    subscriptionId: 'sub-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9),
+                    client_name: formData.get('client_name'),
+                    client_email: formData.get('client_email'),
+                    client_phone: formData.get('client_phone'),
+                    business_name: formData.get('business_name') || '',
+                    business_address: formData.get('business_address') || '',
+                    client_type: formData.get('client_type') || '',
+                    plan_type: formData.get('plan_type'),
+                    start_date: formData.get('start_date') || null
+                };
+                
+                console.log('[CONTRACT] Submitting data to server:', {
+                    subscriptionId: data.subscriptionId,
+                    client_name: data.client_name,
+                    client_email: data.client_email,
+                    client_phone: data.client_phone ? '***' : null,
+                    plan_type: data.plan_type,
+                    has_business_name: !!data.business_name,
+                    has_start_date: !!data.start_date
+                });
+                
+                const requestStartTime = Date.now();
+                
+                // Submit to server
+                const response = await fetch('/api/purchase/create-contract', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const requestDuration = Date.now() - requestStartTime;
+                console.log('[CONTRACT] Server response received:', {
+                    status: response.status,
+                    statusText: response.statusText,
+                    duration: requestDuration + 'ms',
+                    contentType: response.headers.get('content-type')
+                });
+                
+                // Read response body once (can only be read once)
+                let responseText;
+                try {
+                    responseText = await response.text();
+                    console.log('[CONTRACT] Response text length:', responseText.length, 'chars');
+                } catch (e) {
+                    console.error('[CONTRACT] Failed to read response text:', e);
+                    showMessage('Failed to read server response. Please try again.', 'error');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit & Sign Contract';
+                    return;
+                }
+                
+                // Check if response is OK
+                if (!response.ok) {
+                    console.error('[CONTRACT] Server returned error status:', response.status);
+                    // Try to parse error response as JSON
+                    let errorMessage = 'Failed to create contract. Please try again.';
+                    let errorDetails = null;
+                    try {
+                        const errorData = JSON.parse(responseText);
+                        errorMessage = errorData.message || errorMessage;
+                        errorDetails = errorData;
+                        console.error('[CONTRACT] Error response data:', errorData);
+                    } catch (e) {
+                        // If response is not JSON, use status text
+                        console.error('[CONTRACT] Non-JSON error response:', responseText.substring(0, 200));
+                        errorMessage = `Server error (${response.status}): ${response.statusText || 'Please try again later.'}`;
+                    }
+                    showMessage(errorMessage, 'error');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit & Sign Contract';
+                    return;
+                }
+                
+                // Parse JSON response (we already have the text)
+                let result;
+                try {
+                    result = JSON.parse(responseText);
+                    console.log('[CONTRACT] Parsed response:', {
+                        success: result.success,
+                        hasSigningUrl: !!result.signingUrl,
+                        submissionId: result.submissionId,
+                        message: result.message
+                    });
+                } catch (e) {
+                    console.error('[CONTRACT] Failed to parse JSON response:', e);
+                    console.error('[CONTRACT] Response text was:', responseText.substring(0, 500));
+                    showMessage('Invalid response from server. Please try again or contact support.', 'error');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit & Sign Contract';
+                    return;
+                }
+                
+                if (result.success && result.signingUrl) {
+                    console.log('[CONTRACT] Success! Showing payment and signing options');
+                    // Success - show payment button and signing link
+                    showSuccessWithPayment(result.signingUrl, result.paymentUrl);
+                } else {
+                    console.warn('[CONTRACT] Response indicates failure:', result);
+                    // Error
+                    showMessage(result.message || 'Failed to create contract. Please try again.', 'error');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit & Sign Contract';
+                }
+            } catch (error) {
+                console.error('[CONTRACT] Form submission error:', error);
+                console.error('[CONTRACT] Error details:', {
+                    name: error.name,
+                    message: error.message,
+                    stack: error.stack?.substring(0, 500)
+                });
+                let errorMessage = 'An error occurred. Please try again or contact support.';
+                if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                    errorMessage = 'Network error. Please check your connection and try again.';
+                } else if (error.message) {
+                    errorMessage = `Error: ${error.message}`;
+                }
+                showMessage(errorMessage, 'error');
+                submitButton.disabled = false;
+                submitButton.textContent = 'Submit & Sign Contract';
+            }
+        }
+        
+        // Show message to user
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('form-message');
+            if (!messageDiv) return;
+            
+            messageDiv.innerHTML = ''; // Clear any previous HTML
+            messageDiv.textContent = message;
+            messageDiv.style.display = 'block';
+            
+            if (type === 'success') {
+                messageDiv.style.backgroundColor = '#d4edda';
+                messageDiv.style.color = '#155724';
+                messageDiv.style.border = '1px solid #c3e6cb';
+            } else {
+                messageDiv.style.backgroundColor = '#f8d7da';
+                messageDiv.style.color = '#721c24';
+                messageDiv.style.border = '1px solid #f5c6cb';
+            }
+            
+            // Scroll to message
+            messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        // Show success message with payment and signing buttons
+        function showSuccessWithPayment(signingUrl, paymentUrl) {
+            const messageDiv = document.getElementById('form-message');
+            if (!messageDiv) return;
+            
+            messageDiv.style.backgroundColor = '#d4edda';
+            messageDiv.style.color = '#155724';
+            messageDiv.style.border = '1px solid #c3e6cb';
+            messageDiv.style.padding = '1.5rem';
+            messageDiv.style.display = 'block';
+            
+            const paymentUrlFinal = paymentUrl || 'https://square.link/u/xTet1TLc';
+            
+            messageDiv.innerHTML = `
+                <div style="text-align: center;">
+                    <p style="margin: 0 0 1rem 0; font-weight: 600; font-size: 1.1rem;">Contract created successfully!</p>
+                    <p style="margin: 0 0 1.5rem 0;">Next steps:</p>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                        <a href="${signingUrl}" 
+                           target="_blank"
+                           style="
+                               display: inline-block;
+                               font-size: 18px;
+                               line-height: 48px;
+                               height: 48px;
+                               color: #ffffff;
+                               min-width: 212px;
+                               background-color: #155724;
+                               text-align: center;
+                               box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset;
+                               border-radius: 6px;
+                               text-decoration: none;
+                               padding: 0 20px;
+                           ">Sign Contract</a>
+                        <a href="${paymentUrlFinal}?src=embed" 
+                           target="_blank" 
+                           id="payment-button"
+                           style="
+                               display: inline-block;
+                               font-size: 18px;
+                               line-height: 48px;
+                               height: 48px;
+                               color: #ffffff;
+                               min-width: 212px;
+                               background-color: #006aff;
+                               text-align: center;
+                               box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset;
+                               border-radius: 6px;
+                               text-decoration: none;
+                               padding: 0 20px;
+                           ">Pay Now</a>
+                    </div>
+                </div>
+            `;
+            
+            // Add click handler for payment button to open in modal
+            const paymentButton = document.getElementById('payment-button');
+            if (paymentButton) {
+                paymentButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showCheckoutWindow(e, paymentUrlFinal);
+                });
+            }
+            
+            // Scroll to message
+            messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        // Function to show checkout window (from Square embed code)
+        function showCheckoutWindow(e, url) {
+            e.preventDefault();
+            
+            const checkoutUrl = url || (e.target.getAttribute('data-url') || e.target.href);
+            const title = 'Square Payment Links';
+            
+            // Some platforms embed in an iframe, so we want to top window to calculate sizes correctly
+            const topWindow = window.top ? window.top : window;
+            
+            // Fixes dual-screen position                                Most browsers          Firefox
+            const dualScreenLeft = topWindow.screenLeft !==  undefined ? topWindow.screenLeft : topWindow.screenX;
+            const dualScreenTop = topWindow.screenTop !==  undefined   ? topWindow.screenTop  : topWindow.screenY;
+            
+            const width = topWindow.innerWidth ? topWindow.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+            const height = topWindow.innerHeight ? topWindow.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+            
+            const h = height * .75;
+            const w = 500;
+            
+            const systemZoom = width / topWindow.screen.availWidth;
+            const left = (width - w) / 2 / systemZoom + dualScreenLeft;
+            const top = (height - h) / 2 / systemZoom + dualScreenTop;
+            const newWindow = window.open(checkoutUrl, title, `scrollbars=yes, width=${w / systemZoom}, height=${h / systemZoom}, top=${top}, left=${left}`);
+            
+            if (window.focus) newWindow.focus();
+        }
+    </script>
+</body>
+</html>

@@ -65,6 +65,29 @@ async function initializeDatabase() {
     `;
 
     await connection.execute(createQuestionnaireTableQuery);
+
+    // Create contract_submissions table
+    const createContractTableQuery = `
+      CREATE TABLE IF NOT EXISTS contract_submissions (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        subscription_id VARCHAR(255) NOT NULL,
+        client_name VARCHAR(255) NOT NULL,
+        client_email VARCHAR(255) NOT NULL,
+        client_phone VARCHAR(50) NOT NULL,
+        business_name VARCHAR(255),
+        business_address TEXT,
+        plan_type ENUM('monthly', 'yearly') NOT NULL,
+        start_date DATE,
+        docuseal_submission_id VARCHAR(255),
+        signing_url TEXT,
+        status ENUM('pending', 'sent', 'signed', 'completed', 'cancelled') DEFAULT 'pending',
+        signed_pdf_url TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        signed_at TIMESTAMP NULL
+      )
+    `;
+
+    await connection.execute(createContractTableQuery);
     console.log('Database tables initialized successfully');
     connection.release();
   } catch (error) {
