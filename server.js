@@ -2182,10 +2182,7 @@ app.get('/home', (req, res) => {
   res.redirect(301, '/'); // 301 is for a permanent redirect
 });
 
-// Redirect /tos to /terms-of-service
-app.get('/tos', (req, res) => {
-  res.redirect(301, '/terms-of-service');
-});
+// Note: /tos route is defined below with other page routes
 
 // High-value page redirects (301 permanent redirects to preserve SEO value)
 // These pages were deleted but still get significant traffic from Google
@@ -2256,8 +2253,12 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public/home.html')
 app.get('/about', (req, res) => res.sendFile(path.join(__dirname, 'public/about.html')));
 app.get('/pricing', (req, res) => res.sendFile(path.join(__dirname, 'public/pricing.html')));
 app.get('/contact', (req, res) => res.sendFile(path.join(__dirname, 'public/contact.html')));
-app.get('/terms-of-service', (req, res) => res.sendFile(path.join(__dirname, 'public/tos.html')));
-app.get('/privacy-policy', (req, res) => res.sendFile(path.join(__dirname, 'public/pp.html')));
+// Terms of Service and Privacy Policy routes
+app.get('/tos', (req, res) => res.sendFile(path.join(__dirname, 'public/tos.html')));
+app.get('/pp', (req, res) => res.sendFile(path.join(__dirname, 'public/pp.html')));
+// Redirect old URLs to new canonical URLs
+app.get('/terms-of-service', (req, res) => res.redirect(301, '/tos'));
+app.get('/privacy-policy', (req, res) => res.redirect(301, '/pp'));
 app.get('/faq', (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html')));
 app.get('/web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/web-design.html')));
 app.get('/seo', (req, res) => res.sendFile(path.join(__dirname, 'public/seo.html')));
