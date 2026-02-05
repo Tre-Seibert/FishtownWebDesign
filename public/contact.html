@@ -320,6 +320,9 @@
                             <!-- Honeypot Spam Protection -->
                             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
+                            <p style="font-size: 0.8rem; color: var(--text-body); margin: 0.75rem 0 1rem 0; line-height: 1.5;">
+                                By submitting this form, you agree to our <a href="/pp" style="color: var(--primary); text-decoration: underline;">Privacy Policy</a> and consent to being contacted regarding your inquiry.
+                            </p>
                             <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
                         </form>
                     </div>
@@ -718,5 +721,63 @@
             <button id="close-footer-newsletter-modal" class="modal-button">Close</button>
         </div>
     </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; color: #fff; padding: 1rem 1.5rem; z-index: 10000; box-shadow: 0 -4px 20px rgba(0,0,0,0.3);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+            <p style="margin: 0; font-size: 0.9rem; flex: 1; min-width: 280px; line-height: 1.5;">
+                We use cookies to enhance your experience and analyze site traffic. By clicking "Accept", you consent to our use of cookies. 
+                <a href="/pp" style="color: #f8c882; text-decoration: underline;">Privacy Policy</a>
+            </p>
+            <div style="display: flex; gap: 0.75rem; flex-shrink: 0;">
+                <button id="cookie-decline" style="padding: 0.6rem 1.25rem; background: transparent; border: 1px solid #666; color: #fff; border-radius: 4px; cursor: pointer; font-size: 0.875rem; transition: all 0.2s;">Decline</button>
+                <button id="cookie-accept" style="padding: 0.6rem 1.25rem; background: #f8c882; border: none; color: #1a1a1a; border-radius: 4px; cursor: pointer; font-size: 0.875rem; font-weight: 600; transition: all 0.2s;">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Consent Management
+        (function() {
+            const banner = document.getElementById('cookie-consent-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            
+            const consent = localStorage.getItem('cookie-consent');
+            
+            if (consent === null) {
+                banner.style.display = 'block';
+            } else if (consent === 'accepted') {
+                loadGoogleAnalytics();
+            }
+            
+            acceptBtn.addEventListener('click', function() {
+                localStorage.setItem('cookie-consent', 'accepted');
+                banner.style.display = 'none';
+                loadGoogleAnalytics();
+            });
+            
+            declineBtn.addEventListener('click', function() {
+                localStorage.setItem('cookie-consent', 'declined');
+                banner.style.display = 'none';
+            });
+            
+            function loadGoogleAnalytics() {
+                if (window.gaLoaded) return;
+                window.gaLoaded = true;
+                
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E';
+                document.head.appendChild(script);
+                
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                gtag('js', new Date());
+                gtag('config', 'G-P9ZFLQPT8E');
+            }
+        })();
+    </script>
 </body>
 </html>
