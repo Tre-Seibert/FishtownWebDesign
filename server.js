@@ -2266,7 +2266,6 @@ app.get('/unsubscribe', (req, res) => res.sendFile(path.join(__dirname, 'public/
 
 // Contract form route - users fill out contract here
 app.get('/contract', (req, res) => {
-  res.set('X-Robots-Tag', 'noindex, nofollow, noarchive, nosnippet');
   return res.sendFile(path.join(__dirname, 'public/contract-template.html'));
 });
 
