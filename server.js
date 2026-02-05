@@ -14,6 +14,12 @@ require('dotenv').config();
  * - DOCUSEAL_API_KEY - DocuSeal API authentication token (required for /api/purchase/create-contract)
  * - DOCUSEAL_API_URL (optional, defaults to 'https://api.docuseal.co')
  * 
+ * Square API (for payments):
+ * - SQUARE_ACCESS_TOKEN - Square API access token (from Square Developer Dashboard)
+ * - SQUARE_ENVIRONMENT - 'sandbox' or 'production' (default: 'sandbox')
+ * - SQUARE_LOCATION_ID - Square location ID for the business
+ * - SQUARE_WEBHOOK_SIGNATURE_KEY - Signature key for verifying Square webhooks
+ * 
  * Webhooks:
  * - WEBHOOK_SECRET_TOKEN - Secret token for webhook authentication
  * - NEWSLETTER_SECRET_TOKEN - Secret token for newsletter sending
@@ -30,11 +36,26 @@ const winston = require('winston');
 const { pool, testConnection, initializeDatabase } = require('./public/scripts/database');
 const zohoMailService = require('./public/scripts/zohoMail');
 const fs = require('fs').promises;
+const { SquareClient, SquareEnvironment } = require('square');
+
+// Initialize Square client
+const squareClient = new SquareClient({
+  token: process.env.SQUARE_ACCESS_TOKEN,
+  environment: process.env.SQUARE_ENVIRONMENT === 'production' 
+    ? SquareEnvironment.Production 
+    : SquareEnvironment.Sandbox
+});
 
 // Define a port number
 const port = 7000;
 
-app.use(express.json());
+// Custom middleware to skip JSON parsing for Square webhook (needs raw body for signature verification)
+app.use((req, res, next) => {
+  if (req.path === '/webhook/square') {
+    return next();
+  }
+  express.json()(req, res, next);
+});
 
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -336,6 +357,477 @@ app.post('/webhook/docuseal', async (req, res) => {
   }
 });
 
+/**
+ * Calculate prorated amount for monthly plan based on days remaining in month
+ * Billing cycle: 1st of each month
+ * 
+ * @param {number} monthlyAmountCents - Full monthly amount in cents (e.g., 15000 for $150)
+ * @returns {Object} - { proratedAmountCents, daysRemaining, daysInMonth, startDate, nextBillingDate }
+ */
+function calculateProratedAmount(monthlyAmountCents) {
+  const now = new Date();
+  const currentDay = now.getDate();
+  const currentMonth = now.getMonth();
+  const currentYear = now.getFullYear();
+  
+  // Get days in current month
+  const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+  
+  // Days remaining including today
+  const daysRemaining = daysInMonth - currentDay + 1;
+  
+  // Calculate prorated amount (round to nearest cent)
+  const dailyRate = monthlyAmountCents / daysInMonth;
+  const proratedAmountCents = Math.round(dailyRate * daysRemaining);
+  
+  // Next billing date is 1st of next month
+  const nextBillingDate = new Date(currentYear, currentMonth + 1, 1);
+  
+  return {
+    proratedAmountCents,
+    daysRemaining,
+    daysInMonth,
+    dailyRateCents: Math.round(dailyRate),
+    startDate: now.toISOString().split('T')[0],
+    nextBillingDate: nextBillingDate.toISOString().split('T')[0],
+    isFullMonth: currentDay === 1 // No proration needed if signing on 1st
+  };
+}
+
+/**
+ * Square Checkout API - Create payment link with redirect to questionnaire
+ * Supports prorated first month for monthly plans
+ * 
+ * POST /api/square/create-checkout
+ * Body: {
+ *   client_email: "client@example.com",
+ *   client_name: "John Doe",
+ *   plan_type: "monthly" | "yearly",
+ *   contract_submission_id: 123 (optional - links payment to contract),
+ *   subscription_plan_variation_id: "..." (optional - for subscription checkout)
+ * }
+ * 
+ * Returns: { success: true, checkoutUrl: "https://square.link/...", paymentLinkId: "...", proration: {...} }
+ */
+app.post('/api/square/create-checkout', async (req, res) => {
+  res.set('X-Robots-Tag', 'noindex, nofollow, noarchive, nosnippet');
+  
+  try {
+    const { client_email, client_name, plan_type, contract_submission_id, subscription_plan_variation_id } = req.body || {};
+
+    // Validate required fields
+    if (!client_email || !plan_type) {
+      return res.status(400).json({
+        success: false,
+        message: 'Missing required fields: client_email and plan_type are required.'
+      });
+    }
+
+    // Validate plan_type
+    const normalizedPlanType = (plan_type || '').toLowerCase().trim();
+    if (!['monthly', 'yearly'].includes(normalizedPlanType)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid plan_type. Must be "monthly" or "yearly".'
+      });
+    }
+
+    // Check if Square is configured
+    if (!process.env.SQUARE_ACCESS_TOKEN) {
+      logger.error('Square API not configured - SQUARE_ACCESS_TOKEN missing');
+      return res.status(500).json({
+        success: false,
+        message: 'Payment service is not properly configured. Please contact support.'
+      });
+    }
+
+    // Build redirect URL to questionnaire with email pre-filled
+    const questionnaireRedirectUrl = `https://www.fishtownwebdesign.com/questionnaire?email=${encodeURIComponent(client_email)}&payment=success`;
+
+    // Generate unique idempotency key
+    const idempotencyKey = `checkout-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+
+    let amountCents;
+    let planDescription;
+    let prorationInfo = null;
+
+    if (normalizedPlanType === 'yearly') {
+      // Yearly plan - no proration, full amount
+      amountCents = 149900; // $1,499.00
+      planDescription = 'Website Development Service - Annual Plan';
+    } else {
+      // Monthly plan - calculate prorated first payment
+      const proration = calculateProratedAmount(15000); // $150.00 base
+      prorationInfo = proration;
+      
+      if (proration.isFullMonth) {
+        // Signing on 1st of month - full price
+        amountCents = 15000;
+        planDescription = 'Website Development Service - Monthly Plan';
+      } else {
+        // Prorated first month
+        amountCents = proration.proratedAmountCents;
+        planDescription = `Website Development Service - First Month (Prorated: ${proration.daysRemaining} days)`;
+      }
+      
+      logger.info('Monthly plan proration calculated', {
+        client_email,
+        fullMonthCents: 15000,
+        proratedCents: amountCents,
+        daysRemaining: proration.daysRemaining,
+        daysInMonth: proration.daysInMonth,
+        nextBillingDate: proration.nextBillingDate
+      });
+    }
+
+    logger.info('Creating Square checkout', {
+      client_email,
+      plan_type: normalizedPlanType,
+      amountCents,
+      isProrated: prorationInfo && !prorationInfo.isFullMonth,
+      contract_submission_id
+    });
+
+    // Check if we should create a subscription checkout or one-time payment
+    // Subscription checkout requires a subscription_plan_variation_id from Square Catalog
+    let checkoutResponse;
+    
+    if (subscription_plan_variation_id) {
+      // Create subscription checkout (Square handles recurring billing)
+      checkoutResponse = await squareClient.checkout.paymentLinks.create({
+        idempotencyKey,
+        checkoutOptions: {
+          redirectUrl: questionnaireRedirectUrl,
+          askForShippingAddress: false,
+          subscriptionPlanId: subscription_plan_variation_id
+        },
+        prePopulatedData: {
+          buyerEmail: client_email
+        }
+      });
+    } else {
+      // Create one-time payment checkout (for prorated first payment)
+      // Note: For full subscription support, you'll need to create subscription plans in Square Dashboard
+      // and pass the subscription_plan_variation_id
+      checkoutResponse = await squareClient.checkout.paymentLinks.create({
+        idempotencyKey,
+        order: {
+          locationId: process.env.SQUARE_LOCATION_ID,
+          lineItems: [
+            {
+              name: planDescription,
+              quantity: '1',
+              basePriceMoney: {
+                amount: BigInt(amountCents),
+                currency: 'USD'
+              },
+              note: normalizedPlanType === 'monthly' && prorationInfo 
+                ? `Prorated for ${prorationInfo.daysRemaining} days. Next billing: ${prorationInfo.nextBillingDate} at $150.00/month`
+                : undefined
+            }
+          ]
+        },
+        checkoutOptions: {
+          redirectUrl: questionnaireRedirectUrl,
+          askForShippingAddress: false
+        },
+        prePopulatedData: {
+          buyerEmail: client_email
+        }
+      });
+    }
+
+    const paymentLink = checkoutResponse.paymentLink;
+    
+    if (!paymentLink || !paymentLink.url) {
+      logger.error('Invalid Square checkout response', { response: checkoutResponse });
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to create checkout. Please try again.'
+      });
+    }
+
+    logger.info('Square checkout created successfully', {
+      paymentLinkId: paymentLink?.id,
+      orderId: paymentLink?.orderId,
+      client_email
+    });
+
+    // Store payment record in database
+    try {
+      const connection = await pool.getConnection();
+      await connection.execute(
+        `INSERT INTO square_payments 
+          (contract_submission_id, payment_link_id, payment_link_url, order_id, client_email, client_name, plan_type, amount_cents, redirect_url, status)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')`,
+        [
+          contract_submission_id || null,
+          paymentLink.id,
+          paymentLink.url,
+          paymentLink.orderId || null,
+          client_email,
+          client_name || null,
+          normalizedPlanType,
+          amountCents,
+          questionnaireRedirectUrl
+        ]
+      );
+      connection.release();
+    } catch (dbError) {
+      // Log but don't fail - payment link was created successfully
+      logger.warn('Failed to store Square payment record', {
+        error: dbError.message,
+        paymentLinkId: paymentLink.id
+      });
+    }
+
+    return res.json({
+      success: true,
+      checkoutUrl: paymentLink.url,
+      paymentLinkId: paymentLink.id,
+      orderId: paymentLink.orderId,
+      proration: prorationInfo ? {
+        isProrated: !prorationInfo.isFullMonth,
+        originalAmountCents: 15000,
+        proratedAmountCents: amountCents,
+        daysRemaining: prorationInfo.daysRemaining,
+        daysInMonth: prorationInfo.daysInMonth,
+        nextBillingDate: prorationInfo.nextBillingDate
+      } : null
+    });
+
+  } catch (error) {
+    logger.error('Error creating Square checkout', {
+      error: error.message,
+      stack: error.stack,
+      squareErrors: error.errors
+    });
+
+    // Handle Square API errors
+    if (error.errors) {
+      const squareError = error.errors[0];
+      return res.status(400).json({
+        success: false,
+        message: squareError.detail || 'Failed to create checkout.',
+        code: squareError.code
+      });
+    }
+
+    return res.status(500).json({
+      success: false,
+      message: 'There was an error creating your checkout. Please try again later.'
+    });
+  }
+});
+
+/**
+ * Square Webhook Handler - Receives payment events from Square
+ * 
+ * POST /webhook/square
+ * 
+ * Handles events:
+ * - payment.completed - Payment was successful
+ * - payment.updated - Payment status changed
+ * - order.fulfillment.updated - Order fulfillment status changed
+ * 
+ * On successful payment, sends email with questionnaire link
+ */
+app.post('/webhook/square', express.raw({ type: 'application/json' }), async (req, res) => {
+  try {
+    const signature = req.headers['x-square-hmacsha256-signature'];
+    const webhookSignatureKey = process.env.SQUARE_WEBHOOK_SIGNATURE_KEY;
+    
+    // Parse the body
+    let webhookData;
+    if (Buffer.isBuffer(req.body)) {
+      webhookData = JSON.parse(req.body.toString());
+    } else if (typeof req.body === 'string') {
+      webhookData = JSON.parse(req.body);
+    } else {
+      webhookData = req.body;
+    }
+
+    logger.info('Square webhook received', {
+      eventType: webhookData.type,
+      eventId: webhookData.event_id,
+      hasSignature: !!signature
+    });
+
+    // Optional: Verify webhook signature (recommended for production)
+    // Square provides HMAC-SHA256 signature verification
+    // For now, we'll log if signature is missing but continue processing
+    if (webhookSignatureKey && !signature) {
+      logger.warn('Square webhook missing signature - consider verifying in production');
+    }
+
+    const eventType = webhookData.type;
+    const eventData = webhookData.data?.object;
+
+    // Handle payment.completed event
+    if (eventType === 'payment.completed' || eventType === 'payment.updated') {
+      const payment = eventData?.payment;
+      
+      if (!payment) {
+        logger.warn('Square webhook missing payment data', { webhookData });
+        return res.status(200).json({ success: true, message: 'Webhook received' });
+      }
+
+      const paymentStatus = payment.status;
+      const orderId = payment.order_id;
+      const paymentId = payment.id;
+      const amountMoney = payment.amount_money;
+
+      logger.info('Square payment event', {
+        paymentId,
+        orderId,
+        status: paymentStatus,
+        amount: amountMoney?.amount,
+        currency: amountMoney?.currency
+      });
+
+      // Only process completed payments
+      if (paymentStatus === 'COMPLETED') {
+        const connection = await pool.getConnection();
+        
+        try {
+          // Find the payment record by order_id
+          const [payments] = await connection.execute(
+            'SELECT id, client_email, client_name, plan_type, contract_submission_id, status FROM square_payments WHERE order_id = ?',
+            [orderId]
+          );
+
+          if (payments.length > 0) {
+            const paymentRecord = payments[0];
+
+            // Update payment status
+            await connection.execute(
+              `UPDATE square_payments 
+               SET status = 'completed', 
+                   square_payment_id = ?, 
+                   completed_at = CURRENT_TIMESTAMP,
+                   webhook_received_at = CURRENT_TIMESTAMP 
+               WHERE id = ?`,
+              [paymentId, paymentRecord.id]
+            );
+
+            // Update contract submission status if linked
+            if (paymentRecord.contract_submission_id) {
+              await connection.execute(
+                `UPDATE contract_submissions SET status = 'completed' WHERE id = ?`,
+                [paymentRecord.contract_submission_id]
+              );
+            }
+
+            logger.info('Square payment marked as completed', {
+              paymentRecordId: paymentRecord.id,
+              paymentId,
+              client_email: paymentRecord.client_email
+            });
+
+            // Send confirmation email with questionnaire link
+            if (paymentRecord.client_email) {
+              try {
+                const questionnaireUrl = `https://www.fishtownwebdesign.com/questionnaire?email=${encodeURIComponent(paymentRecord.client_email)}`;
+                const planName = paymentRecord.plan_type === 'yearly' ? 'Annual' : 'Monthly';
+                
+                const emailHtml = `
+                  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                    <h1 style="color: #1a1a2e;">Payment Received - Thank You!</h1>
+                    <p>Hi ${paymentRecord.client_name || 'there'},</p>
+                    <p>Thank you for your payment! Your <strong>${planName} Plan</strong> subscription is now active.</p>
+                    <p>To get started, please complete our client questionnaire. This helps us understand your business and build the perfect website for you:</p>
+                    <p style="margin: 30px 0;">
+                      <a href="${questionnaireUrl}" 
+                         style="background-color: #ff6b35; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; display: inline-block;">
+                        Complete Your Questionnaire
+                      </a>
+                    </p>
+                    <p>If you have any questions, reply to this email or contact us at <a href="mailto:sales@fishtownwebdesign.com">sales@fishtownwebdesign.com</a>.</p>
+                    <p>Best regards,<br>The Fishtown Web Design Team</p>
+                  </div>
+                `;
+
+                await zohoMailService.sendEmail(
+                  paymentRecord.client_email,
+                  'Payment Received - Complete Your Questionnaire',
+                  emailHtml
+                );
+
+                logger.info('Payment confirmation email sent', {
+                  client_email: paymentRecord.client_email
+                });
+              } catch (emailError) {
+                logger.error('Failed to send payment confirmation email', {
+                  error: emailError.message,
+                  client_email: paymentRecord.client_email
+                });
+              }
+            }
+          } else {
+            logger.warn('No payment record found for Square order', { orderId });
+          }
+
+          connection.release();
+        } catch (dbError) {
+          connection.release();
+          throw dbError;
+        }
+      }
+    }
+
+    // Handle order.fulfillment.updated event (alternative event type)
+    if (eventType === 'order.fulfillment.updated') {
+      logger.info('Square order fulfillment updated', {
+        orderId: eventData?.order?.id,
+        state: eventData?.fulfillment?.state
+      });
+    }
+
+    // Handle subscription.created event
+    if (eventType === 'subscription.created') {
+      const subscription = eventData?.subscription || eventData;
+      logger.info('Square subscription created', {
+        subscriptionId: subscription?.id,
+        customerId: subscription?.customerId,
+        planId: subscription?.planId,
+        status: subscription?.status
+      });
+      
+      // Could store subscription ID for future management (pause, cancel, etc.)
+    }
+
+    // Handle subscription.updated event
+    if (eventType === 'subscription.updated') {
+      const subscription = eventData?.subscription || eventData;
+      logger.info('Square subscription updated', {
+        subscriptionId: subscription?.id,
+        customerId: subscription?.customerId,
+        status: subscription?.status,
+        canceledDate: subscription?.canceledDate
+      });
+      
+      // Handle subscription cancellation or status changes
+      if (subscription?.status === 'CANCELED') {
+        logger.info('Subscription was canceled', {
+          subscriptionId: subscription?.id
+        });
+        // TODO: Update client status in database, send notification email, etc.
+      }
+    }
+
+    // Always return 200 to acknowledge receipt
+    return res.status(200).json({ success: true, message: 'Webhook processed' });
+
+  } catch (error) {
+    logger.error('Error processing Square webhook', {
+      error: error.message,
+      stack: error.stack
+    });
+    // Return 200 to prevent Square from retrying
+    return res.status(200).json({ success: false, message: 'Webhook processing error' });
+  }
+});
+
 // Route to serve the sitemap dynamically
 app.get('/sitemap.xml', async (req, res) => {
   try {
@@ -492,6 +984,86 @@ const handleCreateContractRoute = async (req, res) => {
       sizeKB: (templateHtml.length / 1024).toFixed(2)
     });
     
+    // Read and inline CSS files for DocuSeal (external CSS won't load in DocuSeal's HTML-to-PDF conversion)
+    try {
+      const contractCssPath = path.join(__dirname, 'public', 'css', 'contract-template.css');
+      let contractCss = await fs.readFile(contractCssPath, 'utf8');
+      
+      // Remove the @import from contract-template.css since we'll inline core.css separately
+      contractCss = contractCss.replace(/@import\s+url\([^)]+\)\s*;?/gi, '');
+      
+      // Extract CSS variables from core.css (the :root section)
+      const coreCssPath = path.join(__dirname, 'public', 'css', 'core.css');
+      const coreCss = await fs.readFile(coreCssPath, 'utf8');
+      
+      // Extract :root { ... } block with CSS variables
+      const rootMatch = coreCss.match(/:root\s*\{[^}]+\}/);
+      const cssVariables = rootMatch ? rootMatch[0] : '';
+      
+      // Create inline style block with CSS variables and contract styles
+      const inlineStyles = `
+<style data-docuseal-inline>
+/* CSS Variables from core.css */
+${cssVariables}
+
+/* Contract Template Styles (inlined for DocuSeal) */
+${contractCss}
+</style>`;
+      
+      // Remove external CSS link tags (they won't work in DocuSeal)
+      templateHtml = templateHtml.replace(/<link[^>]*href="[^"]*contract-template\.css"[^>]*>/gi, '');
+      templateHtml = templateHtml.replace(/<link[^>]*href="[^"]*core\.css"[^>]*>/gi, '');
+      
+      // Inject inline styles into head
+      if (templateHtml.includes('</head>')) {
+        templateHtml = templateHtml.replace('</head>', inlineStyles + '\n</head>');
+      } else {
+        templateHtml = inlineStyles + templateHtml;
+      }
+      
+      logger.info('CSS inlined for DocuSeal', {
+        requestId,
+        contractCssSizeKB: (contractCss.length / 1024).toFixed(2),
+        cssVariablesLength: cssVariables.length
+      });
+    } catch (cssError) {
+      logger.warn('Failed to inline CSS files', {
+        requestId,
+        error: cssError.message
+      });
+      // Continue without inlined CSS - styles may not render correctly
+    }
+    
+    // Remove welcome popup (not needed in DocuSeal document)
+    // Use a robust approach: find the opening tag and walk to find the matching closing tag
+    const welcomeOverlayMatch = templateHtml.match(/<div[^>]*id="welcome-overlay"[^>]*>/i);
+    if (welcomeOverlayMatch) {
+      const startPos = templateHtml.indexOf(welcomeOverlayMatch[0]);
+      const afterOpen = startPos + welcomeOverlayMatch[0].length;
+      let depth = 1;
+      let pos = afterOpen;
+      const len = templateHtml.length;
+      while (depth > 0 && pos < len) {
+        const nextOpen = templateHtml.indexOf('<div', pos);
+        const nextClose = templateHtml.indexOf('</div>', pos);
+        if (nextClose === -1) break;
+        if (nextOpen !== -1 && nextOpen < nextClose) {
+          depth++;
+          pos = nextOpen + 4;
+        } else {
+          depth--;
+          pos = nextClose + 6;
+        }
+      }
+      templateHtml = templateHtml.substring(0, startPos) + templateHtml.substring(pos);
+      logger.info('Welcome popup removed from template', { requestId });
+    }
+    
+    // Remove welcome popup styles from the inline <style> tag in head
+    // The template has a large <style> block with welcome popup styles - remove it entirely
+    // since the welcome popup is removed and these styles are not needed
+    templateHtml = templateHtml.replace(/<style>\s*\/\*\s*={5,}\s*\*\/[\s\S]*?Welcome Popup Styles[\s\S]*?<\/style>/gi, '');
+    
     // Read and convert company signature image to base64 for DocuSeal
     try {
       const signatureImagePath = path.join(__dirname, 'public', 'content', 'contract', 'George Seibert.png');
@@ -543,13 +1115,14 @@ const handleCreateContractRoute = async (req, res) => {
     });
     
     const serviceTerm = '1 Year';
-    const clientType = 'entity'; // Default, can be customized if needed
+    const clientType = client_type || 'entity'; // Use actual client_type from form
 
     // Build CLIENT_INTRO text based on whether it's a business or individual
     let clientIntro = '';
     if (business_name && business_name.trim() !== '') {
-      // Business client
-      clientIntro = `<strong>${business_name}</strong> ("Client"), a Pennsylvania entity`;
+      // Business client - use actual company type if provided
+      const entityType = client_type && client_type.trim() !== '' ? client_type : 'entity';
+      clientIntro = `<strong>${business_name}</strong> ("Client"), a Pennsylvania ${entityType}`;
     } else {
       // Individual client
       clientIntro = `<strong>${client_name}</strong> ("Client"), an individual`;
@@ -578,7 +1151,18 @@ const handleCreateContractRoute = async (req, res) => {
       .replace(/(<input[^>]*id="input-contact"[^>]*)(>)/gi, `$1 value="${(client_name || '').replace(/"/g, '&quot;')}"$2`)
       .replace(/(<input[^>]*id="input-address"[^>]*)(>)/gi, `$1 value="${(business_address || '').replace(/"/g, '&quot;')}"$2`)
       .replace(/(<input[^>]*id="input-phone"[^>]*)(>)/gi, `$1 value="${(client_phone || '').replace(/"/g, '&quot;')}"$2`)
-      .replace(/(<input[^>]*id="input-email"[^>]*)(>)/gi, `$1 value="${(client_email || '').replace(/"/g, '&quot;')}"$2`)
+      .replace(/(<input[^>]*id="input-email"[^>]*)(>)/gi, `$1 value="${(client_email || '').replace(/"/g, '&quot;')}"$2`);
+    
+    // Pre-select the client_type option in the select dropdown
+    if (client_type && client_type.trim() !== '') {
+      const escapedType = client_type.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      templateHtml = templateHtml.replace(
+        new RegExp(`(<option[^>]*value="${escapedType}"[^>]*)>`, 'gi'),
+        '$1 selected>'
+      );
+    }
+    
+    templateHtml = templateHtml
       .replace(/(<select[^>]*id="plan-type"[^>]*>[\s\S]*?<option[^>]*value=")(monthly)("[\s\S]*?>)/gi, (match, p1, val, p2) => {
         return normalizedPlanType === 'monthly' ? `${p1}${val}" selected${p2}` : match;
       })
@@ -619,22 +1203,129 @@ const handleCreateContractRoute = async (req, res) => {
     // Remove form wrapper but keep the content (DocuSeal handles its own form)
     templateHtml = templateHtml.replace(/<form[^>]*>/gi, '<div>').replace(/<\/form>/gi, '</div>');
     
-    // Remove navigation controls (not needed in DocuSeal signing interface)
-    templateHtml = templateHtml.replace(/<div[^>]*class="contract-nav"[^>]*>[\s\S]*?<\/div>/gi, '');
-    templateHtml = templateHtml.replace(/<div[^>]*id="submit-section"[^>]*>[\s\S]*?<\/div>/gi, '');
-    
-    // Make all contract pages visible for DocuSeal (they're hidden by default with display:none)
-    // First, replace the CSS rule that hides contract pages - be more aggressive with the replacement
-    templateHtml = templateHtml.replace(/\.contract-page\s*\{[^}]*\}/gi, (match) => {
-      // Replace any display:none with display:block !important
-      if (match.includes('display') && match.includes('none')) {
-        return match.replace(/display\s*:\s*none[^;]*/gi, 'display: block !important');
-      }
-      // If no display property, add it
-      if (!match.includes('display')) {
-        return match.replace(/\{/, '{ display: block !important; ');
+    // Remove min-heights that cause a blank first page in DocuSeal's PDF render.
+    // .contract-wrapper { min-height: 100vh } and .page-container { min-height: 600px }
+    // reserve a full page of empty space when DocuSeal converts HTML to document pages.
+    templateHtml = templateHtml.replace(/\.contract-wrapper\s*\{[^}]*\}/gi, (match) => {
+      return match.replace(/min-height\s*:\s*100vh[^;]*;?/gi, 'min-height: 0; ');
+    });
+    templateHtml = templateHtml.replace(/\.page-container\s*\{[^}]*\}/gi, (match) => {
+      if (match.includes('min-height')) {
+        return match.replace(/min-height\s*:\s*[^;]+;?/gi, 'min-height: 0; ');
       }
       return match;
+    });
+    // Inject override so DocuSeal's renderer never gets a full-page blank (works even if regex misses).
+    // Remove vertical padding/margin on .contract-page so Article X and "Article X (continued)" sit flush.
+    // Also simplify signature section styling to prevent page breaks and remove dramatic effects.
+    const docusealLayoutFix = `<style data-docuseal-layout-fix>
+.contract-wrapper,.page-container{min-height:0 !important;}
+.contract-page{padding:0 clamp(1.5rem,3vw,2rem) !important;margin:0 !important;box-shadow:none !important;}
+/* Simplify signature section for DocuSeal - remove dramatic styling */
+.signature-section{
+  background: #E5DDD0 !important;
+  border: 1px solid #C4B8A8 !important;
+  border-radius: 0.5rem !important;
+  box-shadow: none !important;
+  padding: 1.5rem !important;
+  margin-top: 1.5rem !important;
+  page-break-inside: avoid !important;
+}
+.signature-section::before{display:none !important;content:none !important;}
+.signature-block{margin-bottom:1.5rem !important;page-break-inside:avoid !important;}
+.signature-field{
+  min-height: 60px !important;
+  padding: 0.75rem !important;
+  border: 1px solid #C4B8A8 !important;
+  border-radius: 0.25rem !important;
+  background: #F4F2ED !important;
+}
+.signature-field.client-signature{min-height:80px !important;}
+.signature-field.company-signature{min-height:auto !important;padding:0.5rem !important;}
+.signature-image{max-height:40px !important;}
+.version-info{margin-top:1rem !important;padding-top:0.5rem !important;}
+</style>`;
+    if (templateHtml.includes('</head>')) {
+      templateHtml = templateHtml.replace('</head>', docusealLayoutFix + '\n</head>');
+    } else {
+      templateHtml = docusealLayoutFix + templateHtml;
+    }
+    
+    // Remove navigation controls and submit buttons (not needed in DocuSeal signing interface)
+    templateHtml = templateHtml.replace(/<div[^>]*class="contract-nav"[^>]*>[\s\S]*?<\/div>/gi, '');
+    templateHtml = templateHtml.replace(/<div[^>]*id="submit-section"[^>]*>[\s\S]*?<\/div>/gi, '');
+    templateHtml = templateHtml.replace(/<div[^>]*class="[^"]*submit-block[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '');
+    
+    // Remove site-wide navigation and footer (added for web display but not needed in DocuSeal PDF)
+    // Remove top banner (matches nested div structure with whitespace)
+    templateHtml = templateHtml.replace(/<div[^>]*class="[^"]*cs-topper-card[^"]*"[^>]*>[\s\S]*?<\/div>[\s\S]*?<\/div>/gi, '');
+    // Remove site navigation header
+    templateHtml = templateHtml.replace(/<header[^>]*id="cs-navigation"[^>]*>[\s\S]*?<\/header>/gi, '');
+    // Remove footer
+    templateHtml = templateHtml.replace(/<footer[^>]*id="cs-footer-2412"[^>]*>[\s\S]*?<\/footer>/gi, '');
+    // Remove page-wrapper div but keep contents (unwrap it)
+    templateHtml = templateHtml.replace(/<div[^>]*class="[^"]*page-wrapper[^"]*"[^>]*>/gi, '');
+    // Remove the corresponding closing comment and div for page-wrapper at end
+    templateHtml = templateHtml.replace(/<\/div>[\s]*<!--\s*End page-wrapper\s*-->/gi, '');
+    
+    // For individuals (no company), remove Company and Company Type fields entirely from DocuSeal
+    if (!business_name || business_name.trim() === '') {
+      // Find and remove only the div containing input-company
+      const companyInputMatch = templateHtml.match(/<input[^>]*id="input-company"[^>]*>/i);
+      if (companyInputMatch) {
+        const inputPos = templateHtml.indexOf(companyInputMatch[0]);
+        // Find the cover-field div that contains this input (search backwards)
+        const beforeInput = templateHtml.substring(0, inputPos);
+        const divStartMatch = beforeInput.match(/.*(<div[^>]*class="cover-field"[^>]*>)/s);
+        if (divStartMatch) {
+          const divStart = beforeInput.lastIndexOf(divStartMatch[1]);
+          const divEnd = templateHtml.indexOf('</div>', inputPos) + 6;
+          templateHtml = templateHtml.substring(0, divStart) + templateHtml.substring(divEnd);
+        }
+      }
+    }
+    
+    if (!client_type || client_type.trim() === '') {
+      // Find and remove only the div containing input-client-type select
+      const selectMatch = templateHtml.match(/<select[^>]*id="input-client-type"[^>]*>/i);
+      if (selectMatch) {
+        const selectPos = templateHtml.indexOf(selectMatch[0]);
+        const beforeSelect = templateHtml.substring(0, selectPos);
+        const divStartMatch = beforeSelect.match(/.*(<div[^>]*class="cover-field"[^>]*>)/s);
+        if (divStartMatch) {
+          const divStart = beforeSelect.lastIndexOf(divStartMatch[1]);
+          // Find the closing </div> after the </select>
+          const selectEnd = templateHtml.indexOf('</select>', selectPos) + 9;
+          const divEnd = templateHtml.indexOf('</div>', selectEnd) + 6;
+          templateHtml = templateHtml.substring(0, divStart) + templateHtml.substring(divEnd);
+        }
+      }
+    } else {
+      // Convert client_type select dropdown to plain text for DocuSeal
+      templateHtml = templateHtml.replace(
+        /<select[^>]*id="input-client-type"[^>]*>[\s\S]*?<\/select>/gi,
+        `<span class="cover-input" style="display:block;padding:0.5rem 0;">${client_type}</span>`
+      );
+    }
+    
+    // Make all contract pages visible for DocuSeal (they're hidden by default with display:none).
+    // Also reduce padding so stacked sections don't create huge vertical gaps between articles.
+    templateHtml = templateHtml.replace(/\.contract-page\s*\{[^}]*\}/gi, (match) => {
+      let out = match;
+      // Replace any display:none with display:block !important
+      if (out.includes('display') && out.includes('none')) {
+        out = out.replace(/display\s*:\s*none[^;]*/gi, 'display: block !important');
+      } else if (!out.includes('display')) {
+        out = out.replace(/\{/, '{ display: block !important; ');
+      }
+      // Remove vertical padding so Article X and "Article X (continued)" sit flush
+      if (out.includes('padding')) {
+        out = out.replace(/padding\s*:\s*[^;]+;?/gi, 'padding: 0 clamp(1.5rem, 3vw, 2rem); ');
+      }
+      if (out.includes('margin')) {
+        out = out.replace(/margin\s*:\s*[^;]+;?/gi, 'margin: 0; ');
+      }
+      return out;
     });
     
     // Also ensure .contract-page.active has display:block and remove opacity animations
@@ -653,20 +1344,58 @@ const handleCreateContractRoute = async (req, res) => {
     // Remove opacity animations from @keyframes that might affect visibility
     templateHtml = templateHtml.replace(/@keyframes\s+fadeIn[^}]*\{[^}]*opacity\s*:\s*0[^}]*\}/gi, '');
     
-    // Add inline style to ALL contract-page divs to force visibility (this overrides CSS)
-    templateHtml = templateHtml.replace(/<div([^>]*class="[^"]*contract-page[^"]*"[^>]*)>/gi, (match, attrs) => {
-      // Remove any existing style attribute
+    // Unwrap .contract-page divs so DocuSeal gets one continuous flow (no block boundaries = no extra spacing)
+    templateHtml = (function unwrapContractPages(html) {
+      const openTag = /<div[^>]*class="[^"]*contract-page[^"]*"[^>]*>/i;
+      let result = html;
+      let match;
+      while ((match = result.match(openTag)) !== null) {
+        const start = result.indexOf(match[0]);
+        const afterOpen = start + match[0].length;
+        let depth = 1;
+        let pos = afterOpen;
+        const len = result.length;
+        while (depth > 0 && pos < len) {
+          const nextOpen = result.indexOf('<div', pos);
+          const nextClose = result.indexOf('</div>', pos);
+          if (nextClose === -1) break;
+          if (nextOpen !== -1 && nextOpen < nextClose) {
+            depth++;
+            pos = nextOpen + 4;
+          } else {
+            depth--;
+            pos = nextClose + 6;
+          }
+        }
+        const end = pos;
+        const inner = result.substring(afterOpen, end - 6);
+        result = result.substring(0, start) + inner + result.substring(end);
+      }
+      return result;
+    })(templateHtml);
+    
+    // Force min-height:0 and minimal padding on wrapper (fixes blank first page)
+    templateHtml = templateHtml.replace(/<div([^>]*class="[^"]*contract-wrapper[^"]*"[^>]*)>/gi, (match, attrs) => {
       const styleMatch = attrs.match(/\s*style\s*=\s*["']([^"']*)["']/i);
-      let existingStyle = styleMatch ? styleMatch[1] : '';
-      // Remove display and opacity from existing style if present
-      existingStyle = existingStyle.replace(/display\s*:\s*[^;]+;?/gi, '').replace(/opacity\s*:\s*[^;]+;?/gi, '').trim();
-      // Add display:block !important and opacity:1 !important
-      const newStyle = existingStyle 
-        ? `style="${existingStyle}; display: block !important; opacity: 1 !important;"`
-        : 'style="display: block !important; opacity: 1 !important;"';
-      // Remove old style attribute and add new one
+      let s = styleMatch ? styleMatch[1] : '';
+      s = s.replace(/min-height\s*:\s*[^;]+;?/gi, '').replace(/padding\s*:\s*[^;]+;?/gi, '').trim();
+      s = s ? `${s}; min-height:0 !important; padding:0.5rem 1rem !important;` : 'min-height:0 !important; padding:0.5rem 1rem !important;';
       attrs = attrs.replace(/\s*style\s*=\s*["'][^"']*["']/gi, '');
-      return `<div${attrs} ${newStyle}>`;
+      return `<div${attrs} style="${s}">`;
+    });
+    templateHtml = templateHtml.replace(/<div([^>]*class="[^"]*page-container[^"]*"[^>]*)>/gi, (match, attrs) => {
+      const styleMatch = attrs.match(/\s*style\s*=\s*["']([^"']*)["']/i);
+      let s = styleMatch ? styleMatch[1] : '';
+      s = s.replace(/min-height\s*:\s*[^;]+;?/gi, '').trim();
+      s = s ? `${s}; min-height:0 !important;` : 'min-height:0 !important;';
+      attrs = attrs.replace(/\s*style\s*=\s*["'][^"']*["']/gi, '');
+      return `<div${attrs} style="${s}">`;
+    });
+    
+    // Make signature-section visible for DocuSeal (hidden on the form but needed for signing)
+    // Just set display:block - other styling is handled by the docusealLayoutFix CSS
+    templateHtml = templateHtml.replace(/<div([^>]*class="[^"]*signature-section[^"]*"[^>]*)style="[^"]*display\s*:\s*none[^"]*"([^>]*)>/gi, (match, before, after) => {
+      return `<div${before}style="display: block;"${after}>`;
     });
     
     // Also ensure page-container doesn't hide content
@@ -704,10 +1433,114 @@ const handleCreateContractRoute = async (req, res) => {
     const docusealApiUrl = process.env.DOCUSEAL_API_URL || 'https://api.docuseal.co';
     const docusealEndpoint = `${docusealApiUrl}/submissions/html`;
 
+    // Create dynamic Square checkout with redirect to questionnaire
+    // Includes prorated first month for monthly plans
+    let squarePaymentUrl;
+    let squareCheckoutData = null;
+    let prorationInfo = null;
+    
+    if (process.env.SQUARE_ACCESS_TOKEN && process.env.SQUARE_LOCATION_ID) {
+      try {
+        let amountCents;
+        let planDescription;
+        
+        if (normalizedPlanType === 'yearly') {
+          amountCents = 149900; // $1,499.00
+          planDescription = 'Website Development Service - Annual Plan';
+        } else {
+          // Calculate prorated first month
+          const proration = calculateProratedAmount(15000);
+          prorationInfo = proration;
+          
+          if (proration.isFullMonth) {
+            amountCents = 15000;
+            planDescription = 'Website Development Service - Monthly Plan';
+          } else {
+            amountCents = proration.proratedAmountCents;
+            planDescription = `Website Development Service - First Month (Prorated: ${proration.daysRemaining} days)`;
+          }
+        }
+        
+        const questionnaireRedirectUrl = `https://www.fishtownwebdesign.com/questionnaire?email=${encodeURIComponent(client_email)}&payment=success`;
+        const idempotencyKey = `contract-${subscriptionId}-${Date.now()}`;
+
+        logger.info('Creating Square checkout for contract', {
+          requestId,
+          client_email,
+          plan_type: normalizedPlanType,
+          amountCents,
+          isProrated: prorationInfo && !prorationInfo.isFullMonth,
+          prorationDetails: prorationInfo
+        });
+
+        const checkoutResponse = await squareClient.checkout.paymentLinks.create({
+          idempotencyKey,
+          order: {
+            locationId: process.env.SQUARE_LOCATION_ID,
+            lineItems: [
+              {
+                name: planDescription,
+                quantity: '1',
+                basePriceMoney: {
+                  amount: BigInt(amountCents),
+                  currency: 'USD'
+                },
+                note: normalizedPlanType === 'monthly' && prorationInfo && !prorationInfo.isFullMonth
+                  ? `Prorated for ${prorationInfo.daysRemaining} days. Regular billing ($150/month) starts ${prorationInfo.nextBillingDate}`
+                  : undefined
+              }
+            ]
+          },
+          checkoutOptions: {
+            redirectUrl: questionnaireRedirectUrl,
+            askForShippingAddress: false
+          },
+          prePopulatedData: {
+            buyerEmail: client_email
+          }
+        });
+
+        const paymentLink = checkoutResponse.paymentLink;
+        if (paymentLink && paymentLink.url) {
+          squarePaymentUrl = paymentLink.url;
+          squareCheckoutData = {
+            paymentLinkId: paymentLink.id,
+            orderId: paymentLink.orderId,
+            url: paymentLink.url,
+            amountCents: amountCents,
+            isProrated: prorationInfo && !prorationInfo.isFullMonth
+          };
+          
+          logger.info('Square checkout created for contract', {
+            requestId,
+            paymentLinkId: paymentLink.id,
+            amountCents,
+            client_email
+          });
+        }
+      } catch (squareError) {
+        logger.warn('Failed to create Square checkout, falling back to static link', {
+          requestId,
+          error: squareError.message,
+          squareErrors: squareError.errors
+        });
+      }
+    }
+
+    // Fallback to static Square payment links if dynamic checkout failed
+    if (!squarePaymentUrl) {
+      squarePaymentUrl = normalizedPlanType === 'yearly' 
+        ? 'https://square.link/u/K82W8oIo'
+        : 'https://square.link/u/xTet1TLc';
+      logger.info('Using fallback static Square payment URL', { requestId, squarePaymentUrl });
+    }
+
     // Build DocuSeal payload according to API documentation
     // https://www.docuseal.com/docs/api#create-a-submission-from-html
     const docusealPayload = {
       name: `Web Design Service Agreement - ${client_name}`,
+      // Redirect client to Square payment after signing
+      completed_redirect_url: squarePaymentUrl,
       documents: [
         {
           name: 'Website Development Service Agreement',
@@ -718,12 +1551,15 @@ const handleCreateContractRoute = async (req, res) => {
         {
           role: 'First Party',
           email: client_email,
-          name: client_name
+          name: client_name,
+          // Client-specific redirect to payment
+          completed_redirect_url: squarePaymentUrl
         },
         {
           role: 'Second Party',
           email: 'sales@fishtownwebdesign.com',
           name: 'George Seibert'
+          // No redirect for company signer
         }
       ],
       // Optional: Add metadata for tracking
@@ -901,6 +1737,49 @@ const handleCreateContractRoute = async (req, res) => {
           client_email,
           docusealSubmissionId: submissionId
         });
+
+        // Store Square payment record if checkout was created
+        if (squareCheckoutData) {
+          try {
+            // Get the contract submission ID we just created
+            const [contractRows] = await connection.execute(
+              'SELECT id FROM contract_submissions WHERE docuseal_submission_id = ? ORDER BY id DESC LIMIT 1',
+              [String(submissionId).trim()]
+            );
+            
+            const contractSubmissionId = contractRows.length > 0 ? contractRows[0].id : null;
+            const amountCents = normalizedPlanType === 'yearly' ? 149900 : 15000;
+            const questionnaireRedirectUrl = `https://www.fishtownwebdesign.com/questionnaire?email=${encodeURIComponent(client_email)}&payment=success`;
+
+            await connection.execute(
+              `INSERT INTO square_payments 
+                (contract_submission_id, payment_link_id, payment_link_url, order_id, client_email, client_name, plan_type, amount_cents, redirect_url, status)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')`,
+              [
+                contractSubmissionId,
+                squareCheckoutData.paymentLinkId,
+                squareCheckoutData.url,
+                squareCheckoutData.orderId || null,
+                client_email,
+                client_name || null,
+                normalizedPlanType,
+                amountCents,
+                questionnaireRedirectUrl
+              ]
+            );
+            
+            logger.info('Square payment record created', {
+              requestId,
+              paymentLinkId: squareCheckoutData.paymentLinkId,
+              contractSubmissionId
+            });
+          } catch (squareDbError) {
+            logger.warn('Failed to store Square payment record', {
+              requestId,
+              error: squareDbError.message
+            });
+          }
+        }
       } catch (dbError) {
         connection.release();
         
@@ -961,17 +1840,17 @@ const handleCreateContractRoute = async (req, res) => {
       });
     }
 
-    // Determine payment URL based on plan type
-    const paymentUrl = normalizedPlanType === 'yearly' 
-      ? 'https://square.link/u/K82W8oIo'
-      : 'https://square.link/u/xTet1TLc';
-    
     // Always return success response with signing URL, even if DB storage failed
     return res.json({
       success: true,
       submissionId: submissionId,
       signingUrl: signingUrl,
-      paymentUrl: paymentUrl,
+      paymentUrl: squarePaymentUrl,
+      squareCheckout: squareCheckoutData ? {
+        paymentLinkId: squareCheckoutData.paymentLinkId,
+        orderId: squareCheckoutData.orderId,
+        redirectsToQuestionnaire: true
+      } : null,
       status: 'sent'
     });
   } catch (error) {

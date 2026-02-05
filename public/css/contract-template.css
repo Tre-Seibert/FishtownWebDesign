@@ -1,0 +1,526 @@
+        /* Import existing design system */
+        @import url('/public/css/core.css');
+        
+        /* Contract-specific styles */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Montserrat, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-body);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6em;
+            font-size: 0.9375rem;
+        }
+        
+        .contract-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: clamp(5.5rem, 3vw, 2rem) 1rem;
+            background: var(--bg-primary);
+            min-height: 100vh;
+        }
+        
+        /* Navigation Header */
+        .contract-nav {
+            background: var(--bg-card);
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex: 1;
+        }
+        
+        .page-indicator {
+            font-weight: 600;
+            color: var(--headerColor);
+            font-size: 0.875rem;
+            white-space: nowrap;
+        }
+        
+        .skip-button {
+            font-family: Horizon, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            padding: 0.625rem 1.25rem;
+            background: var(--primary);
+            color: var(--headerColor);
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .skip-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(248, 200, 130, 0.3);
+        }
+        
+        .nav-arrows {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .nav-arrow {
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 2px solid var(--border-medium);
+            background: var(--bg-primary);
+            border-radius: 0.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: var(--headerColor);
+            font-size: 1.25rem;
+        }
+        
+        .nav-arrow:hover:not(:disabled) {
+            border-color: var(--primary);
+            background: var(--primaryLight);
+            transform: translateY(-2px);
+        }
+        
+        .nav-arrow:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        
+        /* Page Container */
+        .page-container {
+            position: relative;
+            min-height: 600px;
+        }
+        
+        .contract-page {
+            display: none;
+            background: var(--bg-card);
+            padding: clamp(1.5rem, 3vw, 2rem);
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .contract-page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Cover Sheet */
+        .cover-title {
+            font-family: "DM Serif Display";
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 900;
+            color: var(--headerColor);
+            text-align: center;
+            margin: 0 0 clamp(1.5rem, 3vw, 2rem) 0;
+            line-height: 1.2em;
+        }
+        
+        .cover-field {
+            margin-bottom: 1.25rem;
+        }
+        
+        .cover-label {
+            font-weight: 600;
+            color: var(--headerColor);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .cover-label .required {
+            color: var(--primary);
+            font-weight: 700;
+            margin-left: 0.25rem;
+        }
+        
+        .cover-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-medium);
+            border-radius: 0.25rem;
+            font-family: Montserrat, sans-serif;
+            font-size: 1rem;
+            background: var(--bg-primary);
+            color: var(--text-body);
+            box-sizing: border-box;
+        }
+        
+        .cover-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(248, 200, 130, 0.1);
+        }
+        
+        .cover-input[readonly] {
+            background: var(--bg-secondary);
+            cursor: not-allowed;
+        }
+        
+        .cover-input:required:invalid {
+            border-color: var(--border-medium);
+        }
+        
+        .cover-input:required:valid {
+            border-color: var(--border-medium);
+        }
+        
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.75rem 0;
+        }
+        
+        .service-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Contract Content */
+        .contract-main-title {
+            font-family: "DM Serif Display";
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            font-weight: 700;
+            color: var(--headerColor);
+            text-align: center;
+            margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+            line-height: 1.2em;
+        }
+        
+        .contract-intro {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            background: var(--bg-secondary);
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .article {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-title {
+            font-family: "DM Serif Display";
+            font-size: clamp(1.125rem, 2.25vw, 1.25rem);
+            font-weight: 700;
+            color: var(--headerColor);
+            margin: 0 0 0.75rem 0;
+            line-height: 1.2em;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-light);
+        }
+        
+        .article-content {
+            line-height: 1.8;
+            color: var(--text-body);
+            font-size: 0.9375rem;
+        }
+        
+        .article-content p {
+            margin: 0 0 0.875rem 0;
+        }
+        
+        .article-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .article-content strong {
+            color: var(--headerColor);
+            font-weight: 600;
+        }
+        
+        .article-content ul {
+            margin: 0.75rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Signature Section - Highlighted */
+        .signature-section {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+            padding: clamp(1.5rem, 3vw, 2rem);
+            border-radius: 0.5rem;
+            border: 3px solid var(--primary);
+            box-shadow: 0 4px 16px rgba(248, 200, 130, 0.2);
+            position: relative;
+        }
+        
+        .signature-section::before {
+            content: "✍️ Sign Here";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: var(--headerColor);
+            padding: 0.375rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: Horizon, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .signature-block {
+            margin-bottom: 2rem;
+        }
+        
+        .signature-block:last-child {
+            margin-bottom: 0;
+        }
+        
+        .signature-label {
+            font-weight: 600;
+            color: var(--headerColor);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        
+        .signature-field {
+            border: 3px dashed var(--primary);
+            padding: 2rem;
+            text-align: center;
+            background: var(--bg-primary);
+            border-radius: 0.5rem;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .signature-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 120px;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+        
+        .signature-field.company-signature {
+            cursor: default;
+            border-style: solid;
+            border-color: var(--border-light);
+            padding: 0.75rem 1rem;
+            min-height: 60px;
+            max-width: 300px;
+            margin: 0 0 1rem 0;
+            align-items: flex-start;
+        }
+        
+        .signature-field.company-signature .signature-image {
+            max-height: 50px;
+        }
+        
+        .signature-field.company-signature:hover {
+            background: var(--bg-primary);
+            box-shadow: none;
+        }
+        
+        .signature-field.client-signature {
+            padding: 1rem;
+            min-height: 150px;
+            max-width: 100%;
+            margin: 0 0 1rem 0;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .signature-field:hover {
+            border-color: var(--primary-dark);
+            box-shadow: 0 4px 12px rgba(248, 200, 130, 0.3);
+            background: var(--bg-secondary);
+        }
+        
+        .signature-field:active {
+            transform: scale(0.98);
+        }
+        
+        .signature-field.client-signature {
+            cursor: default;
+        }
+        
+        /* DocuSeal signature field styling */
+        signature-field {
+            display: block;
+            width: 100%;
+            min-height: 120px;
+            border: 2px dashed var(--primary);
+            border-radius: 0.25rem;
+            background: var(--bg-primary);
+            margin: 0 auto;
+        }
+        
+        text-field, date-field {
+            display: inline-block;
+            padding: 0.5rem;
+            border: 1px solid var(--border-medium);
+            border-radius: 0.25rem;
+            background: var(--bg-primary);
+            font-family: Montserrat, sans-serif;
+            font-size: 0.875rem;
+        }
+        
+        .signature-placeholder {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            pointer-events: none;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .signature-field.client-signature .signature-placeholder {
+            text-align: center;
+        }
+        
+        .signature-instruction {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            pointer-events: none;
+        }
+        
+        .signature-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-medium);
+            border-radius: 0.25rem;
+            font-family: Montserrat, sans-serif;
+            font-size: 1rem;
+            background: var(--bg-primary);
+            color: var(--text-body);
+            box-sizing: border-box;
+            text-align: center;
+        }
+        
+        .signature-input[readonly] {
+            background: var(--bg-secondary);
+            cursor: not-allowed;
+        }
+        
+        .version-info {
+            text-align: right;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: var(--bg-secondary);
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primaryLight) 100%);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        /* Mobile responsive */
+        @media only screen and (max-width: 48rem) {
+            .contract-wrapper {
+                padding: 5.5rem 1rem 1rem 1rem;
+            }
+            
+            .contract-nav {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .nav-info {
+                justify-content: space-between;
+            }
+            
+            .nav-arrows {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-arrow {
+                flex: 1;
+            }
+            
+            .contract-page {
+                padding: 1rem;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .contract-nav,
+            .skip-button,
+            .nav-arrows {
+                display: none;
+            }
+            
+            .contract-page {
+                display: block !important;
+                page-break-after: always;
+            }
+            
+            .contract-page:last-child {
+                page-break-after: auto;
+            }
+        }

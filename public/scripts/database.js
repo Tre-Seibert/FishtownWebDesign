@@ -88,6 +88,32 @@ async function initializeDatabase() {
     `;
 
     await connection.execute(createContractTableQuery);
+
+    // Create square_payments table for tracking checkout sessions and payments
+    const createSquarePaymentsTableQuery = `
+      CREATE TABLE IF NOT EXISTS square_payments (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        contract_submission_id INT,
+        checkout_id VARCHAR(255),
+        order_id VARCHAR(255),
+        payment_link_id VARCHAR(255),
+        payment_link_url TEXT,
+        client_email VARCHAR(255) NOT NULL,
+        client_name VARCHAR(255),
+        plan_type ENUM('monthly', 'yearly') NOT NULL,
+        amount_cents INT NOT NULL,
+        currency VARCHAR(3) DEFAULT 'USD',
+        status ENUM('pending', 'completed', 'failed', 'cancelled') DEFAULT 'pending',
+        square_payment_id VARCHAR(255),
+        redirect_url TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        completed_at TIMESTAMP NULL,
+        webhook_received_at TIMESTAMP NULL,
+        FOREIGN KEY (contract_submission_id) REFERENCES contract_submissions(id) ON DELETE SET NULL
+      )
+    `;
+
+    await connection.execute(createSquarePaymentsTableQuery);
     console.log('Database tables initialized successfully');
     connection.release();
   } catch (error) {
