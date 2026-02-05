@@ -51,6 +51,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.fishtownwebdesign.com/contract</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fishtownwebdesign.com/charity</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.fishtownwebdesign.com/blog/HVAC-Website-Design-Case-Study-Axel-Mechanical-Services</loc>
     <lastmod>2025-11-09T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
