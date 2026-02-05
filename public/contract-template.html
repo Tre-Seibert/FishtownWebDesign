@@ -3,537 +3,514 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Development Contract - Fishtown Web Design</title>
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <meta property="og:image" content="https://www.fishtownwebdesign.com/public/content/home/fish.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Fishtown Web Design - Philadelphia Custom Web Design Agency">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fishtownwebdesign.com/contract">
+    <meta name="description" content="Complete and sign your website development contract with Fishtown Web Design. Start your web design subscription today.">
+    <meta property="og:title" content="Website Development Contract | Fishtown Web Design">
+    <meta property="og:description" content="Complete and sign your website development contract with Fishtown Web Design. Start your web design subscription today.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Website Development Contract | Fishtown Web Design">
+    <meta name="twitter:description" content="Complete and sign your website development contract with Fishtown Web Design. Start your web design subscription today.">
+    <meta name="twitter:image" content="https://www.fishtownwebdesign.com/public/content/home/fish.png">
+    <meta name="twitter:image:alt" content="Fishtown Web Design - Philadelphia Custom Web Design Agency">
+    <link rel="canonical" href="https://www.fishtownwebdesign.com/contract" />
+
+    <title>Website Development Contract | Fishtown Web Design</title>
+
+    <!--CSS Imports-->
+    <link rel="stylesheet" href="/public/css/contract-template.css">
+    <link rel="stylesheet" href="/public/css/core.css">
+
+    <!--Favicons-->
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/content/home/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/content/home/favicon_io/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
+
     <style>
-        /* Import existing design system */
-        @import url('/public/css/core.css');
+        /* ============================================ */
+        /*              Welcome Popup Styles            */
+        /* ============================================ */
         
-        /* Contract-specific styles */
-        * {
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Montserrat, sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-body);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6em;
-            font-size: 0.9375rem;
-        }
-        
-        .contract-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: clamp(1.5rem, 3vw, 2rem) 1rem;
-            background: var(--bg-primary);
-            min-height: 100vh;
-        }
-        
-        /* Navigation Header */
-        .contract-nav {
-            background: var(--bg-card);
-            padding: 1rem 1.5rem;
-            border-radius: 0.5rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-        
-        .nav-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex: 1;
-        }
-        
-        .page-indicator {
-            font-weight: 600;
-            color: var(--headerColor);
-            font-size: 0.875rem;
-            white-space: nowrap;
-        }
-        
-        .skip-button {
-            font-family: Horizon, sans-serif;
-            font-size: 0.875rem;
-            font-weight: 700;
-            padding: 0.625rem 1.25rem;
-            background: var(--primary);
-            color: var(--headerColor);
-            border: none;
-            border-radius: 0.25rem;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-        
-        .skip-button:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(248, 200, 130, 0.3);
-        }
-        
-        .nav-arrows {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .nav-arrow {
-            width: 2.5rem;
-            height: 2.5rem;
-            border: 2px solid var(--border-medium);
-            background: var(--bg-primary);
-            border-radius: 0.25rem;
-            cursor: pointer;
+        .welcome-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-            color: var(--headerColor);
-            font-size: 1.25rem;
+            padding: 1rem;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            padding-top:8.5rem
         }
         
-        .nav-arrow:hover:not(:disabled) {
-            border-color: var(--primary);
-            background: var(--primaryLight);
-            transform: translateY(-2px);
+        .welcome-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
         }
         
-        .nav-arrow:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-        }
-        
-        /* Page Container */
-        .page-container {
-            position: relative;
-            min-height: 600px;
-        }
-        
-        .contract-page {
-            display: none;
+        .welcome-popup {
             background: var(--bg-card);
-            padding: clamp(1.5rem, 3vw, 2rem);
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            animation: fadeIn 0.3s ease;
+            border-radius: 1rem;
+            max-width: 520px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: popupSlideIn 0.4s ease;
         }
         
-        .contract-page.active {
-            display: block;
-        }
-        
-        @keyframes fadeIn {
+        @keyframes popupSlideIn {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(30px) scale(0.95);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
         
-        /* Cover Sheet */
-        .cover-title {
-            font-family: "DM Serif Display", serif;
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 900;
-            color: var(--headerColor);
+        .welcome-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #e6a63c 100%);
+            padding: 1.5rem;
             text-align: center;
-            margin: 0 0 clamp(1.5rem, 3vw, 2rem) 0;
-            line-height: 1.2em;
+            border-radius: 1rem 1rem 0 0;
         }
         
-        .cover-field {
-            margin-bottom: 1.25rem;
-        }
-        
-        .cover-label {
-            font-weight: 600;
+        .welcome-header h2 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(1.5rem, 5vw, 1.75rem);
             color: var(--headerColor);
-            font-size: 0.875rem;
-            margin-bottom: 0.5rem;
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            margin: 0 0 0.5rem 0;
+            line-height: 1.2;
         }
         
-        .cover-label .required {
-            color: var(--primary);
-            font-weight: 700;
-            margin-left: 0.25rem;
-        }
-        
-        .cover-input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 2px solid var(--border-medium);
-            border-radius: 0.25rem;
-            font-family: Montserrat, sans-serif;
+        .welcome-header p {
             font-size: 1rem;
-            background: var(--bg-primary);
-            color: var(--text-body);
-            box-sizing: border-box;
-        }
-        
-        .cover-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(248, 200, 130, 0.1);
-        }
-        
-        .cover-input[readonly] {
-            background: var(--bg-secondary);
-            cursor: not-allowed;
-        }
-        
-        .cover-input:required:invalid {
-            border-color: var(--border-medium);
-        }
-        
-        .cover-input:required:valid {
-            border-color: var(--border-medium);
-        }
-        
-        .service-list {
-            list-style: none;
-            padding: 0;
-            margin: 0.75rem 0;
-        }
-        
-        .service-list li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        
-        .service-list li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        /* Contract Content */
-        .contract-main-title {
-            font-family: "DM Serif Display", serif;
-            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-            font-weight: 700;
             color: var(--headerColor);
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .welcome-content {
+            padding: 1.5rem;
+        }
+        
+        .welcome-intro {
             text-align: center;
-            margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
-            line-height: 1.2em;
-        }
-        
-        .contract-intro {
             margin-bottom: 1.5rem;
-            line-height: 1.8;
-            background: var(--bg-secondary);
-            padding: 1.25rem;
-            border-radius: 0.5rem;
-            border-left: 4px solid var(--primary);
+            font-size: 1rem;
+            color: var(--text-body);
+            line-height: 1.6;
         }
         
-        .article {
+        .welcome-intro strong {
+            color: var(--headerColor);
+        }
+        
+        /* How It Works Steps */
+        .how-it-works {
             margin-bottom: 1.5rem;
         }
         
-        .article-title {
+        .how-it-works h3 {
             font-family: "DM Serif Display", serif;
-            font-size: clamp(1.125rem, 2.25vw, 1.25rem);
-            font-weight: 700;
+            font-size: 1.125rem;
             color: var(--headerColor);
-            margin: 0 0 0.75rem 0;
-            line-height: 1.2em;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--border-light);
-        }
-        
-        .article-content {
-            line-height: 1.8;
-            color: var(--text-body);
-            font-size: 0.9375rem;
-        }
-        
-        .article-content p {
-            margin: 0 0 0.875rem 0;
-        }
-        
-        .article-content p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .article-content strong {
-            color: var(--headerColor);
-            font-weight: 600;
-        }
-        
-        .article-content ul {
-            margin: 0.75rem 0;
-            padding-left: 1.5rem;
-        }
-        
-        .article-content li {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Signature Section - Highlighted */
-        .signature-section {
-            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
-            padding: clamp(1.5rem, 3vw, 2rem);
-            border-radius: 0.5rem;
-            border: 3px solid var(--primary);
-            box-shadow: 0 4px 16px rgba(248, 200, 130, 0.2);
-            position: relative;
-        }
-        
-        .signature-section::before {
-            content: "✍️ Sign Here";
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: var(--headerColor);
-            padding: 0.375rem 1rem;
-            border-radius: 1rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            font-family: Horizon, sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .signature-block {
-            margin-bottom: 2rem;
-        }
-        
-        .signature-block:last-child {
-            margin-bottom: 0;
-        }
-        
-        .signature-label {
-            font-weight: 600;
-            color: var(--headerColor);
-            font-size: 0.875rem;
-            margin-bottom: 0.75rem;
-            display: block;
-        }
-        
-        .signature-field {
-            border: 3px dashed var(--primary);
-            padding: 2rem;
-            text-align: center;
-            background: var(--bg-primary);
-            border-radius: 0.5rem;
-            min-height: 140px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1rem;
-            position: relative;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .signature-image {
-            max-width: 100%;
-            height: auto;
-            max-height: 120px;
-            object-fit: contain;
-            margin: 0 auto;
-        }
-        
-        .signature-field.company-signature {
-            cursor: default;
-            border-style: solid;
-            border-color: var(--border-light);
-            padding: 0.75rem 1rem;
-            min-height: 60px;
-            max-width: 300px;
             margin: 0 0 1rem 0;
+            text-align: center;
+        }
+        
+        .step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
             align-items: flex-start;
         }
         
-        .signature-field.company-signature .signature-image {
-            max-height: 50px;
+        .step:last-child {
+            margin-bottom: 0;
         }
         
-        .signature-field.company-signature:hover {
-            background: var(--bg-primary);
-            box-shadow: none;
-        }
-        
-        .signature-field.client-signature {
-            padding: 1rem;
-            min-height: 150px;
-            max-width: 100%;
-            margin: 0 0 1rem 0;
+        .step-number {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: var(--primary);
+            color: var(--headerColor);
+            border-radius: 50%;
+            display: flex;
             align-items: center;
-            text-align: center;
-        }
-        
-        .signature-field:hover {
-            border-color: var(--primary-dark);
-            box-shadow: 0 4px 12px rgba(248, 200, 130, 0.3);
-            background: var(--bg-secondary);
-        }
-        
-        .signature-field:active {
-            transform: scale(0.98);
-        }
-        
-        .signature-field.client-signature {
-            cursor: default;
-        }
-        
-        /* DocuSeal signature field styling */
-        signature-field {
-            display: block;
-            width: 100%;
-            min-height: 120px;
-            border: 2px dashed var(--primary);
-            border-radius: 0.25rem;
-            background: var(--bg-primary);
-            margin: 0 auto;
-        }
-        
-        text-field, date-field {
-            display: inline-block;
-            padding: 0.5rem;
-            border: 1px solid var(--border-medium);
-            border-radius: 0.25rem;
-            background: var(--bg-primary);
-            font-family: Montserrat, sans-serif;
+            justify-content: center;
+            font-weight: 700;
             font-size: 0.875rem;
         }
         
-        .signature-placeholder {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-            pointer-events: none;
-            text-align: center;
-            width: 100%;
-        }
-        
-        .signature-field.client-signature .signature-placeholder {
-            text-align: center;
-        }
-        
-        .signature-instruction {
-            color: var(--primary);
+        .step-content h4 {
+            font-size: 0.9375rem;
             font-weight: 600;
+            color: var(--headerColor);
+            margin: 0 0 0.25rem 0;
+        }
+        
+        .step-content p {
             font-size: 0.875rem;
-            margin-top: 0.5rem;
-            pointer-events: none;
-        }
-        
-        .signature-input {
-            width: 100%;
-            max-width: 300px;
-            padding: 0.75rem 1rem;
-            border: 2px solid var(--border-medium);
-            border-radius: 0.25rem;
-            font-family: Montserrat, sans-serif;
-            font-size: 1rem;
-            background: var(--bg-primary);
             color: var(--text-body);
-            box-sizing: border-box;
-            text-align: center;
+            margin: 0;
+            line-height: 1.5;
         }
         
-        .signature-input[readonly] {
-            background: var(--bg-secondary);
-            cursor: not-allowed;
+        .step-content a {
+            color: black;
+            text-decoration: underline;
+            font-weight: 500;
         }
         
-        .version-info {
-            text-align: right;
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            margin-top: 1rem;
+        .step-content a:hover {
+            color: var(--primary-dark);
+        }
+        
+        /* Terms Checkboxes */
+        .terms-section {
+            margin-bottom: 1.5rem;
             padding-top: 1rem;
             border-top: 1px solid var(--border-light);
         }
         
-        /* Progress Bar */
-        .progress-bar {
+        .terms-section h3 {
+            font-family: "DM Serif Display", serif;
+            font-size: 1.125rem;
+            color: var(--headerColor);
+            margin: 0 0 1rem 0;
+            text-align: center;
+        }
+        
+        .term-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            align-items: flex-start;
+            cursor: pointer;
+        }
+        
+        .term-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .term-checkbox {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            border: 2px solid var(--border-medium);
+            border-radius: 4px;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            background: var(--bg-primary);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .term-checkbox:checked {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .term-checkbox:checked::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--headerColor);
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .term-checkbox:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(248, 200, 130, 0.3);
+        }
+        
+        .term-label {
+            font-size: 0.875rem;
+            color: var(--text-body);
+            line-height: 1.5;
+            cursor: pointer;
+        }
+        
+        /* CTA Button */
+        .welcome-cta {
+            text-align: center;
+        }
+        
+        .welcome-button {
+            font-family: Horizon, sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: var(--headerColor);
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
             width: 100%;
-            height: 4px;
-            background: var(--bg-secondary);
-            border-radius: 2px;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
+            max-width: 300px;
+            opacity: 0.5;
+            pointer-events: none;
         }
         
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--primaryLight) 100%);
-            transition: width 0.3s ease;
-            border-radius: 2px;
+        .welcome-button.active {
+            opacity: 1;
+            pointer-events: auto;
         }
         
-        /* Mobile responsive */
-        @media only screen and (max-width: 48rem) {
-            .contract-wrapper {
-                padding: 1rem;
-            }
-            
-            .contract-nav {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .nav-info {
-                justify-content: space-between;
-            }
-            
-            .nav-arrows {
-                width: 100%;
-                justify-content: space-between;
-            }
-            
-            .nav-arrow {
-                flex: 1;
-            }
-            
-            .contract-page {
-                padding: 1rem;
-            }
+        .welcome-button.active:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(248, 200, 130, 0.4);
         }
         
-        /* Print styles */
-        @media print {
-            .contract-nav,
-            .skip-button,
-            .nav-arrows {
-                display: none;
+        .welcome-button.active:active {
+            transform: translateY(0);
+        }
+        
+        /* Mobile Optimizations */
+        @media only screen and (max-width: 480px) {
+            .welcome-popup {
+                max-height: 95vh;
+                border-radius: 0.75rem;
             }
             
-            .contract-page {
-                display: block !important;
-                page-break-after: always;
+            .welcome-header {
+                padding: 1.25rem 1rem;
+                border-radius: 0.75rem 0.75rem 0 0;
             }
             
-            .contract-page:last-child {
-                page-break-after: auto;
+            .welcome-content {
+                padding: 1.25rem 1rem;
+            }
+            
+            .step {
+                padding: 0.875rem;
+            }
+            
+            .step-number {
+                width: 28px;
+                height: 28px;
+                min-width: 28px;
+                font-size: 0.8125rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- ============================================ -->
+    <!--              Welcome Popup                   -->
+    <!-- ============================================ -->
+    
+    <div class="welcome-overlay" id="welcome-overlay">
+        <div class="welcome-popup">
+            <div class="welcome-header">
+                <h2>Welcome to Fishtown Web Design!</h2>
+                <p>Ready to build your online presence today?</p>
+            </div>
+            
+            <div class="welcome-content">
+                <p class="welcome-intro">
+                    We're excited to work with you! Before we get started, here's a quick overview of <strong>how the process works</strong>.
+                </p>
+                
+                <div class="how-it-works">
+                    <h3>How It Works</h3>
+                    
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Fill Out the Contract Form</h4>
+                            <p>Complete your information on the next page. It only takes a few minutes!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Sign Securely Online</h4>
+                            <p>After submitting, you'll be redirected to DocuSeal, our secure e-signature platform, to sign electronically.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Make Your First Payment</h4>
+                            <p>Once signed, you'll be directed to our payment provider to make your first month's payment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Complete the Questionnaire</h4>
+                            <p>Finally, fill out our <a href="https://fishtownwebdesign.com/questionnaire" target="_blank">Client Questionnaire</a> so we can start building your dream website!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="terms-section">
+                    <h3>Before We Begin</h3>
+                    
+                    <label class="term-item">
+                        <input type="checkbox" class="term-checkbox" id="term-1">
+                        <span class="term-label">I understand that this is a subscription service and I'll be billed monthly or yearly based on my selected plan.</span>
+                    </label>
+                    
+                    <label class="term-item">
+                        <input type="checkbox" class="term-checkbox" id="term-2">
+                        <span class="term-label">I agree to provide honest and accurate information in the contract form.</span>
+                    </label>
+                    
+                    <label class="term-item">
+                        <input type="checkbox" class="term-checkbox" id="term-3">
+                        <span class="term-label">I understand that my website development will begin after my first payment is received.</span>
+                    </label>
+                </div>
+                
+                <div class="welcome-cta">
+                    <button class="welcome-button" id="welcome-continue-btn" disabled>
+                        Let's Get Started!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-wrapper">
+
+    <!-- ============================================ -->
+    <!--                 Top Banner                   -->
+    <!-- ============================================ -->
+
+    <div class="cs-topper-card">
+        <div class="top-banner">
+            NOW ACCEPTING NEW CLIENTS.
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!--                 Navigation                   -->
+    <!-- ============================================ -->
+
+    <header id="cs-navigation">
+        <div class="cs-container">
+            <!--Nav Logo-->
+            <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/public/content/home/logo-m.webp">
+                    <source media="(min-width: 601px)" srcset="/public/content/home/logo.webp">
+                    <img 
+                        src="/public/content/home/logo.png"
+                        alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
+                        decoding="async"
+                        id="logo"
+                        width="130px"
+                        height="46.29px"
+                        fetchpriority="high">
+                </picture>
+            </a>
+            <!--Navigation List-->
+            <nav class="cs-nav" role="navigation">
+                <!--Mobile Nav Toggle-->
+                <button class="cs-toggle" aria-label="mobile menu toggle">
+                    <div class="cs-box" aria-hidden="true">
+                        <span class="cs-line cs-line1" aria-hidden="true"></span>
+                        <span class="cs-line cs-line2" aria-hidden="true"></span>
+                        <span class="cs-line cs-line3" aria-hidden="true"></span>
+                    </div>
+                </button>
+                <div class="cs-ul-wrapper">
+                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                        <li class="cs-li">
+                            <a href="https://fishtownwebdesign.com/" class="cs-li-link">
+                                home
+                            </a>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">
+                                about
+                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                            </span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li">
+                                    <a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="https://fishtownwebdesign.com/charity" class="cs-li-link cs-drop-link">charity</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">
+                                services
+                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                            </span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li">
+                                    <a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a>
+                                </li>
+                                <li class="cs-drop-li">
+                                    <a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="cs-li">
+                            <a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">
+                                pricing
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="https://fishtownwebdesign.com/contact" class="cs-li-link">
+                                contact
+                            </a>
+                        </li>
+                        <li class="cs-li">
+                            <a href="https://fishtownwebdesign.com/blog" class="cs-li-link">
+                                blog
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!--                 Contract                     -->
+    <!-- ============================================ -->
+
     <div class="contract-wrapper">
         <!-- Form wrapper -->
         <form id="contract-form" novalidate onsubmit="handleFormSubmit(event)">
@@ -615,7 +592,7 @@
                 </div>
                 
                 <div class="cover-field">
-                    <label class="cover-label">Service Fee:</label>
+                    <label class="cover-label">Service Fee: (Plans are subject to the terms of Section 2.5 herein.)</label>
                     <input type="text" class="cover-input" id="service-fee-display" name="service_fee" value="Select a plan above" readonly style="background: var(--bg-secondary);">
                 </div>
                 
@@ -635,6 +612,16 @@
                         <li>Up to 10GB storage</li>
                         <li>Additional usage will be billed at standard rates</li>
                     </ul>
+                </div>
+                
+                <!-- Create contract button (page 1) -->
+                <div class="submit-block" style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-card); border-radius: 0.5rem; text-align: center;">
+                    <p style="margin-bottom: 1rem; color: var(--text-body); font-size: 0.875rem;">
+                        By submitting this form, you agree to the terms and conditions outlined in this contract.
+                    </p>
+                    <button type="submit" class="skip-button submit-button" id="submit-button" style="font-size: 1rem; padding: 1rem 2rem; min-width: 200px;">
+                        Submit & Sign Contract
+                    </button>
                 </div>
             </div>
             
@@ -716,7 +703,7 @@
                         <p><strong>Beta Version.</strong> Company shall host on its Internet server the Beta Version of Client's Website for Client's testing over the Internet within fifteen (15) days after Client's acceptance of the Alpha Version. Client shall perform complete testing of all aspects of the Beta Version within ten (10) days after Company's provision of the Beta Version. CLIENT EXPRESSLY WAIVES ANY RIGHT TO REVOKE ACCEPTANCE.</p>
                         <p><strong>Final Version.</strong> Company shall deliver Client's completed Website within ten (10) days after Client's Final Acceptance of the Beta Version.</p>
                         <p><strong>2.4. Deliverables.</strong> Company's delivery of Client's Final Version shall consist of Company's posting of Client's Website to Company's Internet server.</p>
-                        <p><strong>2.5. Fees and Payment.</strong> Service Fee shall be delivered by Client to Company contemporaneously with Client's endorsement of this Agreement upon signing, and pay to Company the Service Fee stated on the cover sheet to this Agreement ({{SERVICE_FEE}}), beginning on the date of the execution of this Agreement and continuing thereafter on the first day of each month during the term of this Agreement. Additional fees shall be paid by Client to Company for other services.</p>
+                        <p><strong>2.5. Fees and Payment.</strong> Service Fee shall be delivered by Client to Company contemporaneously with Client's endorsement of this Agreement upon signing, and pay to Company the Service Fee stated on the cover sheet to this Agreement (<span id="display-service-fee">{{SERVICE_FEE}}</span>), beginning on the date of the execution of this Agreement and <span id="display-payment-frequency">continuing thereafter on the first day of each month during the term of this Agreement</span>. Additional fees shall be paid by Client to Company for other services.</p>
                     </div>
                 </div>
             </div>
@@ -787,17 +774,9 @@
                         <p><strong>Authority:</strong> The Parties knowingly and expressly consent to the foregoing terms and conditions. Each signatory is authorized to enter into this Agreement on behalf of its respective Party.</p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Page 8: Signatures -->
-            <div class="contract-page" data-page="8" id="signature-page">
-                <div class="signature-section">
-                    <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
-                        <p style="margin: 0; font-size: 0.875rem; color: var(--text-body); line-height: 1.6;">
-                            <strong style="color: var(--headerColor);">Instructions:</strong> Please review all pages of this agreement. Once all required fields on page 1 are completed, click "Submit & Sign Contract" below. You will be redirected to a secure signing page where you can sign electronically.
-                        </p>
-                    </div>
-                    
+                
+                <!-- Signatures - hidden on form, shown only in DocuSeal -->
+                <div class="signature-section" style="display: none; margin-top: 2rem;">
                     <div class="signature-block">
                         <p class="signature-label"><strong>Fishtown Web Design LLC</strong></p>
                         <p class="signature-label">Signed:</p>
@@ -814,7 +793,6 @@
                         <p class="signature-label"><strong>Client</strong></p>
                         <p class="signature-label">Signed:</p>
                         <div class="signature-field client-signature" id="client-signature-field" style="padding: 1rem; min-height: 150px; display: flex; align-items: center; justify-content: center;">
-                            <!-- DocuSeal signature field - required for DocuSeal to know where to place signature -->
                             <signature-field 
                                 name="Client Signature" 
                                 role="First Party"
@@ -843,19 +821,19 @@
                     
                     <div class="version-info">Page 14 of 14<br>V1.02</div>
                 </div>
-            </div>
-            
-            <!-- Submit Button - Only shown on signature page (page 8) -->
-            <div id="submit-section" style="display: none; margin-top: 2rem; padding: 1.5rem; background: var(--bg-card); border-radius: 0.5rem; text-align: center;">
-                <p style="margin-bottom: 1rem; color: var(--text-body); font-size: 0.875rem;">
-                    By submitting this form, you agree to the terms and conditions outlined in this contract.
-                </p>
-                <button type="submit" class="skip-button" id="submit-button" style="font-size: 1rem; padding: 1rem 2rem; min-width: 200px;">
-                    Submit & Sign Contract
-                </button>
-                <div id="form-message" style="margin-top: 1rem; display: none; padding: 0.75rem; border-radius: 0.25rem;"></div>
+                
+                <!-- Create contract button (page 7) -->
+                <div class="submit-block" style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-card); border-radius: 0.5rem; text-align: center;">
+                    <p style="margin-bottom: 1rem; color: var(--text-body); font-size: 0.875rem;">
+                        By submitting this form, you agree to the terms and conditions outlined in this contract.
+                    </p>
+                    <button type="submit" class="skip-button submit-button" style="font-size: 1rem; padding: 1rem 2rem; min-width: 200px;">
+                        Submit & Sign Contract
+                    </button>
+                </div>
             </div>
         </div>
+        <div id="form-message" style="margin: 1rem; display: none; padding: 0.75rem; border-radius: 0.25rem;"></div>
         </form>
     </div>
     
@@ -906,16 +884,26 @@
         function updateServiceFee() {
             const planType = document.getElementById('plan-type')?.value;
             const feeDisplay = document.getElementById('service-fee-display');
+            const feeInContract = document.getElementById('display-service-fee');
+            const frequencyInContract = document.getElementById('display-payment-frequency');
             
-            if (!feeDisplay) return;
+            let feeText = 'Select a plan above';
+            let shortFee = '{{SERVICE_FEE}}';
+            let frequencyText = 'continuing thereafter on the first day of each month during the term of this Agreement. subject to the terms of Section 2.5 herein.';
             
             if (planType === 'monthly') {
-                feeDisplay.value = '$150.00 per month, payable in advance, subject to the terms of Section 2.5 herein.';
+                feeText = '$150.00/month, due on the first day of each month.';
+                shortFee = '$150.00 per month';
+                frequencyText = 'continuing thereafter on the first day of each month during the term of this Agreement';
             } else if (planType === 'yearly') {
-                feeDisplay.value = '$1,499.00 per year, payable in advance, subject to the terms of Section 2.5 herein.';
-            } else {
-                feeDisplay.value = 'Select a plan above';
+                feeText = '$1,499.00/year, due on annual anniversary of this Agreement.';
+                shortFee = '$1,499.00 per year';
+                frequencyText = 'continuing thereafter on each annual anniversary of this Agreement';
             }
+            
+            if (feeDisplay) feeDisplay.value = feeText;
+            if (feeInContract) feeInContract.textContent = shortFee;
+            if (frequencyInContract) frequencyInContract.textContent = frequencyText;
         }
         
         
@@ -995,26 +983,22 @@
         }
         
         function goToSignatures() {
-            const signaturePage = document.getElementById('signature-page');
-            if (signaturePage) {
-                // Hide current page
-                document.querySelector(`.contract-page[data-page="${currentPage}"]`).classList.remove('active');
-                
-                // Show signature page
-                currentPage = parseInt(signaturePage.getAttribute('data-page'));
-                signaturePage.classList.add('active');
-                
-                updateNavigation();
-                scrollToTop();
-                
-                // Scroll to signature section when signature page becomes visible
-                setTimeout(() => {
-                    const firstSignature = signaturePage.querySelector('.signature-field');
-                    if (firstSignature) {
-                        firstSignature.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                }, 300);
+            // Go to last page (page 7) and scroll to the submit button at the bottom
+            const lastPage = totalPages;
+            if (currentPage === lastPage) {
+                // Already on last page, just scroll to submit
+                const submitBlock = document.querySelector('.contract-page[data-page="7"] .submit-block');
+                if (submitBlock) submitBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
             }
+            document.querySelector(`.contract-page[data-page="${currentPage}"]`).classList.remove('active');
+            currentPage = lastPage;
+            document.querySelector(`.contract-page[data-page="${currentPage}"]`).classList.add('active');
+            updateNavigation();
+            setTimeout(() => {
+                const submitBlock = document.querySelector('.contract-page[data-page="7"] .submit-block');
+                if (submitBlock) submitBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
         }
         
         
@@ -1029,26 +1013,10 @@
             document.getElementById('prev-btn').disabled = currentPage === 1;
             document.getElementById('next-btn').disabled = currentPage === totalPages;
             
-            // Hide skip button on signature page
+            // Hide skip button on last page
             const skipButton = document.getElementById('skip-button');
-            if (currentPage === totalPages) {
-                skipButton.style.display = 'none';
-            } else {
-                skipButton.style.display = 'block';
-            }
-            
-            // Show submit button only on signature page (page 8)
-            const submitSection = document.getElementById('submit-section');
-            if (submitSection) {
-                if (currentPage === totalPages) {
-                    submitSection.style.display = 'block';
-                    // Scroll to submit button after a brief delay
-                    setTimeout(() => {
-                        submitSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }, 300);
-                } else {
-                    submitSection.style.display = 'none';
-                }
+            if (skipButton) {
+                skipButton.style.display = currentPage === totalPages ? 'none' : 'block';
             }
         }
         
@@ -1072,7 +1040,7 @@
             event.stopPropagation();
             
             const form = document.getElementById('contract-form');
-            const submitButton = document.getElementById('submit-button');
+            const submitButtons = document.querySelectorAll('.submit-button');
             const messageDiv = document.getElementById('form-message');
             
             // Remove any remaining required attributes to prevent HTML5 validation
@@ -1142,10 +1110,9 @@
                 return;
             }
             
-            // Disable submit button
-            submitButton.disabled = true;
-            submitButton.textContent = 'Creating Contract...';
-            messageDiv.style.display = 'none';
+            // Disable all submit buttons and show loading
+            submitButtons.forEach(btn => { btn.disabled = true; btn.textContent = 'Creating Contract...'; });
+            if (messageDiv) messageDiv.style.display = 'none';
             
             try {
                 // Collect form data
@@ -1199,8 +1166,7 @@
                 } catch (e) {
                     console.error('[CONTRACT] Failed to read response text:', e);
                     showMessage('Failed to read server response. Please try again.', 'error');
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Submit & Sign Contract';
+                    submitButtons.forEach(btn => { btn.disabled = false; btn.textContent = 'Submit & Sign Contract'; });
                     return;
                 }
                 
@@ -1221,8 +1187,7 @@
                         errorMessage = `Server error (${response.status}): ${response.statusText || 'Please try again later.'}`;
                     }
                     showMessage(errorMessage, 'error');
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Submit & Sign Contract';
+                    submitButtons.forEach(btn => { btn.disabled = false; btn.textContent = 'Submit & Sign Contract'; });
                     return;
                 }
                 
@@ -1240,21 +1205,18 @@
                     console.error('[CONTRACT] Failed to parse JSON response:', e);
                     console.error('[CONTRACT] Response text was:', responseText.substring(0, 500));
                     showMessage('Invalid response from server. Please try again or contact support.', 'error');
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Submit & Sign Contract';
+                    submitButtons.forEach(btn => { btn.disabled = false; btn.textContent = 'Submit & Sign Contract'; });
                     return;
                 }
                 
                 if (result.success && result.signingUrl) {
-                    console.log('[CONTRACT] Success! Showing payment and signing options');
-                    // Success - show payment button and signing link
-                    showSuccessWithPayment(result.signingUrl, result.paymentUrl);
+                    console.log('[CONTRACT] Success! Redirecting to signing page');
+                    window.location.href = result.signingUrl;
+                    return;
                 } else {
                     console.warn('[CONTRACT] Response indicates failure:', result);
-                    // Error
                     showMessage(result.message || 'Failed to create contract. Please try again.', 'error');
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Submit & Sign Contract';
+                    submitButtons.forEach(btn => { btn.disabled = false; btn.textContent = 'Submit & Sign Contract'; });
                 }
             } catch (error) {
                 console.error('[CONTRACT] Form submission error:', error);
@@ -1269,10 +1231,9 @@
                 } else if (error.message) {
                     errorMessage = `Error: ${error.message}`;
                 }
-                showMessage(errorMessage, 'error');
-                submitButton.disabled = false;
-                submitButton.textContent = 'Submit & Sign Contract';
-            }
+                    showMessage(errorMessage, 'error');
+                    submitButtons.forEach(btn => { btn.disabled = false; btn.textContent = 'Submit & Sign Contract'; });
+                }
         }
         
         // Show message to user
@@ -1297,6 +1258,64 @@
             // Scroll to message
             messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
+        
+        // ============================================
+        // Welcome Popup Functionality
+        // ============================================
+        
+        (function initWelcomePopup() {
+            const overlay = document.getElementById('welcome-overlay');
+            const continueBtn = document.getElementById('welcome-continue-btn');
+            const checkboxes = document.querySelectorAll('.term-checkbox');
+            
+            // Check all checkboxes to enable button
+            function updateButtonState() {
+                const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                if (allChecked) {
+                    continueBtn.classList.add('active');
+                    continueBtn.disabled = false;
+                } else {
+                    continueBtn.classList.remove('active');
+                    continueBtn.disabled = true;
+                }
+            }
+            
+            // Add listeners to checkboxes
+            checkboxes.forEach(cb => {
+                cb.addEventListener('change', updateButtonState);
+            });
+            
+            // Continue button click
+            continueBtn.addEventListener('click', function() {
+                if (this.disabled) return;
+                
+                // Hide popup with animation
+                overlay.classList.add('hidden');
+                setTimeout(() => overlay.style.display = 'none', 300);
+            });
+            
+            // Prevent closing by clicking overlay (user must agree to terms)
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    // Subtle shake animation to indicate they need to check boxes
+                    const popup = overlay.querySelector('.welcome-popup');
+                    popup.style.animation = 'none';
+                    popup.offsetHeight; // Trigger reflow
+                    popup.style.animation = 'popupShake 0.5s ease';
+                }
+            });
+        })();
+        
+        // Add shake animation for when user tries to dismiss without agreeing
+        const shakeStyle = document.createElement('style');
+        shakeStyle.textContent = `
+            @keyframes popupShake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(shakeStyle);
         
         // Show success message with payment and signing buttons
         function showSuccessWithPayment(signingUrl, paymentUrl) {
@@ -1393,6 +1412,192 @@
             
             if (window.focus) newWindow.focus();
         }
+    </script>
+
+    <!-- ============================================ -->
+    <!--                 Footer                       -->
+    <!-- ============================================ -->
+
+    <footer id="cs-footer-2412">
+        <div class="cs-container cs-container-top">
+            <!-- Logo -->
+             <picture>
+                <source media="(max-width: 600px)" srcset="/public/content/home/footer-logo-m.webp">
+                <source media="(min-width: 601px)" srcset="/public/content/home/footer-logo.webp">
+                <img loading="lazy" src="/public/content/home/footer-logo.png" id="footer-logo" alt="Fishtown Logo" width="216" height="128">
+            </picture>
+            <!--Quick Links-->
+            <div class="cs-quick-links">
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <a class="cs-link" href="/about">About</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/pricing">Pricing</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/web-design">Web Design</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/seo">SEO</a>
+                    </li>
+                    <li class="cs-li">
+                        <a class="cs-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cs-wrapper">
+                <!--Subscribtion Form-->
+                <div class="cs-subscribe">
+                    <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
+                    <form class="cs-form" name="Subscription Form" method="post" id="footer-newsletter-form" action="#" onsubmit="return false;">
+                        <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address" required>
+                        <button class="cs-button-solid cs-submit" type="submit" id="footer-subscribe-button">
+                            <img class="cs-icon" src="/public/content/home/subscribe.png" alt="submit my email and subscribe" width="40" height="40" decoding="async" loading="lazy">
+                        </button>
+                    </form>
+                    <div id="footer-newsletter-message" style="display: none; margin-top: 10px; margin-bottom: 1rem; padding: 10px; border-radius: 5px;"></div>
+                </div>
+                <div class="cs-bottom">
+                    <!--Social-->
+                    <div class="cs-social">
+                        <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                        <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit instagram">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                    </div>
+                    <!--Legal-->
+                    <div class="cs-legal">
+                        <a href="/tos" class="cs-legal-link cs-link">Terms & Conditions</a>
+                        <span class="cs-divider" aria-hidden="true">|</span>
+                        <a href="/pp" class="cs-legal-link cs-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-credit">
+            <span class="cs-ip cs-text">© <span id="current-year">2026</span> Fishtown Web Design. All rights reserved.</span>
+        </div>
+        <svg class="cs-curve" aria-hidden="true" width="1920" height="1" viewBox="0 0 1920 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1920" height="1" fill="var(--overlayBG)"/>
+        </svg>
+    </footer>
+
+    </div><!-- End page-wrapper -->
+
+    <!-- ============================================ -->
+    <!--                 Scripts                      -->
+    <!-- ============================================ -->
+
+    <script>
+        // Mobile navigation
+        const CSbody = document.querySelector('body');
+        const CSnavbarMenu = document.querySelector('#cs-navigation');
+        const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
+
+        if (CShamburgerMenu) {
+            CShamburgerMenu.addEventListener('click', function() {
+                CShamburgerMenu.classList.toggle('cs-active');
+                CSnavbarMenu.classList.toggle('cs-active');
+                CSbody.classList.toggle('cs-open');
+                ariaExpanded();
+            });
+        }
+
+        function ariaExpanded() {
+            const csUL = document.querySelector('#cs-expanded');
+            const csExpanded = csUL.getAttribute('aria-expanded');
+            csUL.setAttribute('aria-expanded', csExpanded === 'false' ? 'true' : 'false');
+        }
+
+        // Mobile dropdowns
+        const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+        dropDowns.forEach(item => {
+            item.addEventListener('click', () => item.classList.toggle('cs-active'));
+        });
+
+        // Update copyright year dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        });
+
+        // Footer Newsletter Subscription Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const footerNewsletterForm = document.getElementById('footer-newsletter-form');
+            const footerNewsletterMessage = document.getElementById('footer-newsletter-message');
+            const footerSubscribeButton = document.getElementById('footer-subscribe-button');
+            const footerNewsletterInput = document.getElementById('cs-subscribe-2412');
+
+            if (footerNewsletterForm) {
+                footerNewsletterForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const email = footerNewsletterInput.value.trim();
+                    
+                    if (!email) {
+                        showFooterMessage('Please enter your email address.', 'error');
+                        return;
+                    }
+
+                    // Disable submit button during submission
+                    footerSubscribeButton.disabled = true;
+                    const originalButtonHTML = footerSubscribeButton.innerHTML;
+                    footerSubscribeButton.innerHTML = '<span style="color: var(--bodyTextColorWhite);">Subscribing...</span>';
+
+                    try {
+                        const response = await fetch('/subscribe-newsletter', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ email: email })
+                        });
+
+                        const data = await response.json();
+
+                        if (data.success) {
+                            footerNewsletterInput.value = '';
+                            showFooterMessage(data.message, 'success');
+                        } else {
+                            showFooterMessage(data.message, 'error');
+                        }
+                    } catch (error) {
+                        showFooterMessage('There was an error processing your subscription. Please try again.', 'error');
+                    } finally {
+                        // Re-enable submit button
+                        footerSubscribeButton.disabled = false;
+                        footerSubscribeButton.innerHTML = originalButtonHTML;
+                    }
+                });
+
+                function showFooterMessage(message, type) {
+                    footerNewsletterMessage.textContent = message;
+                    footerNewsletterMessage.style.display = 'block';
+                    footerNewsletterMessage.style.backgroundColor = type === 'success' ? '#d4edda' : '#f8d7da';
+                    footerNewsletterMessage.style.color = type === 'success' ? '#155724' : '#721c24';
+                    footerNewsletterMessage.style.border = type === 'success' ? '1px solid #c3e6cb' : '1px solid #f5c6cb';
+                    
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        footerNewsletterMessage.style.display = 'none';
+                    }, 5000);
+                }
+            }
+        });
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P9ZFLQPT8E');
     </script>
 </body>
 </html>
