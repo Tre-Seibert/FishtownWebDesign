@@ -413,7 +413,7 @@
   #pricing-1183 .cs-savings {
     text-align: center;
     font-size: 0.875rem;
-    color: var(--primary);
+    color: #000;
     font-weight: 600;
     margin: 0 0 1.5rem 0;
     font-family: Montserrat, sans-serif;
