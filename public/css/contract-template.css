@@ -511,6 +511,26 @@
             .contract-page {
                 padding: 1rem;
             }
+            
+            /* Submit button mobile fix */
+            .submit-block {
+                padding: 1rem !important;
+            }
+            
+            .submit-button {
+                min-width: unset !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 0.875rem 1rem !important;
+                font-size: 0.875rem !important;
+                white-space: normal !important;
+            }
+            
+            .skip-button {
+                white-space: normal;
+                font-size: 0.75rem;
+                padding: 0.5rem 0.75rem;
+            }
         }
         
         /* Print styles */
