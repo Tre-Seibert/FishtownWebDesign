@@ -510,6 +510,38 @@
             
             .contract-page {
                 padding: 1rem;
+                overflow-x: hidden;
+            }
+            
+            /* Form inputs mobile fix */
+            .cover-field {
+                max-width: 100%;
+                overflow: hidden;
+            }
+            
+            .cover-input {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+                font-size: 0.9375rem;
+                padding: 0.625rem 0.75rem;
+            }
+            
+            .cover-input[type="date"] {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+            }
+            
+            .cover-input[type="email"],
+            .cover-input[type="tel"] {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            select.cover-input {
+                width: 100%;
+                max-width: 100%;
             }
             
             /* Submit button mobile fix */
