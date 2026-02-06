@@ -162,7 +162,13 @@ async function generateSitemap() {
       { url: '/web-design', changefreq: 'monthly', priority: 0.8 },
       { url: '/blog', changefreq: 'weekly', priority: 0.9 },
       { url: '/seo', changefreq: 'monthly', priority: 0.8 },
-      { url: '/charity', changefreq: 'monthly', priority: 0.8 }
+      { url: '/charity', changefreq: 'monthly', priority: 0.8 },
+      // Industry-specific landing pages
+      { url: '/contractor-web-design', changefreq: 'monthly', priority: 0.8 },
+      { url: '/venue-web-design', changefreq: 'monthly', priority: 0.8 },
+      { url: '/ecommerce-web-design', changefreq: 'monthly', priority: 0.8 },
+      // Location-specific landing pages
+      { url: '/web-design-lancaster-pa', changefreq: 'monthly', priority: 0.8 }
     ];
 
     staticPages.forEach(page => sitemap.write(page));
@@ -2264,6 +2270,14 @@ app.get('/web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/w
 app.get('/seo', (req, res) => res.sendFile(path.join(__dirname, 'public/seo.html')));
 app.get('/charity', (req, res) => res.sendFile(path.join(__dirname, 'public/charity.html')));
 app.get('/unsubscribe', (req, res) => res.sendFile(path.join(__dirname, 'public/unsubscribe.html')));
+
+// Industry-specific landing pages
+app.get('/contractor-web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/contractor-web-design.html')));
+app.get('/venue-web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/venue-web-design.html')));
+app.get('/ecommerce-web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/ecommerce-web-design.html')));
+
+// Location-specific landing pages
+app.get('/web-design-lancaster-pa', (req, res) => res.sendFile(path.join(__dirname, 'public/web-design-lancaster-pa.html')));
 
 // Contract form route - users fill out contract here
 app.get('/contract', (req, res) => {

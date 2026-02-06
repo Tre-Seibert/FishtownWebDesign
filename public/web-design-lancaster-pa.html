@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://www.fishtownwebdesign.com/public/content/home/fish.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="description" content="Custom web design in Lancaster, PA. Hand-coded websites for local businesses with 90+ page speed scores. Serving Lancaster County HVAC companies, venues, contractors & more. From $150/mo.">
+    <meta property="og:title" content="Web Design Lancaster PA | Custom Websites for Local Businesses">
+    <meta property="og:description" content="Custom web design in Lancaster, PA. Hand-coded websites for local businesses with 90+ page speed scores. Serving Lancaster County businesses. From $150/mo.">
+    <meta property="og:url" content="https://www.fishtownwebdesign.com/web-design-lancaster-pa">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Web Design Lancaster PA | Custom Websites for Local Businesses">
+    <meta name="twitter:description" content="Custom web design in Lancaster, PA. Hand-coded websites for local businesses. 90+ page speed scores. From $150/mo.">
+    <link rel="canonical" href="https://www.fishtownwebdesign.com/web-design-lancaster-pa" />
+
+    <title>Web Design Lancaster PA | Custom Websites for Local Businesses</title>
+
+    <!-- Schema.org markup for Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Fishtown Web Design - Lancaster PA",
+        "image": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
+        "description": "Custom web design services for businesses in Lancaster, PA and Lancaster County. Hand-coded websites with lightning-fast loading speeds.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Philadelphia",
+            "addressRegion": "PA",
+            "addressCountry": "US"
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Lancaster",
+            "containedInPlace": {
+                "@type": "State",
+                "name": "Pennsylvania"
+            }
+        },
+        "telephone": "717-333-8691",
+        "url": "https://www.fishtownwebdesign.com/web-design-lancaster-pa",
+        "priceRange": "$$",
+        "serviceType": "Web Design"
+    }
+    </script>
+
+    <!--CSS Imports-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/web-design.css">
+    <link rel="stylesheet" href="/public/css/core.css">
+
+    <!--Favicons-->
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/content/home/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/content/home/favicon_io/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
+
+    <style>
+        .location-hero {
+            padding: 100px 16px 60px;
+            background: linear-gradient(135deg, #3A2F28 0%, #2a221c 100%);
+            text-align: center;
+            color: #fff;
+        }
+        .location-hero .cs-topper {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .location-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin: 0 0 20px;
+            line-height: 1.2;
+        }
+        .location-hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .local-intro {
+            padding: 80px 16px;
+            background: #fff;
+        }
+        .local-intro .cs-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .local-intro h2 {
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            margin-bottom: 24px;
+            color: var(--headerColor);
+            text-align: center;
+        }
+        .local-intro p {
+            color: var(--bodyTextColor);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .services-section {
+            padding: 80px 16px;
+            background: var(--bodyBG);
+        }
+        .services-section .cs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .services-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 50px;
+            color: var(--headerColor);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--headerColor);
+        }
+        .service-card p {
+            color: var(--bodyTextColor);
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        .portfolio-section {
+            padding: 80px 16px;
+            background: #fff;
+        }
+        .portfolio-section .cs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .portfolio-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 20px;
+            color: var(--headerColor);
+        }
+        .portfolio-section .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--bodyTextColor);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .portfolio-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+        }
+        .portfolio-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .portfolio-card .card-content {
+            padding: 24px;
+        }
+        .portfolio-card .client-type {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .portfolio-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--headerColor);
+        }
+        .portfolio-card p {
+            color: var(--bodyTextColor);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+        .portfolio-card .visit-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+        .portfolio-card .visit-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .stats-section {
+            padding: 60px 16px;
+            background: var(--primary);
+            color: #fff;
+        }
+        .stats-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .stat-item h3 {
+            font-size: 3rem;
+            margin: 0 0 8px;
+        }
+        .stat-item p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .areas-served {
+            padding: 60px 16px;
+            background: #f8f9fa;
+        }
+        .areas-served .cs-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .areas-served h2 {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            color: var(--headerColor);
+        }
+        .areas-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+        .areas-list span {
+            background: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--bodyTextColor);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        
+        .cta-section {
+            padding: 80px 16px;
+            background: var(--bodyBG);
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 20px;
+            color: var(--headerColor);
+        }
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--bodyTextColor);
+        }
+        .cta-section .cs-button-solid {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+        .cta-section .cs-button-solid:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+
+    <div class="cs-topper-card">
+        <div class="top-banner">
+            NOW ACCEPTING NEW CLIENTS.
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="cs-navigation">
+        <div class="cs-container">
+            <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/public/content/home/logo-m.webp">
+                    <source media="(min-width: 601px)" srcset="/public/content/home/logo.webp">
+                    <img src="/public/content/home/logo.png" alt="Fishtown Web Design Logo" decoding="async" id="logo" width="130px" height="46.29px" fetchpriority="high">
+                </picture>
+            </a>
+            <nav class="cs-nav" role="navigation">
+                <button class="cs-toggle" aria-label="mobile menu toggle">
+                    <div class="cs-box" aria-hidden="true">
+                        <span class="cs-line cs-line1" aria-hidden="true"></span>
+                        <span class="cs-line cs-line2" aria-hidden="true"></span>
+                        <span class="cs-line cs-line3" aria-hidden="true"></span>
+                    </div>
+                </button>
+                <div class="cs-ul-wrapper">
+                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/" class="cs-li-link">home</a></li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">about<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/charity" class="cs-li-link cs-drop-link">charity</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">services<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">industries<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/contractor-web-design" class="cs-li-link cs-drop-link">contractors</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/venue-web-design" class="cs-li-link cs-drop-link">venues</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/ecommerce-web-design" class="cs-li-link cs-drop-link">e-commerce</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link cs-active">locations<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-lancaster-pa" class="cs-li-link cs-drop-link cs-active">lancaster, pa</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">pricing</a></li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/contact" class="cs-li-link">contact</a></li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/blog" class="cs-li-link">blog</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="location-hero">
+        <span class="cs-topper">Lancaster County, PA</span>
+        <h1>Web Design for Lancaster, PA Businesses</h1>
+        <p>Custom, hand-coded websites for Lancaster County businesses. Fast-loading, mobile-first designs that help local HVAC companies, venues, contractors, and service businesses stand out online.</p>
+        <a href="/contact" class="cs-button-solid" style="display: inline-block; padding: 16px 32px; background: #fff; color: #3A2F28; text-decoration: none; border-radius: 8px; font-weight: 600;">Get a Free Consultation</a>
+    </section>
+
+    <!-- Local Intro -->
+    <section class="local-intro">
+        <div class="cs-container">
+            <h2>Your Lancaster Business Deserves a Website That Works</h2>
+            <p>Lancaster County is home to a thriving community of small businesses—from HVAC companies keeping homes comfortable, to wedding venues hosting dream celebrations, to junk removal services helping families declutter. We've worked with businesses across Lancaster, and we understand what local customers expect.</p>
+            <p>Unlike agencies that outsource overseas or use cookie-cutter templates, we hand-code every website for maximum performance. That means your Lancaster business gets a site that loads in under 1 second, looks beautiful on every device, and actually converts visitors into customers.</p>
+            <p>We've already helped multiple Lancaster County businesses establish a professional online presence. Now we'd love to help yours.</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services-section">
+        <div class="cs-container">
+            <h2>What We Build for Lancaster Businesses</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>HVAC & Plumbing Websites</h3>
+                    <p>Emergency-ready websites with click-to-call buttons, service area displays, and trust signals that convert late-night searchers into booked appointments.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Wedding Venue Websites</h3>
+                    <p>Stunning galleries and custom booking systems that showcase your venue's beauty and make it easy for couples to schedule tours.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Contractor & Trade Websites</h3>
+                    <p>Professional sites for construction, junk removal, landscaping, and home service businesses with project galleries and easy contact forms.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Local SEO Optimization</h3>
+                    <p>Every site includes local SEO fundamentals—proper schema markup, Google Business Profile optimization, and content targeting Lancaster-area searches.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Mobile-First Design</h3>
+                    <p>Most Lancaster residents search on their phones. Every website we build looks and works perfectly on mobile devices first.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Ongoing Support</h3>
+                    <p>Hosting, security, updates, and content changes all included in your monthly subscription. No surprise fees or hidden costs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Mobile Responsive</p>
+            </div>
+            <div class="stat-item">
+                <h3>90+</h3>
+                <p>Page Speed Scores</p>
+            </div>
+            <div class="stat-item">
+                <h3>&lt;1s</h3>
+                <p>Load Time</p>
+            </div>
+            <div class="stat-item">
+                <h3>$150</h3>
+                <p>Per Month</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio-section">
+        <div class="cs-container">
+            <h2>Lancaster Businesses We've Worked With</h2>
+            <p class="section-intro">Real local businesses, real results. Here are some of the Lancaster County companies we've helped establish a powerful online presence.</p>
+
+            <div class="portfolio-grid">
+                <!-- Axel Mechanical -->
+                <div class="portfolio-card">
+                    <img src="https://axelmechanicalservices.com/assets/index/hero.jpg" alt="Axel Mechanical Services Lancaster PA" loading="lazy">
+                    <div class="card-content">
+                        <span class="client-type">HVAC & Plumbing • Lancaster, PA</span>
+                        <h3>Axel Mechanical Services</h3>
+                        <p>Full-service HVAC and plumbing company serving Lancaster, York, Lebanon, and Dauphin Counties with emergency services and installations.</p>
+                        <a href="https://axelmechanicalservices.com" target="_blank" rel="noopener" class="visit-btn">Visit Website →</a>
+                    </div>
+                </div>
+
+                <!-- Shawnee Run -->
+                <div class="portfolio-card">
+                    <img src="https://shawneerunvenue.com/content/home/snow-barn-wedding-lancaster-pa.webp" alt="Shawnee Run Wedding Venue Lancaster PA" loading="lazy">
+                    <div class="card-content">
+                        <span class="client-type">Wedding Venue • Columbia, PA</span>
+                        <h3>Shawnee Run Wedding & Events</h3>
+                        <p>Historic 200-year-old wedding and events venue nestled in Lancaster County, featuring elegant indoor and outdoor ceremony spaces.</p>
+                        <a href="https://shawneerunvenue.com" target="_blank" rel="noopener" class="visit-btn">Visit Website →</a>
+                    </div>
+                </div>
+
+                <!-- Junk B Gone -->
+                <div class="portfolio-card">
+                    <img src="https://www.junkbgone.me/images/home/hero.webp" alt="Junk B Gone Lancaster PA" loading="lazy">
+                    <div class="card-content">
+                        <span class="client-type">Junk Removal • Lancaster, PA</span>
+                        <h3>Junk B Gone</h3>
+                        <p>Locally-owned junk removal company with 13 years of experience serving Lancaster, York, Dauphin, and Lebanon Counties.</p>
+                        <a href="https://junkbgone.me" target="_blank" rel="noopener" class="visit-btn">Visit Website →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas Served -->
+    <section class="areas-served">
+        <div class="cs-container">
+            <h2>Serving All of Lancaster County</h2>
+            <div class="areas-list">
+                <span>Lancaster City</span>
+                <span>Columbia</span>
+                <span>Ephrata</span>
+                <span>Lititz</span>
+                <span>Manheim</span>
+                <span>Mount Joy</span>
+                <span>Elizabethtown</span>
+                <span>Millersville</span>
+                <span>Strasburg</span>
+                <span>New Holland</span>
+                <span>Quarryville</span>
+                <span>Denver</span>
+                <span>Leola</span>
+                <span>Bird-in-Hand</span>
+                <span>Paradise</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Grow Your Lancaster Business Online?</h2>
+        <p>Join other Lancaster County businesses that have upgraded to high-performance websites. No contracts, no hassle—just results.</p>
+        <a href="/contact" class="cs-button-solid">Get Your Free Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer id="cs-footer-2412">
+        <div class="cs-container cs-container-top">
+            <picture>
+                <source media="(max-width: 600px)" srcset="/public/content/home/footer-logo-m.webp">
+                <source media="(min-width: 601px)" srcset="/public/content/home/footer-logo.webp">
+                <img loading="lazy" src="/public/content/home/footer-logo.png" id="footer-logo" alt="Fishtown Logo" width="216" height="128">
+            </picture>
+            <div class="cs-quick-links">
+                <ul class="cs-ul">
+                    <li class="cs-li"><a class="cs-link" href="/about">About</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/pricing">Pricing</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/web-design">Web Design</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/seo">SEO</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="cs-wrapper">
+                <div class="cs-subscribe">
+                    <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
+                    <form class="cs-form" name="Subscription Form" method="post">
+                        <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address">
+                        <button class="cs-button-solid cs-submit" type="submit">
+                            <img class="cs-icon" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/paperplane.svg" alt="submit" width="40" height="40" decoding="async" loading="lazy">
+                        </button>
+                    </form>
+                </div>
+                <div class="cs-bottom">
+                    <div class="cs-social">
+                        <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                        <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit instagram">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                    </div>
+                    <div class="cs-legal">
+                        <a href="/tos" class="cs-legal-link cs-link">Terms & Conditions</a>
+                        <span class="cs-divider" aria-hidden="true">|</span>
+                        <a href="/pp" class="cs-legal-link cs-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-credit">
+            <span class="cs-ip cs-text">© 2026 Fishtown Web Design. All rights reserved.</span>
+        </div>
+    </footer>
+    </div>
+
+    <script>
+        const CSbody = document.querySelector('body');
+        const CSnavbarMenu = document.querySelector('#cs-navigation');
+        const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
+        CShamburgerMenu.addEventListener('click', function() {
+            CShamburgerMenu.classList.toggle('cs-active');
+            CSnavbarMenu.classList.toggle('cs-active');
+            CSbody.classList.toggle('cs-open');
+            const csUL = document.querySelector('#cs-expanded');
+            csUL.setAttribute('aria-expanded', csUL.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+        });
+        const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+        dropDowns.forEach(item => item.addEventListener('click', () => item.classList.toggle('cs-active')));
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P9ZFLQPT8E');
+    </script>
+</body>
+</html>

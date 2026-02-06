@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://www.fishtownwebdesign.com/public/content/home/fish.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="description" content="Custom e-commerce website design for online stores & product brands. Fast-loading shops with subscription systems, product galleries & secure checkout. See our portfolio. From $150/mo.">
+    <meta property="og:title" content="E-Commerce Website Design | Online Store & Shop Websites">
+    <meta property="og:description" content="Custom e-commerce website design for online stores & product brands. Fast-loading shops with subscription systems, product galleries & secure checkout. From $150/mo.">
+    <meta property="og:url" content="https://www.fishtownwebdesign.com/ecommerce-web-design">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="E-Commerce Website Design | Online Store & Shop Websites">
+    <meta name="twitter:description" content="Custom e-commerce website design for online stores & product brands. Fast-loading shops with subscription systems & secure checkout. From $150/mo.">
+    <link rel="canonical" href="https://www.fishtownwebdesign.com/ecommerce-web-design" />
+
+    <title>E-Commerce Website Design | Online Store & Shop Websites</title>
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "E-Commerce Website Design",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Fishtown Web Design",
+            "image": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
+            "telephone": "717-333-8691",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Philadelphia",
+                "addressRegion": "PA",
+                "addressCountry": "US"
+            }
+        },
+        "description": "Custom e-commerce website design services for online stores, product brands, and subscription businesses.",
+        "offers": {
+            "@type": "Offer",
+            "price": "150",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "150",
+                "priceCurrency": "USD",
+                "unitText": "month"
+            }
+        }
+    }
+    </script>
+
+    <!--CSS Imports-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/web-design.css">
+    <link rel="stylesheet" href="/public/css/core.css">
+
+    <!--Favicons-->
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/content/home/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/content/home/favicon_io/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
+
+    <style>
+        .industry-hero {
+            padding: 100px 16px 60px;
+            background: linear-gradient(135deg, #3A2F28 0%, #2a221c 100%);
+            text-align: center;
+            color: #fff;
+        }
+        .industry-hero .cs-topper {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .industry-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin: 0 0 20px;
+            line-height: 1.2;
+        }
+        .industry-hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .benefits-section {
+            padding: 80px 16px;
+            background: var(--bodyBG);
+        }
+        .benefits-section .cs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .benefits-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 50px;
+            color: var(--headerColor);
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .benefit-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .benefit-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--headerColor);
+        }
+        .benefit-card p {
+            color: var(--bodyTextColor);
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        .portfolio-section {
+            padding: 80px 16px;
+            background: #fff;
+        }
+        .portfolio-section .cs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .portfolio-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 20px;
+            color: var(--headerColor);
+        }
+        .portfolio-section .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--bodyTextColor);
+        }
+        
+        .portfolio-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #eee;
+        }
+        .portfolio-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .portfolio-item:nth-child(even) {
+            direction: rtl;
+        }
+        .portfolio-item:nth-child(even) > * {
+            direction: ltr;
+        }
+        .portfolio-item img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        .portfolio-item img.crop-top {
+            height: 650px;
+            object-fit: cover;
+            object-position: center calc(90% + 1rem);
+        }
+        .portfolio-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--headerColor);
+        }
+        .portfolio-content .client-type {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .portfolio-content p {
+            color: var(--bodyTextColor);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .portfolio-content .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+        }
+        .portfolio-content .features-list li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            color: var(--bodyTextColor);
+        }
+        .portfolio-content .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        .portfolio-content .visit-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .portfolio-content .visit-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-item {
+                grid-template-columns: 1fr;
+            }
+            .portfolio-item:nth-child(even) {
+                direction: ltr;
+            }
+        }
+        
+        .stats-section {
+            padding: 60px 16px;
+            background: #3A2F28;
+            color: #fff;
+        }
+        .stats-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .stat-item h3 {
+            font-size: 3rem;
+            margin: 0 0 8px;
+        }
+        .stat-item p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .cta-section {
+            padding: 80px 16px;
+            background: var(--bodyBG);
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 20px;
+            color: var(--headerColor);
+        }
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--bodyTextColor);
+        }
+        .cta-section .cs-button-solid {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+        .cta-section .cs-button-solid:hover {
+            background: var(--primary-dark);
+        }
+        
+        .ecommerce-features {
+            padding: 80px 16px;
+            background: #f8f9fa;
+        }
+        .ecommerce-features .cs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .ecommerce-features h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 50px;
+            color: var(--headerColor);
+        }
+        .features-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+        }
+        .feature-item .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .feature-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--headerColor);
+        }
+        .feature-item p {
+            color: var(--bodyTextColor);
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+
+    <div class="cs-topper-card">
+        <div class="top-banner">
+            NOW ACCEPTING NEW CLIENTS.
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="cs-navigation">
+        <div class="cs-container">
+            <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/public/content/home/logo-m.webp">
+                    <source media="(min-width: 601px)" srcset="/public/content/home/logo.webp">
+                    <img src="/public/content/home/logo.png" alt="Fishtown Web Design Logo" decoding="async" id="logo" width="130px" height="46.29px" fetchpriority="high">
+                </picture>
+            </a>
+            <nav class="cs-nav" role="navigation">
+                <button class="cs-toggle" aria-label="mobile menu toggle">
+                    <div class="cs-box" aria-hidden="true">
+                        <span class="cs-line cs-line1" aria-hidden="true"></span>
+                        <span class="cs-line cs-line2" aria-hidden="true"></span>
+                        <span class="cs-line cs-line3" aria-hidden="true"></span>
+                    </div>
+                </button>
+                <div class="cs-ul-wrapper">
+                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/" class="cs-li-link">home</a></li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">about<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/charity" class="cs-li-link cs-drop-link">charity</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">services<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link cs-active">industries<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/contractor-web-design" class="cs-li-link cs-drop-link">contractors</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/venue-web-design" class="cs-li-link cs-drop-link">venues</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/ecommerce-web-design" class="cs-li-link cs-drop-link cs-active">e-commerce</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">locations<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-lancaster-pa" class="cs-li-link cs-drop-link">lancaster, pa</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">pricing</a></li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/contact" class="cs-li-link">contact</a></li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/blog" class="cs-li-link">blog</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="industry-hero">
+        <span class="cs-topper">Industry Expertise</span>
+        <h1>E-Commerce Website Design for Product Brands</h1>
+        <p>Custom online stores built for speed and conversions. Subscription systems, beautiful product galleries, and secure checkout experiences that turn browsers into buyers.</p>
+        <a href="/contact" class="cs-button-solid" style="display: inline-block; padding: 16px 32px; background: #fff; color: #3A2F28; text-decoration: none; border-radius: 8px; font-weight: 600;">Get a Free Consultation</a>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits-section">
+        <div class="cs-container">
+            <h2>Why Your Online Store Needs a Custom Website</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Speed Equals Sales</h3>
+                    <p>Every second of load time costs you conversions. Studies show a 1-second delay can reduce conversions by 7%. Our hand-coded stores load in under 1 second—no bloated page builders dragging you down.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Brand-First Design</h3>
+                    <p>Template stores look like template stores. We build custom designs that reflect your brand's personality and stand out from competitors using the same Shopify themes.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Subscription Systems Built-In</h3>
+                    <p>Recurring revenue is the key to sustainable e-commerce. We build custom subscription flows that make it easy for customers to set it and forget it.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Mobile Shopping Optimized</h3>
+                    <p>Over 70% of e-commerce traffic is mobile. Your store needs to look perfect and function flawlessly on phones—from browsing to checkout.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>SEO for Product Discovery</h3>
+                    <p>Proper product schema markup, optimized category pages, and fast load times help your products appear in Google Shopping and organic search results.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Shopify Storefront API</h3>
+                    <p>We leverage Shopify's powerful Storefront API to give you the best of both worlds—lightning-fast custom frontends with Shopify's bulletproof backend for inventory, payments, and fulfillment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Showcase -->
+    <section class="ecommerce-features">
+        <div class="cs-container">
+            <h2>E-Commerce Features We Build</h2>
+            <div class="features-showcase">
+                <div class="feature-item">
+                    <div class="icon">🛒</div>
+                    <h3>Product Catalogs</h3>
+                    <p>Beautiful, filterable product grids with quick-view options and variant selectors.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🔄</div>
+                    <h3>Subscription Systems</h3>
+                    <p>Custom subscription builders with flexible delivery schedules and easy management.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">💳</div>
+                    <h3>Secure Checkout</h3>
+                    <p>PCI-compliant payment processing with Stripe, Square, or PayPal integration.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📦</div>
+                    <h3>Inventory Management</h3>
+                    <p>Real-time stock tracking with low-inventory alerts and sold-out handling.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📧</div>
+                    <h3>Email Integration</h3>
+                    <p>Automated order confirmations, shipping updates, and abandoned cart recovery.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📊</div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Track sales, popular products, and customer behavior with built-in reporting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>90+</h3>
+                <p>Page Speed Scores</p>
+            </div>
+            <div class="stat-item">
+                <h3>&lt;1s</h3>
+                <p>Load Time</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Mobile Responsive</p>
+            </div>
+            <div class="stat-item">
+                <h3>$150</h3>
+                <p>Per Month</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio-section">
+        <div class="cs-container">
+            <h2>E-Commerce Websites We've Built</h2>
+            <p class="section-intro">Real online stores, real results. Each website is hand-coded for maximum performance and designed to convert visitors into customers.</p>
+
+            <!-- Green Shades Coffee -->
+            <div class="portfolio-item">
+                <img class="crop-top" src="https://cdn.shopify.com/s/files/1/0699/4683/5116/files/lineup.jpg?v=1766013014" alt="Green Shades Coffee Co E-Commerce Website" loading="lazy">
+                <div class="portfolio-content">
+                    <span class="client-type">Coffee Brand / Subscription E-Commerce</span>
+                    <h3>Green Shades Coffee Co.</h3>
+                    <p>A purpose-driven coffee brand based in Binghamton, NY that donates a portion of every sale to animal shelters. We built a lightning-fast custom frontend powered by Shopify's Storefront API—delivering sub-second load times without sacrificing Shopify's robust e-commerce backend.</p>
+                    <ul class="features-list">
+                        <li>Shopify Storefront API integration</li>
+                        <li>Custom subscription builder</li>
+                        <li>Product catalog with variants</li>
+                        <li>90+ page speed scores</li>
+                        <li>Secure Stripe checkout</li>
+                        <li>Email newsletter integration</li>
+                    </ul>
+                    <a href="https://greenshadescoffeeco.com" target="_blank" rel="noopener" class="visit-btn">Visit Website →</a>
+                </div>
+            </div>
+
+            <!-- Hexed & Hearsed -->
+            <div class="portfolio-item">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/public/content/ecommerce/hexed-and-hearsed-m.webp">
+                    <source media="(min-width: 601px)" srcset="/public/content/ecommerce/hexed-and-hearsed.webp">
+                    <img src="/public/content/ecommerce/hexed-and-hearsed.png" alt="Hexed and Hearsed Gothic Clothing Website" loading="lazy">
+                </picture>
+                <div class="portfolio-content">
+                    <span class="client-type">Gothic Clothing / Fashion E-Commerce</span>
+                    <h3>Hexed & Hearsed</h3>
+                    <p>A gothic and alternative fashion brand with a dark, edgy aesthetic. The website design needed to match the brand's vibe while providing a seamless shopping experience for their unique clothing line.</p>
+                    <ul class="features-list">
+                        <li>Dark-themed custom design</li>
+                        <li>Product category organization</li>
+                        <li>Size and color variant selection</li>
+                        <li>Atmospheric brand storytelling</li>
+                        <li>Mobile-optimized gallery</li>
+                        <li>Secure payment processing</li>
+                    </ul>
+                    <a href="https://hexedandhearsed.fishtownwebdesign.com" target="_blank" rel="noopener" class="visit-btn">Visit Website →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Sell More Online?</h2>
+        <p>Your products deserve a store that's as unique as your brand. Let's build an e-commerce experience that converts browsers into loyal customers.</p>
+        <a href="/contact" class="cs-button-solid">Get Your Free Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer id="cs-footer-2412">
+        <div class="cs-container cs-container-top">
+            <picture>
+                <source media="(max-width: 600px)" srcset="/public/content/home/footer-logo-m.webp">
+                <source media="(min-width: 601px)" srcset="/public/content/home/footer-logo.webp">
+                <img loading="lazy" src="/public/content/home/footer-logo.png" id="footer-logo" alt="Fishtown Logo" width="216" height="128">
+            </picture>
+            <div class="cs-quick-links">
+                <ul class="cs-ul">
+                    <li class="cs-li"><a class="cs-link" href="/about">About</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/pricing">Pricing</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/web-design">Web Design</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/seo">SEO</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="cs-wrapper">
+                <div class="cs-subscribe">
+                    <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
+                    <form class="cs-form" name="Subscription Form" method="post">
+                        <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address">
+                        <button class="cs-button-solid cs-submit" type="submit">
+                            <img class="cs-icon" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/paperplane.svg" alt="submit" width="40" height="40" decoding="async" loading="lazy">
+                        </button>
+                    </form>
+                </div>
+                <div class="cs-bottom">
+                    <div class="cs-social">
+                        <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                        <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit instagram">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                    </div>
+                    <div class="cs-legal">
+                        <a href="/tos" class="cs-legal-link cs-link">Terms & Conditions</a>
+                        <span class="cs-divider" aria-hidden="true">|</span>
+                        <a href="/pp" class="cs-legal-link cs-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-credit">
+            <span class="cs-ip cs-text">© 2026 Fishtown Web Design. All rights reserved.</span>
+        </div>
+    </footer>
+    </div>
+
+    <script>
+        const CSbody = document.querySelector('body');
+        const CSnavbarMenu = document.querySelector('#cs-navigation');
+        const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
+        CShamburgerMenu.addEventListener('click', function() {
+            CShamburgerMenu.classList.toggle('cs-active');
+            CSnavbarMenu.classList.toggle('cs-active');
+            CSbody.classList.toggle('cs-open');
+            const csUL = document.querySelector('#cs-expanded');
+            csUL.setAttribute('aria-expanded', csUL.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+        });
+        const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+        dropDowns.forEach(item => item.addEventListener('click', () => item.classList.toggle('cs-active')));
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P9ZFLQPT8E');
+    </script>
+</body>
+</html>
