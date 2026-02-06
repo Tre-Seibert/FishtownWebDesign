@@ -319,8 +319,8 @@
             }
             
             .welcome-popup {
-                max-height: 90vh; /* Fallback */
-                max-height: 90dvh; /* Modern dynamic viewport */
+                max-height: 95vh; /* Fallback */
+                max-height: 95dvh; /* Modern dynamic viewport */
                 border-radius: 0.75rem;
                 margin-bottom: 1rem;
             }
@@ -353,12 +353,13 @@
             }
             
             .welcome-popup {
-                max-height: 80vh;
+                max-height: 90vh;
+                max-height: 90dvh;
             }
             
             @media only screen and (max-width: 480px) {
                 .welcome-popup {
-                    max-height: calc(100% - 6rem);
+                    max-height: 90dvh;
                 }
             }
         }
