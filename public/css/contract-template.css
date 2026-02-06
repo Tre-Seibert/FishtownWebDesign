@@ -480,8 +480,14 @@
         
         /* Mobile responsive */
         @media only screen and (max-width: 48rem) {
+            html, body {
+                overflow-x: hidden;
+            }
+            
             .contract-wrapper {
                 padding: 5.5rem 1rem 1rem 1rem;
+                overflow-x: hidden;
+                max-width: 100vw;
             }
             
             .contract-nav {

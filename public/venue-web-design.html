@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://www.fishtownwebdesign.com/public/content/home/fish.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="description" content="Custom website design for wedding venues, event spaces & hospitality businesses. Beautiful, fast-loading websites with online booking systems. See our venue portfolio. From $150/mo.">
+    <meta property="og:title" content="Wedding Venue Website Design | Event Space & Hospitality Websites">
+    <meta property="og:description" content="Custom website design for wedding venues, event spaces & hospitality businesses. Beautiful, fast-loading websites with online booking systems. From $150/mo.">
+    <meta property="og:url" content="https://www.fishtownwebdesign.com/venue-web-design">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wedding Venue Website Design | Event Space & Hospitality Websites">
+    <meta name="twitter:description" content="Custom website design for wedding venues, event spaces & hospitality businesses. Beautiful, fast-loading websites with online booking systems. From $150/mo.">
+    <link rel="canonical" href="https://www.fishtownwebdesign.com/venue-web-design" />
+
+    <title>Wedding Venue Website Design | Event Space & Hospitality Websites</title>
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Venue Website Design",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Fishtown Web Design",
+            "image": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
+            "telephone": "717-333-8691",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Philadelphia",
+                "addressRegion": "PA",
+                "addressCountry": "US"
+            }
+        },
+        "description": "Custom website design services for wedding venues, event spaces, and hospitality businesses. Includes online booking systems and gallery features.",
+        "offers": {
+            "@type": "Offer",
+            "price": "150",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "150",
+                "priceCurrency": "USD",
+                "unitText": "month"
+            }
+        }
+    }
+    </script>
+
+    <!--CSS Imports-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/web-design.css">
+    <link rel="stylesheet" href="/public/css/core.css">
+
+    <!--Favicons-->
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/content/home/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/content/home/favicon_io/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
+
+    <style>
+        .industry-hero {
+            padding: 100px 16px 60px;
+            background: linear-gradient(135deg, #3A2F28 0%, #2a221c 100%);
+            text-align: center;
+            color: #fff;
+        }
+        .industry-hero .cs-topper {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .industry-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin: 0 0 20px;
+            line-height: 1.2;
+        }
+        .industry-hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .benefits-section {
+            padding: 80px 16px;
+            background: var(--bodyBG);
+        }
+        .benefits-section .cs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .benefits-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 50px;
+            color: var(--headerColor);
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .benefit-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .benefit-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--headerColor);
+        }
+        .benefit-card p {
+            color: var(--bodyTextColor);
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        .portfolio-section {
+            padding: 80px 16px;
+            background: #fff;
+        }
+        .portfolio-section .cs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .portfolio-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 20px;
+            color: var(--headerColor);
+        }
+        .portfolio-section .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--bodyTextColor);
+        }
+        
+        .portfolio-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #eee;
+        }
+        .portfolio-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .portfolio-item img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        .portfolio-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--headerColor);
+        }
+        .portfolio-content .client-type {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .portfolio-content p {
+            color: var(--bodyTextColor);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .portfolio-content .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+        }
+        .portfolio-content .features-list li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            color: var(--bodyTextColor);
+        }
+        .portfolio-content .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        .portfolio-content .visit-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .portfolio-content .visit-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-item {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .stats-section {
+            padding: 60px 16px;
+            background: #3A2F28;
+            color: #fff;
+        }
+        .stats-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .stat-item h3 {
+            font-size: 3rem;
+            margin: 0 0 8px;
+        }
+        .stat-item p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .cta-section {
+            padding: 80px 16px;
+            background: var(--bodyBG);
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 20px;
+            color: var(--headerColor);
+        }
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--bodyTextColor);
+        }
+        .cta-section .cs-button-solid {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+        .cta-section .cs-button-solid:hover {
+            background: var(--primary-dark);
+        }
+        
+        .venue-features {
+            padding: 80px 16px;
+            background: #f8f9fa;
+        }
+        .venue-features .cs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .venue-features h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 50px;
+            color: var(--headerColor);
+        }
+        .features-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+        }
+        .feature-item .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .feature-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--headerColor);
+        }
+        .feature-item p {
+            color: var(--bodyTextColor);
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+
+    <div class="cs-topper-card">
+        <div class="top-banner">
+            NOW ACCEPTING NEW CLIENTS.
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="cs-navigation">
+        <div class="cs-container">
+            <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/public/content/home/logo-m.webp">
+                    <source media="(min-width: 601px)" srcset="/public/content/home/logo.webp">
+                    <img src="/public/content/home/logo.png" alt="Fishtown Web Design Logo" decoding="async" id="logo" width="130px" height="46.29px" fetchpriority="high">
+                </picture>
+            </a>
+            <nav class="cs-nav" role="navigation">
+                <button class="cs-toggle" aria-label="mobile menu toggle">
+                    <div class="cs-box" aria-hidden="true">
+                        <span class="cs-line cs-line1" aria-hidden="true"></span>
+                        <span class="cs-line cs-line2" aria-hidden="true"></span>
+                        <span class="cs-line cs-line3" aria-hidden="true"></span>
+                    </div>
+                </button>
+                <div class="cs-ul-wrapper">
+                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/" class="cs-li-link">home</a></li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">about<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/charity" class="cs-li-link cs-drop-link">charity</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">services<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link cs-active">industries<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/contractor-web-design" class="cs-li-link cs-drop-link">contractors</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/venue-web-design" class="cs-li-link cs-drop-link cs-active">venues</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/ecommerce-web-design" class="cs-li-link cs-drop-link">e-commerce</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">locations<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-lancaster-pa" class="cs-li-link cs-drop-link">lancaster, pa</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">pricing</a></li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/contact" class="cs-li-link">contact</a></li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/blog" class="cs-li-link">blog</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="industry-hero">
+        <span class="cs-topper">Industry Expertise</span>
+        <h1>Website Design for Wedding Venues & Event Spaces</h1>
+        <p>Stunning websites that showcase your venue's beauty and make booking effortless. Custom online booking systems, breathtaking galleries, and fast-loading pages that convert visitors into clients.</p>
+        <a href="/contact" class="cs-button-solid" style="display: inline-block; padding: 16px 32px; background: #fff; color: #3A2F28; text-decoration: none; border-radius: 8px; font-weight: 600;">Get a Free Consultation</a>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits-section">
+        <div class="cs-container">
+            <h2>Why Your Venue Needs a Premium Website</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>First Impressions Are Everything</h3>
+                    <p>Couples spend months researching venues online. Your website is often their first impression—it needs to capture the magic and elegance of your space before they ever visit in person.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Beautiful Galleries That Load Fast</h3>
+                    <p>High-resolution photos are essential for venues, but they can cripple load times. We optimize every image so your stunning photography loads instantly without losing quality.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Custom Online Booking Systems</h3>
+                    <p>Let couples check availability and request tours without back-and-forth emails. Our custom booking systems integrate seamlessly with your workflow and calendar.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Mobile-Perfect Experience</h3>
+                    <p>Most couples research venues on their phones while commuting or during lunch. Your website needs to look just as beautiful on mobile as it does on desktop.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>SEO for Local Searches</h3>
+                    <p>When someone searches "wedding venues near Lancaster PA," you want to appear. We build local SEO directly into your site structure and content.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Event Type Flexibility</h3>
+                    <p>Weddings, corporate events, birthday parties, baby showers—your website should showcase all the ways clients can use your space, expanding your booking potential.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Showcase -->
+    <section class="venue-features">
+        <div class="cs-container">
+            <h2>Features Built for Venues</h2>
+            <div class="features-showcase">
+                <div class="feature-item">
+                    <div class="icon">📅</div>
+                    <h3>Online Booking System</h3>
+                    <p>Custom-coded availability calendars and tour request forms that feed directly into your inbox.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🖼️</div>
+                    <h3>Stunning Photo Galleries</h3>
+                    <p>Lightbox galleries optimized for both beauty and speed—showcase every angle of your venue.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🎥</div>
+                    <h3>Video Integration</h3>
+                    <p>Embed venue tours and highlight reels without slowing down your page load times.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">💬</div>
+                    <h3>Testimonial Displays</h3>
+                    <p>Showcase happy couples and event planners with beautiful review sections.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📍</div>
+                    <h3>Interactive Maps</h3>
+                    <p>Help visitors find you with embedded maps and detailed directions to your venue.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📱</div>
+                    <h3>Social Integration</h3>
+                    <p>Connect your Instagram feed and social proof directly on your website.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>90+</h3>
+                <p>Page Speed Scores</p>
+            </div>
+            <div class="stat-item">
+                <h3>&lt;1s</h3>
+                <p>Load Time</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Mobile Responsive</p>
+            </div>
+            <div class="stat-item">
+                <h3>$150</h3>
+                <p>Per Month</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio-section">
+        <div class="cs-container">
+            <h2>Venue Websites We've Built</h2>
+            <p class="section-intro">Real venues, real results. Each website is hand-coded for maximum performance and designed to convert visitors into bookings.</p>
+
+            <!-- Shawnee Run -->
+            <div class="portfolio-item">
+                <img src="https://shawneerunvenue.com/content/home/snow-barn-wedding-lancaster-pa.webp" alt="Shawnee Run Wedding Venue Website" loading="lazy">
+                <div class="portfolio-content">
+                    <span class="client-type">Wedding & Events Venue</span>
+                    <h3>Shawnee Run Wedding & Events Venue</h3>
+                    <p>A historic 200-year-old venue nestled in Lancaster County, Pennsylvania. Shawnee Run needed a website that captured the charm and elegance of their space while making booking inquiries effortless for couples.</p>
+                    <ul class="features-list">
+                        <li>Custom online booking system</li>
+                        <li>Stunning photo gallery with lightbox</li>
+                        <li>Event type pages (weddings, corporate, parties)</li>
+                        <li>Virtual tour video integration</li>
+                        <li>Location and directions section</li>
+                        <li>Mobile-optimized for on-the-go research</li>
+                    </ul>
+                    <a href="https://shawneerunvenue.com" target="_blank" rel="noopener" class="visit-btn">Visit Website →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Book More Events?</h2>
+        <p>Your venue deserves a website as beautiful as the space itself. Let's create something that captures the magic and converts visitors into bookings.</p>
+        <a href="/contact" class="cs-button-solid">Get Your Free Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer id="cs-footer-2412">
+        <div class="cs-container cs-container-top">
+            <picture>
+                <source media="(max-width: 600px)" srcset="/public/content/home/footer-logo-m.webp">
+                <source media="(min-width: 601px)" srcset="/public/content/home/footer-logo.webp">
+                <img loading="lazy" src="/public/content/home/footer-logo.png" id="footer-logo" alt="Fishtown Logo" width="216" height="128">
+            </picture>
+            <div class="cs-quick-links">
+                <ul class="cs-ul">
+                    <li class="cs-li"><a class="cs-link" href="/about">About</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/pricing">Pricing</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/web-design">Web Design</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/seo">SEO</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="cs-wrapper">
+                <div class="cs-subscribe">
+                    <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
+                    <form class="cs-form" name="Subscription Form" method="post">
+                        <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address">
+                        <button class="cs-button-solid cs-submit" type="submit">
+                            <img class="cs-icon" src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/paperplane.svg" alt="submit" width="40" height="40" decoding="async" loading="lazy">
+                        </button>
+                    </form>
+                </div>
+                <div class="cs-bottom">
+                    <div class="cs-social">
+                        <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                        <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit instagram">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                    </div>
+                    <div class="cs-legal">
+                        <a href="/tos" class="cs-legal-link cs-link">Terms & Conditions</a>
+                        <span class="cs-divider" aria-hidden="true">|</span>
+                        <a href="/pp" class="cs-legal-link cs-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-credit">
+            <span class="cs-ip cs-text">© 2026 Fishtown Web Design. All rights reserved.</span>
+        </div>
+    </footer>
+    </div>
+
+    <script>
+        const CSbody = document.querySelector('body');
+        const CSnavbarMenu = document.querySelector('#cs-navigation');
+        const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
+        CShamburgerMenu.addEventListener('click', function() {
+            CShamburgerMenu.classList.toggle('cs-active');
+            CSnavbarMenu.classList.toggle('cs-active');
+            CSbody.classList.toggle('cs-open');
+            const csUL = document.querySelector('#cs-expanded');
+            csUL.setAttribute('aria-expanded', csUL.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+        });
+        const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+        dropDowns.forEach(item => item.addEventListener('click', () => item.classList.toggle('cs-active')));
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P9ZFLQPT8E');
+    </script>
+</body>
+</html>
