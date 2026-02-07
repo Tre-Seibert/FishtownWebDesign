@@ -91,6 +91,32 @@
             align-items: center;
             justify-content: center;
         }
+        .industry-hero .cs-button-solid {
+            font-size: 1rem;
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none !important;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: var(--bg-dark) !important;
+            min-width: 12.5rem;
+            padding: 0 clamp(2rem, 4vw, 3rem);
+            background-color: var(--primary);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            font-family: Horizon, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            border-radius: 0.5rem;
+            border: none;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+        }
+        .industry-hero .cs-button-solid:hover {
+            background-color: var(--primaryLight);
+            transform: translateY(-1px);
+        }
         .industry-hero .secondary-cta {
             color: rgba(255,255,255,0.92);
             border: 2px solid rgba(255,255,255,0.35);
@@ -234,6 +260,31 @@
             line-height: 1.7;
         }
 
+        .cta-section .cs-button-solid {
+            font-size: 1rem;
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: var(--bg-dark);
+            min-width: 12.5rem;
+            padding: 0 clamp(2rem, 4vw, 3rem);
+            background-color: var(--primary);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            transition: background-color 0.3s, transform 0.3s;
+            font-family: Horizon, sans-serif;
+            text-transform: uppercase;
+            border-radius: 0.5rem;
+            border: none;
+        }
+        .cta-section .cs-button-solid:hover {
+            background-color: var(--primaryLight);
+            transform: translateY(-1px);
+        }
+
         @media (min-width: 768px) {
             .industry-hero .hero-actions {
                 flex-direction: row;
@@ -373,7 +424,6 @@
             </p>
             <div class="hero-actions">
                 <a href="/contact" class="cs-button-solid">Book a Build Call</a>
-                <a href="/questionnaire" class="secondary-cta">Get an MVP Estimate</a>
             </div>
         </div>
     </section>

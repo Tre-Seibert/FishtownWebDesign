@@ -352,6 +352,27 @@
     background: var(--primary);
     color: var(--bg-dark);
     box-shadow: none;
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    min-width: 12.5rem;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    border: none;
+  }
+
+  #saas-cta-2149 .cs-button-solid:hover {
+    background: var(--primaryLight);
+    transform: translateY(-1px);
   }
 }
 
