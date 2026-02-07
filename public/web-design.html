@@ -112,6 +112,9 @@
                                 <li class="cs-drop-li">
                                     <a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a>
                                 </li>
+                                <li class="cs-drop-li">
+                                    <a href="https://fishtownwebdesign.com/saas-development" class="cs-li-link cs-drop-link">saas development</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="cs-li cs-dropdown" tabindex="0">
@@ -129,17 +132,25 @@
                                 <li class="cs-drop-li">
                                     <a href="https://fishtownwebdesign.com/ecommerce-web-design" class="cs-li-link cs-drop-link">e-commerce</a>
                                 </li>
+                                <li class="cs-drop-li">
+                                    <a href="https://fishtownwebdesign.com/startup-product-development" class="cs-li-link cs-drop-link">startups</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="cs-li cs-dropdown" tabindex="0">
-                            <span class="cs-li-link">
-                                locations
-                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                            </span>
+                            <span class="cs-li-link">locations<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
                             <ul class="cs-drop-ul">
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/web-design-lancaster-pa" class="cs-li-link cs-drop-link">lancaster, pa</a>
+                                <li class="cs-drop-li cs-dropdown-nested" tabindex="0">
+                                    <span class="cs-li-link cs-drop-link">philadelphia<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true" style="margin-left: 8px;"></span>
+                                    <ul class="cs-drop-ul-nested">
+                                        <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-fishtown" class="cs-li-link cs-drop-link">fishtown</a></li>
+                                        <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-center-city" class="cs-li-link cs-drop-link">center city</a></li>
+                                        <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-old-city" class="cs-li-link cs-drop-link">old city</a></li>
+                                        <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-northern-liberties" class="cs-li-link cs-drop-link">northern liberties</a></li>
+                                        <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-university-city" class="cs-li-link cs-drop-link">university city</a></li>
+                                    </ul>
                                 </li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-lancaster-pa" class="cs-li-link cs-drop-link">lancaster, pa</a></li>
                             </ul>
                         </li>
                         <li class="cs-li">
@@ -584,39 +595,32 @@
     </footer>
 
     <script>
-        // add classes for mobile navigation toggling
-        var CSbody = document.querySelector('body');
+        const CSbody = document.querySelector('body');
         const CSnavbarMenu = document.querySelector('#cs-navigation');
         const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
-
-        CShamburgerMenu.addEventListener('click', function () {
+        CShamburgerMenu.addEventListener('click', function() {
             CShamburgerMenu.classList.toggle('cs-active');
             CSnavbarMenu.classList.toggle('cs-active');
             CSbody.classList.toggle('cs-open');
-            // run the function to check the aria-expanded value
-            ariaExpanded();
-        });
-
-        // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
-        function ariaExpanded() {
             const csUL = document.querySelector('#cs-expanded');
-            const csExpanded = csUL.getAttribute('aria-expanded');
-
-            if (csExpanded === 'false') {
-                csUL.setAttribute('aria-expanded', 'true');
-            } else {
-                csUL.setAttribute('aria-expanded', 'false');
-            }
-        }
-
-        // mobile nav toggle code
-        const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
-        for (const item of dropDowns) {
-            const onClick = () => {
-                item.classList.toggle('cs-active');
-            };
-            item.addEventListener('click', onClick);
-        }
+            csUL.setAttribute('aria-expanded', csUL.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+        });
+        
+        const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown:not(.cs-dropdown-nested)'));
+        dropDowns.forEach(item => item.addEventListener('click', () => {
+            item.classList.toggle('cs-active');
+        }));
+        
+        // Handle nested dropdowns (Philadelphia submenu)
+        const nestedDropDowns = Array.from(document.querySelectorAll('.cs-dropdown-nested'));
+        nestedDropDowns.forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (e.target === this || e.target.tagName === 'SPAN' || e.target.tagName === 'IMG') {
+                    e.stopPropagation();
+                    this.classList.toggle('cs-active');
+                }
+            });
+        });
     </script>
     <!-- Schema Markup -->
     <script type="application/ld+json">

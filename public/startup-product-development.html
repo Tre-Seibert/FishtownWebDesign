@@ -3,199 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://www.fishtownwebdesign.com/public/content/home/logometa.png">
+    <meta property="og:image" content="https://www.fishtownwebdesign.com/public/content/home/fish.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta name="description" content="Unsubscribe from Fishtown Web Design's newsletter. We respect your privacy and make it easy to opt out of our communications.">
-    <meta property="og:title" content="Unsubscribe - Fishtown Web Design">
-    <meta property="og:description" content="Unsubscribe from our newsletter. We respect your privacy and make it easy to opt out of our communications.">
-    <link rel="canonical" href="https://www.fishtownwebdesign.com/unsubscribe" />
+    <meta name="description" content="Startup MVP and product development nationwide. Plan, design, and build your SaaS or web app, then iterate to traction with reliable ongoing support.">
+    <meta property="og:title" content="Startup MVP & Product Development | Build and Launch Faster">
+    <meta property="og:description" content="Startup MVP and product development nationwide. Plan, design, and build your SaaS or web app, then iterate to traction with reliable ongoing support.">
+    <meta property="og:url" content="https://www.fishtownwebdesign.com/startup-product-development">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Startup MVP & Product Development | Build and Launch Faster">
+    <meta name="twitter:description" content="Startup MVP and product development nationwide. Plan, design, and build your SaaS or web app, then iterate to traction with reliable ongoing support.">
+    <meta name="twitter:image" content="https://www.fishtownwebdesign.com/public/content/home/fish.png">
+    <link rel="canonical" href="https://www.fishtownwebdesign.com/startup-product-development" />
 
-    <title>Unsubscribe from Fishtown Web Design's Newsletter - Fishtown Web Design</title>
+    <title>Startup MVP & Product Development | Build and Launch Faster</title>
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Startup Product Development",
+        "provider": {
+            "@type": "Organization",
+            "name": "Fishtown Web Design",
+            "url": "https://www.fishtownwebdesign.com",
+            "image": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
+            "telephone": "+1-717-333-8691"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "United States"
+        },
+        "url": "https://www.fishtownwebdesign.com/startup-product-development",
+        "description": "Startup MVP and product development services for SaaS and web applications. Strategy, UX, full-stack build, launch, and ongoing iteration."
+    }
+    </script>
 
     <!--CSS Imports-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/web-design.css">
     <link rel="stylesheet" href="/public/css/core.css">
 
     <!--Favicons-->
     <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/public/content/home/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/public/content/home/favicon_io/android_chrome_192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/public/content/home/favicon_io/android_chrome_512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/content/home/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/content/home/favicon_io/android-chrome-512x512.png">
     <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
     <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
 
     <style>
-        body {
+        /* Page-specific styles (mobile-first) */
+        .industry-hero {
+            padding: 100px 16px 60px;
+            background: linear-gradient(135deg, #3A2F28 0%, #2a221c 100%);
+            text-align: center;
+            color: #fff;
+        }
+        .industry-hero .cs-topper {
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .industry-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin: 0 0 18px;
+            line-height: 1.2;
+        }
+        .industry-hero p {
+            font-size: 1.05rem;
+            max-width: 760px;
+            margin: 0 auto 28px;
+            opacity: 0.92;
+            line-height: 1.7;
+        }
+        .industry-hero .hero-actions {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+        .industry-hero .secondary-cta {
+            color: rgba(255,255,255,0.92);
+            border: 2px solid rgba(255,255,255,0.35);
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-family: Horizon, sans-serif;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .industry-hero .secondary-cta:hover {
+            border-color: rgba(255,255,255,0.7);
+            transform: translateY(-1px);
+        }
+
+        .benefits-section {
+            padding: 80px 16px;
+            background: var(--bodyBG);
+        }
+        .benefits-section .cs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .benefits-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 50px;
+            color: var(--headerColor);
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        .benefit-card {
+            background: #fff;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(26,26,26,0.05);
+        }
+        .benefit-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--headerColor);
+        }
+        .benefit-card p {
+            color: var(--bodyTextColor);
+            line-height: 1.7;
             margin: 0;
         }
 
-        main {
-            flex: 1;
+        .deliverables-section {
+            padding: 80px 16px;
+            background: #fff;
         }
-
-        .unsubscribe-section {
-            padding: 120px 0 0px;
-            background: #f3eee8;
-            min-height: 60vh;
-        }
-
-        .unsubscribe-container {
-            max-width: 600px;
+        .deliverables-section .cs-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
-
-        .unsubscribe-card {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        .deliverables-section .section-head {
             text-align: center;
+            margin-bottom: 44px;
         }
-
-        .unsubscribe-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
+        .deliverables-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin: 0 0 12px;
+            color: var(--headerColor);
         }
-
-        .unsubscribe-subtitle {
-            font-size: 1.2rem;
-            color: #6c757d;
-            margin-bottom: 30px;
-            line-height: 1.6;
+        .deliverables-section p {
+            margin: 0 auto;
+            max-width: 800px;
+            line-height: 1.7;
+            color: var(--bodyTextColor);
         }
-
-        .unsubscribe-form {
-            margin-top: 30px;
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
         }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
+        .deliverable {
+            background: var(--bodyBG);
+            border-radius: 12px;
+            padding: 22px 22px;
+            border: 1px solid rgba(26,26,26,0.06);
         }
-
-        .form-label {
+        .deliverable strong {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
-            color: #2c3e50;
+            color: var(--headerColor);
         }
 
-        .form-input {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
+        .process-section {
+            padding: 80px 16px;
+            background: var(--bodyBG);
+        }
+        .process-section .cs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            margin-top: 32px;
+        }
+        .process-step {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px 18px;
+            border: 1px solid rgba(26,26,26,0.06);
+        }
+        .process-step h3 {
+            margin: 0 0 8px;
+            color: var(--headerColor);
+            font-size: 1.15rem;
+        }
+        .process-step p {
+            margin: 0;
+            line-height: 1.7;
+            color: var(--bodyTextColor);
         }
 
-        .form-input:focus {
-            outline: none;
-            border-color: #007bff;
+        .cta-section {
+            padding: 80px 16px;
+            text-align: center;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 18px;
+            color: #fff;
+        }
+        .cta-section p {
+            max-width: 720px;
+            margin: 0 auto 28px;
+            opacity: 0.92;
+            line-height: 1.7;
         }
 
-        .unsubscribe-button {
-            background: black;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .unsubscribe-button:hover {
-            background: black;
-        }
-
-        .unsubscribe-button:disabled {
-            background: #6c757d;
-            cursor: not-allowed;
-        }
-
-        .message {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 8px;
-            font-weight: 500;
-        }
-
-        .message.success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .message.error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        .message.info {
-            background: #d1ecf1;
-            color: #0c5460;
-            border: 1px solid #bee5eb;
-        }
-
-        .resubscribe-section {
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid #e9ecef;
-        }
-
-        .resubscribe-text {
-            color: #6c757d;
-            margin-bottom: 20px;
-        }
-
-        .resubscribe-button {
-            background: #28a745;
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .resubscribe-button:hover {
-            background: #218838;
-        }
-
-        @media (max-width: 768px) {
-            .unsubscribe-section {
-                padding: 100px 0 60px;
+        @media (min-width: 768px) {
+            .industry-hero .hero-actions {
+                flex-direction: row;
             }
-
-            .unsubscribe-card {
-                padding: 30px 20px;
+            .benefits-grid,
+            .deliverables-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-
-            .unsubscribe-title {
-                font-size: 2rem;
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .deliverables-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .process-grid {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
     </style>
 </head>
-
 <body>
+    <div class="page-wrapper">
+
     <div class="cs-topper-card">
-        <!-- Black Banner at the top -->
         <div class="top-banner">
             NOW ACCEPTING NEW CLIENTS.
         </div>
@@ -207,14 +274,13 @@
 
     <header id="cs-navigation">
         <div class="cs-container">
-            <!--Nav Logo-->
             <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
                 <picture>
                     <source media="(max-width: 600px)" srcset="/public/content/home/logo-m.webp">
                     <source media="(min-width: 601px)" srcset="/public/content/home/logo.webp">
                     <img 
                         src="/public/content/home/logo.png"
-                        alt="Fishtown Web Design - Philadelphia Web Design Agency Logo" 
+                        alt="Fishtown Web Design Logo" 
                         decoding="async"
                         id="logo"
                         width="130px"
@@ -222,9 +288,7 @@
                         fetchpriority="high">
                 </picture>
             </a>
-            <!--Navigation List-->
             <nav class="cs-nav" role="navigation">
-                <!--Mobile Nav Toggle-->
                 <button class="cs-toggle" aria-label="mobile menu toggle">
                     <div class="cs-box" aria-hidden="true">
                         <span class="cs-line cs-line1" aria-hidden="true"></span>
@@ -232,27 +296,20 @@
                         <span class="cs-line cs-line3" aria-hidden="true"></span>
                     </div>
                 </button>
-                <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
                 <div class="cs-ul-wrapper">
                     <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
                         <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/" class="cs-li-link">
-                                home
-                            </a>
+                            <a href="https://fishtownwebdesign.com/" class="cs-li-link">home</a>
                         </li>
-                        <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
                         <li class="cs-li cs-dropdown" tabindex="0">
                             <span class="cs-li-link">
                                 about
                                 <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
                             </span>
                             <ul class="cs-drop-ul">
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a>
-                                </li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/charity" class="cs-li-link cs-drop-link">charity</a></li>
                             </ul>
                         </li>
                         <li class="cs-li cs-dropdown" tabindex="0">
@@ -261,35 +318,21 @@
                                 <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
                             </span>
                             <ul class="cs-drop-ul">
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/saas-development" class="cs-li-link cs-drop-link">saas development</a>
-                                </li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/saas-development" class="cs-li-link cs-drop-link">saas development</a></li>
                             </ul>
                         </li>
                         <li class="cs-li cs-dropdown" tabindex="0">
-                            <span class="cs-li-link">
+                            <span class="cs-li-link cs-active">
                                 industries
                                 <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
                             </span>
                             <ul class="cs-drop-ul">
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/contractor-web-design" class="cs-li-link cs-drop-link">contractors</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/venue-web-design" class="cs-li-link cs-drop-link">venues</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/ecommerce-web-design" class="cs-li-link cs-drop-link">e-commerce</a>
-                                </li>
-                                <li class="cs-drop-li">
-                                    <a href="https://fishtownwebdesign.com/startup-product-development" class="cs-li-link cs-drop-link">startups</a>
-                                </li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/contractor-web-design" class="cs-li-link cs-drop-link">contractors</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/venue-web-design" class="cs-li-link cs-drop-link">venues</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/ecommerce-web-design" class="cs-li-link cs-drop-link">e-commerce</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/startup-product-development" class="cs-li-link cs-drop-link cs-active">startups</a></li>
                             </ul>
                         </li>
                         <li class="cs-li cs-dropdown" tabindex="0">
@@ -308,54 +351,153 @@
                                 <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-lancaster-pa" class="cs-li-link cs-drop-link">lancaster, pa</a></li>
                             </ul>
                         </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">
-                                pricing
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/contact" class="cs-li-link">
-                                contact
-                            </a>
-                        </li>
-                        <li class="cs-li">
-                            <a href="https://fishtownwebdesign.com/blog" class="cs-li-link">
-                                blog
-                            </a>
-                        </li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">pricing</a></li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/contact" class="cs-li-link">contact</a></li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/blog" class="cs-li-link">blog</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
 
-    <main>
-        <div class="unsubscribe-section">
-        <div class="unsubscribe-container">
-            <div class="unsubscribe-card">
-                <h1 class="unsubscribe-title">Unsubscribe</h1>
-                <p class="unsubscribe-subtitle">
-                    We're sorry to see you go! Enter your email address below to unsubscribe from our newsletter.
-                </p>
+    <!-- ============================================ -->
+    <!--                 Hero                          -->
+    <!-- ============================================ -->
 
-                <form class="unsubscribe-form" id="unsubscribe-form">
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
-                    </div>
-                    <button type="submit" class="unsubscribe-button" id="unsubscribe-btn">Unsubscribe</button>
-                </form>
+    <section class="industry-hero">
+        <div class="cs-container">
+            <span class="cs-topper">Startup Product Development</span>
+            <h1>From Idea to MVP to Traction</h1>
+            <p>
+                Startups don’t need more meetings—they need progress. We help founders plan, design, and build SaaS and web products, then iterate quickly based on real users. Serving startups nationwide.
+            </p>
+            <div class="hero-actions">
+                <a href="/contact" class="cs-button-solid">Book a Build Call</a>
+                <a href="/questionnaire" class="secondary-cta">Get an MVP Estimate</a>
+            </div>
+        </div>
+    </section>
 
-                <div id="message" class="message" style="display: none;"></div>
+    <!-- ============================================ -->
+    <!--           Endless Possibilities               -->
+    <!-- ============================================ -->
 
-                <div class="resubscribe-section" id="resubscribe-section" style="display: none;">
-                    <p class="resubscribe-text">Changed your mind? You can always resubscribe to our newsletter.</p>
-                    <a href="https://fishtownwebdesign.com/" class="resubscribe-button">Resubscribe</a>
+    <section class="benefits-section">
+        <div class="cs-container">
+            <h2>When You Can Productize a Workflow, the Possibilities Are Endless</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Self-Serve Onboarding</h3>
+                    <p>Reduce sales friction, shorten time-to-value, and turn demos into sign-ups with clean onboarding flows.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Customer Portals</h3>
+                    <p>Give users a place to manage accounts, teams, billing, and workflows—while reducing support load.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Integrations</h3>
+                    <p>Connect to the tools customers already use. Integrations increase retention and make switching harder.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Billing & Pricing Models</h3>
+                    <p>Trials, plans, upgrades, and usage-based billing—designed to improve conversion and reduce churn.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Dashboards & Reporting</h3>
+                    <p>Prove ROI with metrics that matter. Great reporting makes your product “stick.”</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Automation</h3>
+                    <p>Replace manual steps with systems that scale. Automations create leverage for small teams.</p>
                 </div>
             </div>
         </div>
-    </div>
-    </main>
+    </section>
+
+    <!-- ============================================ -->
+    <!--               Deliverables                   -->
+    <!-- ============================================ -->
+
+    <section class="deliverables-section">
+        <div class="cs-container">
+            <div class="section-head">
+                <h2>What You Get</h2>
+                <p>
+                    Clear scope, fast milestones, and a production-ready build—so you can launch, learn, and keep shipping without rebuilding everything.
+                </p>
+            </div>
+
+            <div class="deliverables-grid">
+                <div class="deliverable">
+                    <strong>MVP scope you can actually ship</strong>
+                    Define the core user journey, cut the noise, and build the smallest version that delivers real value.
+                </div>
+                <div class="deliverable">
+                    <strong>UX + flows designed for activation</strong>
+                    Screens and user paths that reduce drop-off and help users reach “aha” moments faster.
+                </div>
+                <div class="deliverable">
+                    <strong>Full-stack build with senior ownership</strong>
+                    Fewer handoffs, faster decisions, and a codebase that’s maintainable after launch.
+                </div>
+                <div class="deliverable">
+                    <strong>Launch checklist + monitoring</strong>
+                    A clean rollout plan, basic monitoring, and the guardrails to avoid post-launch chaos.
+                </div>
+                <div class="deliverable">
+                    <strong>Support that scales</strong>
+                    From quick fixes to major roadmap work—support expands as your product grows.
+                </div>
+                <div class="deliverable">
+                    <strong>Built for iteration</strong>
+                    A foundation that lets you ship improvements quickly as you learn from customers.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Process                       -->
+    <!-- ============================================ -->
+
+    <section class="process-section">
+        <div class="cs-container">
+            <div class="section-head" style="text-align: center;">
+                <h2 style="margin: 0 0 12px; color: var(--headerColor);">How We’ll Work</h2>
+                <p style="margin: 0 auto; max-width: 780px; color: var(--bodyTextColor); line-height: 1.7;">
+                    A simple process that keeps scope clear and shipping consistent.
+                </p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <h3>1) Discovery</h3>
+                    <p>Clarify the user, problem, and outcome. Align on what “done” means.</p>
+                </div>
+                <div class="process-step">
+                    <h3>2) MVP Plan</h3>
+                    <p>Must-haves vs nice-to-haves, timeline, milestones, and what waits for v2.</p>
+                </div>
+                <div class="process-step">
+                    <h3>3) Build + Demos</h3>
+                    <p>Ship in working milestones so you can review, adjust, and stay aligned.</p>
+                </div>
+                <div class="process-step">
+                    <h3>4) Launch + Iterate</h3>
+                    <p>Deploy, monitor, and keep shipping based on user feedback and usage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 CTA                           -->
+    <!-- ============================================ -->
+
+    <section class="cta-section">
+        <h2>Ready to Build Your MVP?</h2>
+        <p>If you’re serious about shipping and learning from real users, let’s map the fastest path to a launch that matters.</p>
+        <a href="/contact" class="cs-button-solid">Book a Build Call</a>
+    </section>
 
     <!-- ============================================ -->
     <!--                 Footer                       -->
@@ -363,34 +505,21 @@
 
     <footer id="cs-footer-2412">
         <div class="cs-container cs-container-top">
-            <!-- Logo -->
-             <picture>
+            <picture>
                 <source media="(max-width: 600px)" srcset="/public/content/home/footer-logo-m.webp">
                 <source media="(min-width: 601px)" srcset="/public/content/home/footer-logo.webp">
                 <img loading="lazy" src="/public/content/home/footer-logo.png" id="footer-logo" alt="Fishtown Logo" width="216" height="128">
             </picture>
-            <!--Quick Links-->
             <div class="cs-quick-links">
                 <ul class="cs-ul">
-                    <li class="cs-li">
-                        <a class="cs-link" href="/about">About</a>
-                    </li>
-                    <li class="cs-li">
-                        <a class="cs-link" href="/pricing">Pricing</a>
-                    </li>
-                    <li class="cs-li">
-                        <a class="cs-link" href="/web-design">Web Design</a>
-                    </li>
-                    <li class="cs-li">
-                        <a class="cs-link" href="/seo">SEO</a>
-                    </li>
-                    <li class="cs-li">
-                        <a class="cs-link" href="/contact">Contact</a>
-                    </li>
+                    <li class="cs-li"><a class="cs-link" href="/about">About</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/pricing">Pricing</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/web-design">Web Design</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/seo">SEO</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/contact">Contact</a></li>
                 </ul>
             </div>
             <div class="cs-wrapper">
-                <!--Subscribtion Form-->
                 <div class="cs-subscribe">
                     <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
                     <form class="cs-form" name="Subscription Form" method="post" id="footer-newsletter-form" action="#" onsubmit="return false;">
@@ -402,7 +531,6 @@
                     <div id="footer-newsletter-message" style="display: none; margin-top: 10px; margin-bottom: 1rem; padding: 10px; border-radius: 5px;"></div>
                 </div>
                 <div class="cs-bottom">
-                    <!--Social-->
                     <div class="cs-social">
                         <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
                             <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
@@ -411,7 +539,6 @@
                             <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
                         </a>
                     </div>
-                    <!--Legal-->
                     <div class="cs-legal">
                         <a href="/tos" class="cs-legal-link cs-link">Terms & Conditions</a>
                         <span class="cs-divider" aria-hidden="true">|</span>
@@ -455,74 +582,6 @@
                 }
             });
         });
-    </script>
-
-    <script>
-        // Auto-populate email from URL parameter if present
-        window.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const emailParam = urlParams.get('email');
-            if (emailParam) {
-                document.getElementById('email').value = decodeURIComponent(emailParam);
-            }
-        });
-
-        // Handle unsubscribe form submission
-        document.getElementById('unsubscribe-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const email = document.getElementById('email').value.trim();
-            const submitBtn = document.getElementById('unsubscribe-btn');
-            const messageDiv = document.getElementById('message');
-            const resubscribeSection = document.getElementById('resubscribe-section');
-            
-            if (!email) {
-                showMessage('Please enter your email address.', 'error');
-                return;
-            }
-
-            // Disable button during submission
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Processing...';
-
-            try {
-                const response = await fetch('/unsubscribe-newsletter', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email: email })
-                });
-
-                const data = await response.json();
-
-                if (data.success) {
-                    showMessage(data.message, 'success');
-                    document.getElementById('email').value = '';
-                    resubscribeSection.style.display = 'block';
-                } else {
-                    showMessage(data.message, 'error');
-                }
-            } catch (error) {
-                showMessage('There was an error processing your request. Please try again.', 'error');
-            } finally {
-                // Re-enable button
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Unsubscribe';
-            }
-        });
-
-        function showMessage(message, type) {
-            const messageDiv = document.getElementById('message');
-            messageDiv.textContent = message;
-            messageDiv.className = `message ${type}`;
-            messageDiv.style.display = 'block';
-            
-            // Hide message after 8 seconds for success, 5 seconds for others
-            setTimeout(() => {
-                messageDiv.style.display = 'none';
-            }, type === 'success' ? 8000 : 5000);
-        }
     </script>
     <script>
         // Update copyright year dynamically
@@ -643,6 +702,7 @@
             }
         });
     </script>
+    </div>
     <!-- Footer Newsletter Success Modal -->
     <div id="footer-newsletter-modal" class="modal" style="display: none;">
         <div class="modal-content">
@@ -650,7 +710,7 @@
                 <picture>
                     <source media="(max-width: 600px)" srcset="/public/content/home/fish-m.webp">
                     <source media="(min-width: 601px)" srcset="/public/content/home/fish.webp">
-                    <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Web Design Philadelphia Logo">
+                    <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Web Design Logo">
                 </picture>
             </div>
             <h2 class="modal-title">Thank You!</h2>
@@ -690,4 +750,4 @@
         })();
     </script>
 </body>
-</html> 
+</html>

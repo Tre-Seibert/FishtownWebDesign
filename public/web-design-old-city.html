@@ -6,48 +6,45 @@
     <meta property="og:image" content="https://www.fishtownwebdesign.com/public/content/home/fish.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta name="description" content="Custom e-commerce website design for online stores & product brands. Fast-loading shops with subscription systems, product galleries & secure checkout. See our portfolio. From $150/mo.">
-    <meta property="og:title" content="E-Commerce Website Design | Online Store & Shop Websites">
-    <meta property="og:description" content="Custom e-commerce website design for online stores & product brands. Fast-loading shops with subscription systems, product galleries & secure checkout. From $150/mo.">
-    <meta property="og:url" content="https://www.fishtownwebdesign.com/ecommerce-web-design">
+    <meta name="description" content="Custom web design in Old City Philadelphia. Hand-coded websites for galleries, boutiques, restaurants & historic businesses. Beautiful designs with 90+ page speed scores. From $150/mo.">
+    <meta property="og:title" content="Web Design Old City | Custom Websites for Old City Philadelphia Businesses">
+    <meta property="og:description" content="Custom web design in Old City Philadelphia. Hand-coded websites for galleries, boutiques, restaurants & historic businesses. Beautiful designs with 90+ page speed scores. From $150/mo.">
+    <meta property="og:url" content="https://www.fishtownwebdesign.com/web-design-old-city">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="E-Commerce Website Design | Online Store & Shop Websites">
-    <meta name="twitter:description" content="Custom e-commerce website design for online stores & product brands. Fast-loading shops with subscription systems & secure checkout. From $150/mo.">
-    <link rel="canonical" href="https://www.fishtownwebdesign.com/ecommerce-web-design" />
+    <meta name="twitter:title" content="Web Design Old City | Custom Websites for Old City Philadelphia">
+    <meta name="twitter:description" content="Custom web design in Old City Philadelphia. Hand-coded websites for local businesses. 90+ page speed scores. From $150/mo.">
+    <link rel="canonical" href="https://www.fishtownwebdesign.com/web-design-old-city" />
 
-    <title>E-Commerce Website Design | Online Store & Shop Websites</title>
+    <title>Web Design Old City | Custom Websites for Old City Philadelphia Businesses</title>
 
-    <!-- Schema.org markup -->
+    <!-- Schema.org markup for Local Business -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "E-Commerce Website Design",
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "Fishtown Web Design",
-            "image": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
-            "telephone": "717-333-8691",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Philadelphia",
-                "addressRegion": "PA",
-                "addressCountry": "US"
+        "@type": "ProfessionalService",
+        "name": "Fishtown Web Design - Old City Philadelphia",
+        "image": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
+        "description": "Custom web design services for businesses in Old City Philadelphia. Hand-coded websites for galleries, boutiques, restaurants, and historic businesses.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Philadelphia",
+            "addressRegion": "PA",
+            "postalCode": "19106",
+            "addressCountry": "US"
+        },
+        "areaServed": {
+            "@type": "Neighborhood",
+            "name": "Old City",
+            "containedInPlace": {
+                "@type": "City",
+                "name": "Philadelphia"
             }
         },
-        "description": "Custom e-commerce website design services for online stores, product brands, and subscription businesses.",
-        "offers": {
-            "@type": "Offer",
-            "price": "150",
-            "priceCurrency": "USD",
-            "priceSpecification": {
-                "@type": "UnitPriceSpecification",
-                "price": "150",
-                "priceCurrency": "USD",
-                "unitText": "month"
-            }
-        }
+        "telephone": "717-333-8691",
+        "url": "https://www.fishtownwebdesign.com/web-design-old-city",
+        "priceRange": "$$",
+        "serviceType": "Web Design"
     }
     </script>
 
@@ -67,13 +64,114 @@
     <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
 
     <style>
-        .industry-hero {
+        /* Nested dropdown styles */
+        .cs-dropdown-nested {
+            position: relative !important;
+        }
+        .cs-drop-ul-nested {
+            display: none !important;
+            position: static;
+            /* Use darker brown from palette */
+            background: var(--bg-dark);
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+            list-style: none;
+        }
+        .cs-dropdown-nested.cs-active > .cs-drop-ul-nested {
+            display: block !important;
+        }
+        .cs-dropdown-nested > .cs-li-link {
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .cs-drop-ul-nested .cs-drop-li {
+            padding-left: 0;
+            /* Mobile spacing (desktop overrides these later) */
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+        }
+        .cs-drop-ul-nested .cs-drop-li a {
+            display: block;
+            /* Bigger tap targets on mobile */
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+            color: var(--text-light);
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.08);
+        }
+        @media only screen and (min-width: 1024px) {
+            /* Core nav CSS clips dropdowns with overflow:hidden on desktop.
+               Allow nested flyout to render outside the parent dropdown. */
+            #cs-navigation .cs-drop-ul {
+                overflow: visible !important;
+            }
+            #cs-navigation .cs-drop-ul-nested {
+                display: none !important;
+                position: absolute !important;
+                /* Default to opening LEFT on smaller desktops to avoid
+                   off-screen rendering + horizontal scrollbars. */
+                left: auto !important;
+                right: 100% !important;
+                top: 0 !important;
+                /* Match the main dropdown look */
+                background: var(--bg-dark) !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                min-width: 220px !important;
+                width: 220px !important;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;
+                z-index: 99999 !important;
+                border-radius: 4px !important;
+                border-bottom: 5px solid var(--primary) !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+            }
+            /* On 4K+ screens, we have room to open to the RIGHT again */
+            @media only screen and (min-width: 3840px) {
+                #cs-navigation .cs-drop-ul-nested {
+                    right: auto !important;
+                    left: 100% !important;
+                }
+            }
+            #cs-navigation .cs-dropdown-nested.cs-active > .cs-drop-ul-nested,
+            #cs-navigation .cs-dropdown-nested:hover > .cs-drop-ul-nested {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+            .cs-drop-ul-nested .cs-drop-li {
+                padding: 0 !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            .cs-drop-ul-nested .cs-drop-li a {
+                color: var(--text-light) !important;
+                text-decoration: none !important;
+                display: block !important;
+                padding: 0.75rem !important;
+                background-color: transparent !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            .cs-drop-ul-nested .cs-drop-li a:hover {
+                background-color: rgba(255, 255, 255, 0.10) !important;
+            }
+        }
+        
+        .location-hero {
             padding: 100px 16px 60px;
             background: linear-gradient(135deg, #3A2F28 0%, #2a221c 100%);
             text-align: center;
             color: #fff;
         }
-        .industry-hero .cs-topper {
+        .location-hero .cs-topper {
             color: rgba(255,255,255,0.8);
             font-size: 14px;
             text-transform: uppercase;
@@ -81,166 +179,78 @@
             margin-bottom: 16px;
             display: block;
         }
-        .industry-hero h1 {
+        .location-hero h1 {
             font-size: clamp(2rem, 5vw, 3rem);
             margin: 0 0 20px;
             line-height: 1.2;
         }
-        .industry-hero p {
+        .location-hero p {
             font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto 30px;
             opacity: 0.9;
         }
         
-        .benefits-section {
+        .local-intro {
+            padding: 80px 16px;
+            background: #fff;
+        }
+        .local-intro .cs-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .local-intro h2 {
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            margin-bottom: 24px;
+            color: var(--headerColor);
+            text-align: center;
+        }
+        .local-intro p {
+            color: var(--bodyTextColor);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .services-section {
             padding: 80px 16px;
             background: var(--bodyBG);
         }
-        .benefits-section .cs-container {
+        .services-section .cs-container {
             max-width: 1200px;
             margin: 0 auto;
         }
-        .benefits-section h2 {
+        .services-section h2 {
             text-align: center;
             font-size: clamp(1.75rem, 4vw, 2.5rem);
             margin-bottom: 50px;
             color: var(--headerColor);
         }
-        .benefits-grid {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        .benefit-card {
+        .service-card {
             background: #fff;
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
-        .benefit-card h3 {
+        .service-card h3 {
             font-size: 1.25rem;
             margin-bottom: 12px;
             color: var(--headerColor);
         }
-        .benefit-card p {
+        .service-card p {
             color: var(--bodyTextColor);
             line-height: 1.7;
             margin: 0;
         }
         
-        .portfolio-section {
-            padding: 80px 16px;
-            background: #fff;
-        }
-        .portfolio-section .cs-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .portfolio-section h2 {
-            text-align: center;
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            margin-bottom: 20px;
-            color: var(--headerColor);
-        }
-        .portfolio-section .section-intro {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 50px;
-            color: var(--bodyTextColor);
-        }
-        
-        .portfolio-item {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            margin-bottom: 60px;
-            padding-bottom: 60px;
-            border-bottom: 1px solid #eee;
-        }
-        .portfolio-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-        .portfolio-item:nth-child(even) {
-            direction: rtl;
-        }
-        .portfolio-item:nth-child(even) > * {
-            direction: ltr;
-        }
-        .portfolio-item img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-        }
-        .portfolio-item img.crop-top {
-            height: 650px;
-            object-fit: cover;
-            object-position: center calc(90% + 1rem);
-        }
-        .portfolio-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-            color: var(--headerColor);
-        }
-        .portfolio-content .client-type {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 16px;
-            display: block;
-        }
-        .portfolio-content p {
-            color: var(--bodyTextColor);
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-        .portfolio-content .features-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 20px;
-        }
-        .portfolio-content .features-list li {
-            padding: 8px 0;
-            padding-left: 28px;
-            position: relative;
-            color: var(--bodyTextColor);
-        }
-        .portfolio-content .features-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-        .portfolio-content .visit-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: var(--primary);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-        .portfolio-content .visit-btn:hover {
-            background: var(--primary-dark);
-        }
-        
-        @media (max-width: 768px) {
-            .portfolio-item {
-                grid-template-columns: 1fr;
-            }
-            .portfolio-item:nth-child(even) {
-                direction: ltr;
-            }
-        }
-        
         .stats-section {
             padding: 60px 16px;
-            background: #3A2F28;
+            background: var(--primary);
             color: #fff;
         }
         .stats-grid {
@@ -260,6 +270,46 @@
             opacity: 0.9;
         }
         
+        .why-oldcity {
+            padding: 80px 16px;
+            background: #fff;
+        }
+        .why-oldcity .cs-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .why-oldcity h2 {
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            margin-bottom: 30px;
+            color: var(--headerColor);
+            text-align: center;
+        }
+        .why-oldcity p {
+            color: var(--bodyTextColor);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .why-oldcity ul {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+        .why-oldcity li {
+            padding: 12px 0 12px 30px;
+            position: relative;
+            color: var(--bodyTextColor);
+            line-height: 1.7;
+        }
+        .why-oldcity li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
         .cta-section {
             padding: 80px 16px;
             background: var(--bodyBG);
@@ -274,6 +324,7 @@
             max-width: 600px;
             margin: 0 auto 30px;
             color: var(--bodyTextColor);
+            font-size: 1.1rem;
         }
         .cta-section .cs-button-solid {
             display: inline-block;
@@ -289,49 +340,21 @@
         .cta-section .cs-button-solid:hover {
             background: var(--primary-dark);
         }
-        
-        .ecommerce-features {
-            padding: 80px 16px;
-            background: #f8f9fa;
-        }
-        .ecommerce-features .cs-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .ecommerce-features h2 {
-            text-align: center;
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            margin-bottom: 50px;
-            color: var(--headerColor);
-        }
-        .features-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .feature-item {
-            text-align: center;
-            padding: 30px;
-        }
-        .feature-item .icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        .feature-item h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-            color: var(--headerColor);
-        }
-        .feature-item p {
-            color: var(--bodyTextColor);
-            line-height: 1.7;
+
+        @media screen and (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
 <body>
     <!-- Floating CTA Button -->
     <div class="floating-cta">
-        <a href="/contract">
+        <a href="/contact">
             Start Today
             <span class="cta-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -387,23 +410,23 @@
                             </ul>
                         </li>
                         <li class="cs-li cs-dropdown" tabindex="0">
-                            <span class="cs-li-link cs-active">industries<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <span class="cs-li-link">industries<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
                             <ul class="cs-drop-ul">
                                 <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/contractor-web-design" class="cs-li-link cs-drop-link">contractors</a></li>
                                 <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/venue-web-design" class="cs-li-link cs-drop-link">venues</a></li>
-                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/ecommerce-web-design" class="cs-li-link cs-drop-link cs-active">e-commerce</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/ecommerce-web-design" class="cs-li-link cs-drop-link">e-commerce</a></li>
                                 <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/startup-product-development" class="cs-li-link cs-drop-link">startups</a></li>
                             </ul>
                         </li>
                         <li class="cs-li cs-dropdown" tabindex="0">
-                            <span class="cs-li-link">locations<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <span class="cs-li-link cs-active">locations<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
                             <ul class="cs-drop-ul">
                                 <li class="cs-drop-li cs-dropdown-nested" tabindex="0">
-                                    <span class="cs-li-link cs-drop-link">philadelphia<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true" style="margin-left: 8px;"></span>
+                                    <span class="cs-li-link cs-drop-link cs-active">philadelphia<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true" style="margin-left: 8px;"></span>
                                     <ul class="cs-drop-ul-nested">
                                         <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-fishtown" class="cs-li-link cs-drop-link">fishtown</a></li>
                                         <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-center-city" class="cs-li-link cs-drop-link">center city</a></li>
-                                        <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-old-city" class="cs-li-link cs-drop-link">old city</a></li>
+                                        <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-old-city" class="cs-li-link cs-drop-link cs-active">old city</a></li>
                                         <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-northern-liberties" class="cs-li-link cs-drop-link">northern liberties</a></li>
                                         <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-university-city" class="cs-li-link cs-drop-link">university city</a></li>
                                     </ul>
@@ -421,80 +444,51 @@
     </header>
 
     <!-- Hero -->
-    <section class="industry-hero">
-        <span class="cs-topper">Industry Expertise</span>
-        <h1>E-Commerce Website Design for Product Brands</h1>
-        <p>Custom online stores built for speed and conversions. Subscription systems, beautiful product galleries, and secure checkout experiences that turn browsers into buyers.</p>
+    <section class="location-hero">
+        <span class="cs-topper">Old City, Philadelphia</span>
+        <h1>Web Design in Old City</h1>
+        <p>Beautiful, high-performance websites for Old City's galleries, boutiques, restaurants, and historic businesses. Websites as unique and artistic as the neighborhood itself.</p>
         <a href="/contact" class="cs-button-solid" style="display: inline-block; padding: 16px 32px; background: #fff; color: #3A2F28; text-decoration: none; border-radius: 8px; font-weight: 600;">Get a Free Consultation</a>
     </section>
 
-    <!-- Benefits -->
-    <section class="benefits-section">
+    <!-- Local Intro -->
+    <section class="local-intro">
         <div class="cs-container">
-            <h2>Why Your Online Store Needs a Custom Website</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h3>Speed Equals Sales</h3>
-                    <p>Every second of load time costs you conversions. Studies show a 1-second delay can reduce conversions by 7%. Our hand-coded stores load in under 1 second—no bloated page builders dragging you down.</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>Brand-First Design</h3>
-                    <p>Template stores look like template stores. We build custom designs that reflect your brand's personality and stand out from competitors using the same Shopify themes.</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>Subscription Systems Built-In</h3>
-                    <p>Recurring revenue is the key to sustainable e-commerce. We build custom subscription flows that make it easy for customers to set it and forget it.</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>Mobile Shopping Optimized</h3>
-                    <p>Over 70% of e-commerce traffic is mobile. Your store needs to look perfect and function flawlessly on phones—from browsing to checkout.</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>SEO for Product Discovery</h3>
-                    <p>Proper product schema markup, optimized category pages, and fast load times help your products appear in Google Shopping and organic search results.</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>Shopify Storefront API</h3>
-                    <p>We leverage Shopify's powerful Storefront API to give you the best of both worlds—lightning-fast custom frontends with Shopify's bulletproof backend for inventory, payments, and fulfillment.</p>
-                </div>
-            </div>
+            <h2>Where History Meets Digital Innovation</h2>
+            <p>Old City is Philadelphia's most historic neighborhood—where cobblestone streets meet contemporary art galleries, where colonial architecture houses modern boutiques, and where tourists and locals alike discover unique businesses around every corner.</p>
+            <p>Your Old City business has character and story that deserves to shine online. Whether you're an art gallery on 2nd Street, a boutique on 3rd, a restaurant near Elfreth's Alley, or a creative studio tucked between the historic buildings, your website should reflect what makes you special.</p>
+            <p>We don't do cookie-cutter templates. Every website we build is hand-coded from scratch, designed to showcase your unique brand, and optimized to attract both tourists planning their visit and locals exploring their neighborhood.</p>
         </div>
     </section>
 
-    <!-- Features Showcase -->
-    <section class="ecommerce-features">
+    <!-- Services -->
+    <section class="services-section">
         <div class="cs-container">
-            <h2>E-Commerce Features We Build</h2>
-            <div class="features-showcase">
-                <div class="feature-item">
-                    <div class="icon">🛒</div>
-                    <h3>Product Catalogs</h3>
-                    <p>Beautiful, filterable product grids with quick-view options and variant selectors.</p>
+            <h2>What We Build for Old City Businesses</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Art Gallery Websites</h3>
+                    <p>Stunning portfolio sites for galleries, artists, and creative studios. High-resolution image galleries, artist bios, exhibition calendars, and online sales functionality.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="icon">🔄</div>
-                    <h3>Subscription Systems</h3>
-                    <p>Custom subscription builders with flexible delivery schedules and easy management.</p>
+                <div class="service-card">
+                    <h3>Restaurant & Cafe Sites</h3>
+                    <p>Mouthwatering websites for Old City's dining scene. Menu displays, reservation systems, photo galleries, and local SEO to attract tourists and regulars alike.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="icon">💳</div>
-                    <h3>Secure Checkout</h3>
-                    <p>PCI-compliant payment processing with Stripe, Square, or PayPal integration.</p>
+                <div class="service-card">
+                    <h3>Boutique & Retail Websites</h3>
+                    <p>E-commerce and showcase sites for clothing boutiques, gift shops, antique stores, and specialty retailers. Online shopping, inventory management, and pick-up options.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="icon">📦</div>
-                    <h3>Inventory Management</h3>
-                    <p>Real-time stock tracking with low-inventory alerts and sold-out handling.</p>
+                <div class="service-card">
+                    <h3>Museum & Historic Site Pages</h3>
+                    <p>Informational sites for museums, historic buildings, and cultural attractions. Event calendars, ticketing systems, educational content, and virtual tours.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="icon">📧</div>
-                    <h3>Email Integration</h3>
-                    <p>Automated order confirmations, shipping updates, and abandoned cart recovery.</p>
+                <div class="service-card">
+                    <h3>Hotel & B&B Websites</h3>
+                    <p>Booking-optimized sites for hotels, bed & breakfasts, and vacation rentals. Room galleries, availability calendars, secure reservations, and guest resources.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="icon">📊</div>
-                    <h3>Analytics Dashboard</h3>
-                    <p>Track sales, popular products, and customer behavior with built-in reporting.</p>
+                <div class="service-card">
+                    <h3>Professional Services</h3>
+                    <p>Sites for creative professionals, studios, and service businesses operating in Old City. Portfolio showcases, client testimonials, and booking systems.</p>
                 </div>
             </div>
         </div>
@@ -504,6 +498,10 @@
     <section class="stats-section">
         <div class="stats-grid">
             <div class="stat-item">
+                <h3>100%</h3>
+                <p>Mobile Responsive</p>
+            </div>
+            <div class="stat-item">
                 <h3>90+</h3>
                 <p>Page Speed Scores</p>
             </div>
@@ -512,70 +510,33 @@
                 <p>Load Time</p>
             </div>
             <div class="stat-item">
-                <h3>100%</h3>
-                <p>Mobile Responsive</p>
-            </div>
-            <div class="stat-item">
                 <h3>$150</h3>
                 <p>Per Month</p>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio -->
-    <section class="portfolio-section">
+    <!-- Why Old City -->
+    <section class="why-oldcity">
         <div class="cs-container">
-            <h2>E-Commerce Websites We've Built</h2>
-            <p class="section-intro">Real online stores, real results. Each website is hand-coded for maximum performance and designed to convert visitors into customers.</p>
-
-            <!-- Green Shades Coffee -->
-            <div class="portfolio-item">
-                <img class="crop-top" src="https://cdn.shopify.com/s/files/1/0699/4683/5116/files/lineup.jpg?v=1766013014" alt="Green Shades Coffee Co E-Commerce Website" loading="lazy">
-                <div class="portfolio-content">
-                    <span class="client-type">Coffee Brand / Subscription E-Commerce</span>
-                    <h3>Green Shades Coffee Co.</h3>
-                    <p>A purpose-driven coffee brand based in Binghamton, NY that donates a portion of every sale to animal shelters. We built a lightning-fast custom frontend powered by Shopify's Storefront API—delivering sub-second load times without sacrificing Shopify's robust e-commerce backend.</p>
-                    <ul class="features-list">
-                        <li>Shopify Storefront API integration</li>
-                        <li>Custom subscription builder</li>
-                        <li>Product catalog with variants</li>
-                        <li>90+ page speed scores</li>
-                        <li>Secure Stripe checkout</li>
-                        <li>Email newsletter integration</li>
-                    </ul>
-                    <a href="https://greenshadescoffeeco.com" target="_blank" rel="noopener" class="visit-btn">Visit Website →</a>
-                </div>
-            </div>
-
-            <!-- Hexed & Hearsed -->
-            <div class="portfolio-item">
-                <picture>
-                    <source media="(max-width: 600px)" srcset="/public/content/ecommerce/hexed-and-hearsed-m.webp">
-                    <source media="(min-width: 601px)" srcset="/public/content/ecommerce/hexed-and-hearsed.webp">
-                    <img src="/public/content/ecommerce/hexed-and-hearsed.png" alt="Hexed and Hearsed Gothic Clothing Website" loading="lazy">
-                </picture>
-                <div class="portfolio-content">
-                    <span class="client-type">Gothic Clothing / Fashion E-Commerce</span>
-                    <h3>Hexed & Hearsed</h3>
-                    <p>A gothic and alternative fashion brand with a dark, edgy aesthetic. The website design needed to match the brand's vibe while providing a seamless shopping experience for their unique clothing line.</p>
-                    <ul class="features-list">
-                        <li>Dark-themed custom design</li>
-                        <li>Product category organization</li>
-                        <li>Size and color variant selection</li>
-                        <li>Atmospheric brand storytelling</li>
-                        <li>Mobile-optimized gallery</li>
-                        <li>Secure payment processing</li>
-                    </ul>
-                    <a href="https://hexedandhearsed.fishtownwebdesign.com" target="_blank" rel="noopener" class="visit-btn">Visit Website →</a>
-                </div>
-            </div>
+            <h2>Why Old City Businesses Choose Us</h2>
+            <p>Old City attracts visitors who appreciate artistry, history, and quality. Your website should communicate the same. Here's how we help:</p>
+            <ul>
+                <li><strong>Custom Design:</strong> No templates. Every site is designed from scratch to match your brand's unique aesthetic and story.</li>
+                <li><strong>Image-Optimized:</strong> We make high-resolution photos load lightning-fast—crucial for galleries, restaurants, and retail.</li>
+                <li><strong>Mobile-First:</strong> Tourists exploring Old City are on their phones. Your site works perfectly on every device.</li>
+                <li><strong>Local SEO:</strong> Optimized to show up when people search "galleries near me," "restaurants Old City," or "shopping Old City Philadelphia."</li>
+                <li><strong>Fast Loading:</strong> Under 1-second load time means visitors don't bounce before seeing your beautiful content.</li>
+                <li><strong>Easy Updates:</strong> Menu changes, new artwork, event updates—all included in your monthly fee.</li>
+            </ul>
+            <p>We understand that Old City businesses need websites that capture attention, tell stories, and convert visitors into customers—whether they're tourists, locals, or art collectors browsing from anywhere in the world.</p>
         </div>
     </section>
 
     <!-- CTA -->
     <section class="cta-section">
-        <h2>Ready to Sell More Online?</h2>
-        <p>Your products deserve a store that's as unique as your brand. Let's build an e-commerce experience that converts browsers into loyal customers.</p>
+        <h2>Ready to Showcase Your Old City Business?</h2>
+        <p>Let's create a website that captures what makes your business special and attracts the customers you deserve.</p>
         <a href="/contact" class="cs-button-solid">Get Your Free Consultation</a>
     </section>
 
