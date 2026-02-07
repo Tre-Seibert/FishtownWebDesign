@@ -1,0 +1,386 @@
+/*-- -------------------------- -->
+<---     SaaS Development Page    -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #saas-hero-2149 {
+    padding: clamp(2.75rem, 54vw, 8rem) 1rem clamp(3.75rem, 7.5vw, 6.25rem);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
+  }
+
+  #saas-hero-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #saas-hero-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #saas-hero-2149 .cs-topper {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: inherit;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
+    color: var(--primary);
+    font-family: Horizon, sans-serif;
+  }
+
+  #saas-hero-2149 .cs-title {
+    font-size: clamp(2.4375rem, 5vw, 4.5rem);
+    max-width: 32ch;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+    font-family: "DM Serif Display", serif;
+  }
+
+  #saas-hero-2149 .cs-text {
+    color: var(--text-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 60ch;
+    margin: 0 0 clamp(1.75rem, 4vw, 2.5rem) 0;
+    line-height: 1.6em;
+    font-family: Montserrat, sans-serif;
+  }
+
+  #saas-hero-2149 .cs-button-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #saas-hero-2149 .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: var(--text-light);
+    min-width: 12.5rem;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--bg-dark);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+
+  #saas-hero-2149 .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+
+  #saas-hero-2149 .cs-button-transparent {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: var(--headerColor);
+    min-width: 12.5rem;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: transparent;
+    border: 2px solid color-mix(in lab, var(--headerColor), transparent 65%);
+    display: inline-block;
+    transition: border-color 0.3s, transform 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+  }
+
+  #saas-hero-2149 .cs-button-transparent:hover {
+    border-color: var(--headerColor);
+    transform: translateY(-1px);
+  }
+
+  #saas-hero-2149 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    opacity: 0.05;
+  }
+
+  #saas-hero-2149 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #saas-capabilities-2149 {
+    padding: var(--sectionPadding);
+    padding-bottom: 0;
+    position: relative;
+    z-index: 1;
+    background: url(/public/content/svgs/stripes.svg);
+  }
+
+  #saas-capabilities-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+
+  #saas-capabilities-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #saas-capabilities-2149 .cs-title {
+    max-width: 34ch;
+  }
+
+  #saas-capabilities-2149 .cs-title strong {
+    color: var(--primary);
+  }
+
+  #saas-capabilities-2149 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 1.875rem;
+    column-gap: 1.875rem;
+  }
+
+  #saas-capabilities-2149 .cs-item {
+    width: 100%;
+    text-align: left;
+    list-style: none;
+    margin: 2.75rem 0 0;
+    padding: 0 clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 6vw, 4rem);
+    background-color: var(--bg-card);
+    box-sizing: border-box;
+    grid-column: span 12;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  }
+
+  #saas-capabilities-2149 .cs-icon-wrapper {
+    width: 5.5rem;
+    height: 5.5rem;
+    margin: -2.75rem auto 2rem 0;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: calc(clamp(1.5rem, 4vw, 2.5rem) * -1);
+    border-radius: 0.75rem;
+  }
+
+  #saas-capabilities-2149 .cs-icon-wrapper svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--bg-dark);
+  }
+
+  #saas-capabilities-2149 .cs-h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+    color: var(--headerColor);
+    font-family: "DM Serif Display", serif;
+  }
+
+  #saas-capabilities-2149 .cs-item-text {
+    font-size: 1rem;
+    line-height: 1.6em;
+    margin: 0;
+    color: var(--text-body);
+  }
+
+  #saas-possibilities-2149 {
+    padding: var(--sectionPadding);
+    background: #fff;
+  }
+
+  #saas-possibilities-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  #saas-possibilities-2149 .cs-content {
+    width: 100%;
+    max-width: 46rem;
+  }
+
+  #saas-possibilities-2149 .cs-text {
+    margin-top: 0.75rem;
+  }
+
+  #saas-possibilities-2149 .cs-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  #saas-possibilities-2149 .cs-list li {
+    list-style: none;
+    padding: 1rem 1rem;
+    border-radius: 0.75rem;
+    background: var(--bg-primary);
+    border: 1px solid rgba(26, 26, 26, 0.06);
+  }
+
+  #saas-process-2149 {
+    padding: var(--sectionPadding);
+    background: var(--bg-primary);
+  }
+
+  #saas-process-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  #saas-process-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #saas-process-2149 .cs-steps {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  #saas-process-2149 .cs-step {
+    list-style: none;
+    background: #fff;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.25rem;
+    border: 1px solid rgba(26, 26, 26, 0.06);
+  }
+
+  #saas-process-2149 .cs-step h3 {
+    margin: 0 0 0.5rem;
+    font-family: "DM Serif Display", serif;
+    color: var(--headerColor);
+    font-size: 1.25rem;
+  }
+
+  #saas-process-2149 .cs-step p {
+    margin: 0;
+    color: var(--text-body);
+    line-height: 1.6;
+  }
+
+  #saas-cta-2149 {
+    padding: var(--sectionPadding);
+    background: var(--bg-dark);
+    color: #fff;
+    text-align: center;
+  }
+
+  #saas-cta-2149 .cs-container {
+    width: 100%;
+    max-width: 60rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  #saas-cta-2149 .cs-title,
+  #saas-cta-2149 .cs-text {
+    color: #fff;
+  }
+
+  #saas-cta-2149 .cs-button-solid {
+    background: var(--primary);
+    color: var(--bg-dark);
+    box-shadow: none;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #saas-hero-2149 .cs-button-group {
+    flex-direction: row;
+  }
+
+  #saas-capabilities-2149 .cs-item {
+    grid-column: span 6;
+  }
+
+  #saas-possibilities-2149 .cs-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #saas-process-2149 .cs-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #saas-capabilities-2149 .cs-item {
+    grid-column: span 4;
+  }
+
+  #saas-process-2149 .cs-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

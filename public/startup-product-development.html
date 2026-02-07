@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://www.fishtownwebdesign.com/public/content/home/fish.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="description" content="Startup MVP and product development nationwide. Plan, design, and build your SaaS or web app, then iterate to traction with reliable ongoing support.">
+    <meta property="og:title" content="Startup MVP & Product Development | Build and Launch Faster">
+    <meta property="og:description" content="Startup MVP and product development nationwide. Plan, design, and build your SaaS or web app, then iterate to traction with reliable ongoing support.">
+    <meta property="og:url" content="https://www.fishtownwebdesign.com/startup-product-development">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Startup MVP & Product Development | Build and Launch Faster">
+    <meta name="twitter:description" content="Startup MVP and product development nationwide. Plan, design, and build your SaaS or web app, then iterate to traction with reliable ongoing support.">
+    <meta name="twitter:image" content="https://www.fishtownwebdesign.com/public/content/home/fish.png">
+    <link rel="canonical" href="https://www.fishtownwebdesign.com/startup-product-development" />
+
+    <title>Startup MVP & Product Development | Build and Launch Faster</title>
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Startup Product Development",
+        "provider": {
+            "@type": "Organization",
+            "name": "Fishtown Web Design",
+            "url": "https://www.fishtownwebdesign.com",
+            "image": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
+            "telephone": "+1-717-333-8691"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "United States"
+        },
+        "url": "https://www.fishtownwebdesign.com/startup-product-development",
+        "description": "Startup MVP and product development services for SaaS and web applications. Strategy, UX, full-stack build, launch, and ongoing iteration."
+    }
+    </script>
+
+    <!--CSS Imports-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/web-design.css">
+    <link rel="stylesheet" href="/public/css/core.css">
+
+    <!--Favicons-->
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/content/home/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/content/home/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/content/home/favicon_io/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
+    <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
+
+    <style>
+        /* Page-specific styles (mobile-first) */
+        .industry-hero {
+            padding: 100px 16px 60px;
+            background: linear-gradient(135deg, #3A2F28 0%, #2a221c 100%);
+            text-align: center;
+            color: #fff;
+        }
+        .industry-hero .cs-topper {
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .industry-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin: 0 0 18px;
+            line-height: 1.2;
+        }
+        .industry-hero p {
+            font-size: 1.05rem;
+            max-width: 760px;
+            margin: 0 auto 28px;
+            opacity: 0.92;
+            line-height: 1.7;
+        }
+        .industry-hero .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+        .industry-hero .secondary-cta {
+            color: rgba(255,255,255,0.92);
+            border: 2px solid rgba(255,255,255,0.35);
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-family: Horizon, sans-serif;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .industry-hero .secondary-cta:hover {
+            border-color: rgba(255,255,255,0.7);
+            transform: translateY(-1px);
+        }
+
+        .benefits-section {
+            padding: 80px 16px;
+            background: var(--bodyBG);
+        }
+        .benefits-section .cs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .benefits-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 50px;
+            color: var(--headerColor);
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        .benefit-card {
+            background: #fff;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(26,26,26,0.05);
+        }
+        .benefit-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--headerColor);
+        }
+        .benefit-card p {
+            color: var(--bodyTextColor);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .deliverables-section {
+            padding: 80px 16px;
+            background: #fff;
+        }
+        .deliverables-section .cs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .deliverables-section .section-head {
+            text-align: center;
+            margin-bottom: 44px;
+        }
+        .deliverables-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin: 0 0 12px;
+            color: var(--headerColor);
+        }
+        .deliverables-section p {
+            margin: 0 auto;
+            max-width: 800px;
+            line-height: 1.7;
+            color: var(--bodyTextColor);
+        }
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        .deliverable {
+            background: var(--bodyBG);
+            border-radius: 12px;
+            padding: 22px 22px;
+            border: 1px solid rgba(26,26,26,0.06);
+        }
+        .deliverable strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--headerColor);
+        }
+
+        .process-section {
+            padding: 80px 16px;
+            background: var(--bodyBG);
+        }
+        .process-section .cs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            margin-top: 32px;
+        }
+        .process-step {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px 18px;
+            border: 1px solid rgba(26,26,26,0.06);
+        }
+        .process-step h3 {
+            margin: 0 0 8px;
+            color: var(--headerColor);
+            font-size: 1.15rem;
+        }
+        .process-step p {
+            margin: 0;
+            line-height: 1.7;
+            color: var(--bodyTextColor);
+        }
+
+        .cta-section {
+            padding: 80px 16px;
+            text-align: center;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 18px;
+            color: #fff;
+        }
+        .cta-section p {
+            max-width: 720px;
+            margin: 0 auto 28px;
+            opacity: 0.92;
+            line-height: 1.7;
+        }
+
+        @media (min-width: 768px) {
+            .industry-hero .hero-actions {
+                flex-direction: row;
+            }
+            .benefits-grid,
+            .deliverables-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .deliverables-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .process-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+
+    <div class="cs-topper-card">
+        <div class="top-banner">
+            NOW ACCEPTING NEW CLIENTS.
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!--                 Navigation                   -->
+    <!-- ============================================ -->
+
+    <header id="cs-navigation">
+        <div class="cs-container">
+            <a href="https://fishtownwebdesign.com/" class="cs-logo" aria-label="back to home">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/public/content/home/logo-m.webp">
+                    <source media="(min-width: 601px)" srcset="/public/content/home/logo.webp">
+                    <img 
+                        src="/public/content/home/logo.png"
+                        alt="Fishtown Web Design Logo" 
+                        decoding="async"
+                        id="logo"
+                        width="130px"
+                        height="46.29px"
+                        fetchpriority="high">
+                </picture>
+            </a>
+            <nav class="cs-nav" role="navigation">
+                <button class="cs-toggle" aria-label="mobile menu toggle">
+                    <div class="cs-box" aria-hidden="true">
+                        <span class="cs-line cs-line1" aria-hidden="true"></span>
+                        <span class="cs-line cs-line2" aria-hidden="true"></span>
+                        <span class="cs-line cs-line3" aria-hidden="true"></span>
+                    </div>
+                </button>
+                <div class="cs-ul-wrapper">
+                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                        <li class="cs-li">
+                            <a href="https://fishtownwebdesign.com/" class="cs-li-link">home</a>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">
+                                about
+                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                            </span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/about" class="cs-li-link cs-drop-link">about us</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/faq" class="cs-li-link cs-drop-link">faq</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/charity" class="cs-li-link cs-drop-link">charity</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">
+                                services
+                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                            </span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design" class="cs-li-link cs-drop-link">web design</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/seo" class="cs-li-link cs-drop-link">seo</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/saas-development" class="cs-li-link cs-drop-link">saas development</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link cs-active">
+                                industries
+                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                            </span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/contractor-web-design" class="cs-li-link cs-drop-link">contractors</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/venue-web-design" class="cs-li-link cs-drop-link">venues</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/ecommerce-web-design" class="cs-li-link cs-drop-link">e-commerce</a></li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/startup-product-development" class="cs-li-link cs-drop-link cs-active">startups</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li cs-dropdown" tabindex="0">
+                            <span class="cs-li-link">locations<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <ul class="cs-drop-ul">
+                                <li class="cs-drop-li cs-dropdown-nested" tabindex="0">
+                                    <span class="cs-li-link cs-drop-link">philadelphia<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true" style="margin-left: 8px;"></span>
+                                    <ul class="cs-drop-ul-nested">
+                                        <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-fishtown" class="cs-li-link cs-drop-link">fishtown</a></li>
+                                        <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-center-city" class="cs-li-link cs-drop-link">center city</a></li>
+                                        <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-old-city" class="cs-li-link cs-drop-link">old city</a></li>
+                                        <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-northern-liberties" class="cs-li-link cs-drop-link">northern liberties</a></li>
+                                        <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-university-city" class="cs-li-link cs-drop-link">university city</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cs-drop-li"><a href="https://fishtownwebdesign.com/web-design-lancaster-pa" class="cs-li-link cs-drop-link">lancaster, pa</a></li>
+                            </ul>
+                        </li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/pricing" class="cs-li-link">pricing</a></li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/contact" class="cs-li-link">contact</a></li>
+                        <li class="cs-li"><a href="https://fishtownwebdesign.com/blog" class="cs-li-link">blog</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!--                 Hero                          -->
+    <!-- ============================================ -->
+
+    <section class="industry-hero">
+        <div class="cs-container">
+            <span class="cs-topper">Startup Product Development</span>
+            <h1>From Idea to MVP to Traction</h1>
+            <p>
+                Startups don’t need more meetings—they need progress. We help founders plan, design, and build SaaS and web products, then iterate quickly based on real users. Serving startups nationwide.
+            </p>
+            <div class="hero-actions">
+                <a href="/contact" class="cs-button-solid">Book a Build Call</a>
+                <a href="/questionnaire" class="secondary-cta">Get an MVP Estimate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--           Endless Possibilities               -->
+    <!-- ============================================ -->
+
+    <section class="benefits-section">
+        <div class="cs-container">
+            <h2>When You Can Productize a Workflow, the Possibilities Are Endless</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Self-Serve Onboarding</h3>
+                    <p>Reduce sales friction, shorten time-to-value, and turn demos into sign-ups with clean onboarding flows.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Customer Portals</h3>
+                    <p>Give users a place to manage accounts, teams, billing, and workflows—while reducing support load.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Integrations</h3>
+                    <p>Connect to the tools customers already use. Integrations increase retention and make switching harder.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Billing & Pricing Models</h3>
+                    <p>Trials, plans, upgrades, and usage-based billing—designed to improve conversion and reduce churn.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Dashboards & Reporting</h3>
+                    <p>Prove ROI with metrics that matter. Great reporting makes your product “stick.”</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Automation</h3>
+                    <p>Replace manual steps with systems that scale. Automations create leverage for small teams.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--               Deliverables                   -->
+    <!-- ============================================ -->
+
+    <section class="deliverables-section">
+        <div class="cs-container">
+            <div class="section-head">
+                <h2>What You Get</h2>
+                <p>
+                    Clear scope, fast milestones, and a production-ready build—so you can launch, learn, and keep shipping without rebuilding everything.
+                </p>
+            </div>
+
+            <div class="deliverables-grid">
+                <div class="deliverable">
+                    <strong>MVP scope you can actually ship</strong>
+                    Define the core user journey, cut the noise, and build the smallest version that delivers real value.
+                </div>
+                <div class="deliverable">
+                    <strong>UX + flows designed for activation</strong>
+                    Screens and user paths that reduce drop-off and help users reach “aha” moments faster.
+                </div>
+                <div class="deliverable">
+                    <strong>Full-stack build with senior ownership</strong>
+                    Fewer handoffs, faster decisions, and a codebase that’s maintainable after launch.
+                </div>
+                <div class="deliverable">
+                    <strong>Launch checklist + monitoring</strong>
+                    A clean rollout plan, basic monitoring, and the guardrails to avoid post-launch chaos.
+                </div>
+                <div class="deliverable">
+                    <strong>Support that scales</strong>
+                    From quick fixes to major roadmap work—support expands as your product grows.
+                </div>
+                <div class="deliverable">
+                    <strong>Built for iteration</strong>
+                    A foundation that lets you ship improvements quickly as you learn from customers.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Process                       -->
+    <!-- ============================================ -->
+
+    <section class="process-section">
+        <div class="cs-container">
+            <div class="section-head" style="text-align: center;">
+                <h2 style="margin: 0 0 12px; color: var(--headerColor);">How We’ll Work</h2>
+                <p style="margin: 0 auto; max-width: 780px; color: var(--bodyTextColor); line-height: 1.7;">
+                    A simple process that keeps scope clear and shipping consistent.
+                </p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <h3>1) Discovery</h3>
+                    <p>Clarify the user, problem, and outcome. Align on what “done” means.</p>
+                </div>
+                <div class="process-step">
+                    <h3>2) MVP Plan</h3>
+                    <p>Must-haves vs nice-to-haves, timeline, milestones, and what waits for v2.</p>
+                </div>
+                <div class="process-step">
+                    <h3>3) Build + Demos</h3>
+                    <p>Ship in working milestones so you can review, adjust, and stay aligned.</p>
+                </div>
+                <div class="process-step">
+                    <h3>4) Launch + Iterate</h3>
+                    <p>Deploy, monitor, and keep shipping based on user feedback and usage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 CTA                           -->
+    <!-- ============================================ -->
+
+    <section class="cta-section">
+        <h2>Ready to Build Your MVP?</h2>
+        <p>If you’re serious about shipping and learning from real users, let’s map the fastest path to a launch that matters.</p>
+        <a href="/contact" class="cs-button-solid">Book a Build Call</a>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Footer                       -->
+    <!-- ============================================ -->
+
+    <footer id="cs-footer-2412">
+        <div class="cs-container cs-container-top">
+            <picture>
+                <source media="(max-width: 600px)" srcset="/public/content/home/footer-logo-m.webp">
+                <source media="(min-width: 601px)" srcset="/public/content/home/footer-logo.webp">
+                <img loading="lazy" src="/public/content/home/footer-logo.png" id="footer-logo" alt="Fishtown Logo" width="216" height="128">
+            </picture>
+            <div class="cs-quick-links">
+                <ul class="cs-ul">
+                    <li class="cs-li"><a class="cs-link" href="/about">About</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/pricing">Pricing</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/web-design">Web Design</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/seo">SEO</a></li>
+                    <li class="cs-li"><a class="cs-link" href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="cs-wrapper">
+                <div class="cs-subscribe">
+                    <h2 class="cs-header">Subscribe for Special Offers & Newsletters</h2>
+                    <form class="cs-form" name="Subscription Form" method="post" id="footer-newsletter-form" action="#" onsubmit="return false;">
+                        <input class="cs-input cs-text" type="email" id="cs-subscribe-2412" name="Subscribe" placeholder="Email Address" required>
+                        <button class="cs-button-solid cs-submit" type="submit" id="footer-subscribe-button">
+                            <img class="cs-icon" src="/public/content/home/subscribe.png" alt="submit my email and subcribe" width="40" height="40" decoding="async" loading="lazy">
+                        </button>
+                    </form>
+                    <div id="footer-newsletter-message" style="display: none; margin-top: 10px; margin-bottom: 1rem; padding: 10px; border-radius: 5px;"></div>
+                </div>
+                <div class="cs-bottom">
+                    <div class="cs-social">
+                        <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                        <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit instagram">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
+                        </a>
+                    </div>
+                    <div class="cs-legal">
+                        <a href="/tos" class="cs-legal-link cs-link">Terms & Conditions</a>
+                        <span class="cs-divider" aria-hidden="true">|</span>
+                        <a href="/pp" class="cs-legal-link cs-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-credit">
+            <span class="cs-ip cs-text">© <span id="current-year">2026</span> Fishtown Web Design. All rights reserved.</span>
+        </div>
+        <svg class="cs-curve" aria-hidden="true" width="1920" height="1" viewBox="0 0 1920 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1920" height="1" fill="var(--overlayBG)"/>
+        </svg>
+    </footer>
+
+    <script>
+        const CSbody = document.querySelector('body');
+        const CSnavbarMenu = document.querySelector('#cs-navigation');
+        const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
+        CShamburgerMenu.addEventListener('click', function() {
+            CShamburgerMenu.classList.toggle('cs-active');
+            CSnavbarMenu.classList.toggle('cs-active');
+            CSbody.classList.toggle('cs-open');
+            const csUL = document.querySelector('#cs-expanded');
+            csUL.setAttribute('aria-expanded', csUL.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+        });
+        
+        const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown:not(.cs-dropdown-nested)'));
+        dropDowns.forEach(item => item.addEventListener('click', () => {
+            item.classList.toggle('cs-active');
+        }));
+        
+        // Handle nested dropdowns (Philadelphia submenu)
+        const nestedDropDowns = Array.from(document.querySelectorAll('.cs-dropdown-nested'));
+        nestedDropDowns.forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (e.target === this || e.target.tagName === 'SPAN' || e.target.tagName === 'IMG') {
+                    e.stopPropagation();
+                    this.classList.toggle('cs-active');
+                }
+            });
+        });
+    </script>
+    <script>
+        // Update copyright year dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+    <script>
+        // Footer Newsletter Subscription Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const footerNewsletterForm = document.getElementById('footer-newsletter-form');
+            const footerNewsletterMessage = document.getElementById('footer-newsletter-message');
+            const footerSubscribeButton = document.getElementById('footer-subscribe-button');
+            const footerNewsletterInput = document.getElementById('cs-subscribe-2412');
+            const footerNewsletterModal = document.getElementById('footer-newsletter-modal');
+
+            if (footerNewsletterForm) {
+                footerNewsletterForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const email = footerNewsletterInput.value.trim();
+                    
+                    if (!email) {
+                        showFooterMessage('Please enter your email address.', 'error');
+                        return;
+                    }
+
+                    footerSubscribeButton.disabled = true;
+                    const originalButtonHTML = footerSubscribeButton.innerHTML;
+                    footerSubscribeButton.innerHTML = '<span style="color: var(--bodyTextColorWhite);">Subscribing...</span>';
+
+                    try {
+                        const response = await fetch('/subscribe-newsletter', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ email: email })
+                        });
+
+                        const data = await response.json();
+
+                        if (data.success) {
+                            footerNewsletterInput.value = '';
+                            openFooterNewsletterModal(data.message);
+                        } else {
+                            showFooterMessage(data.message, 'error');
+                        }
+                    } catch (error) {
+                        showFooterMessage('There was an error processing your subscription. Please try again.', 'error');
+                    } finally {
+                        footerSubscribeButton.disabled = false;
+                        footerSubscribeButton.innerHTML = originalButtonHTML;
+                    }
+                });
+
+                function showFooterMessage(message, type) {
+                    footerNewsletterMessage.textContent = message;
+                    footerNewsletterMessage.style.display = 'block';
+                    footerNewsletterMessage.style.backgroundColor = type === 'success' ? '#d4edda' : '#f8d7da';
+                    footerNewsletterMessage.style.color = type === 'success' ? '#155724' : '#721c24';
+                    footerNewsletterMessage.style.border = type === 'success' ? '1px solid #c3e6cb' : '1px solid #f5c6cb';
+                    setTimeout(() => {
+                        footerNewsletterMessage.style.display = 'none';
+                    }, 5000);
+                }
+
+                function openFooterNewsletterModal(message) {
+                    const modal = document.getElementById('footer-newsletter-modal');
+                    const modalMessage = document.getElementById('footer-newsletter-modal-message');
+                    if (modal && modalMessage) {
+                        modalMessage.textContent = message || 'Thank you for subscribing to our newsletter!';
+                        modal.style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                        setTimeout(() => {
+                            modal.classList.add('modal-show');
+                        }, 10);
+                    }
+                }
+
+                const closeFooterModal = document.getElementById('close-footer-newsletter-modal');
+                if (closeFooterModal) {
+                    closeFooterModal.addEventListener('click', function() {
+                        const modal = document.getElementById('footer-newsletter-modal');
+                        modal.classList.remove('modal-show');
+                        document.body.style.overflow = '';
+                        setTimeout(() => {
+                            modal.style.display = 'none';
+                        }, 300);
+                    });
+                }
+
+                const footerModal = document.getElementById('footer-newsletter-modal');
+                if (footerModal) {
+                    footerModal.addEventListener('click', function(e) {
+                        if (e.target === footerModal) {
+                            footerModal.classList.remove('modal-show');
+                            document.body.style.overflow = '';
+                            setTimeout(() => {
+                                footerModal.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                }
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && footerModal && footerModal.style.display === 'flex') {
+                        footerModal.classList.remove('modal-show');
+                        document.body.style.overflow = '';
+                        setTimeout(() => {
+                            footerModal.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            }
+        });
+    </script>
+    </div>
+    <!-- Footer Newsletter Success Modal -->
+    <div id="footer-newsletter-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-success-icon">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="/public/content/home/fish-m.webp">
+                    <source media="(min-width: 601px)" srcset="/public/content/home/fish.webp">
+                    <img loading="lazy" src="/public/content/home/fish.png" id="fish" alt="Fishtown Web Design Logo">
+                </picture>
+            </div>
+            <h2 class="modal-title">Thank You!</h2>
+            <p id="footer-newsletter-modal-message" class="modal-message">Thank you for subscribing to our newsletter!</p>
+            <button id="close-footer-newsletter-modal" class="modal-button">Close</button>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; color: #fff; padding: 1rem 1.5rem; z-index: 10000; box-shadow: 0 -4px 20px rgba(0,0,0,0.3);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+            <p style="margin: 0; font-size: 0.9rem; flex: 1; min-width: 280px; line-height: 1.5;">
+                We use cookies to enhance your experience and analyze site traffic. By clicking "Accept", you consent to our use of cookies. 
+                <a href="/pp" style="color: #f8c882; text-decoration: underline;">Privacy Policy</a>
+            </p>
+            <div style="display: flex; gap: 0.75rem; flex-shrink: 0;">
+                <button id="cookie-decline" style="padding: 0.6rem 1.25rem; background: transparent; border: 1px solid #666; color: #fff; border-radius: 4px; cursor: pointer; font-size: 0.875rem;">Decline</button>
+                <button id="cookie-accept" style="padding: 0.6rem 1.25rem; background: #f8c882; border: none; color: #1a1a1a; border-radius: 4px; cursor: pointer; font-size: 0.875rem; font-weight: 600;">Accept</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function() {
+            const banner = document.getElementById('cookie-consent-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            const consent = localStorage.getItem('cookie-consent');
+            if (consent === null) { banner.style.display = 'block'; } 
+            else if (consent === 'accepted') { loadGA(); }
+            acceptBtn.addEventListener('click', function() { localStorage.setItem('cookie-consent', 'accepted'); banner.style.display = 'none'; loadGA(); });
+            declineBtn.addEventListener('click', function() { localStorage.setItem('cookie-consent', 'declined'); banner.style.display = 'none'; });
+            function loadGA() {
+                if (window.gaLoaded) return; window.gaLoaded = true;
+                var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-P9ZFLQPT8E'; document.head.appendChild(s);
+                window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} window.gtag = gtag; gtag('js', new Date()); gtag('config', 'G-P9ZFLQPT8E');
+            }
+        })();
+    </script>
+</body>
+</html>
