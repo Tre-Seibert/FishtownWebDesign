@@ -361,8 +361,7 @@
   #pricing-1183 .cs-badge {
     position: absolute;
     top: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 1.5rem;
     background-color: var(--primary);
     color: var(--text-light);
     padding: 0.5rem 1.5rem;
