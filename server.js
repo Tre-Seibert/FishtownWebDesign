@@ -163,6 +163,7 @@ async function generateSitemap() {
       { url: '/blog', changefreq: 'weekly', priority: 0.9 },
       { url: '/seo', changefreq: 'monthly', priority: 0.8 },
       { url: '/saas-development', changefreq: 'monthly', priority: 0.8 },
+      { url: '/app-development', changefreq: 'monthly', priority: 0.8 },
       { url: '/charity', changefreq: 'monthly', priority: 0.8 },
       // Industry-specific landing pages
       { url: '/contractor-web-design', changefreq: 'monthly', priority: 0.8 },
@@ -2276,6 +2277,7 @@ app.get('/faq', (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html
 app.get('/web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/web-design.html')));
 app.get('/seo', (req, res) => res.sendFile(path.join(__dirname, 'public/seo.html')));
 app.get('/saas-development', (req, res) => res.sendFile(path.join(__dirname, 'public/saas-development.html')));
+app.get('/app-development', (req, res) => res.sendFile(path.join(__dirname, 'public/app-development.html')));
 app.get('/charity', (req, res) => res.sendFile(path.join(__dirname, 'public/charity.html')));
 app.get('/unsubscribe', (req, res) => res.sendFile(path.join(__dirname, 'public/unsubscribe.html')));
 
@@ -2807,9 +2809,23 @@ app.post('/send-newsletter', async (req, res) => {
   }
 });
 
-// Start the server and listen on the specified port
-app.listen(port, async () => {
-  console.log(`Server is running on http://localhost:${port}`);
+// Start the server and listen on all network interfaces
+app.listen(port, '0.0.0.0', async () => {
+  const os = require('os');
+  const nets = os.networkInterfaces();
+  let localIP = 'localhost';
+  for (const name of Object.keys(nets)) {
+    for (const net of nets[name]) {
+      if (net.family === 'IPv4' && !net.internal) {
+        localIP = net.address;
+        break;
+      }
+    }
+    if (localIP !== 'localhost') break;
+  }
+  console.log(`Server is running on:`);
+  console.log(`  Local:   http://localhost:${port}`);
+  console.log(`  Network: http://${localIP}:${port}`);
   
   // Initialize database connection and tables
   await testConnection();

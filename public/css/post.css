@@ -425,6 +425,82 @@
   }
 }
 
+/*-- -------------------------- -->
+<---   Blog post related services -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #blog-post-related-2149 {
+    padding: clamp(2.5rem, 5vw, 4rem) 1rem;
+    background-color: var(--bg-secondary, #faf8f5);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  #blog-post-related-2149 .cs-container {
+    width: 100%;
+    max-width: 50rem;
+    margin: auto;
+  }
+
+  #blog-post-related-2149 .cs-content {
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+
+  #blog-post-related-2149 .cs-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--headerColor);
+    margin: 0 0 clamp(0.75rem, 2vw, 1rem) 0;
+    font-family: "DM Serif Display", serif;
+    line-height: 1.25em;
+  }
+
+  #blog-post-related-2149 .cs-title strong {
+    color: var(--primary);
+  }
+
+  #blog-post-related-2149 .cs-text {
+    font-size: clamp(0.9375rem, 1.75vw, 1.0625rem);
+    line-height: 1.6em;
+    color: var(--text-body);
+    margin: 0 0 clamp(1rem, 2vw, 1.25rem) 0;
+    font-family: Montserrat, sans-serif;
+  }
+
+  #blog-post-related-2149 .blog-related-services__case-label {
+    margin-top: clamp(1.25rem, 3vw, 1.75rem);
+    margin-bottom: 0.5rem;
+  }
+
+  #blog-post-related-2149 .blog-related-services__list {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(0.9375rem, 1.75vw, 1.0625rem);
+    line-height: 1.65em;
+    color: var(--text-body);
+  }
+
+  #blog-post-related-2149 .blog-related-services__list li {
+    margin-bottom: 0.35rem;
+  }
+
+  #blog-post-related-2149 .blog-related-services__list a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  #blog-post-related-2149 .blog-related-services__list a:hover {
+    color: var(--headerColor);
+  }
+
+  #blog-post-related-2149 .blog-related-services__list--compact {
+    margin-top: 0.25rem;
+  }
+}
+
 /* Utility Classes */
 .title-link {
   color: inherit;
