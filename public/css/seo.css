@@ -252,10 +252,10 @@
 <--- -------------------------- -*/
 @media only screen and (min-width: 0rem) {
   #seo-bundle-2149 {
-    padding: clamp(2.5rem, 5vw, 3.5rem) 1rem;
-    background-color: var(--bg-card, #faf8f5);
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: var(--sectionPadding);
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-secondary);
   }
 
   #seo-bundle-2149 .cs-container {
@@ -266,13 +266,35 @@
 
   #seo-bundle-2149 .cs-content {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #seo-bundle-2149 .cs-title {
+    max-width: 28ch;
+    letter-spacing: 0.02em;
+  }
+
+  #seo-bundle-2149 .cs-title strong {
+    color: var(--primary);
+  }
+
+  #seo-bundle-2149 .cs-text {
+    max-width: 48ch;
   }
 
   #seo-bundle-2149 .cs-text a {
-    color: var(--primary);
+    color: var(--bg-dark);
     font-weight: 600;
     text-decoration: underline;
-    text-underline-offset: 2px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(58, 47, 40, 0.35);
+  }
+
+  #seo-bundle-2149 .cs-text a:hover {
+    color: var(--accent-terracotta);
+    text-decoration-color: var(--accent-terracotta);
   }
 }
 
