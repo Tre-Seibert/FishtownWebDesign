@@ -134,7 +134,7 @@
       padding: 0;
       padding-left: 1.25rem;
       background-color: var(--bg-secondary);
-      border: none;
+      border: 2px solid #000;
       /* prevents padding from adding to width and height */
       box-sizing: border-box;
       display: block;

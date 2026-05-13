@@ -248,6 +248,35 @@
 }
 
 /*-- -------------------------- -->
+<---   SEO + web design bundle     -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #seo-bundle-2149 {
+    padding: clamp(2.5rem, 5vw, 3.5rem) 1rem;
+    background-color: var(--bg-card, #faf8f5);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  #seo-bundle-2149 .cs-container {
+    width: 100%;
+    max-width: 48rem;
+    margin: auto;
+  }
+
+  #seo-bundle-2149 .cs-content {
+    text-align: center;
+  }
+
+  #seo-bundle-2149 .cs-text a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
+/*-- -------------------------- -->
 <---      Local Focus Section      -->
 <--- -------------------------- -*/
 
