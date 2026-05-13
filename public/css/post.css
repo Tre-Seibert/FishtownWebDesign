@@ -367,6 +367,7 @@
     color: var(--headerColor);
     margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
     font-family: "DM Serif Display", serif;
+    letter-spacing: 0.02em;
   }
   
   #blog-post-cta-2149 .cs-title strong {
@@ -400,12 +401,12 @@
     font-family: Horizon, sans-serif;
     text-transform: uppercase;
     border-radius: 0.5rem;
-    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+    box-shadow: 0 4px 14px rgba(58, 47, 40, 0.12);
   }
   
   #blog-post-cta-2149 .cs-button-solid:hover {
     background-color: var(--bg-dark);
-    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+    box-shadow: 0 6px 20px rgba(58, 47, 40, 0.2);
   }
   
   #blog-post-cta-2149 .cs-background {
@@ -431,9 +432,8 @@
 @media only screen and (min-width: 0rem) {
   #blog-post-related-2149 {
     padding: clamp(2.5rem, 5vw, 4rem) 1rem;
-    background-color: var(--bg-secondary, #faf8f5);
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border-light);
   }
 
   #blog-post-related-2149 .cs-container {
@@ -453,6 +453,7 @@
     margin: 0 0 clamp(0.75rem, 2vw, 1rem) 0;
     font-family: "DM Serif Display", serif;
     line-height: 1.25em;
+    letter-spacing: 0.02em;
   }
 
   #blog-post-related-2149 .cs-title strong {
@@ -470,6 +471,11 @@
   #blog-post-related-2149 .blog-related-services__case-label {
     margin-top: clamp(1.25rem, 3vw, 1.75rem);
     margin-bottom: 0.5rem;
+    color: var(--text-body);
+  }
+
+  #blog-post-related-2149 .blog-related-services__case-label strong {
+    color: var(--headerColor);
   }
 
   #blog-post-related-2149 .blog-related-services__list {
@@ -486,14 +492,16 @@
   }
 
   #blog-post-related-2149 .blog-related-services__list a {
-    color: var(--primary);
+    color: var(--bg-dark);
     font-weight: 600;
     text-decoration: underline;
-    text-underline-offset: 2px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(58, 47, 40, 0.35);
   }
 
   #blog-post-related-2149 .blog-related-services__list a:hover {
-    color: var(--headerColor);
+    color: var(--accent-terracotta);
+    text-decoration-color: var(--accent-terracotta);
   }
 
   #blog-post-related-2149 .blog-related-services__list--compact {
