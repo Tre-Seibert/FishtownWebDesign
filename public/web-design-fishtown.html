@@ -18,33 +18,41 @@
 
     <title>Web Design Fishtown | Custom Websites for Fishtown Businesses</title>
 
-    <!-- Schema.org markup for Local Business -->
+    <!-- Schema.org: WebPage + localized Service; business entity is https://www.fishtownwebdesign.com/#business (no storefront address) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Fishtown Web Design - Fishtown, Philadelphia",
-        "image": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
-        "description": "Custom web design services for businesses in Fishtown, Philadelphia. Hand-coded websites with lightning-fast loading speeds for local breweries, restaurants, venues, and service businesses.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Philadelphia",
-            "addressRegion": "PA",
-            "postalCode": "19125",
-            "addressCountry": "US"
-        },
-        "areaServed": {
-            "@type": "Neighborhood",
-            "name": "Fishtown",
-            "containedInPlace": {
-                "@type": "City",
-                "name": "Philadelphia"
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://www.fishtownwebdesign.com/web-design-fishtown#webpage",
+                "url": "https://www.fishtownwebdesign.com/web-design-fishtown",
+                "name": "Web Design Fishtown | Custom Websites for Fishtown Businesses",
+                "description": "Custom web design in Fishtown, Philadelphia. Hand-coded websites for local businesses with 90+ page speed scores.",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "url": "https://www.fishtownwebdesign.com",
+                    "name": "Fishtown Web Design"
+                },
+                "about": { "@id": "https://www.fishtownwebdesign.com/#business" }
+            },
+            {
+                "@type": "Service",
+                "name": "Web design for Fishtown, Philadelphia",
+                "url": "https://www.fishtownwebdesign.com/web-design-fishtown",
+                "provider": { "@id": "https://www.fishtownwebdesign.com/#business" },
+                "serviceType": "Web design",
+                "areaServed": {
+                    "@type": "Neighborhood",
+                    "name": "Fishtown",
+                    "containedInPlace": {
+                        "@type": "City",
+                        "name": "Philadelphia",
+                        "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+                    }
+                }
             }
-        },
-        "telephone": "717-333-8691",
-        "url": "https://www.fishtownwebdesign.com/web-design-fishtown",
-        "priceRange": "$$",
-        "serviceType": "Web Design"
+        ]
     }
     </script>
 

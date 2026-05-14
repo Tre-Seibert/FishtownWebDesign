@@ -25,68 +25,65 @@
     <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
     <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
 
-    <!-- Schema.org markup for Google -->
+    <!-- Schema.org: ContactPage + ContactPoint; canonical business is https://www.fishtownwebdesign.com/#business (no storefront) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "Fishtown Web Design",
-        "description": "Custom web design agency in Philadelphia specializing in hand-coded websites with 90+ page speed scores. Offering affordable web design subscription plans starting at $150/mo.",
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+1-717-333-8691",
-            "contactType": "customer service",
-            "areaServed": {
+      "@graph": [
+        {
+          "@type": "ContactPage",
+          "@id": "https://www.fishtownwebdesign.com/contact#webpage",
+          "url": "https://www.fishtownwebdesign.com/contact",
+          "name": "Contact Us | Custom Web Design in Philadelphia | Hand-Coded Websites",
+          "isPartOf": {
+            "@type": "WebSite",
+            "url": "https://www.fishtownwebdesign.com",
+            "name": "Fishtown Web Design"
+          },
+          "about": { "@id": "https://www.fishtownwebdesign.com/#business" }
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-717-333-8691",
+          "email": "sales@fishtownwebdesign.com",
+          "contactType": "customer service",
+          "areaServed": [
+            {
               "@type": "City",
               "name": "Philadelphia",
+              "containedInPlace": { "@type": "State", "name": "Pennsylvania" },
               "containsPlace": [
-                {
-                  "@type": "Place",
-                  "name": "Fishtown"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Northern Liberties"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Olde Kensington"
-                },
-                {
-                  "@type": "Place",
-                  "name": "Center City"
-                }
+                { "@type": "Place", "name": "Fishtown" },
+                { "@type": "Place", "name": "Northern Liberties" },
+                { "@type": "Place", "name": "Olde Kensington" },
+                { "@type": "Place", "name": "Center City" }
               ]
             },
-            "availableLanguage": "English"
-          },
-          {
-            "@type": "ContactPoint",
-            "email": "sales@fishtownwebdesign.com",
-            "contactType": "customer service",
-            "areaServed": {
+            {
               "@type": "City",
-              "name": "Philadelphia"
+              "name": "Lancaster",
+              "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
             },
-            "availableLanguage": "English"
-          }
-        ],
-        "makesOffer": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Custom Web Design Subscription",
-              "description": "Monthly web design service with hand-coded websites, 90+ page speed scores, and unlimited updates"
-            },
-            "price": "150",
-            "priceCurrency": "USD"
-          }
-        ]
-      }
+            {
+              "@type": "City",
+              "name": "York",
+              "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+            }
+          ],
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Web Design Subscription",
+            "description": "Monthly web design service with hand-coded websites, 90+ page speed scores, and unlimited updates"
+          },
+          "price": "150",
+          "priceCurrency": "USD",
+          "offeredBy": { "@id": "https://www.fishtownwebdesign.com/#business" }
+        }
+      ]
     }
     </script>
 
@@ -299,18 +296,6 @@
                             Send us a message anytime
                         </p>
                         <a href="mailto:sales@fishtownwebdesign.com" class="cs-link">sales@fishtownwebdesign.com</a>
-                    </li>
-                    <li class="cs-item">
-                        <div class="cs-icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-                            </svg>
-                        </div>
-                        <h3 class="cs-h3">Service Area</h3>
-                        <p class="cs-item-text">
-                            Serving Philadelphia remotely
-                        </p>
-                        <span class="cs-link">Philadelphia & Beyond</span>
                     </li>
                 </ul>
             </div>

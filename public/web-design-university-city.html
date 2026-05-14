@@ -18,33 +18,41 @@
 
     <title>Web Design University City | Websites for UPenn & Drexel Area Businesses</title>
 
-    <!-- Schema.org markup for Local Business -->
+    <!-- Schema.org: WebPage + localized Service; business entity is https://www.fishtownwebdesign.com/#business (no storefront address) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Fishtown Web Design - University City Philadelphia",
-        "image": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
-        "description": "Custom web design services for businesses in University City Philadelphia. Hand-coded websites for startups, student businesses, academic services, and tech companies near UPenn and Drexel.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Philadelphia",
-            "addressRegion": "PA",
-            "postalCode": "19104",
-            "addressCountry": "US"
-        },
-        "areaServed": {
-            "@type": "Neighborhood",
-            "name": "University City",
-            "containedInPlace": {
-                "@type": "City",
-                "name": "Philadelphia"
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://www.fishtownwebdesign.com/web-design-university-city#webpage",
+                "url": "https://www.fishtownwebdesign.com/web-design-university-city",
+                "name": "Web Design University City | Websites for UPenn & Drexel Area Businesses",
+                "description": "Custom web design in University City Philadelphia. Hand-coded websites for startups, student businesses, academic services and tech companies near UPenn and Drexel.",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "url": "https://www.fishtownwebdesign.com",
+                    "name": "Fishtown Web Design"
+                },
+                "about": { "@id": "https://www.fishtownwebdesign.com/#business" }
+            },
+            {
+                "@type": "Service",
+                "name": "Web design for University City, Philadelphia",
+                "url": "https://www.fishtownwebdesign.com/web-design-university-city",
+                "provider": { "@id": "https://www.fishtownwebdesign.com/#business" },
+                "serviceType": "Web design",
+                "areaServed": {
+                    "@type": "Neighborhood",
+                    "name": "University City",
+                    "containedInPlace": {
+                        "@type": "City",
+                        "name": "Philadelphia",
+                        "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+                    }
+                }
             }
-        },
-        "telephone": "717-333-8691",
-        "url": "https://www.fishtownwebdesign.com/web-design-university-city",
-        "priceRange": "$$",
-        "serviceType": "Web Design"
+        ]
     }
     </script>
 
