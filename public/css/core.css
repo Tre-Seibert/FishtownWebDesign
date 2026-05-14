@@ -465,6 +465,48 @@ html, body {
   --border-dark: #8B7D6B;
 }
 
+/* --------------------------------------------------------------------------
+   Global links — brand colors instead of browser default blue / purple
+   -------------------------------------------------------------------------- */
+a:any-link {
+  color: var(--accent-terracotta);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: max(1px, 0.07em);
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-decoration-skip-ink: auto;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+a:any-link:hover {
+  color: var(--bg-dark);
+  text-decoration-color: color-mix(in srgb, currentColor 65%, transparent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* Button-style anchors keep their existing component styles */
+a.cs-button-solid,
+a.btn-get-started,
+a.cs-logo,
+.floating-cta a {
+  text-decoration: none;
+}
+
+/* Home hero: white copy on dark photo — gold / cream links */
+#hero-2149 a:any-link:not(.cs-button-solid):not(.btn-get-started):not(.btn) {
+  color: var(--primaryLight);
+  text-decoration-color: color-mix(in srgb, var(--primaryLight) 45%, transparent);
+}
+
+#hero-2149 a:any-link:not(.cs-button-solid):not(.btn-get-started):not(.btn):hover {
+  color: #fff;
+  text-decoration-color: color-mix(in srgb, #fff 55%, transparent);
+}
+
 /* ==========================================================
    Nested dropdown support (Locations -> Philadelphia -> ...)
    Full structural + visual CSS for nested submenus.
