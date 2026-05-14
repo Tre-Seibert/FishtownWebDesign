@@ -9,17 +9,17 @@
     <meta property="og:image:alt" content="Fishtown Web Design - Philadelphia Custom Web Design Agency">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.fishtownwebdesign.com/">
-    <meta name="description" content="Custom web design in Philadelphia with lightning-fast loading speeds. Hand-coded websites, no WordPress. Affordable web design subscription from $150/mo. Get a free consultation!">
-    <meta property="og:title" content="Custom Web Design in Philadelphia | Hand-Coded Websites & Fast Loading Speeds">
-    <meta property="og:description" content="Custom web design in Philadelphia with lightning-fast loading speeds. Hand-coded websites, no WordPress. Affordable web design subscription from $150/mo. Get a free consultation!">
+    <meta name="description" content="Fishtown Web Design offers hand-coded websites and local SEO in Philadelphia (all neighborhoods), Lancaster PA, and York PA—no WordPress, subscriptions from $150/mo. No walk-in location; free consultation.">
+    <meta property="og:title" content="Fishtown Web Design | Hand-Coded Websites &amp; SEO | Philadelphia">
+    <meta property="og:description" content="Fishtown Web Design offers hand-coded websites and local SEO in Philadelphia (all neighborhoods), Lancaster PA, and York PA—no WordPress, subscriptions from $150/mo. No walk-in location; free consultation.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Custom Web Design in Philadelphia | Hand-Coded Websites & Fast Loading Speeds">
-    <meta name="twitter:description" content="Custom web design in Philadelphia with lightning-fast loading speeds. Hand-coded websites, no WordPress. Affordable web design subscription from $150/mo. Get a free consultation!">
+    <meta name="twitter:title" content="Fishtown Web Design | Hand-Coded Websites &amp; SEO | Philadelphia">
+    <meta name="twitter:description" content="Fishtown Web Design offers hand-coded websites and local SEO in Philadelphia (all neighborhoods), Lancaster PA, and York PA—no WordPress, subscriptions from $150/mo. No walk-in location; free consultation.">
     <meta name="twitter:image" content="https://www.fishtownwebdesign.com/public/content/home/fish.png">
     <meta name="twitter:image:alt" content="Fishtown Web Design - Philadelphia Custom Web Design Agency">
     <link rel="canonical" href="https://www.fishtownwebdesign.com/" />
 
-    <title>Philadelphia Web Design | Custom Hand-Coded Websites | Fishtown Web Design</title>
+    <title>Fishtown Web Design | Hand-Coded Websites &amp; SEO | Philadelphia</title>
 
     <!--CSS Imports-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,72 +44,138 @@
     <link rel="preload" href="/public/content/home/logo.webp" as="image">
     <link rel="preload" href="/public/content/home/web-design-philly.webp" as="image">
 
-    <!-- Schema.org markup for Google -->
+    <!-- Schema.org: service-area business (no public storefront) + services -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Fishtown Web Design",
-      "image": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
-      "description": "Philadelphia's custom web design agency specializing in hand-coded websites with 90+ page speed scores.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Philadelphia",
-        "addressRegion": "PA",
-        "postalCode": "19125",
-        "addressCountry": "US",
-        "areaServed": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": 39.9724,
-            "longitude": -75.1301
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://www.fishtownwebdesign.com/#business",
+          "name": "Fishtown Web Design",
+          "image": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
+          "description": "Hand-coded websites and local SEO for businesses in Philadelphia and all neighborhoods, Lancaster PA, and York PA. Service-area business with no walk-in location—we work with clients remotely and on-site at your location by arrangement.",
+          "url": "https://www.fishtownwebdesign.com",
+          "telephone": "+17173338691",
+          "priceRange": "$$",
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "08:00",
+            "closes": "17:00"
           },
-          "geoRadius": "50000"
-        }
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 39.9724,
-        "longitude": -75.1301
-      },
-      "url": "https://www.fishtownwebdesign.com",
-      "telephone": "717-333-8691",
-      "priceRange": "$$",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "17:00"
-      },
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61570913623739",
-        "https://instagram.com/fishtownwebdesign"
-      ],
-      "areaServed": {
-        "@type": "City",
-        "name": "Philadelphia",
-        "containsPlace": [
-          {
-            "@type": "Place",
-            "name": "Fishtown"
-          },
-          {
-            "@type": "Place",
-            "name": "Northern Liberties"
-          },
-          {
-            "@type": "Place",
-            "name": "Olde Kensington"
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61570913623739",
+            "https://instagram.com/fishtownwebdesign"
+          ],
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Philadelphia",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Pennsylvania"
+              },
+              "containsPlace": [
+                { "@type": "Place", "name": "Fishtown" },
+                { "@type": "Place", "name": "Center City" },
+                { "@type": "Place", "name": "Old City" },
+                { "@type": "Place", "name": "Northern Liberties" },
+                { "@type": "Place", "name": "University City" }
+              ]
+            },
+            {
+              "@type": "City",
+              "name": "Lancaster",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Pennsylvania"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "York",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Pennsylvania"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "Philadelphia web design services",
+          "url": "https://www.fishtownwebdesign.com/web-design",
+          "provider": { "@id": "https://www.fishtownwebdesign.com/#business" },
+          "serviceType": "Web design",
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Philadelphia",
+              "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+            },
+            {
+              "@type": "City",
+              "name": "Lancaster",
+              "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+            },
+            {
+              "@type": "City",
+              "name": "York",
+              "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+            }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Web design services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Custom web design subscription",
+                  "description": "Monthly web design service with custom coding, hosting, and unlimited updates"
+                },
+                "price": "150",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2026-12-31"
+              }
+            ]
           }
-        ]
-      }
+        },
+        {
+          "@type": "Service",
+          "name": "Local SEO services",
+          "url": "https://www.fishtownwebdesign.com/seo",
+          "provider": { "@id": "https://www.fishtownwebdesign.com/#business" },
+          "serviceType": "Search engine optimization",
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Philadelphia",
+              "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+            },
+            {
+              "@type": "City",
+              "name": "Lancaster",
+              "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+            },
+            {
+              "@type": "City",
+              "name": "York",
+              "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+            }
+          ]
+        }
+      ]
     }
     </script>
 
@@ -137,43 +203,9 @@
         "name": "What areas do you serve?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We primarily serve Philadelphia, with a focus on Fishtown, Northern Liberties, and Olde Kensington. However, we work with clients nationwide."
+          "text": "We serve Philadelphia and all neighborhoods (including Fishtown, Center City, Old City, Northern Liberties, University City, and beyond), plus Lancaster PA and York PA. We are a service-area business with no walk-in storefront. We also work with remote clients outside these regions."
         }
       }]
-    }
-    </script>
-
-    <!-- Service Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Fishtown Web Design"
-      },
-      "serviceType": "Web Design",
-      "areaServed": {
-        "@type": "City",
-        "name": "Philadelphia"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Web Design Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Custom Web Design Subscription",
-              "description": "Monthly web design service with custom coding, hosting, and unlimited updates"
-            },
-            "price": "150",
-            "priceCurrency": "USD",
-            "priceValidUntil": "2025-12-31"
-          }
-        ]
-      }
     }
     </script>
 
@@ -186,7 +218,7 @@
       "url": "https://www.fishtownwebdesign.com",
       "image": "https://www.fishtownwebdesign.com/public/content/home/fish.png",
       "logo": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
-      "description": "Custom web design in Philadelphia with lightning-fast loading speeds. Hand-coded websites, no WordPress. Affordable web design subscription from $150/mo.",
+      "description": "Fishtown Web Design: hand-coded websites and SEO for Philadelphia (all neighborhoods), Lancaster PA, York PA, and beyond. Subscriptions from $150/mo.",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
@@ -420,11 +452,15 @@
         <div class="cs-container">
             <div class="cs-content">
                 <span class="cs-topper">custom designs, custom coded</span>
-                <h1 class="cs-title">Web Design in Philadelphia</h1>
+                <h1 class="cs-title">Fishtown Web Design</h1>
                 <p class="cs-text">
-                    No WordPress or page builders. We offer 100% hand-coded websites with lightning-fast loading speeds, starting at $150/mo. Perfect for small businesses in Philadelphia looking for affordable, high-performance web design.
+                    We build custom websites from scratch—no WordPress, no drag-and-drop page builders—so your site stays fast, secure, and easy to own. We pair that with <a href="https://www.fishtownwebdesign.com/seo">local SEO</a> so the site you invest in can actually be found. Plans start at $150/mo with hosting and ongoing updates. A natural fit for Philadelphia small businesses that care about performance and search visibility.
                 </p>
-                <a href="https://www.fishtownwebdesign.com/contact" class="cs-button-solid">Get Started</a>
+                <div style="display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center;">
+                    <a href="https://www.fishtownwebdesign.com/contact" class="cs-button-solid">Get Started</a>
+                    <a href="https://www.fishtownwebdesign.com/web-design" class="cs-link" style="font-weight:700;">Philadelphia web design services →</a>
+                    <a href="https://www.fishtownwebdesign.com/seo" class="cs-link" style="font-weight:700;">Local SEO services →</a>
+                </div>
             </div>
         </div>
         <!-- Background Image -->
@@ -456,9 +492,9 @@
             <!-- Left Content Section-->
             <div class="cs-content">
                 <span id="wed" class="cs-topper">Fast & Affordable Websites</span>
-                <h2 class="cs-title">Custom Web Design Services for Philadelphia Businesses</h2>
+                <h2 class="cs-title">Custom Web Design and SEO to Grow Your Business</h2>
                 <p class="cs-text">
-                    At Fishtown Web Design, we're Philadelphia's leading custom web design agency, specializing in hand-coded websites that load in under a second. Our affordable web design subscription starts at just $150/mo. We serve small businesses across Philadelphia, from Fishtown to Center City, ensuring your website loads instantly and attracts more customers. Every line of code is optimized for speed, helping you rank higher in Google and convert more visitors into paying customers.
+                    We’re a small Philadelphia-area studio focused on two things: <strong>hand-coded websites</strong> and <strong>local SEO</strong>—clean markup, fast load times, and search strategy that matches how real customers look you up. Process, benchmarks, pricing, and FAQs for builds live on <a href="https://www.fishtownwebdesign.com/web-design">Philadelphia web design services</a>; audits, reporting, and ongoing search work live on <a href="https://www.fishtownwebdesign.com/seo">SEO services</a>. Serving Philadelphia (Fishtown, Center City, and nearby) and clients nationwide.
                 </p>
             </div>
             <ul class="cs-card-group">
@@ -496,28 +532,6 @@
                     <h3 class="cs-h3">Optimized Loading Speeds</h3>
                     <p class="cs-item-text">
                         With load times under 1 second, our websites ensure visitors stay engaged, addressing the risk of losing up to half your traffic from slow-loading pages.
-                    </p>
-                </li>
-                <li class="cs-item">
-                    <div class="cs-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">
-                            <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>
-                        </svg>
-                    </div>
-                    <h3 class="cs-h3">SEO</h3>
-                    <p class="cs-item-text">
-                        Our expert team focuses on local search optimization, using proven methods and regular reporting to boost your visibility and help your business grow in your market.
-                    </p>
-                </li>
-                <li class="cs-item">
-                    <div class="cs-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-megaphone" viewBox="0 0 16 16">
-                            <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 75 75 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0m-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233q.27.015.537.036c2.568.189 5.093.744 7.463 1.993zm-9 6.215v-4.13a95 95 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A61 61 0 0 1 4 10.065m-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68 68 0 0 0-1.722-.082z"/>
-                        </svg>
-                    </div>
-                    <h3 class="cs-h3">Google Ads</h3>
-                    <p class="cs-item-text">
-                        We specialize in creating and managing Google Ads campaigns that deliver results, using targeted strategies to ensure you get the best return on your advertising investment.
                     </p>
                 </li>
                 <li class="cs-item">
@@ -573,7 +587,7 @@
                                     <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5"/>
                                 </svg>
                             </div>
-                            <p class="cs-benefit-text">A faster website boosts your SEO rankings and increases the effectiveness of your Google Ads campaigns.</p>
+                            <p class="cs-benefit-text">A faster website boosts your SEO rankings and helps you get more from the traffic you already earn.</p>
                         </li>
                         <li class="cs-benefit-item">
                             <div class="cs-benefit-icon">
@@ -684,7 +698,7 @@
             <span id="portfolio" class="cs-topper">Portfolio</span>
             <h2 class="cs-title">Previous Projects</h2>
             <p class="cs-text">
-                We specialize in custom web design for small businesses across Philadelphia. From contractors and venues to photographers and startups, we create hand-coded websites that are performance-optimized, SEO-friendly, and tailored to your industry. Each website is built with 90+ page speed scores and custom features that drive results.
+                We specialize in custom web design for small businesses across Philadelphia. From contractors and venues to photographers and startups, we create hand-coded websites that are performance-optimized, SEO-friendly, and tailored to your industry. Each website is built with 90+ page speed scores and custom features that drive results. See how we scope and ship work on <a href="https://www.fishtownwebdesign.com/web-design">Philadelphia web design services</a>.
             </p>
         </div>
         <div class="portfolio-layout">
@@ -1084,7 +1098,7 @@
                     </picture>
                     <div class="cs-flex-group">
                         <span class="cs-header">Email</span>
-                        <a href="mailto:sales@fishtownwebdesignn.com" class="cs-link">sales@fishtownwebdesign.com</a>
+                        <a href="mailto:sales@fishtownwebdesign.com" class="cs-link">sales@fishtownwebdesign.com</a>
                     </div>
                 </li>
                 <li class="cs-li">

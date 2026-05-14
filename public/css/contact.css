@@ -196,8 +196,17 @@
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
+  #contact-methods-2149 .cs-card-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-template-columns: unset;
+  }
+
   #contact-methods-2149 .cs-item {
-    grid-column: span 4;
+    flex: 1 1 18rem;
+    max-width: min(24rem, calc(50% - 0.75rem));
+    box-sizing: border-box;
   }
 }
 

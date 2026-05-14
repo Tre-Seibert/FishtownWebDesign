@@ -18,32 +18,37 @@
 
     <title>Web Design Lancaster PA | Custom Websites for Local Businesses</title>
 
-    <!-- Schema.org markup for Local Business -->
+    <!-- Schema.org: WebPage + localized Service; business entity is https://www.fishtownwebdesign.com/#business (no storefront address) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Fishtown Web Design - Lancaster PA",
-        "image": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
-        "description": "Custom web design services for businesses in Lancaster, PA and Lancaster County. Hand-coded websites with lightning-fast loading speeds.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Philadelphia",
-            "addressRegion": "PA",
-            "addressCountry": "US"
-        },
-        "areaServed": {
-            "@type": "City",
-            "name": "Lancaster",
-            "containedInPlace": {
-                "@type": "State",
-                "name": "Pennsylvania"
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://www.fishtownwebdesign.com/web-design-lancaster-pa#webpage",
+                "url": "https://www.fishtownwebdesign.com/web-design-lancaster-pa",
+                "name": "Web Design Lancaster PA | Custom Websites for Local Businesses",
+                "description": "Custom web design in Lancaster, PA. Hand-coded websites for local businesses with 90+ page speed scores.",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "url": "https://www.fishtownwebdesign.com",
+                    "name": "Fishtown Web Design"
+                },
+                "about": { "@id": "https://www.fishtownwebdesign.com/#business" }
+            },
+            {
+                "@type": "Service",
+                "name": "Web design for Lancaster, Pennsylvania",
+                "url": "https://www.fishtownwebdesign.com/web-design-lancaster-pa",
+                "provider": { "@id": "https://www.fishtownwebdesign.com/#business" },
+                "serviceType": "Web design",
+                "areaServed": {
+                    "@type": "City",
+                    "name": "Lancaster",
+                    "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+                }
             }
-        },
-        "telephone": "717-333-8691",
-        "url": "https://www.fishtownwebdesign.com/web-design-lancaster-pa",
-        "priceRange": "$$",
-        "serviceType": "Web Design"
+        ]
     }
     </script>
 

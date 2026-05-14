@@ -159,7 +159,7 @@ async function generateSitemap() {
       { url: '/terms-of-service', changefreq: 'yearly', priority: 0.5 },
       { url: '/privacy-policy', changefreq: 'yearly', priority: 0.5 },
       { url: '/faq', changefreq: 'monthly', priority: 0.7 },
-      { url: '/web-design', changefreq: 'monthly', priority: 0.8 },
+      { url: '/web-design', changefreq: 'weekly', priority: 0.95 },
       { url: '/blog', changefreq: 'weekly', priority: 0.9 },
       { url: '/seo', changefreq: 'monthly', priority: 0.8 },
       { url: '/saas-development', changefreq: 'monthly', priority: 0.8 },

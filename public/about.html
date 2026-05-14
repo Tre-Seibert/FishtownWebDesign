@@ -52,48 +52,41 @@
             "name": "Saint Joseph's University"
           }
         },
-        "location": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Philadelphia",
-            "addressRegion": "PA",
-            "postalCode": "19125",
-            "addressCountry": "US"
-          }
-        },
+        "url": "https://www.fishtownwebdesign.com",
         "knowsAbout": [
           "Custom Web Design",
           "Hand-Coded Website Development",
           "Performance Optimization",
           "SEO",
-          "Google Ads",
           "Front-end Development",
           "Back-end Development",
           "Small Business Web Design"
         ],
-        "areaServed": {
-          "@type": "City",
-          "name": "Philadelphia",
-          "containsPlace": [
-            {
-              "@type": "Place",
-              "name": "Fishtown"
-            },
-            {
-              "@type": "Place",
-              "name": "Northern Liberties"
-            },
-            {
-              "@type": "Place",
-              "name": "Olde Kensington"
-            },
-            {
-              "@type": "Place",
-              "name": "Center City"
-            }
-          ]
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Philadelphia",
+            "containedInPlace": { "@type": "State", "name": "Pennsylvania" },
+            "containsPlace": [
+              { "@type": "Place", "name": "Fishtown" },
+              { "@type": "Place", "name": "Center City" },
+              { "@type": "Place", "name": "Old City" },
+              { "@type": "Place", "name": "Northern Liberties" },
+              { "@type": "Place", "name": "University City" },
+              { "@type": "Place", "name": "Olde Kensington" }
+            ]
+          },
+          {
+            "@type": "City",
+            "name": "Lancaster",
+            "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+          },
+          {
+            "@type": "City",
+            "name": "York",
+            "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+          }
+        ],
         "makesOffer": [
           {
             "@type": "Offer",

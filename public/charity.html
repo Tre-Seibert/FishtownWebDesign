@@ -48,14 +48,24 @@
       "mainEntity": {
         "@type": "Service",
         "serviceType": "Web Design",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Fishtown Web Design"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Philadelphia"
-        },
+        "provider": { "@id": "https://www.fishtownwebdesign.com/#business" },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Philadelphia",
+            "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+          },
+          {
+            "@type": "City",
+            "name": "Lancaster",
+            "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+          },
+          {
+            "@type": "City",
+            "name": "York",
+            "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+          }
+        ],
         "offers": {
           "@type": "Offer",
           "price": "0",

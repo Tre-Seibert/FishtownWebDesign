@@ -18,33 +18,41 @@
 
     <title>Web Design Old City | Custom Websites for Old City Philadelphia Businesses</title>
 
-    <!-- Schema.org markup for Local Business -->
+    <!-- Schema.org: WebPage + localized Service; business entity is https://www.fishtownwebdesign.com/#business (no storefront address) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Fishtown Web Design - Old City Philadelphia",
-        "image": "https://www.fishtownwebdesign.com/public/content/home/logo.png",
-        "description": "Custom web design services for businesses in Old City Philadelphia. Hand-coded websites for galleries, boutiques, restaurants, and historic businesses.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Philadelphia",
-            "addressRegion": "PA",
-            "postalCode": "19106",
-            "addressCountry": "US"
-        },
-        "areaServed": {
-            "@type": "Neighborhood",
-            "name": "Old City",
-            "containedInPlace": {
-                "@type": "City",
-                "name": "Philadelphia"
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://www.fishtownwebdesign.com/web-design-old-city#webpage",
+                "url": "https://www.fishtownwebdesign.com/web-design-old-city",
+                "name": "Web Design Old City | Custom Websites for Old City Philadelphia Businesses",
+                "description": "Custom web design in Old City Philadelphia. Hand-coded websites for galleries, boutiques, restaurants and historic businesses.",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "url": "https://www.fishtownwebdesign.com",
+                    "name": "Fishtown Web Design"
+                },
+                "about": { "@id": "https://www.fishtownwebdesign.com/#business" }
+            },
+            {
+                "@type": "Service",
+                "name": "Web design for Old City, Philadelphia",
+                "url": "https://www.fishtownwebdesign.com/web-design-old-city",
+                "provider": { "@id": "https://www.fishtownwebdesign.com/#business" },
+                "serviceType": "Web design",
+                "areaServed": {
+                    "@type": "Neighborhood",
+                    "name": "Old City",
+                    "containedInPlace": {
+                        "@type": "City",
+                        "name": "Philadelphia",
+                        "containedInPlace": { "@type": "State", "name": "Pennsylvania" }
+                    }
+                }
             }
-        },
-        "telephone": "717-333-8691",
-        "url": "https://www.fishtownwebdesign.com/web-design-old-city",
-        "priceRange": "$$",
-        "serviceType": "Web Design"
+        ]
     }
     </script>
 
