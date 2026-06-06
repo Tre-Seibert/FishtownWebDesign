@@ -27,11 +27,15 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Self-hosted display fonts: preload so they're fetched immediately instead of being
+         discovered only after core.css loads/parses, which was causing a late font swap (CLS) -->
+    <link rel="preload" href="/public/content/fonts/horizon.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="/public/content/fonts/DMSerifDisplay-Regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="/public/css/index.css">
     <link rel="stylesheet" href="/public/css/core.css">
     <!-- Swiper CSS - async load, init deferred until both CSS and DOM are ready -->
     <script>var _swCss=false,_swDom=false;function _maybeInitSwipers(){if(_swCss&&_swDom)initSwipers();}</script>
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet';_swCss=true;_maybeInitSwipers()">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" fetchpriority="low" onload="this.onload=null;this.rel='stylesheet';_swCss=true;_maybeInitSwipers()">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
 
     <!--Favicons-->
@@ -42,11 +46,15 @@
     <link rel="apple-touch-icon" href="/public/content/home/favicon_io/apple-touch-icon.png">
     <link rel="icon" href="/public/content/home/favicon_io/favicon.ico">
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="/public/css/index.css" as="style">
-    <link rel="preload" href="/public/css/core.css" as="style">
-    <link rel="preload" href="/public/content/home/logo.webp" as="image">
-    <link rel="preload" href="/public/content/home/web-design-philly.webp" as="image">
+    <!-- Preload critical resources. The logo and hero image are served as responsive
+         <picture> sources that swap at the 600px breakpoint, so each needs a matching
+         media-conditional preload — otherwise the browser preloads the desktop variant
+         while mobile visitors actually need (and separately fetch) the "-m" variant,
+         which was delaying LCP on mobile. -->
+    <link rel="preload" href="/public/content/home/logo-m.webp" as="image" media="(max-width: 600px)">
+    <link rel="preload" href="/public/content/home/logo.webp" as="image" media="(min-width: 601px)">
+    <link rel="preload" href="/public/content/home/web-design-philly-m.webp" as="image" media="(max-width: 600px)" fetchpriority="high">
+    <link rel="preload" href="/public/content/home/web-design-philly.webp" as="image" media="(min-width: 601px)" fetchpriority="high">
 
     <!-- Schema.org: service-area business (no public storefront) + services -->
     <script type="application/ld+json">
