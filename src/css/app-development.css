@@ -1,0 +1,492 @@
+/*-- -------------------------- -->
+<---   App Development Page      -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #appdev-hero-2149 {
+    padding: clamp(2.75rem, 54vw, 8rem) 1rem clamp(3.75rem, 7.5vw, 6.25rem);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
+  }
+
+  #appdev-hero-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #appdev-hero-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #appdev-hero-2149 .cs-topper {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: inherit;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
+    color: var(--primary);
+    font-family: Horizon, sans-serif;
+  }
+
+  #appdev-hero-2149 .cs-title {
+    font-size: clamp(2.4375rem, 5vw, 4.5rem);
+    max-width: 32ch;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+    font-family: "DM Serif Display", serif;
+  }
+
+  #appdev-hero-2149 .cs-text {
+    color: var(--text-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 60ch;
+    margin: 0 0 clamp(1.75rem, 4vw, 2.5rem) 0;
+    line-height: 1.6em;
+    font-family: Montserrat, sans-serif;
+  }
+
+  #appdev-hero-2149 .cs-button-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #appdev-hero-2149 .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: var(--text-light);
+    min-width: 12.5rem;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--bg-dark);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+
+  #appdev-hero-2149 .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+
+  #appdev-hero-2149 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    opacity: 0.05;
+  }
+
+  #appdev-hero-2149 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ============================================ */
+  /*           Portfolio / Case Study              */
+  /* ============================================ */
+
+  #appdev-portfolio-2149 {
+    padding: var(--sectionPadding);
+    background: #fff;
+  }
+
+  #appdev-portfolio-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 3rem);
+  }
+
+  #appdev-portfolio-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #appdev-portfolio-2149 .cs-title {
+    max-width: 34ch;
+  }
+
+  #appdev-portfolio-2149 .cs-title strong {
+    color: var(--primary);
+  }
+
+  #appdev-portfolio-2149 .cs-text {
+    max-width: 60ch;
+    margin-top: 0.75rem;
+  }
+
+  #appdev-portfolio-2149 .cs-portfolio-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  #appdev-portfolio-2149 .cs-portfolio-img {
+    width: 100%;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  #appdev-portfolio-2149 .cs-portfolio-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  #appdev-portfolio-2149 .cs-feature-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  #appdev-portfolio-2149 .cs-feature-list li {
+    list-style: none;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    background: var(--bg-primary);
+    border: 1px solid rgba(26, 26, 26, 0.06);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-body);
+  }
+
+  #appdev-portfolio-2149 .cs-feature-list li strong {
+    color: var(--headerColor);
+  }
+
+  /* ============================================ */
+  /*              Capabilities Section             */
+  /* ============================================ */
+
+  #appdev-capabilities-2149 {
+    padding: var(--sectionPadding);
+    padding-bottom: 0;
+    position: relative;
+    z-index: 1;
+    background: url(/public/content/svgs/stripes.svg);
+  }
+
+  #appdev-capabilities-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+
+  #appdev-capabilities-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #appdev-capabilities-2149 .cs-title {
+    max-width: 34ch;
+  }
+
+  #appdev-capabilities-2149 .cs-title strong {
+    color: var(--primary);
+  }
+
+  #appdev-capabilities-2149 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 1.875rem;
+    column-gap: 1.875rem;
+  }
+
+  #appdev-capabilities-2149 .cs-item {
+    width: 100%;
+    text-align: left;
+    list-style: none;
+    margin: 2.75rem 0 0;
+    padding: 0 clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 6vw, 4rem);
+    background-color: var(--bg-card);
+    box-sizing: border-box;
+    grid-column: span 12;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  }
+
+  #appdev-capabilities-2149 .cs-icon-wrapper {
+    width: 5.5rem;
+    height: 5.5rem;
+    margin: -2.75rem auto 2rem 0;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: calc(clamp(1.5rem, 4vw, 2.5rem) * -1);
+    border-radius: 0.75rem;
+  }
+
+  #appdev-capabilities-2149 .cs-icon-wrapper svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--bg-dark);
+  }
+
+  #appdev-capabilities-2149 .cs-h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+    color: var(--headerColor);
+    font-family: "DM Serif Display", serif;
+  }
+
+  #appdev-capabilities-2149 .cs-item-text {
+    font-size: 1rem;
+    line-height: 1.6em;
+    margin: 0;
+    color: var(--text-body);
+  }
+
+  /* ============================================ */
+  /*            Industries We Serve                */
+  /* ============================================ */
+
+  #appdev-industries-2149 {
+    padding: var(--sectionPadding);
+    background: #fff;
+  }
+
+  #appdev-industries-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  #appdev-industries-2149 .cs-content {
+    width: 100%;
+    max-width: 46rem;
+  }
+
+  #appdev-industries-2149 .cs-text {
+    margin-top: 0.75rem;
+  }
+
+  #appdev-industries-2149 .cs-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  #appdev-industries-2149 .cs-list li {
+    list-style: none;
+    padding: 1rem 1rem;
+    border-radius: 0.75rem;
+    background: var(--bg-primary);
+    border: 1px solid rgba(26, 26, 26, 0.06);
+  }
+
+  /* ============================================ */
+  /*                  Process                      */
+  /* ============================================ */
+
+  #appdev-process-2149 {
+    padding: var(--sectionPadding);
+    background: var(--bg-primary);
+  }
+
+  #appdev-process-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  #appdev-process-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #appdev-process-2149 .cs-steps {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  #appdev-process-2149 .cs-step {
+    list-style: none;
+    background: #fff;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.25rem;
+    border: 1px solid rgba(26, 26, 26, 0.06);
+  }
+
+  #appdev-process-2149 .cs-step h3 {
+    margin: 0 0 0.5rem;
+    font-family: "DM Serif Display", serif;
+    color: var(--headerColor);
+    font-size: 1.25rem;
+  }
+
+  #appdev-process-2149 .cs-step p {
+    margin: 0;
+    color: var(--text-body);
+    line-height: 1.6;
+  }
+
+  /* ============================================ */
+  /*                    CTA                        */
+  /* ============================================ */
+
+  #appdev-cta-2149 {
+    padding: var(--sectionPadding);
+    background: var(--bg-dark);
+    color: #fff;
+    text-align: center;
+  }
+
+  #appdev-cta-2149 .cs-container {
+    width: 100%;
+    max-width: 60rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  #appdev-cta-2149 .cs-title,
+  #appdev-cta-2149 .cs-text {
+    color: #fff;
+  }
+
+  #appdev-cta-2149 .cs-button-solid {
+    background: var(--primary);
+    color: var(--bg-dark);
+    box-shadow: none;
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    min-width: 12.5rem;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    border: none;
+  }
+
+  #appdev-cta-2149 .cs-button-solid:hover {
+    background: var(--primaryLight);
+    transform: translateY(-1px);
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #appdev-hero-2149 .cs-button-group {
+    flex-direction: row;
+  }
+
+  #appdev-portfolio-2149 .cs-portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #appdev-portfolio-2149 .cs-feature-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #appdev-capabilities-2149 .cs-item {
+    grid-column: span 6;
+  }
+
+  #appdev-industries-2149 .cs-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #appdev-process-2149 .cs-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #appdev-capabilities-2149 .cs-item {
+    grid-column: span 4;
+  }
+
+  #appdev-process-2149 .cs-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
