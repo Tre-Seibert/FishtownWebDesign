@@ -28,8 +28,10 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="/public/css/index.css">
     <link rel="stylesheet" href="/public/css/core.css">
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Swiper CSS - async load, init deferred until both CSS and DOM are ready -->
+    <script>var _swCss=false,_swDom=false;function _maybeInitSwipers(){if(_swCss&&_swDom)initSwipers();}</script>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet';_swCss=true;_maybeInitSwipers()">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
 
     <!--Favicons-->
     <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
@@ -477,7 +479,7 @@
                 type="image/webp"
                 fetchpriority="high">
 
-            <img decoding="async" src="/public/content/home/web-design-philly.jpg" alt="Under The El" width="1920" height="907" aria-hidden="true">
+            <img decoding="async" fetchpriority="high" src="/public/content/home/web-design-philly.jpg" alt="Under The El" width="1920" height="907" aria-hidden="true">
         </picture>
     </section>
                                 
@@ -1471,8 +1473,7 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Initialize Swiper
-        document.addEventListener('DOMContentLoaded', function() {
+        function initSwipers() {
             const portfolioSwiper = new Swiper('.portfolio-swiper', {
                 slidesPerView: 'auto',
                 centeredSlides: true,
@@ -1666,6 +1667,10 @@
                     }
                 });
             }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            _swDom = true;
+            _maybeInitSwipers();
         });
     </script>
     <script>
