@@ -22,21 +22,20 @@
     <title>Fishtown Web Design | Hand-Coded Websites &amp; SEO | Philadelphia</title>
 
     <!--CSS Imports-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
-    <!-- Self-hosted display fonts: preload so they're fetched immediately instead of being
-         discovered only after core.css loads/parses, which was causing a late font swap (CLS) -->
+    <!-- Self-hosted fonts: preload so they're fetched immediately instead of being
+         discovered only after core.css loads/parses, which was causing a late font swap (CLS).
+         Montserrat is now self-hosted (was Google Fonts) to remove the cross-origin redirect
+         chain and let font-display:optional load it before first paint, eliminating swap-CLS. -->
+    <link rel="preload" href="/public/content/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/public/content/fonts/horizon.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/public/content/fonts/DMSerifDisplay-Regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="/public/css/index.css">
     <link rel="stylesheet" href="/public/css/core.css">
-    <!-- Swiper CSS - async load, init deferred until both CSS and DOM are ready -->
+    <!-- Swiper CSS - self-hosted custom build (core + pagination + autoplay + effect-coverflow only,
+         the modules this page actually uses); async load, init deferred until both CSS and DOM are ready -->
     <script>var _swCss=false,_swDom=false;function _maybeInitSwipers(){if(_swCss&&_swDom)initSwipers();}</script>
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" fetchpriority="low" onload="this.onload=null;this.rel='stylesheet';_swCss=true;_maybeInitSwipers()">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+    <link rel="preload" href="/public/css/swiper-custom.min.css" as="style" fetchpriority="low" onload="this.onload=null;this.rel='stylesheet';_swCss=true;_maybeInitSwipers()">
+    <noscript><link rel="stylesheet" href="/public/css/swiper-custom.min.css"></noscript>
 
     <!--Favicons-->
     <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
@@ -265,7 +264,7 @@
     <div id="cs-modal-1605" style="z-index: -10">
         <div class="cs-wrapper">
             <button id="cs-close-1605" class="cs-close" aria-label="close pop up">
-                <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/Close.svg" alt="clothing" width="24" height="24" aria-hidden="true">
+                <img decoding="async" src="/public/content/svgs/close.svg" alt="clothing" width="24" height="24" aria-hidden="true">
             </button>
             <picture class="cs-picture">
                 <!--Mobile Image-->
@@ -346,7 +345,7 @@
                         <li class="cs-li cs-dropdown" tabindex="0">
                             <span class="cs-li-link">
                                 about
-                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                <img class="cs-drop-icon" src="/public/content/svgs/down.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
                             </span>
                             <ul class="cs-drop-ul">
                                 <li class="cs-drop-li">
@@ -363,7 +362,7 @@
                         <li class="cs-li cs-dropdown" tabindex="0">
                             <span class="cs-li-link">
                                 services
-                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                <img class="cs-drop-icon" src="/public/content/svgs/down.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
                             </span>
                             <ul class="cs-drop-ul">
                                 <li class="cs-drop-li">
@@ -383,7 +382,7 @@
                         <li class="cs-li cs-dropdown" tabindex="0">
                             <span class="cs-li-link">
                                 industries
-                                <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                <img class="cs-drop-icon" src="/public/content/svgs/down.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
                             </span>
                             <ul class="cs-drop-ul">
                                 <li class="cs-drop-li">
@@ -401,10 +400,10 @@
                             </ul>
                         </li>
                         <li class="cs-li cs-dropdown" tabindex="0">
-                            <span class="cs-li-link">locations<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
+                            <span class="cs-li-link">locations<img class="cs-drop-icon" src="/public/content/svgs/down.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true"></span>
                             <ul class="cs-drop-ul">
                                 <li class="cs-drop-li cs-dropdown-nested" tabindex="0">
-                                    <span class="cs-li-link cs-drop-link">philadelphia<img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true" style="margin-left: 8px;"></span>
+                                    <span class="cs-li-link cs-drop-link">philadelphia<img class="cs-drop-icon" src="/public/content/svgs/down.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true" style="margin-left: 8px;"></span>
                                     <ul class="cs-drop-ul-nested">
                                         <li class="cs-drop-li"><a href="https://www.fishtownwebdesign.com/web-design-fishtown" class="cs-li-link cs-drop-link">fishtown</a></li>
                                         <li class="cs-drop-li"><a href="https://www.fishtownwebdesign.com/web-design-center-city" class="cs-li-link cs-drop-link">center city</a></li>
@@ -438,7 +437,7 @@
             <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
             <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
                 <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
-                <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
+                <img class="cs-sun" aria-hidden="true" src="/public/content/svgs/sun.svg" decoding="async" alt="moon" width="15" height="15">
             </button> -->
         </div>
     </header>
@@ -716,7 +715,7 @@
                 </li>
             </ul>
             <!--Floating Arrow Graphic-->
-            <!-- <img class="cs-floater" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Forange-arrow.svg" alt="arrow" loading="lazy" decoding="async" aria-hidden="true"> -->
+            <!-- <img class="cs-floater" src="/public/content/svgs/orange-arrow.svg" alt="arrow" loading="lazy" decoding="async" aria-hidden="true"> -->
         </div>
     </section>
     
@@ -1123,7 +1122,7 @@
             <ul class="cs-ul">
                 <li class="cs-li">
                     <picture class="cs-icon-wrapper">
-                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-phone.svg" alt="phone contact icon" class="cs-icon" width="40" height="40" decoding="async">
+                        <img aria-hidden="true" src="/public/content/svgs/mech-phone.svg" alt="phone contact icon" class="cs-icon" width="40" height="40" decoding="async">
                     </picture>
                     <div class="cs-flex-group">
                         <span class="cs-header">Phone</span>
@@ -1134,7 +1133,7 @@
                 </li>
                 <li class="cs-li">
                     <picture class="cs-icon-wrapper">
-                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-email.svg" alt="email contact icon" class="cs-icon" width="40" height="40" decoding="async">
+                        <img aria-hidden="true" src="/public/content/svgs/mech-email.svg" alt="email contact icon" class="cs-icon" width="40" height="40" decoding="async">
                     </picture>
                     <div class="cs-flex-group">
                         <span class="cs-header">Email</span>
@@ -1143,7 +1142,7 @@
                 </li>
                 <li class="cs-li">
                     <picture class="cs-icon-wrapper">
-                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-pin.svg" alt="location pin icon" class="cs-icon" width="40" height="40" decoding="async">
+                        <img aria-hidden="true" src="/public/content/svgs/mech-pin.svg" alt="location pin icon" class="cs-icon" width="40" height="40" decoding="async">
                     </picture>
                     <div class="cs-flex-group">
                         <span class="cs-header">Born in Fishtown</span>
@@ -1180,7 +1179,7 @@
                     <a href="https://www.fishtownwebdesign.com/blog/HVAC-Website-Design-Case-Study-Axel-Mechanical-Services" class="cs-flex">
                         <div class="cs-info-wrapper">
                             <span class="cs-category">
-                                <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/folder-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                                <img class="cs-icon" loading="lazy" decoding="async" src="/public/content/svgs/folder-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
                                 Case Studies
                             </span>
                         </div>
@@ -1200,7 +1199,7 @@
                     <a href="https://www.fishtownwebdesign.com/blog/from-cat-inspiration-to-coffee-empire-building-green-shades-coffee-co-purpose-driven-ecommerce-platform" class="cs-flex">
                         <div class="cs-info-wrapper">
                             <span class="cs-category">
-                                <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/folder-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                                <img class="cs-icon" loading="lazy" decoding="async" src="/public/content/svgs/folder-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
                                 Web Design, SEO
                             </span>
                         </div>
@@ -1220,7 +1219,7 @@
                     <a href="https://www.fishtownwebdesign.com/blog/definitive-guide-to-web-design-for-philadelphia-businesses" class="cs-flex">
                         <div class="cs-info-wrapper">
                             <span class="cs-category">
-                                <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/folder-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
+                                <img class="cs-icon" loading="lazy" decoding="async" src="/public/content/svgs/folder-green.svg" alt="icon" width="20" height="20" aria-hidden="true">
                                 Case Studies
                             </span>
                         </div>
@@ -1282,10 +1281,10 @@
                     <!--Social-->
                     <div class="cs-social">
                         <a href="https://www.facebook.com/profile.php?id=61570913623739" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit facebook">
-                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
+                            <img class="cs-social-icon" src="/public/content/svgs/face-white1.svg" alt="facebook" loading="lazy" decoding="async" width="12" height="12">
                         </a>
                         <a href="https://instagram.com/fishtownwebdesign" class="cs-social-link" target="_blank" rel="noopener" aria-label="visit instagram">
-                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
+                            <img class="cs-social-icon" src="/public/content/svgs/instagram.svg" alt="instagram" loading="lazy" decoding="async" width="12" height="12">
                         </a>
                     </div>
                     <!--Legal-->
@@ -1488,7 +1487,7 @@
         });
     </script>
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="/public/scripts/swiper-custom.min.js" defer></script>
     <script>
         function initSwipers() {
             const portfolioSwiper = new Swiper('.portfolio-swiper', {
