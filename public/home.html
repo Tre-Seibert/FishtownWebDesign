@@ -24,6 +24,7 @@
     <!--CSS Imports-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="/public/css/index.css">
@@ -755,6 +756,7 @@
                                 <img
                                     src="/public/content/home/laura-mobile.png"
                                     alt="Laura Alden Creative Portfolio - Full Website"
+                                    loading="lazy"
                                     decoding="async">
                             </picture>
                         </div>
@@ -765,6 +767,7 @@
                                 <img
                                     src="/public/content/home/laura.png"
                                     alt="Laura Alden Creative Portfolio - Design and Code"
+                                    loading="lazy"
                                     decoding="async">
                             </picture>
                         </div>
@@ -775,6 +778,7 @@
                                 <img
                                     src="/public/content/home/laura-web-mobile.png"
                                     alt="Laura Alden Creative Portfolio - Full Website"
+                                    loading="lazy"
                                     decoding="async">
                             </picture>
                         </div>
@@ -785,6 +789,7 @@
                                 <img
                                     src="/public/content/home/laura-web.png"
                                     alt="Laura Alden Creative Portfolio - Full Website"
+                                    loading="lazy"
                                     decoding="async">
                             </picture>
                         </div>
@@ -1471,7 +1476,7 @@
         });
     </script>
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script>
         function initSwipers() {
             const portfolioSwiper = new Swiper('.portfolio-swiper', {
