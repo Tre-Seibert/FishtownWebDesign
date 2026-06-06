@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "postcss src/css/*.css --dir public/css/ --no-map",
     "build:js": "terser src/js/faq.js -o public/scripts/faq.js",
-    "build": "npm run build:css && npm run build:js",
+    "build:swiper": "esbuild src/js/swiper-custom.js --bundle --minify --format=iife --outfile=public/scripts/swiper-custom.min.js && cat node_modules/swiper/swiper.min.css node_modules/swiper/modules/pagination.min.css node_modules/swiper/modules/autoplay.min.css node_modules/swiper/modules/effect-coverflow.min.css > public/css/swiper-custom.min.css",
+    "build": "npm run build:css && npm run build:js && npm run build:swiper",
     "dev": "cp src/css/*.css public/css/ && cp src/js/faq.js public/scripts/faq.js"
   },
   "repository": {
@@ -34,10 +35,12 @@
     "nodemailer": "^6.9.16",
     "sitemap": "^8.0.0",
     "square": "^44.0.0",
+    "swiper": "^12.2.0",
     "winston": "^3.17.0"
   },
   "devDependencies": {
     "cssnano": "^7.1.9",
+    "esbuild": "^0.28.0",
     "postcss-cli": "^11.0.1",
     "terser": "^5.48.0"
   }
