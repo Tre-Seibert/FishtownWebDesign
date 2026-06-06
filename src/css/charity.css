@@ -1,0 +1,543 @@
+/*-- -------------------------- -->
+<---        Charity Hero           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #charity-hero-2149 {
+    padding: clamp(2.75rem, 54vw, 5rem) 1rem clamp(3.75rem, 7.5vw, 6.25rem);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
+  }
+  
+  #charity-hero-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #charity-hero-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #charity-hero-2149 .cs-topper {
+    margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+  }
+  
+  #charity-hero-2149 .cs-title {
+    font-size: clamp(2.4375rem, 5vw, 4.5rem);
+    max-width: 30ch;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+  }
+  
+  #charity-hero-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #charity-hero-2149 .cs-text {
+    color: var(--text-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 55ch;
+    margin: 0 0 clamp(2rem, 4vw, 3rem) 0;
+    line-height: 1.6em;
+  }
+  
+  #charity-hero-2149 .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-align: center;
+    text-decoration: none;
+    min-width: 12.5rem;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--bg-dark);
+    color: var(--bodyTextColorWhite);
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  
+  #charity-hero-2149 .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  #charity-hero-2149 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.05;
+  }
+  
+  #charity-hero-2149 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/*-- -------------------------- -->
+<---        Included Section      -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #charity-included-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-secondary);
+    position: relative;
+    z-index: 1;
+  }
+  
+  #charity-included-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  
+  #charity-included-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #charity-included-2149 .cs-title {
+    max-width: 30ch;
+  }
+  
+  #charity-included-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #charity-included-2149 .cs-card-group {
+    width: 100%;
+    margin: clamp(1rem, 2vw, 1.5rem) 0 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  #charity-included-2149 .cs-item {
+    text-align: center;
+    display: flex;
+    grid-column: span 12;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: var(--bg-card);
+    padding: clamp(2rem, 4vw, 2.5rem);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  #charity-included-2149 .cs-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  #charity-included-2149 .cs-icon-wrapper {
+    margin-bottom: clamp(1.25rem, 2vw, 1.5rem);
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #charity-included-2149 .cs-icon-wrapper svg {
+    width: 2.5rem;
+    height: auto;
+    display: block;
+    color: var(--bg-dark);
+  }
+  
+  #charity-included-2149 .cs-h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    text-align: inherit;
+    margin: 0 0 clamp(0.75rem, 1.5vw, 1rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #charity-included-2149 .cs-item-text {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.6em;
+    text-align: inherit;
+    max-width: 25.8125rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+    font-family: Montserrat, sans-serif;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #charity-included-2149 .cs-item {
+    grid-column: span 6;
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #charity-included-2149 .cs-item {
+    grid-column: span 4;
+  }
+}
+
+/*-- -------------------------- -->
+<---        Eligibility Section   -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #charity-eligibility-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-primary);
+    position: relative;
+    z-index: 1;
+  }
+  
+  #charity-eligibility-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+  }
+  
+  #charity-eligibility-2149 .cs-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  
+  #charity-eligibility-2149 .cs-content {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  #charity-eligibility-2149 .cs-title {
+    max-width: 30ch;
+  }
+  
+  #charity-eligibility-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #charity-eligibility-2149 .cs-eligibility-list {
+    width: 100%;
+    margin: clamp(2rem, 4vw, 3rem) 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  #charity-eligibility-2149 .cs-eligibility-item {
+    display: flex;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    align-items: flex-start;
+  }
+  
+  #charity-eligibility-2149 .cs-eligibility-icon {
+    width: 3rem;
+    height: 3rem;
+    min-width: 3rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  #charity-eligibility-2149 .cs-eligibility-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--bg-dark);
+  }
+  
+  #charity-eligibility-2149 .cs-eligibility-text {
+    flex: 1;
+  }
+  
+  #charity-eligibility-2149 .cs-h3 {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #charity-eligibility-2149 .cs-item-text {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.6em;
+    color: var(--text-body);
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #charity-eligibility-2149 .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: clamp(1.5rem, 3vw, 2rem) 0 0 0;
+    color: var(--text-light);
+    min-width: 12.5rem;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--bg-dark);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  #charity-eligibility-2149 .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #charity-eligibility-2149 .cs-content-wrapper {
+    max-width: 60rem;
+    margin: auto;
+  }
+}
+
+/*-- -------------------------- -->
+<---        Process Section       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #charity-process-2149 {
+    padding: var(--sectionPadding);
+    overflow: hidden;
+    z-index: 1;
+    background-color: var(--bg-secondary);
+  }
+  
+  #charity-process-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  
+  #charity-process-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #charity-process-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #charity-process-2149 .cs-card-group {
+    width: 100%;
+    margin: clamp(1rem, 2vw, 1.5rem) 0 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  #charity-process-2149 .cs-item {
+    text-align: center;
+    display: flex;
+    grid-column: span 12;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: var(--bg-card);
+    padding: clamp(2rem, 4vw, 2.5rem);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  #charity-process-2149 .cs-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  #charity-process-2149 .cs-picture {
+    margin-bottom: clamp(1.25rem, 2vw, 1.5rem);
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #charity-process-2149 .cs-step-number {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 900;
+    color: var(--bg-dark);
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #charity-process-2149 .cs-h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    text-align: inherit;
+    margin: 0 0 clamp(0.75rem, 1.5vw, 1rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #charity-process-2149 .cs-item-text {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.6em;
+    text-align: inherit;
+    max-width: 25.8125rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+    font-family: Montserrat, sans-serif;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #charity-process-2149 .cs-item {
+    grid-column: span 4;
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #charity-process-2149 .cs-container {
+    max-width: 80rem;
+  }
+}
+
+/*-- -------------------------- -->
+<---        CTA Section           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #charity-cta-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    position: relative;
+    z-index: 1;
+  }
+  
+  #charity-cta-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #charity-cta-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #charity-cta-2149 .cs-topper {
+    color: var(--primary);
+  }
+  
+  #charity-cta-2149 .cs-title {
+    color: var(--text-light);
+    max-width: 30ch;
+  }
+  
+  #charity-cta-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #charity-cta-2149 .cs-text {
+    color: rgba(244, 242, 237, 0.9);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 55ch;
+    margin: 0 0 clamp(2rem, 4vw, 3rem) 0;
+    line-height: 1.6em;
+  }
+  
+  #charity-cta-2149 .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    color: var(--bg-dark);
+    min-width: 12.5rem;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  #charity-cta-2149 .cs-button-solid:hover {
+    background-color: var(--primary);
+    box-shadow: 0 0 30px rgba(248, 200, 130, 0.5);
+    transform: translateY(-2px);
+  }
+}

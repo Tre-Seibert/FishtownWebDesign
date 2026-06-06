@@ -27,10 +27,13 @@ require('dotenv').config();
  */
 
 const express = require('express');
+const compression = require('compression');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const path = require('path');
 const app = express();
+
+app.use(compression());
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const winston = require('winston');
 const { pool, testConnection, initializeDatabase } = require('./public/scripts/database');

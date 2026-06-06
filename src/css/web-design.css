@@ -1,0 +1,1060 @@
+/*-- -------------------------- -->
+<---        Web Design Hero        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #web-design-hero-2149 {
+    padding: clamp(2.75rem, 54vw, 8rem) 1rem clamp(3.75rem, 7.5vw, 6.25rem);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
+  }
+  
+  #web-design-hero-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #web-design-hero-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #web-design-hero-2149 .cs-topper {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: inherit;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
+    color: var(--primary);
+    font-family: Horizon, sans-serif;
+  }
+  
+  #web-design-hero-2149 .cs-title {
+    font-size: clamp(2.4375rem, 5vw, 4.5rem);
+    max-width: 30ch;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #web-design-hero-2149 .cs-text {
+    color: var(--text-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 55ch;
+    margin: 0 0 clamp(2rem, 4vw, 3rem) 0;
+    line-height: 1.6em;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #web-design-hero-2149 .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: var(--text-light);
+    min-width: 12.5rem;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--bg-dark);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  #web-design-hero-2149 .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+  
+  #web-design-hero-2149 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    opacity: 0.05;
+  }
+  
+  #web-design-hero-2149 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/*-- -------------------------- -->
+<---        Why Choose Section     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #web-design-why-2149 {
+    padding: var(--sectionPadding);
+    padding-bottom: 0;
+    position: relative;
+    z-index: 1;
+    background: url(/public/content/svgs/stripes.svg);
+  }
+  
+  #web-design-why-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  
+  #web-design-why-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #web-design-why-2149 .cs-title {
+    max-width: 30ch;
+  }
+  
+  #web-design-why-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #web-design-why-2149 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 1.875rem;
+    column-gap: 1.875rem;
+  }
+  
+  #web-design-why-2149 .cs-item {
+    width: 100%;
+    text-align: left;
+    list-style: none;
+    margin: 2.75rem 0 0;
+    padding: 0 clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 6vw, 4rem);
+    background-color: var(--bg-card);
+    box-sizing: border-box;
+    grid-column: span 12;
+    grid-row: span 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #web-design-why-2149 .cs-icon-wrapper {
+    width: 5.5rem;
+    height: 5.5rem;
+    margin: -2.75rem auto 2rem 0;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: calc(clamp(1.5rem, 4vw, 2.5rem) * -1);
+  }
+  
+  #web-design-why-2149 .cs-icon-wrapper svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--bg-dark);
+  }
+  
+  #web-design-why-2149 .cs-h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-align: inherit;
+    margin: 0 0 .75rem;
+    color: var(--headerColor);
+    font-family: "DM Serif Display";
+  }
+  
+  #web-design-why-2149 .cs-item-text {
+    font-size: clamp(.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    max-width: 18.75rem;
+    margin: 0 0 2rem;
+    padding: 0;
+    color: var(--text-body);
+    font-family: Montserrat;
+  }
+  
+  #web-design-why-2149 .cs-waves {
+    width: 100%;
+    height: 13.875rem;
+    background-color: var(--bg-dark);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  #web-design-why-2149 .cs-waves img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #web-design-why-2149 .cs-card-group {
+    column-gap: 1.875rem;
+  }
+  
+  #web-design-why-2149 .cs-item {
+    grid-column: span 6;
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #web-design-why-2149 .cs-item {
+    grid-column: span 4;
+  }
+}
+
+/*-- -------------------------- -->
+<---   Web design explore links   -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #web-design-explore-2149 {
+    padding: var(--sectionPadding);
+    position: relative;
+    z-index: 1;
+    background: url(/public/content/svgs/stripes.svg);
+  }
+
+  #web-design-explore-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.75rem, 4vw, 2.5rem);
+  }
+
+  #web-design-explore-2149 .cs-content {
+    text-align: center;
+    max-width: 52rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #web-design-explore-2149 .cs-title {
+    max-width: min(48rem, 100%);
+    letter-spacing: 0.02em;
+  }
+
+  #web-design-explore-2149 .cs-title strong {
+    color: var(--primary);
+  }
+
+  #web-design-explore-2149 .cs-text {
+    max-width: 48ch;
+  }
+
+  #web-design-explore-2149 .cs-text a {
+    color: var(--bg-dark);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(58, 47, 40, 0.35);
+  }
+
+  #web-design-explore-2149 .cs-text a:hover {
+    color: var(--accent-terracotta);
+    text-decoration-color: var(--accent-terracotta);
+  }
+
+  #web-design-explore-2149 .cs-explore-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.25rem, 3vw, 1.75rem);
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  #web-design-explore-2149 .cs-explore-col {
+    background-color: var(--bg-card);
+    padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 3vw, 2rem);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 14px rgba(58, 47, 40, 0.06);
+  }
+
+  #web-design-explore-2149 .cs-explore-h3 {
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    letter-spacing: 0.06em;
+    color: var(--headerColor);
+    margin: 0 0 0.75rem 0;
+  }
+
+  #web-design-explore-2149 .cs-explore-list {
+    margin: 0;
+    padding-left: 1.15rem;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
+    line-height: 1.6;
+    color: var(--text-body);
+  }
+
+  #web-design-explore-2149 .cs-explore-list li {
+    margin-bottom: 0.35rem;
+  }
+
+  #web-design-explore-2149 .cs-explore-list a {
+    color: var(--bg-dark);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(58, 47, 40, 0.35);
+  }
+
+  #web-design-explore-2149 .cs-explore-list a:hover {
+    color: var(--accent-terracotta);
+    text-decoration-color: var(--accent-terracotta);
+  }
+
+  #web-design-explore-2149 .cs-explore-foot {
+    margin: 1rem 0 0 0;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
+    line-height: 1.55;
+    color: var(--text-body);
+  }
+
+  #web-design-explore-2149 .cs-explore-foot a {
+    color: var(--bg-dark);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(58, 47, 40, 0.35);
+  }
+
+  #web-design-explore-2149 .cs-explore-foot a:hover {
+    color: var(--accent-terracotta);
+    text-decoration-color: var(--accent-terracotta);
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  #web-design-explore-2149 .cs-explore-grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: clamp(1.5rem, 3vw, 2.25rem);
+  }
+}
+
+/* Industry & location in-body internal links (card callout, matches site sections) */
+.industry-internal-links {
+  padding: 0 1rem;
+  margin: clamp(2rem, 5vw, 3.5rem) auto;
+  max-width: 52rem;
+  background: transparent;
+}
+
+.industry-internal-links .cs-container {
+  max-width: 48rem;
+  margin: 0 auto;
+  background-color: var(--bg-card);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 14px rgba(58, 47, 40, 0.06);
+}
+
+.industry-internal-links h2 {
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  color: var(--headerColor);
+  margin: 0 0 0.75rem 0;
+}
+
+.industry-internal-links p {
+  font-family: Montserrat, sans-serif;
+  font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0 0 1rem 0;
+}
+
+.industry-internal-links ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-family: Montserrat, sans-serif;
+  font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  line-height: 1.55;
+  color: var(--text-body);
+}
+
+.industry-internal-links li {
+  margin-bottom: 0.35rem;
+}
+
+.industry-internal-links a {
+  color: var(--bg-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(58, 47, 40, 0.35);
+}
+
+.industry-internal-links a:hover {
+  color: var(--accent-terracotta);
+  text-decoration-color: var(--accent-terracotta);
+}
+
+/*-- -------------------------- -->
+<---      Comparison Section       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #web-design-comparison-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-primary);
+    position: relative;
+    z-index: 1;
+  }
+  
+  #web-design-comparison-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  
+  #web-design-comparison-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #web-design-comparison-2149 .cs-title {
+    max-width: 30ch;
+  }
+  
+  #web-design-comparison-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-card {
+    width: 100%;
+    background-color: var(--bg-card);
+    padding: clamp(2rem, 4vw, 3rem);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-card.cs-hand-coded {
+    border: 2px solid var(--primary);
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-icon svg {
+    width: 2rem;
+    height: 2rem;
+    color: var(--bg-dark);
+  }
+  
+
+  #web-design-comparison-2149 .cs-wordpress .cs-comparison-icon svg {
+    color: var(--text-light);
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    margin: 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    color: var(--text-body);
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-item.cs-disabled {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+  
+  #web-design-comparison-2149 .cs-check-icon,
+  #web-design-comparison-2149 .cs-x-icon {
+    width: 1.125rem;
+    height: auto;
+    flex-shrink: 0;
+  }
+  
+  #web-design-comparison-2149 .cs-x-icon {
+    filter: grayscale(1) brightness(300%);
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #web-design-comparison-2149 .cs-comparison-wrapper {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  
+  #web-design-comparison-2149 .cs-comparison-card {
+    flex: 1;
+  }
+}
+
+/*-- -------------------------- -->
+<---      Performance Section       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #web-design-performance-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-primary);
+    position: relative;
+    z-index: 1;
+  }
+  
+  #web-design-performance-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  
+  #web-design-performance-2149 .cs-content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  
+  #web-design-performance-2149 .cs-content {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    order: 2;
+  }
+  
+  #web-design-performance-2149 .cs-topper {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  #web-design-performance-2149 .cs-title {
+    font-size: var(--headerFontSize);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+  
+  #web-design-performance-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #web-design-performance-2149 .cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    color: var(--text-primary);
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    max-width: 100%;
+  }
+  
+  #web-design-performance-2149 .cs-benefits-list {
+    width: 100%;
+    margin: 0 0 clamp(2rem, 4vw, 2.5rem) 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 1.25rem);
+  }
+  
+  #web-design-performance-2149 .cs-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    list-style: none;
+  }
+  
+  #web-design-performance-2149 .cs-benefit-icon {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #web-design-performance-2149 .cs-benefit-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #web-design-performance-2149 .cs-benefit-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    color: var(--text-primary);
+    margin: 0;
+    flex: 1;
+  }
+  
+  #web-design-performance-2149 .cs-button-solid {
+    font-size: .8rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: var(--text-light);
+    min-width: 100%;
+    padding: 0 1.5rem;
+    background-color: var(--bg-dark);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+    font-family: Horizon;
+    text-transform: uppercase;
+  }
+  
+  #web-design-performance-2149 .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+  
+  #web-design-performance-2149 .cs-visual-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
+    order: 1;
+  }
+  
+  #web-design-performance-2149 .cs-metrics-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    flex-wrap: wrap;
+  }
+  
+  #web-design-performance-2149 .cs-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: center;
+  }
+  
+  #web-design-performance-2149 .cs-metric-number {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    color: var(--primary);
+    font-family: "DM Serif Display";
+    display: block;
+  }
+  
+  #web-design-performance-2149 .cs-metric-label {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    color: var(--text-primary);
+    display: block;
+    font-family: Montserrat;
+  }
+  
+  #web-design-performance-2149 .cs-pagespeed-card {
+    width: 100%;
+    background-color: var(--bg-secondary);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #web-design-performance-2149 .cs-pagespeed-picture {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+  
+  #web-design-performance-2149 .cs-pagespeed-picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #web-design-performance-2149 .cs-container {
+    max-width: 80rem;
+  }
+  
+  #web-design-performance-2149 .cs-content-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+  
+  #web-design-performance-2149 .cs-content {
+    width: 50%;
+    flex: 1;
+    order: 0;
+  }
+  
+  #web-design-performance-2149 .cs-visual-wrapper {
+    width: 50%;
+    flex: 1;
+    order: 0;
+  }
+  
+  #web-design-performance-2149 .cs-metrics-group {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  #web-design-performance-2149 .cs-metric {
+    flex: 1;
+  }
+  
+  #web-design-performance-2149 .cs-button-solid {
+    min-width: auto;
+    width: auto;
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #web-design-performance-2149 .cs-content-wrapper {
+    align-items: flex-start;
+  }
+  
+  #web-design-performance-2149 .cs-visual-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 3vw, 2.5rem);
+  }
+  
+  #web-design-performance-2149 .cs-metrics-group {
+    justify-content: flex-start;
+  }
+}
+
+/*-- -------------------------- -->
+<---        Process Section        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #web-design-process-2149 {
+    padding: var(--sectionPadding);
+    overflow: hidden;
+    z-index: 1;
+    background-color: var(--bg-secondary);
+  }
+  
+  #web-design-process-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  
+  #web-design-process-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #web-design-process-2149 .cs-title {
+    max-width: 30ch;
+  }
+  
+  #web-design-process-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #web-design-process-2149 .cs-card-group {
+    width: 100%;
+    margin: clamp(1rem, 2vw, 1.5rem) 0 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  #web-design-process-2149 .cs-item {
+    text-align: center;
+    display: flex;
+    grid-column: span 12;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: var(--bg-card);
+    padding: clamp(2rem, 4vw, 2.5rem);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  #web-design-process-2149 .cs-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  #web-design-process-2149 .cs-picture {
+    margin-bottom: clamp(1.25rem, 2vw, 1.5rem);
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #web-design-process-2149 .cs-icon {
+    width: 2.5rem;
+    height: auto;
+    display: block;
+    color: var(--bg-dark);
+  }
+  
+  #web-design-process-2149 .cs-h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    text-align: inherit;
+    margin: 0 0 clamp(0.75rem, 1.5vw, 1rem);
+    font-weight: 700;
+    color: var(--headerColor);
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #web-design-process-2149 .cs-item-text {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.6em;
+    text-align: inherit;
+    max-width: 25.8125rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+    font-family: Montserrat, sans-serif;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #web-design-process-2149 .cs-item {
+    grid-column: span 4;
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #web-design-process-2149 .cs-container {
+    max-width: 80rem;
+  }
+}
+
+/*-- -------------------------- -->
+<---          CTA Section          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #web-design-cta-2149 {
+    padding: clamp(2.75rem, 54vw, 8rem) 1rem clamp(3.75rem, 7.5vw, 6.25rem);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-primary);
+  }
+  
+  #web-design-cta-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #web-design-cta-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #web-design-cta-2149 .cs-topper {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: inherit;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
+    color: var(--primary);
+    font-family: Horizon, sans-serif;
+  }
+  
+  #web-design-cta-2149 .cs-title {
+    font-size: clamp(2.4375rem, 5vw, 4.5rem);
+    max-width: 30ch;
+    color: var(--headerColor);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  #web-design-cta-2149 .cs-title strong {
+    color: var(--primary);
+  }
+  
+  #web-design-cta-2149 .cs-text {
+    color: var(--text-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 55ch;
+    margin: 0 0 clamp(2rem, 4vw, 3rem) 0;
+    line-height: 1.6em;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  #web-design-cta-2149 .cs-button-solid {
+    font-size: 1rem;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: var(--text-light);
+    min-width: 12.5rem;
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--bg-dark);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: Horizon, sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(248, 200, 130, 0.3);
+  }
+  
+  #web-design-cta-2149 .cs-button-solid:hover {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 25px rgba(58, 47, 40, 0.5);
+  }
+  
+  #web-design-cta-2149 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    opacity: 0.05;
+  }
+  
+  #web-design-cta-2149 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

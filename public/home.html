@@ -24,11 +24,13 @@
     <!--CSS Imports-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="/public/css/index.css">
     <link rel="stylesheet" href="/public/css/core.css">
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
 
     <!--Favicons-->
     <link rel="icon" type="image/png" sizes="16x16" href="/public/content/home/favicon_io/favicon-16x16.png">
@@ -749,9 +751,10 @@
                             <picture class="swiper-picture">
                                 <source media="(max-width: 600px)" srcset="/public/content/home/laura-mobile-m.webp">
                                 <source media="(min-width: 601px)" srcset="/public/content/home/laura-mobile.webp">
-                                <img 
-                                    src="/public/content/home/laura-mobile.png" 
-                                    alt="Laura Alden Creative Portfolio - Full Website" 
+                                <img
+                                    src="/public/content/home/laura-mobile.png"
+                                    alt="Laura Alden Creative Portfolio - Full Website"
+                                    loading="lazy"
                                     decoding="async">
                             </picture>
                         </div>
@@ -759,19 +762,21 @@
                             <picture class="swiper-picture">
                                 <source media="(max-width: 600px)" srcset="/public/content/home/laura-m.webp">
                                 <source media="(min-width: 601px)" srcset="/public/content/home/laura.webp">
-                                <img 
-                                    src="/public/content/home/laura.png" 
-                                    alt="Laura Alden Creative Portfolio - Design and Code" 
+                                <img
+                                    src="/public/content/home/laura.png"
+                                    alt="Laura Alden Creative Portfolio - Design and Code"
+                                    loading="lazy"
                                     decoding="async">
-                            </picture>      
+                            </picture>
                         </div>
                         <div class="swiper-slide">
                             <picture class="swiper-picture">
                                 <source media="(max-width: 600px)" srcset="/public/content/home/laura-web-mobile-m.webp">
                                 <source media="(min-width: 601px)" srcset="/public/content/home/laura-web-mobile.webp">
-                                <img 
-                                    src="/public/content/home/laura-web-mobile.png" 
-                                    alt="Laura Alden Creative Portfolio - Full Website" 
+                                <img
+                                    src="/public/content/home/laura-web-mobile.png"
+                                    alt="Laura Alden Creative Portfolio - Full Website"
+                                    loading="lazy"
                                     decoding="async">
                             </picture>
                         </div>
@@ -779,11 +784,12 @@
                             <picture class="swiper-picture">
                                 <source media="(max-width: 600px)" srcset="/public/content/home/laura-web-m.webp">
                                 <source media="(min-width: 601px)" srcset="/public/content/home/laura-web.webp">
-                                <img 
-                                    src="/public/content/home/laura-web.png" 
-                                    alt="Laura Alden Creative Portfolio - Full Website" 
+                                <img
+                                    src="/public/content/home/laura-web.png"
+                                    alt="Laura Alden Creative Portfolio - Full Website"
+                                    loading="lazy"
                                     decoding="async">
-                            </picture>      
+                            </picture>
                         </div>
                     </div>
                 </div>
