@@ -1,4 +1,4 @@
-/*-- -------------------------- -->
+﻿/*-- -------------------------- -->
 <---        About Hero           -->
 <--- -------------------------- -*/
 
@@ -87,7 +87,7 @@
   
   #about-hero-2149 .cs-role {
     font-size: clamp(1rem, 2vw, 1.25rem);
-    color: var(--primary);
+    color: var(--primary-text);
     font-weight: 600;
     margin: 0 0 0.25rem 0;
     font-family: Horizon, sans-serif;
@@ -168,7 +168,7 @@
   }
   
   #journey-2149 .cs-title strong {
-    color: var(--primary);
+    color: var(--primary-text);
   }
   
   #journey-2149 .cs-timeline {
@@ -205,7 +205,7 @@
     width: 4rem;
     height: 4rem;
     min-width: 4rem;
-    background-color: var(--primary);
+    background-color: var(--primary-text);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -321,7 +321,7 @@
   }
   
   #mission-2149 .cs-title strong {
-    color: var(--primary);
+    color: var(--primary-text);
   }
   
   #mission-2149 .cs-text {
@@ -331,7 +331,7 @@
   }
   
   #mission-2149 .cs-text strong {
-    color: var(--primary);
+    color: var(--primary-text);
     font-weight: 700;
   }
   
@@ -390,7 +390,7 @@
   #mission-2149 .cs-mission-icon {
     width: 5rem;
     height: 5rem;
-    background-color: var(--primary);
+    background-color: var(--primary-text);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -478,7 +478,7 @@
   }
   
   #stats-2149 .cs-topper {
-    color: var(--primary);
+    color: var(--primary-text);
   }
   
   #stats-2149 .cs-title {
@@ -487,7 +487,7 @@
   }
   
   #stats-2149 .cs-title strong {
-    color: var(--primary);
+    color: var(--primary-text);
   }
   
   #stats-2149 .cs-stats-group {
@@ -516,13 +516,13 @@
   
   #stats-2149 .cs-stat-item:hover {
     transform: translateY(-5px);
-    border-color: var(--primary);
+    border-color: var(--primary-text);
   }
   
   #stats-2149 .cs-stat-number {
     font-size: clamp(3rem, 6vw, 4.5rem);
     font-weight: 900;
-    color: var(--primary);
+    color: var(--primary-text);
     line-height: 1.2em;
     font-family: "DM Serif Display", serif;
     display: block;
@@ -625,7 +625,7 @@
     margin-bottom: clamp(1.25rem, 2vw, 1.5rem);
     width: 5.5rem;
     height: 5.5rem;
-    background-color: var(--primary);
+    background-color: var(--primary-text);
     border-radius: 50%;
     display: flex;
     justify-content: center;

@@ -1,4 +1,4 @@
-/*-- -------------------------- -->
+﻿/*-- -------------------------- -->
 <---        SEO Hero               -->
 <--- -------------------------- -*/
 
@@ -37,7 +37,7 @@
     letter-spacing: 0.1em;
     text-align: inherit;
     margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
-    color: var(--primary);
+    color: var(--primary-text);
     font-family: Horizon, sans-serif;
   }
   
@@ -143,7 +143,7 @@
   }
   
   #seo-services-2149 .cs-title strong {
-    color: var(--primary);
+    color: var(--primary-text);
   }
   
   #seo-services-2149 .cs-card-group {
@@ -178,7 +178,7 @@
     width: 5.5rem;
     height: 5.5rem;
     margin: -2.75rem auto 2rem 0;
-    background-color: var(--primary);
+    background-color: var(--primary-text);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -277,7 +277,7 @@
   }
 
   #seo-bundle-2149 .cs-title strong {
-    color: var(--primary);
+    color: var(--primary-text);
   }
 
   #seo-bundle-2149 .cs-text {
@@ -333,7 +333,7 @@
   }
   
   #seo-local-2149 .cs-topper {
-    color: var(--primary);
+    color: var(--primary-text);
     margin-bottom: 0.5rem;
   }
   
@@ -344,7 +344,7 @@
   }
   
   #seo-local-2149 .cs-title strong {
-    color: var(--primary);
+    color: var(--primary-text);
   }
   
   #seo-local-2149 .cs-text {
@@ -376,7 +376,7 @@
     width: 2.5rem;
     height: 2.5rem;
     flex-shrink: 0;
-    background-color: var(--primary);
+    background-color: var(--primary-text);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -561,7 +561,7 @@
   }
   
   #seo-process-2149 .cs-title strong {
-    color: var(--primary);
+    color: var(--primary-text);
   }
   
   #seo-process-2149 .cs-card-group {
@@ -596,7 +596,7 @@
     margin-bottom: clamp(1.25rem, 2vw, 1.5rem);
     width: 5.5rem;
     height: 5.5rem;
-    background-color: var(--primary);
+    background-color: var(--primary-text);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -677,7 +677,7 @@
   }
   
   #seo-results-2149 .cs-topper {
-    color: var(--primary);
+    color: var(--primary-text);
   }
   
   #seo-results-2149 .cs-title {
@@ -686,7 +686,7 @@
   }
   
   #seo-results-2149 .cs-title strong {
-    color: var(--primary);
+    color: var(--primary-text);
   }
   
   #seo-results-2149 .cs-stats-group {
@@ -715,13 +715,13 @@
   
   #seo-results-2149 .cs-stat-item:hover {
     transform: translateY(-5px);
-    border-color: var(--primary);
+    border-color: var(--primary-text);
   }
   
   #seo-results-2149 .cs-stat-number {
     font-size: clamp(3rem, 6vw, 4.5rem);
     font-weight: 900;
-    color: var(--primary);
+    color: var(--primary-text);
     line-height: 1.2em;
     font-family: "DM Serif Display", serif;
     display: block;
@@ -800,7 +800,7 @@
     letter-spacing: 0.1em;
     text-align: inherit;
     margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
-    color: var(--primary);
+    color: var(--primary-text);
     font-family: Horizon, sans-serif;
   }
   
@@ -813,7 +813,7 @@
   }
   
   #seo-cta-2149 .cs-title strong {
-    color: var(--primary);
+    color: var(--primary-text);
   }
   
   #seo-cta-2149 .cs-text {
@@ -939,7 +939,7 @@
   }
 
   #seo-packages-2149 .cs-topper {
-    color: var(--primary);
+    color: var(--primary-text);
     font-family: Horizon, sans-serif;
     font-size: clamp(0.875rem, 1.5vw, 1rem);
     font-weight: 700;
@@ -957,7 +957,7 @@
   }
 
   #seo-packages-2149 .cs-title strong {
-    color: var(--primary);
+    color: var(--primary-text);
   }
 
   #seo-packages-2149 .cs-intro {
@@ -991,7 +991,7 @@
   }
 
   #seo-packages-2149 .cs-package:hover {
-    border-color: var(--primary);
+    border-color: var(--primary-text);
     transform: translateY(-4px);
   }
 
@@ -1011,7 +1011,7 @@
   }
 
   #seo-packages-2149 .cs-price {
-    color: var(--primary);
+    color: var(--primary-text);
     font-family: "DM Serif Display", serif;
     font-size: clamp(2.5rem, 5vw, 3.75rem);
     font-weight: 900;
@@ -1071,7 +1071,7 @@
 
   #seo-packages-2149 .cs-feature::before {
     content: "•";
-    color: var(--primary);
+    color: var(--primary-text);
     position: absolute;
     left: 0;
     font-weight: 700;
@@ -1095,7 +1095,7 @@
   }
 
   #seo-packages-2149 .cs-addons-title {
-    color: var(--primary);
+    color: var(--primary-text);
     font-family: Horizon, sans-serif;
     font-size: clamp(0.875rem, 1.5vw, 1rem);
     font-weight: 700;
@@ -1158,7 +1158,7 @@
   }
 
   #seo-packages-2149 .cs-packages-cta a {
-    color: var(--primary);
+    color: var(--primary-text);
     font-weight: 600;
     text-decoration: none;
   }
@@ -1445,7 +1445,7 @@
   }
 
   #seo-faq-2149 .cs-topper {
-    color: var(--primary);
+    color: var(--primary-text);
     font-family: Horizon, sans-serif;
     font-size: clamp(0.875rem, 1.5vw, 1rem);
     font-weight: 700;
@@ -1500,7 +1500,7 @@
 
   #seo-faq-2149 .cs-faq-question::after {
     content: "+";
-    color: var(--primary);
+    color: var(--primary-text);
     font-size: 1.5rem;
     font-family: Montserrat, sans-serif;
     font-weight: 300;

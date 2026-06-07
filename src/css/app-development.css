@@ -1,4 +1,4 @@
-/*-- -------------------------- -->
+﻿/*-- -------------------------- -->
 <---   App Development Page      -->
 <--- -------------------------- -*/
 
@@ -37,7 +37,7 @@
     letter-spacing: 0.1em;
     text-align: inherit;
     margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
-    color: var(--primary);
+    color: var(--primary-text);
     font-family: Horizon, sans-serif;
   }
 
@@ -142,7 +142,7 @@
   }
 
   #appdev-portfolio-2149 .cs-title strong {
-    color: var(--primary);
+    color: var(--primary-text);
   }
 
   #appdev-portfolio-2149 .cs-text {
@@ -230,7 +230,7 @@
   }
 
   #appdev-capabilities-2149 .cs-title strong {
-    color: var(--primary);
+    color: var(--primary-text);
   }
 
   #appdev-capabilities-2149 .cs-card-group {
@@ -266,7 +266,7 @@
     width: 5.5rem;
     height: 5.5rem;
     margin: -2.75rem auto 2rem 0;
-    background-color: var(--primary);
+    background-color: var(--primary-text);
     display: flex;
     justify-content: center;
     align-items: center;

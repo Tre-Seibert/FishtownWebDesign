@@ -1,4 +1,4 @@
-/*-- -------------------------- -->
+﻿/*-- -------------------------- -->
 <---        Questionnaire Hero    -->
 <--- -------------------------- -*/
 
@@ -173,7 +173,7 @@
   }
   
   #questionnaire .step-label[data-step="1"] {
-    color: var(--primary);
+    color: var(--primary-text);
     background-color: rgba(248, 200, 130, 0.2);
   }
   
@@ -241,7 +241,7 @@
   }
   
   #questionnaire .required {
-    color: var(--primary);
+    color: var(--primary-text);
     font-weight: 700;
   }
   
@@ -262,7 +262,7 @@
   
   #questionnaire .cs-input:focus {
     outline: none;
-    border-color: var(--primary);
+    border-color: var(--primary-text);
     box-shadow: 0 0 0 3px rgba(248, 200, 130, 0.1);
   }
   
@@ -368,7 +368,7 @@
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    background-color: var(--primary);
+    background-color: var(--primary-text);
     color: var(--bg-dark);
     flex: 0 0 auto;
   }
@@ -432,7 +432,7 @@
   #questionnaire .info-icon {
     width: 3rem;
     height: 3rem;
-    background-color: var(--primary);
+    background-color: var(--primary-text);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -623,7 +623,7 @@
   }
   
   #questionnaire .form-step[data-step="2"].active ~ .form-header .step-label[data-step="2"] {
-    color: var(--primary);
+    color: var(--primary-text);
     background-color: rgba(248, 200, 130, 0.2);
   }
 }

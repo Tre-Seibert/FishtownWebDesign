@@ -428,6 +428,7 @@ html, body {
   --primary: #F8C882;
   --primaryLight: #FAD08F;
   --primary-dark: #E0B86B;
+  --primary-text: #9A5200;
   
   /* Secondary Accents (Earthy) */
   --accent-terracotta: #C97D60;

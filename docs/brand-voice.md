@@ -40,7 +40,7 @@ The brand voice reflects that.
 ## Sentence style
 
 - Short declarative sentences as the foundation. Vary with longer ones for rhythm.
-- Em dashes for asides — like this — used sparingly.
+- Never use em dashes (—). Rewrite the sentence instead.
 - Questions to engage: "What does a monthly SEO report actually show you?"
 - Lists when there's genuinely more than one thing to say.
 - Numbers are specific: "15–20 keywords," "3–12 months," not "many keywords" or "several months."

@@ -41,6 +41,42 @@
     <link rel="preload" href="/public/css/core.css" as="style">
     <link rel="preload" href="/public/content/home/logo.webp" as="image">
 
+    <style>
+    /* Code strip: laptop preview panel */
+    #web-design-code-strip-2149 .cs-laptop-wrapper { display: none; }
+    #web-design-code-strip-2149 .cs-code-left { display: flex; flex-direction: column; gap: .625rem; }
+    @media only screen and (min-width: 64rem) {
+        #web-design-code-strip-2149 .cs-code-inner { flex-direction: row; align-items: center; gap: 1.25rem; }
+        #web-design-code-strip-2149 .cs-code-left { flex: 1; min-width: 0; }
+        #web-design-code-strip-2149 .cs-laptop-wrapper { display: flex; flex-shrink: 0; width: 21rem; }
+    }
+    /* Laptop chrome */
+    #web-design-code-strip-2149 .cs-laptop { width: 100%; }
+    #web-design-code-strip-2149 .cs-laptop-screen { background: #faf8f5; border: 7px solid #1e1b18; border-radius: 8px 8px 0 0; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.55); }
+    #web-design-code-strip-2149 .cs-laptop-chrome { background: #1a1714; display: flex; align-items: center; gap: 5px; padding: 7px 10px; }
+    #web-design-code-strip-2149 .cs-lc-dot { border-radius: 50%; display: inline-block; flex-shrink: 0; height: 8px; width: 8px; }
+    #web-design-code-strip-2149 .cs-lc-r { background: #ff5f57; }
+    #web-design-code-strip-2149 .cs-lc-y { background: #febc2e; }
+    #web-design-code-strip-2149 .cs-lc-g { background: #28c840; }
+    #web-design-code-strip-2149 .cs-lc-url { background: rgba(255,255,255,.07); border-radius: 3px; color: rgba(255,255,255,.32); flex: 1; font-family: Courier New, monospace; font-size: 9px; margin-left: 6px; overflow: hidden; padding: 2px 8px; text-overflow: ellipsis; white-space: nowrap; }
+    #web-design-code-strip-2149 .cs-laptop-hinge { background: #1a1714; border-radius: 0 0 2px 2px; height: 5px; }
+    #web-design-code-strip-2149 .cs-laptop-base { align-items: flex-end; background: #252220; border-radius: 0 0 10px 10px; display: flex; height: 14px; justify-content: center; padding-bottom: 2px; }
+    #web-design-code-strip-2149 .cs-laptop-notch { background: #1a1714; border-radius: 4px 4px 0 0; height: 7px; width: 38%; }
+    /* Viewport content */
+    #web-design-code-strip-2149 .cs-laptop-viewport { display: flex; flex-direction: column; gap: .75rem; min-height: 10.5rem; padding: 1.5rem 1.25rem 1.25rem; }
+    /* Preview elements: hidden by default, fade+slide in when .cs-pv-visible is added */
+    #web-design-code-strip-2149 .cs-pv-h1,
+    #web-design-code-strip-2149 .cs-pv-p,
+    #web-design-code-strip-2149 .cs-pv-btn { opacity: 0; transform: translateY(8px); transition: opacity .45s ease, transform .45s ease; }
+    #web-design-code-strip-2149 .cs-pv-h1.cs-pv-visible,
+    #web-design-code-strip-2149 .cs-pv-p.cs-pv-visible,
+    #web-design-code-strip-2149 .cs-pv-btn.cs-pv-visible { opacity: 1; transform: translateY(0); }
+    /* Preview typography mirrors the real site style at miniature scale */
+    #web-design-code-strip-2149 .cs-pv-h1 { color: #3a2f28; font-family: "DM Serif Display", serif; font-size: 1.1rem; font-weight: 700; line-height: 1.2; margin: 0; }
+    #web-design-code-strip-2149 .cs-pv-p { color: #6b5c52; font-family: Montserrat, sans-serif; font-size: .72rem; line-height: 1.5; margin: 0; }
+    #web-design-code-strip-2149 .cs-pv-btn { align-self: flex-start; background: #3a2f28; border-radius: 4px; color: #f8c882; font-family: Horizon, sans-serif; font-size: .55rem; font-weight: 700; letter-spacing: .06em; padding: .4rem .8rem; text-decoration: none; text-transform: uppercase; }
+    </style>
+
 </head>
 <body>
     <div class="page-wrapper">
@@ -214,8 +250,29 @@
 
     <section id="web-design-code-strip-2149" aria-hidden="true">
         <div class="cs-code-inner">
-            <span class="cs-code-label">index.html</span>
-            <pre class="cs-code-block" id="cs-typewriter-target"></pre>
+            <div class="cs-code-left">
+                <span class="cs-code-label">your-new-website.html</span>
+                <pre class="cs-code-block" id="cs-typewriter-target"></pre>
+            </div>
+            <div class="cs-laptop-wrapper" aria-hidden="true">
+                <div class="cs-laptop">
+                    <div class="cs-laptop-screen">
+                        <div class="cs-laptop-chrome">
+                            <span class="cs-lc-dot cs-lc-r"></span>
+                            <span class="cs-lc-dot cs-lc-y"></span>
+                            <span class="cs-lc-dot cs-lc-g"></span>
+                            <span class="cs-lc-url">fishtownwebdesign.com/your-business</span>
+                        </div>
+                        <div class="cs-laptop-viewport">
+                            <h2 class="cs-pv-h1" id="cs-pv-h1">Fast. Clean.<br>No shortcuts.</h2>
+                            <p class="cs-pv-p" id="cs-pv-p">Every line written by a person.</p>
+                            <a class="cs-pv-btn" id="cs-pv-btn" href="/contact">Book a call</a>
+                        </div>
+                    </div>
+                    <div class="cs-laptop-hinge"></div>
+                    <div class="cs-laptop-base"><div class="cs-laptop-notch"></div></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -997,6 +1054,13 @@
         /* ---- 1. Code Typewriter ---- */
         var target = document.getElementById('cs-typewriter-target');
         if (target) {
+            var pvH1  = document.getElementById('cs-pv-h1');
+            var pvP   = document.getElementById('cs-pv-p');
+            var pvBtn = document.getElementById('cs-pv-btn');
+
+            function pvShow(el) { if (el) el.classList.add('cs-pv-visible'); }
+            function pvHide(el) { if (el) el.classList.remove('cs-pv-visible'); }
+
             var clsMap = { t: 'cs-token-tag', a: 'cs-token-attr', s: 'cs-token-string', x: 'cs-token-text' };
             var segs = [];
             function p(text, c) { segs.push([text, c || '']); }
@@ -1024,6 +1088,7 @@
                 target.innerHTML = '';
                 target.appendChild(cursor);
                 idx = 0; currentSpan = null; currentCls = null;
+                pvHide(pvH1); pvHide(pvP); pvHide(pvBtn);
             }
 
             function step() {
@@ -1035,6 +1100,11 @@
                 var ch = chars[idx][0], rawCls = chars[idx][1];
                 var cls = clsMap[rawCls] || '';
                 idx++;
+                /* Reveal preview elements as the matching code tag closes:
+                   idx 35 = just typed <h1>, idx 72 = <p>, idx 129 = <a href="..."> */
+                if (idx === 35)  pvShow(pvH1);
+                if (idx === 72)  pvShow(pvP);
+                if (idx === 129) pvShow(pvBtn);
                 if (ch === '\n') {
                     cursor.before(document.createTextNode('\n'));
                     currentSpan = null; currentCls = null;
