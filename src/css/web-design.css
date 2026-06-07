@@ -1533,3 +1533,79 @@
     object-fit: cover;
   }
 }
+
+/* ============================================
+   SEO Bundle Callout
+   ============================================ */
+
+#web-design-seo-bundle-2149 {
+  padding: clamp(3rem, 6vw, 4.5rem) 1rem;
+  background-color: var(--bg-card);
+  border-top: 1px solid rgba(248, 200, 130, 0.15);
+  border-bottom: 1px solid rgba(248, 200, 130, 0.15);
+}
+
+#web-design-seo-bundle-2149 .cs-bundle-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#web-design-seo-bundle-2149 .cs-topper {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#web-design-seo-bundle-2149 .cs-bundle-title {
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--headerColor);
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+#web-design-seo-bundle-2149 .cs-bundle-text {
+  font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  color: var(--text-body);
+  line-height: 1.7;
+  max-width: 54ch;
+  margin: 0;
+}
+
+#web-design-seo-bundle-2149 .cs-bundle-action {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+#web-design-seo-bundle-2149 .cs-bundle-link {
+  display: inline-block;
+  color: var(--primary);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  border: 2px solid var(--primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#web-design-seo-bundle-2149 .cs-bundle-link:hover {
+  background-color: var(--primary);
+  color: var(--bg-dark);
+}
+
+@media only screen and (min-width: 48rem) {
+  #web-design-seo-bundle-2149 .cs-bundle-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  #web-design-seo-bundle-2149 .cs-bundle-action {
+    align-items: center;
+  }
+}
