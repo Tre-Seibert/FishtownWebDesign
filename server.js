@@ -121,6 +121,15 @@ app.use((req, res, next) => {
   next();
 });
 
+// HSTS — only set on HTTPS connections (proxy passes X-Forwarded-Proto, direct uses req.protocol)
+app.use((req, res, next) => {
+  const proto = req.get('X-Forwarded-Proto') || req.protocol;
+  if (proto === 'https') {
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+  }
+  next();
+});
+
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { createGzip } = require('zlib');
 
@@ -2266,6 +2275,10 @@ deletedPages.forEach((path) => {
 });
 
 // Routes
+app.get('/llms.txt', (req, res) => {
+  res.setHeader('Content-Type', 'text/plain');
+  res.sendFile(path.join(__dirname, 'public/llms.txt'));
+});
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public/home.html')));
 app.get('/about', (req, res) => res.sendFile(path.join(__dirname, 'public/about.html')));
 app.get('/pricing', (req, res) => res.sendFile(path.join(__dirname, 'public/pricing.html')));

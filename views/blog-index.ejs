@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Fishtown Web Design</title>
-    <meta name="description" content="Explore the Fishtown Web Design blog for expert insights on web development, design trends, and digital solutions. Stay updated with tips, tutorials, and industry news from our Philadelphia-based team.">
     <% if (typeof categorySlug !== 'undefined' && categorySlug) { %>
+    <title><%= categorySlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') %> Articles | Fishtown Web Design Blog</title>
+    <meta name="description" content="Browse <%= categorySlug.replace(/-/g, ' ') %> articles from Fishtown Web Design — expert insights on web design, SEO, and digital strategy for Philadelphia businesses.">
     <link rel="canonical" href="https://www.fishtownwebdesign.com/blog/category/<%= categorySlug %>" />
+    <meta property="og:title" content="<%= categorySlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') %> Articles | Fishtown Web Design Blog">
+    <meta property="og:description" content="Browse <%= categorySlug.replace(/-/g, ' ') %> articles from Fishtown Web Design — expert insights for Philadelphia businesses.">
     <% } else { %>
+    <title>Blog | Fishtown Web Design — Philadelphia Web Design Insights</title>
+    <meta name="description" content="Explore the Fishtown Web Design blog for expert insights on web development, design trends, and digital solutions. Tips, tutorials, and industry news from our Philadelphia-based team.">
     <link rel="canonical" href="https://www.fishtownwebdesign.com/blog" />
+    <meta property="og:title" content="Blog | Fishtown Web Design — Philadelphia Web Design Insights">
+    <meta property="og:description" content="Expert insights on web design, SEO, and web development from Fishtown Web Design in Philadelphia.">
     <% } %>
-    <meta property="og:title" content="Blog | Fishtown Web Design">
-    <meta property="og:description" content="Insights, tips, and updates on web design, SEO, and web development.">
-    <meta property="og:url" content="https://www.fishtownwebdesign.com/blog">
+    <meta property="og:url" content="https://www.fishtownwebdesign.com/<% if (typeof categorySlug !== 'undefined' && categorySlug) { %>blog/category/<%= categorySlug %><% } else { %>blog<% } %>">
 
     <!-- CSS Imports -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -95,6 +99,31 @@
                 </li>
                 <% }); %>
             </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              Blog Editorial Intro             -->
+    <!-- ============================================ -->
+
+    <section id="blog-editorial-2149">
+        <div class="cs-container">
+            <div class="cs-content">
+                <% if (typeof categorySlug !== 'undefined' && categorySlug) { %>
+                <h2 class="cs-title"><%= categorySlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') %> Articles</h2>
+                <p class="cs-text">
+                    Browse our <%= categorySlug.replace(/-/g, ' ') %> articles written by the Fishtown Web Design team. We cover practical topics for Philadelphia small businesses — from how hand-coded sites outperform page-builder alternatives, to real case studies showing traffic and conversion results. Every post is written from direct project experience, not theory.
+                </p>
+                <% } else { %>
+                <h2 class="cs-title">Philadelphia Web Design Insights</h2>
+                <p class="cs-text">
+                    The Fishtown Web Design blog covers web design, local SEO, and digital strategy for small businesses across Philadelphia and the surrounding area. We publish case studies from real projects — HVAC companies, coffee brands, wedding venues — along with practical guides on topics like page speed, on-page SEO, and what makes a website actually convert visitors into customers.
+                </p>
+                <p class="cs-text">
+                    Our team hand-codes every site we build. That means no WordPress, no Wix, no drag-and-drop builders — just clean, fast HTML, CSS, and JavaScript that ranks well and loads quickly. The posts here reflect what we learn on every project and what we see working for local businesses in search right now.
+                </p>
+                <% } %>
+            </div>
         </div>
     </section>
 
