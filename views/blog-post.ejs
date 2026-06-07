@@ -7,8 +7,17 @@
     <!-- Essential Meta Tags -->
     <%
         const baseTitle = post.metaTitle || post.title;
-        const suffix = ' | Fishtown Web Design';
-        const pageTitle = (baseTitle + suffix).length <= 60 ? baseTitle + suffix : baseTitle.length > 60 ? baseTitle.substring(0, 57) + '...' : baseTitle;
+        const longSuffix = ' | Fishtown Web Design';
+        const shortSuffix = ' | FWD';
+        let pageTitle;
+        if ((baseTitle + longSuffix).length <= 60) {
+            pageTitle = baseTitle + longSuffix;
+        } else if ((baseTitle + shortSuffix).length <= 60) {
+            pageTitle = baseTitle + shortSuffix;
+        } else {
+            const maxBase = 60 - longSuffix.length - 1;
+            pageTitle = baseTitle.substring(0, maxBase) + '…' + longSuffix;
+        }
     %>
     <title><%= pageTitle %></title>
     <meta name="description" content="<%= post.metaDescription || post.excerpt || post.title %>">

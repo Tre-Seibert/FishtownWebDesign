@@ -113,19 +113,19 @@ app.use((req, res, next) => {
   next();
 });
 
-// Force www redirect
-app.use((req, res, next) => {
-  if (req.hostname === 'fishtownwebdesign.com') {
-    return res.redirect(301, `https://www.fishtownwebdesign.com${req.url}`);
-  }
-  next();
-});
-
-// HSTS — only set on HTTPS connections (proxy passes X-Forwarded-Proto, direct uses req.protocol)
+// HSTS — set before www redirect so the non-www redirect response also carries the header
 app.use((req, res, next) => {
   const proto = req.get('X-Forwarded-Proto') || req.protocol;
   if (proto === 'https') {
     res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+  }
+  next();
+});
+
+// Force www redirect
+app.use((req, res, next) => {
+  if (req.hostname === 'fishtownwebdesign.com') {
+    return res.redirect(301, `https://www.fishtownwebdesign.com${req.url}`);
   }
   next();
 });
