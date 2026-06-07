@@ -52,7 +52,7 @@ Work through these in order. Do not skip ahead — earlier items have higher ROI
 
 **Content**
 
-- [ ] 17\. **Rewrite `/seo` page body copy** — replace brochure language with: what you audit, what the client gets monthly, what your reporting looks like, what you will not promise, scope of local SEO vs. organic. No superlatives. File: `public/seo.html`  
+- [x] 17\. **Rewrite `/seo` page body copy** — replace brochure language with: what you audit, what the client gets monthly, what your reporting looks like, what you will not promise, scope of local SEO vs. organic. No superlatives. File: `public/seo.html`  
 - [ ] 18\. **Clean the Semrush keyword tracking basket** — remove: all “philly seo consultants” strings (competitor branded), all NJ pricing town terms, “baytown seo”, “seo and web hosting georgetown”, “jamestown website design”. Replace with \~30 clean Philly \+ suburb terms aligned to your actual service area.
 
 ---
