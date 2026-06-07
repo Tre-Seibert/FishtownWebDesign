@@ -1,4 +1,4 @@
-﻿/*-- -------------------------- -->
+/*-- -------------------------- -->
 <---      Blog Post Hero Section   -->
 <--- -------------------------- -*/
 
@@ -41,7 +41,7 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: var(--primary-text);
+    background-color: var(--primary);
     color: var(--bg-dark);
     border-radius: 2rem;
     font-size: clamp(0.875rem, 1.5vw, 1rem);
@@ -219,7 +219,7 @@
   }
   
   #blog-post-content-2149 .cs-article-content a {
-    color: var(--primary-text);
+    color: var(--primary);
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
@@ -277,7 +277,7 @@
   #blog-post-content-2149 .cs-article-content code {
     font-family: 'Courier New', Courier, monospace;
     font-size: clamp(0.875rem, 1.5vw, 1rem);
-    color: var(--primary-text);
+    color: var(--primary);
     font-weight: 600;
   }
   
@@ -371,7 +371,7 @@
   }
   
   #blog-post-cta-2149 .cs-title strong {
-    color: var(--primary-text);
+    color: var(--primary);
   }
   
   #blog-post-cta-2149 .cs-text {
@@ -457,7 +457,7 @@
   }
 
   #blog-post-related-2149 .cs-title strong {
-    color: var(--primary-text);
+    color: var(--primary);
   }
 
   #blog-post-related-2149 .cs-text {

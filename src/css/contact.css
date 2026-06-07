@@ -1,4 +1,4 @@
-﻿/*-- -------------------------- -->
+/*-- -------------------------- -->
 <---        Contact Hero          -->
 <--- -------------------------- -*/
 
@@ -37,7 +37,7 @@
     letter-spacing: 0.1em;
     text-align: inherit;
     margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
-    color: var(--primary-text);
+    color: var(--primary);
     font-family: Horizon, sans-serif;
   }
   
@@ -112,7 +112,7 @@
   }
   
   #contact-methods-2149 .cs-title strong {
-    color: var(--primary-text);
+    color: var(--primary);
   }
   
   #contact-methods-2149 .cs-card-group {
@@ -147,7 +147,7 @@
   #contact-methods-2149 .cs-icon-wrapper {
     width: 5rem;
     height: 5rem;
-    background-color: var(--primary-text);
+    background-color: var(--primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -248,7 +248,7 @@
   }
   
   #contact-form-2149 .cs-title strong {
-    color: var(--primary-text);
+    color: var(--primary);
   }
   
   #contact-form-2149 .cs-text {
@@ -294,7 +294,7 @@
   
   #contact-form-2149 .cs-input:focus {
     outline: none;
-    border-color: var(--primary-text);
+    border-color: var(--primary);
   }
   
   #contact-form-2149 .cs-input::placeholder {
@@ -376,7 +376,7 @@
     width: 2.5rem;
     height: 2.5rem;
     min-width: 2.5rem;
-    background-color: var(--primary-text);
+    background-color: var(--primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -462,7 +462,7 @@
   }
   
   #contact-why-2149 .cs-title strong {
-    color: var(--primary-text);
+    color: var(--primary);
   }
   
   #contact-why-2149 .cs-card-group {
@@ -497,7 +497,7 @@
   #contact-why-2149 .cs-icon-wrapper {
     width: 5rem;
     height: 5rem;
-    background-color: var(--primary-text);
+    background-color: var(--primary);
     border-radius: 50%;
     display: flex;
     align-items: center;

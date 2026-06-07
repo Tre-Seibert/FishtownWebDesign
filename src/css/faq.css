@@ -1,4 +1,4 @@
-﻿/*-- -------------------------- -->
+/*-- -------------------------- -->
 <---        FAQ Hero Section      -->
 <--- -------------------------- -*/
 
@@ -45,7 +45,7 @@
   }
   
   #faq-hero-2149 .cs-text .cs-link {
-    color: var(--primary-text);
+    color: var(--primary);
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
@@ -109,7 +109,7 @@
   }
   
   #faq-categories-2149 .cs-title strong {
-    color: var(--primary-text);
+    color: var(--primary);
   }
   
   #faq-categories-2149 .cs-category-group {
@@ -146,12 +146,12 @@
   #faq-categories-2149 .cs-category-button:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    border-color: var(--primary-text);
+    border-color: var(--primary);
   }
   
   #faq-categories-2149 .cs-category-button.cs-active {
-    background-color: var(--primary-text);
-    border-color: var(--primary-text);
+    background-color: var(--primary);
+    border-color: var(--primary);
     box-shadow: 0 8px 20px rgba(248, 200, 130, 0.3);
   }
   
@@ -168,7 +168,7 @@
   #faq-categories-2149 .cs-category-icon {
     width: 5rem;
     height: 5rem;
-    background-color: var(--primary-text);
+    background-color: var(--primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -319,7 +319,7 @@
     position: absolute;
     width: 1.25rem;
     height: 2px;
-    background-color: var(--primary-text);
+    background-color: var(--primary);
     border-radius: 2px;
     transition: transform 0.3s, opacity 0.3s;
   }
@@ -369,7 +369,7 @@
   }
   
   #faq-1720 .cs-item-p .cs-link {
-    color: var(--primary-text);
+    color: var(--primary);
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
@@ -426,7 +426,7 @@
   }
   
   #faq-cta-2149 .cs-title strong {
-    color: var(--primary-text);
+    color: var(--primary);
   }
   
   #faq-cta-2149 .cs-text {

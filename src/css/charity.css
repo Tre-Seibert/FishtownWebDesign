@@ -1,4 +1,4 @@
-﻿/*-- -------------------------- -->
+/*-- -------------------------- -->
 <---        Charity Hero           -->
 <--- -------------------------- -*/
 
@@ -41,7 +41,7 @@
   }
   
   #charity-hero-2149 .cs-title strong {
-    color: var(--primary-text);
+    color: var(--primary);
   }
   
   #charity-hero-2149 .cs-text {
@@ -135,7 +135,7 @@
   }
   
   #charity-included-2149 .cs-title strong {
-    color: var(--primary-text);
+    color: var(--primary);
   }
   
   #charity-included-2149 .cs-card-group {
@@ -170,7 +170,7 @@
     margin-bottom: clamp(1.25rem, 2vw, 1.5rem);
     width: 5.5rem;
     height: 5.5rem;
-    background-color: var(--primary-text);
+    background-color: var(--primary);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -256,7 +256,7 @@
   }
   
   #charity-eligibility-2149 .cs-title strong {
-    color: var(--primary-text);
+    color: var(--primary);
   }
   
   #charity-eligibility-2149 .cs-eligibility-list {
@@ -279,7 +279,7 @@
     width: 3rem;
     height: 3rem;
     min-width: 3rem;
-    background-color: var(--primary-text);
+    background-color: var(--primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -380,7 +380,7 @@
   }
   
   #charity-process-2149 .cs-title strong {
-    color: var(--primary-text);
+    color: var(--primary);
   }
   
   #charity-process-2149 .cs-card-group {
@@ -415,7 +415,7 @@
     margin-bottom: clamp(1.25rem, 2vw, 1.5rem);
     width: 5.5rem;
     height: 5.5rem;
-    background-color: var(--primary-text);
+    background-color: var(--primary);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -495,7 +495,7 @@
   }
   
   #charity-cta-2149 .cs-topper {
-    color: var(--primary-text);
+    color: var(--primary);
   }
   
   #charity-cta-2149 .cs-title {
@@ -504,7 +504,7 @@
   }
   
   #charity-cta-2149 .cs-title strong {
-    color: var(--primary-text);
+    color: var(--primary);
   }
   
   #charity-cta-2149 .cs-text {
@@ -524,7 +524,7 @@
     color: var(--bg-dark);
     min-width: 12.5rem;
     padding: 0 clamp(2rem, 4vw, 3rem);
-    background-color: var(--primary-text);
+    background-color: var(--primary);
     display: inline-block;
     position: relative;
     z-index: 1;
@@ -536,7 +536,7 @@
   }
   
   #charity-cta-2149 .cs-button-solid:hover {
-    background-color: var(--primary-text);
+    background-color: var(--primary);
     box-shadow: 0 0 30px rgba(248, 200, 130, 0.5);
     transform: translateY(-2px);
   }
