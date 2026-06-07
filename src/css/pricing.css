@@ -1,4 +1,4 @@
-/*-- -------------------------- -->
+﻿/*-- -------------------------- -->
 <---        Pricing Hero          -->
 <--- -------------------------- -*/
 
@@ -37,7 +37,7 @@
     letter-spacing: 0.1em;
     text-align: inherit;
     margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
-    color: var(--primary);
+    color: var(--primary-text);
     font-family: Horizon, sans-serif;
   }
   
@@ -118,7 +118,7 @@
     letter-spacing: 0.1em;
     text-align: inherit;
     margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
-    color: var(--primary);
+    color: var(--primary-text);
     font-family: Horizon, sans-serif;
   }
   
@@ -132,7 +132,7 @@
   }
   
   #pricing-value-2149 .cs-title strong {
-    color: var(--primary);
+    color: var(--primary-text);
   }
   
   #pricing-value-2149 .cs-text {
@@ -199,7 +199,7 @@
   #pricing-value-2149 .cs-value-icon {
     width: 5rem;
     height: 5rem;
-    background-color: var(--primary);
+    background-color: var(--primary-text);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -295,7 +295,7 @@
     letter-spacing: 0.1em;
     text-align: inherit;
     margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
-    color: var(--primary);
+    color: var(--primary-text);
     font-family: Horizon, sans-serif;
   }
   
@@ -362,7 +362,7 @@
     position: absolute;
     top: -1rem;
     left: 1.5rem;
-    background-color: var(--primary);
+    background-color: var(--primary-text);
     color: var(--text-light);
     padding: 0.5rem 1.5rem;
     border-radius: 2rem;
