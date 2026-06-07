@@ -1175,127 +1175,205 @@
 }
 
 /*-- -------------------------- -->
-<---    Timeline (Process)         -->
+<---    Signal Monitor Timeline    -->
 <--- -------------------------- -*/
 
 @media only screen and (min-width: 0rem) {
-  #seo-process-2149 .cs-timeline {
-    width: 100%;
-  }
-
-  #seo-process-2149 .cs-steps {
-    list-style: none;
+  #seo-process-2149 .cs-text {
+    color: var(--text-body);
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7em;
+    max-width: 48ch;
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+  }
+
+  /* Monitor outer wrapper */
+  #seo-process-2149 .cs-monitor-wrap {
+    width: 100%;
+    max-width: 72rem;
+  }
+
+  /* Bezel frame */
+  #seo-process-2149 .cs-monitor-bezel {
+    background: linear-gradient(145deg, #1e1710, #120e09);
+    border-radius: 0.875rem;
+    padding: 0.1875rem;
+    box-shadow:
+      0 0 0 1px rgba(201, 168, 76, 0.25),
+      0 25px 70px rgba(0, 0, 0, 0.7),
+      0 0 100px rgba(201, 168, 76, 0.04);
+  }
+
+  /* Screen surface */
+  #seo-process-2149 .cs-monitor-screen {
+    background: #070503;
+    border-radius: 0.75rem;
+    overflow: hidden;
     position: relative;
   }
 
-  #seo-process-2149 .cs-steps::before {
-    content: "";
+  /* CRT scanline overlay */
+  #seo-process-2149 .cs-monitor-scanlines {
     position: absolute;
-    left: 2rem;
-    top: 4rem;
-    bottom: 4rem;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--primary), rgba(201, 168, 76, 0.15));
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.18) 3px,
+      rgba(0, 0, 0, 0.18) 4px
+    );
+    pointer-events: none;
+    z-index: 10;
+    border-radius: 0.75rem;
   }
 
-  #seo-process-2149 .cs-step {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 5.5rem;
-    position: relative;
-    list-style: none;
-  }
-
-  #seo-process-2149 .cs-step-circle {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    background-color: var(--primary);
-    color: var(--bg-dark);
-    font-family: "DM Serif Display", serif;
-    font-size: 1.5rem;
-    font-weight: 700;
+  /* Window titlebar */
+  #seo-process-2149 .cs-monitor-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.4375rem;
+    padding: 0.6rem 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+    position: relative;
+    z-index: 5;
+  }
+
+  #seo-process-2149 .cs-monitor-dot {
+    width: 0.6875rem;
+    height: 0.6875rem;
+    border-radius: 50%;
     flex-shrink: 0;
-    box-shadow: 0 0 20px rgba(201, 168, 76, 0.35);
+  }
+
+  #seo-process-2149 .cs-dot-red    { background: #ff5f57; }
+  #seo-process-2149 .cs-dot-yellow { background: #febc2e; }
+  #seo-process-2149 .cs-dot-green  { background: #28c840; }
+
+  #seo-process-2149 .cs-monitor-title {
+    font-family: "Courier New", monospace;
+    font-size: 0.6875rem;
+    color: rgba(201, 168, 76, 0.5);
+    flex: 1;
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+
+  #seo-process-2149 .cs-monitor-rec {
+    font-family: "Courier New", monospace;
+    font-size: 0.625rem;
+    color: #ff5f57;
+    letter-spacing: 0.04em;
+    animation: cs-rec-blink 1.6s ease-in-out infinite;
+  }
+
+  @keyframes cs-rec-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.15; }
+  }
+
+  /* Canvas element */
+  #cs-signal-canvas {
+    display: block;
+    width: 100%;
+    height: 200px;
+    position: relative;
     z-index: 1;
   }
 
-  #seo-process-2149 .cs-step .cs-h3 {
-    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
-    color: var(--headerColor);
+  /* 4 column labels below canvas, aligned with the 4 peaks */
+  #seo-process-2149 .cs-milestone-labels {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(201, 168, 76, 0.1);
+    background: rgba(255, 255, 255, 0.015);
+    position: relative;
+    z-index: 5;
+  }
+
+  #seo-process-2149 .cs-ml-item {
+    font-family: "Courier New", monospace;
+    font-size: 0.5625rem;
+    color: rgba(201, 168, 76, 0.45);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.4rem 0.25rem;
+    border-right: 1px solid rgba(201, 168, 76, 0.06);
+  }
+
+  #seo-process-2149 .cs-ml-item:last-child {
+    border-right: none;
+  }
+
+  /* Content cards grid */
+  #seo-process-2149 .cs-milestone-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    max-width: 72rem;
+  }
+
+  #seo-process-2149 .cs-milestone-card {
+    background-color: var(--bg-card);
+    border-top: 3px solid var(--primary);
+    padding: 1.5rem;
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  #seo-process-2149 .cs-milestone-card.cs-mc-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #seo-process-2149 .cs-mc-num {
+    display: block;
     font-family: "DM Serif Display", serif;
-    margin: 0.5rem 0 0.625rem;
+    font-size: 3.5rem;
+    color: rgba(201, 168, 76, 0.12);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  #seo-process-2149 .cs-mc-title {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--headerColor);
+    margin: 0 0 0.75rem;
     line-height: 1.3em;
   }
 
-  #seo-process-2149 .cs-step .cs-item-text {
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
+  #seo-process-2149 .cs-mc-text {
+    font-family: Montserrat, sans-serif;
+    font-size: 0.875rem;
     line-height: 1.75em;
     color: var(--text-body);
     margin: 0;
-    max-width: 50ch;
-    font-family: Montserrat, sans-serif;
-    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  #seo-process-2149 .cs-milestone-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #cs-signal-canvas {
+    height: 230px;
   }
 }
 
 @media only screen and (min-width: 64rem) {
-  #seo-process-2149 .cs-steps {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 0;
+  #seo-process-2149 .cs-milestone-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  #seo-process-2149 .cs-steps::before {
-    display: none;
-  }
-
-  #seo-process-2149 .cs-step {
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 0;
-    padding-top: 5.5rem;
-    text-align: center;
-    position: relative;
-  }
-
-  #seo-process-2149 .cs-step:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 2rem;
-    left: calc(50% + 2.25rem);
-    right: calc(-50% + 2.25rem);
-    height: 2px;
-    background: linear-gradient(to right, var(--primary), rgba(201, 168, 76, 0.25));
-  }
-
-  #seo-process-2149 .cs-step-circle {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-  }
-
-  #seo-process-2149 .cs-step .cs-h3 {
-    margin-top: 0;
-  }
-
-  #seo-process-2149 .cs-step .cs-item-text {
-    text-align: center;
-    max-width: 28ch;
+  #cs-signal-canvas {
+    height: 260px;
   }
 }
 

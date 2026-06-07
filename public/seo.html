@@ -498,30 +498,54 @@
             <div class="cs-content">
                 <span class="cs-topper">What to Expect</span>
                 <h2 class="cs-title">Month by month, <strong>here's how it goes.</strong></h2>
+                <p class="cs-text">SEO isn't magic — it's methodical work, tracked and reported every step of the way.</p>
             </div>
-            <div class="cs-timeline">
-                <ul class="cs-steps">
-                    <li class="cs-step" data-aos="fade-up" data-aos-delay="0">
-                        <div class="cs-step-circle" aria-hidden="true">1</div>
-                        <h3 class="cs-h3">Month 1 — Audit &amp; Baseline</h3>
-                        <p class="cs-item-text">Screaming Frog crawl + Semrush audit. GBP cleaned up. GSC and rank tracking connected and baselined. You get the prioritized issue list before we touch a single thing — so you see exactly where you stand on day one.</p>
-                    </li>
-                    <li class="cs-step" data-aos="fade-up" data-aos-delay="150">
-                        <div class="cs-step-circle" aria-hidden="true">2</div>
-                        <h3 class="cs-h3">Month 2 — Fix &amp; Optimize</h3>
-                        <p class="cs-item-text">Top issues get worked. Technical first. On-page next. First content piece delivered (Local and E-Commerce plans). Citations submitted. GBP posting starts. First monthly report delivered.</p>
-                    </li>
-                    <li class="cs-step" data-aos="fade-up" data-aos-delay="300">
-                        <div class="cs-step-circle" aria-hidden="true">3</div>
-                        <h3 class="cs-h3">Months 3–6 — Build</h3>
-                        <p class="cs-item-text">The monthly cycle runs. Content, citations, GBP, on-page from keyword data. Local map pack movement typically starts showing up in this window. Organic head terms are still warming up.</p>
-                    </li>
-                    <li class="cs-step" data-aos="fade-up" data-aos-delay="450">
-                        <div class="cs-step-circle" aria-hidden="true">4</div>
-                        <h3 class="cs-h3">Months 6–12 — Compound</h3>
-                        <p class="cs-item-text">Authority builds. More pages rank. Branded search grows. Head terms start moving. Monthly reports show the trajectory — not just where you are, but the direction you're heading.</p>
-                    </li>
-                </ul>
+
+            <!-- Signal monitor visualization -->
+            <div class="cs-monitor-wrap">
+                <div class="cs-monitor-bezel">
+                    <div class="cs-monitor-screen">
+                        <div class="cs-monitor-scanlines" aria-hidden="true"></div>
+                        <div class="cs-monitor-header" aria-hidden="true">
+                            <span class="cs-monitor-dot cs-dot-red"></span>
+                            <span class="cs-monitor-dot cs-dot-yellow"></span>
+                            <span class="cs-monitor-dot cs-dot-green"></span>
+                            <span class="cs-monitor-title">seo_progress.monitor — live</span>
+                            <span class="cs-monitor-rec">● REC</span>
+                        </div>
+                        <canvas id="cs-signal-canvas" aria-label="Animated SEO progress signal monitor"></canvas>
+                        <div class="cs-milestone-labels" aria-hidden="true">
+                            <span class="cs-ml-item">Month 1</span>
+                            <span class="cs-ml-item">Month 2</span>
+                            <span class="cs-ml-item">Months 3–6</span>
+                            <span class="cs-ml-item">Months 6–12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milestone content cards -->
+            <div class="cs-milestone-grid">
+                <div class="cs-milestone-card">
+                    <span class="cs-mc-num" aria-hidden="true">01</span>
+                    <h3 class="cs-mc-title">Audit &amp; Baseline</h3>
+                    <p class="cs-mc-text">Screaming Frog crawl + Semrush audit. GBP cleaned up. GSC and rank tracking connected and baselined. You get the prioritized issue list before we touch a single thing.</p>
+                </div>
+                <div class="cs-milestone-card">
+                    <span class="cs-mc-num" aria-hidden="true">02</span>
+                    <h3 class="cs-mc-title">Fix &amp; Optimize</h3>
+                    <p class="cs-mc-text">Top issues get worked — technical first, on-page next. First content piece delivered (Local and E-Commerce plans). Citations submitted. GBP posting starts. First report delivered.</p>
+                </div>
+                <div class="cs-milestone-card">
+                    <span class="cs-mc-num" aria-hidden="true">03</span>
+                    <h3 class="cs-mc-title">Build</h3>
+                    <p class="cs-mc-text">Monthly cycle runs — content, citations, GBP, on-page from keyword data. Local map pack movement typically starts showing up here. Organic head terms are still warming up.</p>
+                </div>
+                <div class="cs-milestone-card">
+                    <span class="cs-mc-num" aria-hidden="true">04</span>
+                    <h3 class="cs-mc-title">Compound</h3>
+                    <p class="cs-mc-text">Authority builds. More pages rank. Branded search grows. Head terms start moving. Monthly reports show the trajectory — not just where you are, but which direction you're heading.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -681,6 +705,204 @@
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>AOS.init({ once: true, duration: 600, easing: 'ease-out' });</script>
+    <script>
+    (function () {
+        const canvas = document.getElementById('cs-signal-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+
+        const GOLD        = '#C9A84C';
+        const GOLD_GLOW   = 'rgba(201,168,76,0.55)';
+        const GRID_COLOR  = 'rgba(201,168,76,0.07)';
+        const BASE_Y      = 0.60;   // baseline (fraction of canvas height)
+        const PEAK_Y      = 0.14;   // spike peak
+        const DIP_Y       = 0.70;   // small Q-dip before spike
+        const T_BUMP_Y    = 0.53;   // slight T-wave bump after spike
+        // 4 peak x-positions at centres of the 4 quarters
+        const MX          = [0.125, 0.375, 0.625, 0.875];
+        const SPIKE_W     = 0.028;  // half-width of spike (fraction of width)
+        const ANIM_MS     = 2400;   // total draw duration
+
+        let started = false, startTs = null;
+
+        /* ---- build path once ---- */
+        function buildPath() {
+            const pts = [{ x: 0, y: BASE_Y }];
+            MX.forEach((mx) => {
+                pts.push({ x: mx - SPIKE_W * 2.5, y: BASE_Y });       // flat approach
+                pts.push({ x: mx - SPIKE_W,       y: DIP_Y    });     // Q dip
+                pts.push({ x: mx,                  y: PEAK_Y, ms: true }); // R peak ★
+                pts.push({ x: mx + SPIKE_W,       y: BASE_Y + 0.06 }); // S descent
+                pts.push({ x: mx + SPIKE_W * 2,   y: T_BUMP_Y });     // T bump
+                pts.push({ x: mx + SPIKE_W * 3.5, y: BASE_Y });       // back to baseline
+            });
+            pts.push({ x: 1, y: BASE_Y });
+            return pts;
+        }
+        const PATH = buildPath();
+        const N    = PATH.length - 1;
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+        function ease(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; }
+
+        /* ---- resize ---- */
+        function resize() {
+            canvas.width  = canvas.offsetWidth  || 800;
+            canvas.height = canvas.offsetHeight || 240;
+        }
+
+        /* ---- draw ---- */
+        function draw(progress) {
+            const w = canvas.width, h = canvas.height;
+            ctx.clearRect(0, 0, w, h);
+
+            /* grid */
+            ctx.save();
+            ctx.strokeStyle = GRID_COLOR;
+            ctx.lineWidth   = 1;
+            for (let r = 1; r < 5; r++) {
+                ctx.beginPath(); ctx.moveTo(0, h * r / 5); ctx.lineTo(w, h * r / 5); ctx.stroke();
+            }
+            for (let c = 1; c < 8; c++) {
+                ctx.beginPath(); ctx.moveTo(w * c / 8, 0); ctx.lineTo(w * c / 8, h); ctx.stroke();
+            }
+            ctx.restore();
+
+            if (progress <= 0) return;
+
+            const ep = ease(Math.min(progress, 1));
+            const drawn   = Math.floor(ep * N);
+            const partial = (ep * N) - drawn;
+
+            /* signal line */
+            ctx.save();
+            ctx.beginPath();
+            ctx.strokeStyle = GOLD;
+            ctx.lineWidth   = 2.5;
+            ctx.lineJoin    = 'round';
+            ctx.lineCap     = 'round';
+            ctx.shadowColor = GOLD_GLOW;
+            ctx.shadowBlur  = 10;
+
+            const p0 = PATH[0];
+            ctx.moveTo(p0.x * w, p0.y * h);
+            for (let i = 1; i <= drawn && i < PATH.length; i++) {
+                ctx.lineTo(PATH[i].x * w, PATH[i].y * h);
+            }
+            if (drawn < N && partial > 0) {
+                const a = PATH[drawn], b = PATH[drawn + 1];
+                ctx.lineTo(lerp(a.x, b.x, partial) * w, lerp(a.y, b.y, partial) * h);
+            }
+            ctx.stroke();
+            ctx.restore();
+
+            /* drawing-head dot */
+            const headPt = drawn < N
+                ? { x: lerp(PATH[drawn].x, PATH[drawn+1].x, partial), y: lerp(PATH[drawn].y, PATH[drawn+1].y, partial) }
+                : PATH[N];
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(headPt.x * w, headPt.y * h, 3.5, 0, Math.PI * 2);
+            ctx.fillStyle = '#ffffff';
+            ctx.shadowColor = 'rgba(255,255,255,0.9)';
+            ctx.shadowBlur  = 12;
+            ctx.fill();
+            ctx.restore();
+
+            /* milestone circles */
+            PATH.forEach((pt, i) => {
+                if (!pt.ms) return;
+                const ptProgress = i / N;
+                if (ep <= ptProgress) return;
+                const age  = Math.min(1, (ep - ptProgress) / 0.04);
+                const x    = pt.x * w, y = pt.y * h;
+
+                /* outer pulse ring */
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(x, y, 14 + age * 22, 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(201,168,76,${0.45 * (1 - age)})`;
+                ctx.lineWidth   = 1.5;
+                ctx.stroke();
+                ctx.restore();
+
+                /* solid filled circle */
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(x, y, 15, 0, Math.PI * 2);
+                ctx.fillStyle   = GOLD;
+                ctx.shadowColor = GOLD_GLOW;
+                ctx.shadowBlur  = 22;
+                ctx.fill();
+                ctx.restore();
+
+                /* number label */
+                ctx.save();
+                ctx.font         = 'bold 13px "DM Serif Display", Georgia, serif';
+                ctx.fillStyle    = '#090603';
+                ctx.textAlign    = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(String(MX.indexOf(pt.x) + 1), x, y);
+                ctx.restore();
+            });
+        }
+
+        /* ---- idle pulse after draw completes ---- */
+        let pulseRaf = null;
+        function startIdlePulse() {
+            function pulse(ts) {
+                draw(1);
+                const phase = (ts * 0.0007) % 1;
+                PATH.forEach((pt) => {
+                    if (!pt.ms) return;
+                    const x = pt.x * canvas.width, y = pt.y * canvas.height;
+                    const f = ((phase + MX.indexOf(pt.x) * 0.22) % 1);
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.arc(x, y, 15 + f * 20, 0, Math.PI * 2);
+                    ctx.strokeStyle = `rgba(201,168,76,${0.28 * (1 - f)})`;
+                    ctx.lineWidth   = 1;
+                    ctx.stroke();
+                    ctx.restore();
+                });
+                pulseRaf = requestAnimationFrame(pulse);
+            }
+            pulseRaf = requestAnimationFrame(pulse);
+        }
+
+        /* ---- animate ---- */
+        function animate(ts) {
+            if (!startTs) startTs = ts;
+            const progress = Math.min(1, (ts - startTs) / ANIM_MS);
+            draw(progress);
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                /* stagger-reveal content cards */
+                document.querySelectorAll('#seo-process-2149 .cs-milestone-card').forEach((card, i) => {
+                    setTimeout(() => card.classList.add('cs-mc-visible'), i * 180);
+                });
+                startIdlePulse();
+            }
+        }
+
+        /* ---- trigger on scroll ---- */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && !started) {
+                    started = true;
+                    observer.disconnect();
+                    requestAnimationFrame(animate);
+                }
+            });
+        }, { threshold: 0.25 });
+
+        resize();
+        draw(0);
+        observer.observe(canvas);
+        window.addEventListener('resize', () => { resize(); draw(started ? 1 : 0); });
+    })();
+    </script>
     <script>
         const CSbody = document.querySelector('body');
         const CSnavbarMenu = document.querySelector('#cs-navigation');
