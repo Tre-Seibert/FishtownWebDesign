@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Essential Meta Tags -->
-    <title><%= post.metaTitle || post.title %> | Fishtown Web Design Blog</title>
+    <%
+        const baseTitle = post.metaTitle || post.title;
+        const suffix = ' | Fishtown Web Design';
+        const pageTitle = (baseTitle + suffix).length <= 60 ? baseTitle + suffix : baseTitle.length > 60 ? baseTitle.substring(0, 57) + '...' : baseTitle;
+    %>
+    <title><%= pageTitle %></title>
     <meta name="description" content="<%= post.metaDescription || post.excerpt || post.title %>">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.fishtownwebdesign.com/blog/<%= post.slug %>" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="<%= post.metaTitle || post.title %> | Fishtown Web Design Blog">
+    <meta property="og:title" content="<%= pageTitle %>">
     <meta property="og:description" content="<%= post.metaDescription || post.excerpt || post.title %>">
     <meta property="og:url" content="https://www.fishtownwebdesign.com/blog/<%= post.slug %>">
     <meta property="og:image" content="<%= post.featuredImage || 'https://www.fishtownwebdesign.com/public/content/home/fish.png' %>">
@@ -22,7 +27,7 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<%= post.metaTitle || post.title %> | Fishtown Web Design Blog">
+    <meta name="twitter:title" content="<%= pageTitle %>">
     <meta name="twitter:description" content="<%= post.metaDescription || post.excerpt || post.title %>">
     <meta name="twitter:image" content="<%= post.featuredImage || 'https://www.fishtownwebdesign.com/public/content/home/fish.png' %>">
 

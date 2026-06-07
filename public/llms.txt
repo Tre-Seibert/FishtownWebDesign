@@ -1,0 +1,41 @@
+# Fishtown Web Design
+
+> A Philadelphia-based web design studio specializing in hand-coded, high-performance websites and local SEO. We build custom sites from scratch — no WordPress, no page builders — for small businesses, contractors, venues, startups, and non-profits.
+
+## Services
+
+- [Web Design](https://www.fishtownwebdesign.com/web-design): Custom hand-coded websites with 90+ PageSpeed scores
+- [SEO](https://www.fishtownwebdesign.com/seo): Local search optimization and ongoing content strategy
+- [SaaS Development](https://www.fishtownwebdesign.com/saas-development): Custom web application and SaaS product builds
+- [App Development](https://www.fishtownwebdesign.com/app-development): Full-stack application development
+- [E-commerce Web Design](https://www.fishtownwebdesign.com/ecommerce-web-design): Custom e-commerce platforms
+- [Charity Program](https://www.fishtownwebdesign.com/charity): Free websites for qualifying non-profits
+
+## Industry Pages
+
+- [Contractor Web Design](https://www.fishtownwebdesign.com/contractor-web-design)
+- [Venue Web Design](https://www.fishtownwebdesign.com/venue-web-design)
+- [Startup Product Development](https://www.fishtownwebdesign.com/startup-product-development)
+
+## Location Pages
+
+- [Philadelphia Web Design](https://www.fishtownwebdesign.com/web-design)
+- [Fishtown](https://www.fishtownwebdesign.com/web-design-fishtown)
+- [Center City](https://www.fishtownwebdesign.com/web-design-center-city)
+- [Old City](https://www.fishtownwebdesign.com/web-design-old-city)
+- [Northern Liberties](https://www.fishtownwebdesign.com/web-design-northern-liberties)
+- [University City](https://www.fishtownwebdesign.com/web-design-university-city)
+- [Lancaster, PA](https://www.fishtownwebdesign.com/web-design-lancaster-pa)
+
+## Blog
+
+- [Blog](https://www.fishtownwebdesign.com/blog): Web design insights, case studies, and industry news
+- [HVAC Website Case Study](https://www.fishtownwebdesign.com/blog/HVAC-Website-Design-Case-Study-Axel-Mechanical-Services)
+- [Philadelphia Web Design Guide](https://www.fishtownwebdesign.com/blog/definitive-guide-to-web-design-for-philadelphia-businesses)
+- [Green Shades Coffee E-commerce Case Study](https://www.fishtownwebdesign.com/blog/from-cat-inspiration-to-coffee-empire-building-green-shades-coffee-co-purpose-driven-ecommerce-platform)
+
+## Contact
+
+- [Pricing](https://www.fishtownwebdesign.com/pricing)
+- [Contact](https://www.fishtownwebdesign.com/contact)
+- [FAQ](https://www.fishtownwebdesign.com/faq)
