@@ -868,3 +868,578 @@
     object-fit: cover;
   }
 }
+
+/*-- -------------------------- -->
+<---    Methodology Add-ons        -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+  #seo-services-2149 .cs-ongoing {
+    width: 100%;
+    background-color: var(--bg-card);
+    padding: clamp(1.75rem, 4vw, 2.5rem);
+    border-left: 4px solid var(--primary);
+    box-sizing: border-box;
+  }
+
+  #seo-services-2149 .cs-ongoing-title {
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+    font-family: "DM Serif Display", serif;
+    color: var(--headerColor);
+    margin: 0 0 1rem;
+    line-height: 1.3em;
+  }
+
+  #seo-services-2149 .cs-ongoing-text {
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.75em;
+    color: var(--text-body);
+    margin: 0 0 1rem;
+  }
+
+  #seo-services-2149 .cs-ongoing-text:last-child {
+    margin: 0;
+  }
+
+  #seo-services-2149 .cs-frank {
+    font-style: italic;
+    opacity: 0.85;
+  }
+}
+
+/*-- -------------------------- -->
+<---      Packages Section         -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+  #seo-packages-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-dark);
+    position: relative;
+    z-index: 1;
+  }
+
+  #seo-packages-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  #seo-packages-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #seo-packages-2149 .cs-topper {
+    color: var(--primary);
+    font-family: Horizon, sans-serif;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem);
+  }
+
+  #seo-packages-2149 .cs-title {
+    color: var(--text-light);
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+    max-width: 28ch;
+  }
+
+  #seo-packages-2149 .cs-title strong {
+    color: var(--primary);
+  }
+
+  #seo-packages-2149 .cs-intro {
+    color: rgba(244, 242, 237, 0.8);
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7em;
+    max-width: 52ch;
+    margin: 0;
+  }
+
+  #seo-packages-2149 .cs-package-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #seo-packages-2149 .cs-package {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  #seo-packages-2149 .cs-package:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+  }
+
+  #seo-packages-2149 .cs-package-header {
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2rem) 1.25rem;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  }
+
+  #seo-packages-2149 .cs-package-name {
+    color: var(--text-light);
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  #seo-packages-2149 .cs-price {
+    color: var(--primary);
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 900;
+    line-height: 1em;
+    margin: 0 0 0.35rem;
+  }
+
+  #seo-packages-2149 .cs-price span {
+    font-size: 0.45em;
+    opacity: 0.8;
+  }
+
+  #seo-packages-2149 .cs-bundle-price {
+    color: rgba(244, 242, 237, 0.55);
+    font-family: Montserrat, sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.4em;
+    margin: 0;
+  }
+
+  #seo-packages-2149 .cs-package-body {
+    padding: 1.25rem clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2rem);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #seo-packages-2149 .cs-best-for {
+    color: rgba(244, 242, 237, 0.65);
+    font-family: Montserrat, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.55em;
+    margin: 0 0 1.25rem;
+    font-style: italic;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  #seo-packages-2149 .cs-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  #seo-packages-2149 .cs-feature {
+    color: rgba(244, 242, 237, 0.9);
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
+    line-height: 1.5em;
+    padding-left: 1.25rem;
+    position: relative;
+    list-style: none;
+  }
+
+  #seo-packages-2149 .cs-feature::before {
+    content: "•";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+
+  #seo-packages-2149 .cs-feature-sub {
+    display: block;
+    color: rgba(244, 242, 237, 0.5);
+    font-size: 0.8125rem;
+    margin-top: 0.2rem;
+    padding-left: 0.5rem;
+  }
+
+  #seo-packages-2149 .cs-addons {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(201, 168, 76, 0.15);
+    border-radius: 0.5rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    box-sizing: border-box;
+  }
+
+  #seo-packages-2149 .cs-addons-title {
+    color: var(--primary);
+    font-family: Horizon, sans-serif;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem;
+  }
+
+  #seo-packages-2149 .cs-addons-intro {
+    color: rgba(244, 242, 237, 0.65);
+    font-family: Montserrat, sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.6em;
+    margin: 0 0 1.5rem;
+  }
+
+  #seo-packages-2149 .cs-addons-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #seo-packages-2149 .cs-addon-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    list-style: none;
+  }
+
+  #seo-packages-2149 .cs-addon-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  #seo-packages-2149 .cs-addon-name {
+    color: var(--text-light);
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
+    font-weight: 600;
+  }
+
+  #seo-packages-2149 .cs-addon-desc {
+    color: rgba(244, 242, 237, 0.55);
+    font-family: Montserrat, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5em;
+  }
+
+  #seo-packages-2149 .cs-packages-cta {
+    color: rgba(244, 242, 237, 0.7);
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+    margin: 0;
+    text-align: center;
+  }
+
+  #seo-packages-2149 .cs-packages-cta a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  #seo-packages-2149 .cs-packages-cta a:hover {
+    text-decoration: underline;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  #seo-packages-2149 .cs-package-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*-- -------------------------- -->
+<---    Timeline (Process)         -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+  #seo-process-2149 .cs-timeline {
+    width: 100%;
+  }
+
+  #seo-process-2149 .cs-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    position: relative;
+  }
+
+  #seo-process-2149 .cs-steps::before {
+    content: "";
+    position: absolute;
+    left: 2rem;
+    top: 4rem;
+    bottom: 4rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), rgba(201, 168, 76, 0.15));
+  }
+
+  #seo-process-2149 .cs-step {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 5.5rem;
+    position: relative;
+    list-style: none;
+  }
+
+  #seo-process-2149 .cs-step-circle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--bg-dark);
+    font-family: "DM Serif Display", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.35);
+    z-index: 1;
+  }
+
+  #seo-process-2149 .cs-step .cs-h3 {
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+    color: var(--headerColor);
+    font-family: "DM Serif Display", serif;
+    margin: 0.5rem 0 0.625rem;
+    line-height: 1.3em;
+  }
+
+  #seo-process-2149 .cs-step .cs-item-text {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.75em;
+    color: var(--text-body);
+    margin: 0;
+    max-width: 50ch;
+    font-family: Montserrat, sans-serif;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  #seo-process-2149 .cs-steps {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  #seo-process-2149 .cs-steps::before {
+    display: none;
+  }
+
+  #seo-process-2149 .cs-step {
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    padding-top: 5.5rem;
+    text-align: center;
+    position: relative;
+  }
+
+  #seo-process-2149 .cs-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 2rem;
+    left: calc(50% + 2.25rem);
+    right: calc(-50% + 2.25rem);
+    height: 2px;
+    background: linear-gradient(to right, var(--primary), rgba(201, 168, 76, 0.25));
+  }
+
+  #seo-process-2149 .cs-step-circle {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  #seo-process-2149 .cs-step .cs-h3 {
+    margin-top: 0;
+  }
+
+  #seo-process-2149 .cs-step .cs-item-text {
+    text-align: center;
+    max-width: 28ch;
+  }
+}
+
+/*-- -------------------------- -->
+<---    Scope / Won't Promise      -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+  #seo-results-2149 .cs-scope-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 56rem;
+  }
+
+  #seo-results-2149 .cs-scope-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--primary);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 0.375rem 0.375rem 0;
+    list-style: none;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+    line-height: 1.75em;
+    color: rgba(244, 242, 237, 0.85);
+  }
+
+  #seo-results-2149 .cs-scope-item strong {
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 0.3rem;
+    font-family: "DM Serif Display", serif;
+    font-size: 1.0625em;
+  }
+}
+
+/*-- -------------------------- -->
+<---         FAQ Section           -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+  #seo-faq-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-primary);
+    position: relative;
+    z-index: 1;
+  }
+
+  #seo-faq-2149 .cs-container {
+    width: 100%;
+    max-width: 52rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  #seo-faq-2149 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #seo-faq-2149 .cs-topper {
+    color: var(--primary);
+    font-family: Horizon, sans-serif;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem);
+  }
+
+  #seo-faq-2149 .cs-title {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: var(--headerColor);
+    margin: 0;
+    max-width: 22ch;
+  }
+
+  #seo-faq-2149 .cs-faq-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  #seo-faq-2149 .cs-faq-item {
+    background-color: var(--bg-card);
+    border-radius: 0.375rem;
+    border: 1px solid rgba(58, 47, 40, 0.15);
+    overflow: hidden;
+  }
+
+  #seo-faq-2149 .cs-faq-item[open] {
+    border-color: rgba(201, 168, 76, 0.35);
+  }
+
+  #seo-faq-2149 .cs-faq-question {
+    padding: 1.25rem 1.5rem;
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(1.0625rem, 2vw, 1.25rem);
+    color: var(--headerColor);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    user-select: none;
+  }
+
+  #seo-faq-2149 .cs-faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  #seo-faq-2149 .cs-faq-question::after {
+    content: "+";
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+    line-height: 1;
+  }
+
+  #seo-faq-2149 .cs-faq-item[open] .cs-faq-question::after {
+    transform: rotate(45deg);
+  }
+
+  #seo-faq-2149 .cs-faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.75em;
+    color: var(--text-body);
+  }
+}
