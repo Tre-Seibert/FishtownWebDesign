@@ -117,29 +117,91 @@
     <style>
         /* Page-specific styles */
         .industry-hero {
-            padding: 100px 16px 60px;
-            background: linear-gradient(135deg, #3A2F28 0%, #2a221c 100%);
-            text-align: center;
+            padding: 110px 16px 140px;
+            background-color: #3A2F28;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 47px, rgba(255,255,255,0.05) 47px, rgba(255,255,255,0.05) 48px),
+                repeating-linear-gradient(90deg, transparent, transparent 47px, rgba(255,255,255,0.05) 47px, rgba(255,255,255,0.05) 48px);
+            clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
             color: #fff;
+            position: relative;
+        }
+        .industry-hero .cs-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .industry-hero .hero-content {
+            max-width: 680px;
+        }
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 0;
+            margin-bottom: 22px;
+        }
+        .hero-tags span {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(255,255,255,0.4);
+        }
+        .hero-tags span + span::before {
+            content: " · ";
+            color: rgba(255,255,255,0.2);
+            margin: 0 6px;
         }
         .industry-hero .cs-topper {
-            color: rgba(255,255,255,0.8);
-            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 16px;
             display: block;
         }
         .industry-hero h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin: 0 0 20px;
-            line-height: 1.2;
+            font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+            margin: 0 0 22px;
+            line-height: 1.15;
         }
         .industry-hero p {
             font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
+            max-width: 620px;
+            margin: 0 0 32px;
+            opacity: 0.88;
+            line-height: 1.75;
+        }
+        .hero-cta-row {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .hero-btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: #fff;
+            color: #3A2F28;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .hero-btn:hover {
+            background: rgba(255,255,255,0.88);
+        }
+        .hero-secondary-link {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 2px;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        .hero-secondary-link:hover {
+            color: #fff;
+            border-bottom-color: rgba(255,255,255,0.7);
         }
         
         /* Pain sections — shared */
@@ -1057,10 +1119,25 @@
     <!-- ============================================ -->
 
     <section class="industry-hero">
-        <span class="cs-topper">Industry Expertise</span>
-        <h1>Website Design for Contractors & Service Businesses</h1>
-        <p>Custom websites built for HVAC companies, construction firms, junk removal services, and trade professionals. Fast-loading, mobile-first designs that convert visitors into phone calls and quote requests.</p>
-        <a href="/contact" class="cs-button-solid" style="display: inline-block; padding: 16px 32px; background: #fff; color: #3A2F28; text-decoration: none; border-radius: 8px; font-weight: 600;">Get a Free Consultation</a>
+        <div class="cs-container">
+            <div class="hero-content">
+                <div class="hero-tags">
+                    <span>HVAC</span>
+                    <span>Plumbing</span>
+                    <span>Roofing</span>
+                    <span>Construction</span>
+                    <span>Landscaping</span>
+                    <span>Electrical</span>
+                </div>
+                <span class="cs-topper">Built for the trades</span>
+                <h1>Website Design for Contractors & Service Businesses</h1>
+                <p>Most contractor sites are slow, hard to update, and built by someone who disappeared. We build them right the first time — hand-coded, fast, and backed by someone who picks up the phone.</p>
+                <div class="hero-cta-row">
+                    <a href="/contact" class="hero-btn">Get a Free Consultation</a>
+                    <a href="#portfolio" class="hero-secondary-link">See our work ↓</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- ============================================ -->
@@ -1304,7 +1381,7 @@
     <!--              Portfolio Section               -->
     <!-- ============================================ -->
 
-    <section class="portfolio-section">
+    <section class="portfolio-section" id="portfolio">
         <div class="cs-container">
             <h2>Contractor Websites We've Built</h2>
             <p class="section-intro">Real websites for real service businesses. Each project is hand-coded for maximum performance and designed to generate leads.</p>
