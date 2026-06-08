@@ -26,8 +26,8 @@ Work through these in order. Do not skip ahead — earlier items have higher ROI
 
 - [x] 4\. Create a free agency profile on **DesignRush.com** (Authority Score 58 — The 215 Guys have this, you don't)  
 - [x] 5\. Create a free agency profile on **GoodFirms.co** (AS 51 — The 215 Guys have this, you don't)  
-- [ ] ~~6\. Apply for a listing on **Expertise.com** — search “web design Philadelphia” on their site and submit your agency~~  
-- [ ] ~~7\. Create a free profile on **UpCity.com** (AS 42 — The 215 Guys have this, you don't)~~
+- [x] ~~6\. Apply for a listing on **Expertise.com** — search “web design Philadelphia” on their site and submit your agency~~  
+- [x] ~~7\. Create a free profile on **UpCity.com** (AS 42 — The 215 Guys have this, you don't)~~
 
 **Client Footer Credits**
 
@@ -53,7 +53,7 @@ Work through these in order. Do not skip ahead — earlier items have higher ROI
 **Content**
 
 - [x] 17\. **Rewrite `/seo` page body copy** — replace brochure language with: what you audit, what the client gets monthly, what your reporting looks like, what you will not promise, scope of local SEO vs. organic. No superlatives. File: `public/seo.html`  
-- [ ] 18\. **Clean the Semrush keyword tracking basket** — remove: all “philly seo consultants” strings (competitor branded), all NJ pricing town terms, “baytown seo”, “seo and web hosting georgetown”, “jamestown website design”. Replace with \~30 clean Philly \+ suburb terms aligned to your actual service area.
+- [x] 18\. **Clean the Semrush keyword tracking basket** — remove: all “philly seo consultants” strings (competitor branded), all NJ pricing town terms, “baytown seo”, “seo and web hosting georgetown”, “jamestown website design”. Replace with \~30 clean Philly \+ suburb terms aligned to your actual service area.
 
 ---
 
@@ -63,24 +63,24 @@ Work through these in order. Do not skip ahead — earlier items have higher ROI
 
 **Content (ask Claude to draft, then you review)**
 
-- [ ] 19\. **Deepen `/web-design` page** — add: process steps, timeline, what hand-coded means vs WordPress, before/after speed examples, proof tiles with client outcomes, FAQ section  
+- [x] 19\. **Deepen `/web-design` page** — add: process steps, timeline, what hand-coded means vs WordPress, before/after speed examples, proof tiles with client outcomes, FAQ section  
 - [ ] 20\. **Deepen `/contractor-web-design`** — most commercially valuable industry page. Add: industry-specific pain points, examples of contractor sites you've built, why speed matters for mobile job-site searches  
 - [ ] 21\. **Deepen `/ecommerce-web-design`** — add: platform options, conversion focus, Shopify vs custom, example (Green Shades)  
-- [ ] 22\. **Write a full Axel Mechanical case study** — before/after page speed, what you built, business outcomes if available, photos. Add to blog. Link internally to `/contractor-web-design`  
-- [ ] 23\. **Write a full Green Shades Coffee case study** — same format. Link internally to `/ecommerce-web-design`  
+- [x] 22\. **Write a full Axel Mechanical case study** — before/after page speed, what you built, business outcomes if available, photos. Add to blog. Link internally to `/contractor-web-design`  
+- [x] 23\. **Write a full Green Shades Coffee case study** — same format. Link internally to `/ecommerce-web-design`  
 - [ ] 24\. **Write one comparison post** — “Web Design Agency vs. Freelancer vs. DIY Website Builders: What Philadelphia Small Businesses Should Know.” Honest, not snarky. This type of content earns links and answers a real question buyers Google before hiring.
 
 **Authority / Off-Site**
 
 - [ ] 25\. Identify 3–5 Philadelphia business partners (photographers, brand strategists, accountants serving SMBs) and get a mention or link on their site — a “partners we recommend” style listing or a blog mention  
 - [ ] 26\. Look for one local Philadelphia business org, chamber, or neighborhood association to join or sponsor — these produce real, local, editorial links  
-- [ ] 27\. Build a post-launch review request into your workflow — after every site goes live, send the client a review request email at the 2-week mark. Make this a habit, not a one-time ask.
+- [x] 27\. Build a post-launch review request into your workflow — after every site goes live, send the client a review request email at the 2-week mark. Make this a habit, not a one-time ask.
 
 **Monitoring (ongoing, monthly)**
 
 - [ ] 28\. **GSC check:** watch the “affordable” cluster (positions 17–30 confirmed May 2026\) for movement toward page 1\. Also check that `/web-design` is the top URL for Philly head terms, not the homepage.  
 - [ ] 29\. **Semrush referring domains:** target 2–4 new legitimate referring domains added per month. Track this number monthly — it is the most honest leading indicator of authority growth.  
-- [ ] 30\. **Run Rich Results Test** on `home.html` after any structured data edits.
+- [x] 30\. **Run Rich Results Test** on `home.html` after any structured data edits.
 
 ---
 
