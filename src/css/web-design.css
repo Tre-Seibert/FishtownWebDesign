@@ -1545,6 +1545,12 @@
   border-bottom: 1px solid rgba(248, 200, 130, 0.15);
 }
 
+#web-design-seo-bundle-2149 .cs-container {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
 #web-design-seo-bundle-2149 .cs-bundle-inner {
   display: flex;
   flex-direction: column;
