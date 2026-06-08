@@ -178,7 +178,7 @@ async function generateSitemap() {
       { url: '/app-development', changefreq: 'monthly', priority: 0.8 },
       { url: '/charity', changefreq: 'monthly', priority: 0.8 },
       // Industry-specific landing pages
-      { url: '/contractor-web-design', changefreq: 'monthly', priority: 0.8 },
+      { url: '/contractor-web-design', changefreq: 'monthly', priority: 0.8, lastmod: '2026-06-08' },
       { url: '/venue-web-design', changefreq: 'monthly', priority: 0.8 },
       { url: '/ecommerce-web-design', changefreq: 'monthly', priority: 0.8 },
       { url: '/startup-product-development', changefreq: 'monthly', priority: 0.8 },
