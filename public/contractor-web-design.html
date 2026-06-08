@@ -527,6 +527,49 @@
             display: block;
         }
         .c-source a { color: #bbb; text-decoration: underline; }
+
+        /* Timeline on light bg (Section 1) */
+        .pain-section--light .timeline-col {
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+        .pain-section--light .timeline-col--good {
+            background: #fff;
+            border: 2px solid var(--primary);
+        }
+        .pain-section--light .timeline-col h3 {
+            color: var(--bodyTextColor);
+            opacity: 0.5;
+        }
+        .pain-section--light .timeline-col--good h3 {
+            color: var(--primary);
+            opacity: 1;
+        }
+        .pain-section--light .t-dot { background: #ddd; }
+        .pain-section--light .timeline-col--good .t-dot { background: var(--primary); }
+        .pain-section--light .t-step p { color: var(--bodyTextColor); opacity: 0.5; }
+        .pain-section--light .timeline-col--good .t-step p { color: var(--bodyTextColor); opacity: 1; }
+
+        /* Referral chain + stat cards on dark bg (Section 2) */
+        .pain-section--dark .chain-step { background: rgba(255,255,255,0.09); }
+        .pain-section--dark .chain-step:nth-child(3) { background: rgba(255,255,255,0.2); }
+        .pain-section--dark .chain-label { color: rgba(255,255,255,0.85); }
+        .pain-section--dark .chain-step:nth-child(3) .chain-label { color: #fff; }
+        .pain-section--dark .chain-sublabel { color: rgba(255,255,255,0.6); }
+        .pain-section--dark .chain-step:nth-child(3) .chain-sublabel { color: rgba(255,255,255,0.85); }
+        .pain-section--dark .chain-critical { color: rgba(255,255,255,0.5); }
+        .pain-section--dark .chain-step + .chain-step::before {
+            background: #3A2F28;
+            color: rgba(255,255,255,0.3);
+        }
+        .pain-section--dark .chain-step:nth-child(3) + .chain-step::before {
+            background: #3A2F28;
+            color: rgba(255,255,255,0.3);
+        }
+        .pain-section--dark .stat-card { background: rgba(255,255,255,0.1); }
+        .pain-section--dark .stat-card .s-num { color: #fff; }
+        .pain-section--dark .stat-card p { color: rgba(255,255,255,0.8); }
+        .pain-section--dark .s-source a { color: rgba(255,255,255,0.4); }
         
         .portfolio-section {
             padding: 80px 16px;
@@ -1024,7 +1067,7 @@
     <!--   Pain 1: Web guy disappeared               -->
     <!-- ============================================ -->
 
-    <section class="pain-section pain-section--dark">
+    <section class="pain-section pain-section--light">
         <div class="cs-container">
             <div class="fade-up">
                 <span class="ps-topper">Problem #1</span>
@@ -1060,7 +1103,7 @@
     <!--   Pain 2: Referral funnel                   -->
     <!-- ============================================ -->
 
-    <section class="pain-section pain-section--light">
+    <section class="pain-section pain-section--dark">
         <div class="cs-container">
             <div class="fade-up">
                 <span class="ps-topper">Problem #2</span>
