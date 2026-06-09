@@ -64,7 +64,7 @@ Work through these in order. Do not skip ahead — earlier items have higher ROI
 **Content (ask Claude to draft, then you review)**
 
 - [x] 19\. **Deepen `/web-design` page** — add: process steps, timeline, what hand-coded means vs WordPress, before/after speed examples, proof tiles with client outcomes, FAQ section  
-- [ ] 20\. **Deepen `/contractor-web-design`** — most commercially valuable industry page. Add: industry-specific pain points, examples of contractor sites you've built, why speed matters for mobile job-site searches  
+- [x] 20\. **Deepen `/contractor-web-design`** — most commercially valuable industry page. Add: industry-specific pain points, examples of contractor sites you've built, why speed matters for mobile job-site searches  
 - [ ] 21\. **Deepen `/ecommerce-web-design`** — add: platform options, conversion focus, Shopify vs custom, example (Green Shades)  
 - [x] 22\. **Write a full Axel Mechanical case study** — before/after page speed, what you built, business outcomes if available, photos. Add to blog. Link internally to `/contractor-web-design`  
 - [x] 23\. **Write a full Green Shades Coffee case study** — same format. Link internally to `/ecommerce-web-design`  
