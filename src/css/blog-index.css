@@ -238,6 +238,47 @@
 }
 
 /*-- -------------------------- -->
+<---      Blog Editorial Intro       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #blog-editorial-2149 {
+    padding: var(--sectionPadding);
+    background-color: var(--bg-primary);
+    position: relative;
+    z-index: 1;
+  }
+
+  #blog-editorial-2149 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+  }
+
+  #blog-editorial-2149 .cs-content {
+    width: 100%;
+    max-width: 65ch;
+  }
+
+  #blog-editorial-2149 .cs-title {
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+  }
+
+  #blog-editorial-2149 .cs-text {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7em;
+    max-width: none;
+    margin: 0 0 1rem;
+  }
+
+  #blog-editorial-2149 .cs-text:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*-- -------------------------- -->
 <---        Blog Posts Grid         -->
 <--- -------------------------- -*/
 

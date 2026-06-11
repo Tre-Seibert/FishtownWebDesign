@@ -130,6 +130,24 @@ app.use((req, res, next) => {
   next();
 });
 
+// Redirect removed / low-value pages to web design
+const webDesignRedirects = [
+  '/services',
+  '/blog/fishtownwebdesign.com',
+  '/blog/link',
+];
+
+webDesignRedirects.forEach((redirectPath) => {
+  app.get(redirectPath, (req, res) => {
+    res.redirect(301, '/web-design');
+  });
+});
+
+// Serve robots.txt from project root
+app.get('/robots.txt', (req, res) => {
+  res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { createGzip } = require('zlib');
 
@@ -2257,10 +2275,7 @@ app.get('/public/*.html', (req, res) => {
 // Return 410 Gone for old/deleted pages (low-value pages that should be removed from index)
 const deletedPages = [
   '/blog/philly-site-speed-hacks',
-  '/blog/fishtownwebdesign.com',
   '/blog/seo-blog-',
-  '/services',
-  '/blog/link',
   '/subscribe-newsletter',
   '/blog/building-a-blog-with-strapi-and-node-js',
   '/blog/why-trade-business-owners-need-a-blog-seo-tips-for-painters-contractors',
