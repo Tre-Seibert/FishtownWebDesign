@@ -65,7 +65,7 @@ Work through these in order. Do not skip ahead — earlier items have higher ROI
 
 - [x] 19\. **Deepen `/web-design` page** — add: process steps, timeline, what hand-coded means vs WordPress, before/after speed examples, proof tiles with client outcomes, FAQ section  
 - [x] 20\. **Deepen `/contractor-web-design`** — most commercially valuable industry page. Add: industry-specific pain points, examples of contractor sites you've built, why speed matters for mobile job-site searches  
-- [ ] 21\. **Deepen `/ecommerce-web-design`** — add: platform options, conversion focus, Shopify vs custom, example (Green Shades)  
+- [x] 21\. **Deepen `/ecommerce-web-design`** — add: platform options, conversion focus, Shopify vs custom, example (Green Shades). Full rebuild: flywheel hero animation, Storefront API explainer with architecture diagram, score ring comparison, revenue impact visual, platform options (3-card with honest "not what we do" card), 6-section feature deep-dive, Green Shades + Hexed &amp; Hearsed portfolio, FAQ with JSON-LD schema. ✅ Done 2026-06-11.  
 - [x] 22\. **Write a full Axel Mechanical case study** — before/after page speed, what you built, business outcomes if available, photos. Add to blog. Link internally to `/contractor-web-design`  
 - [x] 23\. **Write a full Green Shades Coffee case study** — same format. Link internally to `/ecommerce-web-design`  
 - [ ] 24\. **Write one comparison post** — “Web Design Agency vs. Freelancer vs. DIY Website Builders: What Philadelphia Small Businesses Should Know.” Honest, not snarky. This type of content earns links and answers a real question buyers Google before hiring.
