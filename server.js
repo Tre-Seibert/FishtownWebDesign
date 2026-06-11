@@ -182,6 +182,8 @@ async function generateSitemap() {
       { url: '/venue-web-design', changefreq: 'monthly', priority: 0.8 },
       { url: '/ecommerce-web-design', changefreq: 'monthly', priority: 0.8 },
       { url: '/startup-product-development', changefreq: 'monthly', priority: 0.8 },
+      { url: '/electrician-website-design', changefreq: 'monthly', priority: 0.8, lastmod: '2026-06-10' },
+      { url: '/roofing-website-design', changefreq: 'monthly', priority: 0.8, lastmod: '2026-06-10' },
       // Location-specific landing pages
       { url: '/web-design-lancaster-pa', changefreq: 'monthly', priority: 0.8 },
       { url: '/web-design-fishtown', changefreq: 'monthly', priority: 0.8 },
@@ -2302,6 +2304,8 @@ app.get('/contractor-web-design', (req, res) => res.sendFile(path.join(__dirname
 app.get('/venue-web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/venue-web-design.html')));
 app.get('/ecommerce-web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/ecommerce-web-design.html')));
 app.get('/startup-product-development', (req, res) => res.sendFile(path.join(__dirname, 'public/startup-product-development.html')));
+app.get('/electrician-website-design', (req, res) => res.sendFile(path.join(__dirname, 'public/electrician-website-design.html')));
+app.get('/roofing-website-design', (req, res) => res.sendFile(path.join(__dirname, 'public/roofing-website-design.html')));
 
 // Location-specific landing pages
 app.get('/web-design-lancaster-pa', (req, res) => res.sendFile(path.join(__dirname, 'public/web-design-lancaster-pa.html')));
