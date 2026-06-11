@@ -74,9 +74,9 @@ Work through these in order. Do not skip ahead — earlier items have higher ROI
 
 - [x] 25\. **Create `/electrician-website-design`** — primary: `electrician website design` (480/mo, KD 7). Lowest KD in the entire dataset — easiest first win. Supporting keywords: “electrician web design”, “website design for electricians”, “electrician contractor website”. Link internally to `/contractor-web-design` and homepage.
 - [x] 26\. **Create `/roofing-website-design`** — primary: `roofing website design` (880/mo, KD 12). Best volume/difficulty ratio of any trades keyword. Supporting: “roofing contractor web design” (50/mo, KD 15), “roofing contractor website design”, “roofing web design”. Link internally to `/contractor-web-design`. ✅ Done 2026-06-10.
-- [ ] 27\. **Create `/landscaping-website-design`** — primary: `landscaping website design` (480/mo, KD 13). Supporting: “website design for landscapers”, “landscaping web design”, “lawn care website design”.
-- [ ] 28\. **Create `/plumber-website-design`** — primary: `plumber website design` (390/mo, KD 13). Supporting: “plumbing website design”, “plumber web design”, “plumbing contractor website”.
-- [ ] 29\. **Create `/hvac-web-design` service page** — primary: `HVAC website design` (1,300/mo, KD 22). Supporting: “HVAC web design” (720/mo, KD 15), “HVAC contractor web design services” (50/mo, KD 13), “web design services for HVAC contractors” (50/mo, KD 11). The existing Axel Mechanical case study blog post should link to this page as its primary CTA — this is the owner URL for HVAC intent, not the blog post.
+- [x] 27\. **Create `/landscaping-website-design`** — primary: `landscaping website design` (480/mo, KD 13). Supporting: “website design for landscapers”, “landscaping web design”, “lawn care website design”. ✅ Done 2026-06-10.
+- [x] 28\. **Create `/plumber-website-design`** — primary: `plumber website design` (390/mo, KD 13). Supporting: “plumbing website design”, “plumber web design”, “plumbing contractor website”.
+- [x] 29\. **Create `/hvac-web-design` service page** — primary: `HVAC website design` (1,300/mo, KD 22). Supporting: “HVAC web design” (720/mo, KD 15), “HVAC contractor web design services” (50/mo, KD 13), “web design services for HVAC contractors” (50/mo, KD 11). The existing Axel Mechanical case study blog post should link to this page as its primary CTA — this is the owner URL for HVAC intent, not the blog post.
 
 **Philadelphia Keyword Strategy** *(long-term goal: compete with The 215 Guys and BoomTown)*
 
