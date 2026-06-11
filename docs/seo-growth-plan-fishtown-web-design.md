@@ -70,17 +70,31 @@ Work through these in order. Do not skip ahead — earlier items have higher ROI
 - [x] 23\. **Write a full Green Shades Coffee case study** — same format. Link internally to `/ecommerce-web-design`  
 - [ ] 24\. **Write one comparison post** — “Web Design Agency vs. Freelancer vs. DIY Website Builders: What Philadelphia Small Businesses Should Know.” Honest, not snarky. This type of content earns links and answers a real question buyers Google before hiring.
 
+**Trades Industry Pages** *(build in this order — sorted by volume-to-difficulty ratio)*
+
+- [x] 25\. **Create `/electrician-website-design`** — primary: `electrician website design` (480/mo, KD 7). Lowest KD in the entire dataset — easiest first win. Supporting keywords: “electrician web design”, “website design for electricians”, “electrician contractor website”. Link internally to `/contractor-web-design` and homepage.
+- [x] 26\. **Create `/roofing-website-design`** — primary: `roofing website design` (880/mo, KD 12). Best volume/difficulty ratio of any trades keyword. Supporting: “roofing contractor web design” (50/mo, KD 15), “roofing contractor website design”, “roofing web design”. Link internally to `/contractor-web-design`. ✅ Done 2026-06-10.
+- [ ] 27\. **Create `/landscaping-website-design`** — primary: `landscaping website design` (480/mo, KD 13). Supporting: “website design for landscapers”, “landscaping web design”, “lawn care website design”.
+- [ ] 28\. **Create `/plumber-website-design`** — primary: `plumber website design` (390/mo, KD 13). Supporting: “plumbing website design”, “plumber web design”, “plumbing contractor website”.
+- [ ] 29\. **Create `/hvac-web-design` service page** — primary: `HVAC website design` (1,300/mo, KD 22). Supporting: “HVAC web design” (720/mo, KD 15), “HVAC contractor web design services” (50/mo, KD 13), “web design services for HVAC contractors” (50/mo, KD 11). The existing Axel Mechanical case study blog post should link to this page as its primary CTA — this is the owner URL for HVAC intent, not the blog post.
+
+**Philadelphia Keyword Strategy** *(long-term goal: compete with The 215 Guys and BoomTown)*
+
+- [ ] 30\. **Write WordPress comparison blog post** — targets `wordpress design philadelphia` (70/mo, KD 5), `wordpress design services philadelphia` (70/mo, KD 6), `wordpress designer in philadelphia` (50/mo, KD 3). These are essentially uncontested (KD 2–6). The angle: you don't build WordPress and you have strong opinions about why — lean into that. Acknowledge the search intent honestly (“you're looking for a WordPress designer”), make the case for custom, end with a CTA. This page also links to `/web-design` and `/philadelphia-web-developers`, feeding internal link equity to the pages that need it most. See §15 for the full strategy.
+- [ ] 31\. **Create `/philadelphia-web-developers`** — primary: `philadelphia web developers` (110/mo, KD 40). Supporting: “philadelphia website developers” (70/mo, KD 40), “philadelphia website developer” (30/mo, KD 61). Dual purpose: standalone keyword target AND an internal linking vehicle — link from this page up to the homepage to reinforce homepage authority for “web design philadelphia.” All neighborhood pages should link to this page too.
+- [ ] 32\. **Optimize homepage for `web design philadelphia`** — currently position 98, competitors at 2–36. This is a 6–12 month compounding play, not a single fix. Requires: title tag explicitly containing the phrase, H1 including Philadelphia, more body content mentioning Philadelphia (audit flagged low text-to-HTML), and sustained internal link equity from all the pages above flowing back to it. See §15 for the full strategy.
+
 **Authority / Off-Site**
 
-- [ ] 25\. Identify 3–5 Philadelphia business partners (photographers, brand strategists, accountants serving SMBs) and get a mention or link on their site — a “partners we recommend” style listing or a blog mention  
-- [ ] 26\. Look for one local Philadelphia business org, chamber, or neighborhood association to join or sponsor — these produce real, local, editorial links  
-- [x] 27\. Build a post-launch review request into your workflow — after every site goes live, send the client a review request email at the 2-week mark. Make this a habit, not a one-time ask.
+- [ ] 33\. Identify 3–5 Philadelphia business partners (photographers, brand strategists, accountants serving SMBs) and get a mention or link on their site — a “partners we recommend” style listing or a blog mention  
+- [ ] 34\. Look for one local Philadelphia business org, chamber, or neighborhood association to join or sponsor — these produce real, local, editorial links  
+- [x] 35\. Build a post-launch review request into your workflow — after every site goes live, send the client a review request email at the 2-week mark. Make this a habit, not a one-time ask.
 
 **Monitoring (ongoing, monthly)**
 
-- [ ] 28\. **GSC check:** watch the “affordable” cluster (positions 17–30 confirmed May 2026\) for movement toward page 1\. Also check that `/web-design` is the top URL for Philly head terms, not the homepage.  
-- [ ] 29\. **Semrush referring domains:** target 2–4 new legitimate referring domains added per month. Track this number monthly — it is the most honest leading indicator of authority growth.  
-- [x] 30\. **Run Rich Results Test** on `home.html` after any structured data edits.
+- [ ] 36\. **GSC check:** watch the “affordable” cluster (positions 17–30 confirmed May 2026\) for movement toward page 1\. Also check that `/web-design` is the top URL for Philly head terms, not the homepage.  
+- [ ] 37\. **Semrush referring domains:** target 2–4 new legitimate referring domains added per month. Track this number monthly — it is the most honest leading indicator of authority growth.  
+- [x] 38\. **Run Rich Results Test** on `home.html` after any structured data edits.
 
 ---
 
@@ -458,3 +472,133 @@ Because SEO is a service you sell:
 ---
 
 *Document generated from the agreed audit and strategy. Update the **Implementation status** table and “Last reviewed” date when you ship changes. Update KPIs as execution progresses.*
+
+---
+
+## 14\. Trades niche expansion — keyword targets and page map
+
+*Source: Semrush keyword exports 2026-06-08. Build pages in priority order (best volume/difficulty ratio first).*
+
+| Priority | Page slug | Primary keyword | Volume | KD | Est. time to rank | Supporting keywords |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| 1 | `/electrician-website-design` | electrician website design | 480 | 7 | 1–3 mo | electrician web design, website design for electricians |
+| 2 | `/roofing-website-design` | roofing website design | 880 | 12 | 2–4 mo | roofing contractor web design, roofing web design |
+| 3 | `/landscaping-website-design` | landscaping website design | 480 | 13 | 2–4 mo | website design for landscapers, lawn care website design |
+| 4 | `/plumber-website-design` | plumber website design | 390 | 13 | 2–4 mo | plumbing website design, plumber web design |
+| 5 | `/hvac-web-design` | HVAC website design | 1,300 | 22 | 3–5 mo | HVAC web design (720, KD 15), HVAC contractor web design services |
+
+### Proof strategy for trades pages (portfolio reality check)
+
+Current portfolio by trade: HVAC (Axel Mechanical), construction (Lauer Construction), junk removal. No roofing, electrician, landscaping, or plumber clients yet.
+
+**Do not fake industry-specific proof.** A roofing contractor will immediately notice if your "roofing examples" are actually HVAC sites.
+
+**What to do instead — use contractor-level proof, framed honestly:**
+
+- Show Axel Mechanical and Lauer Construction as "contractor websites we've built" — this is legitimate proof that your sites are fast, mobile-first, and built for trades businesses. The reader connects the dots.
+- Do not label these as "roofing examples" or "electrician examples" on those specific pages.
+- Frame it as: *"We've built fast, hand-coded sites for contractors including HVAC companies and general contractors."*
+
+**First client in each vertical is the unlock.** Once you land a roofing, electrician, or landscaping client, offer a modest rate reduction in exchange for a detailed before/after case study. That becomes the anchor proof for that page.
+
+**Optional honest line for thin pages (until proof exists):**
+> *"We specialize in contractor websites. If you're one of our first roofing clients, reach out — we're actively building our portfolio in this niche."*
+This kind of transparency builds trust with the right clients rather than eroding it.
+
+### Page structure for each trades page
+
+Every trades page should follow the same proven structure as `/contractor-web-design`:
+
+1. **H1:** `[Trade] Website Design` — exact match primary keyword
+2. **Who it's for** — pain points specific to that trade (e.g. roofing: mobile-first for homeowners getting quotes; HVAC: seasonal urgency, service area visibility)
+3. **What you build differently** — hand-coded, fast-loading, no WordPress dependency
+4. **Proof** — contractor-level proof until industry-specific clients exist (see proof strategy above); HVAC → Axel Mechanical is the closest match for any trades page
+5. **FAQ** — 3–5 questions relevant to that trade
+6. **Internal links** — up to `/contractor-web-design` hub, up to homepage, across to other relevant trades pages
+
+### Internal linking map for trades
+
+```
+Homepage
+  └── /contractor-web-design (hub)
+        ├── /hvac-web-design
+        ├── /roofing-website-design
+        ├── /electrician-website-design
+        ├── /landscaping-website-design
+        └── /plumber-website-design
+              └── Blog: Axel Mechanical case study → /hvac-web-design
+```
+
+`/contractor-web-design` should be updated to include a “Trades we specialize in” section linking down to all five pages once they exist.
+
+---
+
+## 15\. Philadelphia competitive strategy — ranking against The 215 Guys and BoomTown
+
+*Goal: rank for `web design philadelphia` (720/mo, KD 65). Currently position 98. Competitors at 2–36. This is a 6–12 month compounding play.*
+
+### Why position 98 is an authority problem, not a content problem
+
+The competitors outrank FWD not because their pages are better written — it's because they have significantly more referring domains and brand signals (see §1.C). The 215 Guys have links from yahoo.com, bing.com, inquirer.com, DesignRush, UpCity, and hundreds of legitimate referring domains. FWD has ~6 legitimate referring domains. **Content alone won't close this gap; authority has to compound in parallel.**
+
+### The three-layer strategy
+
+**Layer 1 — WordPress comparison content (quick win, KD 2–6)**
+
+Create a blog post targeting the WordPress Philadelphia keyword cluster. These keywords are nearly uncontested despite real search volume:
+
+- `wordpress design philadelphia` — 70/mo, KD 5
+- `wordpress design services philadelphia` — 70/mo, KD 6
+- `wordpress designer in philadelphia` — 50/mo, KD 3
+- `wordpress designers philadelphia` — 40/mo, KD 2
+
+FWD doesn't build WordPress and has strong opinions about why — that's the exact angle. The post doesn't pretend to offer WordPress. It captures the search, makes an honest comparison, and converts a percentage to custom site clients. Someone searching “wordpress designer philadelphia” is in research mode and hasn't committed yet.
+
+Suggested title/angle: *”Looking for a WordPress Designer in Philadelphia? Here's Why We Build Custom Instead”* or *”WordPress vs. Custom Web Design for Philadelphia Businesses: An Honest Comparison.”*
+
+The post must:
+- Acknowledge the searcher's intent directly (don't bait-and-switch the intro)
+- Give a genuinely useful comparison (speed, cost, ownership, maintenance)
+- End with a clear CTA to `/web-design` or contact
+- Internally link to `/web-design`, `/philadelphia-web-developers`, and `/contractor-web-design`
+
+Expected result: page 1 rankings within 1–2 months for the WordPress cluster. This page then feeds internal link equity upstream.
+
+**Layer 2 — `/philadelphia-web-developers` (medium-term, KD 40)**
+
+A dedicated page for `philadelphia web developers` / `philadelphia website developers`. Competitors rank here; FWD has zero presence. This page:
+
+- Directly targets commercial developer intent (people ready to hire)
+- Serves as a link hub — links up to homepage, reinforcing homepage authority for “web design philadelphia”
+- All neighborhood pages (`/web-design-fishtown`, `/web-design-center-city`, etc.) should link to this page
+
+Expected result: ranking movement within 4–8 months.
+
+**Layer 3 — Homepage authority compounding**
+
+`web design philadelphia` (KD 65) will not move fast, but every piece above accelerates it:
+
+| Action | Effect on homepage ranking |
+| :---- | :---- |
+| Trades pages link to homepage | More internal link equity pointing at homepage |
+| `/philadelphia-web-developers` links to homepage | Direct internal authority from a Philadelphia-intent page |
+| WordPress blog post links to `/web-design` | Equity flows to the main commercial hub |
+| Neighborhood pages link to `/philadelphia-web-developers` | Tightens the Philadelphia entity cluster |
+| New referring domains (DesignRush, GoodFirms, client credits) | External authority — the main gap vs. competitors |
+
+Homepage on-page optimizations needed (do these now, they're free):
+- Title tag should include “Philadelphia Web Design” naturally
+- H1 or hero copy should mention Philadelphia explicitly  
+- Body content mentioning Philadelphia is thin (audit flagged low text-to-HTML)
+
+### Realistic timeline
+
+| Milestone | Target |
+| :---- | :---- |
+| WordPress Philadelphia blog post ranking page 1 | 1–2 months after publish |
+| First trades page (electrician, KD 7) ranking page 1 | 1–3 months after publish |
+| `/philadelphia-web-developers` in top 20 | 4–8 months |
+| `web design philadelphia` moving from 98 toward top 30 | 6–12 months |
+| Competing in top 10 for `web design philadelphia` | 12–18 months (requires sustained authority growth) |
+
+The honest reality: the head term is a long game. The trades niche and low-KD Philadelphia keywords are the near-term wins that build the foundation to compete at the top eventually.
