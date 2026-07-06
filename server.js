@@ -130,6 +130,24 @@ app.use((req, res, next) => {
   next();
 });
 
+// Redirect removed / low-value pages to web design
+const webDesignRedirects = [
+  '/services',
+  '/blog/fishtownwebdesign.com',
+  '/blog/link',
+];
+
+webDesignRedirects.forEach((redirectPath) => {
+  app.get(redirectPath, (req, res) => {
+    res.redirect(301, '/web-design');
+  });
+});
+
+// Serve robots.txt from project root
+app.get('/robots.txt', (req, res) => {
+  res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { createGzip } = require('zlib');
 
@@ -178,10 +196,15 @@ async function generateSitemap() {
       { url: '/app-development', changefreq: 'monthly', priority: 0.8 },
       { url: '/charity', changefreq: 'monthly', priority: 0.8 },
       // Industry-specific landing pages
-      { url: '/contractor-web-design', changefreq: 'monthly', priority: 0.8 },
+      { url: '/contractor-web-design', changefreq: 'monthly', priority: 0.8, lastmod: '2026-06-08' },
       { url: '/venue-web-design', changefreq: 'monthly', priority: 0.8 },
       { url: '/ecommerce-web-design', changefreq: 'monthly', priority: 0.8 },
       { url: '/startup-product-development', changefreq: 'monthly', priority: 0.8 },
+      { url: '/electrician-website-design', changefreq: 'monthly', priority: 0.8, lastmod: '2026-06-10' },
+      { url: '/roofing-website-design', changefreq: 'monthly', priority: 0.8, lastmod: '2026-06-10' },
+      { url: '/hvac-web-design', changefreq: 'monthly', priority: 0.8, lastmod: '2026-06-10' },
+      { url: '/plumber-website-design', changefreq: 'monthly', priority: 0.8, lastmod: '2026-06-10' },
+      { url: '/landscaping-website-design', changefreq: 'monthly', priority: 0.8, lastmod: '2026-06-10' },
       // Location-specific landing pages
       { url: '/web-design-lancaster-pa', changefreq: 'monthly', priority: 0.8 },
       { url: '/web-design-fishtown', changefreq: 'monthly', priority: 0.8 },
@@ -2252,10 +2275,7 @@ app.get('/public/*.html', (req, res) => {
 // Return 410 Gone for old/deleted pages (low-value pages that should be removed from index)
 const deletedPages = [
   '/blog/philly-site-speed-hacks',
-  '/blog/fishtownwebdesign.com',
   '/blog/seo-blog-',
-  '/services',
-  '/blog/link',
   '/subscribe-newsletter',
   '/blog/building-a-blog-with-strapi-and-node-js',
   '/blog/why-trade-business-owners-need-a-blog-seo-tips-for-painters-contractors',
@@ -2302,6 +2322,11 @@ app.get('/contractor-web-design', (req, res) => res.sendFile(path.join(__dirname
 app.get('/venue-web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/venue-web-design.html')));
 app.get('/ecommerce-web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/ecommerce-web-design.html')));
 app.get('/startup-product-development', (req, res) => res.sendFile(path.join(__dirname, 'public/startup-product-development.html')));
+app.get('/electrician-website-design', (req, res) => res.sendFile(path.join(__dirname, 'public/electrician-website-design.html')));
+app.get('/roofing-website-design', (req, res) => res.sendFile(path.join(__dirname, 'public/roofing-website-design.html')));
+app.get('/hvac-web-design', (req, res) => res.sendFile(path.join(__dirname, 'public/hvac-web-design.html')));
+app.get('/plumber-website-design', (req, res) => res.sendFile(path.join(__dirname, 'public/plumber-website-design.html')));
+app.get('/landscaping-website-design', (req, res) => res.sendFile(path.join(__dirname, 'public/landscaping-website-design.html')));
 
 // Location-specific landing pages
 app.get('/web-design-lancaster-pa', (req, res) => res.sendFile(path.join(__dirname, 'public/web-design-lancaster-pa.html')));
