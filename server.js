@@ -2452,9 +2452,9 @@ app.post('/submit-questionnaire', async (req, res) => {
       optionalText(experience_feedback)
     ];
 
-    const insertSql = \INSERT INTO questionnaire_submissions 
+    const insertSql = `INSERT INTO questionnaire_submissions 
         (name, email, business_name, business_address, business_phone, primary_services, top_revenue_services, top_volume_services, about_business, why_choose_you, proof_points, hours_operations, essential_info, service_areas, competitors, grow_vs_protect, seasonal_offers, review_platforms, booking_flow, preserve_urls, photo_assets, design_inspiration, primary_cta, branding, features, requested_pages, experience_feedback)
-       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\;
+       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
 
     const connection = await pool.getConnection();
     await connection.execute(insertSql, insertValues);
@@ -2529,9 +2529,9 @@ app.post('/submit-questionnaire', async (req, res) => {
           optionalText(experience_feedback)
         ];
 
-        const insertSql = \INSERT INTO questionnaire_submissions 
+        const insertSql = `INSERT INTO questionnaire_submissions 
             (name, email, business_name, business_address, business_phone, primary_services, top_revenue_services, top_volume_services, about_business, why_choose_you, proof_points, hours_operations, essential_info, service_areas, competitors, grow_vs_protect, seasonal_offers, review_platforms, booking_flow, preserve_urls, photo_assets, design_inspiration, primary_cta, branding, features, requested_pages, experience_feedback)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\;
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
 
         const connection = await pool.getConnection();
         await connection.execute(insertSql, insertValues);
