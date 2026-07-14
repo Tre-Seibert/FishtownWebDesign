@@ -49,11 +49,25 @@ async function initializeDatabase() {
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
+        business_name VARCHAR(255),
+        business_address TEXT,
+        business_phone VARCHAR(50),
         primary_services TEXT NOT NULL,
         top_revenue_services TEXT NOT NULL,
+        top_volume_services TEXT,
         about_business TEXT NOT NULL,
         why_choose_you TEXT NOT NULL,
+        proof_points TEXT,
+        hours_operations TEXT,
         essential_info TEXT,
+        service_areas TEXT,
+        competitors TEXT,
+        grow_vs_protect TEXT,
+        seasonal_offers TEXT,
+        review_platforms TEXT,
+        booking_flow TEXT,
+        preserve_urls TEXT,
+        photo_assets TEXT,
         design_inspiration TEXT NOT NULL,
         primary_cta VARCHAR(255) NOT NULL,
         branding TEXT NOT NULL,
@@ -65,6 +79,37 @@ async function initializeDatabase() {
     `;
 
     await connection.execute(createQuestionnaireTableQuery);
+
+    // Migrate existing questionnaire_submissions tables with new Local SEO columns
+    const questionnaireColumns = [
+      ['business_name', 'VARCHAR(255) NULL'],
+      ['business_address', 'TEXT NULL'],
+      ['business_phone', 'VARCHAR(50) NULL'],
+      ['top_volume_services', 'TEXT NULL'],
+      ['proof_points', 'TEXT NULL'],
+      ['hours_operations', 'TEXT NULL'],
+      ['service_areas', 'TEXT NULL'],
+      ['competitors', 'TEXT NULL'],
+      ['grow_vs_protect', 'TEXT NULL'],
+      ['seasonal_offers', 'TEXT NULL'],
+      ['review_platforms', 'TEXT NULL'],
+      ['booking_flow', 'TEXT NULL'],
+      ['preserve_urls', 'TEXT NULL'],
+      ['photo_assets', 'TEXT NULL']
+    ];
+
+    for (const [columnName, columnType] of questionnaireColumns) {
+      try {
+        await connection.execute(
+          `ALTER TABLE questionnaire_submissions ADD COLUMN ${columnName} ${columnType}`
+        );
+      } catch (alterError) {
+        // Ignore duplicate column errors on existing databases
+        if (alterError.code !== 'ER_DUP_FIELDNAME') {
+          throw alterError;
+        }
+      }
+    }
 
     // Create contract_submissions table
     const createContractTableQuery = `

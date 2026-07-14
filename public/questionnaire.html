@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fishtown Web Design - Client Questionnaire. Help us understand your business, goals, and design preferences so we can build a website that represents your brand.">
+    <meta name="description" content="Fishtown Web Design - Client Questionnaire. Help us understand your business, local SEO goals, and design preferences so we can build a website that ranks and represents your brand.">
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
     <link rel="canonical" href="https://www.fishtownwebdesign.com/questionnaire" />
 
@@ -170,7 +170,7 @@
                     <span class="cs-topper">Let's Build Your Website</span>
                     <h1 class="cs-title">Client Questionnaire</h1>
                     <p class="cs-text">
-                        Thank you for choosing Fishtown Web Design! This questionnaire helps us understand your business, goals, and design preferences so we can build a website that truly represents your brand. Please take a few minutes to fill it out as thoroughly as possible.
+                        Thank you for choosing Fishtown Web Design! This questionnaire helps us understand your business, local SEO goals, and design preferences so we can build a website that ranks and represents your brand. Please take a few minutes to fill it out as thoroughly as possible.
                     </p>
                     <p class="cs-text">If you have any questions, feel free to reach out—we're here to help!</p>
                 </div>
@@ -220,7 +220,7 @@
                                     </svg>
                                 </div>
                                 <h4>Why We Ask</h4>
-                                <p>These questions help us understand your business and create a website that perfectly matches your brand and goals.</p>
+                                <p>These questions guide your website structure, keyword strategy, Google Business Profile, and design — so we don't guess on the things that drive rankings and bookings.</p>
                             </div>
                             <div class="info-card">
                                 <div class="info-icon">
@@ -231,7 +231,7 @@
                                     </svg>
                                 </div>
                                 <h4>Quick & Easy</h4>
-                                <p>This questionnaire takes about 10-15 minutes to complete. All questions can be answered at your own pace.</p>
+                                <p>This questionnaire takes about 15–20 minutes to complete. All questions can be answered at your own pace.</p>
                             </div>
                         </div>
                     </div>
@@ -243,12 +243,13 @@
                             
                             <div class="form-header">
                                 <div class="stepper" aria-hidden="true">
-                                    <div class="step-text"><span id="stepCurrent">1</span> / 2</div>
+                                    <div class="step-text"><span id="stepCurrent">1</span> / 3</div>
                                     <div class="step-progress"><span id="stepProgressBar"></span></div>
                                 </div>
                                 <div class="step-indicator">
                                     <span class="step-label" data-step="1">Business Info</span>
-                                    <span class="step-label" data-step="2">Design & Features</span>
+                                    <span class="step-label" data-step="2">Local SEO</span>
+                                    <span class="step-label" data-step="3">Design & Features</span>
                                 </div>
                             </div>
 
@@ -259,7 +260,7 @@
                                 </div>
 
                                 <label class="cs-label">
-                                    <span class="label-text">Name <span class="required">*</span></span>
+                                    <span class="label-text">Your Name <span class="required">*</span></span>
                                     <input class="cs-input" required type="text" id="name" name="name" placeholder="Your full name">
                                 </label>
                                 <label class="cs-label cs-email">
@@ -267,24 +268,48 @@
                                     <input class="cs-input" required type="email" id="email" name="email" placeholder="you@example.com">
                                 </label>
                                 <label class="cs-label">
-                                    <span class="label-text">What are the primary services your business offers? (Please list your top 3–4 services.) <span class="required">*</span></span>
-                                    <textarea class="cs-input cs-textarea" required name="primary_services" id="primary_services" placeholder="e.g., Web Design, SEO, Google Ads, Branding"></textarea>
+                                    <span class="label-text">Exact public / legal business name <span class="required">*</span></span>
+                                    <input class="cs-input" required type="text" id="business_name" name="business_name" placeholder="As it should appear on Google and your website">
                                 </label>
                                 <label class="cs-label">
-                                    <span class="label-text">Which two services generate the most revenue for your business? <span class="required">*</span></span>
-                                    <textarea class="cs-input cs-textarea" required name="top_revenue_services" id="top_revenue_services" placeholder="List your top 2 revenue-generating services"></textarea>
+                                    <span class="label-text">Business address <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="business_address" id="business_address" placeholder="Street, city, state, ZIP"></textarea>
                                 </label>
                                 <label class="cs-label">
-                                    <span class="label-text">Tell us about your business. (Share your story, background, expertise, and what sets you apart from competitors.) <span class="required">*</span></span>
+                                    <span class="label-text">Business phone number <span class="required">*</span></span>
+                                    <input class="cs-input" required type="tel" id="business_phone" name="business_phone" placeholder="(555) 555-5555">
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">What are the primary services your business offers? (List your top services.) <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="primary_services" id="primary_services" placeholder="e.g., Haircuts, Color, Balayage, Bridal, Extensions"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Which services generate the most revenue? (List your top 5 if possible.) <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="top_revenue_services" id="top_revenue_services" placeholder="List your top revenue-generating services"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Which services do you perform most often by volume? (List your top 5 if possible.) <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="top_volume_services" id="top_volume_services" placeholder="List your highest-volume services"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Tell us about your business. (Share your story, background, expertise, and what sets you apart.) <span class="required">*</span></span>
                                     <textarea class="cs-input cs-textarea" required name="about_business" id="about_business" placeholder="Tell us your story, experience, and differentiators"></textarea>
                                 </label>
                                 <label class="cs-label">
-                                    <span class="label-text">Why should customers choose your business? (Provide three key reasons that make your business the best choice.) <span class="required">*</span></span>
+                                    <span class="label-text">Why should customers choose your business? (Provide three key reasons.) <span class="required">*</span></span>
                                     <textarea class="cs-input cs-textarea" required name="why_choose_you" id="why_choose_you" placeholder="List three compelling reasons"></textarea>
                                 </label>
                                 <label class="cs-label">
-                                    <span class="label-text">What essential information should visitors know about your business? (Include any details you want prominently featured on your website.)</span>
-                                    <textarea class="cs-input cs-textarea" name="essential_info" id="essential_info" placeholder="Hours, service areas, certifications, guarantees, etc."></textarea>
+                                    <span class="label-text">Proof points we can feature (years in business, awards, press, longtime stylists, photos, testimonials, etc.)</span>
+                                    <textarea class="cs-input cs-textarea" name="proof_points" id="proof_points" placeholder="e.g., 50+ years in York, awards, press mentions, team tenure"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Hours, parking, accessibility, and whether you take walk-ins or appointments only <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="hours_operations" id="hours_operations" placeholder="Hours, parking details, accessibility notes, walk-ins vs appointments"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Any other essential information visitors should know?</span>
+                                    <textarea class="cs-input cs-textarea" name="essential_info" id="essential_info" placeholder="Certifications, guarantees, policies, etc."></textarea>
                                 </label>
                                 <div class="form-actions">
                                     <button type="button" class="cs-button-solid cs-next">Next Step →</button>
@@ -293,32 +318,76 @@
 
                             <div class="form-step" data-step="2">
                                 <div class="step-title">
-                                    <h3>Step 2: Design & Features</h3>
+                                    <h3>Step 2: Local SEO & Growth</h3>
+                                    <p>Help us plan keywords, service pages, and local visibility</p>
+                                </div>
+
+                                <label class="cs-label">
+                                    <span class="label-text">Primary service area / neighborhoods you want to own in search <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="service_areas" id="service_areas" placeholder="e.g., York PA, Springettsbury, West York, Red Lion"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Competitors you lose customers to (names + website links if you have them) <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="competitors" id="competitors" placeholder="List 3–5 competitors with links if possible"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Which services do you want to grow vs. protect? <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="grow_vs_protect" id="grow_vs_protect" placeholder="Grow: ... / Protect: ..."></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Seasonal offers or specialty services (bridal, color, extensions, promotions, etc.)</span>
+                                    <textarea class="cs-input cs-textarea" name="seasonal_offers" id="seasonal_offers" placeholder="Anything seasonal or specialty we should plan pages or content around"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Which review platforms matter most to you? <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="review_platforms" id="review_platforms" placeholder="e.g., Google, Yelp, Facebook, StyleSeat, Meevo"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">How do customers book today, and what booking flow do you want on the new site? <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="booking_flow" id="booking_flow" placeholder="e.g., Meevo online booking, call only, request form then confirm"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Any existing website pages or URLs that must stay live for SEO/history?</span>
+                                    <textarea class="cs-input cs-textarea" name="preserve_urls" id="preserve_urls" placeholder="Blog posts, old service URLs, landing pages we should redirect carefully"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">What photos do you already have vs. what still needs a shoot?</span>
+                                    <textarea class="cs-input cs-textarea" name="photo_assets" id="photo_assets" placeholder="e.g., Have: logo, team headshots / Need: salon interior, service results"></textarea>
+                                </label>
+                                <div class="form-actions">
+                                    <button type="button" class="cs-button-solid cs-back">← Back</button>
+                                    <button type="button" class="cs-button-solid cs-next">Next Step →</button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" data-step="3">
+                                <div class="step-title">
+                                    <h3>Step 3: Design & Features</h3>
                                     <p>Share your design preferences and website requirements</p>
                                 </div>
 
                                 <label class="cs-label">
-                                    <span class="label-text">Are there any website styles or designs you admire? (If possible, provide links to websites you like so we can better understand your preferences.) <span class="required">*</span></span>
+                                    <span class="label-text">Are there any website styles or designs you admire? (If possible, provide links.) <span class="required">*</span></span>
                                     <textarea class="cs-input cs-textarea" required name="design_inspiration" id="design_inspiration" placeholder="Share links and notes on styles you like"></textarea>
                                 </label>
                                 <label class="cs-label">
-                                    <span class="label-text">What call-to-action (CTA) do you want to feature? (e.g., "Schedule a Consultation," "Get a Quote," "Contact Us," etc.) <span class="required">*</span></span>
+                                    <span class="label-text">What call-to-action (CTA) do you want to feature? (e.g., "Book Now," "Call Us," "Schedule a Consultation") <span class="required">*</span></span>
                                     <input class="cs-input" required type="text" id="primary_cta" name="primary_cta" placeholder="Your primary CTA">
                                 </label>
                                 <label class="cs-label">
-                                    <span class="label-text">Do you have a preferred color scheme or branding guidelines? (If yes, please provide details.) <span class="required">*</span></span>
+                                    <span class="label-text">Do you have a preferred color scheme or branding guidelines? <span class="required">*</span></span>
                                     <textarea class="cs-input cs-textarea" required name="branding" id="branding" placeholder="Brand colors, fonts, logo usage, tone, etc."></textarea>
                                 </label>
                                 <label class="cs-label">
-                                    <span class="label-text">Do you need any specific features or functionality? (e.g., contact form, appointment booking, etc) <span class="required">*</span></span>
+                                    <span class="label-text">Do you need any specific features or functionality? (contact form, appointment booking, e-comm, etc.) <span class="required">*</span></span>
                                     <textarea class="cs-input cs-textarea" required name="features" id="features" placeholder="List features and integrations needed"></textarea>
                                 </label>
                                 <label class="cs-label">
-                                    <span class="label-text">Please list all of the web pages you would like to see on your website - subscription plans include a 5 page design (e.g., Home, About, Contact, Booking, Shipping Policy, etc.) <span class="required">*</span></span>
-                                    <textarea class="cs-input cs-textarea" required name="requested_pages" id="requested_pages" placeholder="List your desired pages"></textarea>
+                                    <span class="label-text">Please list the web pages you would like on your website (subscription plans include a 5-page design) <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="requested_pages" id="requested_pages" placeholder="e.g., Home, About, Services, Gallery, Book / Contact"></textarea>
                                 </label>
                                 <label class="cs-label">
-                                    <span class="label-text">How has your experience working with us been so far? (Please share any feedback on our communication, process, and any improvements we can make.)</span>
+                                    <span class="label-text">How has your experience working with us been so far?</span>
                                     <textarea class="cs-input cs-textarea" name="experience_feedback" id="experience_feedback" placeholder="Your feedback"></textarea>
                                 </label>
 
@@ -532,17 +601,20 @@
                 const form = document.getElementById('client-questionnaire-form');
                 if(!form) return;
                 const steps = Array.from(form.querySelectorAll('.form-step'));
-                const nextBtn = form.querySelector('.cs-next');
-                const backBtn = form.querySelector('.cs-back');
+                const nextBtns = Array.from(form.querySelectorAll('.cs-next'));
+                const backBtns = Array.from(form.querySelectorAll('.cs-back'));
                 const stepText = document.getElementById('stepCurrent');
                 const progressBar = document.getElementById('stepProgressBar');
+                const totalSteps = steps.length;
                 let current = 0;
 
                 function showStep(index){
                     steps.forEach((s,i)=>{ s.classList.toggle('active', i===index); });
                     if(stepText) stepText.textContent = String(index+1);
-                    if(progressBar) progressBar.style.width = index === 0 ? '50%' : '100%';
-                    if(backBtn) backBtn.style.display = index === 0 ? 'none' : 'inline-block';
+                    if(progressBar) {
+                        const pct = ((index + 1) / totalSteps) * 100;
+                        progressBar.style.width = pct + '%';
+                    }
                     
                     // Update step indicators
                     const stepLabels = document.querySelectorAll('.step-label');
@@ -570,21 +642,21 @@
                     return true;
                 }
 
-                if(nextBtn){
-                    nextBtn.addEventListener('click', function(){
+                nextBtns.forEach(btn => {
+                    btn.addEventListener('click', function(){
                         if(!validateStep(current)) return;
-                        current = Math.min(current+1, steps.length-1);
+                        current = Math.min(current+1, totalSteps-1);
                         showStep(current);
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     });
-                }
-                if(backBtn){
-                    backBtn.addEventListener('click', function(){
+                });
+                backBtns.forEach(btn => {
+                    btn.addEventListener('click', function(){
                         current = Math.max(current-1, 0);
                         showStep(current);
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     });
-                }
+                });
                 showStep(current);
 
                 // On submit, ensure last step is valid and handle submission

@@ -2354,11 +2354,25 @@ app.post('/submit-questionnaire', async (req, res) => {
     const {
       name,
       email,
+      business_name,
+      business_address,
+      business_phone,
       primary_services,
       top_revenue_services,
+      top_volume_services,
       about_business,
       why_choose_you,
+      proof_points,
+      hours_operations,
       essential_info,
+      service_areas,
+      competitors,
+      grow_vs_protect,
+      seasonal_offers,
+      review_platforms,
+      booking_flow,
+      preserve_urls,
+      photo_assets,
       design_inspiration,
       primary_cta,
       branding,
@@ -2378,10 +2392,20 @@ app.post('/submit-questionnaire', async (req, res) => {
     const requiredFields = [
       name,
       email,
+      business_name,
+      business_address,
+      business_phone,
       primary_services,
       top_revenue_services,
+      top_volume_services,
       about_business,
       why_choose_you,
+      hours_operations,
+      service_areas,
+      competitors,
+      grow_vs_protect,
+      review_platforms,
+      booking_flow,
       design_inspiration,
       primary_cta,
       branding,
@@ -2396,44 +2420,75 @@ app.post('/submit-questionnaire', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Please enter a valid email address.' });
     }
 
+    const optionalText = (value) => (value && String(value).trim() !== '' ? String(value).trim() : null);
+
+    const insertValues = [
+      String(name).trim(),
+      String(email).trim(),
+      String(business_name).trim(),
+      String(business_address).trim(),
+      String(business_phone).trim(),
+      String(primary_services).trim(),
+      String(top_revenue_services).trim(),
+      String(top_volume_services).trim(),
+      String(about_business).trim(),
+      String(why_choose_you).trim(),
+      optionalText(proof_points),
+      String(hours_operations).trim(),
+      optionalText(essential_info),
+      String(service_areas).trim(),
+      String(competitors).trim(),
+      String(grow_vs_protect).trim(),
+      optionalText(seasonal_offers),
+      String(review_platforms).trim(),
+      String(booking_flow).trim(),
+      optionalText(preserve_urls),
+      optionalText(photo_assets),
+      String(design_inspiration).trim(),
+      String(primary_cta).trim(),
+      String(branding).trim(),
+      String(features).trim(),
+      String(requested_pages).trim(),
+      optionalText(experience_feedback)
+    ];
+
+    const insertSql = \INSERT INTO questionnaire_submissions 
+        (name, email, business_name, business_address, business_phone, primary_services, top_revenue_services, top_volume_services, about_business, why_choose_you, proof_points, hours_operations, essential_info, service_areas, competitors, grow_vs_protect, seasonal_offers, review_platforms, booking_flow, preserve_urls, photo_assets, design_inspiration, primary_cta, branding, features, requested_pages, experience_feedback)
+       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\;
+
     const connection = await pool.getConnection();
-    await connection.execute(
-      `INSERT INTO questionnaire_submissions 
-        (name, email, primary_services, top_revenue_services, about_business, why_choose_you, essential_info, design_inspiration, primary_cta, branding, features, requested_pages, experience_feedback)
-       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-      [
-        String(name).trim(),
-        String(email).trim(),
-        String(primary_services).trim(),
-        String(top_revenue_services).trim(),
-        String(about_business).trim(),
-        String(why_choose_you).trim(),
-        essential_info ? String(essential_info).trim() : null,
-        String(design_inspiration).trim(),
-        String(primary_cta).trim(),
-        String(branding).trim(),
-        String(features).trim(),
-        String(requested_pages).trim(),
-        experience_feedback ? String(experience_feedback).trim() : null
-      ]
-    );
+    await connection.execute(insertSql, insertValues);
     connection.release();
 
     logger.info('Questionnaire submission saved', { email });
     return res.json({ success: true, message: 'Your questionnaire has been submitted successfully! We will review it and follow up within 1 business day.' });
   } catch (error) {
-    // If table does not exist yet, initialize schema then retry once
-    if (error && (error.code === 'ER_NO_SUCH_TABLE' || /doesn't exist/i.test(error.message))) {
+    // If table/columns are missing, initialize schema then retry once
+    if (error && (error.code === 'ER_NO_SUCH_TABLE' || error.code === 'ER_BAD_FIELD_ERROR' || /doesn't exist/i.test(error.message))) {
       try {
         await initializeDatabase();
         const {
           name,
           email,
+          business_name,
+          business_address,
+          business_phone,
           primary_services,
           top_revenue_services,
+          top_volume_services,
           about_business,
           why_choose_you,
+          proof_points,
+          hours_operations,
           essential_info,
+          service_areas,
+          competitors,
+          grow_vs_protect,
+          seasonal_offers,
+          review_platforms,
+          booking_flow,
+          preserve_urls,
+          photo_assets,
           design_inspiration,
           primary_cta,
           branding,
@@ -2441,27 +2496,45 @@ app.post('/submit-questionnaire', async (req, res) => {
           requested_pages,
           experience_feedback
         } = req.body || {};
+
+        const optionalText = (value) => (value && String(value).trim() !== '' ? String(value).trim() : null);
+
+        const insertValues = [
+          String(name).trim(),
+          String(email).trim(),
+          String(business_name).trim(),
+          String(business_address).trim(),
+          String(business_phone).trim(),
+          String(primary_services).trim(),
+          String(top_revenue_services).trim(),
+          String(top_volume_services).trim(),
+          String(about_business).trim(),
+          String(why_choose_you).trim(),
+          optionalText(proof_points),
+          String(hours_operations).trim(),
+          optionalText(essential_info),
+          String(service_areas).trim(),
+          String(competitors).trim(),
+          String(grow_vs_protect).trim(),
+          optionalText(seasonal_offers),
+          String(review_platforms).trim(),
+          String(booking_flow).trim(),
+          optionalText(preserve_urls),
+          optionalText(photo_assets),
+          String(design_inspiration).trim(),
+          String(primary_cta).trim(),
+          String(branding).trim(),
+          String(features).trim(),
+          String(requested_pages).trim(),
+          optionalText(experience_feedback)
+        ];
+
+        const insertSql = \INSERT INTO questionnaire_submissions 
+            (name, email, business_name, business_address, business_phone, primary_services, top_revenue_services, top_volume_services, about_business, why_choose_you, proof_points, hours_operations, essential_info, service_areas, competitors, grow_vs_protect, seasonal_offers, review_platforms, booking_flow, preserve_urls, photo_assets, design_inspiration, primary_cta, branding, features, requested_pages, experience_feedback)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\;
+
         const connection = await pool.getConnection();
-        await connection.execute(
-          `INSERT INTO questionnaire_submissions 
-            (name, email, primary_services, top_revenue_services, about_business, why_choose_you, essential_info, design_inspiration, primary_cta, branding, features, requested_pages, experience_feedback)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-          [
-            String(name).trim(),
-            String(email).trim(),
-            String(primary_services).trim(),
-            String(top_revenue_services).trim(),
-            String(about_business).trim(),
-            String(why_choose_you).trim(),
-            essential_info ? String(essential_info).trim() : null,
-            String(design_inspiration).trim(),
-            String(primary_cta).trim(),
-            String(branding).trim(),
-            String(features).trim(),
-            String(requested_pages).trim(),
-            experience_feedback ? String(experience_feedback).trim() : null
-          ]
-        );
+        await connection.execute(insertSql, insertValues);
         connection.release();
         logger.info('Questionnaire submission saved after schema init', { email });
         return res.json({ success: true, message: 'Your questionnaire has been submitted successfully! We will review it and follow up within 1 business day.' });
