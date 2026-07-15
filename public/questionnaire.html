@@ -701,18 +701,38 @@
                         const result = await response.json();
 
                         if (result.success) {
-                            // Email forms@fishtownwebdesign.com via EmailForms (non-blocking on failure)
+                            // Email forms@ via EmailForms. Send a condensed payload:
+                            // raw questionnaire fields often include several URLs, which
+                            // EmailForms pattern-spam rejects (and our UI previously ignored that).
                             try {
-                                await fetch('https://forms.fishtownwebdesign.com/api/submit', {
+                                const neutralizeUrls = (value) =>
+                                    String(value ?? '').replace(/https?:\/\//gi, '');
+                                const skipKeys = new Set(['apiKey', 'subject', 'from_name', 'botcheck']);
+                                const message = Object.keys(data)
+                                    .filter((key) => !skipKeys.has(key) && data[key])
+                                    .map((key) => `${key}:\n${neutralizeUrls(data[key])}`)
+                                    .join('\n\n');
+
+                                const emailRes = await fetch('https://forms.fishtownwebdesign.com/api/submit', {
                                     method: 'POST',
                                     headers: {
                                         'Content-Type': 'application/json',
                                     },
                                     body: JSON.stringify({
-                                        ...data,
+                                        apiKey: data.apiKey,
+                                        subject: data.subject,
+                                        from_name: data.from_name,
+                                        name: data.name,
+                                        email: data.email,
+                                        phone: data.business_phone || '',
+                                        message,
                                         botcheck: ''
                                     })
                                 });
+                                const emailResult = await emailRes.json().catch(() => ({}));
+                                if (!emailRes.ok || !emailResult.success) {
+                                    console.error('Questionnaire email failed:', emailRes.status, emailResult);
+                                }
                             } catch (emailError) {
                                 console.error('Questionnaire email notification failed:', emailError);
                             }
