@@ -240,7 +240,11 @@
                     <div class="cs-form-wrapper">
                         <!--Form-->
                         <form action="/submit-questionnaire" method="POST" class="cs-form" id="client-questionnaire-form" name="Client Questionnaire">
-                            
+                            <!-- EmailForms: same apiKey as contact → emails forms@fishtownwebdesign.com -->
+                            <input type="hidden" name="apiKey" value="xJHLRHotYucwbBra5mnduC5FMfFR07HM">
+                            <input type="hidden" name="subject" value="New Client Questionnaire from Fishtown Web Design">
+                            <input type="hidden" name="from_name" value="Fishtown Web Design Questionnaire">
+
                             <div class="form-header">
                                 <div class="stepper" aria-hidden="true">
                                     <div class="step-text"><span id="stepCurrent">1</span> / 3</div>
@@ -685,7 +689,7 @@
                             data[key] = value;
                         });
 
-                        // Send to server
+                        // Save to site DB
                         const response = await fetch('/submit-questionnaire', {
                             method: 'POST',
                             headers: {
@@ -697,6 +701,22 @@
                         const result = await response.json();
 
                         if (result.success) {
+                            // Email forms@fishtownwebdesign.com via EmailForms (non-blocking on failure)
+                            try {
+                                await fetch('https://forms.fishtownwebdesign.com/api/submit', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                    },
+                                    body: JSON.stringify({
+                                        ...data,
+                                        botcheck: ''
+                                    })
+                                });
+                            } catch (emailError) {
+                                console.error('Questionnaire email notification failed:', emailError);
+                            }
+
                             // Show success modal
                             const modal = document.getElementById('responseModal');
                             const modalMessage = document.getElementById('modal-message');
