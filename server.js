@@ -1153,8 +1153,8 @@ ${contractCss}
 
     // Calculate service fee based on plan type (normalizedPlanType already defined above)
     const serviceFee = normalizedPlanType === 'monthly' 
-      ? '$150.00 per month, payable in advance, subject to the terms of Section 2.5 herein.'
-      : '$1,499.00 per year, payable in advance, subject to the terms of Section 2.5 herein.';
+      ? '$150.00 per month, payable in advance, subject to the terms of Section 3 herein.'
+      : '$1,499.00 per year, payable in advance, subject to the terms of Section 3 herein.';
     
     logger.info('Service fee calculated', { 
       requestId, 
