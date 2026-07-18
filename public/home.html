@@ -1079,16 +1079,11 @@
                 <h2 class="cs-title">Tell Us About Your Project</h2>
                 <!--Form-->
                 <form action="https://forms.fishtownwebdesign.com/api/submit" method="POST" class="cs-form" id="cs-form-1105" name="Contact Form">
-                    <!-- Replace with your Access Key -->
+                    <!-- EmailForms API key (client: Fishtown Web Design → forms@fishtownwebdesign.com) -->
                     <input type="hidden" name="apiKey" value="xJHLRHotYucwbBra5mnduC5FMfFR07HM">
-                    
-                    <!-- Optional: Subject for the email -->
                     <input type="hidden" name="subject" value="New Appointment Request from Fishtown Web Design">
-                    
-                    <!-- Optional: From Name in email -->
                     <input type="hidden" name="from_name" value="Fishtown Web Design Website">
-                    
-                    <!-- Custom Redirection to show modal -->
+                    <!-- Redirect back here so the success modal opens via #success -->
                     <input type="hidden" name="redirect" value="https://www.fishtownwebdesign.com/#success">
                     
                     <label class="cs-label">
@@ -1107,8 +1102,8 @@
                         Message
                         <textarea class="cs-input cs-textarea" required name="message" id="message-1105" placeholder="Write message..."></textarea>
                     </label>
-                    <!-- Honeypot Spam Protection -->
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <!-- Honeypot: leave empty (EmailForms rejects non-empty botcheck) -->
+                    <input type="text" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" style="display: none;" aria-hidden="true">
 
                     <button class="cs-button-solid cs-submit" type="submit">Send It</button>
                 </form>
@@ -1721,7 +1716,7 @@
             }, 300);
         }
 
-        // Check if we're returning from Web3Forms submission (URL has #success)
+        // Check if we're returning from EmailForms submission (URL has #success)
         if (window.location.hash === '#success') {
             // Show the success modal
             document.querySelector('#modal-message').textContent = 'Your appointment request has been submitted successfully! We will get back to you within 1 business day.';
