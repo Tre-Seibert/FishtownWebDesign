@@ -324,16 +324,11 @@
                         </p>
                         <!--Form-->
                         <form action="https://forms.fishtownwebdesign.com/api/submit" method="POST" class="cs-form" id="cs-form-1105" name="Contact Form">
-                            <!-- Replace with your Access Key -->
+                            <!-- EmailForms API key (client: Fishtown Web Design → forms@fishtownwebdesign.com) -->
                             <input type="hidden" name="apiKey" value="xJHLRHotYucwbBra5mnduC5FMfFR07HM">
-                            
-                            <!-- Optional: Subject for the email -->
                             <input type="hidden" name="subject" value="New Appointment Request from Fishtown Web Design">
-                            
-                            <!-- Optional: From Name in email -->
                             <input type="hidden" name="from_name" value="Fishtown Web Design Website">
-                            
-                            <!-- Custom Redirection to show modal -->
+                            <!-- Redirect back here so the success modal opens via #success -->
                             <input type="hidden" name="redirect" value="https://www.fishtownwebdesign.com/contact#success">
                             
                             <label class="cs-label">
@@ -352,8 +347,8 @@
                                 Message
                                 <textarea class="cs-input cs-textarea" required name="message" id="message-1105" placeholder="Tell us about your project..."></textarea>
                             </label>
-                            <!-- Honeypot Spam Protection -->
-                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                            <!-- Honeypot: leave empty (EmailForms rejects non-empty botcheck) -->
+                            <input type="text" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" style="display: none;" aria-hidden="true">
 
                             <p style="font-size: 0.8rem; color: var(--text-body); margin: 0.75rem 0 1rem 0; line-height: 1.5;">
                                 By submitting this form, you agree to our <a href="/pp" style="color: var(--primary); text-decoration: underline;">Privacy Policy</a> and consent to being contacted regarding your inquiry.
@@ -548,7 +543,7 @@
                 }, 300);
             }
 
-            // Check if we're returning from Web3Forms submission (URL has #success)
+            // Check if we're returning from EmailForms submission (URL has #success)
             if (window.location.hash === '#success') {
                 // Show the success modal
                 document.querySelector('#modal-message').textContent = 'Your appointment request has been submitted successfully! We will get back to you within 1 business day.';
