@@ -87,6 +87,12 @@ const ALLOWED_BLOG_POSTS = [
 // Allowed category slugs
 const ALLOWED_CATEGORIES = ['web-design', 'case-studies'];
 
+// Blog categories that no longer exist but are still indexed by Google.
+// Mapped to the closest live page so the 404s become 301s.
+const RETIRED_CATEGORY_REDIRECTS = {
+  'seo': '/seo',
+};
+
 // Force HTTPS redirect (before www redirect)
 // Skip if behind a proxy (Cloudflare, AWS ALB, etc.) - they handle HTTPS redirects
 app.use((req, res, next) => {
@@ -192,6 +198,7 @@ async function generateSitemap() {
       { url: '/web-design', changefreq: 'weekly', priority: 0.95 },
       { url: '/blog', changefreq: 'weekly', priority: 0.9 },
       { url: '/seo', changefreq: 'monthly', priority: 0.8 },
+      { url: '/philadelphia-web-developers', changefreq: 'monthly', priority: 0.9, lastmod: '2026-09-13' },
       { url: '/saas-development', changefreq: 'monthly', priority: 0.8 },
       { url: '/app-development', changefreq: 'monthly', priority: 0.8 },
       { url: '/charity', changefreq: 'monthly', priority: 0.8 },
@@ -2040,11 +2047,19 @@ app.get('/blog/category/:categorySlug', async (req, res) => {
     const { categorySlug } = req.params;
     logger.info('Blog category request received', { categorySlug });
     
-    // Check if category is allowed
+    // Retired categories Google still has indexed — send them to the closest
+    // live page instead of a 404 so the existing link equity isn't dropped.
+    if (RETIRED_CATEGORY_REDIRECTS[categorySlug]) {
+      logger.info('301 redirect: retired blog category', { categorySlug });
+      return res.redirect(301, RETIRED_CATEGORY_REDIRECTS[categorySlug]);
+    }
+
+    // Check if category is allowed. 410 rather than 404 so Google drops these
+    // permanently instead of re-crawling them for months.
     if (!ALLOWED_CATEGORIES.includes(categorySlug)) {
       logger.warn('Unauthorized category access attempt', { categorySlug });
       res.set('X-Robots-Tag', 'noindex');
-      return res.status(404).send('Category not found.');
+      return res.status(410).send('Category no longer exists.');
     }
     
     // Convert slug back to category name for filtering
@@ -2315,6 +2330,7 @@ app.get('/seo', (req, res) => res.sendFile(path.join(__dirname, 'public/seo.html
 app.get('/saas-development', (req, res) => res.sendFile(path.join(__dirname, 'public/saas-development.html')));
 app.get('/app-development', (req, res) => res.sendFile(path.join(__dirname, 'public/app-development.html')));
 app.get('/charity', (req, res) => res.sendFile(path.join(__dirname, 'public/charity.html')));
+app.get('/philadelphia-web-developers', (req, res) => res.sendFile(path.join(__dirname, 'public/philadelphia-web-developers.html')));
 app.get('/unsubscribe', (req, res) => res.sendFile(path.join(__dirname, 'public/unsubscribe.html')));
 
 // Industry-specific landing pages
