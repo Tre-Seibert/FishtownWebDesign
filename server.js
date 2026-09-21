@@ -2571,6 +2571,109 @@ app.post('/submit-questionnaire', async (req, res) => {
   }
 });
 
+// Nonprofit questionnaire (free website program).
+// Field order matches the nonprofit_questionnaire_submissions columns in database.js.
+const NONPROFIT_QUESTIONNAIRE_FIELDS = [
+  { name: 'name', required: true, max: 255 },
+  { name: 'email', required: true, max: 255 },
+  { name: 'contact_role', required: false, max: 255 },
+  { name: 'organization_name', required: true, max: 255 },
+  { name: 'nonprofit_status', required: true, max: 255 },
+  { name: 'org_address', required: true },
+  { name: 'org_phone', required: true, max: 50 },
+  { name: 'mission', required: true },
+  { name: 'programs', required: true },
+  { name: 'who_you_serve', required: true },
+  { name: 'impact_proof', required: false },
+  { name: 'website_goals', required: true },
+  { name: 'audiences', required: true },
+  { name: 'primary_cta', required: true, max: 255 },
+  { name: 'donations', required: false },
+  { name: 'volunteers', required: false },
+  { name: 'events', required: false },
+  { name: 'branding', required: true },
+  { name: 'requested_pages', required: true },
+  { name: 'photos_content', required: true },
+  { name: 'features', required: false },
+  { name: 'accessibility_needs', required: false },
+  { name: 'design_inspiration', required: false },
+  { name: 'current_website', required: false, max: 255 },
+  { name: 'domain_and_accounts', required: true },
+  { name: 'approvers', required: false },
+  { name: 'timeline', required: false },
+  { name: 'how_heard', required: false, max: 255 },
+  { name: 'anything_else', required: false }
+];
+const NONPROFIT_TEXT_MAX = 10000;
+
+app.get('/nonprofit-questionnaire', (req, res) => {
+  res.set('X-Robots-Tag', 'noindex, nofollow, noarchive, nosnippet');
+  return res.sendFile(path.join(__dirname, 'public/nonprofit-questionnaire.html'));
+});
+
+async function insertNonprofitQuestionnaire(values) {
+  const columns = NONPROFIT_QUESTIONNAIRE_FIELDS.map((f) => f.name).join(', ');
+  const placeholders = NONPROFIT_QUESTIONNAIRE_FIELDS.map(() => '?').join(',');
+  const connection = await pool.getConnection();
+  try {
+    await connection.execute(
+      `INSERT INTO nonprofit_questionnaire_submissions (${columns}) VALUES (${placeholders})`,
+      values
+    );
+  } finally {
+    connection.release();
+  }
+}
+
+app.post('/submit-nonprofit-questionnaire', async (req, res) => {
+  res.set('X-Robots-Tag', 'noindex, nofollow, noarchive, nosnippet');
+  const body = req.body || {};
+
+  // Honeypot check
+  if (body.botcheck) {
+    logger.warn('Bot submission blocked on nonprofit questionnaire');
+    return res.status(200).json({ success: true, message: 'OK' });
+  }
+
+  const values = [];
+  for (const field of NONPROFIT_QUESTIONNAIRE_FIELDS) {
+    const raw = body[field.name];
+    const value = typeof raw === 'string' ? raw.trim() : '';
+    if (field.required && !value) {
+      return res.status(400).json({ success: false, message: 'Please complete all required fields.' });
+    }
+    if (value.length > (field.max || NONPROFIT_TEXT_MAX)) {
+      return res.status(400).json({ success: false, message: 'One of your answers is too long. Please shorten it and try again.' });
+    }
+    values.push(value || null);
+  }
+
+  const email = values[NONPROFIT_QUESTIONNAIRE_FIELDS.findIndex((f) => f.name === 'email')];
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ success: false, message: 'Please enter a valid email address.' });
+  }
+
+  try {
+    try {
+      await insertNonprofitQuestionnaire(values);
+    } catch (error) {
+      // If the table/columns are missing, initialize schema then retry once
+      if (error.code !== 'ER_NO_SUCH_TABLE' && error.code !== 'ER_BAD_FIELD_ERROR') throw error;
+      await initializeDatabase();
+      await insertNonprofitQuestionnaire(values);
+    }
+
+    logger.info('Nonprofit questionnaire submission saved', { email });
+    return res.json({ success: true, message: "Your questionnaire is in. We'll review it and follow up by email." });
+  } catch (error) {
+    logger.error('Error handling nonprofit questionnaire submission', {
+      error: error.message,
+      stack: error.stack
+    });
+    return res.status(500).json({ success: false, message: 'There was an error submitting your questionnaire. Please try again later.' });
+  }
+});
+
 // Test endpoint to verify DocuSeal API connection (remove in production)
 app.get('/api/test/docuseal', async (req, res) => {
   res.set('X-Robots-Tag', 'noindex, nofollow, noarchive, nosnippet');

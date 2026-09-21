@@ -111,6 +111,45 @@ async function initializeDatabase() {
       }
     }
 
+    // Create nonprofit_questionnaire_submissions table (free website program intake)
+    const createNonprofitQuestionnaireTableQuery = `
+      CREATE TABLE IF NOT EXISTS nonprofit_questionnaire_submissions (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        contact_role VARCHAR(255),
+        organization_name VARCHAR(255) NOT NULL,
+        nonprofit_status VARCHAR(255) NOT NULL,
+        org_address TEXT NOT NULL,
+        org_phone VARCHAR(50) NOT NULL,
+        mission TEXT NOT NULL,
+        programs TEXT NOT NULL,
+        who_you_serve TEXT NOT NULL,
+        impact_proof TEXT,
+        website_goals TEXT NOT NULL,
+        audiences TEXT NOT NULL,
+        primary_cta VARCHAR(255) NOT NULL,
+        donations TEXT,
+        volunteers TEXT,
+        events TEXT,
+        branding TEXT NOT NULL,
+        requested_pages TEXT NOT NULL,
+        photos_content TEXT NOT NULL,
+        features TEXT,
+        accessibility_needs TEXT,
+        design_inspiration TEXT,
+        current_website VARCHAR(255),
+        domain_and_accounts TEXT NOT NULL,
+        approvers TEXT,
+        timeline TEXT,
+        how_heard VARCHAR(255),
+        anything_else TEXT,
+        submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `;
+
+    await connection.execute(createNonprofitQuestionnaireTableQuery);
+
     // Create contract_submissions table
     const createContractTableQuery = `
       CREATE TABLE IF NOT EXISTS contract_submissions (
