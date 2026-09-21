@@ -231,7 +231,7 @@
                                     </svg>
                                 </div>
                                 <h4>Quick & Easy</h4>
-                                <p>About 15 minutes. You can't save partway, so have your EIN, logo and domain details handy before you start.</p>
+                                <p>About 15–20 minutes. You can't save partway, so have your logo, brand colors and domain details handy before you start.</p>
                             </div>
                         </div>
                     </div>
@@ -278,10 +278,6 @@
                                 <label class="cs-label">
                                     <span class="label-text">Organization's legal name <span class="required">*</span></span>
                                     <input class="cs-input" required type="text" id="organization_name" name="organization_name" placeholder="As registered with the IRS" maxlength="255">
-                                </label>
-                                <label class="cs-label">
-                                    <span class="label-text">Tax-exempt status and EIN <span class="required">*</span></span>
-                                    <input class="cs-input" required type="text" id="nonprofit_status" name="nonprofit_status" placeholder="e.g., 501(c)(3), EIN 12-3456789" maxlength="255">
                                 </label>
                                 <label class="cs-label">
                                     <span class="label-text">Organization address <span class="required">*</span></span>
@@ -332,6 +328,10 @@
                                     <input class="cs-input" required type="text" id="primary_cta" name="primary_cta" placeholder="Your primary CTA" maxlength="255">
                                 </label>
                                 <label class="cs-label">
+                                    <span class="label-text">If a first-time visitor spends 10 seconds on the homepage, what should they do or see first? Rank donate, volunteer, calendar, newsletter, shop, other. <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="first_impression" id="first_impression" placeholder="e.g., 1. Donate, 2. Volunteer, 3. Calendar, 4. Newsletter, 5. Shop, 6. Other: (say what)" maxlength="10000"></textarea>
+                                </label>
+                                <label class="cs-label">
                                     <span class="label-text">How do people give today, and how do you want them to give on the site? (PayPal, Zeffy, Donorbox, checks, none.)</span>
                                     <textarea class="cs-input cs-textarea" name="donations" id="donations" placeholder="Or write &#x27;we don&#x27;t take online donations&#x27;" maxlength="10000"></textarea>
                                 </label>
@@ -343,6 +343,18 @@
                                     <span class="label-text">Recurring events or programs with dates the site should show? (Galas, drives, classes, meetings.)</span>
                                     <textarea class="cs-input cs-textarea" name="events" id="events" placeholder="e.g., Monthly food drive, annual gala in October" maxlength="10000"></textarea>
                                 </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Which tool sends your newsletter (Mailchimp, Constant Contact, other), and who manages it?</span>
+                                    <input class="cs-input" type="text" id="newsletter_tool" name="newsletter_tool" placeholder="e.g., Mailchimp, managed by our office manager" maxlength="255">
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Which social media accounts should we link?</span>
+                                    <input class="cs-input" type="text" id="social_accounts" name="social_accounts" placeholder="e.g., Instagram and Facebook handles or links" maxlength="255">
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">What do people most often call, email or ask about that the site should answer?</span>
+                                    <textarea class="cs-input cs-textarea" name="common_questions" id="common_questions" placeholder="e.g., Where do I pick up food? How do I sign up my kid? Are you hiring?" maxlength="10000"></textarea>
+                                </label>
 
                                 <div class="form-actions">
                                     <button type="button" class="cs-button-solid cs-back">← Back</button>
@@ -353,20 +365,28 @@
                             <div class="form-step" data-step="3">
                                 <div class="step-title">
                                     <h3>Step 3: Design, Content &amp; Launch</h3>
-                                    <p>Tell us what you have and what we need to get it live</p>
+                                    <p>Tell us how the site should look and feel, and what we need to build it</p>
                                 </div>
 
                                 <label class="cs-label">
-                                    <span class="label-text">Do you have a logo, brand colors, or fonts? If not, say so. We'll work with what you've got. <span class="required">*</span></span>
-                                    <textarea class="cs-input cs-textarea" required name="branding" id="branding" placeholder="Logo files, colors, fonts, tone, or &quot;none yet&quot;" maxlength="10000"></textarea>
+                                    <span class="label-text">Do you have a logo, brand colors, or fonts? If not, say so. We'll work with what you've got. Are there colors or fonts you want to keep or avoid? <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="branding" id="branding" placeholder="Logo files, colors and fonts to keep, colors or fonts to avoid, or &quot;none yet&quot;" maxlength="10000"></textarea>
                                 </label>
                                 <label class="cs-label">
-                                    <span class="label-text">Which pages do you want? (The free program includes up to 5.) <span class="required">*</span></span>
-                                    <textarea class="cs-input cs-textarea" required name="requested_pages" id="requested_pages" placeholder="e.g., Home, About, Programs, Get Involved, Contact" maxlength="10000"></textarea>
+                                    <span class="label-text">Pick 3–5 words for how the organization should feel, and 3 words it should not feel like. <span class="required">*</span></span>
+                                    <input class="cs-input" required type="text" id="brand_words" name="brand_words" placeholder="Should feel: warm, local, hopeful. Should not feel: corporate, slick, preachy" maxlength="255">
                                 </label>
                                 <label class="cs-label">
-                                    <span class="label-text">What photos and written content do you already have? Do you have permission to publish photos of the people you serve? <span class="required">*</span></span>
-                                    <textarea class="cs-input cs-textarea" required name="photos_content" id="photos_content" placeholder="Have: logo, event photos / Need: staff photos, program photos / Photo permission: yes, no, or not sure" maxlength="10000"></textarea>
+                                    <span class="label-text">Any nonprofit sites you admire? (Links help.) For each one, what do you like about it (layout, colors, photos, tone)? Are there any you dislike?</span>
+                                    <textarea class="cs-input cs-textarea" name="design_inspiration" id="design_inspiration" placeholder="Links, plus what you like or dislike about each" maxlength="10000"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">What kind of photos represent you best: people at events, streets and buildings, or a mix? Who owns your existing photos?</span>
+                                    <textarea class="cs-input cs-textarea" name="photo_style" id="photo_style" placeholder="e.g., Mostly people at events, a few of the building. A volunteer took them and we&#x27;re not sure who owns them" maxlength="10000"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">What do you like and dislike about your current site? Where do neighbors get stuck? <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="current_site_feedback" id="current_site_feedback" placeholder="e.g., Like: the photos. Dislike: the donate button is hard to find. People get stuck finding event dates. (No site yet? Say so.)" maxlength="10000"></textarea>
                                 </label>
                                 <label class="cs-label">
                                     <span class="label-text">Anything specific the site needs? (Donate button, event calendar, volunteer form, newsletter signup, etc.)</span>
@@ -376,10 +396,12 @@
                                     <span class="label-text">Accessibility or language needs for your audience? (Translations, screen readers, low bandwidth.)</span>
                                     <textarea class="cs-input cs-textarea" name="accessibility_needs" id="accessibility_needs" placeholder="e.g., Spanish and English, mostly visitors on older phones" maxlength="10000"></textarea>
                                 </label>
-                                <label class="cs-label">
-                                    <span class="label-text">Any nonprofit sites you admire? (Links help.)</span>
-                                    <textarea class="cs-input cs-textarea" name="design_inspiration" id="design_inspiration" placeholder="Share links and notes on styles you like" maxlength="10000"></textarea>
-                                </label>
+
+                                <div class="step-title" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);">
+                                    <h3>Access &amp; Migration</h3>
+                                    <p>We need these before the build starts.</p>
+                                </div>
+
                                 <label class="cs-label">
                                     <span class="label-text">Current website, if you have one</span>
                                     <input class="cs-input" type="text" id="current_website" name="current_website" placeholder="yourorg.org" maxlength="255">
@@ -389,9 +411,27 @@
                                     <textarea class="cs-input cs-textarea" required name="domain_and_accounts" id="domain_and_accounts" placeholder="e.g., Domain at GoDaddy, login is with our treasurer, email runs on Google Workspace" maxlength="10000"></textarea>
                                 </label>
                                 <label class="cs-label">
-                                    <span class="label-text">Who signs off before launch? (Executive director, board, anyone else who needs to see it.)</span>
-                                    <textarea class="cs-input cs-textarea" name="approvers" id="approvers" placeholder="Names and roles" maxlength="10000"></textarea>
+                                    <span class="label-text">For each tool you use (Printful, Givebutter, Typeform, Google Workspace/Calendar, Zoom, YouTube, Google Analytics), who holds the login? <span class="required">*</span></span>
+                                    <textarea class="cs-input cs-textarea" required name="tool_logins" id="tool_logins" placeholder="e.g., Givebutter: treasurer / Google Workspace: office manager / Zoom: not sure" maxlength="10000"></textarea>
                                 </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Do you already have a Squarespace account? Who should own it?</span>
+                                    <input class="cs-input" type="text" id="squarespace" name="squarespace" placeholder="e.g., Yes, under our founder&#x27;s personal email. It should move to the org email" maxlength="255">
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Do flyers, QR codes, social posts or partner sites link to specific pages on your current site?</span>
+                                    <textarea class="cs-input cs-textarea" name="inbound_links" id="inbound_links" placeholder="e.g., The QR code on our flyers goes to /volunteer, and a partner links to our events page" maxlength="10000"></textarea>
+                                </label>
+                                <label class="cs-label">
+                                    <span class="label-text">Who should receive contact-form messages, and do different topics go to different people?</span>
+                                    <textarea class="cs-input cs-textarea" name="contact_routing" id="contact_routing" placeholder="e.g., General messages to info@, volunteer questions to Maria, press to the director" maxlength="10000"></textarea>
+                                </label>
+
+                                <div class="step-title" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);">
+                                    <h3>Almost Done</h3>
+                                    <p>Last few questions.</p>
+                                </div>
+
                                 <label class="cs-label">
                                     <span class="label-text">Any deadlines? (A gala, grant deadline, campaign launch.)</span>
                                     <textarea class="cs-input cs-textarea" name="timeline" id="timeline" placeholder="Dates we should plan around" maxlength="10000"></textarea>

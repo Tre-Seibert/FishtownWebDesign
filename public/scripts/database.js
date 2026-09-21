@@ -119,7 +119,6 @@ async function initializeDatabase() {
         email VARCHAR(255) NOT NULL,
         contact_role VARCHAR(255),
         organization_name VARCHAR(255) NOT NULL,
-        nonprofit_status VARCHAR(255) NOT NULL,
         org_address TEXT NOT NULL,
         org_phone VARCHAR(50) NOT NULL,
         mission TEXT NOT NULL,
@@ -129,18 +128,26 @@ async function initializeDatabase() {
         website_goals TEXT NOT NULL,
         audiences TEXT NOT NULL,
         primary_cta VARCHAR(255) NOT NULL,
+        first_impression TEXT NOT NULL,
         donations TEXT,
         volunteers TEXT,
         events TEXT,
+        newsletter_tool VARCHAR(255),
+        social_accounts VARCHAR(255),
+        common_questions TEXT,
         branding TEXT NOT NULL,
-        requested_pages TEXT NOT NULL,
-        photos_content TEXT NOT NULL,
+        brand_words VARCHAR(255) NOT NULL,
+        design_inspiration TEXT,
+        photo_style TEXT,
+        current_site_feedback TEXT NOT NULL,
         features TEXT,
         accessibility_needs TEXT,
-        design_inspiration TEXT,
         current_website VARCHAR(255),
         domain_and_accounts TEXT NOT NULL,
-        approvers TEXT,
+        tool_logins TEXT NOT NULL,
+        squarespace VARCHAR(255),
+        inbound_links TEXT,
+        contact_routing TEXT,
         timeline TEXT,
         how_heard VARCHAR(255),
         anything_else TEXT,
@@ -149,6 +156,55 @@ async function initializeDatabase() {
     `;
 
     await connection.execute(createNonprofitQuestionnaireTableQuery);
+
+    // Migrate nonprofit_questionnaire_submissions tables created with an earlier question set
+    const nonprofitQuestionnaireColumns = [
+      ['first_impression', 'TEXT NULL'],
+      ['common_questions', 'TEXT NULL'],
+      ['newsletter_tool', 'VARCHAR(255) NULL'],
+      ['social_accounts', 'VARCHAR(255) NULL'],
+      ['brand_words', 'VARCHAR(255) NULL'],
+      ['current_site_feedback', 'TEXT NULL'],
+      ['photo_style', 'TEXT NULL'],
+      ['tool_logins', 'TEXT NULL'],
+      ['squarespace', 'VARCHAR(255) NULL'],
+      ['inbound_links', 'TEXT NULL'],
+      ['contact_routing', 'TEXT NULL']
+    ];
+
+    for (const [columnName, columnType] of nonprofitQuestionnaireColumns) {
+      try {
+        await connection.execute(
+          `ALTER TABLE nonprofit_questionnaire_submissions ADD COLUMN ${columnName} ${columnType}`
+        );
+      } catch (alterError) {
+        // Ignore duplicate column errors on existing databases
+        if (alterError.code !== 'ER_DUP_FIELDNAME') {
+          throw alterError;
+        }
+      }
+    }
+
+    // These questions were removed from the form. Keep the columns and any saved answers, but make them optional.
+    const retiredNonprofitQuestionnaireColumns = [
+      ['nonprofit_status', 'VARCHAR(255)'],
+      ['approvers', 'TEXT'],
+      ['requested_pages', 'TEXT'],
+      ['photos_content', 'TEXT']
+    ];
+
+    for (const [columnName, columnType] of retiredNonprofitQuestionnaireColumns) {
+      try {
+        await connection.execute(
+          `ALTER TABLE nonprofit_questionnaire_submissions MODIFY COLUMN ${columnName} ${columnType} NULL`
+        );
+      } catch (alterError) {
+        // Fresh databases never had these columns
+        if (alterError.code !== 'ER_BAD_FIELD_ERROR') {
+          throw alterError;
+        }
+      }
+    }
 
     // Create contract_submissions table
     const createContractTableQuery = `
