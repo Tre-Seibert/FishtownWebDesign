@@ -2572,13 +2572,12 @@ app.post('/submit-questionnaire', async (req, res) => {
 });
 
 // Nonprofit questionnaire (free website program).
-// Field order matches the nonprofit_questionnaire_submissions columns in database.js.
+// Field names match the nonprofit_questionnaire_submissions columns in database.js.
 const NONPROFIT_QUESTIONNAIRE_FIELDS = [
   { name: 'name', required: true, max: 255 },
   { name: 'email', required: true, max: 255 },
   { name: 'contact_role', required: false, max: 255 },
   { name: 'organization_name', required: true, max: 255 },
-  { name: 'nonprofit_status', required: true, max: 255 },
   { name: 'org_address', required: true },
   { name: 'org_phone', required: true, max: 50 },
   { name: 'mission', required: true },
@@ -2588,18 +2587,26 @@ const NONPROFIT_QUESTIONNAIRE_FIELDS = [
   { name: 'website_goals', required: true },
   { name: 'audiences', required: true },
   { name: 'primary_cta', required: true, max: 255 },
+  { name: 'first_impression', required: true },
   { name: 'donations', required: false },
   { name: 'volunteers', required: false },
   { name: 'events', required: false },
+  { name: 'newsletter_tool', required: false, max: 255 },
+  { name: 'social_accounts', required: false, max: 255 },
+  { name: 'common_questions', required: false },
   { name: 'branding', required: true },
-  { name: 'requested_pages', required: true },
-  { name: 'photos_content', required: true },
+  { name: 'brand_words', required: true, max: 255 },
+  { name: 'design_inspiration', required: false },
+  { name: 'photo_style', required: false },
+  { name: 'current_site_feedback', required: true },
   { name: 'features', required: false },
   { name: 'accessibility_needs', required: false },
-  { name: 'design_inspiration', required: false },
   { name: 'current_website', required: false, max: 255 },
   { name: 'domain_and_accounts', required: true },
-  { name: 'approvers', required: false },
+  { name: 'tool_logins', required: true },
+  { name: 'squarespace', required: false, max: 255 },
+  { name: 'inbound_links', required: false },
+  { name: 'contact_routing', required: false },
   { name: 'timeline', required: false },
   { name: 'how_heard', required: false, max: 255 },
   { name: 'anything_else', required: false }
