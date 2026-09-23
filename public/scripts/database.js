@@ -145,7 +145,6 @@ async function initializeDatabase() {
         current_website VARCHAR(255),
         domain_and_accounts TEXT NOT NULL,
         tool_logins TEXT NOT NULL,
-        squarespace VARCHAR(255),
         inbound_links TEXT,
         contact_routing TEXT,
         timeline TEXT,
@@ -167,7 +166,6 @@ async function initializeDatabase() {
       ['current_site_feedback', 'TEXT NULL'],
       ['photo_style', 'TEXT NULL'],
       ['tool_logins', 'TEXT NULL'],
-      ['squarespace', 'VARCHAR(255) NULL'],
       ['inbound_links', 'TEXT NULL'],
       ['contact_routing', 'TEXT NULL']
     ];
