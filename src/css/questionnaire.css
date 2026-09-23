@@ -284,11 +284,18 @@
   #questionnaire .form-actions {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
     margin-top: clamp(2rem, 4vw, 2.5rem);
     padding-top: 2rem;
     border-top: 1px solid var(--border-light);
+  }
+
+  /* Buttons stack full-width on mobile so Back + Submit never force horizontal overflow */
+  #questionnaire .form-actions .cs-button-solid {
+    width: 100%;
+    min-width: 0;
   }
   
   /* Buttons */
@@ -591,13 +598,24 @@
   }
   
   #questionnaire .form-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-end;
   }
-  
+
+  #questionnaire .form-actions .cs-button-solid {
+    width: auto;
+    min-width: 9.375rem;
+  }
+
+  #questionnaire .form-actions .cs-submit {
+    min-width: 15.6875rem;
+  }
+
   #questionnaire .cs-back {
     order: 1;
   }
-  
+
   #questionnaire .cs-submit {
     order: 2;
   }

@@ -2604,7 +2604,6 @@ const NONPROFIT_QUESTIONNAIRE_FIELDS = [
   { name: 'current_website', required: false, max: 255 },
   { name: 'domain_and_accounts', required: true },
   { name: 'tool_logins', required: true },
-  { name: 'squarespace', required: false, max: 255 },
   { name: 'inbound_links', required: false },
   { name: 'contact_routing', required: false },
   { name: 'timeline', required: false },
