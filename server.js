@@ -1256,6 +1256,10 @@ ${contractCss}
     templateHtml = templateHtml.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
     const scriptsAfter = (templateHtml.match(/<script/gi) || []).length;
     
+    // Strip anti-spam fields that only exist for the web form
+    templateHtml = templateHtml
+      .replace(/<!-- Anti-spam honeypot[\s\S]*?<div id="turnstile-container"[^>]*><\/div>\s*/i, '');
+
     // Remove form wrapper but keep the content (DocuSeal handles its own form)
     templateHtml = templateHtml.replace(/<form[^>]*>/gi, '<div>').replace(/<\/form>/gi, '</div>');
     
@@ -1929,8 +1933,10 @@ ${contractCss}
 };
 
 // Register the route for both paths - MUST be before proxy middleware
-app.post('/api/purchase/create-contract', handleCreateContractRoute);
-app.post('/purchase/create-contract', handleCreateContractRoute);
+const contractGuard = require('./middleware/contractGuard');
+app.get('/api/contract-token', contractGuard.tokenHandler);
+app.post('/api/purchase/create-contract', contractGuard.guard(logger), handleCreateContractRoute);
+app.post('/purchase/create-contract', contractGuard.guard(logger), handleCreateContractRoute);
 
 // Proxy API requests to Strapi running at localhost:1337
 // Exclude /api/purchase routes (handled by our Express routes)

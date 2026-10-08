@@ -610,6 +610,12 @@
     <div class="contract-wrapper">
         <!-- Form wrapper -->
         <form id="contract-form" novalidate onsubmit="handleFormSubmit(event)">
+            <!-- Anti-spam honeypot: hidden from humans, bots tend to fill it -->
+            <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+                <label for="input-website">Website</label>
+                <input type="text" id="input-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <div id="turnstile-container" style="display:none;"></div>
             <!-- Navigation Header -->
             <div class="contract-nav">
                 <div class="nav-info">
@@ -1283,6 +1289,34 @@
             }
         });
         
+        // Signed form token is requested on page load so the server can enforce a minimum fill time
+        function loadGuard() {
+            return fetch('/api/contract-token', { cache: 'no-store' }).then(r => r.json());
+        }
+        let guardPromise = loadGuard();
+
+        // Cloudflare Turnstile (only used when the server reports a site key)
+        function getTurnstileToken(siteKey) {
+            return new Promise((resolve, reject) => {
+                const render = () => {
+                    const box = document.getElementById('turnstile-container');
+                    box.style.display = 'block';
+                    box.innerHTML = '';
+                    window.turnstile.render(box, {
+                        sitekey: siteKey,
+                        callback: (token) => { box.style.display = 'none'; resolve(token); },
+                        'error-callback': () => reject(new Error('Verification failed. Please reload and try again.'))
+                    });
+                };
+                if (window.turnstile) return render();
+                const s = document.createElement('script');
+                s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+                s.onload = render;
+                s.onerror = () => reject(new Error('Could not load verification. Please reload and try again.'));
+                document.head.appendChild(s);
+            });
+        }
+
         // Handle form submission
         async function handleFormSubmit(event) {
             console.log('[CONTRACT] Form submission started');
@@ -1389,8 +1423,17 @@
                     has_start_date: !!data.start_date
                 });
                 
+                // Anti-spam: honeypot, signed token and (optional) Turnstile response
+                data.website = formData.get('website') || '';
+                const guard = await guardPromise;
+                guardPromise = loadGuard(); // tokens are single-use; prepare the next one
+                data.form_token = guard.token;
+                if (guard.turnstileSiteKey) {
+                    data.turnstile_token = await getTurnstileToken(guard.turnstileSiteKey);
+                }
+
                 const requestStartTime = Date.now();
-                
+
                 // Submit to server
                 const response = await fetch('/api/purchase/create-contract', {
                     method: 'POST',
