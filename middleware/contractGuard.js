@@ -23,8 +23,9 @@ const SECRET = process.env.CONTRACT_TOKEN_SECRET
 
 const MIN_FILL_MS = 20 * 1000;
 const MAX_AGE_MS = 2 * 60 * 60 * 1000;
-const IP_LIMIT = { max: 5, windowMs: 60 * 60 * 1000 };
-const EMAIL_LIMIT = { max: 2, windowMs: 24 * 60 * 60 * 1000 };
+const HOUR = 60 * 60 * 1000;
+const IP_LIMITS = [{ max: 1, windowMs: HOUR }, { max: 2, windowMs: 24 * HOUR }];
+const EMAIL_LIMIT = { max: 2, windowMs: 24 * HOUR };
 const ALLOWED_HOSTS = new Set([
   'fishtownwebdesign.com',
   'www.fishtownwebdesign.com',
@@ -78,7 +79,7 @@ setInterval(() => {
   const now = Date.now();
   for (const [token, t] of spentTokens) if (now - t > MAX_AGE_MS) spentTokens.delete(token);
   for (const [key, list] of hits) {
-    const recent = list.filter((t) => now - t < EMAIL_LIMIT.windowMs);
+    const recent = list.filter((t) => now - t < 24 * HOUR);
     if (recent.length) hits.set(key, recent); else hits.delete(key);
   }
 }, 10 * 60 * 1000).unref();
@@ -168,7 +169,7 @@ function guard(logger) {
     const contentError = validateContent(body);
     if (contentError) return block('junk-content', 400, contentError);
 
-    if (overLimit(`ip:${ip}`, IP_LIMIT)) {
+    if (IP_LIMITS.some((limit) => overLimit(`ip:${ip}`, limit))) {
       return block('ip-rate-limit', 429, 'Too many attempts. Please try again later or email help@fishtownwebdesign.com.');
     }
     if (email && overLimit(`email:${email}`, EMAIL_LIMIT)) {
