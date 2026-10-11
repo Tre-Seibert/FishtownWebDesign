@@ -3,7 +3,7 @@ from PIL import Image
 import tinify
 
 # Initialize Tinify API (you need to get a free API key from https://tinypng.com/developers)
-tinify.key = "REDACTED_SECRET"
+tinify.key = os.environ["TINIFY_API_KEY"]
 
 # Create the directory to store compressed images
 def create_compressed_folder():
